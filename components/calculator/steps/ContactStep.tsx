@@ -67,7 +67,7 @@ function validate() {
   return valid;
 }
 
-function handleSubmit() {
+async function handleSubmit() {
   if (!validate()) return;
 
   const formData = {
@@ -81,9 +81,24 @@ function handleSubmit() {
     discount,
   };
 
-  console.log(formData);
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
 
-  router.push("/thank-you");
+    if (!response.ok) {
+      throw new Error("Failed to send request");
+    }
+
+    router.push("/thank-you");
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
+  }
 }
 
 
@@ -496,39 +511,41 @@ function handleSubmit() {
   />
 
   <textarea
-    rows={6}
-    placeholder="Tell us about your project..."
-    className="
-      w-full
+  rows={6}
+  value={message}
+  onChange={(e) => setMessage(e.target.value)}
+  placeholder="Tell us about your project..."
+  className="
+    w-full
 
-      rounded-[22px]
+    rounded-[22px]
 
-      border
-      border-white/10
+    border
+    border-white/10
 
-      bg-white/[0.03]
+    bg-white/[0.03]
 
-      py-5
-      pl-14
-      pr-6
+    py-5
+    pl-14
+    pr-6
 
-      text-white
+    text-white
 
-      placeholder:text-white/30
+    placeholder:text-white/30
 
-      outline-none
+    outline-none
 
-      transition-all
-      duration-300
+    transition-all
+    duration-300
 
-      hover:border-white/20
+    hover:border-white/20
 
-      focus:border-blue-400/50
-      focus:bg-white/[0.05]
+    focus:border-blue-400/50
+    focus:bg-white/[0.05]
 
-      focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]
-    "
-  />
+    focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]
+  "
+/>
 </div>
 
       </div>
