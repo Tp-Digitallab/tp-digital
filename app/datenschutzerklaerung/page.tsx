@@ -49,7 +49,171 @@ export default function DatenschutzerklaerungPage() {
 
       <section className="mx-auto max-w-6xl px-6 pb-28">
 
-      </section>
+  <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
+
+    {/* Sidebar */}
+
+    <aside className="sticky top-28 h-fit rounded-3xl border border-white/15 bg-white/[0.05] p-6 backdrop-blur">
+
+      <h2 className="text-lg font-semibold text-white">
+        Inhaltsverzeichnis
+      </h2>
+
+      <nav className="mt-6 flex flex-col gap-4">
+
+        <a href="#general" className="text-zinc-400 transition hover:text-white">
+          Allgemeine Hinweise
+        </a>
+
+        <a href="#controller" className="text-zinc-400 transition hover:text-white">
+          Verantwortlicher
+        </a>
+
+        <a href="#hosting" className="text-zinc-400 transition hover:text-white">
+          Hosting
+        </a>
+
+        <a href="#logs" className="text-zinc-400 transition hover:text-white">
+          Server-Log-Dateien
+        </a>
+
+        <a href="#ssl" className="text-zinc-400 transition hover:text-white">
+          SSL-Verschlüsselung
+        </a>
+
+        <a href="#rights" className="text-zinc-400 transition hover:text-white">
+          Ihre Rechte
+        </a>
+
+      </nav>
+
+    </aside>
+
+    {/* Content */}
+
+    <div className="space-y-8">
+
+      <div
+        id="general"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          Allgemeine Hinweise
+        </h2>
+
+        <p className="mt-5 leading-8 text-zinc-300">
+          Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen.
+          Diese Datenschutzerklärung informiert Sie darüber, welche
+          personenbezogenen Daten beim Besuch dieser Website verarbeitet werden
+          und zu welchem Zweck dies geschieht.
+        </p>
+      </div>
+
+      <div
+        id="controller"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          Verantwortlicher
+        </h2>
+
+        <div className="mt-5 space-y-2 text-zinc-300 leading-8">
+
+          <p className="font-medium text-white">
+            TP-Digital
+          </p>
+
+          <p>
+            Inhaber: Taras Pakhaliuk
+          </p>
+
+          <p>
+            Neubiberger Straße 13
+          </p>
+
+          <p>
+            81737 München
+          </p>
+
+          <p>
+            Deutschland
+          </p>
+
+          <p>
+            E-Mail: taraspahalyk@gmail.com
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        id="hosting"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          Hosting
+        </h2>
+
+        <p className="mt-5 leading-8 text-zinc-300">
+          Diese Website wird bei Vercel gehostet. Beim Aufruf der Website
+          können technische Informationen verarbeitet werden, die für den
+          sicheren Betrieb und die Bereitstellung der Website erforderlich sind.
+        </p>
+      </div>
+
+      <div
+        id="logs"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          Server-Log-Dateien
+        </h2>
+
+        <p className="mt-5 leading-8 text-zinc-300">
+          Beim Besuch dieser Website werden automatisch technische Informationen
+          wie IP-Adresse, Browsertyp, Betriebssystem, Datum und Uhrzeit des
+          Zugriffs sowie aufgerufene Seiten in Server-Log-Dateien gespeichert.
+          Diese Daten dienen ausschließlich der technischen Sicherheit und dem
+          stabilen Betrieb der Website.
+        </p>
+      </div>
+
+      <div
+        id="ssl"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          SSL-/TLS-Verschlüsselung
+        </h2>
+
+        <p className="mt-5 leading-8 text-zinc-300">
+          Diese Website verwendet eine SSL-/TLS-Verschlüsselung, um übertragene
+          Daten vor dem Zugriff unbefugter Dritter zu schützen.
+        </p>
+      </div>
+
+      <div
+        id="rights"
+        className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur"
+      >
+        <h2 className="text-2xl font-semibold text-white">
+          Rechte der betroffenen Personen
+        </h2>
+
+        <p className="mt-5 leading-8 text-zinc-300">
+          Sie haben nach der DSGVO das Recht auf Auskunft, Berichtigung,
+          Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie
+          Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     </main>
   );
