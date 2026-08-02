@@ -172,7 +172,7 @@ export default function ContactSection() {
               </Link>
 
               <Link
-                href="/Datenschutz"
+                href="/datenschutzerklaerung"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
                 Datenschutz
