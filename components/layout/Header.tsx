@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Container from "@/components/common/Container";
 import Button from "@/components/ui/Button";
-import Link from "next/link";
 import MobileMenu from "@/components/layout/MobileMenu";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 const navigation = [
   { name: "Solutions", href: "#solutions" },
   { name: "Packages", href: "#packages" },
   { name: "Projects", href: "#projects" },
+  { name: "Calculator", href: "#calculator" },
   { name: "Process", href: "#process" },
   { name: "Contact", href: "#contact" },
 ];
@@ -38,28 +39,27 @@ export default function Header() {
 
           {/* Logo */}
 
-          <Link
-            href="/"
-            className="leading-none group"
-          >
-            <div
-              className="
-                text-2xl
-                font-semibold
-                text-white
-                transition-all
-                duration-300
-                group-hover:tracking-wide
-              "
-            >
-              TP
-            </div>
+         <ScrollLink
+  href="#top"
+  className="leading-none group"
+>
+  <div
+    className="
+      text-2xl
+      font-semibold
+      text-white
+      transition-all
+      duration-300
+      group-hover:tracking-wide
+    "
+  >
+    TP
+  </div>
 
-            <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
-              Digital Lab
-            </div>
-          </Link>
-
+  <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
+    Digital Lab
+  </div>
+</ScrollLink>
           {/* Navigation */}
 
           <nav
@@ -97,51 +97,51 @@ export default function Header() {
               }
             `}
           >
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="
-                  relative
+           {navigation.map((item) => (
+  <ScrollLink
+    key={item.name}
+    href={item.href}
+    className="
+      relative
 
-                  text-[15px]
-                  font-medium
+      text-[15px]
+      font-medium
 
-                  tracking-[0.02em]
+      tracking-[0.02em]
 
-                  text-white/85
+      text-white/85
 
-                  transition-all
-                  duration-300
+      transition-all
+      duration-300
 
-                  hover:text-white
+      hover:text-white
 
-                  after:absolute
-                  after:left-1/2
-                  after:-bottom-2
-                  after:h-[3px]
-                  after:w-[3px]
-                  after:-translate-x-1/2
-                  after:rounded-full
-                  after:bg-white
-                  after:scale-0
-                  after:transition-all
-                  after:duration-300
+      after:absolute
+      after:left-1/2
+      after:-bottom-2
+      after:h-[3px]
+      after:w-[3px]
+      after:-translate-x-1/2
+      after:rounded-full
+      after:bg-white
+      after:scale-0
+      after:transition-all
+      after:duration-300
 
-                  hover:after:scale-100
-                "
-              >
-                {item.name}
-              </a>
-            ))}
+      hover:after:scale-100
+    "
+  >
+    {item.name}
+  </ScrollLink>
+))}
           </nav>
 
           {/* Button */}
 
           <div className="justify-self-end">
-            <Button>
-              Start Project
-            </Button>
+           <Button href="#calculator">
+  Start Project
+</Button>
           </div>
 
         </div>
@@ -150,21 +150,19 @@ export default function Header() {
 
         <div className="flex items-center justify-between mt-8 md:hidden">
 
-          <Link
-            href="/"
-            className="leading-none"
-          >
-            <div className="text-2xl font-semibold text-white">
-              TP
-            </div>
+          <ScrollLink
+  href="#top"
+  className="leading-none"
+>
+  <div className="text-2xl font-semibold text-white">
+    TP
+  </div>
 
-            <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
-              Digital Lab
-            </div>
-          </Link>
-
+  <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
+    Digital Lab
+  </div>
+</ScrollLink>
           <MobileMenu />
-
         </div>
 
       </Container>

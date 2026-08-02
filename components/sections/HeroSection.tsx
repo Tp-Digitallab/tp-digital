@@ -2,10 +2,14 @@ import Container from "@/components/common/Container";
 import BackgroundGrid from "@/components/effects/BackgroundGrid";
 import CursorTrail from "@/components/effects/CursorTrail";
 import Button from "@/components/ui/Button";
+import ScrollLink from "@/components/ui/ScrollLink";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
+    <section
+  id="top"
+  className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
+>
 
       <BackgroundGrid />
       <CursorTrail />
@@ -40,13 +44,16 @@ export default function HeroSection() {
 
             <div className="mt-14 flex items-center gap-6">
 
-              <Button>
-                Start Project
+              <Button href="#calculator">
+                 Start Project
               </Button>
 
-              <button className="text-sm text-white/55 transition hover:text-white">
-                View Projects →
-              </button>
+              <ScrollLink
+  href="#projects"
+  className="text-sm text-white/55 transition hover:text-white"
+>
+  View Projects →
+</ScrollLink>
 
             </div>
 
