@@ -2,6 +2,8 @@
 
 import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 interface PackageCardProps {
   id: string;
@@ -22,6 +24,11 @@ export default function PackageCard({
   features,
   featured,
 }: PackageCardProps) {
+  
+ const { language } = useLanguage();
+
+  const t = translations[language];
+
   return (
     <motion.div
       whileHover={{
@@ -62,17 +69,22 @@ export default function PackageCard({
           {title}
         </h3>
 
-        <div className="mt-8 flex items-end gap-2">
+       <div className="mt-8 flex items-baseline gap-3">
 
-          <span className="text-6xl font-semibold text-white">
-            {price}
-          </span>
+  <span
+    className="
+      whitespace-nowrap
+      text-5xl
+      font-semibold
+      tracking-tight
+      text-white
+      md:text-4xl
+    "
+  >
+    {price}
+  </span>
 
-          <span className="mb-2 text-white/40">
-            from
-          </span>
-
-        </div>
+</div>
 
         <p className="mt-8 text-lg leading-8 text-white/60">
           {description}
@@ -109,8 +121,9 @@ export default function PackageCard({
     );
   }}
 >
-  Choose Plan
+  {t.packages.button}
 </Button>
+
 
         </div>
 

@@ -26,6 +26,9 @@ import {
 export default function Calculator() {
   const [step, setStep] = useState(1);
   const [packagePrice, setPackagePrice] = useState<number | null>(null);
+  const [includedMarketing, setIncludedMarketing] = useState<string[]>([]);
+const [includedFeatures, setIncludedFeatures] = useState<string[]>([]);
+const [includedSupport, setIncludedSupport] = useState<string[]>([]);
 
   const [includedLanguages, setIncludedLanguages] = useState<string[]>([]);
   
@@ -65,18 +68,21 @@ export default function Calculator() {
   }
 
 
-  setSelectedLanguages(preset.languages);
+setSelectedLanguages(preset.languages);
 setIncludedLanguages(preset.languages);
 
-  setSelectedMarketing(preset.marketing);
+setSelectedMarketing(preset.marketing);
+setIncludedMarketing(preset.marketing);
 
   console.log("MARKETING FROM PRESET:", preset.marketing);
 
   setSelectedBranding(preset.branding);
 
-  setSelectedFeatures(preset.features);
+setSelectedFeatures(preset.features);
+setIncludedFeatures(preset.features);
 
-  setSelectedSupport(preset.support);
+setSelectedSupport(preset.support);
+setIncludedSupport(preset.support);
 
   setStep(7);
 
@@ -108,46 +114,42 @@ useEffect(() => {
   }
 });
 
- if (!packagePrice) {
-  selectedMarketing.forEach((id) => {
-    const item = marketing.find((x) => x.id === id);
+ selectedMarketing.forEach((id) => {
+  const item = marketing.find((x) => x.id === id);
 
-    if (item) {
-      price += item.price;
-    }
-  });
-}
+  if (item && !includedMarketing.includes(id)) {
+    price += item.price;
+  }
+});
 
- if (!packagePrice) {
-  selectedBranding.forEach((id) => {
-    const item = branding.find((x) => x.id === id);
+ selectedBranding.forEach((id) => {
+  const item = branding.find((x) => x.id === id);
 
-    if (item) {
-      price += item.price;
-    }
-  });
-}
+  if (item) {
+    price += item.price;
+  }
+});
 
-  if (!packagePrice) {
-  selectedFeatures.forEach((id) => {
-    const item = features.find((x) => id === x.id);
+ selectedFeatures.forEach((id) => {
+  const item = features.find((x) => id === x.id);
 
-    if (item) {
-      price += item.price;
-    }
-  });
-}
+  if (item && !includedFeatures.includes(id)) {
+    price += item.price;
+  }
+});
 
   return price;
 }, [
   website,
+  packagePrice,
   selectedLanguages,
   includedLanguages,
   selectedMarketing,
+  includedMarketing,
   selectedBranding,
   selectedFeatures,
-]
-);
+  includedFeatures,
+]);
 
 const monthlyTotal = useMemo(() => {
   let price = 0;
@@ -155,13 +157,16 @@ const monthlyTotal = useMemo(() => {
   selectedSupport.forEach((id) => {
     const item = support.find((x) => x.id === id);
 
-    if (item) {
-      price += item.price;
-    }
+    if (item && !includedSupport.includes(id)) {
+  price += item.price;
+} 
   });
 
   return price;
-}, [selectedSupport]);
+}, [
+  selectedSupport,
+  includedSupport,
+]);
 
 
 

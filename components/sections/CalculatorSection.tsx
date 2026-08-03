@@ -1,8 +1,20 @@
+"use client";
+
 import Container from "@/components/common/Container";
 import Calculator from "@/components/calculator/Calculator";
 import Grid from "@/components/ui/background/Grid";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
+
+
 export default function CalculatorSection() {
+
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
+
   return (
     <section
       id="calculator"
@@ -13,7 +25,9 @@ export default function CalculatorSection() {
         bg-[#050505]
       "
     >
+
       <Grid />
+
 
       <div
         className="
@@ -24,29 +38,44 @@ export default function CalculatorSection() {
         "
       />
 
+
       <Container className="relative z-10">
+
 
         <div className="max-w-3xl">
 
+
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-white/35">
-            PROJECT CALCULATOR
+            {t.calculator.eyebrow}
           </p>
+
 
           <h2 className="text-5xl font-semibold leading-tight text-white md:text-7xl">
-            Build your project.
+
+            {t.calculator.title}
+
             <br />
-            Get an instant estimate.
+
+            {t.calculator.titleAccent}
+
           </h2>
 
+
           <p className="mt-8 max-w-2xl text-xl leading-9 text-white/60">
-            Configure your future website and see the estimated investment before contacting us.
+
+            {t.calculator.description}
+
           </p>
+
 
         </div>
 
+
         <Calculator />
 
+
       </Container>
+
 
     </section>
   );

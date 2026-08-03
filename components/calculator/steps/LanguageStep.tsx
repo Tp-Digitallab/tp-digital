@@ -1,5 +1,6 @@
 import { languages } from "@/config/calculator";
-
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 interface Props {
   selected: string[];
   setSelected: React.Dispatch<React.SetStateAction<string[]>>;
@@ -13,6 +14,10 @@ export default function LanguageStep({
   back,
   next,
 }: Props) {
+  
+const { language } = useLanguage();
+
+const t = translations[language];
 
   const primary = selected[0];
 
@@ -44,15 +49,15 @@ export default function LanguageStep({
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 2
+        {t.calculatorSteps.languages.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Choose Languages
+        {t.calculatorSteps.languages.title}
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        One language is included. Add more languages if needed.
+        {t.calculatorSteps.languages.description}
       </p>
 
       {/* PRIMARY */}
@@ -60,7 +65,7 @@ export default function LanguageStep({
       <div className="mt-14">
 
         <h3 className="mb-6 text-xl font-semibold text-white">
-          Primary Language
+          {t.calculatorSteps.languages.primary}
         </h3>
 
         <div className="space-y-4">
@@ -101,7 +106,7 @@ export default function LanguageStep({
                       </h3>
 
                       <p className="mt-2 text-white/50">
-                        Included
+                        {t.calculatorSteps.languages.included}
                       </p>
 
                     </div>
@@ -127,7 +132,7 @@ export default function LanguageStep({
       <div className="mt-14">
 
         <h3 className="mb-6 text-xl font-semibold text-white">
-          Additional Languages
+          {t.calculatorSteps.languages.additional}
         </h3>
 
         <div className="space-y-4">
@@ -200,14 +205,14 @@ export default function LanguageStep({
           onClick={back}
           className="rounded-full border border-white/10 px-8 py-4 text-white hover:bg-white/5"
         >
-          ← Back
+         ← {t.calculatorSteps.languages.back}
         </button>
 
         <button
           onClick={next}
           className="rounded-full bg-blue-500 px-8 py-4 text-white hover:bg-blue-400"
         >
-          Next →
+          {t.calculatorSteps.languages.next} →
         </button>
 
       </div>

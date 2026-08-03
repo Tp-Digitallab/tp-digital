@@ -1,4 +1,9 @@
+"use client";
+
 import { websiteTypes } from "@/config/calculator";
+
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 interface Props {
   website: (typeof websiteTypes)[number];
@@ -11,19 +16,22 @@ export default function WebsiteStep({
   setWebsite,
   next,
 }: Props) {
+    const { language } = useLanguage();
+
+  const t = translations[language];
   return (
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 1
+       {t.calculatorSteps.website.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Choose your website
+        {t.calculatorSteps.website.title}
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        Select the type of website that best fits your business.
+        {t.calculatorSteps.website.description}
       </p>
 
       <div className="mt-14 space-y-6">
@@ -123,7 +131,7 @@ export default function WebsiteStep({
                 <div>
 
                   <p className="text-sm uppercase tracking-[0.2em] text-white/35">
-                    Starting From
+                    {t.calculatorSteps.website.startingFrom}
                   </p>
 
                   <p className="mt-2 text-3xl font-bold text-white">
@@ -164,7 +172,7 @@ export default function WebsiteStep({
             hover:-translate-y-1
           "
         >
-          Next →
+          {t.calculatorSteps.website.next} →
         </button>
 
       </div>

@@ -14,6 +14,7 @@ export const packages = [
     ],
   },
 
+
   {
     id: "business",
     name: "Business",
@@ -26,9 +27,10 @@ export const packages = [
       "Advanced SEO",
       "Google Business Profile",
       "Conversion Tracking",
-      "14 Days Support",
+      "1 Month Support",
     ],
   },
+
 
   {
     id: "growth",
@@ -42,7 +44,7 @@ export const packages = [
       "CMS",
       "Up to 3 Languages",
       "Google Ads Setup",
-      "1 Month Support",
+      "2 Months Support",
     ],
   },
 ];
