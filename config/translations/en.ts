@@ -132,6 +132,46 @@ export const en = {
 
       next: "Next",
     },
+    marketing: {
+  step: "STEP 3",
+
+  title: "Choose Marketing",
+
+  description:
+    "Select additional marketing services for your project.",
+
+  included: "Included",
+
+  back: "Back",
+
+  next: "Next",
+},
+branding: {
+  step: "STEP 4",
+
+  title: "Branding",
+
+  description:
+    "Strengthen your visual identity and make your business memorable.",
+
+  back: "Back",
+
+  next: "Next",
+},
+features: {
+  step: "STEP 5",
+
+  title: "Additional Features",
+
+  description:
+    "Add extra functionality to make your website easier to manage.",
+
+  popular: "MOST POPULAR",
+
+  back: "Back",
+
+  next: "Next",
+},
   },
 
   packageCards: {

@@ -129,6 +129,46 @@ export const de = {
 
       next: "Weiter",
     },
+    marketing: {
+  step: "SCHRITT 3",
+
+  title: "Marketing auswählen",
+
+  description:
+    "Wählen Sie zusätzliche Marketing-Leistungen für Ihr Projekt.",
+
+  included: "Inklusive",
+
+  back: "Zurück",
+
+  next: "Weiter",
+},
+branding: {
+  step: "SCHRITT 4",
+
+  title: "Branding",
+
+  description:
+    "Stärken Sie Ihre visuelle Identität und machen Sie Ihr Unternehmen einzigartig.",
+
+  back: "Zurück",
+
+  next: "Weiter",
+},
+features: {
+  step: "SCHRITT 5",
+
+  title: "Zusätzliche Funktionen",
+
+  description:
+    "Fügen Sie zusätzliche Funktionen zu Ihrer Website hinzu.",
+
+  popular: "BELIEBT",
+
+  back: "Zurück",
+
+  next: "Weiter",
+},
   },
 
   packageCards: {

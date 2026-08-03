@@ -1,5 +1,6 @@
 import { branding } from "@/config/calculator";
-
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 interface Props {
   selected: string[];
   setSelected: React.Dispatch<React.SetStateAction<string[]>>;
@@ -14,6 +15,9 @@ export default function BrandingStep({
   next,
 }: Props) 
 {
+    const { language } = useLanguage();
+
+  const t = translations[language];
     
   function toggle(id: string) {
     if (selected.includes(id)) {
@@ -27,15 +31,15 @@ export default function BrandingStep({
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 4
+        {t.calculatorSteps.branding.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Branding
+        {t.calculatorSteps.branding.step}
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        Strengthen your visual identity and make your business memorable.
+       {t.calculatorSteps.branding.step}
       </p>
 
       <div className="mt-14 space-y-5">
@@ -153,7 +157,7 @@ export default function BrandingStep({
             hover:bg-white/5
           "
         >
-          ← Back
+          {t.calculatorSteps.branding.step}
         </button>
 
         <button
@@ -168,7 +172,7 @@ export default function BrandingStep({
     hover:bg-blue-400
   "
 >
-  Next →
+  {t.calculatorSteps.branding.step}
 </button>
 
       </div>

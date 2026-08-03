@@ -1,4 +1,6 @@
 import { marketing } from "@/config/calculator";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 interface Props {
   selected: string[];
@@ -14,6 +16,10 @@ export default function MarketingStep({
   next,
 }: Props) {
 
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
   function toggle(id: string) {
     if (selected.includes(id)) {
       setSelected(selected.filter((item) => item !== id));
@@ -26,15 +32,15 @@ export default function MarketingStep({
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 3
+       {t.calculatorSteps.marketing.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Marketing
+        {t.calculatorSteps.marketing.title}
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        Boost your visibility and attract more customers.
+        {t.calculatorSteps.marketing.title}
       </p>
 
       <div className="mt-14 space-y-5">
@@ -80,7 +86,7 @@ export default function MarketingStep({
                 </div>
 
                 <div className="mt-8 text-lg font-semibold text-green-400">
-                  ✓ Included
+                 {t.calculatorSteps.marketing.title}
                 </div>
 
               </div>
@@ -183,7 +189,7 @@ export default function MarketingStep({
             hover:bg-white/5
           "
         >
-          ← Back
+          {t.calculatorSteps.marketing.title}
         </button>
 
         <button
@@ -198,7 +204,7 @@ export default function MarketingStep({
             hover:bg-blue-400
           "
         >
-          Next →
+         {t.calculatorSteps.marketing.title}
         </button>
 
       </div>
