@@ -39,6 +39,15 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+  twitter: {
+  card: "summary_large_image",
+  title: "TP Digital Lab",
+  description:
+    "Modern websites, web applications, automation and digital solutions for businesses.",
+  images: [
+    "https://tpdigitallab.de/og-image.png",
+  ],
+},
 };
 
 export default function RootLayout({
