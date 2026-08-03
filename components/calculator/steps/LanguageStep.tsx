@@ -140,7 +140,7 @@ export default function LanguageStep({
 
               const price =
                 item.id === "other"
-                  ? 100
+                  ? 50
                   : 50;
 
               return (

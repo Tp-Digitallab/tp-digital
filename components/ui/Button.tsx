@@ -33,21 +33,23 @@ export default function Button({
   return (
     <button
       className={classes}
-      onClick={() => {
-        if (href.startsWith("#")) {
-          const element = document.querySelector(href);
+      onClick={(event) => {
+  props.onClick?.(event);
 
-          if (element && (window as any).lenis) {
-            (window as any).lenis.scrollTo(element, {
-              duration: 1.2,
-            });
+  if (href.startsWith("#")) {
+    const element = document.querySelector(href);
 
-            return;
-          }
-        }
+    if (element && (window as any).lenis) {
+      (window as any).lenis.scrollTo(element, {
+        duration: 1.2,
+      });
 
-        window.location.href = href;
-      }}
+      return;
+    }
+  }
+
+  window.location.href = href;
+}}
     >
       <span>{children}</span>
 

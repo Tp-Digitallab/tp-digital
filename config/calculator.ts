@@ -3,21 +3,21 @@ export const websiteTypes = [
     id: "landing",
     title: "Landing Page",
     description: "Perfect for a single service or product.",
-    price: 999,
+    price: 399,
   },
 
   {
     id: "business",
     title: "Business Website",
     description: "Professional website for growing companies.",
-    price: 1499,
+    price: 799,
   },
 
   {
     id: "shop",
     title: "Online Store",
     description: "Sell products online with secure payments.",
-    price: 1999,
+    price: 1199,
   },
 ];
 
@@ -60,7 +60,7 @@ export const marketing = [
     title: "Google Ads Setup",
     description:
       "Campaign structure, keyword research, conversion tracking and initial optimization.",
-    price: 200,
+    price: 150,
   },
 
   {

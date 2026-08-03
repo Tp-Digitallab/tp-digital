@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Button from "@/components/ui/Button";
 
 interface PackageCardProps {
+  id: string;
   badge?: string;
   title: string;
   price: string;
@@ -13,6 +14,7 @@ interface PackageCardProps {
 }
 
 export default function PackageCard({
+  id,
   badge,
   title,
   price,
@@ -97,9 +99,18 @@ export default function PackageCard({
 
         <div className="mt-12">
 
-          <Button>
-            Choose Plan
-          </Button>
+          <Button
+  href="#calculator"
+  onClick={() => {
+    localStorage.setItem("selectedPackage", id);
+
+    window.dispatchEvent(
+      new Event("packageSelected")
+    );
+  }}
+>
+  Choose Plan
+</Button>
 
         </div>
 

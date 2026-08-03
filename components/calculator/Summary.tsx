@@ -414,11 +414,6 @@ useEffect(() => {
 
 </div>
 <div className="mt-10">
-
-  <Button className="w-full">
-    Get My Proposal →
-  </Button>
-
 </div>
     </aside>
   );

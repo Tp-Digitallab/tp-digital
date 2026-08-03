@@ -2,6 +2,7 @@ import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 import SectionHeader from "@/components/common/SectionHeader";
 import ServiceCard from "@/components/ui/ServiceCard";
+import Grid from "@/components/ui/background/Grid";
 
 const solutions = [
   {
@@ -33,8 +34,16 @@ const solutions = [
 export default function ServicesSection() {
   return (
     <Section id="solutions">
+<div
+  className="
+    pointer-events-none
+    absolute
+    inset-0
 
-      <Container>
+    bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.08),transparent_35%)]
+  "
+/>
+      <Container className="relative z-10">
 
         <SectionHeader
           eyebrow="SOLUTIONS"

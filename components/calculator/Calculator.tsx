@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import StepIndicator from "./StepIndicator";
 import Summary from "./Summary";
@@ -14,6 +14,8 @@ import { support } from "@/config/support";
 import ContactStep from "./steps/ContactStep";
 import FeaturesStep from "./steps/FeaturesStep";
 import { features } from "@/config/features";
+import { packagePresets } from "@/config/packagePresets";
+
 
 import {
   websiteTypes,
@@ -23,7 +25,10 @@ import {
 
 export default function Calculator() {
   const [step, setStep] = useState(1);
+  const [packagePrice, setPackagePrice] = useState<number | null>(null);
 
+  const [includedLanguages, setIncludedLanguages] = useState<string[]>([]);
+  
   const [website, setWebsite] = useState(websiteTypes[0]);
 
   const [selectedLanguages, setSelectedLanguages] = useState<string[]>(["de"]);
@@ -35,15 +40,75 @@ export default function Calculator() {
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
 
   const [selectedSupport, setSelectedSupport] = useState<string[]>([]);
+  const applyPackage = () => {
+
+  const selectedPackage = localStorage.getItem("selectedPackage");
+
+  console.log("PACKAGE FROM STORAGE:", selectedPackage);
+
+  if (!selectedPackage) return;
+
+  const preset =
+    packagePresets[selectedPackage as keyof typeof packagePresets];
+
+  if (!preset) return;
+
+  setPackagePrice(preset.price);
+
+
+  const selectedWebsite = websiteTypes.find(
+    (item) => item.id === preset.website
+  );
+
+  if (selectedWebsite) {
+    setWebsite(selectedWebsite);
+  }
+
+
+  setSelectedLanguages(preset.languages);
+setIncludedLanguages(preset.languages);
+
+  setSelectedMarketing(preset.marketing);
+
+  console.log("MARKETING FROM PRESET:", preset.marketing);
+
+  setSelectedBranding(preset.branding);
+
+  setSelectedFeatures(preset.features);
+
+  setSelectedSupport(preset.support);
+
+  setStep(7);
+
+};
+useEffect(() => {
+  applyPackage();
+
+  window.addEventListener(
+    "packageSelected",
+    applyPackage
+  );
+
+  return () => {
+    window.removeEventListener(
+      "packageSelected",
+      applyPackage
+    );
+  };
+
+}, []);
 
   const total = useMemo(() => {
-  let price = website.price;
+ let price = packagePrice ?? website.price;
 
-  // Первый язык включен в стоимость
-  selectedLanguages.slice(1).forEach(() => {
+  
+  selectedLanguages.forEach((language) => {
+  if (!includedLanguages.includes(language)) {
     price += 50;
-  });
+  }
+});
 
+ if (!packagePrice) {
   selectedMarketing.forEach((id) => {
     const item = marketing.find((x) => x.id === id);
 
@@ -51,7 +116,9 @@ export default function Calculator() {
       price += item.price;
     }
   });
+}
 
+ if (!packagePrice) {
   selectedBranding.forEach((id) => {
     const item = branding.find((x) => x.id === id);
 
@@ -59,19 +126,23 @@ export default function Calculator() {
       price += item.price;
     }
   });
+}
 
+  if (!packagePrice) {
   selectedFeatures.forEach((id) => {
-  const item = features.find((x) => x.id === id);
+    const item = features.find((x) => id === x.id);
 
-  if (item) {
-    price += item.price;
-  }
-});
+    if (item) {
+      price += item.price;
+    }
+  });
+}
 
   return price;
 }, [
   website,
   selectedLanguages,
+  includedLanguages,
   selectedMarketing,
   selectedBranding,
   selectedFeatures,
