@@ -19,8 +19,26 @@ export const metadata: Metadata = {
     default: "TP Digital Lab",
     template: "%s | TP Digital Lab",
   },
+
   description:
     "Modern websites, web applications, automation and digital solutions for businesses.",
+
+  openGraph: {
+    title: "TP Digital Lab",
+    description:
+      "Modern websites, web applications, automation and digital solutions for businesses.",
+    url: "https://tpdigitallab.de",
+    siteName: "TP Digital Lab",
+    images: [
+      {
+        url: "https://tpdigitallab.de/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TP Digital Lab",
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
