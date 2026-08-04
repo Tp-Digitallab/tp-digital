@@ -53,7 +53,9 @@ const t = translations[language];
               key={item.id}
               onClick={() => toggle(item.id)}
               className={`
-                w-full
+                w-[90%]
+mr-auto
+sm:w-full
 
                 rounded-[24px]
 
@@ -156,43 +158,39 @@ sm:justify-between
 ">
 
         <button
-          onClick={back}
-          className="
-            rounded-full
+  onClick={back}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
 
-            border
-            border-white/10
-
-            px-8
-            py-4
-
-            text-white
-
-            transition
-
-            hover:bg-white/5
-          "
-        >
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
          ← {t.calculatorSteps.support.back}
         </button>
 
         <button
-          onClick={next}
-          className="
-            rounded-full
+  onClick={next}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
 
-            bg-blue-500
-
-            px-8
-            py-4
-
-            text-white
-
-            transition
-
-            hover:bg-blue-400
-          "
-        >
+    rounded-full
+    bg-blue-500
+    px-8
+    py-4
+    text-white
+    hover:bg-blue-400
+  "
+>
           {t.calculatorSteps.support.finish} →
         </button>
 

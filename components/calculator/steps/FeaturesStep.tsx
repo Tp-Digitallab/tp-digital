@@ -54,7 +54,9 @@ export default function FeaturesStep({
               onClick={() => toggle(item.id)}
               className={`
                 relative
-                w-full
+                w-[90%]
+mr-auto
+sm:w-full
                 rounded-[24px]
                 border
                 p-5 sm:p-7
@@ -84,10 +86,8 @@ export default function FeaturesStep({
               <div
 className="
 absolute
-right-4
-top-4
-sm:right-20
-sm:top-6
+right-16
+top-1
 rounded-full
 bg-blue-500
 px-3
@@ -97,7 +97,7 @@ font-semibold
 text-white
 "
 >
-                {t.calculatorSteps.features.popular}
+  {t.calculatorSteps.features.popular}
               </div>
 
               <div
@@ -167,33 +167,39 @@ sm:justify-between
 ">
 
         <button
-          onClick={back}
-          className="
-            rounded-full
-            border
-            border-white/10
-            px-8
-            py-4
-            text-white
-            transition
-            hover:bg-white/5
-          "
-        >
+  onClick={back}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
           ← {t.calculatorSteps.features.back}
         </button>
 
         <button
-          onClick={next}
-          className="
-            rounded-full
-            bg-blue-500
-            px-8
-            py-4
-            text-white
-            transition
-            hover:bg-blue-400
-          "
-        >
+  onClick={next}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    bg-blue-500
+    px-8
+    py-4
+    text-white
+    hover:bg-blue-400
+  "
+>
           {t.calculatorSteps.features.next} →
         </button>
 

@@ -124,7 +124,17 @@ async function handleSubmit() {
         {t.calculatorSteps.contact.description}
       </p>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
+      <div className="
+mt-10
+
+w-[90%]
+mr-auto
+sm:w-full
+
+grid
+gap-5
+md:grid-cols-2
+">
 
 
 {/* First Name */}
@@ -558,27 +568,36 @@ async function handleSubmit() {
       </div>
      <div className="
 mt-10
+
+w-[88%]
+mr-auto
+sm:w-full
+
 flex
 flex-col
-gap-4
+gap-3
+
 sm:flex-row
 sm:items-center
 sm:justify-between
 ">
 
   <button
-    onClick={back}
-    className="
-      rounded-full
-      border
-      border-white/10
-      px-8
-      py-4
-      text-white
-      transition
-      hover:bg-white/5
-    "
-  >
+  onClick={back}
+  className="
+    w-[100%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
     ← {t.calculatorSteps.contact.back}
   </button>
 

@@ -55,17 +55,24 @@ export default function MarketingStep({
             return (
 
               <div
-                key={item.id}
-                className="
-                  rounded-[24px]
-                  border
-                  border-green-400/30
-                  bg-green-500/10
-                  p-5 sm:p-7
-                "
-              >
+  key={item.id}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-full
+
+    rounded-[24px]
+    border
+    border-green-400/30
+    bg-green-500/10
+
+    p-5
+    sm:p-7
+  "
+>
 
                 <div className="
+                
 flex
 flex-col
 gap-5
@@ -108,7 +115,9 @@ sm:justify-between
               key={item.id}
               onClick={() => toggle(item.id)}
               className={`
-                w-full
+                w-[90%]
+mx-auto
+sm:w-full
                 rounded-[24px]
                 border
                 p-5 sm:p-7
@@ -201,33 +210,39 @@ sm:justify-between
 ">
 
         <button
-          onClick={back}
-          className="
-            rounded-full
-            border
-            border-white/10
-            px-8
-            py-4
-            text-white
-            transition
-            hover:bg-white/5
-          "
-        >
+  onClick={back}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
           {t.calculatorSteps.marketing.back}
         </button>
 
         <button
-          onClick={next}
-          className="
-            rounded-full
-            bg-blue-500
-            px-8
-            py-4
-            text-white
-            transition
-            hover:bg-blue-400
-          "
-        >
+  onClick={next}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    bg-blue-500
+    px-8
+    py-4
+    text-white
+    hover:bg-blue-400
+  "
+>
          {t.calculatorSteps.marketing.next}
         </button>
 

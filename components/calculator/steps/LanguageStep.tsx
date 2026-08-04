@@ -82,14 +82,14 @@ const t = translations[language];
                   key={item.id}
                   onClick={() => setPrimary(item.id)}
                   className={`
-                    w-full
-                    rounded-3xl
-                    border
-                    px-4
-py-4
-sm:p-6
-                    text-left
-                    transition-all
+  w-[90%]
+  mx-auto
+  sm:w-full
+  rounded-3xl
+  border
+  p-5 sm:p-6
+  text-left
+  transition-all
 
                     ${
                       active
@@ -120,6 +120,7 @@ gap-3
 
                     <div
   className={`
+  
     flex
     h-9
     w-9
@@ -178,7 +179,9 @@ gap-3
                   key={item.id}
                   onClick={() => toggleAdditional(item.id)}
                   className={`
-                    w-full
+                    w-[90%]
+mx-auto
+sm:w-full
                     rounded-3xl
                     border
                    px-4
@@ -255,17 +258,40 @@ gap-3
   "
 >
 
-        <button
-          onClick={back}
-          className="rounded-full border border-white/10 px-8 py-4 text-white hover:bg-white/5"
-        >
+       <button
+  onClick={back}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
          ← {t.calculatorSteps.languages.back}
         </button>
 
         <button
-          onClick={next}
-          className="rounded-full bg-blue-500 px-8 py-4 text-white hover:bg-blue-400"
-        >
+  onClick={next}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
+    rounded-full
+    bg-blue-500
+    px-8
+    py-4
+    text-white
+    hover:bg-blue-400
+  "
+>
           {t.calculatorSteps.languages.next} →
         </button>
 

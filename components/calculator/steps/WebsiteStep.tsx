@@ -48,7 +48,9 @@ export default function WebsiteStep({
               className={`
                 relative
 
-                w-full
+                w-[90%]
+mx-auto
+sm:w-full
 
                 overflow-hidden
 
@@ -168,27 +170,20 @@ sm:justify-end
 >
 
         <button
-          onClick={next}
-          className="
-            rounded-full
+  onClick={next}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
 
-            bg-blue-500
-
-            w-full
-sm:w-auto
-px-8
-py-4
-
-            font-medium
-            text-white
-
-            transition-all
-            duration-300
-
-            hover:bg-blue-400
-            hover:-translate-y-1
-          "
-        >
+    rounded-full
+    bg-blue-500
+    px-8
+    py-4
+    text-white
+    hover:bg-blue-400
+  "
+>
           {t.calculatorSteps.website.next} →
         </button>
 

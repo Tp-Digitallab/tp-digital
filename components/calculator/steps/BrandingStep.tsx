@@ -54,7 +54,9 @@ export default function BrandingStep({
               key={item.id}
               onClick={() => toggle(item.id)}
               className={`
-                w-full
+                w-[90%]
+mr-auto
+sm:w-full
 
                 rounded-[24px]
 
@@ -157,35 +159,36 @@ sm:justify-between
 ">
 
         <button
-          onClick={back}
-          className="
-            rounded-full
+  onClick={back}
+  className="
+    w-[90%]
+    mx-left
+    sm:w-auto
 
-            border
-            border-white/10
-
-            px-8
-            py-4
-
-            text-white
-
-            transition
-
-            hover:bg-white/5
-          "
-        >
+    rounded-full
+    border
+    border-white/10
+    px-8
+    py-4
+    text-white
+    hover:bg-white/5
+  "
+>
           {t.calculatorSteps.branding.back}
         </button>
 
         <button
   onClick={next}
   className="
+    w-[90%]
+    mx-left
+    sm:w-auto
+
     rounded-full
     bg-blue-500
     px-8
     py-4
     text-white
-    transition
     hover:bg-blue-400
   "
 >

@@ -90,6 +90,9 @@ useEffect(() => {
   className="
     lg:sticky
     lg:top-32
+    w-[90%]
+mx-left
+sm:w-full
 
     rounded-[24px]
     lg:rounded-[32px]
