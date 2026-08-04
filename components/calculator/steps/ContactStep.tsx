@@ -116,15 +116,15 @@ async function handleSubmit() {
         {t.calculatorSteps.contact.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
          {t.calculatorSteps.contact.title}
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+     <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
         {t.calculatorSteps.contact.description}
       </p>
 
-      <div className="mt-14 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
 
 
 {/* First Name */}
@@ -252,7 +252,7 @@ async function handleSubmit() {
     {t.calculatorSteps.contact.budget}
   </p>
 
-  <div className="grid gap-4 sm:grid-cols-2">
+  <div className="grid gap-3 sm:grid-cols-2">
 
     {[
       "Under €500",
@@ -556,7 +556,15 @@ async function handleSubmit() {
 </div>
 
       </div>
-      <div className="mt-14 flex items-center justify-between">
+     <div className="
+mt-10
+flex
+flex-col
+gap-4
+sm:flex-row
+sm:items-center
+sm:justify-between
+">
 
   <button
     onClick={back}
@@ -586,8 +594,10 @@ rounded-full
 
 bg-blue-500
 
-px-10
-py-5
+w-full
+sm:w-auto
+px-8
+py-4
 
 font-semibold
 text-white

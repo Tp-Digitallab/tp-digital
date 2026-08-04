@@ -52,17 +52,17 @@ const t = translations[language];
         {t.calculatorSteps.languages.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
         {t.calculatorSteps.languages.title}
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+      <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
         {t.calculatorSteps.languages.description}
       </p>
 
       {/* PRIMARY */}
 
-      <div className="mt-14">
+      <div className="mt-10 sm:mt-14">
 
         <h3 className="mb-6 text-xl font-semibold text-white">
           {t.calculatorSteps.languages.primary}
@@ -85,7 +85,7 @@ const t = translations[language];
                     w-full
                     rounded-3xl
                     border
-                    p-6
+                    p-5 sm:p-6
                     text-left
                     transition-all
 
@@ -97,23 +97,47 @@ const t = translations[language];
                   `}
                 >
 
-                  <div className="flex justify-between">
+                  <div
+className="
+flex
+items-start
+gap-4
+justify-between
+"
+>
 
                     <div>
 
-                      <h3 className="text-2xl font-semibold text-white">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-white">
                         {item.title}
                       </h3>
 
-                      <p className="mt-2 text-white/50">
+                      <p className="mt-2 text-sm sm:text-base text-white/50">
                         {t.calculatorSteps.languages.included}
                       </p>
 
                     </div>
 
-                    <div className="text-white">
-                      ✓
-                    </div>
+                    <div
+  className={`
+    flex
+    h-9
+    w-9
+    shrink-0
+    items-center
+    justify-center
+    rounded-full
+    border
+
+    ${
+      active
+        ? "border-blue-400 bg-blue-500 text-white"
+        : "border-white/15 text-white/30"
+    }
+  `}
+>
+  ✓
+</div>
 
                   </div>
 
@@ -129,7 +153,7 @@ const t = translations[language];
 
       {/* ADDITIONAL */}
 
-      <div className="mt-14">
+      <div className="mt-10 sm:mt-14">
 
         <h3 className="mb-6 text-xl font-semibold text-white">
           {t.calculatorSteps.languages.additional}
@@ -157,7 +181,7 @@ const t = translations[language];
                     w-full
                     rounded-3xl
                     border
-                    p-6
+                   p-5 sm:p-6
                     text-left
                     transition-all
 
@@ -169,15 +193,22 @@ const t = translations[language];
                   `}
                 >
 
-                  <div className="flex justify-between">
+                  <div
+className="
+flex
+items-start
+gap-4
+justify-between
+"
+>
 
                     <div>
 
-                      <h3 className="text-2xl font-semibold text-white">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
                         {item.title}
                       </h3>
 
-                      <p className="mt-2 text-white/50">
+                      <p className="mt-2 text-sm sm:text-base text-white/50">
                         +€{price}
                       </p>
 
@@ -199,7 +230,16 @@ const t = translations[language];
 
       </div>
 
-      <div className="mt-14 flex justify-between">
+      <div
+  className="
+    mt-10
+    flex
+    flex-col
+    gap-4
+    sm:flex-row
+    sm:justify-between
+  "
+>
 
         <button
           onClick={back}

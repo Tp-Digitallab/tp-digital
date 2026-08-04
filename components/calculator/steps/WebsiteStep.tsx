@@ -26,11 +26,11 @@ export default function WebsiteStep({
        {t.calculatorSteps.website.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
         {t.calculatorSteps.website.title}
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+     <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
         {t.calculatorSteps.website.description}
       </p>
 
@@ -52,11 +52,12 @@ export default function WebsiteStep({
 
                 overflow-hidden
 
-                rounded-[28px]
+                rounded-[24px]
+p-5 sm:p-8
 
                 border
 
-                p-8
+                
 
                 text-left
 
@@ -86,7 +87,14 @@ export default function WebsiteStep({
               `}
             >
 
-              <div className="flex items-start justify-between">
+             <div className="
+flex
+flex-col
+gap-5
+sm:flex-row
+sm:items-start
+sm:justify-between
+">
 
                 <div>
 
@@ -126,7 +134,7 @@ export default function WebsiteStep({
 
               </div>
 
-              <div className="mt-10 flex items-center justify-between">
+              <div className="mt-8">
 
                 <div>
 
@@ -150,7 +158,14 @@ export default function WebsiteStep({
 
       </div>
 
-      <div className="mt-12 flex justify-end">
+    <div
+className="
+mt-10
+flex
+justify-stretch
+sm:justify-end
+"
+>
 
         <button
           onClick={next}
@@ -159,8 +174,10 @@ export default function WebsiteStep({
 
             bg-blue-500
 
-            px-8
-            py-4
+            w-full
+sm:w-auto
+px-8
+py-4
 
             font-medium
             text-white

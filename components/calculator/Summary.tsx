@@ -87,27 +87,29 @@ useEffect(() => {
 
   return (
     <aside
-      className="
-        sticky
-        top-32
+  className="
+    lg:sticky
+    lg:top-32
 
-        rounded-[32px]
+    rounded-[24px]
+    lg:rounded-[32px]
 
-        border
-        border-white/10
+    border
+    border-white/10
 
-        bg-gradient-to-b
-        from-white/[0.06]
-        to-white/[0.02]
+    bg-gradient-to-b
+    from-white/[0.06]
+    to-white/[0.02]
 
-        p-8
-      "
-    >
+    p-5
+    sm:p-8
+  "
+>
       <p className="text-xs uppercase tracking-[0.3em] text-white/40">
         Your Project
       </p>
 
-      <div className="mt-8 space-y-8">
+      <div className="mt-6 sm:mt-8 space-y-6 sm:space-y-8">
 
         {/* Website */}
 
@@ -144,7 +146,7 @@ useEffect(() => {
                 return (
                   <p
                     key={id}
-                    className="text-white/70"
+                    className="text-sm sm:text-base text-white/70"
                   >
                     • {item?.title}
                   </p>
@@ -177,7 +179,7 @@ useEffect(() => {
                 return (
                   <p
                     key={id}
-                    className="text-white/70"
+                    className="text-sm sm:text-base text-white/70"
                   >
                     • {item?.title}
                   </p>
@@ -210,7 +212,7 @@ useEffect(() => {
                 return (
                   <p
                     key={id}
-                    className="text-white/70"
+                    className="text-sm sm:text-base text-white/70"
                   >
                     • {item?.title}
                   </p>
@@ -244,7 +246,7 @@ useEffect(() => {
         return (
           <p
             key={id}
-            className="text-white/70"
+           className="text-sm sm:text-base text-white/70"
           >
             • • {item?.title} (+€{item?.price})
           </p>
@@ -276,7 +278,7 @@ useEffect(() => {
         return (
           <p
             key={id}
-            className="text-white/70"
+           className="text-sm sm:text-base text-white/70"
           >
             • {item?.title}
           </p>
@@ -373,7 +375,7 @@ useEffect(() => {
     className="
       mt-4
 
-      text-6xl
+      text-5xl sm:text-6xl
       font-bold
 
       text-white

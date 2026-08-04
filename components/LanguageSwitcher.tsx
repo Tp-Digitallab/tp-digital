@@ -6,15 +6,15 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 const languages = [
   {
     code: "de",
-    name: "Deutsch",
+    short: "DE",
   },
   {
     code: "en",
-    name: "English",
+    short: "EN",
   },
   {
     code: "ru",
-    name: "Русский",
+    short: "RU",
   },
 ];
 
@@ -54,45 +54,53 @@ export default function LanguageSwitcher() {
       </button>
 
 
-      {open && (
-        <div
-          className="
-            absolute
-            right-0
-            mt-3
-            w-36
-            rounded-2xl
-            border
-            border-white/10
-            bg-black/80
-            p-2
-            backdrop-blur-xl
-          "
-        >
+     {open && (
+  <div
+    className="
+      absolute
+      right-0
+      top-full
+      mt-2
+      flex
+      gap-1
+      rounded-full
+      border
+      border-white/15
+      bg-black/80
+      p-1
+      backdrop-blur-xl
+      shadow-[0_10px_40px_rgba(0,0,0,0.5)]
+    "
+  >
 
-          {languages.map((item) => (
-            <button
-              key={item.code}
-              onClick={() => changeLanguage(item.code)}
-              className="
-                block
-                w-full
-                rounded-xl
-                px-3
-                py-2
-                text-left
-                text-sm
-                text-white/80
-                hover:bg-white/10
-                hover:text-white
-              "
-            >
-              {item.name}
-            </button>
-          ))}
+    {languages.map((item) => (
+      <button
+        key={item.code}
+        onClick={() => changeLanguage(item.code)}
+        className="
+          flex
+          h-9
+          w-9
+          items-center
+          justify-center
+          rounded-full
+          text-xs
+          font-medium
+          text-white/70
+          transition
+          hover:bg-white/10
+          hover:text-white
+        "
+      >
+        {item.short}
+      </button>
+    ))}
 
-        </div>
-      )}
+  </div>
+)}
+
+
+
 
     </div>
   );

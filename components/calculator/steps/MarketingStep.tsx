@@ -35,11 +35,11 @@ export default function MarketingStep({
        {t.calculatorSteps.marketing.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
         {t.calculatorSteps.marketing.title}
       </h2>
 
-     <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+    <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
   {t.calculatorSteps.marketing.description}
     </p>
 
@@ -61,15 +61,22 @@ export default function MarketingStep({
                   border
                   border-green-400/30
                   bg-green-500/10
-                  p-7
+                  p-5 sm:p-7
                 "
               >
 
-                <div className="flex items-start justify-between">
+                <div className="
+flex
+flex-col
+gap-5
+sm:flex-row
+sm:items-start
+sm:justify-between
+">
 
                   <div>
 
-                    <h3 className="text-2xl font-semibold text-white">
+                   <h3 className="text-xl sm:text-2xl font-semibold text-white">
                       {item.title}
                     </h3>
 
@@ -104,7 +111,7 @@ export default function MarketingStep({
                 w-full
                 rounded-[24px]
                 border
-                p-7
+                p-5 sm:p-7
                 text-left
                 transition-all
                 duration-300
@@ -126,11 +133,18 @@ export default function MarketingStep({
               `}
             >
 
-              <div className="flex items-start justify-between">
+             <div className="
+flex
+flex-col
+gap-5
+sm:flex-row
+sm:items-start
+sm:justify-between
+">
 
                 <div>
 
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
                     {item.title}
                   </h3>
 
@@ -143,8 +157,10 @@ export default function MarketingStep({
                 <div
                   className={`
                     flex
-                    h-11
-                    w-11
+                   h-9
+w-9
+sm:h-11
+sm:w-11
                     items-center
                     justify-center
                     rounded-full
@@ -174,7 +190,15 @@ export default function MarketingStep({
 
       </div>
 
-      <div className="mt-14 flex items-center justify-between">
+      <div className="
+mt-10
+flex
+flex-col
+gap-4
+sm:flex-row
+sm:items-center
+sm:justify-between
+">
 
         <button
           onClick={back}

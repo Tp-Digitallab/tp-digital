@@ -33,11 +33,11 @@ export default function FeaturesStep({
        {t.calculatorSteps.features.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
   {t.calculatorSteps.features.title}
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+     <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
   {t.calculatorSteps.features.description}
 </p>
 
@@ -57,7 +57,7 @@ export default function FeaturesStep({
                 w-full
                 rounded-[24px]
                 border
-                p-7
+                p-5 sm:p-7
                 text-left
                 transition-all
                 duration-300
@@ -81,7 +81,22 @@ export default function FeaturesStep({
 
               {/* Badge */}
 
-              <div className="absolute right-20 top-6 rounded-full bg-blue-500 px-3 py-1 text-xs font-semibold text-white">
+              <div
+className="
+absolute
+right-4
+top-4
+sm:right-20
+sm:top-6
+rounded-full
+bg-blue-500
+px-3
+py-1
+text-xs
+font-semibold
+text-white
+"
+>
                 {t.calculatorSteps.features.popular}
               </div>
 
@@ -89,7 +104,7 @@ export default function FeaturesStep({
 
                 <div className="max-w-[80%]">
 
-                  <h3 className="text-2xl font-semibold text-white">
+                 <h3 className="text-xl sm:text-2xl font-semibold text-white">
                     {item.title}
                   </h3>
 
@@ -102,8 +117,10 @@ export default function FeaturesStep({
                 <div
                   className={`
                     flex
-                    h-11
-                    w-11
+                    h-9
+w-9
+sm:h-11
+sm:w-11
                     items-center
                     justify-center
                     rounded-full
@@ -133,7 +150,15 @@ export default function FeaturesStep({
 
       </div>
 
-      <div className="mt-14 flex items-center justify-between">
+      <div className="
+mt-10
+flex
+flex-col
+gap-4
+sm:flex-row
+sm:items-center
+sm:justify-between
+">
 
         <button
           onClick={back}

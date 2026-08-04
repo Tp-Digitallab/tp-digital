@@ -172,16 +172,16 @@ const monthlyTotal = useMemo(() => {
 
   return (
     <div
-      className="
-        mt-24
-        grid
-        gap-14
-        lg:grid-cols-[1.35fr_420px]
-      "
-    >
+ className="
+ mt-16
+ grid
+ gap-10
+ lg:grid-cols-[1.35fr_420px]
+ "
+>
       {/* LEFT */}
 
-      <div>
+      <div className="min-h-[950px]">
 
         <StepIndicator step={step} />
 

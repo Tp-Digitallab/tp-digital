@@ -33,11 +33,11 @@ const t = translations[language];
         {t.calculatorSteps.support.step}
       </p>
 
-      <h2 className="text-5xl font-semibold text-white">
+      <h2 className="text-3xl sm:text-5xl font-semibold text-white">
   {t.calculatorSteps.support.title}
 </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+      <p className="mt-4 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/60">
   {t.calculatorSteps.support.description}
 </p>
 
@@ -59,7 +59,7 @@ const t = translations[language];
 
                 border
 
-                p-7
+               p-5 sm:p-7
 
                 text-left
 
@@ -85,11 +85,18 @@ const t = translations[language];
               `}
             >
 
-              <div className="flex items-start justify-between">
+              <div className="
+flex
+flex-col
+gap-5
+sm:flex-row
+sm:items-start
+sm:justify-between
+">
 
                 <div>
 
-                  <h3 className="text-2xl font-semibold text-white">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
                     {item.title}
                   </h3>
 
@@ -102,8 +109,10 @@ const t = translations[language];
                 <div
                   className={`
                     flex
-                    h-11
-                    w-11
+                    h-9
+w-9
+sm:h-11
+sm:w-11
                     items-center
                     justify-center
 
@@ -136,7 +145,15 @@ const t = translations[language];
 
       </div>
 
-      <div className="mt-14 flex items-center justify-between">
+      <div className="
+mt-10
+flex
+flex-col
+gap-4
+sm:flex-row
+sm:items-center
+sm:justify-between
+">
 
         <button
           onClick={back}
