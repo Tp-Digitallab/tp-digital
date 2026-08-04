@@ -99,3 +99,14 @@ img {
   display: block;
   max-width: 100%;
 }
+/* Prevent text dragging and selection */
+.no-drag {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+img,
+svg {
+  -webkit-user-drag: none;
+}

@@ -36,7 +36,7 @@ export default function HeroSection() {
         <div className="relative z-10 flex min-h-screen items-center">
 
 
-          <div className="max-w-4xl min-h-[430px] -translate-y-10">
+          <div className="max-w-4xl min-h-[430px] -translate-y-10 select-none">
 
 
             <p className="mb-8 text-xs uppercase tracking-[0.45em] text-white/35">
