@@ -85,7 +85,9 @@ const t = translations[language];
                     w-full
                     rounded-3xl
                     border
-                    p-5 sm:p-6
+                    px-4
+py-4
+sm:p-6
                     text-left
                     transition-all
 
@@ -100,15 +102,13 @@ const t = translations[language];
                   <div
 className="
 flex
-items-start
-gap-4
-justify-between
+items-center
+gap-3
 "
 >
 
-                    <div>
-
-                      <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                    <div className="min-w-0 flex-1">
+  <h3 className="text-lg sm:text-2xl font-semibold text-white break-words">
                         {item.title}
                       </h3>
 
@@ -181,7 +181,9 @@ justify-between
                     w-full
                     rounded-3xl
                     border
-                   p-5 sm:p-6
+                   px-4
+py-4
+sm:p-6
                     text-left
                     transition-all
 
@@ -196,15 +198,13 @@ justify-between
                   <div
 className="
 flex
-items-start
-gap-4
-justify-between
+items-center
+gap-3
 "
 >
 
-                    <div>
-
-                    <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                    <div className="min-w-0 flex-1">
+  <h3 className="text-lg sm:text-2xl font-semibold text-white break-words">
                         {item.title}
                       </h3>
 
@@ -214,9 +214,23 @@ justify-between
 
                     </div>
 
-                    <div className="text-white">
-                      {active ? "✓" : ""}
-                    </div>
+                    <div
+  className="
+    flex
+    h-8
+    w-8
+    shrink-0
+    items-center
+    justify-center
+    rounded-full
+    border
+    border-white/20
+    text-sm
+    text-white
+  "
+>
+  {active ? "✓" : ""}
+</div>
 
                   </div>
 

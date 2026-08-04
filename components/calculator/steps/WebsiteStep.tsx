@@ -52,8 +52,8 @@ export default function WebsiteStep({
 
                 overflow-hidden
 
-                rounded-[24px]
-p-5 sm:p-8
+                rounded-2xl
+                p-4 sm:p-8
 
                 border
 
@@ -98,11 +98,11 @@ sm:justify-between
 
                 <div>
 
-                  <h3 className="text-3xl font-semibold text-white">
+                  <h3 className="text-xl sm:text-3xl font-semibold text-white">
                     {item.title}
                   </h3>
 
-                  <p className="mt-4 max-w-xl leading-8 text-white/60">
+                  <p className="mt-3 max-w-xl text-sm sm:text-base leading-6 sm:leading-8 text-white/60">
                     {item.description}
                   </p>
 
@@ -142,7 +142,7 @@ sm:justify-between
                     {t.calculatorSteps.website.startingFrom}
                   </p>
 
-                  <p className="mt-2 text-3xl font-bold text-white">
+                  <p className="mt-2 text-2xl sm:text-3xl font-bold text-white">
                     €{item.price}
                   </p>
 

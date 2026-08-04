@@ -100,7 +100,13 @@ text-white
                 {t.calculatorSteps.features.popular}
               </div>
 
-              <div className="flex items-start justify-between">
+              <div
+className="
+flex
+items-start
+gap-4
+"
+>
 
                 <div className="max-w-[80%]">
 
