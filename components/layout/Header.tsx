@@ -178,7 +178,15 @@ export default function Header() {
           </ScrollLink>
 
 
-          <MobileMenu />
+          <div className="flex items-center gap-3">
+
+  <div className="scale-90">
+    <LanguageSwitcher />
+  </div>
+
+  <MobileMenu />
+
+</div>
 
         </div>
 
