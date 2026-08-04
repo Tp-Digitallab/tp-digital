@@ -1,9 +1,17 @@
 "use client";
+
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function ThankYouPage() {
+
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
   return (
     <main
       className="
@@ -115,15 +123,15 @@ export default function ThankYouPage() {
         </motion.div>
 
         <h1 className="mt-10 text-5xl font-bold text-white">
-          Thank You!
+          {t.thankYou.title}
         </h1>
 
         <p className="mt-6 text-xl leading-8 text-white/60">
-          Your request has been successfully submitted.
+          {t.thankYou.description}
         </p>
 
         <p className="mt-3 text-white/45">
-          We'll carefully review your project and prepare a personalized proposal.
+          {t.thankYou.subDescription}
         </p>
 
         <div
@@ -143,7 +151,7 @@ export default function ThankYouPage() {
           "
         >
           <h3 className="text-xl font-semibold text-white">
-            What happens next?
+          {t.thankYou.nextTitle}
           </h3>
 
           <div className="mt-8 space-y-7">
@@ -157,11 +165,11 @@ export default function ThankYouPage() {
               <div>
 
                 <p className="font-medium text-white">
-                  We review your request
+                 {t.thankYou.steps[0].title}
                 </p>
 
                 <p className="mt-1 text-white/50">
-                  We analyze your goals, requirements and selected services.
+                  {t.thankYou.steps[0].description}
                 </p>
 
               </div>
@@ -177,11 +185,11 @@ export default function ThankYouPage() {
               <div>
 
                 <p className="font-medium text-white">
-                  We prepare your quotation
+                 {t.thankYou.steps[1].title}
                 </p>
 
                 <p className="mt-1 text-white/50">
-                  You'll receive a personalized offer with pricing, timeline and recommendations.
+                  {t.thankYou.steps[1].description}
                 </p>
 
               </div>
@@ -197,11 +205,11 @@ export default function ThankYouPage() {
               <div>
 
                 <p className="font-medium text-white">
-                  We contact you
+                  {t.thankYou.steps[2].title}
                 </p>
 
                 <p className="mt-1 text-white/50">
-                  Our team usually responds within a few business hours.
+                  {t.thankYou.steps[2].description}
                 </p>
 
               </div>
@@ -226,7 +234,7 @@ export default function ThankYouPage() {
           "
         >
           <p className="text-sm uppercase tracking-[0.2em] text-green-300">
-            Average response time
+            {t.thankYou.responseTime}
           </p>
 
           <p className="mt-2 text-4xl font-bold text-white">
@@ -260,12 +268,12 @@ export default function ThankYouPage() {
               hover:bg-blue-400
             "
           >
-            Back Home
+            {t.thankYou.backHome}
             <ArrowRight size={18} />
           </Link>
 
           <Link
-            href="/calculator"
+          href="/#calculator"
             className="
 inline-flex
 items-center
@@ -290,7 +298,7 @@ hover:bg-indigo-400
 hover:shadow-[0_20px_55px_rgba(99,102,241,.4)]
 "
           >
-            Create Another Quote
+            {t.thankYou.anotherQuote}
           </Link>
 
         </div>

@@ -66,7 +66,7 @@ export const de = {
     button: "Paket auswählen",
   },
 
-  calculator: {
+    calculator: {
     eyebrow: "PROJEKT KONFIGURATOR",
 
     title: "Erstellen Sie Ihr Projekt.",
@@ -76,6 +76,53 @@ export const de = {
     description:
       "Konfigurieren Sie Ihre Website und sehen Sie die geschätzte Investition, bevor Sie uns kontaktieren.",
   },
+
+
+  thankYou: {
+    title: "Vielen Dank!",
+
+    description:
+      "Ihre Anfrage wurde erfolgreich gesendet.",
+
+    subDescription:
+      "Wir prüfen Ihr Projekt sorgfältig und erstellen ein persönliches Angebot.",
+
+    nextTitle:
+      "Was passiert als Nächstes?",
+
+    steps: [
+      {
+        title: "Wir prüfen Ihre Anfrage",
+
+        description:
+          "Wir analysieren Ihre Ziele, Anforderungen und ausgewählten Leistungen.",
+      },
+
+      {
+        title: "Wir erstellen Ihr Angebot",
+
+        description:
+          "Sie erhalten ein individuelles Angebot mit Preisen, Zeitrahmen und Empfehlungen.",
+      },
+
+      {
+        title: "Wir kontaktieren Sie",
+
+        description:
+          "Unser Team antwortet normalerweise innerhalb weniger Stunden.",
+      },
+    ],
+
+    responseTime:
+      "Durchschnittliche Antwortzeit",
+
+    backHome:
+      "Zur Startseite",
+
+    anotherQuote:
+      "Neue Anfrage erstellen",
+  },
+
 
   calculatorSteps: {
     website: {

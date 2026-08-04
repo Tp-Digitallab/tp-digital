@@ -76,6 +76,50 @@ export const en = {
     description:
       "Configure your website and see the estimated investment before contacting us.",
   },
+  thankYou: {
+  title: "Thank You!",
+
+  description:
+    "Your request has been successfully submitted.",
+
+  subDescription:
+    "We'll carefully review your project and prepare a personalized proposal.",
+
+  nextTitle:
+    "What happens next?",
+
+  steps: [
+    {
+      title: "We review your request",
+
+      description:
+        "We analyze your goals, requirements and selected services.",
+    },
+
+    {
+      title: "We prepare your quotation",
+
+      description:
+        "You'll receive a personalized offer with pricing, timeline and recommendations.",
+    },
+
+    {
+      title: "We contact you",
+
+      description:
+        "Our team usually responds within a few business hours.",
+    },
+  ],
+
+  responseTime:
+    "Average response time",
+
+  backHome:
+    "Back Home",
+
+  anotherQuote:
+    "Create Another Quote",
+},
 
   calculatorSteps: {
     website: {
