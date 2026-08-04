@@ -1,8 +1,17 @@
+"use client";
+
 import Container from "@/components/common/Container";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
 import Grid from "@/components/ui/background/Grid";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
+
 export default function ProjectsSection() {
+  const { language } = useLanguage();
+
+const t = translations[language];
+  
   return (
     <section
       id="projects"
@@ -86,19 +95,15 @@ export default function ProjectsSection() {
         <div className="max-w-3xl">
 
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-white/35">
-            SELECTED PROJECTS
+            {t.projects.eyebrow}
           </p>
 
           <h2 className="text-5xl font-semibold leading-tight text-white md:text-7xl">
-            Real projects.
-            <br />
-            Real results.
+            {t.projects.title}
           </h2>
 
           <p className="mt-8 max-w-2xl text-xl leading-9 text-white/60">
-            Every project is built with a single goal —
-            helping businesses grow, generate leads and
-            build trust online.
+            {t.projects.description}
           </p>
 
         </div>

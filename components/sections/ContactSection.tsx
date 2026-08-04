@@ -13,7 +13,15 @@ import {
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
+
 export default function ContactSection() {
+
+    const { language } = useLanguage();
+
+  const t = translations[language];
+
   return (
     <Section
   id="contact"
@@ -22,12 +30,11 @@ export default function ContactSection() {
       <Container className="max-w-6xl">
         <div className="mb-14 text-center">
           <h2 className="text-4xl font-bold tracking-tight text-white">
-            Ready to Start Your Project?
+            {t.contact.title}
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-300">
-            Have a project in mind? Whether you need a modern website,
-            automation or a custom digital solution — let's discuss your idea.
+            {t.contact.description}
           </p>
         </div>
 
@@ -35,11 +42,11 @@ export default function ContactSection() {
           {/* Contact */}
           <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.07]">
             <h3 className="text-2xl font-semibold text-white">
-              Contact Information
+              {t.contact.information}
             </h3>
 
             <p className="mt-2 text-zinc-300">
-              Feel free to contact me anytime.
+              {t.contact.subtitle}
             </p>
 
             <div className="mt-8 space-y-6">
@@ -49,7 +56,7 @@ export default function ContactSection() {
                 </p>
 
                 <p className="text-zinc-400">
-                  Founder & Full-Stack Developer
+                  {t.contact.role}
                 </p>
               </div>
 
@@ -72,12 +79,12 @@ export default function ContactSection() {
                 <div>
                   <p className="text-white">Email</p>
                   <a
-                    href="mailto:info@tp-digital.de"
-                    className="text-zinc-400 transition hover:text-blue-400"
-                  >
-                    info@tp-digital.de
-                  </a>
-                </div>
+  href="mailto:info@tpdigitallab.de"
+  className="!text-white transition hover:!text-blue-400"
+>
+  info@tpdigitallab.de
+</a>
+                </div> 
               </div>
 
               <div className="flex items-center gap-4">
@@ -119,7 +126,7 @@ export default function ContactSection() {
           {/* Links */}
           <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 transition-all duration-300 hover:border-white/30 hover:bg-white/[0.07]">
             <h3 className="text-2xl font-semibold text-white">
-              Quick Links
+                {t.contact.quickLinks}
             </h3>
 
             <div className="mt-8 flex flex-col gap-5">
@@ -127,39 +134,39 @@ export default function ContactSection() {
                 href="#services"
                className="text-lg !text-white transition hover:text-blue-400"
               >
-                Services
+               {t.contact.services}
               </Link>
 
               <Link
                 href="#pricing"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
-                Pricing
+                {t.contact.pricing}
               </Link>
 
               <Link
                 href="#projects"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
-                Projects
+                {t.contact.projects}
               </Link>
 
               <Link
                 href="#faq"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
-                FAQ
+                {t.contact.faq}
               </Link>
             </div>
 
             <div className="my-10 h-px bg-white/10" />
 
             <h3 className="text-2xl font-semibold text-white">
-              Legal
+               {t.contact.legal}
             </h3>
 
             <p className="mt-3 text-zinc-400">
-              This website complies with German legal requirements.
+              {t.contact.legalDescription}
             </p>
 
             <div className="mt-8 flex flex-col gap-5">
@@ -167,7 +174,7 @@ export default function ContactSection() {
                 href="/impressum"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
-                Impressum
+                {t.contact.impressum}
                 <ExternalLink className="h-4 w-4" />
               </Link>
 
@@ -175,7 +182,7 @@ export default function ContactSection() {
                 href="/datenschutzerklaerung"
                 className="text-lg !text-white transition hover:text-blue-400"
               >
-                Datenschutz
+                {t.contact.privacy}
                 <ExternalLink className="h-4 w-4" />
               </Link>
             </div>

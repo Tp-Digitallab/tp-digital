@@ -54,6 +54,173 @@ export const en = {
       },
     ],
   },
+  projects: {
+  eyebrow: "OUR PROJECTS",
+
+  title: "Our work.",
+
+  description:
+    "We create modern websites and digital solutions that help businesses attract customers and grow online.",
+},
+process: {
+  eyebrow: "OUR PROCESS",
+
+  title: "From idea.",
+
+  titleAccent: "To your first clients.",
+
+  description:
+    "Every project follows a transparent workflow designed to deliver fast, reliable and measurable results.",
+    steps: [
+  {
+    title: "Discovery",
+
+    description:
+      "We learn about your business, goals and target audience.",
+  },
+
+  {
+    title: "Strategy & Design",
+
+    description:
+      "We create the structure, modern UI and user experience.",
+  },
+
+  {
+    title: "Development",
+
+    description:
+      "We build a fast, responsive and SEO-optimized website.",
+  },
+
+  {
+    title: "Launch & Growth",
+
+    description:
+      "Your website goes live with analytics, support and marketing.",
+  },
+],
+},
+faq: {
+  title: "Frequently Asked Questions",
+
+  description:
+    "Everything you need to know before starting your project.",
+
+  items: [
+    {
+      question: "How much does a website cost?",
+      answer:
+        "Every project is unique. Use our pricing calculator or contact us for a personalized quote.",
+    },
+
+    {
+      question: "How long does development take?",
+      answer:
+        "Most projects are completed within 1–4 weeks depending on complexity.",
+    },
+
+    {
+      question: "Can you redesign my existing website?",
+      answer:
+        "Yes. We can modernize your current website or rebuild it completely while keeping your content if needed.",
+    },
+
+    {
+      question: "Do you provide SEO?",
+      answer:
+        "Every website includes technical SEO basics. Advanced SEO is available as an additional service.",
+    },
+
+    {
+      question: "Do you manage Google Ads?",
+      answer:
+        "Yes. We create, optimize and manage Google Ads campaigns focused on measurable business growth.",
+    },
+
+    {
+      question: "Will my website work on mobile devices?",
+      answer:
+        "Absolutely. Every website is fully responsive and optimized for desktop, tablet and mobile.",
+    },
+
+    {
+      question: "Do you provide support after launch?",
+      answer:
+        "Yes. We offer maintenance, updates and long-term technical support.",
+    },
+
+    {
+      question: "Can I request something custom?",
+      answer:
+        "Of course. Tell us about your idea and we'll prepare an individual solution.",
+    },
+  ],
+},
+contact: {
+  title: "Ready to Start Your Project?",
+
+  description:
+    "Have a project in mind? Whether you need a modern website, automation or a custom digital solution — let's discuss your idea.",
+
+  information:
+    "Contact Information",
+
+  subtitle:
+    "Feel free to contact me anytime.",
+
+  role:
+    "Founder & Full-Stack Developer",
+
+  location:
+    "Location",
+
+  email:
+    "Email",
+
+  whatsapp:
+    "WhatsApp",
+
+  whatsappText:
+    "Available on request",
+
+  response:
+    "Response Time",
+
+  responseText:
+    "Usually within 24 hours",
+
+  start:
+    "Start Your Project",
+
+  quickLinks:
+    "Quick Links",
+
+  services:
+    "Services",
+
+  pricing:
+    "Pricing",
+
+  projects:
+    "Projects",
+
+  faq:
+    "FAQ",
+
+  legal:
+    "Legal",
+
+  legalDescription:
+  "This website complies with German legal requirements.",
+
+  impressum:
+    "Impressum",
+
+  privacy:
+    "Privacy",
+},
+
 
   packages: {
     eyebrow: "PACKAGES",
@@ -258,6 +425,24 @@ contact: {
   back: "Back",
 
   submit: "Get My Proposal",
+  quickLinks: "Quick Links",
+
+services: "Services",
+
+pricing: "Pricing",
+
+projects: "Projects",
+
+faq: "FAQ",
+
+legal: "Legal",
+
+legalDescription:
+  "This website complies with German legal requirements.",
+
+impressum: "Impressum",
+
+privacy: "Privacy Policy",
 },
   },
 

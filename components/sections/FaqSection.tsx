@@ -6,68 +6,35 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 
-const faqs = [
-  {
-    question: "How much does a website cost?",
-    answer:
-      "Every project is unique. Use our pricing calculator or contact us for a personalized quote.",
-  },
-  {
-    question: "How long does development take?",
-    answer:
-      "Most projects are completed within 1–4 weeks depending on complexity.",
-  },
-  {
-    question: "Can you redesign my existing website?",
-    answer:
-      "Yes. We can modernize your current website or rebuild it completely while keeping your content if needed.",
-  },
-  {
-    question: "Do you provide SEO?",
-    answer:
-      "Every website includes technical SEO basics. Advanced SEO is available as an additional service.",
-  },
-  {
-    question: "Do you manage Google Ads?",
-    answer:
-      "Yes. We create, optimize and manage Google Ads campaigns focused on measurable business growth.",
-  },
-  {
-    question: "Will my website work on mobile devices?",
-    answer:
-      "Absolutely. Every website is fully responsive and optimized for desktop, tablet and mobile.",
-  },
-  {
-    question: "Do you provide support after launch?",
-    answer:
-      "Yes. We offer maintenance, updates and long-term technical support.",
-  },
-  {
-    question: "Can I request something custom?",
-    answer:
-      "Of course. Tell us about your idea and we'll prepare an individual solution.",
-  },
-];
 
 export default function FaqSection() {
-  const [open, setOpen] = useState<number | null>(0);
 
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
+  const [open, setOpen] = useState<number | null>(0);
+  
   return (
     <Section id="faq">
       <Container className="max-w-4xl">
+
         <div className="mb-14 text-center">
+
           <h2 className="text-4xl font-bold tracking-tight text-white">
-            Frequently Asked Questions
+          {t.faq.title}
           </h2>
 
           <p className="mt-4 text-lg text-muted-foreground">
-            Everything you need to know before starting your project.
-          </p>
+           {t.faq.description}
+           </p> 
         </div>
         <div className="space-y-4">
-          {faqs.map((item, index) => (
+         {t.faq.items.map((item, index) => (
             <div
   key={index}
   className={`overflow-hidden rounded-3xl border transition-all duration-300

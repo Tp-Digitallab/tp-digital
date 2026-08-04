@@ -54,6 +54,181 @@ export const de = {
       },
     ],
   },
+    projects: {
+    eyebrow: "UNSERE PROJEKTE",
+
+    title: "Unsere Arbeiten.",
+
+    description:
+      "Wir entwickeln moderne Websites und digitale Lösungen, die Unternehmen helfen, Kunden zu gewinnen und online zu wachsen.",
+  },
+
+process: {
+  eyebrow: "UNSER PROZESS",
+
+  title: "Von der Idee.",
+  
+  titleAccent: "Zu Ihren ersten Kunden.",
+
+  description:
+    "Jedes Projekt folgt einem transparenten Ablauf, der schnelle, zuverlässige und messbare Ergebnisse liefert.",
+    steps: [
+  {
+    title: "Analyse",
+
+    description:
+      "Wir lernen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe kennen.",
+  },
+
+  {
+    title: "Strategie & Design",
+
+    description:
+      "Wir erstellen die Struktur, modernes Design und eine optimale Nutzererfahrung.",
+  },
+
+  {
+    title: "Entwicklung",
+
+    description:
+      "Wir entwickeln eine schnelle, responsive und SEO-optimierte Website.",
+  },
+
+  {
+    title: "Launch & Wachstum",
+
+    description:
+      "Ihre Website geht online mit Analyse, Support und Marketing.",
+  },
+],
+},
+faq: {
+  title: "Häufig gestellte Fragen",
+
+  description:
+    "Alles, was Sie vor dem Start Ihres Projekts wissen müssen.",
+
+  items: [
+    {
+      question: "Wie viel kostet eine Website?",
+
+      answer:
+        "Jedes Projekt ist einzigartig. Nutzen Sie unseren Kostenrechner oder kontaktieren Sie uns für ein individuelles Angebot.",
+    },
+
+    {
+      question: "Wie lange dauert die Entwicklung?",
+
+      answer:
+        "Die meisten Projekte werden je nach Komplexität innerhalb von 1–4 Wochen abgeschlossen.",
+    },
+
+    {
+      question: "Können Sie meine bestehende Website neu gestalten?",
+
+      answer:
+        "Ja. Wir können Ihre aktuelle Website modernisieren oder komplett neu erstellen und bei Bedarf Ihre Inhalte übernehmen.",
+    },
+
+    {
+      question: "Bieten Sie SEO an?",
+
+      answer:
+        "Jede Website enthält grundlegende technische SEO. Erweiterte SEO ist als zusätzliche Leistung verfügbar.",
+    },
+
+    {
+      question: "Verwalten Sie Google Ads?",
+
+      answer:
+        "Ja. Wir erstellen, optimieren und verwalten Google Ads Kampagnen mit Fokus auf messbare Ergebnisse.",
+    },
+
+    {
+      question: "Funktioniert meine Website auf mobilen Geräten?",
+
+      answer:
+        "Ja. Jede Website ist vollständig responsiv und für Desktop, Tablet und Smartphone optimiert.",
+    },
+
+    {
+      question: "Bieten Sie Support nach dem Start an?",
+
+      answer:
+        "Ja. Wir bieten Wartung, Updates und langfristigen technischen Support.",
+    },
+
+    {
+      question: "Kann ich eine individuelle Lösung anfragen?",
+
+      answer:
+        "Natürlich. Erzählen Sie uns von Ihrer Idee und wir erstellen eine passende Lösung.",
+    },
+  ],
+},
+contact: {
+  title: "Bereit, Ihr Projekt zu starten?",
+
+  description:
+    "Haben Sie ein Projekt im Kopf? Egal ob moderne Website, Automatisierung oder individuelle digitale Lösung — sprechen wir über Ihre Idee.",
+
+  information: "Kontaktinformationen",
+
+  subtitle:
+    "Sie können mich jederzeit kontaktieren.",
+
+  role:
+    "Gründer & Full-Stack-Entwickler",
+
+  location:
+    "Standort",
+
+  email:
+    "E-Mail",
+
+  whatsapp:
+    "WhatsApp",
+
+  whatsappText:
+    "Auf Anfrage verfügbar",
+
+  response:
+    "Antwortzeit",
+
+  responseText:
+    "Normalerweise innerhalb von 24 Stunden",
+
+  start:
+    "Projekt starten",
+
+  quickLinks:
+    "Schnelllinks",
+
+  services:
+    "Leistungen",
+
+  pricing:
+    "Preise",
+
+  projects:
+    "Projekte",
+
+  faq:
+    "FAQ",
+
+  legal:
+    "Rechtliches",
+
+  legalDescription:
+  "Diese Website entspricht den deutschen gesetzlichen Anforderungen.",
+
+  impressum:
+    "Impressum",
+
+  privacy:
+    "Datenschutz",
+},
+
 
   packages: {
     eyebrow: "PAKETE",
@@ -258,6 +433,24 @@ contact: {
   back: "Zurück",
 
   submit: "Angebot erhalten",
+  quickLinks: "Schnelllinks",
+
+services: "Leistungen",
+
+pricing: "Preise",
+
+projects: "Projekte",
+
+faq: "FAQ",
+
+legal: "Rechtliches",
+
+legalDescription:
+  "Diese Website erfüllt die deutschen gesetzlichen Anforderungen.",
+
+impressum: "Impressum",
+
+privacy: "Datenschutz",
 },
   },
 

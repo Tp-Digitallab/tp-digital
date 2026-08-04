@@ -23,7 +23,7 @@ export default function ImpressumPage() {
             className="mb-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-white transition hover:border-white/30 hover:bg-white/10"
           >
             <ArrowLeft className="h-5 w-5" />
-            Back to Home
+            Zurück zur Startseite
           </Link>
 
           <h1 className="text-5xl font-bold tracking-tight">
@@ -31,7 +31,7 @@ export default function ImpressumPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-300">
-            Information according to § 5 TMG and § 18 MStV.
+            Angaben gemäß § 5 TMG und § 18 MStV.
           </p>
 
         </div>
@@ -50,7 +50,7 @@ export default function ImpressumPage() {
               <Building2 className="h-6 w-6 text-blue-400" />
 
               <h2 className="text-2xl font-semibold">
-                Business Information
+                Unternehmensinformationen
               </h2>
             </div>
 
@@ -58,7 +58,7 @@ export default function ImpressumPage() {
 
               <div>
                 <p className="text-sm uppercase tracking-widest text-zinc-500">
-                  Company
+                 Unternehmen
                 </p>
 
                 <p className="mt-2 text-xl font-semibold text-white">
@@ -68,7 +68,7 @@ export default function ImpressumPage() {
 
               <div>
                 <p className="text-sm uppercase tracking-widest text-zinc-500">
-                  Owner
+                  Inhaber
                 </p>
 
                 <p className="mt-2">
@@ -102,7 +102,7 @@ export default function ImpressumPage() {
               <Shield className="h-6 w-6 text-blue-400" />
 
               <h2 className="text-2xl font-semibold">
-                Contact Details
+                Kontaktdaten
               </h2>
             </div>
 
@@ -123,7 +123,7 @@ export default function ImpressumPage() {
                 <Mail className="mt-1 h-5 w-5 text-blue-400" />
 
                 <span>
-                  taraspahalyk@gmail.com
+                  info@tpdigitallab.de
                 </span>
 
               </div>
@@ -131,7 +131,7 @@ export default function ImpressumPage() {
               <div>
 
                 <p className="text-sm uppercase tracking-widest text-zinc-500">
-                  Responsible for content according to § 18 Abs. 2 MStV
+                 Verantwortlich für den Inhalt gemäß § 18 Abs. 2 MStV
                 </p>
 
                 <p className="mt-2 text-white">

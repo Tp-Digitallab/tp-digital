@@ -1,7 +1,15 @@
-import { processSteps } from "@/config/process";
+"use client";
+
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 import ProcessCard from "./ProcessCard";
 
 export default function ProcessTimeline() {
+
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
   return (
     <div className="relative mt-24">
 
@@ -35,12 +43,16 @@ export default function ProcessTimeline() {
           xl:grid-cols-4
         "
       >
-        {processSteps.map((step) => (
-          <ProcessCard
-            key={step.id}
-            step={step}
-          />
-        ))}
+        {t.process.steps.map((step, index) => (
+  <ProcessCard
+    key={index}
+    step={{
+      id: index + 1,
+      title: step.title,
+      description: step.description,
+    }}
+  />
+))}
       </div>
 
     </div>

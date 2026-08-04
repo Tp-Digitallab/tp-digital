@@ -140,7 +140,7 @@ export default function DatenschutzerklaerungPage() {
           </p>
 
           <p>
-            E-Mail: taraspahalyk@gmail.com
+            E-Mail: info@tpdigitallab.de
           </p>
 
         </div>
@@ -156,7 +156,7 @@ export default function DatenschutzerklaerungPage() {
         </h2>
 
         <p className="mt-5 leading-8 text-zinc-300">
-          Diese Website wird bei Vercel gehostet. Beim Aufruf der Website
+          Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA gehostet. Beim Aufruf der Website
           können technische Informationen verarbeitet werden, die für den
           sicheren Betrieb und die Bereitstellung der Website erforderlich sind.
         </p>

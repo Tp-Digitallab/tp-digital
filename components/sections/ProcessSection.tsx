@@ -1,8 +1,16 @@
+"use client";
+
 import Container from "@/components/common/Container";
 import ProcessTimeline from "@/components/process/ProcessTimeline";
 import Grid from "@/components/ui/background/Grid";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 export default function ProcessSection() {
+
+  const { language } = useLanguage();
+
+  const t = translations[language];
   return (
     <section
       id="process"
@@ -49,18 +57,17 @@ export default function ProcessSection() {
         <div className="max-w-3xl">
 
           <p className="mb-5 text-xs uppercase tracking-[0.35em] text-white/35">
-            OUR PROCESS
+            {t.process.eyebrow}
           </p>
 
           <h2 className="text-5xl font-semibold leading-tight text-white md:text-7xl">
-            From idea.
+            {t.process.title}
             <br />
-            To your first clients.
+            {t.process.titleAccent}
           </h2>
 
           <p className="mt-8 max-w-2xl text-xl leading-9 text-white/60">
-            Every project follows a transparent workflow designed
-            to deliver fast, reliable and measurable results.
+            {t.process.description}
           </p>
 
         </div>
