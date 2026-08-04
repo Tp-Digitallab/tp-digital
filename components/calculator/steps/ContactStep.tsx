@@ -1,4 +1,8 @@
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
+
+
 import {
   User,
   Mail,
@@ -16,6 +20,9 @@ interface Props {
 export default function ContactStep({
   back,
 }: Props) {
+  const { language } = useLanguage();
+
+const t = translations[language];
 
   const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
@@ -106,15 +113,15 @@ async function handleSubmit() {
   return (
     <section>
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 6
+        {t.calculatorSteps.contact.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Almost Done
+         {t.calculatorSteps.contact.title}
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        Tell us a little about your project and we'll prepare your personal proposal.
+        {t.calculatorSteps.contact.description}
       </p>
 
       <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -141,7 +148,7 @@ async function handleSubmit() {
     });
   }
 }}
-  placeholder="First Name *"
+  placeholder={t.calculatorSteps.contact.firstName}
   className="w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white placeholder:text-white/30 outline-none transition-all duration-300 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
 />
 
@@ -174,7 +181,7 @@ async function handleSubmit() {
     });
   }
 }}
-  placeholder="Last Name *"
+  placeholder={t.calculatorSteps.contact.lastName}
   className="w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white placeholder:text-white/30 outline-none transition-all duration-300 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
 />
 
@@ -207,7 +214,7 @@ async function handleSubmit() {
     });
   }
 }}
-  placeholder="Email *"
+  placeholder={t.calculatorSteps.contact.email}
   className="w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white placeholder:text-white/30 outline-none transition-all duration-300 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
 />
 
@@ -231,7 +238,7 @@ async function handleSubmit() {
   <input
   value={phone}
   onChange={(e) => setPhone(e.target.value)}
-  placeholder="Phone"
+  placeholder={t.calculatorSteps.contact.phone}
   className="w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white placeholder:text-white/30 outline-none transition-all duration-300 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(59,130,246,0.15)]"
 />
 
@@ -242,7 +249,7 @@ async function handleSubmit() {
 <div className="md:col-span-2">
 
   <p className="mb-5 text-lg font-semibold text-white">
-    Project Budget
+    {t.calculatorSteps.contact.budget}
   </p>
 
   <div className="grid gap-4 sm:grid-cols-2">
@@ -341,7 +348,7 @@ async function handleSubmit() {
 <div className="md:col-span-2">
 
   <p className="mb-5 text-lg font-semibold text-white">
-    Project Timeline
+    {t.calculatorSteps.contact.timeline}
   </p>
 
   <div className="grid gap-4 sm:grid-cols-2">
@@ -461,11 +468,11 @@ async function handleSubmit() {
     <div>
 
       <p className="font-medium text-white">
-        Flexible Budget
+        {t.calculatorSteps.contact.flexible}
       </p>
 
       <p className="mt-1 text-sm text-white/50">
-        I'm open to discussing a more affordable solution.
+        {t.calculatorSteps.contact.flexibleDescription}
       </p>
 
     </div>
@@ -514,7 +521,7 @@ async function handleSubmit() {
   rows={6}
   value={message}
   onChange={(e) => setMessage(e.target.value)}
-  placeholder="Tell us about your project..."
+  placeholder={t.calculatorSteps.contact.message}
   className="
     w-full
 
@@ -564,7 +571,7 @@ async function handleSubmit() {
       hover:bg-white/5
     "
   >
-    ← Back
+    ← {t.calculatorSteps.contact.back}
   </button>
 
   <button
@@ -596,7 +603,7 @@ hover:shadow-[0_18px_45px_rgba(59,130,246,0.35)]
 active:scale-[0.98]
 "
 >
-  Get My Proposal →
+  {t.calculatorSteps.contact.submit} →
 </button>
 
 </div>

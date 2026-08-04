@@ -169,6 +169,49 @@ features: {
 
   next: "Weiter",
 },
+support: {
+  step: "SCHRITT 6",
+
+  title: "Support",
+
+  description:
+    "Wählen Sie Wartung und laufende Unterstützung für Ihre Website.",
+
+  back: "Zurück",
+
+  finish: "Fertigstellen",
+},
+contact: {
+  step: "SCHRITT 7",
+
+  title: "Fast geschafft",
+
+  description:
+    "Erzählen Sie uns etwas über Ihr Projekt und wir erstellen ein persönliches Angebot.",
+
+  firstName: "Vorname *",
+
+  lastName: "Nachname *",
+
+  email: "E-Mail *",
+
+  phone: "Telefon",
+
+  budget: "Projektbudget",
+
+  timeline: "Projektzeitraum",
+
+  message: "Beschreiben Sie Ihr Projekt...",
+
+  flexible: "Flexibles Budget",
+
+  flexibleDescription:
+    "Ich bin offen für eine günstigere Lösung.",
+
+  back: "Zurück",
+
+  submit: "Angebot erhalten",
+},
   },
 
   packageCards: {

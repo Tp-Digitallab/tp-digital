@@ -1,4 +1,6 @@
 import { support } from "@/config/support";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
 
 interface Props {
   selected: string[];
@@ -13,6 +15,9 @@ export default function SupportStep({
   back,
   next,
 }: Props) {
+  const { language } = useLanguage();
+
+const t = translations[language];
   function toggle(id: string) {
     if (selected.includes(id)) {
       setSelected(selected.filter((item) => item !== id));
@@ -25,16 +30,16 @@ export default function SupportStep({
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        STEP 5
+        {t.calculatorSteps.support.step}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
-        Support & Maintenance
-      </h2>
+  {t.calculatorSteps.support.title}
+</h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        Keep your website secure, updated and continuously growing after launch.
-      </p>
+  {t.calculatorSteps.support.description}
+</p>
 
       <div className="mt-14 space-y-5">
 
@@ -151,7 +156,7 @@ export default function SupportStep({
             hover:bg-white/5
           "
         >
-          ← Back
+         ← {t.calculatorSteps.support.back}
         </button>
 
         <button
@@ -171,7 +176,7 @@ export default function SupportStep({
             hover:bg-blue-400
           "
         >
-          Finish →
+          {t.calculatorSteps.support.finish} →
         </button>
 
       </div>

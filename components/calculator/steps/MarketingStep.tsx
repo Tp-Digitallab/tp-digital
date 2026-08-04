@@ -39,9 +39,9 @@ export default function MarketingStep({
         {t.calculatorSteps.marketing.title}
       </h2>
 
-      <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-        {t.calculatorSteps.marketing.title}
-      </p>
+     <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
+  {t.calculatorSteps.marketing.description}
+    </p>
 
       <div className="mt-14 space-y-5">
 
@@ -86,7 +86,7 @@ export default function MarketingStep({
                 </div>
 
                 <div className="mt-8 text-lg font-semibold text-green-400">
-                 {t.calculatorSteps.marketing.title}
+                 {t.calculatorSteps.marketing.included}
                 </div>
 
               </div>
@@ -189,7 +189,7 @@ export default function MarketingStep({
             hover:bg-white/5
           "
         >
-          {t.calculatorSteps.marketing.title}
+          {t.calculatorSteps.marketing.back}
         </button>
 
         <button
@@ -204,7 +204,7 @@ export default function MarketingStep({
             hover:bg-blue-400
           "
         >
-         {t.calculatorSteps.marketing.title}
+         {t.calculatorSteps.marketing.next}
         </button>
 
       </div>

@@ -172,6 +172,49 @@ features: {
 
   next: "Next",
 },
+support: {
+  step: "STEP 6",
+
+  title: "Support",
+
+  description:
+    "Choose website maintenance and ongoing support options.",
+
+  back: "Back",
+
+  finish: "Finish",
+},
+contact: {
+  step: "STEP 7",
+
+  title: "Almost Done",
+
+  description:
+    "Tell us a little about your project and we'll prepare your personal proposal.",
+
+  firstName: "First Name *",
+
+  lastName: "Last Name *",
+
+  email: "Email *",
+
+  phone: "Phone",
+
+  budget: "Project Budget",
+
+  timeline: "Project Timeline",
+
+  message: "Tell us about your project...",
+
+  flexible: "Flexible Budget",
+
+  flexibleDescription:
+    "I'm open to discussing a more affordable solution.",
+
+  back: "Back",
+
+  submit: "Get My Proposal",
+},
   },
 
   packageCards: {

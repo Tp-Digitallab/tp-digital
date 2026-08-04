@@ -31,7 +31,7 @@ export default function BrandingStep({
     <section>
 
       <p className="mb-2 text-sm uppercase tracking-[0.3em] text-blue-400">
-        {t.calculatorSteps.branding.step}
+         {t.calculatorSteps.branding.title}
       </p>
 
       <h2 className="text-5xl font-semibold text-white">
@@ -39,7 +39,7 @@ export default function BrandingStep({
       </h2>
 
       <p className="mt-5 max-w-2xl text-lg leading-8 text-white/60">
-       {t.calculatorSteps.branding.step}
+        {t.calculatorSteps.branding.description}
       </p>
 
       <div className="mt-14 space-y-5">
@@ -157,7 +157,7 @@ export default function BrandingStep({
             hover:bg-white/5
           "
         >
-          {t.calculatorSteps.branding.step}
+          {t.calculatorSteps.branding.back}
         </button>
 
         <button
@@ -172,7 +172,7 @@ export default function BrandingStep({
     hover:bg-blue-400
   "
 >
-  {t.calculatorSteps.branding.step}
+  {t.calculatorSteps.branding.next}
 </button>
 
       </div>
