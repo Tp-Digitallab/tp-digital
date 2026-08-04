@@ -54,7 +54,7 @@ export default function BrandingStep({
               key={item.id}
               onClick={() => toggle(item.id)}
               className={`
-                w-[90%]
+                w-[100%]
 mr-auto
 sm:w-full
 

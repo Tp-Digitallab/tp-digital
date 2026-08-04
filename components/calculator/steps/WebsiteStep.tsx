@@ -48,7 +48,7 @@ export default function WebsiteStep({
               className={`
                 relative
 
-                w-[90%]
+                w-[100%]
 mx-auto
 sm:w-full
 
@@ -172,7 +172,7 @@ sm:justify-end
         <button
   onClick={next}
   className="
-    w-[90%]
+    w-[100%]
     mx-left
     sm:w-auto
 

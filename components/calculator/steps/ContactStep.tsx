@@ -127,7 +127,7 @@ async function handleSubmit() {
       <div className="
 mt-10
 
-w-[90%]
+w-[100%]
 mr-auto
 sm:w-full
 

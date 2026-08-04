@@ -18,7 +18,18 @@ export default function StepIndicator({
   return (
     <div className="mb-14">
 
-      <div className="flex items-center gap-3">
+      <div
+  className="
+    w-[100%]
+    mx-left
+    sm:w-full
+
+    flex
+    items-center
+    gap-2
+    sm:gap-3
+  "
+>
 
         {steps.map((label, index) => {
 
@@ -27,9 +38,12 @@ export default function StepIndicator({
           return (
 
             <div
-              key={label}
-              className="flex-1"
-            >
+  key={label}
+  className="
+    flex-1
+    min-w-0
+  "
+>
 
               <div
                 className={`
@@ -53,7 +67,8 @@ export default function StepIndicator({
                   mt-3
 
                   text-center
-                  text-xs
+                  text-[9px]
+sm:text-xs
 
                   transition-all
                   duration-300

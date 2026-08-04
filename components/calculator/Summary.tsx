@@ -90,7 +90,7 @@ useEffect(() => {
   className="
     lg:sticky
     lg:top-32
-    w-[90%]
+    w-[100%]
 mx-left
 sm:w-full
 

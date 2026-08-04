@@ -82,7 +82,7 @@ const t = translations[language];
                   key={item.id}
                   onClick={() => setPrimary(item.id)}
                   className={`
-  w-[90%]
+  w-[100%]
   mx-auto
   sm:w-full
   rounded-3xl
@@ -179,7 +179,7 @@ gap-3
                   key={item.id}
                   onClick={() => toggleAdditional(item.id)}
                   className={`
-                    w-[90%]
+                    w-[100%]
 mx-auto
 sm:w-full
                     rounded-3xl
@@ -261,7 +261,7 @@ gap-3
        <button
   onClick={back}
   className="
-    w-[90%]
+    w-[100%]
     mx-left
     sm:w-auto
 
@@ -280,7 +280,7 @@ gap-3
         <button
   onClick={next}
   className="
-    w-[90%]
+    w-[100%]
     mx-left
     sm:w-auto
 

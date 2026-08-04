@@ -54,7 +54,7 @@ export default function FeaturesStep({
               onClick={() => toggle(item.id)}
               className={`
                 relative
-                w-[90%]
+                w-[100%]
 mr-auto
 sm:w-full
                 rounded-[24px]
@@ -169,7 +169,7 @@ sm:justify-between
         <button
   onClick={back}
   className="
-    w-[90%]
+    w-[100%]
     mx-left
     sm:w-auto
 
@@ -188,7 +188,7 @@ sm:justify-between
         <button
   onClick={next}
   className="
-    w-[90%]
+    w-[100%]
     mx-left
     sm:w-auto
 
