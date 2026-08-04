@@ -16,7 +16,25 @@ export default function ImpressumPage() {
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_60%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-6">
+        <div
+  className="
+    w-[90%]
+    mx-auto
+    sm:w-full
+    max-w-4xl
+
+    rounded-[32px]
+    border
+    border-white/10
+
+    bg-white/[0.04]
+
+    backdrop-blur-2xl
+
+    p-6
+    sm:p-10
+  "
+>
 
           <Link
             href="/"
@@ -26,7 +44,7 @@ export default function ImpressumPage() {
             Zurück zur Startseite
           </Link>
 
-          <h1 className="text-5xl font-bold tracking-tight">
+         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
             Impressum
           </h1>
 
@@ -38,13 +56,33 @@ export default function ImpressumPage() {
 
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-28">
+      <section
+  className="
+    w-[90%]
+    mr-auto
+    ml-2
+    sm:w-full
+    max-w-6xl
+    pb-28
+  "
+>
 
         <div className="grid gap-8 lg:grid-cols-2">
 
           {/* Business */}
 
-          <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-8 backdrop-blur">
+          <div
+  className="
+    w-full
+    rounded-3xl
+    border
+    border-white/15
+    bg-white/[0.05]
+    p-5
+    sm:p-8
+    backdrop-blur
+  "
+>
 
             <div className="mb-6 flex items-center gap-3">
               <Building2 className="h-6 w-6 text-blue-400" />

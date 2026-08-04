@@ -11,7 +11,15 @@ export default function DatenschutzerklaerungPage() {
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_60%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-6">
+       <div
+  className="
+    relative
+    w-[90%]
+    mx-auto
+    sm:w-full
+    max-w-6xl
+  "
+>
 
           <Link
             href="/"
@@ -27,17 +35,35 @@ export default function DatenschutzerklaerungPage() {
               <Shield className="h-8 w-8 text-blue-400" />
             </div>
 
-            <div>
+            <div className="max-w-5xl">
 
-              <h1 className="text-5xl font-bold tracking-tight">
-                Datenschutzerklärung
-               </h1>
+  <h1
+  className="
+    text-3xl
+    sm:text-5xl
+    font-bold
+    tracking-tight
+  "
+>
+  Datenschutzerklärung
+</h1>
 
-<p className="mt-4 max-w-3xl text-lg leading-8 text-zinc-300">
-  Informationen über die Verarbeitung personenbezogener Daten gemäß der Datenschutz-Grundverordnung (DSGVO).
-</p>
+  <p
+    className="
+      mt-4
+      text-base
+      sm:text-lg
+      leading-7
+      sm:leading-8
+      text-zinc-300
+    "
+  >
+    Informationen über die Verarbeitung personenbezogener Daten gemäß der Datenschutz-Grundverordnung (DSGVO).
+  </p>
 
-            </div>
+</div>
+
+
 
           </div>
 
