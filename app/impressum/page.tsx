@@ -60,7 +60,7 @@ export default function ImpressumPage() {
   className="
     w-[90%]
     mr-auto
-    ml-2
+    ml-auto
     sm:w-full
     max-w-6xl
     pb-28
