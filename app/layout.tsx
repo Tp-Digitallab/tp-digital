@@ -12,6 +12,7 @@ import LanguageProvider from "@/components/providers/LanguageProvider";
 
 import IntroAnimation from "@/components/effects/IntroAnimation";
 
+import Script from "next/script";
 
 
 const geistSans = Geist({
@@ -26,7 +27,6 @@ const geistMono = Geist_Mono({
 });
 
 
-
 export const metadata: Metadata = {
 
   metadataBase: new URL(
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   title: {
 
     default:
-"TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen in Deutschland",
+      "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen in Deutschland",
 
     template:
       "%s | TP Digital Lab",
@@ -46,32 +46,32 @@ export const metadata: Metadata = {
 
 
   description:
-"TP Digital Lab entwickelt moderne Websites, SEO-optimierte Weblösungen und digitale Systeme für Unternehmen in Deutschland. Professionelles Webdesign, Online-Shops und individuelle digitale Lösungen aus einer Hand.",
+    "TP Digital Lab entwickelt moderne Websites, SEO-optimierte Weblösungen und digitale Systeme für Unternehmen in Deutschland. Professionelles Webdesign, Online-Shops und individuelle digitale Lösungen aus einer Hand.",
 
 
   keywords: [
 
-"Webdesign Deutschland",
+    "Webdesign Deutschland",
 
-"Website erstellen Deutschland",
+    "Website erstellen Deutschland",
 
-"Website erstellen lassen",
+    "Website erstellen lassen",
 
-"Professionelle Website für Unternehmen",
+    "Professionelle Website für Unternehmen",
 
-"Webagentur Deutschland",
+    "Webagentur Deutschland",
 
-"Webentwicklung Deutschland",
+    "Webentwicklung Deutschland",
 
-"Landing Page erstellen",
+    "Landing Page erstellen",
 
-"SEO Deutschland",
+    "SEO Deutschland",
 
-"Suchmaschinenoptimierung",
+    "Suchmaschinenoptimierung",
 
-"Digitale Lösungen Unternehmen",
+    "Digitale Lösungen Unternehmen",
 
-],
+  ],
 
 
   authors: [
@@ -108,11 +108,11 @@ export const metadata: Metadata = {
   openGraph: {
 
     title:
-"TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
+      "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
 
 
     description:
-"Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
+      "Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
 
 
     url:
@@ -135,9 +135,6 @@ export const metadata: Metadata = {
 };
 
 
-
-
-
 export default function RootLayout({
 
   children,
@@ -149,53 +146,75 @@ export default function RootLayout({
 }>) {
 
 
-return (
+  return (
 
-<html
+    <html
 
-lang="de"
+      lang="de"
 
-className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
 
->
+    >
 
+      <body
 
-<body
+        className="
+        relative
+        overflow-x-hidden
+        "
 
-className="
-relative
-overflow-x-hidden
-"
+      >
 
->
+        {/* Google Ads / Google Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18377056618"
+          strategy="afterInteractive"
+        />
 
+        <Script
+          id="google-ads-tag"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
 
-<JsonLd />
+            function gtag() {
+              dataLayer.push(arguments);
+            }
 
+            gtag('js', new Date());
 
-<IntroAnimation />
-
-
-<LanguageProvider>
-
-
-<LenisProvider>
-
-
-{children}
-
-
-</LenisProvider>
-
-
-</LanguageProvider>
-
-
-</body>
+            gtag('config', 'AW-18377056618');
+          `}
+        </Script>
 
 
-</html>
+        <JsonLd />
 
-);
+
+        <IntroAnimation />
+
+
+        <LanguageProvider>
+
+
+          <LenisProvider>
+
+
+            {children}
+
+
+          </LenisProvider>
+
+
+        </LanguageProvider>
+
+
+      </body>
+
+
+    </html>
+
+  );
 
 }
