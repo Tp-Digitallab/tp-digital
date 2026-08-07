@@ -32,28 +32,12 @@ const schema = {
 },
 
 
-"serviceType": [
-
-"Webdesign",
-
-"Webentwicklung",
-
-"SEO Optimierung",
-
-"Landing Pages",
-
-"Online Shop Entwicklung",
-
-"Digitale Lösungen für Unternehmen"
-
-],
-
-
 "hasOfferCatalog": {
 
 "@type": "OfferCatalog",
 
 "name": "Digitale Dienstleistungen",
+
 
 "itemListElement": [
 
@@ -69,6 +53,24 @@ const schema = {
 
 "description":
 "Moderne und professionelle Websites für Unternehmen."
+
+}
+
+},
+
+
+{
+
+"@type": "Offer",
+
+"itemOffered": {
+
+"@type": "Service",
+
+"name": "Webentwicklung",
+
+"description":
+"Individuelle Webentwicklung und digitale Lösungen für Unternehmen."
 
 }
 
@@ -105,6 +107,24 @@ const schema = {
 
 "description":
 "Individuelle E-Commerce Lösungen für Unternehmen."
+
+}
+
+},
+
+
+{
+
+"@type": "Offer",
+
+"itemOffered": {
+
+"@type": "Service",
+
+"name": "Digitale Lösungen",
+
+"description":
+"Moderne digitale Lösungen und Webanwendungen für Unternehmen."
 
 }
 
