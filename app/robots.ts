@@ -1,24 +1,22 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 
 export default function robots(): MetadataRoute.Robots {
 
-  return {
+return {
 
-    rules: {
+rules: {
 
-      userAgent:
-        "*",
+userAgent: "*",
 
-      allow:
-        "/",
+allow: "/",
 
-    },
+},
 
 
-    sitemap:
-      "https://tpdigitallab.de/sitemap.xml",
+sitemap:
+"https://tpdigitallab.de/sitemap.xml",
 
-  };
+};
 
 }

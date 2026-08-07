@@ -15,25 +15,24 @@ import IntroAnimation from "@/components/effects/IntroAnimation";
 
 
 const geistSans = Geist({
-
   variable: "--font-geist-sans",
-
   subsets: ["latin"],
-
 });
 
 
 const geistMono = Geist_Mono({
-
   variable: "--font-geist-mono",
-
   subsets: ["latin"],
-
 });
 
 
 
 export const metadata: Metadata = {
+
+  metadataBase: new URL(
+    "https://tpdigitallab.de"
+  ),
+
 
   title: {
 
@@ -72,10 +71,8 @@ export const metadata: Metadata = {
   authors: [
 
     {
-
       name:
         "TP Digital Lab",
-
     },
 
   ],
@@ -90,6 +87,14 @@ export const metadata: Metadata = {
     index: true,
 
     follow: true,
+
+  },
+
+
+  alternates: {
+
+    canonical:
+      "/",
 
   },
 
@@ -120,7 +125,6 @@ export const metadata: Metadata = {
       "website",
 
   },
-
 
 };
 
@@ -166,7 +170,6 @@ overflow-x-hidden
 <IntroAnimation />
 
 
-
 <LanguageProvider>
 
 
@@ -182,13 +185,11 @@ overflow-x-hidden
 </LanguageProvider>
 
 
-
 </body>
 
 
 </html>
 
 );
-
 
 }
