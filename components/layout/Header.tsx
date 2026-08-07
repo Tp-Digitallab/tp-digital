@@ -21,13 +21,38 @@ export default function Header() {
 
 
   const navigation = [
-    { name: t.nav.services, href: "#solutions" },
-    { name: t.nav.packages, href: "#packages" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.calculator, href: "#calculator" },
-    { name: t.nav.process, href: "#process" },
-    { name: t.nav.contact, href: "#contact" },
-  ];
+
+{
+name: t.nav.services,
+href: "#solutions",
+},
+
+{
+name: t.nav.projects,
+href: "#projects",
+},
+
+{
+name: t.nav.packages,
+href: "#packages",
+},
+
+{
+name: t.nav.process,
+href: "#process",
+},
+
+{
+name: t.nav.calculator,
+href: "#calculator",
+},
+
+{
+name: t.nav.contact,
+href: "#contact",
+},
+
+];
 
 
   const [scrolled, setScrolled] = useState(false);

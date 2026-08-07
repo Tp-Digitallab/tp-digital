@@ -8,97 +8,135 @@ export const de = {
     contact: "Kontakt",
   },
 
-  hero: {
-    badge: "DIGITAL STUDIO · MUNICH",
+ hero: {
 
-    title: "Digitale Erlebnisse",
+badge:
+"DIGITALE LÖSUNGEN FÜR UNTERNEHMEN",
 
-    titleAccent: "die im Kopf bleiben.",
 
-    description:
-      "Premium-Websites, Automatisierungen und digitale Lösungen für Unternehmen mit Anspruch.",
+title:
+"Wir bringen Ihr",
 
-    button: "Projekt starten",
 
-    projects: "Projekte ansehen",
-  },
+titleAccent:
+"Unternehmen online.",
+
+
+description:
+"TP Digital Lab entwickelt digitale Lösungen für Unternehmen, Agenturen und Startups. Von professionellen Websites und Online-Shops bis zu individuellen Systemen – wir helfen Ihnen, online sichtbar zu werden und neue Kunden zu gewinnen.",
+
+
+button:
+"Projekt starten",
+
+
+projects:
+"Unsere Projekte",
+
+},
 
   services: {
-    eyebrow: "LEISTUNGEN",
+  eyebrow: "UNSERE DIGITALEN LÖSUNGEN",
 
-    title: "Alles, was Ihr Unternehmen online wachsen lässt.",
+  title:
+  "Digitale Lösungen für Unternehmen, die online erfolgreich wachsen möchten.",
 
-    description:
-      "Wir erstellen nicht nur Websites. Wir helfen Unternehmen, Kunden zu gewinnen, sichtbar zu werden und digital zu wachsen.",
+  description:
+    "Wir entwickeln nicht nur Websites. Wir bauen digitale Lösungen, die Unternehmen online sichtbar machen, neue Kunden gewinnen und langfristiges Wachstum ermöglichen.",
 
     items: [
       {
-        title: "Website Entwicklung",
-        description:
-          "Moderne Websites, die Vertrauen schaffen und Besucher in Kunden verwandeln.",
+        title:
+"Professionelle Websites",
+
+description:
+"Moderne, schnelle und SEO-optimierte Websites für Unternehmen, die online Kunden gewinnen möchten.",
+
+link:
+"/webdesign",
+
       },
       {
-        title: "SEO Optimierung",
-        description:
-          "Technische und On-Page SEO für bessere Google-Rankings.",
+        title:
+"SEO & Google Sichtbarkeit",
+
+description:
+"Technische SEO und Optimierung für bessere Rankings und mehr Sichtbarkeit bei Google.",
+
+link:
+"/seo",
       },
       {
-        title: "Google Ads",
+       title:
+"Online Marketing & Google Ads",
         description:
-          "Kampagnenaufbau, Keyword-Recherche und Conversion-Tracking.",
+"Strategische Kampagnen, Conversion-Tracking und digitale Werbung für messbare Ergebnisse.",
+
+link:
+"/digitale-loesungen",
       },
       {
-        title: "Laufender Support",
+        title:
+"Digitale Betreuung & Wachstum",
         description:
-          "Website Updates, Google Ads Betreuung und kontinuierliche Verbesserungen.",
+"Wir begleiten Unternehmen nach dem Launch mit Updates, Optimierungen und langfristiger Weiterentwicklung.",
+
+link:
+"/digitale-loesungen",
       },
     ],
   },
     projects: {
     eyebrow: "UNSERE PROJEKTE",
 
-    title: "Unsere Arbeiten.",
+   title:
+"Unsere digitalen Projekte.",
 
     description:
       "Wir entwickeln moderne Websites und digitale Lösungen, die Unternehmen helfen, Kunden zu gewinnen und online zu wachsen.",
   },
 
 process: {
-  eyebrow: "UNSER PROZESS",
+  eyebrow:
+    "UNSER DIGITALER PROZESS",
 
-  title: "Von der Idee.",
-  
-  titleAccent: "Zu Ihren ersten Kunden.",
+  title:
+    "Von der Idee",
+
+  titleAccent:
+    "zur erfolgreichen Online-Präsenz.",
 
   description:
-    "Jedes Projekt folgt einem transparenten Ablauf, der schnelle, zuverlässige und messbare Ergebnisse liefert.",
+    "Wir begleiten Unternehmen von der ersten Idee bis zur fertigen digitalen Lösung. Strategie, Design, Entwicklung und Wachstum aus einer Hand.",
+
+
     steps: [
   {
     title: "Analyse",
 
     description:
-      "Wir lernen Ihr Unternehmen, Ihre Ziele und Ihre Zielgruppe kennen.",
+"Wir analysieren Ihr Unternehmen, Ihre Ziele, Ihre Kunden und entwickeln eine passende digitale Strategie.",
   },
 
   {
     title: "Strategie & Design",
 
     description:
-      "Wir erstellen die Struktur, modernes Design und eine optimale Nutzererfahrung.",
+"Wir entwickeln eine klare Struktur, modernes Design und eine Nutzererfahrung, die Besucher überzeugt.",
   },
 
   {
     title: "Entwicklung",
 
     description:
-      "Wir entwickeln eine schnelle, responsive und SEO-optimierte Website.",
+"Wir entwickeln eine schnelle, responsive und SEO-optimierte Website.",
   },
 
   {
     title: "Launch & Wachstum",
 
     description:
-      "Ihre Website geht online mit Analyse, Support und Marketing.",
+"Ihre digitale Lösung geht online mit Analyse, Support und Marketing für nachhaltiges Wachstum.",
   },
 ],
 },
@@ -164,6 +202,13 @@ faq: {
       answer:
         "Natürlich. Erzählen Sie uns von Ihrer Idee und wir erstellen eine passende Lösung.",
     },
+    {
+  question:
+    "Kann eine Website neue Kunden für mein Unternehmen gewinnen?",
+
+  answer:
+    "Ja. Eine professionell entwickelte Website kann Ihr Unternehmen online präsentieren, Vertrauen aufbauen und durch SEO, Marketing und optimierte Nutzererfahrung neue Kunden erreichen.",
+},
   ],
 },
 contact: {
@@ -231,26 +276,41 @@ contact: {
 
 
   packages: {
-    eyebrow: "PAKETE",
 
-    title: "Wählen Sie die passende Lösung.",
+  eyebrow:
+    "DIGITALE PAKETE FÜR UNTERNEHMEN",
 
-    description:
-      "Starten Sie mit einem fertigen Paket oder passen Sie jedes Detail im Konfigurator an.",
 
-    button: "Paket auswählen",
-  },
+  title:
+    "Die passende digitale Lösung für Ihr Unternehmen.",
+
+
+  description:
+    "Ob neue Website, Online-Shop oder komplette digitale Lösung – wir entwickeln ein System, das zu Ihren Zielen und Ihrem Wachstum passt.",
+
+
+  button:
+    "Projekt auswählen",
+
+},
 
     calculator: {
-    eyebrow: "PROJEKT KONFIGURATOR",
 
-    title: "Erstellen Sie Ihr Projekt.",
+  eyebrow:
+    "WEBSITE KOSTEN BERECHNEN",
 
-    titleAccent: "Erhalten Sie eine erste Einschätzung.",
 
-    description:
-      "Konfigurieren Sie Ihre Website und sehen Sie die geschätzte Investition, bevor Sie uns kontaktieren.",
-  },
+  title:
+    "Was kostet Ihre",
+
+
+  titleAccent:
+    "digitale Lösung?",
+
+
+  description:
+    "Konfigurieren Sie Ihre Website, Ihren Online-Shop oder Ihre digitale Lösung und erhalten Sie eine erste Einschätzung der möglichen Investition.",
+},
 
 
   thankYou: {
@@ -303,7 +363,7 @@ contact: {
     website: {
       step: "SCHRITT 1",
 
-      title: "Wählen Sie Ihre Website",
+      title:"Welche digitale Lösung benötigen Sie?",
 
       description:
         "Wählen Sie den Website-Typ, der am besten zu Ihrem Unternehmen passt.",
@@ -316,19 +376,19 @@ contact: {
         landing: {
           title: "Landing Page",
           description:
-            "Eine moderne Seite für Unternehmen, die schnell online starten möchten.",
+            "Eine fokussierte Landingpage, um neue Kunden zu gewinnen und Angebote online zu präsentieren.",
         },
 
         website: {
           title: "Mehrseitige Website",
           description:
-            "Eine vollständige Website für Unternehmen mit mehreren Bereichen.",
+            "Eine professionelle Unternehmenswebsite mit mehreren Seiten, SEO-Grundlage und moderner Nutzererfahrung."
         },
 
         shop: {
           title: "Online-Shop",
           description:
-            "Eine E-Commerce-Lösung für den Verkauf von Produkten online.",
+            "Ein moderner Online-Shop, mit dem Ihr Unternehmen Produkte digital verkaufen und neue Kunden erreichen kann.",
         },
       },
     },
@@ -456,10 +516,10 @@ privacy: "Datenschutz",
 
   packageCards: {
     launch: {
-      name: "Start",
+      name:"Online Start",
 
       description:
-        "Der perfekte Einstieg für Unternehmen, die eine professionelle Online-Präsenz benötigen.",
+        "Für Unternehmen, die professionell online starten und eine moderne digitale Präsenz aufbauen möchten.",
 
       features: [
         "Landing Page",
@@ -473,7 +533,7 @@ privacy: "Datenschutz",
       name: "Business",
 
       description:
-        "Unser beliebtestes Paket für Unternehmen, die mehr Kunden gewinnen und online wachsen möchten.",
+        "Für Unternehmen, die online sichtbar werden, neue Kunden gewinnen und langfristig wachsen möchten.",
 
       features: [
         "Mehrseitige Website",
@@ -488,7 +548,7 @@ privacy: "Datenschutz",
       name: "Wachstum",
 
       description:
-        "Komplette digitale Lösung für Unternehmen mit erweiterten Anforderungen.",
+        "Eine umfassende digitale Lösung mit Online-Shop, Marketing und erweiterten Funktionen für wachsende Unternehmen.",
 
       features: [
         "Online-Shop",

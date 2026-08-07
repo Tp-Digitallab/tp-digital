@@ -46,11 +46,12 @@ export default function ServicesSection() {
           {t.services.items.map((item, index) => (
 
             <ServiceCard
-              key={index}
-              number={`0${index + 1}`}
-              title={item.title}
-              description={item.description}
-            />
+  key={index}
+  number={`0${index + 1}`}
+  title={item.title}
+  description={item.description}
+  href={item.link}
+/>
 
           ))}
 

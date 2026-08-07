@@ -36,21 +36,31 @@ export const en = {
         title: "Website Development",
         description:
           "Modern websites that build trust and turn visitors into customers.",
+           link:
+    "/webdesign",
       },
       {
         title: "SEO Optimization",
         description:
           "Technical and on-page SEO to improve your Google rankings.",
+          link:
+    "/seo",
       },
       {
         title: "Google Ads",
         description:
           "Campaign setup, keyword research and conversion tracking.",
+            link:
+    "/digitale-loesungen",
       },
       {
         title: "Ongoing Support",
         description:
           "Website updates, Google Ads management and continuous improvements.",
+
+           link:
+    "/digitale-loesungen",
+
       },
     ],
   },
@@ -61,6 +71,9 @@ export const en = {
 
   description:
     "We create modern websites and digital solutions that help businesses attract customers and grow online.",
+
+    
+
 },
 process: {
   eyebrow: "OUR PROCESS",
@@ -77,6 +90,9 @@ process: {
 
     description:
       "We learn about your business, goals and target audience.",
+
+      
+
   },
 
   {
