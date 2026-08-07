@@ -6,7 +6,9 @@ import "./globals.css";
 
 import LenisProvider from "@/components/providers/LenisProvider";
 import LanguageProvider from "@/components/providers/LanguageProvider";
+
 import IntroAnimation from "@/components/effects/IntroAnimation";
+
 
 
 const geistSans = Geist({
@@ -21,6 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 
+
 export const metadata: Metadata = {
 
   title: {
@@ -30,47 +33,6 @@ export const metadata: Metadata = {
 
   description:
     "Modern websites, web applications, automation and digital solutions for businesses.",
-
-
-  openGraph: {
-
-    title: "TP Digital Lab",
-
-    description:
-      "Modern websites, web applications, automation and digital solutions for businesses.",
-
-    url: "https://tpdigitallab.de",
-
-    siteName: "TP Digital Lab",
-
-    images: [
-      {
-        url: "https://tpdigitallab.de/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "TP Digital Lab",
-      },
-    ],
-
-    type: "website",
-
-  },
-
-
-  twitter: {
-
-    card: "summary_large_image",
-
-    title: "TP Digital Lab",
-
-    description:
-      "Modern websites, web applications, automation and digital solutions for businesses.",
-
-    images: [
-      "https://tpdigitallab.de/og-image.png",
-    ],
-
-  },
 
 };
 
@@ -82,31 +44,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  return (
 
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+return (
 
-      <body>
+<html
+  lang="de"
+  className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+>
 
-        <IntroAnimation />
 
-        <LanguageProvider>
+<body className="relative overflow-x-hidden">
 
-          <LenisProvider>
 
-            {children}
+  
 
-          </LenisProvider>
+  <IntroAnimation />
 
-        </LanguageProvider>
 
-      </body>
+  <LanguageProvider>
 
-    </html>
+    <LenisProvider>
 
-  );
+      {children}
+
+    </LenisProvider>
+
+
+  </LanguageProvider>
+
+
+</body>
+
+
+</html>
+
+);
+
 
 }

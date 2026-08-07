@@ -8,6 +8,10 @@ import ScrollLink from "@/components/ui/ScrollLink";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
+import { motion } from "motion/react";
+
+
+
 
 export default function Header() {
 
@@ -48,7 +52,32 @@ export default function Header() {
 
         {/* ================= DESKTOP ================= */}
 
-        <div className="hidden md:grid grid-cols-[220px_1fr_280px] items-center mt-8">
+        <motion.div
+
+  initial={{
+    opacity:0,
+    y:-30,
+  }}
+
+  animate={{
+    opacity:1,
+    y:0,
+  }}
+
+  transition={{
+    duration:0.8,
+    ease:"easeOut",
+  }}
+
+  className="
+    hidden
+    md:grid
+    grid-cols-[220px_1fr_280px]
+    items-center
+    mt-8
+  "
+
+>
 
 
           {/* Logo */}
@@ -57,18 +86,32 @@ export default function Header() {
             href="#top"
             className="leading-none group"
           >
-            <div
-              className="
-                text-2xl
-                font-semibold
-                text-white
-                transition-all
-                duration-300
-                group-hover:tracking-wide
-              "
-            >
-              TP
-            </div>
+            <motion.div
+
+whileHover={{
+ scale:1.08,
+}}
+
+transition={{
+ duration:0.3,
+}}
+
+className="
+text-2xl
+font-semibold
+text-white
+
+drop-shadow-[0_0_15px_rgba(59,130,246,0.4)]
+
+transition-all
+duration-300
+
+group-hover:tracking-wide
+"
+
+>
+TP
+</motion.div>
 
             <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
               Digital Lab
@@ -81,6 +124,9 @@ export default function Header() {
 
           <nav
             className={`
+              relative
+              z-10
+overflow-hidden
               justify-self-center
               flex
               items-center
@@ -93,7 +139,8 @@ export default function Header() {
               py-3
               backdrop-blur-2xl
               backdrop-saturate-150
-              shadow-[0_8px_30px_rgba(0,0,0,0.35)]
+              shadow-[0_20px_60px_rgba(0,0,0,0.45)]
+hover:shadow-[0_0_50px_rgba(59,130,246,0.25)]
               transition-all
               duration-500
               hover:scale-[1.015]
@@ -106,13 +153,51 @@ export default function Header() {
             `}
           >
 
+<motion.div
+
+  animate={{
+    x:["-150%","600%"],
+  }}
+
+  transition={{
+    duration:6,
+    repeat:Infinity,
+    ease:"linear",
+  }}
+
+  className="
+    absolute
+
+    left-0
+    top-0
+
+    h-full
+    w-64
+
+    pointer-events-none
+
+    bg-gradient-to-r
+from-transparent
+via-white/40
+to-blue-400/40
+
+    blur-2xl
+
+    z-0
+  "
+
+/>
+
+
             {navigation.map((item) => (
               <ScrollLink
-                key={item.name}
-                href={item.href}
-                className="
-                  relative
-                  text-[15px]
+  key={item.name}
+  href={item.href}
+  className="
+    relative
+    z-10
+
+    text-[15px]
                   font-medium
                   tracking-[0.02em]
                   text-white/85
@@ -155,8 +240,8 @@ export default function Header() {
           </div>
 
 
-        </div>
-
+       
+</motion.div>
 
         {/* ================= MOBILE ================= */}
 
