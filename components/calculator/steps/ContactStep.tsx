@@ -90,18 +90,23 @@ async function handleSubmit() {
 
   try {
     const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(formData),
+});
 
-    if (!response.ok) {
-      throw new Error("Failed to send request");
-    }
+if (!response.ok) {
+  throw new Error("Failed to send request");
+}
 
-    router.push("/thank-you");
+sessionStorage.setItem(
+  "lead_successfully_submitted",
+  "true"
+);
+
+router.push("/thank-you");
   } catch (error) {
     console.error(error);
     alert("Something went wrong. Please try again.");

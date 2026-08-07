@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
 import Link from "next/link";
@@ -7,10 +8,29 @@ import { CheckCircle2, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function ThankYouPage() {
-
   const { language } = useLanguage();
 
   const t = translations[language];
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const submitted = sessionStorage.getItem(
+      "lead_successfully_submitted"
+    );
+
+    if (submitted !== "true") return;
+
+    const gtag = (window as any).gtag;
+
+    if (typeof gtag === "function") {
+      gtag("event", "conversion", {
+        send_to: "AW-18377056618/zbQMCJTp9t0cEOrC7rpE",
+      });
+    }
+
+    sessionStorage.removeItem("lead_successfully_submitted");
+  }, []);
 
   return (
     <main
