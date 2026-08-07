@@ -9,7 +9,7 @@ export const en = {
   },
 
   hero: {
-    badge: "DIGITAL STUDIO · MUNICH",
+    badge: "DIGITAL STUDIO · Deutschland",
 
     title: "Digital experiences",
 

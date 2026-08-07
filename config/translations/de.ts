@@ -11,19 +11,19 @@ export const de = {
  hero: {
 
 badge:
-"DIGITALE LÖSUNGEN FÜR UNTERNEHMEN",
+"WEBAGENTUR FÜR UNTERNEHMEN IN DEUTSCHLAND",
 
 
 title:
-"Wir bringen Ihr",
+"Moderne Websites",
 
 
 titleAccent:
-"Unternehmen online.",
+"für Ihr Unternehmen.",
 
 
 description:
-"TP Digital Lab entwickelt digitale Lösungen für Unternehmen, Agenturen und Startups. Von professionellen Websites und Online-Shops bis zu individuellen Systemen – wir helfen Ihnen, online sichtbar zu werden und neue Kunden zu gewinnen.",
+"TP Digital Lab entwickelt professionelle Websites, digitale Lösungen und SEO-optimierte Online-Erlebnisse für Unternehmen in Deutschland. Wir helfen Unternehmen, online sichtbar zu werden, Vertrauen aufzubauen und neue Kunden zu gewinnen.",
 
 
 button:
@@ -36,10 +36,10 @@ projects:
 },
 
   services: {
-  eyebrow: "UNSERE DIGITALEN LÖSUNGEN",
+  eyebrow: "WEB DESIGN, SEO & DIGITALE LÖSUNGEN",
 
   title:
-  "Digitale Lösungen für Unternehmen, die online erfolgreich wachsen möchten.",
+  "Websites, SEO und digitale Lösungen für Unternehmen.",
 
   description:
     "Wir entwickeln nicht nur Websites. Wir bauen digitale Lösungen, die Unternehmen online sichtbar machen, neue Kunden gewinnen und langfristiges Wachstum ermöglichen.",

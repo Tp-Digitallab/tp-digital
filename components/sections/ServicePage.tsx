@@ -1,6 +1,15 @@
 import Container from "@/components/common/Container";
 import BackgroundGrid from "@/components/effects/BackgroundGrid";
 import Button from "@/components/ui/Button";
+import FaqSchema from "@/components/seo/FaqSchema";
+
+type FAQ = {
+
+  question: string;
+
+  answer: string;
+
+};
 
 
 type Props = {
@@ -12,6 +21,12 @@ type Props = {
   description: string;
 
   services: string[];
+
+  seoTitle: string;
+
+  seoDescription: string;
+
+  faq: FAQ[];
 
 };
 
@@ -27,10 +42,21 @@ export default function ServicePage({
 
   services,
 
+  seoTitle,
+
+  seoDescription,
+
+  faq,
+
 }: Props) {
 
 
 return (
+
+<>
+
+<FaqSchema items={faq} />
+
 
 <main className="
 relative
@@ -175,11 +201,9 @@ text-3xl
 font-medium
 ">
 
-
-Warum professionelle digitale Lösungen wichtig sind
+{seoTitle}
 
 </h2>
-
 
 
 <p className="
@@ -188,12 +212,7 @@ leading-8
 text-white/60
 ">
 
-
-Eine moderne digitale Lösung ist mehr als nur eine
-Online-Präsenz. Sie hilft Unternehmen Vertrauen
-aufzubauen, neue Kunden zu erreichen und langfristig
-online erfolgreich zu wachsen.
-
+{seoDescription}
 
 </p>
 
@@ -279,7 +298,146 @@ font-medium
 
 </section>
 
+{/* WHY TP DIGITAL LAB */}
 
+<section className="
+relative
+z-10
+py-24
+">
+
+
+<h2 className="
+mb-10
+text-3xl
+font-medium
+">
+
+Warum TP Digital Lab?
+
+</h2>
+
+
+
+<div className="
+grid
+gap-6
+md:grid-cols-3
+">
+
+
+
+<div className="
+rounded-2xl
+border
+border-white/10
+bg-white/[0.05]
+p-8
+">
+
+
+<h3 className="
+text-xl
+font-medium
+">
+
+Individuelle Lösungen
+
+</h3>
+
+
+<p className="
+mt-4
+text-white/60
+">
+
+Keine Standardlösungen.
+Jede Website wird passend zu den Zielen
+und Anforderungen Ihres Unternehmens entwickelt.
+
+</p>
+
+
+</div>
+
+
+
+
+<div className="
+rounded-2xl
+border
+border-white/10
+bg-white/[0.05]
+p-8
+">
+
+
+<h3 className="
+text-xl
+font-medium
+">
+
+SEO & Sichtbarkeit
+
+</h3>
+
+
+<p className="
+mt-4
+text-white/60
+">
+
+Wir entwickeln Websites mit Fokus auf
+Performance, technische Optimierung
+und bessere Auffindbarkeit bei Google.
+
+</p>
+
+
+</div>
+
+
+
+
+<div className="
+rounded-2xl
+border
+border-white/10
+bg-white/[0.05]
+p-8
+">
+
+
+<h3 className="
+text-xl
+font-medium
+">
+
+Von Idee bis Umsetzung
+
+</h3>
+
+
+<p className="
+mt-4
+text-white/60
+">
+
+Von der ersten Idee über Design bis zur
+fertigen digitalen Lösung begleiten wir
+Unternehmen bei jedem Schritt.
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
 
 
 
@@ -301,8 +459,7 @@ text-3xl
 font-medium
 ">
 
-
-Häufige Fragen zum Webdesign
+Häufige Fragen
 
 </h2>
 
@@ -316,57 +473,24 @@ space-y-8
 ">
 
 
-<div>
 
 
-<h3 className="text-xl">
+{faq.map((item) => (
+  <div key={item.question}>
 
-Wie viel kostet eine professionelle Website?
+    <h3 className="text-xl">
+      {item.question}
+    </h3>
 
-</h3>
+    <p className="
+      mt-3
+      text-white/60
+    ">
+      {item.answer}
+    </p>
 
-
-<p className="
-mt-3
-text-white/60
-">
-
-Die Kosten hängen vom Umfang und den Anforderungen ab.
-TP Digital Lab entwickelt individuelle Lösungen für
-Unternehmen.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div>
-
-
-<h3 className="text-xl">
-
-Wie lange dauert die Entwicklung einer Website?
-
-</h3>
-
-
-<p className="
-mt-3
-text-white/60
-">
-
-Die meisten Projekte können innerhalb weniger Wochen
-umgesetzt werden.
-
-</p>
-
-
-</div>
-
+  </div>
+))}
 
 
 </div>
@@ -470,7 +594,8 @@ SEO & Sichtbarkeit
 
 </main>
 
-);
+</>
 
+);
 
 }

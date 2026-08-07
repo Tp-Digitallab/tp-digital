@@ -34,9 +34,9 @@ const schema = {
 
 "areaServed": {
 
-"@type": "Place",
+"@type": "Country",
 
-"name": "München, Deutschland"
+"name": "Deutschland"
 
 },
 

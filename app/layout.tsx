@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   title: {
 
     default:
-      "TP Digital Lab | Webdesign, Websites & Digitale Lösungen für Unternehmen",
+"TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen in Deutschland",
 
     template:
       "%s | TP Digital Lab",
@@ -46,26 +46,32 @@ export const metadata: Metadata = {
 
 
   description:
-    "TP Digital Lab erstellt moderne Websites, Webanwendungen und digitale Lösungen für Unternehmen. Professionelles Webdesign, SEO und individuelle Softwareentwicklung.",
+"TP Digital Lab entwickelt moderne Websites, SEO-optimierte Weblösungen und digitale Systeme für Unternehmen in Deutschland. Professionelles Webdesign, Online-Shops und individuelle digitale Lösungen aus einer Hand.",
 
 
   keywords: [
 
-    "Webdesign München",
+"Webdesign Deutschland",
 
-    "Website erstellen München",
+"Website erstellen Deutschland",
 
-    "Webagentur München",
+"Website erstellen lassen",
 
-    "Webentwicklung München",
+"Professionelle Website für Unternehmen",
 
-    "Landing Page erstellen",
+"Webagentur Deutschland",
 
-    "SEO München",
+"Webentwicklung Deutschland",
 
-    "Digitale Lösungen Unternehmen",
+"Landing Page erstellen",
 
-  ],
+"SEO Deutschland",
+
+"Suchmaschinenoptimierung",
+
+"Digitale Lösungen Unternehmen",
+
+],
 
 
   authors: [
@@ -102,11 +108,11 @@ export const metadata: Metadata = {
   openGraph: {
 
     title:
-      "TP Digital Lab | Moderne Websites für Unternehmen",
+"TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
 
 
     description:
-      "Professionelles Webdesign, Webentwicklung und digitale Lösungen für Unternehmen.",
+"Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
 
 
     url:
