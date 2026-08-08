@@ -8,17 +8,25 @@ export interface Support {
 export const support: Support[] = [
   {
     id: "website",
-    title: "Website Maintenance",
+
+    title:
+      "Website Maintenance",
+
     description:
       "Updates, backups, security monitoring and priority support.",
+
     price: 150,
   },
 
   {
     id: "ads",
-    title: "Google Ads Management",
+
+    title:
+      "Google Ads Management",
+
     description:
       "Campaign optimization, reports and continuous improvements.",
-    price: 150,
+
+    price: 200,
   },
 ];

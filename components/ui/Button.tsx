@@ -1,11 +1,16 @@
 "use client";
 
 import {
-  ButtonHTMLAttributes,
-  MouseEvent,
+  type ButtonHTMLAttributes,
+  type MouseEvent,
 } from "react";
+import type Lenis from "lenis";
 
 import { cn } from "@/lib/utils";
+
+type WindowWithLenis = Window & {
+  lenis?: Lenis;
+};
 
 interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -43,26 +48,25 @@ export default function Button({
     `,
 
     variant === "primary" &&
-  `
-    border-blue-400/25
-    bg-[#172033]
-    text-white
+      `
+        border-blue-400/25
+        bg-[#172033]
+        text-white
+        shadow-[0_8px_30px_rgba(59,130,246,0.16)]
 
-    shadow-[0_8px_30px_rgba(59,130,246,0.16)]
+        sm:border-white/15
+        sm:bg-white/[0.10]
+        sm:backdrop-blur-xl
+        sm:shadow-[0_0_30px_rgba(59,130,246,0.18)]
 
-    sm:border-white/15
-    sm:bg-white/[0.10]
-    sm:backdrop-blur-xl
-    sm:shadow-[0_0_30px_rgba(59,130,246,0.18)]
+        hover:border-blue-400/40
+        hover:bg-[#1c2942]
 
-    hover:border-blue-400/40
-    hover:bg-[#1c2942]
+        sm:hover:bg-white/[0.15]
+        sm:hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]
 
-    sm:hover:bg-white/[0.15]
-    sm:hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]
-
-    active:scale-[0.98]
-  `,
+        active:scale-[0.98]
+      `,
 
     variant === "ghost" &&
       `
@@ -80,27 +84,33 @@ export default function Button({
   ) {
     onClick?.(event);
 
-    if (event.defaultPrevented || !href) {
+    if (
+      event.defaultPrevented ||
+      !href
+    ) {
       return;
     }
 
     if (href.startsWith("#")) {
       const element =
-        document.querySelector(href);
+  document.querySelector<HTMLElement>(
+    href
+  );
 
       if (!element) {
         return;
       }
 
-      const lenis = (window as any).lenis;
+      const browserWindow =
+  window as unknown as WindowWithLenis;
 
-      if (
-        lenis &&
-        typeof lenis.scrollTo === "function"
-      ) {
-        lenis.scrollTo(element, {
-          duration: 1.2,
-        });
+      if (browserWindow.lenis) {
+        browserWindow.lenis.scrollTo(
+          element,
+          {
+            duration: 1.2,
+          }
+        );
       } else {
         element.scrollIntoView({
           behavior: "smooth",
@@ -124,6 +134,7 @@ export default function Button({
       <span>{children}</span>
 
       <span
+        aria-hidden="true"
         className="
           shrink-0
           transition-transform

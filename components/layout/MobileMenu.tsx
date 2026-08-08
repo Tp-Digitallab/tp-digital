@@ -1,20 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import {
+  useEffect,
+  useState,
+} from "react";
+import {
+  AnimatePresence,
+  motion,
+} from "motion/react";
+import {
+  ArrowRight,
+  Menu,
+  X,
+} from "lucide-react";
+import type Lenis from "lenis";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
 
 type Language = "de" | "en" | "ru";
 
+type WindowWithLenis = Window & {
+  lenis?: Lenis;
+};
+
 export default function MobileMenu() {
-  const { language, setLanguage } = useLanguage();
+  const {
+    language,
+    setLanguage,
+  } = useLanguage();
 
   const t = translations[language];
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] =
+    useState(false);
 
   const navigation = [
     {
@@ -66,45 +85,79 @@ export default function MobileMenu() {
   ];
 
   useEffect(() => {
-    const lenis = (window as any).lenis;
+    const browserWindow =
+      window as unknown as WindowWithLenis;
+
+    const { lenis } = browserWindow;
+
+    const previousOverflow =
+      document.body.style.overflow;
 
     if (open) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow =
+        "hidden";
 
-      if (lenis?.stop) {
-        lenis.stop();
-      }
+      lenis?.stop();
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow =
+        previousOverflow;
 
-      if (lenis?.start) {
-        lenis.start();
+      lenis?.start();
+    }
+
+    function handleKeyDown(
+      event: KeyboardEvent
+    ) {
+      if (
+        event.key === "Escape" &&
+        open
+      ) {
+        setOpen(false);
       }
     }
 
-    return () => {
-      document.body.style.overflow = "";
+    window.addEventListener(
+      "keydown",
+      handleKeyDown
+    );
 
-      if (lenis?.start) {
-        lenis.start();
-      }
+    return () => {
+      document.body.style.overflow =
+        previousOverflow;
+
+      lenis?.start();
+
+      window.removeEventListener(
+        "keydown",
+        handleKeyDown
+      );
     };
   }, [open]);
 
-  function handleNavigation(href: string) {
-    const element = document.querySelector(href);
-
+  function handleNavigation(
+    href: string
+  ) {
+    const element =
+  document.querySelector<HTMLElement>(
+    href
+  );
     setOpen(false);
 
-    setTimeout(() => {
-      if (!element) return;
+    window.setTimeout(() => {
+      if (!element) {
+        return;
+      }
 
-      const lenis = (window as any).lenis;
+      const browserWindow =
+       window as unknown as WindowWithLenis;
 
-      if (lenis?.scrollTo) {
-        lenis.scrollTo(element, {
-          duration: 1.1,
-        });
+      if (browserWindow.lenis) {
+        browserWindow.lenis.scrollTo(
+          element,
+          {
+            duration: 1.1,
+          }
+        );
 
         return;
       }
@@ -116,7 +169,9 @@ export default function MobileMenu() {
     }, 80);
   }
 
-  function handleLanguage(code: Language) {
+  function handleLanguage(
+    code: Language
+  ) {
     setLanguage(code);
   }
 
@@ -128,6 +183,8 @@ export default function MobileMenu() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
+        aria-expanded={open}
+        aria-controls="mobile-menu"
         className="
           flex
           h-12
@@ -154,7 +211,10 @@ export default function MobileMenu() {
           md:hidden
         "
       >
-        <Menu size={21} strokeWidth={1.8} />
+        <Menu
+          size={21}
+          strokeWidth={1.8}
+        />
       </button>
 
       {/* MOBILE MENU */}
@@ -162,6 +222,10 @@ export default function MobileMenu() {
       <AnimatePresence>
         {open && (
           <motion.div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
             initial={{
               opacity: 0,
             }}
@@ -248,7 +312,9 @@ export default function MobileMenu() {
               <div className="flex items-center justify-between">
                 <button
                   type="button"
-                  onClick={() => handleNavigation("#top")}
+                  onClick={() =>
+                    handleNavigation("#top")
+                  }
                   className="text-left"
                 >
                   <div className="text-2xl font-semibold text-white">
@@ -270,7 +336,9 @@ export default function MobileMenu() {
 
                 <button
                   type="button"
-                  onClick={() => setOpen(false)}
+                  onClick={() =>
+                    setOpen(false)
+                  }
                   aria-label="Close menu"
                   className="
                     flex
@@ -293,7 +361,10 @@ export default function MobileMenu() {
                     active:scale-95
                   "
                 >
-                  <X size={22} strokeWidth={1.8} />
+                  <X
+                    size={22}
+                    strokeWidth={1.8}
+                  />
                 </button>
               </div>
 
@@ -316,76 +387,81 @@ export default function MobileMenu() {
               {/* NAVIGATION */}
 
               <nav className="mt-4 space-y-2.5">
-                {navigation.map((item, index) => (
-                  <motion.button
-                    key={item.href}
-                    type="button"
-                    initial={{
-                      opacity: 0,
-                      x: -12,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      delay: 0.04 * index,
-                      duration: 0.3,
-                    }}
-                    onClick={() =>
-                      handleNavigation(item.href)
-                    }
-                    className="
-                      group
-
-                      flex
-                      w-full
-                      items-center
-                      justify-between
-
-                      rounded-2xl
-
-                      border
-                      border-white/[0.08]
-
-                      bg-white/[0.035]
-
-                      px-5
-                      py-[17px]
-
-                      text-left
-
-                      transition-all
-                      duration-200
-
-                      active:scale-[0.985]
-                      active:bg-white/[0.07]
-                    "
-                  >
-                    <span
+                {navigation.map(
+                  (item, index) => (
+                    <motion.button
+                      key={item.href}
+                      type="button"
+                      initial={{
+                        opacity: 0,
+                        x: -12,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                      }}
+                      transition={{
+                        delay:
+                          0.04 * index,
+                        duration: 0.3,
+                      }}
+                      onClick={() =>
+                        handleNavigation(
+                          item.href
+                        )
+                      }
                       className="
-                        text-[17px]
-                        font-medium
-                        tracking-[-0.01em]
-                        text-white/90
-                      "
-                    >
-                      {item.name}
-                    </span>
+                        group
 
-                    <ArrowRight
-                      size={18}
-                      strokeWidth={1.7}
-                      className="
-                        text-white/30
-                        transition-transform
+                        flex
+                        w-full
+                        items-center
+                        justify-between
+
+                        rounded-2xl
+
+                        border
+                        border-white/[0.08]
+
+                        bg-white/[0.035]
+
+                        px-5
+                        py-[17px]
+
+                        text-left
+
+                        transition-all
                         duration-200
 
-                        group-active:translate-x-1
+                        active:scale-[0.985]
+                        active:bg-white/[0.07]
                       "
-                    />
-                  </motion.button>
-                ))}
+                    >
+                      <span
+                        className="
+                          text-[17px]
+                          font-medium
+                          tracking-[-0.01em]
+                          text-white/90
+                        "
+                      >
+                        {item.name}
+                      </span>
+
+                      <ArrowRight
+                        size={18}
+                        strokeWidth={1.7}
+                        className="
+                          text-white/30
+                          transition-transform
+                          duration-200
+
+                          group-active:translate-x-1
+                        "
+                      />
+                    </motion.button>
+                  )
+                )}
               </nav>
 
               {/* LANGUAGE */}
@@ -421,68 +497,80 @@ export default function MobileMenu() {
                     p-1.5
                   "
                 >
-                  {languages.map((item) => {
-                    const active =
-                      language === item.code;
+                  {languages.map(
+                    (item) => {
+                      const active =
+                        language ===
+                        item.code;
 
-                    return (
-                      <button
-                        key={item.code}
-                        type="button"
-                        onClick={() =>
-                          handleLanguage(item.code)
-                        }
-                        className={`
-                          flex
-                          min-h-[54px]
-                          flex-col
-                          items-center
-                          justify-center
-
-                          rounded-xl
-
-                          transition-all
-                          duration-250
-
-                          active:scale-[0.97]
-
-                          ${
-                            active
-                              ? `
-                                bg-blue-500
-                                text-white
-
-                                shadow-[0_8px_25px_rgba(59,130,246,0.28)]
-                              `
-                              : `
-                                text-white/50
-                                hover:bg-white/[0.05]
-                                hover:text-white
-                              `
+                      return (
+                        <button
+                          key={
+                            item.code
                           }
-                        `}
-                      >
-                        <span className="text-sm font-semibold">
-                          {item.label}
-                        </span>
-
-                        <span
+                          type="button"
+                          aria-pressed={
+                            active
+                          }
+                          onClick={() =>
+                            handleLanguage(
+                              item.code
+                            )
+                          }
                           className={`
-                            mt-0.5
-                            text-[10px]
+                            flex
+                            min-h-[54px]
+                            flex-col
+                            items-center
+                            justify-center
+
+                            rounded-xl
+
+                            transition-all
+                            duration-250
+
+                            active:scale-[0.97]
 
                             ${
                               active
-                                ? "text-white/70"
-                                : "text-white/30"
+                                ? `
+                                  bg-blue-500
+                                  text-white
+
+                                  shadow-[0_8px_25px_rgba(59,130,246,0.28)]
+                                `
+                                : `
+                                  text-white/50
+                                  hover:bg-white/[0.05]
+                                  hover:text-white
+                                `
                             }
                           `}
                         >
-                          {item.name}
-                        </span>
-                      </button>
-                    );
-                  })}
+                          <span className="text-sm font-semibold">
+                            {
+                              item.label
+                            }
+                          </span>
+
+                          <span
+                            className={`
+                              mt-0.5
+                              text-[10px]
+
+                              ${
+                                active
+                                  ? "text-white/70"
+                                  : "text-white/30"
+                              }
+                            `}
+                          >
+                            {item.name}
+                          </span>
+                        </button>
+                      );
+                    }
+                  )}
                 </div>
               </div>
 
@@ -492,7 +580,9 @@ export default function MobileMenu() {
                 <button
                   type="button"
                   onClick={() =>
-                    handleNavigation("#calculator")
+                    handleNavigation(
+                      "#calculator"
+                    )
                   }
                   className="
                     group
@@ -524,7 +614,9 @@ export default function MobileMenu() {
                     active:bg-blue-400
                   "
                 >
-                  <span>{t.hero.button}</span>
+                  <span>
+                    {t.hero.button}
+                  </span>
 
                   <ArrowRight
                     size={19}

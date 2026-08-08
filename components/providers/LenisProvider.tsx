@@ -1,7 +1,14 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import {
+  type ReactNode,
+  useEffect,
+} from "react";
 import Lenis from "lenis";
+
+type WindowWithLenis = Window & {
+  lenis: Lenis;
+};
 
 export default function LenisProvider({
   children,
@@ -9,23 +16,57 @@ export default function LenisProvider({
   children: ReactNode;
 }) {
   useEffect(() => {
+    const reducedMotion =
+      window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+    if (reducedMotion) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
       touchMultiplier: 2,
     });
 
-    (window as any).lenis = lenis;
+    const browserWindow =
+      window as unknown as WindowWithLenis;
 
-    function raf(time: number) {
+    browserWindow.lenis = lenis;
+
+    let animationFrameId = 0;
+
+    function updateLenis(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+
+      animationFrameId =
+        requestAnimationFrame(
+          updateLenis
+        );
     }
 
-    requestAnimationFrame(raf);
+    animationFrameId =
+      requestAnimationFrame(
+        updateLenis
+      );
 
     return () => {
+      cancelAnimationFrame(
+        animationFrameId
+      );
+
       lenis.destroy();
+
+      if (
+        browserWindow.lenis === lenis
+      ) {
+        Reflect.deleteProperty(
+          browserWindow,
+          "lenis"
+        );
+      }
     };
   }, []);
 

@@ -1,50 +1,69 @@
 export const packages = [
   {
     id: "launch",
+
     name: "Launch",
-    price: 399,
+
+    price: 500,
+
     featured: false,
+
     description:
-      "A perfect start for businesses that need a professional online presence.",
+      "A ready-to-launch landing page for businesses that need a professional online presence.",
+
     features: [
       "Landing Page",
+      "1 Language",
       "Basic SEO",
       "Contact Form",
-      "Google Analytics Setup",
+      "Google Analytics 4 Setup",
+      "Responsive Design",
     ],
   },
-
 
   {
     id: "business",
+
     name: "Business",
-    price: 799,
+
+    price: 1000,
+
     featured: true,
+
     description:
-      "Our most popular package for companies focused on generating leads and growing online.",
+      "A complete multi-page website for companies focused on visibility and customer acquisition.",
+
     features: [
-      "Multi-page Website",
+      "Multi-page Website — up to 5 pages",
+      "2 Languages",
       "Advanced SEO",
       "Google Business Profile",
-      "Conversion Tracking",
-      "1 Month Support",
+      "GA4 and Conversion Tracking",
+      "1 Month Technical Support",
     ],
   },
-
 
   {
     id: "growth",
+
     name: "Growth",
-    price: 1199,
+
+    price: 2000,
+
     featured: false,
+
     description:
-      "Complete digital solution for businesses that need more advanced features.",
+      "A complete online store with administration, marketing setup and multilingual support.",
+
     features: [
-      "Online Store",
-      "CMS",
+      "Online Store — up to 20 products",
       "Up to 3 Languages",
+      "Advanced SEO",
+      "Admin Panel (CMS)",
+      "Payment Integration",
+      "GA4 E-commerce Tracking",
       "Google Ads Setup",
-      "2 Months Support",
+      "2 Months Technical Support",
     ],
   },
-];
+] as const;

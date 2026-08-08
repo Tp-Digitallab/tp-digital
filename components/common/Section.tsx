@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 interface SectionProps {
@@ -17,6 +18,7 @@ export default function Section({
       id={id}
       className={cn(
         "relative bg-[#050505] py-28 md:py-40",
+        className
       )}
     >
       {children}

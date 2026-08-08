@@ -1,6 +1,14 @@
 "use client";
 
-import { ReactNode } from "react";
+import type {
+  MouseEvent,
+  ReactNode,
+} from "react";
+import type Lenis from "lenis";
+
+type WindowWithLenis = Window & {
+  lenis?: Lenis;
+};
 
 interface ScrollLinkProps {
   href: string;
@@ -8,67 +16,60 @@ interface ScrollLinkProps {
   className?: string;
 }
 
-
 export default function ScrollLink({
   href,
   children,
   className,
 }: ScrollLinkProps) {
+  function handleClick(
+    event: MouseEvent<HTMLAnchorElement>
+  ) {
+    if (!href.startsWith("#")) {
+      return;
+    }
 
+    const element =
+  document.querySelector<HTMLElement>(
+    href
+  );
 
-function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (!element) {
+      return;
+    }
 
+    event.preventDefault();
 
-  // обычные страницы Next.js
-  if (!href.startsWith("#")) {
-    return;
+    const browserWindow =
+  window as unknown as WindowWithLenis;
+
+    if (browserWindow.lenis) {
+      browserWindow.lenis.scrollTo(
+        element,
+        {
+          duration: 1.2,
+        }
+      );
+    } else {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    window.history.replaceState(
+      null,
+      "",
+      href
+    );
   }
 
-
-  e.preventDefault();
-
-
-  const element = document.querySelector(href);
-
-
-  if (!element) return;
-
-
-  if ((window as any).lenis) {
-
-    (window as any).lenis.scrollTo(element, {
-      duration: 1.2,
-    });
-
-  } else {
-
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
-
-  }
-
-}
-
-
-
-return (
-
-<a
-
-href={href}
-
-onClick={handleClick}
-
-className={className}
-
->
-
-{children}
-
-</a>
-
-);
-
-
+  return (
+    <a
+      href={href}
+      onClick={handleClick}
+      className={className}
+    >
+      {children}
+    </a>
+  );
 }

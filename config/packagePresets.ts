@@ -1,76 +1,110 @@
-export const packagePresets = {
+type PackageId =
+  | "launch"
+  | "business"
+  | "growth";
+
+interface PackagePreset {
+  price: number;
+
+  website: string;
+
+  languages: string[];
+
+  marketing: string[];
+
+  branding: string[];
+
+  features: string[];
+
+  support: string[];
+}
+
+export const packagePresets:
+  Record<
+    PackageId,
+    PackagePreset
+  > = {
   launch: {
-  price: 399,
+    price: 500,
 
-  website: "landing",
+    website: "landing",
 
-  languages: [
-    "de",
-  ],
+    languages: [
+      "de",
+    ],
 
-  marketing: [
-    "basic-seo",
-  ],
+    marketing: [
+      "basic-seo",
+    ],
 
-  branding: [],
+    branding: [],
 
-  features: [],
+    features: [],
 
-  support: [],
-},
+    /*
+     * Техническая поддержка является
+     * временным бонусом пакета,
+     * а не постоянной бесплатной услугой.
+     */
+    support: [],
+  },
 
   business: {
-  price: 799,
+    price: 1000,
 
-  website: "business",
+    website: "business",
 
-  languages: [
-    "de",
-    "en",
-    "other",
-  ],
+    languages: [
+      "de",
+      "en",
+    ],
 
-  marketing: [
-    "advanced-seo",
-    "ads",
-    "business-profile",
-  ],
+    marketing: [
+      "advanced-seo",
+      "business-profile",
+    ],
 
-  branding: [],
+    branding: [],
 
-  features: [],
+    features: [],
 
-  support: [
-    "website",
-  ],
-},
+    /*
+     * Первый месяц технической поддержки
+     * включён после запуска.
+     * Дальнейшее обслуживание:
+     * €150 в месяц.
+     */
+    support: [],
+  },
 
+  growth: {
+    price: 2000,
 
- growth: {
-  price: 1199,
+    website: "shop",
 
-  website: "shop",
+    languages: [
+      "de",
+      "en",
+      "other",
+    ],
 
-  languages: [
-    "de",
-    "en",
-    "other",
-  ],
+    marketing: [
+      "advanced-seo",
+      "ads",
+    ],
 
-  marketing: [
-    "advanced-seo",
-    "ads",
-  ],
+    branding: [],
 
-  branding: [],
+    features: [
+      "cms",
+    ],
 
-  features: [
-    "cms",
-  ],
-
-  support: [
-    "website",
-    "ads",
-  ],
-},
+    /*
+     * Два месяца технической поддержки
+     * включены после запуска.
+     * Google Ads Management:
+     * €200 в месяц отдельно.
+     */
+    support: [],
+  },
 };
