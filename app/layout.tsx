@@ -108,32 +108,42 @@ export const metadata: Metadata = {
 
 
   openGraph: {
+  title:
+    "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
 
-    title:
-      "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
+  description:
+    "Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
 
+  url:
+    "https://tpdigitallab.de",
 
-    description:
-      "Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
+  siteName:
+    "TP Digital Lab",
 
+  locale:
+    "de_DE",
 
-    url:
-      "https://tpdigitallab.de",
+  type:
+    "website",
 
+  images: [
+    {
+      url: "/opengraph-image.png",
+      width: 1731,
+      height: 909,
+      alt: "TP Digital Lab – Webdesign, SEO und digitale Lösungen",
+    },
+  ],
+},
 
-    siteName:
-      "TP Digital Lab",
-
-
-    locale:
-      "de_DE",
-
-
-    type:
-      "website",
-
-  },
-
+twitter: {
+  card: "summary_large_image",
+  title:
+    "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen",
+  description:
+    "Moderne Websites, SEO-Optimierung, Online-Shops und digitale Lösungen für Unternehmen in Deutschland.",
+  images: ["/opengraph-image.png"],
+},
 };
 
 
