@@ -288,15 +288,11 @@ to-blue-400/40
           </ScrollLink>
 
 
-          <div className="flex items-center gap-3">
-
-  <div className="scale-90">
-    <LanguageSwitcher />
-  </div>
-
+          <div className="flex items-center">
   <MobileMenu />
-
 </div>
+
+
 
         </div>
 

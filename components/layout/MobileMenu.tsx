@@ -1,175 +1,557 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import Button from "@/components/ui/Button";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { ArrowRight, Menu, X } from "lucide-react";
+
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
 
-
+type Language = "de" | "en" | "ru";
 
 export default function MobileMenu() {
-
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const t = translations[language];
 
   const [open, setOpen] = useState(false);
 
-
   const navigation = [
-    { name: t.nav.services, href: "#solutions" },
-    { name: t.nav.packages, href: "#packages" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.calculator, href: "#calculator" },
-    { name: t.nav.process, href: "#process" },
-    { name: t.nav.contact, href: "#contact" },
+    {
+      name: t.nav.services,
+      href: "#solutions",
+    },
+    {
+      name: t.nav.projects,
+      href: "#projects",
+    },
+    {
+      name: t.nav.packages,
+      href: "#packages",
+    },
+    {
+      name: t.nav.process,
+      href: "#process",
+    },
+    {
+      name: t.nav.calculator,
+      href: "#calculator",
+    },
+    {
+      name: t.nav.contact,
+      href: "#contact",
+    },
   ];
+
+  const languages: {
+    code: Language;
+    label: string;
+    name: string;
+  }[] = [
+    {
+      code: "de",
+      label: "DE",
+      name: "Deutsch",
+    },
+    {
+      code: "en",
+      label: "EN",
+      name: "English",
+    },
+    {
+      code: "ru",
+      label: "RU",
+      name: "Русский",
+    },
+  ];
+
+  useEffect(() => {
+    const lenis = (window as any).lenis;
+
+    if (open) {
+      document.body.style.overflow = "hidden";
+
+      if (lenis?.stop) {
+        lenis.stop();
+      }
+    } else {
+      document.body.style.overflow = "";
+
+      if (lenis?.start) {
+        lenis.start();
+      }
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+
+      if (lenis?.start) {
+        lenis.start();
+      }
+    };
+  }, [open]);
+
+  function handleNavigation(href: string) {
+    const element = document.querySelector(href);
+
+    setOpen(false);
+
+    setTimeout(() => {
+      if (!element) return;
+
+      const lenis = (window as any).lenis;
+
+      if (lenis?.scrollTo) {
+        lenis.scrollTo(element, {
+          duration: 1.1,
+        });
+
+        return;
+      }
+
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 80);
+  }
+
+  function handleLanguage(code: Language) {
+    setLanguage(code);
+  }
 
   return (
     <>
+      {/* MENU BUTTON */}
+
       <button
+        type="button"
         onClick={() => setOpen(true)}
+        aria-label="Open menu"
         className="
-          md:hidden
           flex
+          h-12
+          w-12
           items-center
           justify-center
-          h-11
-          w-11
-          rounded-full
+
+          rounded-2xl
+
           border
-          border-white/15
-          bg-white/[0.08]
-          backdrop-blur-xl
+          border-white/10
+
+          bg-[#111827]
+
+          text-white
+
+          shadow-[0_8px_30px_rgba(0,0,0,0.28)]
+
+          transition-all
+          duration-300
+
+          active:scale-95
+
+          md:hidden
         "
       >
-        <Menu size={20} color="white" />
+        <Menu size={21} strokeWidth={1.8} />
       </button>
 
-      {open && (
-  <div
-    className="
-      fixed
-      inset-0
-      z-[100]
-      overflow-hidden
-      bg-[#050505]/95
-      backdrop-blur-3xl
-    "
-  >
-    <div
-  className="
-    absolute
-    left-1/2
-    top-1/3
-    -translate-x-1/2
-    h-[500px]
-    w-[500px]
-    rounded-full
-    bg-blue-500/10
-    blur-[160px]
-  "
-/>
-          <div className="
-  relative
-  flex
-  items-center
-  justify-between
-  px-8
-  pt-8
-">
+      {/* MOBILE MENU */}
 
-            <div>
-              <div className="
-  text-4xl
-  font-semibold
-  tracking-tight
-  text-white
-">
-  TP
-</div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            transition={{
+              duration: 0.25,
+            }}
+            className="
+              fixed
+              inset-0
+              z-[200]
 
-              <div className="text-xs uppercase tracking-[0.35em] text-white/40">
-                Digital Lab
-              </div>
-            </div>
+              min-h-[100dvh]
 
-            <button
-              onClick={() => setOpen(false)}
+              overflow-y-auto
+
+              bg-[#05070b]
+            "
+          >
+            {/* BACKGROUND GLOW */}
+
+            <div
+              className="
+                pointer-events-none
+                absolute
+                left-1/2
+                top-[-100px]
+
+                h-[420px]
+                w-[420px]
+
+                -translate-x-1/2
+
+                rounded-full
+
+                bg-blue-500/10
+
+                blur-[130px]
+              "
+            />
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: 15,
+              }}
+              transition={{
+                duration: 0.35,
+                ease: "easeOut",
+              }}
+              className="
+                relative
+                z-10
+
+                mx-auto
+
+                flex
+                min-h-[100dvh]
+                w-full
+                max-w-lg
+                flex-col
+
+                px-5
+
+                pb-[max(24px,env(safe-area-inset-bottom))]
+                pt-[max(24px,env(safe-area-inset-top))]
+              "
             >
-              <X size={28} color="white" />
-            </button>
+              {/* HEADER */}
 
-          </div>
+              <div className="flex items-center justify-between">
+                <button
+                  type="button"
+                  onClick={() => handleNavigation("#top")}
+                  className="text-left"
+                >
+                  <div className="text-2xl font-semibold text-white">
+                    TP
+                  </div>
 
-          <nav
-  className="
-    relative
-    mt-16
-    flex
-    flex-col
-    gap-5
-    px-8
-  "
->
+                  <div
+                    className="
+                      mt-1
+                      text-[10px]
+                      uppercase
+                      tracking-[0.35em]
+                      text-white/40
+                    "
+                  >
+                    Digital Lab
+                  </div>
+                </button>
 
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                onClick={() => setOpen(false)}
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  aria-label="Close menu"
+                  className="
+                    flex
+                    h-12
+                    w-12
+                    items-center
+                    justify-center
 
-                className="
-  flex
-  items-center
-  justify-between
+                    rounded-2xl
 
-  rounded-full
+                    border
+                    border-white/10
 
-  border
-  border-white/15
+                    bg-white/[0.05]
 
-  bg-white/[0.08]
+                    text-white
 
-  px-7
-  py-5
+                    transition-all
 
-  text-2xl
-  font-medium
+                    active:scale-95
+                  "
+                >
+                  <X size={22} strokeWidth={1.8} />
+                </button>
+              </div>
 
-  !text-white
+              {/* LABEL */}
 
-  backdrop-blur-xl
+              <div className="mt-10">
+                <p
+                  className="
+                    text-[11px]
+                    font-medium
+                    uppercase
+                    tracking-[0.28em]
+                    text-white/30
+                  "
+                >
+                  Navigation
+                </p>
+              </div>
 
-  shadow-[0_8px_30px_rgba(0,0,0,0.25)]
+              {/* NAVIGATION */}
 
-  transition-all
-  duration-300
+              <nav className="mt-4 space-y-2.5">
+                {navigation.map((item, index) => (
+                  <motion.button
+                    key={item.href}
+                    type="button"
+                    initial={{
+                      opacity: 0,
+                      x: -12,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      x: 0,
+                    }}
+                    transition={{
+                      delay: 0.04 * index,
+                      duration: 0.3,
+                    }}
+                    onClick={() =>
+                      handleNavigation(item.href)
+                    }
+                    className="
+                      group
 
-  hover:border-white/30
+                      flex
+                      w-full
+                      items-center
+                      justify-between
 
-  hover:bg-white/[0.12]
+                      rounded-2xl
 
-  hover:shadow-[0_0_30px_rgba(59,130,246,0.18)]
+                      border
+                      border-white/[0.08]
 
-  hover:scale-[1.02]
-"
-              >
-                {item.name}
-              </a>
-            ))}
+                      bg-white/[0.035]
 
-          </nav>
-          <div className="mt-14 flex flex-col items-center gap-8">
+                      px-5
+                      py-[17px]
 
-  <LanguageSwitcher />
+                      text-left
 
-</div>
+                      transition-all
+                      duration-200
 
-        </div>
-      )}
+                      active:scale-[0.985]
+                      active:bg-white/[0.07]
+                    "
+                  >
+                    <span
+                      className="
+                        text-[17px]
+                        font-medium
+                        tracking-[-0.01em]
+                        text-white/90
+                      "
+                    >
+                      {item.name}
+                    </span>
+
+                    <ArrowRight
+                      size={18}
+                      strokeWidth={1.7}
+                      className="
+                        text-white/30
+                        transition-transform
+                        duration-200
+
+                        group-active:translate-x-1
+                      "
+                    />
+                  </motion.button>
+                ))}
+              </nav>
+
+              {/* LANGUAGE */}
+
+              <div className="mt-9">
+                <p
+                  className="
+                    text-[11px]
+                    font-medium
+                    uppercase
+                    tracking-[0.28em]
+                    text-white/30
+                  "
+                >
+                  Sprache / Language
+                </p>
+
+                <div
+                  className="
+                    mt-4
+
+                    grid
+                    grid-cols-3
+                    gap-2
+
+                    rounded-2xl
+
+                    border
+                    border-white/[0.08]
+
+                    bg-white/[0.025]
+
+                    p-1.5
+                  "
+                >
+                  {languages.map((item) => {
+                    const active =
+                      language === item.code;
+
+                    return (
+                      <button
+                        key={item.code}
+                        type="button"
+                        onClick={() =>
+                          handleLanguage(item.code)
+                        }
+                        className={`
+                          flex
+                          min-h-[54px]
+                          flex-col
+                          items-center
+                          justify-center
+
+                          rounded-xl
+
+                          transition-all
+                          duration-250
+
+                          active:scale-[0.97]
+
+                          ${
+                            active
+                              ? `
+                                bg-blue-500
+                                text-white
+
+                                shadow-[0_8px_25px_rgba(59,130,246,0.28)]
+                              `
+                              : `
+                                text-white/50
+                                hover:bg-white/[0.05]
+                                hover:text-white
+                              `
+                          }
+                        `}
+                      >
+                        <span className="text-sm font-semibold">
+                          {item.label}
+                        </span>
+
+                        <span
+                          className={`
+                            mt-0.5
+                            text-[10px]
+
+                            ${
+                              active
+                                ? "text-white/70"
+                                : "text-white/30"
+                            }
+                          `}
+                        >
+                          {item.name}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* CTA */}
+
+              <div className="mt-auto pt-8">
+                <button
+                  type="button"
+                  onClick={() =>
+                    handleNavigation("#calculator")
+                  }
+                  className="
+                    group
+
+                    flex
+                    w-full
+                    items-center
+                    justify-between
+
+                    rounded-2xl
+
+                    border
+                    border-blue-400/20
+
+                    bg-blue-500
+
+                    px-5
+                    py-[18px]
+
+                    font-semibold
+                    text-white
+
+                    shadow-[0_12px_35px_rgba(59,130,246,0.28)]
+
+                    transition-all
+                    duration-300
+
+                    active:scale-[0.985]
+                    active:bg-blue-400
+                  "
+                >
+                  <span>{t.hero.button}</span>
+
+                  <ArrowRight
+                    size={19}
+                    className="
+                      transition-transform
+                      duration-300
+
+                      group-active:translate-x-1
+                    "
+                  />
+                </button>
+
+                <p
+                  className="
+                    mt-4
+                    text-center
+                    text-[11px]
+                    text-white/25
+                  "
+                >
+                  TP Digital Lab
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
