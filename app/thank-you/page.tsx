@@ -13,24 +13,33 @@ export default function ThankYouPage() {
   const t = translations[language];
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+  if (typeof window === "undefined") return;
 
-    const submitted = sessionStorage.getItem(
-      "lead_successfully_submitted"
-    );
+  const submitted = sessionStorage.getItem(
+    "lead_successfully_submitted"
+  );
 
-    if (submitted !== "true") return;
+  if (submitted !== "true") return;
 
-    const gtag = (window as any).gtag;
+  const gtag = (window as any).gtag;
 
-    if (typeof gtag === "function") {
-      gtag("event", "conversion", {
-        send_to: "AW-18377056618/zbQMCJTp9t0cEOrC7rpE",
-      });
-    }
+  if (typeof gtag === "function") {
+    // Google Ads conversion
+    gtag("event", "conversion", {
+      send_to: "AW-18377056618/zbQMCJTp9t0cEOrC7rpE",
+    });
 
-    sessionStorage.removeItem("lead_successfully_submitted");
-  }, []);
+    // Google Analytics 4
+    gtag("event", "generate_lead", {
+      send_to: "G-H0KVG8N991",
+      currency: "EUR",
+    });
+  }
+
+  sessionStorage.removeItem(
+    "lead_successfully_submitted"
+  );
+}, []);
 
   return (
     <main
