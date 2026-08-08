@@ -5,15 +5,77 @@ export async function POST(req: Request) {
     const body = await req.json();
 
     const {
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-      budget,
-      timeline,
-      discount,
-    } = body;
+  firstName,
+  lastName,
+  email,
+  phone,
+  message,
+  budget,
+  timeline,
+  discount,
+  turnstileToken,
+} = body;
+
+if (!turnstileToken) {
+  return NextResponse.json(
+    {
+      success: false,
+      error: "Security verification required",
+    },
+    {
+      status: 400,
+    }
+  );
+}
+
+const secretKey = process.env.TURNSTILE_SECRET_KEY;
+
+if (!secretKey) {
+  console.error("TURNSTILE_SECRET_KEY is missing");
+
+  return NextResponse.json(
+    {
+      success: false,
+      error: "Server configuration error",
+    },
+    {
+      status: 500,
+    }
+  );
+}
+
+const verificationResponse = await fetch(
+  "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      secret: secretKey,
+      response: turnstileToken,
+    }),
+  }
+);
+
+const verification = await verificationResponse.json();
+
+if (!verification.success) {
+  console.warn(
+    "Turnstile verification failed:",
+    verification["error-codes"]
+  );
+
+  return NextResponse.json(
+    {
+      success: false,
+      error: "Security verification failed",
+    },
+    {
+      status: 403,
+    }
+  );
+}
 
     const text = `
 🚀 <b>New Website Request</b>

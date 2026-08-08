@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 
 import {
@@ -28,10 +29,13 @@ const t = translations[language];
   const [timeline, setTimeline] = useState("");
   const [discount, setDiscount] = useState(false);
   const [firstName, setFirstName] = useState("");
-const [lastName, setLastName] = useState(""); 
-const [email, setEmail] = useState("");
-const [phone, setPhone] = useState("");
-const [message, setMessage] = useState("");
+  const [lastName, setLastName] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+
+const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+
 const router = useRouter();
 
 const [errors, setErrors] = useState({
@@ -77,16 +81,22 @@ function validate() {
 async function handleSubmit() {
   if (!validate()) return;
 
+  if (!turnstileToken) {
+  alert("Sicherheitsprüfung läuft noch. Bitte versuchen Sie es erneut.");
+  return;
+}
+
   const formData = {
-    firstName,
-    lastName,
-    email,
-    phone,
-    message,
-    budget,
-    timeline,
-    discount,
-  };
+  firstName,
+  lastName,
+  email,
+  phone,
+  message,
+  budget,
+  timeline,
+  discount,
+  turnstileToken,
+};
 
   try {
     const response = await fetch("/api/contact", {
@@ -106,7 +116,7 @@ sessionStorage.setItem(
   "true"
 );
 
-sessionStorage.setItem("lead_successfully_submitted", "true");
+
 router.push("/thank-you");
   } catch (error) {
     console.error(error);
@@ -571,8 +581,28 @@ md:grid-cols-2
 />
 </div>
 
-      </div>
-     <div className="
+</div>
+
+<div className="mt-8 flex justify-center">
+  <Turnstile
+    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+    onSuccess={(token) => {
+      setTurnstileToken(token);
+    }}
+    onExpire={() => {
+      setTurnstileToken(null);
+    }}
+    onError={() => {
+      setTurnstileToken(null);
+    }}
+    options={{
+      theme: "dark",
+      size: "flexible",
+    }}
+  />
+</div>
+
+<div className="
 mt-10
 
 w-[88%]
