@@ -14,6 +14,8 @@ import IntroAnimation from "@/components/effects/IntroAnimation";
 
 import Script from "next/script";
 
+import CookieConsent from "@/components/privacy/CookieConsent";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -157,61 +159,80 @@ export default function RootLayout({
     >
 
       <body
+  className="
+    relative
+    overflow-x-hidden
+  "
+>
+  {/* Google Consent Mode v2 */}
+  <Script
+    id="google-consent-default"
+    strategy="beforeInteractive"
+  >
+    {`
+      window.dataLayer = window.dataLayer || [];
 
-        className="
-        relative
-        overflow-x-hidden
-        "
+      function gtag() {
+        dataLayer.push(arguments);
+      }
 
-      >
+      window.gtag = gtag;
 
-        {/* Google Ads / Google Tag */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18377056618"
-          strategy="afterInteractive"
-        />
+      var savedConsent = localStorage.getItem('tp_cookie_consent');
 
-        <Script
-          id="google-ads-tag"
-          strategy="afterInteractive"
-        >
-          {`
-            window.dataLayer = window.dataLayer || [];
+      if (savedConsent === 'granted') {
 
-            function gtag() {
-              dataLayer.push(arguments);
-            }
+        gtag('consent', 'default', {
+          analytics_storage: 'granted',
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted'
+        });
 
-            gtag('js', new Date());
+      } else {
 
-            gtag('config', 'AW-18377056618');
-            gtag('config', 'G-H0KVG8N991');
-          `}
-        </Script>
+        gtag('consent', 'default', {
+          analytics_storage: 'denied',
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          wait_for_update: 500
+        });
 
+      }
+    `}
+  </Script>
 
-        <JsonLd />
+  {/* Google Tag */}
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=AW-18377056618"
+    strategy="afterInteractive"
+  />
 
+  <Script
+    id="google-tag"
+    strategy="afterInteractive"
+  >
+    {`
+      gtag('js', new Date());
 
-        <IntroAnimation />
+      gtag('config', 'AW-18377056618');
+      gtag('config', 'G-H0KVG8N991');
+    `}
+  </Script>
 
+  <JsonLd />
 
-        <LanguageProvider>
+  <IntroAnimation />
 
+  <LanguageProvider>
+    <LenisProvider>
+      {children}
+    </LenisProvider>
 
-          <LenisProvider>
-
-
-            {children}
-
-
-          </LenisProvider>
-
-
-        </LanguageProvider>
-
-
-      </body>
+    <CookieConsent />
+  </LanguageProvider>
+</body>
 
 
     </html>
