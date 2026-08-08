@@ -4,37 +4,40 @@ import Link from "next/link";
 
 import Container from "@/components/common/Container";
 import BackgroundGrid from "@/components/effects/BackgroundGrid";
+import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 import FaqSchema from "@/components/seo/FaqSchema";
 import Button from "@/components/ui/Button";
 
-import { useLanguage } from "@/components/providers/LanguageProvider";
-
-type Language = "de" | "en" | "ru";
-
-type FAQ = {
-  question: string;
-  answer: string;
-};
+import {
+  servicePageTranslations,
+  type ServicePageKey,
+} from "@/config/servicePageTranslations";
 
 type Props = {
-  title: string;
-  accent: string;
-  description: string;
-  services: string[];
-  seoTitle: string;
-  seoDescription: string;
-  faq: FAQ[];
+  serviceKey: ServicePageKey;
 };
 
 const pageTranslations = {
   de: {
     startProject: "Projekt starten",
+    servicesTitle: "Unsere Leistungen",
+    whyTitle: "Warum TP Digital Lab?",
+    faqTitle: "Häufige Fragen",
 
-    servicesTitle:
-      "Unsere Leistungen",
+    moreSolutions:
+      "Weitere digitale Lösungen:",
 
-    whyTitle:
-      "Warum TP Digital Lab?",
+    webdesign: "Webdesign",
+
+    onlineShop:
+      "Online-Shop Entwicklung",
+
+    digitalSolutions:
+      "Digitale Lösungen",
+
+    seo: "SEO & Sichtbarkeit",
 
     reasons: [
       {
@@ -59,24 +62,6 @@ const pageTranslations = {
           "Von der ersten Idee über Design bis zur fertigen digitalen Lösung begleiten wir Unternehmen bei jedem Schritt.",
       },
     ],
-
-    faqTitle:
-      "Häufige Fragen",
-
-    moreSolutions:
-      "Weitere digitale Lösungen:",
-
-    onlineShop:
-      "Online-Shop Entwicklung",
-
-    digitalSolutions:
-      "Digitale Lösungen",
-
-    seo:
-      "SEO & Sichtbarkeit",
-
-    webdesign:
-      "Webdesign",
   },
 
   en: {
@@ -88,6 +73,22 @@ const pageTranslations = {
 
     whyTitle:
       "Why TP Digital Lab?",
+
+    faqTitle:
+      "Frequently Asked Questions",
+
+    moreSolutions:
+      "More digital solutions:",
+
+    webdesign: "Web Design",
+
+    onlineShop:
+      "Online Store Development",
+
+    digitalSolutions:
+      "Digital Solutions",
+
+    seo: "SEO & Visibility",
 
     reasons: [
       {
@@ -112,24 +113,6 @@ const pageTranslations = {
           "From the first idea and design to the finished digital solution, we support your business at every step.",
       },
     ],
-
-    faqTitle:
-      "Frequently Asked Questions",
-
-    moreSolutions:
-      "More digital solutions:",
-
-    onlineShop:
-      "Online Store Development",
-
-    digitalSolutions:
-      "Digital Solutions",
-
-    seo:
-      "SEO & Visibility",
-
-    webdesign:
-      "Web Design",
   },
 
   ru: {
@@ -141,6 +124,23 @@ const pageTranslations = {
 
     whyTitle:
       "Почему TP Digital Lab?",
+
+    faqTitle:
+      "Частые вопросы",
+
+    moreSolutions:
+      "Другие цифровые решения:",
+
+    webdesign:
+      "Разработка сайтов",
+
+    onlineShop:
+      "Разработка интернет-магазина",
+
+    digitalSolutions:
+      "Цифровые решения",
+
+    seo: "SEO и видимость",
 
     reasons: [
       {
@@ -165,65 +165,32 @@ const pageTranslations = {
           "Мы сопровождаем бизнес на каждом этапе — от первой идеи и дизайна до готового цифрового решения.",
       },
     ],
-
-    faqTitle:
-      "Частые вопросы",
-
-    moreSolutions:
-      "Другие цифровые решения:",
-
-    onlineShop:
-      "Разработка интернет-магазина",
-
-    digitalSolutions:
-      "Цифровые решения",
-
-    seo:
-      "SEO и видимость",
-
-    webdesign:
-      "Веб-дизайн",
   },
-} satisfies Record<
-  Language,
-  {
-    startProject: string;
-    servicesTitle: string;
-    whyTitle: string;
-
-    reasons: Array<{
-      title: string;
-      description: string;
-    }>;
-
-    faqTitle: string;
-    moreSolutions: string;
-    onlineShop: string;
-    digitalSolutions: string;
-    seo: string;
-    webdesign: string;
-  }
->;
+} as const;
 
 export default function ServicePage({
-  title,
-  accent,
-  description,
-  services,
-  seoTitle,
-  seoDescription,
-  faq,
+  serviceKey,
 }: Props) {
   const { language } = useLanguage();
 
   const t =
     pageTranslations[language];
 
+  const content =
+    servicePageTranslations[
+      serviceKey
+    ][language];
+
   return (
     <>
-      <FaqSchema items={faq} />
+      <FaqSchema
+        items={content.faq}
+      />
+
+      <Header />
 
       <main
+        id="top"
         className="
           relative
           min-h-screen
@@ -248,52 +215,50 @@ export default function ServicePage({
         />
 
         <Container>
-          {/* Hero */}
+          {/* HERO */}
 
           <section
             className="
               relative
               z-10
               flex
-              min-h-screen
-              items-center
-              py-28
+              min-h-[100svh]
+              items-start
+              pb-20
+              pt-36
+              md:min-h-screen
+              md:items-center
+              md:py-28
             "
           >
-            <div className="max-w-4xl md:-translate-y-10">
-              <p
-                className="
-                  mb-8
-                  text-xs
-                  uppercase
-                  tracking-[0.45em]
-                  text-white/40
-                "
-              >
+            <div className="w-full max-w-4xl md:-translate-y-10">
+              <p className="mb-8 text-xs uppercase tracking-[0.45em] text-white/40">
                 TP DIGITAL LAB
               </p>
 
               <h1
                 className="
-                  text-[48px]
+                  break-words
+                  text-[40px]
                   font-medium
-                  leading-[0.95]
+                  leading-[0.98]
                   tracking-[-0.05em]
+                  [overflow-wrap:anywhere]
                   sm:text-[56px]
                   md:text-[90px]
                 "
               >
-                {title}
+                {content.title}
 
                 <br />
 
                 <span className="text-white/70">
-                  {accent}
+                  {content.accent}
                 </span>
               </h1>
 
               <p className="mt-10 max-w-2xl text-lg leading-8 text-white/55">
-                {description}
+                {content.description}
               </p>
 
               <div className="mt-12">
@@ -304,19 +269,21 @@ export default function ServicePage({
             </div>
           </section>
 
-          {/* SEO text */}
+          {/* SEO TEXT */}
 
           <section className="relative z-10 py-24">
             <h2 className="mb-6 text-3xl font-medium">
-              {seoTitle}
+              {content.seoTitle}
             </h2>
 
             <p className="max-w-3xl leading-8 text-white/60">
-              {seoDescription}
+              {
+                content.seoDescription
+              }
             </p>
           </section>
 
-          {/* Services */}
+          {/* SERVICES */}
 
           <section className="relative z-10 pb-24">
             <h2 className="mb-10 text-3xl font-medium">
@@ -324,7 +291,7 @@ export default function ServicePage({
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">
-              {services.map(
+              {content.services.map(
                 (item) => (
                   <div
                     key={item}
@@ -351,7 +318,7 @@ export default function ServicePage({
             </div>
           </section>
 
-          {/* Why TP Digital Lab */}
+          {/* WHY TP DIGITAL LAB */}
 
           <section className="relative z-10 py-24">
             <h2 className="mb-10 text-3xl font-medium">
@@ -399,31 +366,35 @@ export default function ServicePage({
             </h2>
 
             <div className="max-w-3xl space-y-8">
-              {faq.map((item) => (
-                <article
-                  key={item.question}
-                  className="
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    p-6
-                    sm:p-8
-                  "
-                >
-                  <h3 className="text-xl">
-                    {item.question}
-                  </h3>
+              {content.faq.map(
+                (item) => (
+                  <article
+                    key={
+                      item.question
+                    }
+                    className="
+                      rounded-2xl
+                      border
+                      border-white/10
+                      bg-white/[0.03]
+                      p-6
+                      sm:p-8
+                    "
+                  >
+                    <h3 className="text-xl">
+                      {item.question}
+                    </h3>
 
-                  <p className="mt-3 leading-8 text-white/60">
-                    {item.answer}
-                  </p>
-                </article>
-              ))}
+                    <p className="mt-3 leading-8 text-white/60">
+                      {item.answer}
+                    </p>
+                  </article>
+                )
+              )}
             </div>
           </section>
 
-          {/* Internal links */}
+          {/* INTERNAL LINKS */}
 
           <section className="relative z-10 pb-20">
             <p className="text-white/40">
@@ -451,22 +422,24 @@ export default function ServicePage({
               </Link>
 
               <Link
-                href="/digitale-loesungen"
-                className="text-white/70 transition hover:text-white"
-              >
-                {t.digitalSolutions}
-              </Link>
-
-              <Link
                 href="/seo"
                 className="text-white/70 transition hover:text-white"
               >
                 {t.seo}
               </Link>
+
+              <Link
+                href="/digitale-loesungen"
+                className="text-white/70 transition hover:text-white"
+              >
+                {t.digitalSolutions}
+              </Link>
             </nav>
           </section>
         </Container>
       </main>
+
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Container from "@/components/common/Container";
 import Button from "@/components/ui/Button";
 import MobileMenu from "@/components/layout/MobileMenu";
@@ -19,40 +20,57 @@ export default function Header() {
 
   const t = translations[language];
 
+    const pathname = usePathname();
 
-  const navigation = [
+  function homeHref(
+    hash: string
+  ) {
+    return pathname === "/"
+      ? hash
+      : `/${hash}`;
+  }
 
-{
-name: t.nav.services,
-href: "#solutions",
-},
 
-{
-name: t.nav.projects,
-href: "#projects",
-},
+    const navigation = [
+    {
+      name: t.nav.services,
+      href: homeHref(
+        "#solutions"
+      ),
+    },
+    {
+      name: t.nav.projects,
+      href: homeHref(
+        "#projects"
+      ),
+    },
+    {
+      name: t.nav.packages,
+      href: homeHref(
+        "#packages"
+      ),
+    },
+    {
+      name: t.nav.process,
+      href: homeHref(
+        "#process"
+      ),
+    },
+    {
+      name: t.nav.calculator,
+      href: homeHref(
+        "#calculator"
+      ),
+    },
+    {
+      name: t.nav.contact,
+      href: homeHref(
+        "#contact"
+      ),
+    },
+  ];
 
-{
-name: t.nav.packages,
-href: "#packages",
-},
 
-{
-name: t.nav.process,
-href: "#process",
-},
-
-{
-name: t.nav.calculator,
-href: "#calculator",
-},
-
-{
-name: t.nav.contact,
-href: "#contact",
-},
-
-];
 
 
   const [scrolled, setScrolled] = useState(false);
@@ -108,7 +126,7 @@ href: "#contact",
           {/* Logo */}
 
           <ScrollLink
-            href="#top"
+            href={homeHref("#top")}
             className="leading-none group"
           >
             <motion.div
@@ -258,7 +276,11 @@ to-blue-400/40
 
             <LanguageSwitcher />
 
-            <Button href="#calculator">
+           <Button
+  href={homeHref(
+    "#calculator"
+  )}
+>
               {t.hero.button}
             </Button>
 
@@ -273,7 +295,7 @@ to-blue-400/40
         <div className="flex items-center justify-between mt-8 md:hidden">
 
           <ScrollLink
-            href="#top"
+            href={homeHref("#top")}
             className="leading-none"
           >
 

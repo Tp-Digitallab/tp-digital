@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import type Lenis from "lenis";
+import { usePathname } from "next/navigation";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
@@ -32,33 +33,55 @@ export default function MobileMenu() {
 
   const t = translations[language];
 
+    const pathname = usePathname();
+
+  function homeHref(
+    hash: string
+  ) {
+    return pathname === "/"
+      ? hash
+      : `/${hash}`;
+  }
+
   const [open, setOpen] =
     useState(false);
 
-  const navigation = [
+    const navigation = [
     {
       name: t.nav.services,
-      href: "#solutions",
+      href: homeHref(
+        "#solutions"
+      ),
     },
     {
       name: t.nav.projects,
-      href: "#projects",
+      href: homeHref(
+        "#projects"
+      ),
     },
     {
       name: t.nav.packages,
-      href: "#packages",
+      href: homeHref(
+        "#packages"
+      ),
     },
     {
       name: t.nav.process,
-      href: "#process",
+      href: homeHref(
+        "#process"
+      ),
     },
     {
       name: t.nav.calculator,
-      href: "#calculator",
+      href: homeHref(
+        "#calculator"
+      ),
     },
     {
       name: t.nav.contact,
-      href: "#contact",
+      href: homeHref(
+        "#contact"
+      ),
     },
   ];
 
@@ -139,7 +162,13 @@ export default function MobileMenu() {
 ) {
   setOpen(false);
 
+  if (!href.startsWith("#")) {
+    window.location.assign(href);
+    return;
+  }
+
   window.setTimeout(() => {
+
     const element =
       document.querySelector<HTMLElement>(
         href
@@ -322,7 +351,9 @@ export default function MobileMenu() {
                 <button
                   type="button"
                   onClick={() =>
-                    handleNavigation("#top")
+                   handleNavigation(
+  homeHref("#top")
+)
                   }
                   className="text-left"
                 >
@@ -590,8 +621,8 @@ export default function MobileMenu() {
                   type="button"
                   onClick={() =>
                     handleNavigation(
-                      "#calculator"
-                    )
+  homeHref("#calculator")
+)                   
                   }
                   className="
                     group
