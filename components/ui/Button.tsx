@@ -43,19 +43,26 @@ export default function Button({
     `,
 
     variant === "primary" &&
-      `
-        border-white/15
-        bg-white/[0.10]
-        text-white
-        backdrop-blur-xl
-        shadow-[0_0_30px_rgba(59,130,246,0.18)]
+  `
+    border-blue-400/25
+    bg-[#172033]
+    text-white
 
-        hover:border-blue-400/40
-        hover:bg-white/[0.15]
-        hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]
+    shadow-[0_8px_30px_rgba(59,130,246,0.16)]
 
-        active:scale-[0.98]
-      `,
+    sm:border-white/15
+    sm:bg-white/[0.10]
+    sm:backdrop-blur-xl
+    sm:shadow-[0_0_30px_rgba(59,130,246,0.18)]
+
+    hover:border-blue-400/40
+    hover:bg-[#1c2942]
+
+    sm:hover:bg-white/[0.15]
+    sm:hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]
+
+    active:scale-[0.98]
+  `,
 
     variant === "ghost" &&
       `

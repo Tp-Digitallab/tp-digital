@@ -45,7 +45,7 @@ export default function PackageCard({
         overflow-hidden
         rounded-[34px]
         border
-        backdrop-blur-2xl
+        sm:backdrop-blur-2xl
         transition-all
 
         ${
