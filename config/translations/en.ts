@@ -28,8 +28,10 @@ export const en = {
 
     title: "Everything you need to grow your business online.",
 
-    description:
+        description:
       "We don't just build websites. We help businesses attract customers, improve visibility and grow with modern digital solutions.",
+
+    button: "Learn more",
 
     items: [
       {

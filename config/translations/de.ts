@@ -41,10 +41,12 @@ projects:
   title:
   "Websites, SEO und digitale Lösungen für Unternehmen.",
 
-  description:
+    description:
     "Wir entwickeln nicht nur Websites. Wir bauen digitale Lösungen, die Unternehmen online sichtbar machen, neue Kunden gewinnen und langfristiges Wachstum ermöglichen.",
 
-    items: [
+  button: "Mehr erfahren",
+
+  items: [
       {
         title:
 "Professionelle Websites",
