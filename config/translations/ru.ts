@@ -343,6 +343,19 @@ contact: {
           description:
             "E-commerce решение для продажи товаров онлайн.",
         },
+        budgetOptions: {
+  under500: "До 500 €",
+  from500To1000: "500 € – 1 000 €",
+  from1000To2500: "1 000 € – 2 500 €",
+  unsure: "Пока не уверен",
+},
+
+timelineOptions: {
+  asap: "Как можно скорее",
+  withinMonth: "В течение месяца",
+  oneToThreeMonths: "1–3 месяца",
+  flexible: "Гибкие сроки",
+},
       },
     },
 

@@ -15,9 +15,10 @@ import {
 
 interface SummaryProps {
   website: {
-    title: string;
-    price: number;
-  };
+  id: string;
+  title: string;
+  price: number;
+};
 
   total: number;
   monthlyTotal: number;

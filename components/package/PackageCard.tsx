@@ -57,7 +57,7 @@ export default function PackageCard({
     >
       <div className="absolute inset-0 bg-gradient-to-b from-white/[0.04] to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
 
-      <div className="relative z-10 p-10">
+      <div className="relative z-10 p-6 sm:p-8 lg:p-10">
 
         {badge && (
           <div className="mb-8 inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">
@@ -111,10 +111,15 @@ export default function PackageCard({
 
         <div className="mt-12">
 
+
           <Button
   href="#calculator"
+  className="w-full sm:w-auto"
   onClick={() => {
-    localStorage.setItem("selectedPackage", id);
+    localStorage.setItem(
+      "selectedPackage",
+      id
+    );
 
     window.dispatchEvent(
       new Event("packageSelected")

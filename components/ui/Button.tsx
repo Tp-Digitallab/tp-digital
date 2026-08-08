@@ -1,10 +1,14 @@
 "use client";
 
+import {
+  ButtonHTMLAttributes,
+  MouseEvent,
+} from "react";
 
-import { ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "ghost";
   children: React.ReactNode;
   href?: string;
@@ -15,58 +19,111 @@ export default function Button({
   variant = "primary",
   className,
   href,
+  onClick,
+  type = "button",
   ...props
 }: ButtonProps) {
   const classes = cn(
-    "appearance-none group inline-flex items-center justify-center gap-3 rounded-full border px-6 py-3 text-sm font-medium transition-all duration-300",
+    `
+      appearance-none
+      group
+      inline-flex
+      items-center
+      justify-center
+      gap-3
+      rounded-full
+      border
+      px-6
+      py-3
+      text-sm
+      font-medium
+      transition-all
+      duration-300
+      touch-manipulation
+    `,
 
     variant === "primary" &&
-      variant === "primary" &&
-"appearance-none border border-white/15 bg-white/[0.10] text-white backdrop-blur-xl shadow-[0_0_30px_rgba(59,130,246,0.18)] hover:border-blue-400/40 hover:bg-white/[0.15] hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]",
+      `
+        border-white/15
+        bg-white/[0.10]
+        text-white
+        backdrop-blur-xl
+        shadow-[0_0_30px_rgba(59,130,246,0.18)]
+
+        hover:border-blue-400/40
+        hover:bg-white/[0.15]
+        hover:shadow-[0_0_45px_rgba(59,130,246,0.35)]
+
+        active:scale-[0.98]
+      `,
 
     variant === "ghost" &&
-      "border-transparent text-white hover:bg-white/5",
+      `
+        border-transparent
+        text-white
+        hover:bg-white/5
+        active:scale-[0.98]
+      `,
 
     className
   );
 
-  if (href) {
- return (
-  <button
-    type="button"
-    className={classes}
-      onClick={(event) => {
-  props.onClick?.(event);
+  function handleClick(
+    event: MouseEvent<HTMLButtonElement>
+  ) {
+    onClick?.(event);
 
-  if (href.startsWith("#")) {
-    const element = document.querySelector(href);
+    if (event.defaultPrevented || !href) {
+      return;
+    }
 
-    if (element && (window as any).lenis) {
-      (window as any).lenis.scrollTo(element, {
-        duration: 1.2,
-      });
+    if (href.startsWith("#")) {
+      const element =
+        document.querySelector(href);
+
+      if (!element) {
+        return;
+      }
+
+      const lenis = (window as any).lenis;
+
+      if (
+        lenis &&
+        typeof lenis.scrollTo === "function"
+      ) {
+        lenis.scrollTo(element, {
+          duration: 1.2,
+        });
+      } else {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
 
       return;
     }
+
+    window.location.assign(href);
   }
 
-  window.location.href = href;
-}}
+  return (
+    <button
+      type={type}
+      className={classes}
+      onClick={handleClick}
+      {...props}
     >
       <span>{children}</span>
 
-      <span className="transition-transform duration-300 group-hover:translate-x-1">
-        →
-      </span>
-    </button>
-  );
-}
-
-  return (
-    <button className={classes} {...props}>
-      <span>{children}</span>
-
-      <span className="transition-transform duration-300 group-hover:translate-x-1">
+      <span
+        className="
+          shrink-0
+          transition-transform
+          duration-300
+          group-hover:translate-x-1
+        "
+      >
         →
       </span>
     </button>

@@ -108,11 +108,17 @@ useEffect(() => {
  let price = packagePrice ?? website.price;
 
   
-  selectedLanguages.forEach((language) => {
-  if (!includedLanguages.includes(language)) {
-    price += 50;
-  }
-});
+  const includedLanguageCount =
+  packagePrice === null
+    ? 1
+    : Math.max(1, includedLanguages.length);
+
+const paidLanguages = Math.max(
+  0,
+  selectedLanguages.length - includedLanguageCount
+);
+
+price += paidLanguages * 50;
 
  selectedMarketing.forEach((id) => {
   const item = marketing.find((x) => x.id === id);
