@@ -13,9 +13,7 @@ export default function ProjectCard({
         rounded-[28px]
         border
         border-white/10
-       bg-gradient-to-b
-from-white/[0.06]
-to-white/[0.02]
+        bg-white/[0.03]
         p-8
       "
     >
@@ -39,7 +37,6 @@ to-white/[0.02]
               rounded-full
               border
               border-white/10
-              backdrop-blur-xl
               px-4
               py-2
               text-sm
