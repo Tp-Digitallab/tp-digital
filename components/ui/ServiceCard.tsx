@@ -33,7 +33,10 @@ href,
 
 return (
 
-<ScrollLink href={href}>
+<ScrollLink
+  href={href}
+  className="block"
+>
 
 
 <motion.div
@@ -70,7 +73,7 @@ min-h-[460px]
 
 backdrop-blur-2xl
 
-shadow-[0_0_0_rgba(59,130,blue,0)]
+shadow-[0_0_0_rgba(59,130,246,0)]
 
 transition-all
 duration-500
@@ -168,36 +171,32 @@ text-white/60
 
 
 <div
-className="
-mt-10
-inline-flex
-items-center
-gap-3
-
-rounded-full
-
-border
-border-white/10
-
-bg-white/[0.06]
-
-px-5
-py-3
-
-text-sm
-font-medium
-
-text-white/80
-
-backdrop-blur-xl
-
-transition-all
-duration-500
-
-group-hover:border-blue-400/40
-group-hover:bg-blue-500/10
-group-hover:text-white
-"
+  className="
+    mt-10
+    inline-flex
+    items-center
+    gap-3
+    rounded-full
+    border
+    border-blue-400/25
+    bg-[#172033]
+    px-5
+    py-3
+    text-sm
+    font-medium
+    text-white
+    shadow-[0_8px_30px_rgba(59,130,246,0.16)]
+    transition-all
+    duration-500
+    sm:border-white/10
+    sm:bg-white/[0.06]
+    sm:text-white/80
+    sm:backdrop-blur-xl
+    sm:shadow-none
+    group-hover:border-blue-400/40
+    group-hover:bg-blue-500/10
+    group-hover:text-white
+  "
 >
 
 <span>

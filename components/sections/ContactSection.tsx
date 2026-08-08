@@ -109,7 +109,7 @@ export default function ContactSection() {
 
                   <a
                     href="mailto:info@tpdigitallab.de"
-                    className="break-all text-zinc-400 transition hover:text-blue-400"
+                    className="break-all text-white/80 transition hover:text-blue-300"
                   >
                     info@tpdigitallab.de
                   </a>

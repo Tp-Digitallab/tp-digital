@@ -44,29 +44,47 @@ export default function FaqSection() {
         : "border-white/20 bg-white/[0.05] hover:border-white/35 hover:bg-white/[0.07] hover:shadow-[0_0_25px_rgba(255,255,255,0.08)]"
     }`}
             >
-              <button
-                onClick={() => setOpen(open === index ? null : index)}
-                className="flex w-full items-center justify-between px-6 py-5 text-left transition hover:bg-white/[0.03]"
+
+
+
+
+                            <button
+                type="button"
+                onClick={() =>
+                  setOpen(
+                    open === index
+                      ? null
+                      : index
+                  )
+                }
+                className="flex w-full items-center justify-between px-4 py-5 text-left transition hover:bg-white/[0.03] sm:px-6"
               >
-                
-               <div className="flex items-center gap-4">
-  <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-blue-400">
-    {String(index + 1).padStart(2, "0")}
-  </div>
+                <div className="flex min-w-0 flex-1 items-center gap-3 sm:gap-4">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-blue-400">
+                    {String(
+                      index + 1
+                    ).padStart(
+                      2,
+                      "0"
+                    )}
+                  </div>
 
-  <span className="text-lg font-semibold text-white">
-    {item.question}
-  </span>
-</div>
+                  <span className="min-w-0 break-words text-base font-semibold leading-6 text-white sm:text-lg">
+                    {item.question}
+                  </span>
+                </div>
 
-<div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5">
-  <ChevronDown
-    className={`h-5 w-5 text-white/80 transition-transform duration-300 ${
-      open === index ? "rotate-180" : ""
-    }`}
-  />
-</div>
+                <div className="ml-3 flex size-10 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/5">
+                  <ChevronDown
+                    className={`h-5 w-5 text-white/80 transition-transform duration-300 ${
+                      open === index
+                        ? "rotate-180"
+                        : ""
+                    }`}
+                  />
+                </div>
               </button>
+
 
               <AnimatePresence initial={false}>
                 {open === index && (
@@ -76,9 +94,9 @@ export default function FaqSection() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <div className="mx-6 border-t border-white/10" />
+                   <div className="mx-4 border-t border-white/10 sm:mx-6" />
 
-<p className="px-6 pt-5 pb-6 leading-8 text-zinc-200">
+<p className="px-4 pt-5 pb-6 leading-8 text-zinc-200 sm:px-6">
                       {item.answer}
                     </p>
                   </motion.div>

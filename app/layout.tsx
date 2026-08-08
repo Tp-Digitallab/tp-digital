@@ -4,6 +4,7 @@ import {
   Geist_Mono,
 } from "next/font/google";
 
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";

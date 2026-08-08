@@ -117,13 +117,15 @@ export default function DatenschutzerklaerungPage() {
     <main className="min-h-screen bg-[#050505] text-white">
       {/* Hero */}
 
-      <section className="relative overflow-hidden py-24 sm:py-28">
+
+            <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.12),transparent_60%)]"
         />
 
-        <div className="relative mx-auto w-[90%] max-w-6xl sm:w-full sm:px-6">
+        <div className="relative mx-auto w-full max-w-6xl">
+
           <Link
             href="/"
             className="
@@ -151,7 +153,8 @@ export default function DatenschutzerklaerungPage() {
             Zurück zur Startseite
           </Link>
 
-          <div className="flex items-start gap-4 sm:items-center">
+
+                    <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
             <div className="shrink-0 rounded-2xl border border-white/15 bg-white/5 p-4">
               <Shield
                 aria-hidden="true"
@@ -159,12 +162,12 @@ export default function DatenschutzerklaerungPage() {
               />
             </div>
 
-            <div className="max-w-5xl">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+            <div className="w-full min-w-0 max-w-5xl">
+              <h1 className="break-words text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
                 Datenschutzerklärung
               </h1>
 
-              <p className="mt-4 text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
+              <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-300 sm:text-lg sm:leading-8">
                 Informationen über die
                 Verarbeitung
                 personenbezogener Daten
@@ -178,6 +181,7 @@ export default function DatenschutzerklaerungPage() {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 

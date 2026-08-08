@@ -25,7 +25,7 @@ export default function ServicesSection() {
           absolute
           inset-0
 
-          bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,blue,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,blue,0.08),transparent_35%)]
+          bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.08),transparent_35%)]
         "
       />
 

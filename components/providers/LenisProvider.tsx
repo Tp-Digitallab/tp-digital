@@ -4,6 +4,7 @@ import {
   type ReactNode,
   useEffect,
 } from "react";
+
 import Lenis from "lenis";
 
 type WindowWithLenis = Window & {
@@ -16,15 +17,6 @@ export default function LenisProvider({
   children: ReactNode;
 }) {
   useEffect(() => {
-    const reducedMotion =
-      window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-      ).matches;
-
-    if (reducedMotion) {
-      return;
-    }
-
     const lenis = new Lenis({
       duration: 1.2,
       smoothWheel: true,
@@ -38,22 +30,24 @@ export default function LenisProvider({
 
     let animationFrameId = 0;
 
-    function updateLenis(time: number) {
+    function updateLenis(
+      time: number
+    ) {
       lenis.raf(time);
 
       animationFrameId =
-        requestAnimationFrame(
+        window.requestAnimationFrame(
           updateLenis
         );
     }
 
     animationFrameId =
-      requestAnimationFrame(
+      window.requestAnimationFrame(
         updateLenis
       );
 
     return () => {
-      cancelAnimationFrame(
+      window.cancelAnimationFrame(
         animationFrameId
       );
 

@@ -135,39 +135,47 @@ export default function MobileMenu() {
   }, [open]);
 
   function handleNavigation(
-    href: string
-  ) {
+  href: string
+) {
+  setOpen(false);
+
+  window.setTimeout(() => {
     const element =
-  document.querySelector<HTMLElement>(
-    href
-  );
-    setOpen(false);
+      document.querySelector<HTMLElement>(
+        href
+      );
 
-    window.setTimeout(() => {
-      if (!element) {
-        return;
-      }
+    if (!element) {
+      return;
+    }
 
-      const browserWindow =
-       window as unknown as WindowWithLenis;
+    const browserWindow =
+      window as unknown as WindowWithLenis;
 
-      if (browserWindow.lenis) {
-        browserWindow.lenis.scrollTo(
-          element,
-          {
-            duration: 1.1,
-          }
-        );
+    if (browserWindow.lenis) {
+      browserWindow.lenis.start();
 
-        return;
-      }
-
+      browserWindow.lenis.scrollTo(
+        element,
+        {
+          duration: 1.1,
+          force: true,
+        }
+      );
+    } else {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
-    }, 80);
-  }
+    }
+
+    window.history.replaceState(
+      null,
+      "",
+      href
+    );
+  }, 80);
+}
 
   function handleLanguage(
     code: Language
@@ -222,10 +230,11 @@ export default function MobileMenu() {
       <AnimatePresence>
         {open && (
           <motion.div
-            id="mobile-menu"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Mobile navigation"
+  id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile navigation"
+  data-lenis-prevent
             initial={{
               opacity: 0,
             }}

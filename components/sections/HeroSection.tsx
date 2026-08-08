@@ -20,7 +20,7 @@ export default function HeroSection() {
   return (
     <section
       id="top"
-      className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
+      className="relative min-h-[100svh] overflow-hidden bg-[#050505] text-white"
     >
 
       <BackgroundGrid />
@@ -33,18 +33,18 @@ export default function HeroSection() {
 
       <Container>
 
-        <div className="relative z-10 flex min-h-screen items-center">
+        <div className="relative z-10 flex min-h-[100svh] items-start pb-16 pt-32 md:min-h-screen md:items-center md:py-0">
 
 
-          <div className="max-w-4xl min-h-[430px] -translate-y-10 select-none">
+          <div className="w-full max-w-4xl select-none md:min-h-[430px] md:-translate-y-10">
 
 
-            <p className="mb-8 text-xs uppercase tracking-[0.45em] text-white/35">
+            <p className="mb-8 hidden text-xs uppercase tracking-[0.45em] text-white/35 md:block">
               {t.hero.badge}
             </p>
 
 
-            <h1 className="text-[58px] leading-[0.95] font-medium tracking-[-0.05em] md:text-[96px]">
+            <h1 className="text-[44px] leading-[0.98] font-medium tracking-[-0.045em] sm:text-[58px] md:text-[96px]">
 
 
               {t.hero.title}
