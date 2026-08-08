@@ -106,6 +106,7 @@ sessionStorage.setItem(
   "true"
 );
 
+sessionStorage.setItem("lead_successfully_submitted", "true");
 router.push("/thank-you");
   } catch (error) {
     console.error(error);
