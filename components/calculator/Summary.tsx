@@ -7,6 +7,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { support as allSupport } from "@/config/support";
 import { features as allFeatures } from "@/config/features";
 
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { translations } from "@/config/translations";
+
 import {
   languages as allLanguages,
   marketing as allMarketing,
@@ -40,7 +43,13 @@ export default function Summary({
   features,
   support,
 }: SummaryProps) {
-    const [displayPrice, setDisplayPrice] = useState(total);
+  const { language } = useLanguage();
+
+  const t = translations[language];
+
+  const summaryT = t.calculatorSteps.summary;
+
+  const [displayPrice, setDisplayPrice] = useState(total);
 
 const [priceChange, setPriceChange] = useState(0);
 const [showChange, setShowChange] = useState(false);
@@ -110,7 +119,7 @@ sm:w-full
   "
 >
       <p className="text-xs uppercase tracking-[0.3em] text-white/40">
-        Your Project
+        {summaryT.title}
       </p>
 
       <div className="mt-6 sm:mt-8 space-y-6 sm:space-y-8">
@@ -120,8 +129,8 @@ sm:w-full
         <div>
 
           <p className="text-sm text-white/40">
-            Website
-          </p>
+  {summaryT.website}
+</p>
 
           <p className="mt-2 text-xl font-semibold text-white">
             {website.title}
@@ -134,7 +143,7 @@ sm:w-full
         <div>
 
           <p className="text-sm text-white/40">
-            Languages
+           {summaryT.languages}
           </p>
 
           <div className="mt-3 space-y-2">
@@ -167,7 +176,7 @@ sm:w-full
         <div>
 
           <p className="text-sm text-white/40">
-            Marketing
+            {summaryT.marketing}
           </p>
 
           <div className="mt-3 space-y-2">
@@ -200,7 +209,7 @@ sm:w-full
         <div>
 
           <p className="text-sm text-white/40">
-            Branding
+            {summaryT.branding}
           </p>
 
           <div className="mt-3 space-y-2">
@@ -236,7 +245,7 @@ sm:w-full
 <div>
 
   <p className="text-sm text-white/40">
-    Website Features
+    {summaryT.features}
   </p>
 
   <div className="mt-3 space-y-2">
@@ -268,7 +277,7 @@ sm:w-full
 <div>
 
   <p className="text-sm text-white/40">
-    Monthly Services
+   {summaryT.monthlyServices}
   </p>
 
   <div className="mt-3 space-y-2">
@@ -358,7 +367,7 @@ sm:w-full
   </AnimatePresence>
 
   <p className="text-white/45">
-    Estimated Price
+    {summaryT.estimatedPrice}
   </p>
 
   <motion.h2
@@ -405,7 +414,7 @@ sm:w-full
 >
 
   <p className="text-sm text-white/45">
-    Monthly Services
+    {summaryT.monthlyServices}
   </p>
 
   <p className="mt-2 text-3xl font-semibold text-white">
@@ -413,7 +422,7 @@ sm:w-full
 
     <span className="text-lg text-white/45">
       {" "}
-      / month
+      {summaryT.perMonth}
     </span>
 
   </p>

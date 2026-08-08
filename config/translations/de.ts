@@ -390,19 +390,6 @@ contact: {
           description:
             "Ein moderner Online-Shop, mit dem Ihr Unternehmen Produkte digital verkaufen und neue Kunden erreichen kann.",
         },
-        budgetOptions: {
-  under500: "Unter 500 €",
-  from500To1000: "500 € – 1.000 €",
-  from1000To2500: "1.000 € – 2.500 €",
-  unsure: "Noch nicht sicher",
-},
-
-timelineOptions: {
-  asap: "So schnell wie möglich",
-  withinMonth: "Innerhalb eines Monats",
-  oneToThreeMonths: "1–3 Monate",
-  flexible: "Flexibel",
-},
       },
     },
 
@@ -496,6 +483,20 @@ contact: {
 
   timeline: "Projektzeitraum",
 
+  budgetOptions: {
+  under500: "Unter 500 €",
+  from500To1000: "500 € – 1.000 €",
+  from1000To2500: "1.000 € – 2.500 €",
+  unsure: "Noch nicht sicher",
+},
+
+timelineOptions: {
+  asap: "So schnell wie möglich",
+  withinMonth: "Innerhalb eines Monats",
+  oneToThreeMonths: "1–3 Monate",
+  flexible: "Flexibel",
+},
+
   message: "Beschreiben Sie Ihr Projekt...",
 
   flexible: "Flexibles Budget",
@@ -525,9 +526,22 @@ impressum: "Impressum",
 
 privacy: "Datenschutz",
 },
+
+summary: {
+  title: "Ihr Projekt",
+  website: "Website",
+  languages: "Sprachen",
+  marketing: "Marketing",
+  branding: "Branding",
+  features: "Website-Funktionen",
+  monthlyServices: "Monatliche Leistungen",
+  estimatedPrice: "Geschätzter Preis",
+  perMonth: "/ Monat",
+},
+
   },
 
-  packageCards: {
+packageCards: {
     launch: {
       name:"Online Start",
 

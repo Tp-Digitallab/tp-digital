@@ -115,7 +115,7 @@ export default function ContactSection() {
             </div>
 
             <a
-              href="mailto:info@tp-digital.de"
+              href="mailto:info@tpdigitallab.de"
               className="mt-10 inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-500"
             >
               Start Your Project

@@ -25,6 +25,44 @@ export default function ContactStep({
 
 const t = translations[language];
 
+const budgetOptions = [
+  {
+    value: "under-500",
+    label: t.calculatorSteps.contact.budgetOptions.under500,
+  },
+  {
+    value: "500-1000",
+    label: t.calculatorSteps.contact.budgetOptions.from500To1000,
+  },
+  {
+    value: "1000-2500",
+    label: t.calculatorSteps.contact.budgetOptions.from1000To2500,
+  },
+  {
+    value: "unsure",
+    label: t.calculatorSteps.contact.budgetOptions.unsure,
+  },
+];
+
+const timelineOptions = [
+  {
+    value: "asap",
+    label: t.calculatorSteps.contact.timelineOptions.asap,
+  },
+  {
+    value: "within-month",
+    label: t.calculatorSteps.contact.timelineOptions.withinMonth,
+  },
+  {
+    value: "1-3-months",
+    label: t.calculatorSteps.contact.timelineOptions.oneToThreeMonths,
+  },
+  {
+    value: "flexible",
+    label: t.calculatorSteps.contact.timelineOptions.flexible,
+  },
+];
+
 
   const [budget, setBudget] = useState("");
   const [timeline, setTimeline] = useState("");
@@ -93,8 +131,13 @@ async function handleSubmit() {
   email,
   phone,
   message,
-  budget,
-  timeline,
+
+  budget:
+    budgetOptions.find((item) => item.value === budget)?.label || "",
+
+  timeline:
+    timelineOptions.find((item) => item.value === timeline)?.label || "",
+
   discount,
   turnstileToken,
 };
@@ -281,21 +324,16 @@ md:grid-cols-2
 
   <div className="grid gap-3 sm:grid-cols-2">
 
-    {[
-      "Under €500",
-      "€500 – €1,000",
-      "€1,000 – €2,500",
-      "I'm not sure yet",
-    ].map((item) => {
+    {budgetOptions.map((item) => {
 
-      const active = budget === item;
+      const active = budget === item.value;
 
       return (
 
         <button
-          key={item}
+          key={item.value}
           type="button"
-          onClick={() => setBudget(item)}
+          onClick={() => setBudget(item.value)}
           className={`
             rounded-[22px]
 
@@ -330,7 +368,7 @@ md:grid-cols-2
           <div className="flex items-center justify-between">
 
             <span className={active ? "text-white" : "text-white/65"}>
-              {item}
+              {item.label}
             </span>
 
             <div
@@ -380,21 +418,16 @@ md:grid-cols-2
 
   <div className="grid gap-4 sm:grid-cols-2">
 
-    {[
-      "As soon as possible",
-      "Within 1 month",
-      "1–3 months",
-      "Flexible",
-    ].map((item) => {
+    {timelineOptions.map((item) => {
 
-      const active = timeline === item;
+      const active = timeline === item.value;
 
       return (
 
         <button
-          key={item}
+          key={item.value}
           type="button"
-          onClick={() => setTimeline(item)}
+          onClick={() => setTimeline(item.value)}
           className={`
             rounded-[22px]
             border
@@ -423,7 +456,7 @@ md:grid-cols-2
           <div className="flex items-center justify-between">
 
             <span className={active ? "text-white" : "text-white/65"}>
-              {item}
+              {item.label}
             </span>
 
             <div

@@ -431,6 +431,21 @@ contact: {
 
   timeline: "Project Timeline",
 
+  budgetOptions: {
+  under500: "Under €500",
+  from500To1000: "€500 – €1,000",
+  from1000To2500: "€1,000 – €2,500",
+  unsure: "I'm not sure yet",
+},
+
+timelineOptions: {
+  asap: "As soon as possible",
+  withinMonth: "Within 1 month",
+  oneToThreeMonths: "1–3 months",
+  flexible: "Flexible",
+},
+
+
   message: "Tell us about your project...",
 
   flexible: "Flexible Budget",
@@ -460,9 +475,22 @@ impressum: "Impressum",
 
 privacy: "Privacy Policy",
 },
+
+summary: {
+  title: "Your Project",
+  website: "Website",
+  languages: "Languages",
+  marketing: "Marketing",
+  branding: "Branding",
+  features: "Website Features",
+  monthlyServices: "Monthly Services",
+  estimatedPrice: "Estimated Price",
+  perMonth: "/ month",
+},
+
   },
 
-  packageCards: {
+packageCards: {
     launch: {
       name: "Launch",
 

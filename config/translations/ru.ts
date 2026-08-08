@@ -343,19 +343,6 @@ contact: {
           description:
             "E-commerce решение для продажи товаров онлайн.",
         },
-        budgetOptions: {
-  under500: "До 500 €",
-  from500To1000: "500 € – 1 000 €",
-  from1000To2500: "1 000 € – 2 500 €",
-  unsure: "Пока не уверен",
-},
-
-timelineOptions: {
-  asap: "Как можно скорее",
-  withinMonth: "В течение месяца",
-  oneToThreeMonths: "1–3 месяца",
-  flexible: "Гибкие сроки",
-},
       },
     },
 
@@ -449,6 +436,20 @@ contact: {
 
   timeline: "Сроки проекта",
 
+  budgetOptions: {
+  under500: "До 500 €",
+  from500To1000: "500 € – 1 000 €",
+  from1000To2500: "1 000 € – 2 500 €",
+  unsure: "Пока не уверен",
+},
+
+timelineOptions: {
+  asap: "Как можно скорее",
+  withinMonth: "В течение месяца",
+  oneToThreeMonths: "1–3 месяца",
+  flexible: "Гибкие сроки",
+},
+
   message: "Расскажите о вашем проекте...",
 
   flexible: "Гибкий бюджет",
@@ -478,9 +479,22 @@ impressum: "Impressum",
 
 privacy: "Privacy Policy",
 },
+
+summary: {
+  title: "Ваш проект",
+  website: "Сайт",
+  languages: "Языки",
+  marketing: "Маркетинг",
+  branding: "Брендинг",
+  features: "Функции сайта",
+  monthlyServices: "Ежемесячные услуги",
+  estimatedPrice: "Расчётная стоимость",
+  perMonth: "/ месяц",
+},
+
   },
 
-  packageCards: {
+packageCards: {
     launch: {
       name: "Старт",
 
