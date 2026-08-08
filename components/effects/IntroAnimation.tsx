@@ -14,7 +14,7 @@ export default function IntroAnimation() {
 
     const timer = setTimeout(() => {
       setShow(false);
-    }, 10000);
+    }, 7000);
 
 
     return () => clearTimeout(timer);
