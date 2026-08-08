@@ -9,189 +9,196 @@ import WebsiteStep from "./steps/WebsiteStep";
 import LanguageStep from "./steps/LanguageStep";
 import MarketingStep from "./steps/MarketingStep";
 import BrandingStep from "./steps/BrandingStep";
-import SupportStep from "./steps/SupportStep";
-import { support } from "@/config/support";
-import ContactStep from "./steps/ContactStep";
 import FeaturesStep from "./steps/FeaturesStep";
+import SupportStep from "./steps/SupportStep";
+import ContactStep from "./steps/ContactStep";
+
+import { websiteTypes, marketing, branding } from "@/config/calculator";
 import { features } from "@/config/features";
+import { support } from "@/config/support";
 import { packagePresets } from "@/config/packagePresets";
 
-
-import {
-  websiteTypes,
-  marketing,
-  branding,
-} from "@/config/calculator";
+type PackageId = keyof typeof packagePresets;
 
 export default function Calculator() {
   const [step, setStep] = useState(1);
+
+  const [selectedPackageId, setSelectedPackageId] =
+    useState<PackageId | null>(null);
+
   const [packagePrice, setPackagePrice] = useState<number | null>(null);
-  const [includedMarketing, setIncludedMarketing] = useState<string[]>([]);
-const [includedFeatures, setIncludedFeatures] = useState<string[]>([]);
-const [includedSupport, setIncludedSupport] = useState<string[]>([]);
 
   const [includedLanguages, setIncludedLanguages] = useState<string[]>([]);
-  
+  const [includedMarketing, setIncludedMarketing] = useState<string[]>([]);
+  const [includedFeatures, setIncludedFeatures] = useState<string[]>([]);
+  const [includedSupport, setIncludedSupport] = useState<string[]>([]);
+
   const [website, setWebsite] = useState(websiteTypes[0]);
 
-  const [selectedLanguages, setSelectedLanguages] = useState<string[]>(["de"]);
+  const [selectedLanguages, setSelectedLanguages] = useState<string[]>([
+    "de",
+  ]);
 
   const [selectedMarketing, setSelectedMarketing] = useState<string[]>([]);
-
   const [selectedBranding, setSelectedBranding] = useState<string[]>([]);
-
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
-
   const [selectedSupport, setSelectedSupport] = useState<string[]>([]);
-  const applyPackage = () => {
 
-  const selectedPackage = localStorage.getItem("selectedPackage");
+  function applyPackage() {
+    const storedPackage = localStorage.getItem("selectedPackage");
 
-  console.log("PACKAGE FROM STORAGE:", selectedPackage);
+    if (!storedPackage) {
+      return;
+    }
 
-  if (!selectedPackage) return;
+    if (!(storedPackage in packagePresets)) {
+      return;
+    }
 
-  const preset =
-    packagePresets[selectedPackage as keyof typeof packagePresets];
+    const packageId = storedPackage as PackageId;
+    const preset = packagePresets[packageId];
 
-  if (!preset) return;
+    setSelectedPackageId(packageId);
+    setPackagePrice(preset.price);
 
-  setPackagePrice(preset.price);
+    const selectedWebsite = websiteTypes.find(
+      (item) => item.id === preset.website
+    );
 
+    if (selectedWebsite) {
+      setWebsite(selectedWebsite);
+    }
 
-  const selectedWebsite = websiteTypes.find(
-    (item) => item.id === preset.website
-  );
+    setSelectedLanguages([...preset.languages]);
+    setIncludedLanguages([...preset.languages]);
 
-  if (selectedWebsite) {
-    setWebsite(selectedWebsite);
+    setSelectedMarketing([...preset.marketing]);
+    setIncludedMarketing([...preset.marketing]);
+
+    setSelectedBranding([...preset.branding]);
+
+    setSelectedFeatures([...preset.features]);
+    setIncludedFeatures([...preset.features]);
+
+    setSelectedSupport([...preset.support]);
+    setIncludedSupport([...preset.support]);
+
+    setStep(7);
   }
 
+  useEffect(() => {
+    const handlePackageSelected = () => {
+      applyPackage();
+    };
 
-setSelectedLanguages(preset.languages);
-setIncludedLanguages(preset.languages);
+    const storedPackage = localStorage.getItem("selectedPackage");
 
-setSelectedMarketing(preset.marketing);
-setIncludedMarketing(preset.marketing);
+    if (storedPackage) {
+      queueMicrotask(handlePackageSelected);
+    }
 
-  console.log("MARKETING FROM PRESET:", preset.marketing);
-
-  setSelectedBranding(preset.branding);
-
-setSelectedFeatures(preset.features);
-setIncludedFeatures(preset.features);
-
-setSelectedSupport(preset.support);
-setIncludedSupport(preset.support);
-
-  setStep(7);
-
-};
-useEffect(() => {
-  applyPackage();
-
-  window.addEventListener(
-    "packageSelected",
-    applyPackage
-  );
-
-  return () => {
-    window.removeEventListener(
+    window.addEventListener(
       "packageSelected",
-      applyPackage
+      handlePackageSelected
     );
-  };
 
-}, []);
+    return () => {
+      window.removeEventListener(
+        "packageSelected",
+        handlePackageSelected
+      );
+    };
+  }, []);
 
   const total = useMemo(() => {
- let price = packagePrice ?? website.price;
+    let price = packagePrice ?? website.price;
 
-  
-  const includedLanguageCount =
-  packagePrice === null
-    ? 1
-    : Math.max(1, includedLanguages.length);
+    const includedLanguageCount =
+      packagePrice === null
+        ? 1
+        : Math.max(1, includedLanguages.length);
 
-const paidLanguages = Math.max(
-  0,
-  selectedLanguages.length - includedLanguageCount
-);
+    const paidLanguages = Math.max(
+      0,
+      selectedLanguages.length - includedLanguageCount
+    );
 
-price += paidLanguages * 50;
+    price += paidLanguages * 50;
 
- selectedMarketing.forEach((id) => {
-  const item = marketing.find((x) => x.id === id);
+    selectedMarketing.forEach((id) => {
+      const item = marketing.find(
+        (marketingItem) => marketingItem.id === id
+      );
 
-  if (item && !includedMarketing.includes(id)) {
-    price += item.price;
-  }
-});
+      if (item && !includedMarketing.includes(id)) {
+        price += item.price;
+      }
+    });
 
- selectedBranding.forEach((id) => {
-  const item = branding.find((x) => x.id === id);
+    selectedBranding.forEach((id) => {
+      const item = branding.find(
+        (brandingItem) => brandingItem.id === id
+      );
 
-  if (item) {
-    price += item.price;
-  }
-});
+      if (item) {
+        price += item.price;
+      }
+    });
 
- selectedFeatures.forEach((id) => {
-  const item = features.find((x) => id === x.id);
+    selectedFeatures.forEach((id) => {
+      const item = features.find(
+        (featureItem) => featureItem.id === id
+      );
 
-  if (item && !includedFeatures.includes(id)) {
-    price += item.price;
-  }
-});
+      if (item && !includedFeatures.includes(id)) {
+        price += item.price;
+      }
+    });
 
-  return price;
-}, [
-  website,
-  packagePrice,
-  selectedLanguages,
-  includedLanguages,
-  selectedMarketing,
-  includedMarketing,
-  selectedBranding,
-  selectedFeatures,
-  includedFeatures,
-]);
+    return price;
+  }, [
+    website,
+    packagePrice,
+    selectedLanguages,
+    includedLanguages,
+    selectedMarketing,
+    includedMarketing,
+    selectedBranding,
+    selectedFeatures,
+    includedFeatures,
+  ]);
 
-const monthlyTotal = useMemo(() => {
-  let price = 0;
+  const monthlyTotal = useMemo(() => {
+    let price = 0;
 
-  selectedSupport.forEach((id) => {
-    const item = support.find((x) => x.id === id);
+    selectedSupport.forEach((id) => {
+      const item = support.find(
+        (supportItem) => supportItem.id === id
+      );
 
-    if (item && !includedSupport.includes(id)) {
-  price += item.price;
-} 
-  });
+      if (item && !includedSupport.includes(id)) {
+        price += item.price;
+      }
+    });
 
-  return price;
-}, [
-  selectedSupport,
-  includedSupport,
-]);
-
-
+    return price;
+  }, [selectedSupport, includedSupport]);
 
   return (
     <div
- className="
- mt-16
- grid
- w-full
- max-w-full
- overflow-hidden
- gap-10
- lg:grid-cols-[1.35fr_420px]
- "
->
-      {/* LEFT */}
+      className="
+        mt-16
+        grid
+        w-full
+        max-w-full
+        gap-10
+        overflow-hidden
+        lg:grid-cols-[1.35fr_420px]
+      "
+    >
+      {/* LEFT SIDE */}
 
       <div className="min-h-0">
-
         <StepIndicator step={step} />
 
         {step === 1 && (
@@ -221,54 +228,62 @@ const monthlyTotal = useMemo(() => {
         )}
 
         {step === 4 && (
-  <BrandingStep
-    selected={selectedBranding}
-    setSelected={setSelectedBranding}
-    back={() => setStep(3)}
-    next={() => setStep(5)}
-  />
-)}
+          <BrandingStep
+            selected={selectedBranding}
+            setSelected={setSelectedBranding}
+            back={() => setStep(3)}
+            next={() => setStep(5)}
+          />
+        )}
 
-      {step === 5 && (
-  <FeaturesStep
-    selected={selectedFeatures}
-    setSelected={setSelectedFeatures}
-    back={() => setStep(4)}
-    next={() => setStep(6)}
-  />
-)}
+        {step === 5 && (
+          <FeaturesStep
+            selected={selectedFeatures}
+            setSelected={setSelectedFeatures}
+            back={() => setStep(4)}
+            next={() => setStep(6)}
+          />
+        )}
 
-{step === 6 && (
-  <SupportStep
-    selected={selectedSupport}
-    setSelected={setSelectedSupport}
-    back={() => setStep(5)}
-    next={() => setStep(7)}
-  />
-)}
+        {step === 6 && (
+          <SupportStep
+            selected={selectedSupport}
+            setSelected={setSelectedSupport}
+            back={() => setStep(5)}
+            next={() => setStep(7)}
+          />
+        )}
 
-{step === 7 && (
-  <ContactStep
-    back={() => setStep(6)}
-  />
-)}
-
-
+        {step === 7 && (
+          <ContactStep
+            back={() => setStep(6)}
+            quote={{
+              packageId: selectedPackageId,
+              websiteId: website.id,
+              languages: selectedLanguages,
+              marketing: selectedMarketing,
+              branding: selectedBranding,
+              features: selectedFeatures,
+              support: selectedSupport,
+              total,
+              monthlyTotal,
+            }}
+          />
+        )}
       </div>
 
-      {/* RIGHT */}
+      {/* RIGHT SIDE */}
 
- <Summary
-  website={website}
-  total={total}
-  monthlyTotal={monthlyTotal}
-  languages={selectedLanguages}
-  marketing={selectedMarketing}
-  branding={selectedBranding}
-  features={selectedFeatures}
-  support={selectedSupport}
-/>
-
+      <Summary
+        website={website}
+        total={total}
+        monthlyTotal={monthlyTotal}
+        languages={selectedLanguages}
+        marketing={selectedMarketing}
+        branding={selectedBranding}
+        features={selectedFeatures}
+        support={selectedSupport}
+      />
     </div>
   );
 }
