@@ -107,34 +107,37 @@ export default function MobileMenu() {
     },
   ];
 
-  useEffect(() => {
+    useEffect(() => {
+    if (!open) {
+      return;
+    }
+
     const browserWindow =
       window as unknown as WindowWithLenis;
 
-    const { lenis } = browserWindow;
+    const { lenis } =
+      browserWindow;
 
-    const previousOverflow =
-      document.body.style.overflow;
+    const body = document.body;
 
-    if (open) {
-      document.body.style.overflow =
-        "hidden";
+    const html =
+      document.documentElement;
 
-      lenis?.stop();
-    } else {
-      document.body.style.overflow =
-        previousOverflow;
+    const previousBodyOverflow =
+      body.style.overflow;
 
-      lenis?.start();
-    }
+    const previousHtmlOverflow =
+      html.style.overflow;
+
+    body.style.overflow = "hidden";
+    html.style.overflow = "hidden";
+
+    lenis?.stop();
 
     function handleKeyDown(
       event: KeyboardEvent
     ) {
-      if (
-        event.key === "Escape" &&
-        open
-      ) {
+      if (event.key === "Escape") {
         setOpen(false);
       }
     }
@@ -145,8 +148,11 @@ export default function MobileMenu() {
     );
 
     return () => {
-      document.body.style.overflow =
-        previousOverflow;
+      body.style.overflow =
+        previousBodyOverflow;
+
+      html.style.overflow =
+        previousHtmlOverflow;
 
       lenis?.start();
 
@@ -156,6 +162,7 @@ export default function MobileMenu() {
       );
     };
   }, [open]);
+
 
   function handleNavigation(
   href: string
