@@ -7,7 +7,7 @@ import ServicePage from "@/components/sections/ServicePage";
 export const metadata: Metadata = {
 
 title:
-"Digitale Lösungen für Unternehmen",
+"Digitale Lösungen für Unternehmen | Webentwicklung Deutschland | TP Digital Lab",
 
 
 description:

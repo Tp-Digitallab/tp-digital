@@ -7,7 +7,8 @@ import ServicePage from "@/components/sections/ServicePage";
 export const metadata: Metadata = {
 
 title:
-"Online-Shop erstellen lassen in Deutschland",
+"Online Shop erstellen Deutschland | E-Commerce Lösungen | TP Digital Lab",
+
 
 description:
 "Professionelle Online-Shop Entwicklung in Deutschland für Unternehmen. TP Digital Lab erstellt moderne E-Commerce Lösungen, die verkaufen und Kunden erreichen.",

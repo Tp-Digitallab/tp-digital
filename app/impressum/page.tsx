@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import {
@@ -9,66 +8,6 @@ import {
   Phone,
   Shield,
 } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "Impressum",
-
-  description:
-    "Impressum und Anbieterkennzeichnung von TP Digital Lab in München.",
-
-  alternates: {
-    canonical: "/impressum",
-  },
-
-  openGraph: {
-    title:
-      "Impressum | TP Digital Lab",
-
-    description:
-      "Impressum und Anbieterkennzeichnung von TP Digital Lab in München.",
-
-    url:
-      "https://tpdigitallab.de/impressum",
-
-    siteName:
-      "TP Digital Lab",
-
-    locale:
-      "de_DE",
-
-    type:
-      "website",
-
-    images: [
-      {
-        url:
-          "/opengraph-image.png",
-
-        width: 1731,
-
-        height: 909,
-
-        alt:
-          "TP Digital Lab",
-      },
-    ],
-  },
-
-  twitter: {
-    card:
-      "summary_large_image",
-
-    title:
-      "Impressum | TP Digital Lab",
-
-    description:
-      "Impressum und Anbieterkennzeichnung von TP Digital Lab in München.",
-
-    images: [
-      "/opengraph-image.png",
-    ],
-  },
-};
 
 export default function ImpressumPage() {
   return (

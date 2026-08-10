@@ -1,53 +1,52 @@
-import type {
-  MetadataRoute,
-} from "next";
+import type { MetadataRoute } from "next";
 
-const BASE_URL =
-  "https://tpdigitallab.de";
-
-export default function sitemap():
-  MetadataRoute.Sitemap {
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: BASE_URL,
+      url: "https://tpdigitallab.de",
+      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
 
     {
-      url: `${BASE_URL}/webdesign`,
+      url: "https://tpdigitallab.de/webdesign",
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
 
     {
-      url: `${BASE_URL}/online-shop`,
+      url: "https://tpdigitallab.de/seo",
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
 
     {
-      url: `${BASE_URL}/seo`,
+      url: "https://tpdigitallab.de/online-shop",
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
 
     {
-      url:
-        `${BASE_URL}/digitale-loesungen`,
+      url: "https://tpdigitallab.de/digitale-loesungen",
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
 
     {
-      url: `${BASE_URL}/impressum`,
+      url: "https://tpdigitallab.de/impressum",
+      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.2,
     },
 
     {
-      url:
-        `${BASE_URL}/datenschutzerklaerung`,
+      url: "https://tpdigitallab.de/datenschutzerklaerung",
+      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.2,
     },
