@@ -276,14 +276,22 @@ export default function MobileMenu() {
             transition={{
               duration: 0.25,
             }}
-            className="
+                        className="
               fixed
               inset-0
               z-[200]
 
-              min-h-[100dvh]
+              h-[100dvh]
+              w-full
+              max-w-[100vw]
 
+              overflow-x-hidden
               overflow-y-auto
+
+              overscroll-x-none
+              overscroll-y-contain
+
+              touch-pan-y
 
               bg-[#05070b]
             "
@@ -333,8 +341,9 @@ export default function MobileMenu() {
 
                 mx-auto
 
-                flex
+                                flex
                 min-h-[100dvh]
+                min-w-0
                 w-full
                 max-w-lg
                 flex-col

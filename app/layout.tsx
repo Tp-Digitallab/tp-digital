@@ -8,7 +8,7 @@ import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
-import IntroAnimation from "@/components/effects/IntroAnimation";
+
 import JsonLd from "@/components/seo/JsonLd";
 import CookieConsent from "@/components/privacy/CookieConsent";
 import LanguageProvider from "@/components/providers/LanguageProvider";
@@ -130,7 +130,7 @@ export default function RootLayout({
       >
         <JsonLd />
 
-        <IntroAnimation />
+  
 
         <LanguageProvider>
           <LenisProvider>
