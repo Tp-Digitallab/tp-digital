@@ -1,19 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import {
   ArrowLeft,
   Shield,
 } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Datenschutzerklärung",
+const title =
+  "Datenschutzerklärung";
 
-  description:
-    "Datenschutzerklärung von TP Digital Lab mit Informationen zur Verarbeitung personenbezogener Daten.",
+const description =
+  "Datenschutzerklärung von TP Digital Lab mit Informationen zur Verarbeitung personenbezogener Daten.";
+
+export const metadata: Metadata = {
+  title,
+  description,
 
   alternates: {
     canonical:
       "/datenschutzerklaerung",
+  },
+
+  openGraph: {
+    title:
+      `${title} | TP Digital Lab`,
+    description,
+    url:
+      "https://tpdigitallab.de/datenschutzerklaerung",
+    siteName:
+      "TP Digital Lab",
+    locale:
+      "de_DE",
+    type:
+      "website",
+
+    images: [
+      {
+        url:
+          "/opengraph-image.png",
+        width: 1731,
+        height: 909,
+        alt:
+          "TP Digital Lab – Datenschutzerklärung",
+      },
+    ],
+  },
+
+  twitter: {
+    card:
+      "summary_large_image",
+    title:
+      `${title} | TP Digital Lab`,
+    description,
+    images: [
+      "/opengraph-image.png",
+    ],
   },
 };
 
