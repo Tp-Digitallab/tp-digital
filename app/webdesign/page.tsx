@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 import ServiceSchema from "@/components/seo/ServiceSchema";
-import ServicePage from "@/components/sections/ServicePage";
+import WebdesignLandingPage from "@/components/sections/WebdesignLandingPage";
 
 const title =
-  "Professionelles Webdesign für Unternehmen";
+  "Professionelle Website erstellen lassen – ab 500 €";
 
 const description =
-  "TP Digital Lab erstellt moderne, schnelle und SEO-optimierte Websites für Unternehmen, die Vertrauen schaffen und neue Kunden gewinnen.";
+  "TP Digital Lab erstellt professionelle Landingpages ab 500 € und Unternehmenswebsites ab 1.000 €. Persönliche Betreuung aus München – deutschlandweit.";
 
 export const metadata: Metadata = {
   title,
@@ -18,22 +18,31 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: `${title} | TP Digital Lab`,
+    title:
+      `${title} | TP Digital Lab`,
+
     description,
+
     url:
       "https://tpdigitallab.de/webdesign",
+
     siteName: "TP Digital Lab",
+
     locale: "de_DE",
+
     type: "website",
 
     images: [
       {
         url:
           "/opengraph-image.png",
+
         width: 1731,
+
         height: 909,
+
         alt:
-          "Professionelles Webdesign – TP Digital Lab",
+          "Professionelle Website erstellen lassen – TP Digital Lab",
       },
     ],
   },
@@ -41,9 +50,12 @@ export const metadata: Metadata = {
   twitter: {
     card:
       "summary_large_image",
+
     title:
       `${title} | TP Digital Lab`,
+
     description,
+
     images: [
       "/opengraph-image.png",
     ],
@@ -54,14 +66,12 @@ export default function Page() {
   return (
     <>
       <ServiceSchema
-        name="Professionelles Webdesign für Unternehmen"
-        description="TP Digital Lab entwickelt moderne, schnelle und SEO-optimierte Websites für Unternehmen."
+        name="Professionelle Website erstellen lassen"
+        description="TP Digital Lab erstellt Landingpages ab 500 € und professionelle Unternehmenswebsites ab 1.000 € für Kunden in Deutschland."
         url="https://tpdigitallab.de/webdesign"
       />
 
-      <ServicePage
-        serviceKey="webdesign"
-      />
+      <WebdesignLandingPage />
     </>
   );
 }
