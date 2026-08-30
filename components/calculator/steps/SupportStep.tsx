@@ -177,7 +177,7 @@ export default function SupportStep({
                 </div>
               </div>
 
-              <div className="mt-8 text-lg font-semibold text-white">
+              <div className="price-number mt-8 text-lg font-semibold text-white">
                 €{item.price}{" "}
 
                 <span className="text-white/50">

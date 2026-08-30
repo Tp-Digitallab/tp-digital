@@ -1473,7 +1473,7 @@ export default function WebdesignLandingPage() {
                           }
                         </span>
 
-                        <span className="text-5xl font-semibold tracking-tight">
+                        <span className="price-number text-5xl font-semibold">
                           {formatPrice(
                             packageData.price
                           )}

@@ -241,7 +241,7 @@ export default function MarketingStep({
                 </div>
               </div>
 
-              <div className="mt-8 text-lg font-semibold text-white">
+             <div className="price-number mt-8 text-lg font-semibold text-white">
                 +€{item.price}
               </div>
             </button>

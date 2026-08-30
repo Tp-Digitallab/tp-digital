@@ -633,7 +633,7 @@ support,
               transition={{
                 duration: 0.25,
               }}
-              className="mt-4 text-5xl font-bold text-white sm:text-6xl"
+              className="price-number mt-4 text-5xl font-bold text-white sm:text-6xl"
             >
               €{displayPrice}
             </motion.h2>
@@ -657,7 +657,7 @@ support,
               }
             </p>
 
-            <p className="mt-2 text-3xl font-semibold text-white">
+            <p className="price-number mt-2 text-3xl font-semibold text-white">
               €{monthlyTotal}
 
               <span className="text-lg text-white/45">

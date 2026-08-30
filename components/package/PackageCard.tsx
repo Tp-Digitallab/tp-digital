@@ -65,7 +65,13 @@ export default function PackageCard({
           </div>
         )}
 
-        <h3 className="text-3xl font-semibold text-white">
+        <h3 className="
+  price-number
+  text-3xl
+  font-semibold
+  text-white
+  md:text-4xl
+">
           {title}
         </h3>
 
