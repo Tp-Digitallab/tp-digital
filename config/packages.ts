@@ -4,7 +4,7 @@ export const packages = [
 
     name: "Launch",
 
-    price: 500,
+    price: 299,
 
     featured: false,
 
@@ -26,7 +26,7 @@ export const packages = [
 
     name: "Business",
 
-    price: 1000,
+    price: 599,
 
     featured: true,
 
@@ -48,7 +48,7 @@ export const packages = [
 
     name: "Growth",
 
-    price: 2000,
+    price: 899,
 
     featured: false,
 

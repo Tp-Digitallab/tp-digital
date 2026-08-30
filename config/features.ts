@@ -8,6 +8,6 @@ export const features = [
     description:
       "Edit texts, images, projects and website content without coding.",
 
-    price: 200,
+    price: 100,
   },
 ];

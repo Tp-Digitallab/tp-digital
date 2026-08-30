@@ -7,7 +7,7 @@ export const websiteTypes = [
     description:
       "Perfect for a single service or product.",
 
-    price: 500,
+    price: 299,
 
     customPrice: false,
   },
@@ -20,7 +20,7 @@ export const websiteTypes = [
     description:
       "Professional multi-page website for growing companies.",
 
-    price: 1000,
+    price: 599,
 
     customPrice: false,
   },
@@ -33,7 +33,7 @@ export const websiteTypes = [
     description:
       "Sell products online with secure payments.",
 
-    price: 2000,
+    price: 899,
 
     customPrice: false,
   },
@@ -92,7 +92,7 @@ export const marketing = [
     description:
       "Keyword research, Search Console, speed optimization and advanced on-page SEO.",
 
-    price: 150,
+    price: 100,
   },
 
   {
@@ -104,7 +104,7 @@ export const marketing = [
     description:
       "Campaign structure, keyword research, conversion tracking and initial optimization.",
 
-    price: 200,
+    price: 100,
   },
 
   {
@@ -116,7 +116,7 @@ export const marketing = [
     description:
       "Google Maps listing, profile setup and optimization.",
 
-    price: 150,
+    price: 50,
   },
 ] as const;
 
@@ -129,7 +129,7 @@ export const branding = [
     description:
       "Unique logo designed for your business and brand.",
 
-    price: 100,
+    price: 50,
   },
 
   {

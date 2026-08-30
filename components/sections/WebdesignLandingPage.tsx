@@ -810,7 +810,7 @@ function getQuote(
       branding: [],
       features: [],
       support: [],
-      total: 1000,
+      total: 599,
       monthlyTotal: 0,
     };
   }
@@ -839,7 +839,7 @@ function getQuote(
     branding: [],
     features: [],
     support: [],
-    total: 500,
+    total: 299,
     monthlyTotal: 0,
   };
 }
@@ -999,13 +999,11 @@ export default function WebdesignLandingPage() {
               `[Source: /webdesign]\n${message.trim()}`,
 
             budget:
-              selectedPackage ===
-              "launch"
-                ? "ab 500 €"
-                : selectedPackage ===
-                    "business"
-                  ? "ab 1.000 €"
-                  : "Noch offen",
+  selectedPackage === "launch"
+    ? "ab 299 €"
+    : selectedPackage === "business"
+      ? "ab 599 €"
+      : "Noch offen",
 
             timeline: "",
 

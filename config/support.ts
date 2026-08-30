@@ -15,7 +15,7 @@ export const support: Support[] = [
     description:
       "Updates, backups, security monitoring and priority support.",
 
-    price: 150,
+    price: 100,
   },
 
   {
@@ -27,6 +27,6 @@ export const support: Support[] = [
     description:
       "Campaign optimization, reports and continuous improvements.",
 
-    price: 200,
+    price: 150,
   },
 ];
