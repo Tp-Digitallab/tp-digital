@@ -434,9 +434,9 @@ contact: {
   timeline: "Project Timeline",
 
   budgetOptions: {
-  under500: "Under €300",
-  from500To1000: "€300 – €600",
-  from1000To2500: "€600 – €1,000",
+  under300: "Under €300",
+  from300To600: "€300 – €600",
+  from600To1000: "€600 – €1,000",
   unsure: "I'm not sure yet",
 },
 

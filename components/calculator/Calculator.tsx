@@ -3,8 +3,11 @@
 import {
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
+
+import type Lenis from "lenis";
 
 import StepIndicator from "./StepIndicator";
 import Summary from "./Summary";
@@ -32,7 +35,17 @@ type PackageId =
 type WebsiteType =
   (typeof websiteTypes)[number];
 
+type WindowWithLenis = Window & {
+  lenis?: Lenis;
+};
+
 export default function Calculator() {
+  const calculatorRef =
+    useRef<HTMLDivElement>(null);
+
+  const isInitialStepRender =
+    useRef(true);
+
   const [step, setStep] =
     useState(1);
 
@@ -263,7 +276,51 @@ export default function Calculator() {
         handlePackageSelected
       );
     };
-  }, []);
+
+    }, []);
+
+  useEffect(() => {
+    if (isInitialStepRender.current) {
+      isInitialStepRender.current = false;
+      return;
+    }
+
+    const animationFrameId =
+      window.requestAnimationFrame(() => {
+        const calculatorElement =
+          calculatorRef.current;
+
+        if (!calculatorElement) {
+          return;
+        }
+
+        const browserWindow =
+          window as unknown as WindowWithLenis;
+
+        if (browserWindow.lenis) {
+          browserWindow.lenis.scrollTo(
+            calculatorElement,
+            {
+              duration: 0.7,
+              offset: -96,
+            }
+          );
+
+          return;
+        }
+
+        calculatorElement.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+
+    return () => {
+      window.cancelAnimationFrame(
+        animationFrameId
+      );
+    };
+  }, [step]);
 
   const total = useMemo(() => {
     if (
@@ -408,10 +465,12 @@ export default function Calculator() {
     ]);
 
   return (
-    <div
-      className="
-        mt-16
-        grid
+  <div
+    ref={calculatorRef}
+    className="
+      mt-16
+      scroll-mt-24
+      grid
         w-full
         max-w-full
         gap-10
@@ -576,11 +635,14 @@ export default function Calculator() {
           selectedBranding
         }
         features={
-          selectedFeatures
-        }
-        support={
-          selectedSupport
-        }
+  selectedFeatures
+}
+includedFeatures={
+  includedFeatures
+}
+support={
+  selectedSupport
+}
       />
     </div>
   );

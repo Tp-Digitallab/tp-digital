@@ -32,27 +32,27 @@ export default function ContactStep({
   const router = useRouter();
 
   const budgetOptions = [
-    {
-      value: "under-500",
-      label:
-        t.calculatorSteps.contact.budgetOptions.under500,
-    },
-    {
-      value: "500-1000",
-      label:
-        t.calculatorSteps.contact.budgetOptions.from500To1000,
-    },
-    {
-      value: "1000-2500",
-      label:
-        t.calculatorSteps.contact.budgetOptions.from1000To2500,
-    },
-    {
-      value: "unsure",
-      label:
-        t.calculatorSteps.contact.budgetOptions.unsure,
-    },
-  ];
+  {
+    value: "under-300",
+    label:
+      t.calculatorSteps.contact.budgetOptions.under300,
+  },
+  {
+    value: "300-600",
+    label:
+      t.calculatorSteps.contact.budgetOptions.from300To600,
+  },
+  {
+    value: "600-1000",
+    label:
+      t.calculatorSteps.contact.budgetOptions.from600To1000,
+  },
+  {
+    value: "unsure",
+    label:
+      t.calculatorSteps.contact.budgetOptions.unsure,
+  },
+];
 
   const timelineOptions = [
     {

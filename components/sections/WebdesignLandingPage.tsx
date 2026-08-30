@@ -142,7 +142,7 @@ const landingCopy: Record<
         "Webdesign aus München · deutschlandweit",
       title:
         "Professionelle Website erstellen lassen",
-      accent: "ab 500 €",
+      accent: "ab 299 €",
       description:
         "Individuelle Landingpages und Unternehmenswebsites für Selbstständige und Unternehmen. Modern, schnell, mobiloptimiert und auf neue Kundenanfragen ausgerichtet.",
       primaryCta:
@@ -150,10 +150,10 @@ const landingCopy: Record<
       secondaryCta:
         "Referenzen ansehen",
       priceNote:
-        "Landingpages ab 500 € · Unternehmenswebsites ab 1.000 €",
+        "Landingpages ab 299 € · Unternehmenswebsites ab 599 €",
       cardTitle:
         "Ihr professioneller Online-Auftritt",
-      cardPrice: "ab 500 €",
+      cardPrice: "ab 299 €",
       cardDescription:
         "Persönliche Umsetzung ohne anonyme Agentur-Strukturen.",
       cardFeatures: [
@@ -270,8 +270,7 @@ const landingCopy: Record<
           question:
             "Wie viel kostet eine professionelle Website?",
           answer:
-            "Eine Landingpage startet bei 500 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 1.000 €. Den verbindlichen Festpreis erhalten Sie vor Projektbeginn im Angebot.",
-        },
+  "Eine Landingpage startet bei 299 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 599 €. Den verbindlichen Festpreis erhalten Sie vor Projektbeginn im Angebot.",        },
         {
           question:
             "Gehören Unterseiten zu einer Landingpage?",
@@ -313,9 +312,9 @@ const landingCopy: Record<
       package:
         "Gewünschte Leistung *",
       packageLaunch:
-        "Landingpage – ab 500 €",
-      packageBusiness:
-        "Unternehmenswebsite – ab 1.000 €",
+  "Landingpage – ab 299 €",
+packageBusiness:
+  "Unternehmenswebsite – ab 599 €",
       packageCustom:
         "Noch nicht sicher / individuelle Anfrage",
       message:
@@ -355,7 +354,7 @@ const landingCopy: Record<
         "Web design from Munich · across Germany",
       title:
         "Get a professional business website",
-      accent: "from €500",
+      accent: "from €299",
       description:
         "Custom landing pages and business websites for freelancers and companies. Modern, fast, mobile-friendly and designed to generate new enquiries.",
       primaryCta:
@@ -363,10 +362,10 @@ const landingCopy: Record<
       secondaryCta:
         "View references",
       priceNote:
-        "Landing pages from €500 · Business websites from €1,000",
+  "Landing pages from €299 · Business websites from €599",
       cardTitle:
         "Your professional online presence",
-      cardPrice: "from €500",
+      cardPrice: "from €299",
       cardDescription:
         "Personal implementation without anonymous agency structures.",
       cardFeatures: [
@@ -482,7 +481,7 @@ const landingCopy: Record<
           question:
             "How much does a professional website cost?",
           answer:
-            "A landing page starts at €500. A business website with up to five pages starts at €1,000. You receive the binding fixed price in the quote before the project begins.",
+  "A landing page starts at €299. A business website with up to five pages starts at €599. You receive the binding fixed price in the quote before the project begins.",
         },
         {
           question:
@@ -527,9 +526,9 @@ const landingCopy: Record<
       package:
         "Requested service *",
       packageLaunch:
-        "Landing page – from €500",
-      packageBusiness:
-        "Business website – from €1,000",
+  "Landing page – from €299",
+packageBusiness:
+  "Business website – from €599",
       packageCustom:
         "Not sure yet / custom request",
       message:
@@ -567,7 +566,7 @@ const landingCopy: Record<
         "Веб-дизайн из Мюнхена · по всей Германии",
       title:
         "Профессиональный сайт для бизнеса",
-      accent: "от 500 €",
+     accent: "от 299 €",
       description:
         "Индивидуальные лендинги и корпоративные сайты для самозанятых и компаний. Современно, быстро, адаптивно и с фокусом на новые заявки.",
       primaryCta:
@@ -575,10 +574,10 @@ const landingCopy: Record<
       secondaryCta:
         "Посмотреть работы",
       priceNote:
-        "Лендинги от 500 € · Сайты компаний от 1 000 €",
+  "Лендинги от 299 € · Сайты компаний от 599 €",
       cardTitle:
         "Профессиональное присутствие в интернете",
-      cardPrice: "от 500 €",
+      cardPrice: "от 299 €",
       cardDescription:
         "Личная работа с исполнителем без структуры анонимного агентства.",
       cardFeatures: [
@@ -698,7 +697,7 @@ const landingCopy: Record<
           question:
             "Сколько стоит профессиональный сайт?",
           answer:
-            "Лендинг стоит от 500 €. Сайт компании до пяти страниц — от 1 000 €. Обязательная фиксированная цена указывается в предложении до начала проекта.",
+  "Лендинг стоит от 299 €. Сайт компании до пяти страниц — от 599 €. Обязательная фиксированная цена указывается в предложении до начала проекта.",
         },
         {
           question:
@@ -741,9 +740,9 @@ const landingCopy: Record<
       package:
         "Нужная услуга *",
       packageLaunch:
-        "Лендинг — от 500 €",
-      packageBusiness:
-        "Сайт компании — от 1 000 €",
+  "Лендинг — от 299 €",
+packageBusiness:
+  "Сайт компании — от 599 €",
       packageCustom:
         "Пока не уверен / индивидуальный запрос",
       message:

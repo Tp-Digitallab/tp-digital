@@ -49,7 +49,8 @@ interface SummaryProps {
   marketing: string[];
   branding: string[];
   features: string[];
-  support: string[];
+includedFeatures: string[];
+support: string[];
 }
 
 interface SummaryItem {
@@ -65,8 +66,9 @@ interface SelectionGroupProps {
   items: readonly SummaryItem[];
 
   showPrice?: boolean;
+includedIds?: string[];
 
-  getTitle?: (
+getTitle?: (
     id: string,
     fallbackTitle: string
   ) => string;
@@ -77,7 +79,8 @@ function SelectionGroup({
   selectedIds,
   items,
   showPrice = false,
-  getTitle,
+includedIds = [],
+getTitle,
 }: SelectionGroupProps) {
   return (
     <div>
@@ -113,10 +116,11 @@ function SelectionGroup({
                 : fallbackTitle;
 
             const showItemPrice =
-              showPrice &&
-              typeof item?.price ===
-                "number" &&
-              item.price > 0;
+  showPrice &&
+  !includedIds.includes(id) &&
+  typeof item?.price ===
+    "number" &&
+  item.price > 0;
 
             return (
               <p
@@ -216,8 +220,9 @@ export default function Summary({
   languages,
   marketing,
   branding,
-  features,
-  support,
+features,
+includedFeatures,
+support,
 }: SummaryProps) {
   const { language } = useLanguage();
 
@@ -409,14 +414,19 @@ export default function Summary({
         ) : (
           <>
             <SelectionGroup
-              label={
-                summaryT.languages
-              }
-              selectedIds={
-                languages
-              }
-              items={allLanguages}
-              getTitle={(
+  label={
+    summaryT.features
+  }
+  selectedIds={
+    features
+  }
+  items={allFeatures}
+  showPrice
+  includedIds={
+    includedFeatures
+  }
+  getTitle={(
+
                 id,
                 fallbackTitle
               ) =>
