@@ -4,7 +4,6 @@ import {
   Geist_Mono,
 } from "next/font/google";
 
-import "lenis/dist/lenis.css";
 import "./globals.css";
 
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
@@ -12,7 +11,6 @@ import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import JsonLd from "@/components/seo/JsonLd";
 import CookieConsent from "@/components/privacy/CookieConsent";
 import LanguageProvider from "@/components/providers/LanguageProvider";
-import LenisProvider from "@/components/providers/LenisProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -133,9 +131,9 @@ export default function RootLayout({
   
 
         <LanguageProvider>
-          <LenisProvider>
+          
             {children}
-          </LenisProvider>
+          
 
           <CookieConsent />
 
