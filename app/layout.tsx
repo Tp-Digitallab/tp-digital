@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import {
   Geist,
@@ -134,7 +135,7 @@ export default function RootLayout({
           
             {children}
           
-
+<Analytics />
           <CookieConsent />
 
           <GoogleAnalytics />
