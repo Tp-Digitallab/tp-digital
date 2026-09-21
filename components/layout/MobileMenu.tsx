@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import {
   AnimatePresence,
   motion,
@@ -25,63 +22,78 @@ type WindowWithLenis = Window & {
   lenis?: Lenis;
 };
 
+const menuCopy = {
+  de: {
+    open: "Menü öffnen",
+    close: "Menü schließen",
+    navigation: "Navigation",
+    language: "Sprache",
+    request: "Unverbindliches Angebot anfragen",
+    brand: "Digitale Lösungen für Unternehmen",
+  },
+  en: {
+    open: "Open menu",
+    close: "Close menu",
+    navigation: "Navigation",
+    language: "Language",
+    request: "Request a no-obligation quote",
+    brand: "Digital solutions for businesses",
+  },
+  ru: {
+    open: "Открыть меню",
+    close: "Закрыть меню",
+    navigation: "Навигация",
+    language: "Язык",
+    request: "Запросить предложение",
+    brand: "Цифровые решения для бизнеса",
+  },
+};
+
 export default function MobileMenu() {
   const {
     language,
     setLanguage,
   } = useLanguage();
 
+  const pathname = usePathname();
   const t = translations[language];
+  const copy = menuCopy[language];
 
-    const pathname = usePathname();
+  const [open, setOpen] = useState(false);
 
-  function homeHref(
-    hash: string
-  ) {
-    return pathname === "/"
-      ? hash
-      : `/${hash}`;
+  function homeHref(hash: string) {
+    return pathname === "/" ? hash : `/${hash}`;
   }
 
-  const [open, setOpen] =
-    useState(false);
+  const requestHref =
+    pathname === "/webdesign"
+      ? "#anfrage"
+      : "/webdesign#anfrage";
 
-    const navigation = [
+  const navigation = [
     {
       name: t.nav.services,
-      href: homeHref(
-        "#solutions"
-      ),
+      href: homeHref("#solutions"),
     },
     {
       name: t.nav.projects,
-      href: homeHref(
-        "#projects"
-      ),
+      href: homeHref("#projects"),
     },
     {
       name: t.nav.packages,
-      href: homeHref(
-        "#packages"
-      ),
+      href: homeHref("#packages"),
     },
     {
       name: t.nav.process,
-      href: homeHref(
-        "#process"
-      ),
+      href: homeHref("#process"),
     },
     {
       name: t.nav.calculator,
-      href: homeHref(
-        "#calculator"
-      ),
+      href: homeHref("#calculator"),
     },
     {
       name: t.nav.contact,
-      href: homeHref(
-        "#contact"
-      ),
+      href: homeHref("#contact"),
     },
   ];
 
@@ -107,7 +119,7 @@ export default function MobileMenu() {
     },
   ];
 
-    useEffect(() => {
+  useEffect(() => {
     if (!open) {
       return;
     }
@@ -115,585 +127,254 @@ export default function MobileMenu() {
     const browserWindow =
       window as unknown as WindowWithLenis;
 
-    const { lenis } =
-      browserWindow;
-
     const body = document.body;
-
-    const html =
-      document.documentElement;
-
-    const previousBodyOverflow =
-      body.style.overflow;
-
-    const previousHtmlOverflow =
-      html.style.overflow;
+    const html = document.documentElement;
+    const previousBodyOverflow = body.style.overflow;
+    const previousHtmlOverflow = html.style.overflow;
 
     body.style.overflow = "hidden";
     html.style.overflow = "hidden";
+    browserWindow.lenis?.stop();
 
-    lenis?.stop();
-
-    function handleKeyDown(
-      event: KeyboardEvent
-    ) {
+    function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false);
       }
     }
 
-    window.addEventListener(
-      "keydown",
-      handleKeyDown
-    );
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      body.style.overflow =
-        previousBodyOverflow;
+      body.style.overflow = previousBodyOverflow;
+      html.style.overflow = previousHtmlOverflow;
 
-      html.style.overflow =
-        previousHtmlOverflow;
-
-      lenis?.start();
+      browserWindow.lenis?.start();
 
       window.removeEventListener(
         "keydown",
-        handleKeyDown
+        handleKeyDown,
       );
     };
   }, [open]);
 
+  function handleNavigation(href: string) {
+    setOpen(false);
 
-  function handleNavigation(
-  href: string
-) {
-  setOpen(false);
-
-  if (!href.startsWith("#")) {
-    window.location.assign(href);
-    return;
-  }
-
-  window.setTimeout(() => {
-
-    const element =
-      document.querySelector<HTMLElement>(
-        href
-      );
-
-    if (!element) {
+    if (!href.startsWith("#")) {
+      window.location.assign(href);
       return;
     }
 
-    const browserWindow =
-      window as unknown as WindowWithLenis;
+    window.setTimeout(() => {
+      const element =
+        document.querySelector<HTMLElement>(href);
 
-    if (browserWindow.lenis) {
-      browserWindow.lenis.start();
+      if (!element) {
+        return;
+      }
 
-      browserWindow.lenis.scrollTo(
-        element,
-        {
+      const browserWindow =
+        window as unknown as WindowWithLenis;
+
+      if (browserWindow.lenis) {
+        browserWindow.lenis.start();
+        browserWindow.lenis.scrollTo(element, {
           duration: 1.1,
           force: true,
-        }
+        });
+      } else {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      window.history.replaceState(
+        null,
+        "",
+        href,
       );
-    } else {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    }, 80);
+  }
 
-    window.history.replaceState(
-      null,
-      "",
-      href
-    );
-  }, 80);
-}
-
-  function handleLanguage(
-    code: Language
-  ) {
+  function handleLanguage(code: Language) {
     setLanguage(code);
   }
 
   return (
     <>
-      {/* MENU BUTTON */}
-
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label="Open menu"
+        aria-label={copy.open}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="
-          flex
-          h-12
-          w-12
-          items-center
-          justify-center
-
-          rounded-2xl
-
-          border
-          border-white/10
-
-          bg-[#111827]
-
-          text-white
-
-          shadow-[0_8px_30px_rgba(0,0,0,0.28)]
-
-          transition-all
-          duration-300
-
-          active:scale-95
-
-          md:hidden
-        "
+        className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#111827] text-white shadow-[0_8px_30px_rgba(0,0,0,0.28)] transition-colors hover:bg-[#1a263b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95 md:hidden"
       >
         <Menu
           size={21}
           strokeWidth={1.8}
+          aria-hidden="true"
         />
       </button>
-
-      {/* MOBILE MENU */}
 
       <AnimatePresence>
         {open && (
           <motion.div
-  id="mobile-menu"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Mobile navigation"
-  data-lenis-prevent
-            initial={{
-              opacity: 0,
-            }}
-            animate={{
-              opacity: 1,
-            }}
-            exit={{
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.25,
-            }}
-                        className="
-              fixed
-              inset-0
-              z-[200]
-
-              h-[100dvh]
-              w-full
-              max-w-[100vw]
-
-              overflow-x-hidden
-              overflow-y-auto
-
-              overscroll-x-none
-              overscroll-y-contain
-
-              touch-pan-y
-
-              bg-[#05070b]
-            "
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label={copy.navigation}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] overflow-y-auto bg-[#05070b]"
           >
-            {/* BACKGROUND GLOW */}
-
             <div
-              className="
-                pointer-events-none
-                absolute
-                left-1/2
-                top-[-100px]
-
-                h-[420px]
-                w-[420px]
-
-                -translate-x-1/2
-
-                rounded-full
-
-                bg-blue-500/10
-
-                blur-[130px]
-              "
+              aria-hidden="true"
+              className="pointer-events-none fixed left-1/2 top-1/4 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/10 blur-[130px]"
             />
 
             <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: 15,
-              }}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
               transition={{
-                duration: 0.35,
+                duration: 0.3,
                 ease: "easeOut",
               }}
-              className="
-                relative
-                z-10
-
-                mx-auto
-
-                                flex
-                min-h-[100dvh]
-                min-w-0
-                w-full
-                max-w-lg
-                flex-col
-
-                px-5
-
-                pb-[max(24px,env(safe-area-inset-bottom))]
-                pt-[max(24px,env(safe-area-inset-top))]
-              "
+              className="relative mx-auto flex min-h-[100dvh] w-full max-w-lg flex-col px-5 pb-[max(24px,env(safe-area-inset-bottom))] pt-[max(24px,env(safe-area-inset-top))]"
             >
-              {/* HEADER */}
-
               <div className="flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() =>
-                   handleNavigation(
-  homeHref("#top")
-)
+                    handleNavigation(homeHref("#top"))
                   }
-                  className="text-left"
+                  className="rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                 >
-                  <div className="text-2xl font-semibold text-white">
+                  <span className="block text-2xl font-semibold text-white">
                     TP
-                  </div>
+                  </span>
 
-                  <div
-                    className="
-                      mt-1
-                      text-[10px]
-                      uppercase
-                      tracking-[0.35em]
-                      text-white/40
-                    "
-                  >
+                  <span className="mt-1 block text-[10px] uppercase tracking-[0.3em] text-white/50">
                     Digital Lab
-                  </div>
+                  </span>
                 </button>
 
                 <button
                   type="button"
-                  onClick={() =>
-                    setOpen(false)
-                  }
-                  aria-label="Close menu"
-                  className="
-                    flex
-                    h-12
-                    w-12
-                    items-center
-                    justify-center
-
-                    rounded-2xl
-
-                    border
-                    border-white/10
-
-                    bg-white/[0.05]
-
-                    text-white
-
-                    transition-all
-
-                    active:scale-95
-                  "
+                  onClick={() => setOpen(false)}
+                  aria-label={copy.close}
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white transition-colors hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95"
                 >
                   <X
                     size={22}
                     strokeWidth={1.8}
+                    aria-hidden="true"
                   />
                 </button>
               </div>
 
-              {/* LABEL */}
-
               <div className="mt-10">
-                <p
-                  className="
-                    text-[11px]
-                    font-medium
-                    uppercase
-                    tracking-[0.28em]
-                    text-white/30
-                  "
-                >
-                  Navigation
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/35">
+                  {copy.navigation}
                 </p>
-              </div>
 
-              {/* NAVIGATION */}
-
-              <nav className="mt-4 space-y-2.5">
-                {navigation.map(
-                  (item, index) => (
+                <nav className="mt-4 space-y-2">
+                  {navigation.map((item, index) => (
                     <motion.button
                       key={item.href}
                       type="button"
-                      initial={{
-                        opacity: 0,
-                        x: -12,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        x: 0,
-                      }}
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay:
-                          0.04 * index,
-                        duration: 0.3,
+                        delay: index * 0.04,
+                        duration: 0.25,
                       }}
                       onClick={() =>
-                        handleNavigation(
-                          item.href
-                        )
+                        handleNavigation(item.href)
                       }
-                      className="
-                        group
-
-                        flex
-                        w-full
-                        items-center
-                        justify-between
-
-                        rounded-2xl
-
-                        border
-                        border-white/[0.08]
-
-                        bg-white/[0.035]
-
-                        px-5
-                        py-[17px]
-
-                        text-left
-
-                        transition-all
-                        duration-200
-
-                        active:scale-[0.985]
-                        active:bg-white/[0.07]
-                      "
+                      className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.035] px-5 text-left transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.985]"
                     >
-                      <span
-                        className="
-                          text-[17px]
-                          font-medium
-                          tracking-[-0.01em]
-                          text-white/90
-                        "
-                      >
+                      <span className="text-base font-medium text-white/90">
                         {item.name}
                       </span>
 
                       <ArrowRight
                         size={18}
                         strokeWidth={1.7}
-                        className="
-                          text-white/30
-                          transition-transform
-                          duration-200
-
-                          group-active:translate-x-1
-                        "
+                        aria-hidden="true"
+                        className="text-white/35 transition-transform group-hover:translate-x-1"
                       />
                     </motion.button>
-                  )
-                )}
-              </nav>
-
-              {/* LANGUAGE */}
+                  ))}
+                </nav>
+              </div>
 
               <div className="mt-9">
-                <p
-                  className="
-                    text-[11px]
-                    font-medium
-                    uppercase
-                    tracking-[0.28em]
-                    text-white/30
-                  "
-                >
-                  Sprache / Language
+                <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-white/35">
+                  {copy.language}
                 </p>
 
-                <div
-                  className="
-                    mt-4
+                <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-1.5">
+                  {languages.map((item) => {
+                    const active =
+                      language === item.code;
 
-                    grid
-                    grid-cols-3
-                    gap-2
+                    return (
+                      <button
+                        key={item.code}
+                        type="button"
+                        aria-pressed={active}
+                        onClick={() =>
+                          handleLanguage(item.code)
+                        }
+                        className={`flex min-h-14 flex-col items-center justify-center rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.97] ${
+                          active
+                            ? "bg-blue-600 text-white shadow-[0_8px_25px_rgba(59,130,246,0.28)]"
+                            : "text-white/50 hover:bg-white/[0.06] hover:text-white"
+                        }`}
+                      >
+                        <span className="text-sm font-semibold">
+                          {item.label}
+                        </span>
 
-                    rounded-2xl
-
-                    border
-                    border-white/[0.08]
-
-                    bg-white/[0.025]
-
-                    p-1.5
-                  "
-                >
-                  {languages.map(
-                    (item) => {
-                      const active =
-                        language ===
-                        item.code;
-
-                      return (
-                        <button
-                          key={
-                            item.code
-                          }
-                          type="button"
-                          aria-pressed={
+                        <span
+                          className={`mt-0.5 text-[10px] ${
                             active
-                          }
-                          onClick={() =>
-                            handleLanguage(
-                              item.code
-                            )
-                          }
-                          className={`
-                            flex
-                            min-h-[54px]
-                            flex-col
-                            items-center
-                            justify-center
-
-                            rounded-xl
-
-                            transition-all
-                            duration-250
-
-                            active:scale-[0.97]
-
-                            ${
-                              active
-                                ? `
-                                  bg-blue-500
-                                  text-white
-
-                                  shadow-[0_8px_25px_rgba(59,130,246,0.28)]
-                                `
-                                : `
-                                  text-white/50
-                                  hover:bg-white/[0.05]
-                                  hover:text-white
-                                `
-                            }
-                          `}
+                              ? "text-white/75"
+                              : "text-white/35"
+                          }`}
                         >
-                          <span className="text-sm font-semibold">
-                            {
-                              item.label
-                            }
-                          </span>
-
-                          <span
-                            className={`
-                              mt-0.5
-                              text-[10px]
-
-                              ${
-                                active
-                                  ? "text-white/70"
-                                  : "text-white/30"
-                              }
-                            `}
-                          >
-                            {item.name}
-                          </span>
-                        </button>
-                      );
-                    }
-                  )}
+                          {item.name}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* CTA */}
-
-              <div className="mt-auto pt-8">
+              <div className="mt-auto pt-10">
                 <button
                   type="button"
                   onClick={() =>
-                    handleNavigation(
-  homeHref("#calculator")
-)                   
+                    handleNavigation(requestHref)
                   }
-                  className="
-                    group
-
-                    flex
-                    w-full
-                    items-center
-                    justify-between
-
-                    rounded-2xl
-
-                    border
-                    border-blue-400/20
-
-                    bg-blue-500
-
-                    px-5
-                    py-[18px]
-
-                    font-semibold
-                    text-white
-
-                    shadow-[0_12px_35px_rgba(59,130,246,0.28)]
-
-                    transition-all
-                    duration-300
-
-                    active:scale-[0.985]
-                    active:bg-blue-400
-                  "
+                  className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-blue-400/20 bg-blue-600 px-5 font-semibold text-white shadow-[0_12px_35px_rgba(59,130,246,0.28)] transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 active:scale-[0.985]"
                 >
-                  <span>
-                    {t.hero.button}
-                  </span>
+                  <span>{copy.request}</span>
 
                   <ArrowRight
                     size={19}
-                    className="
-                      transition-transform
-                      duration-300
-
-                      group-active:translate-x-1
-                    "
+                    aria-hidden="true"
+                    className="transition-transform group-hover:translate-x-1"
                   />
                 </button>
 
-                <p
-                  className="
-                    mt-4
-                    text-center
-                    text-[11px]
-                    text-white/25
-                  "
-                >
-                  TP Digital Lab
+                <p className="mt-4 text-center text-[11px] leading-5 text-white/35">
+                  {copy.brand}
                 </p>
               </div>
             </motion.div>
