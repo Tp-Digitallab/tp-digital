@@ -1,5 +1,3 @@
-import IntroAnimation from "@/components/effects/IntroAnimation";
-
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -15,25 +13,16 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <>
-      <IntroAnimation />
-
       <Header />
 
       <main>
         <HeroSection />
-
         <ServicesSection />
-
         <PackagesSection />
-
         <ProjectsSection />
-
         <ProcessSection />
-
         <CalculatorSection />
-
         <FaqSection />
-
         <ContactSection />
       </main>
 

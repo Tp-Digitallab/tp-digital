@@ -7,7 +7,7 @@ export const websiteTypes = [
     description:
       "Perfect for a single service or product.",
 
-    price: 299,
+    price: 490,
 
     customPrice: false,
   },
@@ -20,7 +20,7 @@ export const websiteTypes = [
     description:
       "Professional multi-page website for growing companies.",
 
-    price: 599,
+   price: 990,
 
     customPrice: false,
   },
@@ -33,7 +33,7 @@ export const websiteTypes = [
     description:
       "Sell products online with secure payments.",
 
-    price: 899,
+    price: 1790,
 
     customPrice: false,
   },

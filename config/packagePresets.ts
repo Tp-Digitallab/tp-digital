@@ -25,7 +25,7 @@ export const packagePresets:
     PackagePreset
   > = {
   launch: {
-    price: 299,
+    price: 490,
 
     website: "landing",
 
@@ -50,7 +50,7 @@ export const packagePresets:
   },
 
   business: {
-    price: 599,
+    price: 990,
 
     website: "business",
 
@@ -78,7 +78,7 @@ export const packagePresets:
   },
 
   growth: {
-    price: 899,
+    price: 1790,
 
     website: "shop",
 

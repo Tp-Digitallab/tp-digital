@@ -4,20 +4,22 @@ export const packages = [
 
     name: "Launch",
 
-    price: 299,
+    price: 490,
 
     featured: false,
 
     description:
-      "A ready-to-launch landing page for businesses that need a professional online presence.",
+      "Eine startbereite Landingpage für Selbstständige und kleine Unternehmen, die professionell online auftreten möchten.",
 
     features: [
-      "Landing Page",
-      "1 Language",
-      "Basic SEO",
-      "Contact Form",
-      "Google Analytics 4 Setup",
-      "Responsive Design",
+      "Landingpage – eine Seite mit mehreren Abschnitten",
+      "1 Sprache",
+      "Individuelles Design",
+      "Basis-SEO",
+      "Kontaktformular",
+      "Google-Analytics-4-Einrichtung",
+      "Optimiert für Smartphone und Desktop",
+      "2 Korrekturrunden",
     ],
   },
 
@@ -26,20 +28,22 @@ export const packages = [
 
     name: "Business",
 
-    price: 599,
+    price: 990,
 
     featured: true,
 
     description:
-      "A complete multi-page website for companies focused on visibility and customer acquisition.",
+      "Eine vollständige Unternehmenswebsite für mehr Sichtbarkeit und neue Kundenanfragen.",
 
     features: [
-      "Multi-page Website — up to 5 pages",
-      "2 Languages",
-      "Advanced SEO",
-      "Google Business Profile",
-      "GA4 and Conversion Tracking",
-      "1 Month Technical Support",
+      "Unternehmenswebsite – bis zu 5 Seiten",
+      "2 Sprachen",
+      "Individuelles Design",
+      "Erweiterte SEO-Optimierung",
+      "Google-Unternehmensprofil",
+      "GA4 und Conversion-Tracking",
+      "1 Monat technischer Support",
+      "2 Korrekturrunden",
     ],
   },
 
@@ -48,22 +52,23 @@ export const packages = [
 
     name: "Growth",
 
-    price: 899,
+    price: 1790,
 
     featured: false,
 
     description:
-      "A complete online store with administration, marketing setup and multilingual support.",
+      "Ein professioneller Online-Shop mit Verwaltung, Zahlungsintegration und Marketing-Einrichtung.",
 
     features: [
-      "Online Store — up to 20 products",
-      "Up to 3 Languages",
-      "Advanced SEO",
-      "Admin Panel (CMS)",
-      "Payment Integration",
-      "GA4 E-commerce Tracking",
-      "Google Ads Setup",
-      "2 Months Technical Support",
+      "Online-Shop – bis zu 20 Produkte",
+      "Bis zu 3 Sprachen",
+      "Admin-Bereich (CMS)",
+      "Zahlungsintegration",
+      "Erweiterte SEO-Optimierung",
+      "GA4 E-Commerce-Tracking",
+      "Google-Ads-Einrichtung",
+      "2 Monate technischer Support",
+      "2 Korrekturrunden",
     ],
   },
 ] as const;
