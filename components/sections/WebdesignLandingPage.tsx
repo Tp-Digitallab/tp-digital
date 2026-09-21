@@ -3,6 +3,7 @@
 import { type FormEvent, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import MobileLeadBar from "@/components/ui/MobileLeadBar";
 import { useRouter } from "next/navigation";
 import {
   Turnstile,
@@ -1916,6 +1917,7 @@ export default function WebdesignLandingPage() {
         </section>
       </main>
 
+            <MobileLeadBar />
       <Footer />
     </>
   );
