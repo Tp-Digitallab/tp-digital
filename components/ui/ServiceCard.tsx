@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { motion } from "motion/react";
 
 interface ServiceCardProps {
   number: string;
@@ -22,115 +21,111 @@ export default function ServiceCard({
   return (
     <Link
       href={href}
-      className="block h-full"
       aria-label={`${ctaLabel}: ${title}`}
+      className="
+        group
+        relative
+        flex
+        h-full
+        min-w-0
+        flex-col
+        overflow-hidden
+        rounded-[28px]
+        border
+        border-white/10
+        bg-gradient-to-br
+        from-white/[0.06]
+        via-white/[0.03]
+        to-white/[0.01]
+        p-6
+        transition-colors
+        duration-200
+        hover:border-blue-400/40
+        focus-visible:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-blue-400
+        focus-visible:ring-offset-4
+        focus-visible:ring-offset-[#050505]
+        motion-reduce:transition-none
+        sm:rounded-[32px]
+        sm:p-8
+        lg:p-10
+      "
     >
-      <motion.div
-        whileHover={{
-          y: -10,
-          scale: 1.03,
-        }}
-        transition={{
-          duration: 0.35,
-          ease: "easeOut",
-        }}
+      <div
+        aria-hidden="true"
         className="
-          group
-          relative
-          h-full
-          min-h-[460px]
-          overflow-hidden
-          rounded-[32px]
-          border
-          border-white/10
-          bg-gradient-to-br
-          from-white/[0.06]
-          via-white/[0.03]
-          to-white/[0.01]
-          p-10
-          backdrop-blur-2xl
-          shadow-[0_0_0_rgba(59,130,246,0)]
-          transition-all
-          duration-500
-          hover:border-blue-400/30
-          hover:shadow-[0_0_45px_rgba(59,130,246,0.18)]
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.14),transparent_55%)]
+          opacity-40
+          transition-opacity
+          duration-200
+          group-hover:opacity-100
+          group-focus-visible:opacity-100
+          motion-reduce:transition-none
         "
-      >
-        <div
-          aria-hidden="true"
-          className="
-            absolute
-            inset-0
-            bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_45%)]
-            opacity-0
-            transition-all
-            duration-500
-            group-hover:opacity-100
-          "
-        />
+      />
 
-        <div className="relative z-10 flex h-full flex-col justify-between">
+      <div className="relative z-10 flex flex-1 flex-col">
+        <span
+          aria-hidden="true"
+          className="text-4xl font-semibold text-blue-300/50 sm:text-5xl"
+        >
+          {number}
+        </span>
+
+        <h3 className="mt-6 text-2xl font-semibold leading-tight text-white [overflow-wrap:anywhere] sm:mt-8 lg:text-3xl">
+          {title}
+        </h3>
+
+        <p className="mt-4 text-base leading-7 text-white/70 [overflow-wrap:anywhere] sm:text-lg sm:leading-8">
+          {description}
+        </p>
+
+        <div className="mt-auto pt-7 sm:pt-8">
           <span
             className="
-              text-6xl
-              font-semibold
-              text-white/10
-              transition-all
-              duration-500
-              group-hover:scale-110
-              group-hover:text-blue-300/30
+              inline-flex
+              min-h-12
+              w-full
+              items-center
+              justify-between
+              gap-3
+              rounded-2xl
+              border
+              border-blue-400/25
+              bg-[#172033]
+              px-4
+              py-3
+              text-sm
+              font-medium
+              leading-6
+              text-white
+              transition-colors
+              duration-200
+              group-hover:border-blue-400/50
+              group-hover:bg-[#1d2b44]
+              group-focus-visible:border-blue-400/50
+              group-focus-visible:bg-[#1d2b44]
+              motion-reduce:transition-none
+              sm:w-auto
+              sm:rounded-full
+              sm:px-5
             "
           >
-            {number}
+            <span className="min-w-0 [overflow-wrap:anywhere]">
+              {ctaLabel}
+            </span>
+
+            <ArrowRight
+              aria-hidden="true"
+              className="h-4 w-4 shrink-0"
+            />
           </span>
-
-          <div className="mt-20">
-            <h3 className="text-3xl font-medium text-white">
-              {title}
-            </h3>
-
-            <p className="mt-5 max-w-sm text-lg leading-8 text-white/60">
-              {description}
-            </p>
-
-            <div
-              className="
-                mt-10
-                inline-flex
-                items-center
-                gap-3
-                rounded-full
-                border
-                border-blue-400/25
-                bg-[#172033]
-                px-5
-                py-3
-                text-sm
-                font-medium
-                text-white
-                shadow-[0_8px_30px_rgba(59,130,246,0.16)]
-                transition-all
-                duration-500
-                sm:border-white/10
-                sm:bg-white/[0.06]
-                sm:text-white/80
-                sm:backdrop-blur-xl
-                sm:shadow-none
-                group-hover:border-blue-400/40
-                group-hover:bg-blue-500/10
-                group-hover:text-white
-              "
-            >
-              <span>{ctaLabel}</span>
-
-              <ArrowRight
-                aria-hidden="true"
-                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </div>
-          </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 }

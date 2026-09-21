@@ -1,326 +1,131 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+
 import Container from "@/components/common/Container";
-import Button from "@/components/ui/Button";
 import MobileMenu from "@/components/layout/MobileMenu";
 import ScrollLink from "@/components/ui/ScrollLink";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
-import { motion } from "motion/react";
 
-
-
+const headerCopy = {
+  de: {
+    request: "Angebot anfragen",
+    requestShort: "Anfragen",
+    navigation: "Hauptnavigation",
+  },
+  en: {
+    request: "Request a quote",
+    requestShort: "Enquire",
+    navigation: "Main navigation",
+  },
+  ru: {
+    request: "Обсудить проект",
+    requestShort: "Заявка",
+    navigation: "Основное меню",
+  },
+};
 
 export default function Header() {
-
   const { language } = useLanguage();
+  const pathname = usePathname();
 
   const t = translations[language];
+  const copy = headerCopy[language];
 
-    const pathname = usePathname();
-
-  function homeHref(
-    hash: string
-  ) {
-    return pathname === "/"
-      ? hash
-      : `/${hash}`;
+  function homeHref(hash: string) {
+    return pathname === "/" ? hash : `/${hash}`;
   }
 
+  const requestHref =
+    pathname === "/webdesign"
+      ? "#anfrage"
+      : "/webdesign#anfrage";
 
-    const navigation = [
+  const navigation = [
     {
       name: t.nav.services,
-      href: homeHref(
-        "#solutions"
-      ),
+      href: homeHref("#solutions"),
     },
     {
       name: t.nav.projects,
-      href: homeHref(
-        "#projects"
-      ),
+      href: homeHref("#projects"),
     },
     {
       name: t.nav.packages,
-      href: homeHref(
-        "#packages"
-      ),
+      href: homeHref("#packages"),
     },
     {
       name: t.nav.process,
-      href: homeHref(
-        "#process"
-      ),
+      href: homeHref("#process"),
     },
     {
       name: t.nav.calculator,
-      href: homeHref(
-        "#calculator"
-      ),
+      href: homeHref("#calculator"),
     },
     {
       name: t.nav.contact,
-      href: homeHref(
-        "#contact"
-      ),
+      href: homeHref("#contact"),
     },
   ];
 
-
-
-
-  const [scrolled, setScrolled] = useState(false);
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-
   return (
-    <header className="fixed inset-x-0 top-0 z-50 select-none">
-      
-
-      <Container>
-
-        {/* ================= DESKTOP ================= */}
-
-        <motion.div
-
-  initial={{
-    opacity:0,
-    y:-30,
-  }}
-
-  animate={{
-    opacity:1,
-    y:0,
-  }}
-
-  transition={{
-    duration:0.8,
-    ease:"easeOut",
-  }}
-
-  className="
-    hidden
-    md:grid
-    grid-cols-[220px_1fr_280px]
-    items-center
-    mt-8
-  "
-
->
-
-
-          {/* Logo */}
-
+    <header className="fixed inset-x-0 top-0 z-50">
+      <Container className="px-3 sm:px-6 lg:px-8">
+        <div className="mt-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 rounded-[24px] border border-white/15 bg-[#090d15]/95 px-4 py-3 shadow-[0_12px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:mt-4 sm:px-5 xl:flex-nowrap xl:gap-5">
           <ScrollLink
             href={homeHref("#top")}
-            className="leading-none group"
+            className="shrink-0 rounded-lg leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#090d15]"
           >
-            <motion.div
+            <span className="block text-2xl font-semibold text-white">
+              TP
+            </span>
 
-whileHover={{
- scale:1.08,
-}}
-
-transition={{
- duration:0.3,
-}}
-
-className="
-text-2xl
-font-semibold
-text-white
-
-drop-shadow-[0_0_15px_rgba(59,130,246,0.4)]
-
-transition-all
-duration-300
-
-group-hover:tracking-wide
-"
-
->
-TP
-</motion.div>
-
-            <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
+            <span className="mt-1 block text-[9px] uppercase tracking-[0.2em] text-white/65 sm:text-[10px]">
               Digital Lab
-            </div>
-
+            </span>
           </ScrollLink>
 
-
-          {/* Navigation */}
-
           <nav
-            className={`
-              relative
-              z-10
-overflow-hidden
-              justify-self-center
-              flex
-              items-center
-              gap-7
-              rounded-full
-              border
-              border-white/15
-              bg-white/[0.12]
-              px-8
-              py-3
-              backdrop-blur-2xl
-              backdrop-saturate-150
-              shadow-[0_20px_60px_rgba(0,0,0,0.45)]
-hover:shadow-[0_0_50px_rgba(59,130,246,0.25)]
-              transition-all
-              duration-500
-              hover:scale-[1.015]
-
-              ${
-                scrolled
-                  ? "-translate-y-6 scale-[0.97]"
-                  : "translate-y-0 scale-100"
-              }
-            `}
+            aria-label={copy.navigation}
+            className="order-3 hidden w-full flex-wrap items-center justify-center gap-x-5 gap-y-1 border-t border-white/10 pt-2 md:flex xl:order-none xl:w-auto xl:flex-1 xl:gap-x-3 xl:border-0 xl:pt-0"
           >
-
-<motion.div
-
-  animate={{
-    x:["-150%","600%"],
-  }}
-
-  transition={{
-    duration:6,
-    repeat:Infinity,
-    ease:"linear",
-  }}
-
-  className="
-    absolute
-
-    left-0
-    top-0
-
-    h-full
-    w-64
-
-    pointer-events-none
-
-    bg-gradient-to-r
-from-transparent
-via-white/40
-to-blue-400/40
-
-    blur-2xl
-
-    z-0
-  "
-
-/>
-
-
             {navigation.map((item) => (
               <ScrollLink
-  key={item.name}
-  href={item.href}
-  className="
-    relative
-    z-10
-
-    text-[15px]
-                  font-medium
-                  tracking-[0.02em]
-                  text-white/85
-                  transition-all
-                  duration-300
-                  hover:text-white
-
-                  after:absolute
-                  after:left-1/2
-                  after:-bottom-2
-                  after:h-[3px]
-                  after:w-[3px]
-                  after:-translate-x-1/2
-                  after:rounded-full
-                  after:bg-white
-                  after:scale-0
-                  after:transition-all
-                  after:duration-300
-
-                  hover:after:scale-100
-                "
+                key={item.href}
+                href={item.href}
+                className="inline-flex min-h-10 items-center rounded-lg px-1 text-sm font-medium text-white/75 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 motion-reduce:transition-none"
               >
                 {item.name}
               </ScrollLink>
             ))}
-
           </nav>
 
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <div className="hidden md:block">
+              <LanguageSwitcher />
+            </div>
 
-          {/* Right */}
+            <ScrollLink
+              href={requestHref}
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-center text-sm font-semibold leading-5 text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#090d15] motion-reduce:transition-none sm:px-5"
+            >
+              <span className="md:hidden">
+                {copy.requestShort}
+              </span>
 
-         <div className="justify-self-end flex items-center gap-4 whitespace-nowrap">
+              <span className="hidden md:inline">
+                {copy.request}
+              </span>
+            </ScrollLink>
 
-            <LanguageSwitcher />
-
-           <Button
-  href={homeHref(
-    "#calculator"
-  )}
->
-              {t.hero.button}
-            </Button>
-
+            <div className="md:hidden">
+              <MobileMenu />
+            </div>
           </div>
-
-
-       
-</motion.div>
-
-        {/* ================= MOBILE ================= */}
-
-        <div className="flex items-center justify-between mt-8 md:hidden">
-
-          <ScrollLink
-            href={homeHref("#top")}
-            className="leading-none"
-          >
-
-            <div className="text-2xl font-semibold text-white">
-              TP
-            </div>
-
-            <div className="mt-1 text-[11px] uppercase tracking-[0.35em] text-white/40">
-              Digital Lab
-            </div>
-
-          </ScrollLink>
-
-
-          <div className="flex items-center">
-  <MobileMenu />
-</div>
-
-
-
         </div>
-
-
       </Container>
-
     </header>
   );
 }
