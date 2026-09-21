@@ -418,7 +418,7 @@ const copy: Record<Language, Copy> = {
       title:
         "Erzählen Sie kurz von Ihrem Projekt",
       description:
-        "Sie erhalten eine persönliche Rückmeldung und anschließend ein unverbindliches Angebot.",
+  "Beschreiben Sie mir kurz Ihr Projekt. Ich melde mich in der Regel innerhalb von 3–12 Stunden persönlich per E-Mail. Wenn es passt, erhalten Sie danach ein schriftliches Angebot mit klarem Leistungsumfang und Festpreis.",
       firstName: "Vorname *",
       lastName: "Nachname *",
       email: "E-Mail *",
@@ -435,7 +435,8 @@ const copy: Record<Language, Copy> = {
       message:
         "Beschreiben Sie kurz Ihr Projekt *",
       privacy: "Ich habe die",
-      privacyLink: "Datenschutzerklärung",
+      privacyLink:
+  "Datenschutzerklärung zur Kenntnis genommen",
       submit:
         "Unverbindliches Angebot anfragen",
       sending: "Wird gesendet...",
@@ -469,7 +470,7 @@ const copy: Record<Language, Copy> = {
       description:
         "Modern, fast websites for freelancers and small businesses. Personally implemented with clear planning and the goal of making new enquiries easier.",
       primaryCta:
-        "Request a free quote",
+  "Request a no-obligation quote",
       secondaryCta:
         "View references",
       priceNote:
@@ -701,7 +702,7 @@ const copy: Record<Language, Copy> = {
       title:
         "Tell me briefly about your project",
       description:
-        "You receive a personal response followed by a no-obligation quote.",
+  "Tell me briefly about your project. I usually reply personally by email within 3–12 hours. If the project is a good fit, you will then receive a written quote with a clear scope and fixed price.",
       firstName: "First name *",
       lastName: "Last name *",
       email: "Email *",
@@ -719,7 +720,7 @@ const copy: Record<Language, Copy> = {
         "Briefly describe your project *",
       privacy: "I have read the",
       privacyLink: "Privacy Policy",
-      submit: "Request a free quote",
+      submit: "Request a no-obligation quote",
       sending: "Sending...",
       requiredError:
         "Please complete all required fields and accept the privacy policy.",
@@ -987,7 +988,7 @@ const copy: Record<Language, Copy> = {
       title:
         "Кратко расскажите о вашем проекте",
       description:
-        "Вы получите личный ответ и предложение без обязательств.",
+  "Коротко расскажите о вашем проекте. Обычно я лично отвечаю по электронной почте в течение 3–12 часов. Если проект подходит, вы получите письменное предложение с понятным объёмом работ и фиксированной ценой.",
       firstName: "Имя *",
       lastName: "Фамилия *",
       email: "E-mail *",
@@ -1102,7 +1103,6 @@ export default function WebdesignLandingPage() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   const [privacyAccepted, setPrivacyAccepted] =
@@ -1177,7 +1177,7 @@ export default function WebdesignLandingPage() {
           firstName: firstName.trim(),
           lastName: lastName.trim(),
           email: email.trim(),
-          phone: phone.trim(),
+          
 
           message:
             `[Source: /webdesign]\n${message.trim()}`,
@@ -1459,13 +1459,14 @@ export default function WebdesignLandingPage() {
                     }`}
                   >
                     {packageId === "business" && (
-                      <span className="rounded-full bg-blue-500/15 px-3 py-1 text-xs text-blue-300">
-                        {t.pricing.title ===
-                        "Ein klarer Startpreis statt versteckter Kosten"
-                          ? "Beliebteste Wahl"
-                          : "Most popular"}
-                      </span>
-                    )}
+  <span className="rounded-full bg-blue-500/15 px-3 py-1 text-xs text-blue-300">
+    {language === "de"
+      ? "Für Ihren Firmenauftritt"
+      : language === "en"
+        ? "For your business website"
+        : "Для сайта вашей компании"}
+  </span>
+)}
 
                     <h3 className="mt-6 text-3xl font-semibold">
                       {packageText.name}
@@ -1772,19 +1773,6 @@ export default function WebdesignLandingPage() {
                     className={inputClassName}
                   />
 
-                  <input
-                    name="phone"
-                    type="tel"
-                    value={phone}
-                    onChange={(event) =>
-                      setPhone(event.target.value)
-                    }
-                    placeholder={t.form.phone}
-                    aria-label={t.form.phone}
-                    autoComplete="tel"
-                    maxLength={50}
-                    className={inputClassName}
-                  />
 
                   <select
                     name="package"
