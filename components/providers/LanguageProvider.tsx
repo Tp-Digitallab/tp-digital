@@ -8,20 +8,24 @@ import {
   useState,
 } from "react";
 
-type Language = "de" | "en" | "ru";
+export type Language = "de" | "en" | "ru";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
 }
 
+interface LanguageProviderProps {
+  children: React.ReactNode;
+  initialLanguage?: Language;
+  respectSavedLanguage?: boolean;
+}
+
 const LanguageContext =
-  createContext<LanguageContextType | null>(
-    null
-  );
+  createContext<LanguageContextType | null>(null);
 
 function isLanguage(
-  value: string | null
+  value: string | null,
 ): value is Language {
   return (
     value === "de" ||
@@ -32,22 +36,29 @@ function isLanguage(
 
 export default function LanguageProvider({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+  initialLanguage = "de",
+  respectSavedLanguage = true,
+}: LanguageProviderProps) {
   const [language, setLanguageState] =
-    useState<Language>("de");
+    useState<Language>(initialLanguage);
 
   useEffect(() => {
+    document.documentElement.lang =
+      initialLanguage;
+
+    if (!respectSavedLanguage) {
+      return;
+    }
+
     const savedLanguage =
-      localStorage.getItem("language");
+      window.localStorage.getItem("language");
 
     if (!isLanguage(savedLanguage)) {
       return;
     }
 
     const animationFrame =
-      requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
         setLanguageState(savedLanguage);
 
         document.documentElement.lang =
@@ -55,23 +66,30 @@ export default function LanguageProvider({
       });
 
     return () => {
-      cancelAnimationFrame(animationFrame);
+      window.cancelAnimationFrame(
+        animationFrame,
+      );
     };
-  }, []);
+  }, [
+    initialLanguage,
+    respectSavedLanguage,
+  ]);
 
   const setLanguage = useCallback(
     (newLanguage: Language) => {
       setLanguageState(newLanguage);
 
-      localStorage.setItem(
-        "language",
-        newLanguage
-      );
+      if (respectSavedLanguage) {
+        window.localStorage.setItem(
+          "language",
+          newLanguage,
+        );
+      }
 
       document.documentElement.lang =
         newLanguage;
     },
-    []
+    [respectSavedLanguage],
   );
 
   return (
@@ -88,12 +106,12 @@ export default function LanguageProvider({
 
 export function useLanguage() {
   const context = useContext(
-    LanguageContext
+    LanguageContext,
   );
 
   if (!context) {
     throw new Error(
-      "useLanguage must be used inside LanguageProvider"
+      "useLanguage must be used inside LanguageProvider",
     );
   }
 

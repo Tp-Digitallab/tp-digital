@@ -22,141 +22,112 @@ type ServicePageContent = {
 export const servicePageTranslations = {
   webdesign: {
     de: {
-      title: "Professionelles Webdesign",
-      accent: "für Unternehmen.",
-
+      title: "Professionelle Websites",
+      accent: "für kleine Unternehmen.",
       description:
-        "TP Digital Lab entwickelt professionelle Websites für Unternehmen in Deutschland. Wir erstellen moderne, schnelle und SEO-optimierte Websites, die visuell überzeugen und Besucher in Kunden verwandeln. Von der Konzeption über das Design bis zur technischen Umsetzung entsteht eine digitale Lösung, die Ihr Unternehmen langfristig online stärkt.",
-
+        "Ich entwickle moderne Websites für Selbstständige und kleine Unternehmen. Die Inhalte, Struktur und Kontaktmöglichkeiten werden so geplant, dass Besucher Ihr Angebot schnell verstehen und einfach mit Ihnen Kontakt aufnehmen können.",
       services: [
-        "Individuelles Webdesign für Unternehmen",
-        "SEO-optimierte Website-Entwicklung",
-        "Responsive Design für Smartphone, Tablet und Desktop",
-        "Conversion-Optimierung für mehr Kundenanfragen",
-        "Schnelle und technisch optimierte Websites",
+        "Individuelles Design passend zu Ihrem Unternehmen",
+        "Landingpages und Unternehmenswebsites",
+        "Optimierung für Smartphone, Tablet und Desktop",
+        "Kontaktformular und klare Kontaktwege",
+        "Basis-SEO und schnelle technische Grundlage",
       ],
-
       seoTitle:
-        "Warum professionelles Webdesign wichtig ist",
-
+        "Was eine gute Unternehmenswebsite leisten sollte",
       seoDescription:
-        "Eine professionelle Website ist die digitale Visitenkarte eines Unternehmens. Sie schafft Vertrauen, verbessert die Sichtbarkeit bei Google und hilft dabei, neue Kunden zu gewinnen. Eine schnelle, moderne und benutzerfreundliche Website unterstützt Unternehmen dabei, langfristig online erfolgreich zu sein.",
-
+        "Eine Website soll nicht nur gut aussehen. Sie muss Ihr Angebot verständlich erklären, Vertrauen schaffen und Interessenten einen einfachen Weg zur Anfrage geben. Ich entwickle die Struktur passend zu Ihrem Unternehmen und stimme den Leistungsumfang vor dem Start schriftlich mit Ihnen ab.",
       faq: [
         {
           question:
             "Wie viel kostet eine professionelle Website?",
-
           answer:
-            "Die Kosten hängen vom Umfang, Design und den gewünschten Funktionen ab. TP Digital Lab entwickelt individuelle Websites passend zu den Anforderungen des Unternehmens.",
+            "Eine Landingpage startet bei 490 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 990 €. Den genauen Leistungsumfang und den endgültigen Festpreis erhalten Sie vor Projektbeginn schriftlich.",
         },
         {
           question:
-            "Wie lange dauert die Entwicklung einer Website?",
-
+            "Wie lange dauert die Entwicklung?",
           answer:
-            "Die Dauer hängt vom Projektumfang ab. Viele Unternehmenswebsites können innerhalb weniger Wochen umgesetzt werden.",
+            "Die Dauer hängt vom Umfang und davon ab, wann Texte und Bilder bereitstehen. Eine Landingpage kann bei vollständigen Inhalten oft innerhalb von 1–2 Wochen umgesetzt werden.",
         },
         {
           question:
-            "Warum ist professionelles Webdesign wichtig?",
-
+            "Wie viele Änderungen sind inklusive?",
           answer:
-            "Eine moderne Website stärkt das Vertrauen der Kunden, verbessert die Online-Sichtbarkeit und unterstützt die Gewinnung neuer Anfragen.",
+            "In den Website-Paketen sind zwei Korrekturrunden enthalten. Weitere Änderungen können vorab gegen Aufpreis vereinbart werden.",
         },
       ],
     },
 
     en: {
-      title: "Professional Web Design",
-      accent: "for businesses.",
-
+      title: "Professional websites",
+      accent: "for small businesses.",
       description:
-        "TP Digital Lab develops professional websites for businesses. We create modern, fast and SEO-optimized websites that look convincing and turn visitors into customers. From planning and design to technical implementation, we build a digital solution that strengthens your business online over the long term.",
-
+        "I create modern websites for freelancers and small businesses. The content, structure and contact options are planned so visitors can quickly understand your offer and get in touch with you.",
       services: [
-        "Custom web design for businesses",
-        "SEO-optimized website development",
-        "Responsive design for mobile, tablet and desktop",
-        "Conversion optimization for more enquiries",
-        "Fast and technically optimized websites",
+        "Custom design for your business",
+        "Landing pages and business websites",
+        "Optimized for mobile, tablet and desktop",
+        "Contact form and clear contact paths",
+        "Basic SEO and a fast technical foundation",
       ],
-
       seoTitle:
-        "Why professional web design matters",
-
+        "What a good business website should do",
       seoDescription:
-        "A professional website is the digital face of a business. It builds trust, improves visibility on Google and helps attract new customers. A fast, modern and user-friendly website supports long-term online growth.",
-
+        "A website should do more than look good. It should explain your offer clearly, build trust and give interested visitors an easy way to enquire. I plan the structure around your business and agree on the scope in writing before work begins.",
       faq: [
         {
           question:
             "How much does a professional website cost?",
-
           answer:
-            "The cost depends on the scope, design and required features. TP Digital Lab develops custom websites tailored to each business.",
+            "A landing page starts from €490. A business website with up to five pages starts from €990. You receive the exact scope and final fixed price in writing before the project begins.",
         },
         {
           question:
-            "How long does website development take?",
-
+            "How long does development take?",
           answer:
-            "The timeline depends on the scope of the project. Many business websites can be completed within a few weeks.",
+            "The timeline depends on the scope and when your texts and images are available. With complete content, a landing page can often be completed within 1–2 weeks.",
         },
         {
           question:
-            "Why is professional web design important?",
-
+            "How many revisions are included?",
           answer:
-            "A modern website builds customer trust, improves online visibility and helps generate new enquiries.",
+            "The website packages include two revision rounds. Additional changes can be agreed in advance for an additional fee.",
         },
       ],
     },
 
     ru: {
-      title:
-        "Профессиональная разработка сайтов",
-
-      accent: "для бизнеса.",
-
+      title: "Профессиональные сайты",
+      accent: "для небольших компаний.",
       description:
-        "TP Digital Lab разрабатывает профессиональные сайты для компаний. Мы создаём современные, быстрые и SEO-оптимизированные сайты, которые убедительно представляют бизнес и превращают посетителей в клиентов. От планирования и дизайна до технической реализации мы создаём цифровое решение для долгосрочного развития компании в интернете.",
-
+        "Я создаю современные сайты для частных специалистов и небольших компаний. Контент, структура и способы связи планируются так, чтобы посетитель быстро понял ваше предложение и мог легко оставить заявку.",
       services: [
-        "Индивидуальный веб-дизайн для бизнеса",
-        "SEO-оптимизированная разработка сайтов",
-        "Адаптивный дизайн для смартфонов, планшетов и компьютеров",
-        "Оптимизация конверсии для увеличения числа заявок",
-        "Быстрые и технически оптимизированные сайты",
+        "Индивидуальный дизайн под ваш бизнес",
+        "Лендинги и сайты компаний",
+        "Адаптация для телефона, планшета и компьютера",
+        "Контактная форма и понятные способы связи",
+        "Базовое SEO и быстрая техническая основа",
       ],
-
       seoTitle:
-        "Почему профессиональный сайт важен для бизнеса",
-
+        "Что должен делать хороший сайт компании",
       seoDescription:
-        "Профессиональный сайт — это цифровое лицо компании. Он укрепляет доверие, повышает видимость в Google и помогает привлекать новых клиентов. Быстрый, современный и удобный сайт создаёт основу для долгосрочного роста бизнеса в интернете.",
-
+        "Сайт должен не только красиво выглядеть. Он должен понятно объяснять ваше предложение, вызывать доверие и давать посетителю простой способ связаться с вами. Я планирую структуру под ваш бизнес и согласую объём работ письменно до начала проекта.",
       faq: [
         {
-          question:
-            "Сколько стоит профессиональный сайт?",
-
+          question: "Сколько стоит профессиональный сайт?",
           answer:
-            "Стоимость зависит от объёма, дизайна и необходимых функций. TP Digital Lab разрабатывает индивидуальные сайты с учётом задач конкретного бизнеса.",
+            "Лендинг стоит от 490 €. Сайт компании до пяти страниц — от 990 €. Точный объём работ и окончательная фиксированная цена согласуются письменно до начала проекта.",
         },
         {
-          question:
-            "Сколько времени занимает разработка сайта?",
-
+          question: "Сколько времени занимает разработка?",
           answer:
-            "Срок зависит от объёма проекта. Многие корпоративные сайты можно реализовать в течение нескольких недель.",
+            "Срок зависит от объёма проекта и готовности текстов и изображений. При готовом контенте лендинг часто можно сделать за 1–2 недели.",
         },
         {
-          question:
-            "Почему профессиональный веб-дизайн так важен?",
-
+          question: "Сколько правок входит в стоимость?",
           answer:
-            "Современный сайт укрепляет доверие клиентов, повышает видимость компании в интернете и помогает получать новые заявки.",
+            "В пакет входят два раунда правок. Дополнительные изменения можно заранее согласовать за отдельную плату.",
         },
       ],
     },
@@ -164,146 +135,115 @@ export const servicePageTranslations = {
 
   onlineShop: {
     de: {
-      title: "Online-Shop-Entwicklung",
-
-      accent:
-        "für erfolgreiche Unternehmen.",
-
+      title: "Online-Shop erstellen lassen",
+      accent: "für den Verkauf im Internet.",
       description:
-        "TP Digital Lab entwickelt moderne Online-Shops für Unternehmen in Deutschland. Wir verbinden professionelles Design, schnelle Technologie und eine optimale Nutzererfahrung, damit Besucher zu Kunden werden.",
-
+        "Ich entwickle übersichtliche Online-Shops für Unternehmen, die Produkte oder Leistungen online anbieten möchten. Der Shop wird mit Produktverwaltung, Zahlungsintegration und einer klaren Nutzerführung geplant.",
       services: [
-        "Individuelle E-Commerce-Lösungen",
-        "Moderne Online-Shop-Entwicklung",
-        "Responsive Shop-Design",
-        "Optimierung für bessere Conversion",
-        "Integration digitaler Funktionen",
+        "Online-Shop mit bis zu 20 Produkten",
+        "Produktverwaltung über ein CMS",
+        "Zahlungsintegration nach Anforderungen",
+        "Optimierung für Smartphone und Desktop",
+        "SEO-Grundlage für Produkt- und Kategorieseiten",
       ],
-
       seoTitle:
-        "Warum ein professioneller Online-Shop wichtig ist",
-
+        "Ein Online-Shop muss einfach zu bedienen sein",
       seoDescription:
-        "Ein erfolgreicher Online-Shop ist mehr als eine Produktseite. Er muss schnell, benutzerfreundlich und technisch optimiert sein. TP Digital Lab entwickelt E-Commerce-Lösungen, die Unternehmen beim digitalen Wachstum unterstützen.",
-
+        "Besucher müssen Produkte schnell finden, Informationen verstehen und den Kauf ohne unnötige Hindernisse abschließen können. Ich plane den Shop passend zu Ihrem Sortiment und kläre vor Beginn, welche Funktionen tatsächlich benötigt werden.",
       faq: [
         {
           question:
-            "Wie viel kostet die Entwicklung eines Online-Shops?",
-
+            "Wie viel kostet ein Online-Shop?",
           answer:
-            "Die Kosten hängen von Funktionen, Umfang und individuellen Anforderungen ab. Jeder Online-Shop wird passend zum Unternehmen entwickelt.",
+            "Ein Online-Shop startet bei 1.790 €. Der genaue Preis hängt von Produktanzahl, Sprachen, Zahlungsanbieter und weiteren Funktionen ab. Sie erhalten den endgültigen Festpreis schriftlich vor dem Start.",
         },
         {
           question:
-            "Wie lange dauert die Erstellung eines Online-Shops?",
-
+            "Wie viele Produkte können enthalten sein?",
           answer:
-            "Die Entwicklungszeit hängt von der Komplexität ab. Kleine Shops können schneller umgesetzt werden, umfangreiche Projekte benötigen mehr Zeit.",
+            "Das Growth-Paket umfasst bis zu 20 Produkte. Ein größerer Umfang kann individuell besprochen und separat angeboten werden.",
         },
         {
           question:
-            "Warum braucht ein Unternehmen einen professionellen Online-Shop?",
-
+            "Kann ich Produkte später selbst verwalten?",
           answer:
-            "Ein professioneller Online-Shop ermöglicht Unternehmen, Produkte digital anzubieten, neue Kunden zu erreichen und Verkäufe zu steigern.",
+            "Ja. Wenn ein CMS im vereinbarten Leistungsumfang enthalten ist, können Sie Produkte und Inhalte anschließend selbst verwalten.",
         },
       ],
     },
 
     en: {
-      title: "Online Store Development",
-
-      accent:
-        "for successful businesses.",
-
+      title: "Build your online store",
+      accent: "for selling online.",
       description:
-        "TP Digital Lab develops modern online stores for businesses. We combine professional design, fast technology and an optimized user experience to turn visitors into customers.",
-
+        "I create clear online stores for businesses that want to offer products or services online. The store is planned with product management, payment integration and a straightforward customer journey.",
       services: [
-        "Custom e-commerce solutions",
-        "Modern online store development",
-        "Responsive store design",
-        "Conversion optimization",
-        "Integration of digital features",
+        "Online store with up to 20 products",
+        "Product management through a CMS",
+        "Payment integration based on requirements",
+        "Optimized for mobile and desktop",
+        "SEO foundation for product and category pages",
       ],
-
       seoTitle:
-        "Why a professional online store matters",
-
+        "An online store should be easy to use",
       seoDescription:
-        "A successful online store is more than a product page. It needs to be fast, user-friendly and technically optimized. TP Digital Lab develops e-commerce solutions that support sustainable digital growth.",
-
+        "Visitors need to find products quickly, understand the important information and complete a purchase without unnecessary friction. I plan the store around your catalogue and clarify the required features before work begins.",
       faq: [
         {
           question:
             "How much does an online store cost?",
-
           answer:
-            "The cost depends on the features, scope and individual requirements. Every online store is developed around the needs of the business.",
+            "An online store starts from €1,790. The final price depends on the number of products, languages, payment provider and additional features. You receive the final fixed price in writing before work begins.",
         },
         {
           question:
-            "How long does it take to build an online store?",
-
+            "How many products can be included?",
           answer:
-            "The timeline depends on the complexity. Smaller stores can be completed faster, while larger projects require more time.",
+            "The Growth package includes up to 20 products. A larger catalogue can be discussed and quoted separately.",
         },
         {
           question:
-            "Why does a business need a professional online store?",
-
+            "Can I manage products myself later?",
           answer:
-            "A professional online store allows a business to sell products digitally, reach new customers and increase sales.",
+            "Yes. If a CMS is included in the agreed scope, you can manage products and content yourself after the handover.",
         },
       ],
     },
 
     ru: {
-      title:
-        "Разработка интернет-магазинов",
-
-      accent:
-        "для успешного бизнеса.",
-
+      title: "Разработка интернет-магазина",
+      accent: "для продаж в интернете.",
       description:
-        "TP Digital Lab разрабатывает современные интернет-магазины для компаний. Мы объединяем профессиональный дизайн, быстрые технологии и удобный пользовательский опыт, чтобы превращать посетителей в покупателей.",
-
+        "Я создаю понятные интернет-магазины для компаний, которые хотят продавать товары или услуги онлайн. Магазин планируется с управлением товарами, подключением оплаты и удобным путём клиента от товара до заказа.",
       services: [
-        "Индивидуальные решения для электронной коммерции",
-        "Разработка современных интернет-магазинов",
-        "Адаптивный дизайн магазина",
-        "Оптимизация конверсии",
-        "Интеграция цифровых функций",
+        "Интернет-магазин до 20 товаров",
+        "Управление товарами через CMS",
+        "Подключение оплаты по требованиям проекта",
+        "Адаптация для телефона и компьютера",
+        "SEO-основа для товаров и категорий",
       ],
-
       seoTitle:
-        "Почему профессиональный интернет-магазин важен",
-
+        "Интернет-магазином должно быть удобно пользоваться",
       seoDescription:
-        "Успешный интернет-магазин — это больше, чем страница с товарами. Он должен быть быстрым, удобным и технически оптимизированным. TP Digital Lab создаёт решения для электронной коммерции, которые помогают бизнесу стабильно расти онлайн.",
-
+        "Посетитель должен быстро найти товар, понять важную информацию и оформить заказ без лишних препятствий. Я планирую магазин под ваш ассортимент и заранее согласую необходимые функции.",
       faq: [
         {
           question:
-            "Сколько стоит разработка интернет-магазина?",
-
+            "Сколько стоит интернет-магазин?",
           answer:
-            "Стоимость зависит от функций, объёма и индивидуальных требований. Каждый интернет-магазин разрабатывается с учётом задач конкретного бизнеса.",
+            "Интернет-магазин стоит от 1 790 €. Итоговая цена зависит от количества товаров, языков, платёжной системы и дополнительных функций. Фиксированную цену вы получите письменно до начала работы.",
         },
         {
           question:
-            "Сколько времени занимает создание интернет-магазина?",
-
+            "Сколько товаров можно добавить?",
           answer:
-            "Срок зависит от сложности. Небольшие магазины можно запустить быстрее, а крупным проектам требуется больше времени.",
+            "Пакет Growth включает до 20 товаров. Больший каталог можно обсудить отдельно.",
         },
         {
           question:
-            "Зачем бизнесу профессиональный интернет-магазин?",
-
+            "Смогу ли я сам управлять товарами?",
           answer:
-            "Профессиональный интернет-магазин позволяет продавать товары онлайн, привлекать новых клиентов и увеличивать продажи.",
+            "Да. Если CMS входит в согласованный объём работ, после передачи магазина вы сможете самостоятельно управлять товарами и контентом.",
         },
       ],
     },
@@ -312,144 +252,113 @@ export const servicePageTranslations = {
   seo: {
     de: {
       title: "SEO für Unternehmen",
-
-      accent:
-        "für bessere Sichtbarkeit.",
-
+      accent: "damit Ihre Website besser gefunden wird.",
       description:
-        "TP Digital Lab unterstützt Unternehmen in Deutschland bei der Suchmaschinenoptimierung. Wir verbessern technische Grundlagen, Inhalte und Nutzererfahrung, damit Websites besser bei Google gefunden werden und langfristig neue Kunden erreichen.",
-
+        "Ich verbessere die technische Grundlage und Struktur Ihrer Website, damit Suchmaschinen Ihre Inhalte besser verstehen und potenzielle Kunden Ihr Angebot leichter finden können.",
       services: [
-        "Technische SEO-Optimierung",
-        "Keyword-Analyse und Strategie",
+        "Technische SEO-Analyse",
+        "Struktur und interne Verlinkung",
+        "Keyword- und Inhaltsanalyse",
         "OnPage-Optimierung",
-        "Google-Sichtbarkeit verbessern",
-        "Digitale Wachstumsstrategien",
+        "Verbesserung der lokalen Sichtbarkeit",
       ],
-
       seoTitle:
-        "Warum professionelle SEO-Optimierung wichtig ist",
-
+        "SEO beginnt mit einer verständlichen Website",
       seoDescription:
-        "Eine moderne Website bringt nur dann Kunden, wenn sie gefunden wird. Professionelle SEO verbessert die Sichtbarkeit bei Google, erreicht relevante Besucher und unterstützt Unternehmen beim langfristigen Wachstum.",
-
+        "SEO ist kein einzelner Knopf und keine garantierte Position bei Google. Es ist ein langfristiger Prozess aus technischer Qualität, passenden Inhalten, klarer Struktur und einer guten Nutzererfahrung.",
       faq: [
         {
           question:
-            "Warum ist SEO für Unternehmen wichtig?",
-
+            "Was kostet SEO?",
           answer:
-            "SEO hilft Unternehmen dabei, bei Google besser gefunden zu werden und langfristig mehr relevante Besucher zu erreichen.",
+            "SEO wird nach dem tatsächlichen Umfang angeboten. Nach einer kurzen Abstimmung erhalten Sie eine klare Beschreibung der geplanten Leistungen und den vereinbarten Preis.",
         },
         {
           question:
-            "Wie lange dauert es, bis SEO-Ergebnisse sichtbar werden?",
-
+            "Wann sind erste Verbesserungen sichtbar?",
           answer:
-            "SEO ist ein langfristiger Prozess. Die ersten Verbesserungen hängen von Wettbewerb, Website-Zustand und Umfang der Optimierung ab.",
+            "SEO braucht Zeit. Die Entwicklung hängt unter anderem von Wettbewerb, Ausgangslage, Suchbegriffen und Umfang der Optimierung ab. Einen bestimmten Ranking- oder Anfragewert kann ich nicht garantieren.",
         },
         {
           question:
-            "Was beinhaltet professionelle SEO-Optimierung?",
-
+            "Kann SEO mit einer neuen Website kombiniert werden?",
           answer:
-            "SEO umfasst technische Optimierung, Keyword-Analyse, Content-Optimierung und Verbesserungen der Nutzererfahrung.",
+            "Ja. SEO kann bereits bei Struktur, Inhalten und technischer Umsetzung einer neuen Website berücksichtigt werden.",
         },
       ],
     },
 
     en: {
-      title: "SEO for Businesses",
-
-      accent:
-        "for better visibility.",
-
+      title: "SEO for businesses",
+      accent: "so your website can be found more easily.",
       description:
-        "TP Digital Lab helps businesses improve their search visibility. We optimize technical foundations, content and user experience so websites can rank better on Google and attract new customers over the long term.",
-
+        "I improve the technical foundation and structure of your website so search engines can understand your content more clearly and potential customers can find your offer more easily.",
       services: [
-        "Technical SEO optimization",
-        "Keyword research and strategy",
+        "Technical SEO review",
+        "Site structure and internal linking",
+        "Keyword and content analysis",
         "On-page optimization",
-        "Improved visibility on Google",
-        "Digital growth strategies",
+        "Improved local visibility",
       ],
-
       seoTitle:
-        "Why professional SEO matters",
-
+        "SEO starts with a clear website",
       seoDescription:
-        "A modern website can only generate customers when people can find it. Professional SEO improves visibility on Google, attracts relevant visitors and supports sustainable business growth.",
-
+        "SEO is not a single button or a guaranteed Google position. It is a long-term process involving technical quality, relevant content, clear structure and a useful customer experience.",
       faq: [
         {
           question:
-            "Why is SEO important for businesses?",
-
+            "How much does SEO cost?",
           answer:
-            "SEO helps businesses rank more prominently on Google and attract more relevant visitors over the long term.",
+            "SEO is quoted according to the actual scope. After a short discussion, you receive a clear description of the planned work and the agreed price.",
         },
         {
           question:
-            "How long does it take to see SEO results?",
-
+            "When will the first improvements appear?",
           answer:
-            "SEO is a long-term process. The first improvements depend on the competition, the current website and the scope of optimization.",
+            "SEO takes time. Progress depends on competition, the starting point, search terms and the scope of optimization. I cannot guarantee a specific ranking or number of enquiries.",
         },
         {
           question:
-            "What does professional SEO include?",
-
+            "Can SEO be combined with a new website?",
           answer:
-            "SEO includes technical optimization, keyword research, content optimization and improvements to the user experience.",
+            "Yes. SEO can be considered from the beginning when planning the structure, content and technical implementation of a new website.",
         },
       ],
     },
 
     ru: {
       title: "SEO для бизнеса",
-
-      accent:
-        "для лучшей видимости.",
-
+      accent: "чтобы сайт было легче найти.",
       description:
-        "TP Digital Lab помогает компаниям повышать видимость в поисковых системах. Мы улучшаем техническую основу, контент и пользовательский опыт, чтобы сайты занимали более высокие позиции в Google и стабильно привлекали новых клиентов.",
-
+        "Я улучшаю техническую основу и структуру сайта, чтобы поисковые системы лучше понимали ваш контент, а потенциальным клиентам было проще найти ваше предложение.",
       services: [
-        "Техническая SEO-оптимизация",
-        "Анализ ключевых слов и стратегия",
+        "Технический SEO-аудит",
+        "Структура сайта и внутренние ссылки",
+        "Анализ ключевых слов и контента",
         "Внутренняя оптимизация страниц",
-        "Повышение видимости в Google",
-        "Стратегии цифрового роста",
+        "Улучшение локальной видимости",
       ],
-
       seoTitle:
-        "Почему профессиональная SEO-оптимизация важна",
-
+        "SEO начинается с понятного сайта",
       seoDescription:
-        "Современный сайт приносит клиентов только тогда, когда его можно найти. Профессиональное SEO повышает видимость в Google, привлекает целевых посетителей и поддерживает долгосрочный рост бизнеса.",
-
+        "SEO — это не одна кнопка и не гарантия конкретной позиции в Google. Это долгосрочная работа с техническим качеством, содержанием, структурой и удобством сайта для посетителей.",
       faq: [
         {
-          question:
-            "Почему SEO важно для бизнеса?",
-
+          question: "Сколько стоит SEO?",
           answer:
-            "SEO помогает компаниям занимать более заметные позиции в Google и стабильно привлекать больше целевых посетителей.",
+            "SEO рассчитывается по фактическому объёму работ. После короткого обсуждения вы получите понятное описание задач и согласованную стоимость.",
         },
         {
           question:
-            "Когда становятся заметны результаты SEO?",
-
+            "Когда появятся первые улучшения?",
           answer:
-            "SEO — это долгосрочный процесс. Первые улучшения зависят от конкуренции, текущего состояния сайта и объёма оптимизации.",
+            "SEO требует времени. Результат зависит от конкуренции, состояния сайта, запросов и объёма оптимизации. Я не могу гарантировать конкретную позицию или количество заявок.",
         },
         {
           question:
-            "Что входит в профессиональное SEO?",
-
+            "Можно ли объединить SEO с разработкой сайта?",
           answer:
-            "SEO включает техническую оптимизацию, анализ ключевых слов, улучшение контента и пользовательского опыта.",
+            "Да. SEO можно учитывать уже при планировании структуры, контента и технической реализации нового сайта.",
         },
       ],
     },
@@ -458,152 +367,118 @@ export const servicePageTranslations = {
   digitalSolutions: {
     de: {
       title: "Digitale Lösungen",
-
-      accent:
-        "für moderne Unternehmen.",
-
+      accent: "für besondere Aufgaben.",
       description:
-        "TP Digital Lab entwickelt individuelle digitale Lösungen für Unternehmen. Von modernen Webanwendungen bis zu automatisierten Prozessen helfen wir Unternehmen, effizienter zu arbeiten und ihre digitalen Ziele zu erreichen.",
-
+        "Wenn Ihr Unternehmen eine individuelle Webanwendung, einen automatisierten Ablauf oder eine spezielle Funktion benötigt, kläre ich zuerst die Aufgabe und entwickle danach einen passenden Lösungsumfang.",
       services: [
         "Individuelle Webentwicklung",
-        "Digitale Anwendungen für Unternehmen",
-        "Automatisierung von Geschäftsprozessen",
-        "Integration moderner Technologien",
-        "Maßgeschneiderte digitale Lösungen",
+        "Interne Tools und Webanwendungen",
+        "Automatisierung wiederkehrender Abläufe",
+        "Anbindung externer Dienste",
+        "Technische Beratung und Umsetzung",
       ],
-
       seoTitle:
-        "Warum digitale Lösungen für Unternehmen wichtig sind",
-
+        "Individuelle Entwicklung beginnt mit dem Problem",
       seoDescription:
-        "Digitale Technologien helfen Unternehmen dabei, Prozesse zu optimieren, Kunden besser zu erreichen und langfristig wettbewerbsfähig zu bleiben. TP Digital Lab entwickelt Lösungen, die genau zu den Anforderungen eines Unternehmens passen.",
-
+        "Nicht jede Aufgabe passt in ein fertiges Paket. Bei individuellen digitalen Lösungen steht deshalb zuerst die genaue Beschreibung des Problems im Mittelpunkt. Danach werden Umfang, technische Umsetzung und Kosten schriftlich geklärt.",
       faq: [
         {
           question:
-            "Was sind digitale Lösungen für Unternehmen?",
-
+            "Welche digitalen Lösungen entwickeln Sie?",
           answer:
-            "Digitale Lösungen umfassen moderne Websites, Webanwendungen, Automatisierungen und individuelle Systeme, die Unternehmen effizienter machen.",
+            "Zum Beispiel individuelle Webanwendungen, interne Tools, automatisierte Abläufe oder Anbindungen an externe Dienste. Die konkrete Lösung hängt von Ihrer Aufgabe ab.",
         },
         {
           question:
-            "Welche Unternehmen benötigen digitale Lösungen?",
-
+            "Wie wird der Preis berechnet?",
           answer:
-            "Digitale Lösungen eignen sich für Unternehmen jeder Größe, die Prozesse verbessern, Kunden erreichen oder neue digitale Angebote entwickeln möchten.",
+            "Individuelle Projekte werden nach Aufgaben, Umfang und technischen Anforderungen kalkuliert. Vor dem Start erhalten Sie ein schriftliches Angebot.",
         },
         {
           question:
-            "Entwickelt TP Digital Lab individuelle Software?",
-
+            "Kann ich auch eine bestehende Lösung erweitern lassen?",
           answer:
-            "TP Digital Lab entwickelt individuelle digitale Lösungen und moderne Webanwendungen passend zu den Anforderungen des Unternehmens.",
+            "Ja. Beschreiben Sie im ersten Kontakt, was bereits vorhanden ist und welche Änderung oder Funktion Sie benötigen.",
         },
       ],
     },
 
     en: {
-      title: "Digital Solutions",
-
-      accent:
-        "for modern businesses.",
-
+      title: "Digital solutions",
+      accent: "for specific business tasks.",
       description:
-        "TP Digital Lab develops custom digital solutions for businesses. From modern web applications to automated processes, we help companies work more efficiently and achieve their digital goals.",
-
+        "If your business needs a custom web application, automated workflow or special feature, I first clarify the task and then define a suitable solution and scope.",
       services: [
         "Custom web development",
-        "Digital applications for businesses",
-        "Business process automation",
-        "Integration of modern technologies",
-        "Tailored digital solutions",
+        "Internal tools and web applications",
+        "Automation of recurring workflows",
+        "Integration with external services",
+        "Technical planning and implementation",
       ],
-
       seoTitle:
-        "Why digital solutions matter for businesses",
-
+        "Custom development starts with the problem",
       seoDescription:
-        "Digital technologies help businesses optimize processes, reach customers more effectively and remain competitive over the long term. TP Digital Lab develops solutions tailored to the specific requirements of each company.",
-
+        "Not every task fits into a standard package. For custom digital solutions, the exact problem comes first. We then clarify the scope, technical approach and price in writing.",
       faq: [
         {
           question:
-            "What are digital solutions for businesses?",
-
+            "What digital solutions do you develop?",
           answer:
-            "Digital solutions include modern websites, web applications, automations and custom systems that help businesses operate more efficiently.",
+            "Examples include custom web applications, internal tools, automated workflows and integrations with external services. The right solution depends on your task.",
         },
         {
           question:
-            "Which businesses need digital solutions?",
-
+            "How is the price calculated?",
           answer:
-            "Digital solutions are suitable for businesses of any size that want to improve processes, reach customers or develop new digital services.",
+            "Custom projects are estimated according to the task, scope and technical requirements. You receive a written offer before work begins.",
         },
         {
           question:
-            "Does TP Digital Lab develop custom software?",
-
+            "Can you extend an existing solution?",
           answer:
-            "TP Digital Lab develops custom digital solutions and modern web applications tailored to the requirements of each business.",
+            "Yes. Describe what already exists and which change or feature you need in your first enquiry.",
         },
       ],
     },
 
     ru: {
       title: "Цифровые решения",
-
-      accent:
-        "для современного бизнеса.",
-
+      accent: "для особых задач бизнеса.",
       description:
-        "TP Digital Lab разрабатывает индивидуальные цифровые решения для компаний. От современных веб-приложений до автоматизации процессов — мы помогаем бизнесу работать эффективнее и достигать цифровых целей.",
-
+        "Если вашему бизнесу нужно индивидуальное веб-приложение, автоматизация процесса или специальная функция, я сначала изучу задачу, а затем предложу подходящий объём решения.",
       services: [
         "Индивидуальная веб-разработка",
-        "Цифровые приложения для бизнеса",
-        "Автоматизация бизнес-процессов",
-        "Интеграция современных технологий",
-        "Цифровые решения под задачи компании",
+        "Внутренние инструменты и веб-приложения",
+        "Автоматизация повторяющихся процессов",
+        "Интеграция внешних сервисов",
+        "Техническое планирование и реализация",
       ],
-
       seoTitle:
-        "Почему цифровые решения важны для бизнеса",
-
+        "Индивидуальная разработка начинается с проблемы",
       seoDescription:
-        "Цифровые технологии помогают оптимизировать процессы, эффективнее взаимодействовать с клиентами и сохранять конкурентоспособность. TP Digital Lab создаёт решения, точно соответствующие требованиям конкретной компании.",
-
+        "Не каждую задачу можно решить готовым пакетом. Поэтому в индивидуальных проектах сначала нужно точно описать проблему. После этого мы письменно согласуем объём, технический подход и стоимость.",
       faq: [
         {
           question:
-            "Что такое цифровые решения для бизнеса?",
-
+            "Какие цифровые решения вы разрабатываете?",
           answer:
-            "К цифровым решениям относятся современные сайты, веб-приложения, автоматизация и индивидуальные системы, которые помогают компаниям работать эффективнее.",
+            "Например, индивидуальные веб-приложения, внутренние инструменты, автоматизацию процессов и интеграции с внешними сервисами. Решение зависит от вашей задачи.",
+        },
+        {
+          question: "Как рассчитывается стоимость?",
+          answer:
+            "Индивидуальный проект рассчитывается по задаче, объёму и техническим требованиям. До начала работы вы получите письменное предложение.",
         },
         {
           question:
-            "Каким компаниям нужны цифровые решения?",
-
+            "Можно ли доработать существующее решение?",
           answer:
-            "Они подходят бизнесу любого размера, который хочет улучшить процессы, эффективнее привлекать клиентов или создавать новые цифровые услуги.",
-        },
-        {
-          question:
-            "Разрабатывает ли TP Digital Lab индивидуальное программное обеспечение?",
-
-          answer:
-            "TP Digital Lab создаёт индивидуальные цифровые решения и современные веб-приложения с учётом требований конкретного бизнеса.",
+            "Да. В первой заявке опишите, что уже есть и какую функцию или изменение вы хотите добавить.",
         },
       ],
     },
   },
 } satisfies Record<
   ServicePageKey,
-  Record<
-    Language,
-    ServicePageContent
-  >
+  Record<Language, ServicePageContent>
 >;

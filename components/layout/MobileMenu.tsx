@@ -197,9 +197,36 @@ export default function MobileMenu() {
     }, 80);
   }
 
-  function handleLanguage(code: Language) {
-    setLanguage(code);
+  function handleLanguage(
+  code: Language,
+) {
+  setLanguage(code);
+
+  if (!pathname) {
+    return;
   }
+
+  const localizedMatch = pathname.match(
+    /^\/(de|en|ru)(?=\/|$)/,
+  );
+
+  if (!localizedMatch) {
+    return;
+  }
+
+  const pathWithoutLocale =
+    pathname.slice(localizedMatch[0].length) ||
+    "/";
+
+  const localizedPath = `/${code}${
+    pathWithoutLocale === "/"
+      ? ""
+      : pathWithoutLocale
+  }`;
+
+  setOpen(false);
+  window.location.assign(localizedPath);
+}
 
   return (
     <>
