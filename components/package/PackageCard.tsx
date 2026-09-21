@@ -52,6 +52,20 @@ const priceNotes = {
   },
 };
 
+function scrollToCalculator() {
+  const calculator =
+    document.getElementById("calculator");
+
+  if (!calculator) {
+    return;
+  }
+
+  calculator.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
 export default function PackageCard({
   id,
   badge,
@@ -84,6 +98,10 @@ export default function PackageCard({
     window.dispatchEvent(
       new Event("packageSelected"),
     );
+
+    window.requestAnimationFrame(() => {
+      scrollToCalculator();
+    });
   }
 
   return (
@@ -164,6 +182,7 @@ export default function PackageCard({
             }`}
           >
             <span>{t.packages.button}</span>
+
             <span
               aria-hidden="true"
               className="transition-transform duration-200 group-hover/button:translate-x-1"
