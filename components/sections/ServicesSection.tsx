@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -7,122 +10,155 @@ import ServiceCard from "@/components/ui/ServiceCard";
 
 const servicesCopy = {
   de: {
-    eyebrow: "Meine Leistungen",
-    title: "Ein passender Start für Ihr Unternehmen im Internet.",
+    eyebrow: "Die passende Lösung",
+
+    title: "Was möchten Sie mit Ihrer Website erreichen?",
+
     description:
-      "Ich erstelle Websites für Selbstständige und kleine Unternehmen. Wenn Sie zusätzlich Unterstützung bei Google oder bei der Pflege Ihrer Website brauchen, vereinbaren wir dafür einen passenden Leistungsumfang.",
+      "Ob erster Internetauftritt, neue Website oder Online-Shop: Wir starten mit Ihrer Aufgabe und klären, welche Lösung zu Ihrem Unternehmen passt.",
+
+    helpTitle: "Sie wissen noch nicht, was Sie brauchen?",
+
+    helpDescription:
+      "Beschreiben Sie kurz Ihren Betrieb und was Sie verbessern möchten. Wenn Sie bereits eine Website haben, schicken Sie mir gerne den Link. Ich empfehle Ihnen einen passenden nächsten Schritt.",
+
+    helpButton: "Mein Vorhaben beschreiben",
+
     note:
-      "Sie müssen nicht alles auf einmal buchen. Was Ihr Projekt umfasst und kostet, halten wir vor dem Start schriftlich fest.",
+      "Unverbindlich und schriftlich. Umfang und Preis vereinbaren wir, bevor die Arbeit beginnt.",
+
     items: [
       {
-        title: "Website erstellen lassen",
+        title: "Ich brauche meine erste Website",
         description:
-          "Eine Landingpage oder Unternehmenswebsite, die Ihr Angebot verständlich vorstellt und den Kontakt zu Ihnen einfach macht. Mit individueller Gestaltung, Kontaktformular und einer Darstellung für Smartphone, Tablet und Computer.",
-        href: "/webdesign",
+          "Stellen Sie Ihre Leistungen vor, zeigen Sie Ihre Arbeit und machen Sie es Interessenten leicht, Sie zu kontaktieren. Ich entwickle eine Landingpage oder Unternehmenswebsite, die zu Ihrem Angebot passt.",
+        path: "webdesign",
         button: "Websites und Preise ansehen",
       },
       {
-        title: "Bei Google gefunden werden",
+        title: "Meine Website braucht eine Überarbeitung",
         description:
-          "Ich optimiere die technische Grundlage und Struktur Ihrer Website für Suchmaschinen. Für lokale Unternehmen kann auch die Einrichtung oder Optimierung des Google-Unternehmensprofils sinnvoll sein.",
-        href: "/seo",
-        button: "SEO-Leistungen ansehen",
+          "Veraltete Inhalte, eine unübersichtliche Darstellung oder Probleme auf dem Smartphone? Ich prüfe mit Ihnen, was verbessert werden soll und ob gezielte Änderungen oder ein neuer Aufbau sinnvoll sind.",
+        path: "digitale-loesungen",
+        button: "Website verbessern lassen",
       },
       {
-        title: "Google Ads einrichten",
+        title: "Ich möchte Produkte online verkaufen",
         description:
-          "Sie möchten Ihr Angebot mit Google-Anzeigen bewerben? Ich unterstütze Sie bei der Einrichtung. Leistungen und Kosten stimmen wir vorher ab. Das Werbebudget bei Google kommt separat hinzu.",
-        href: "/webdesign#anfrage",
-        button: "Google Ads anfragen",
+          "Ein Online-Shop, in dem Kunden Ihre Produkte ansehen, bestellen und bezahlen können. Produktumfang, Zahlungsarten und die Verwaltung des Shops stimmen wir vor der Umsetzung ab.",
+        path: "online-shop",
+        button: "Online-Shop und Leistungen ansehen",
       },
       {
-        title: "Website pflegen lassen",
+        title: "Meine Website wird bei Google kaum gefunden",
         description:
-          "Auch nach dem Start können Sie sich für technische Pflege und Änderungen an mich wenden. Wir vereinbaren, welche Aufgaben ich übernehme und welche Kosten dafür entstehen.",
-        href: "/webdesign#anfrage",
-        button: "Website-Pflege anfragen",
+          "Ich prüfe die technische Grundlage, Inhalte und Struktur Ihrer Website und optimiere sie für relevante Suchanfragen. Für lokale Betriebe beziehen wir bei Bedarf auch das Google-Unternehmensprofil ein.",
+        path: "seo",
+        button: "Mehr über Suchmaschinenoptimierung",
       },
     ],
   },
 
   en: {
-    eyebrow: "My services",
-    title: "The right start for your business online.",
+    eyebrow: "Find the right solution",
+
+    title: "What would you like your website to do?",
+
     description:
-      "I create websites for freelancers and small businesses. If you also need help with Google or website maintenance, we can agree on a suitable scope for those services.",
+      "Whether you need your first website, an update or an online store, we start with your needs and work out what suits your business.",
+
+    helpTitle: "Not sure what you need yet?",
+
+    helpDescription:
+      "Tell me briefly about your business and what you would like to improve. If you already have a website, feel free to include the link. I will recommend a suitable next step.",
+
+    helpButton: "Tell me about your project",
+
     note:
-      "You do not need to book everything at once. We agree on your project's scope and price in writing before work begins.",
+      "No obligation, with everything discussed in writing. We agree on the scope and price before work begins.",
+
     items: [
       {
-        title: "Create your website",
+        title: "I need my first website",
         description:
-          "A landing page or business website that explains your offer clearly and makes it easy to contact you. With a custom design, a contact form and layouts for phones, tablets and computers.",
-        href: "/webdesign",
+          "Explain your services, showcase your work and make it easy for potential customers to contact you. I will build a landing page or business website that suits your offer.",
+        path: "webdesign",
         button: "View websites and pricing",
       },
       {
-        title: "Get found on Google",
+        title: "My website needs an update",
         description:
-          "I optimise your website’s technical foundation and structure for search engines. For local businesses, setting up or improving a Google Business Profile may also be useful.",
-        href: "/seo",
-        button: "Explore SEO services",
+          "Outdated content, confusing pages or problems on mobile? We will identify what needs improving and whether targeted changes or a rebuild make sense.",
+        path: "digitale-loesungen",
+        button: "Explore website improvements",
       },
       {
-        title: "Set up Google Ads",
+        title: "I want to sell products online",
         description:
-          "Want to promote your services with Google Ads? I can help with the setup. We agree on the services and fees beforehand. Your advertising budget with Google is separate.",
-        href: "/webdesign#anfrage",
-        button: "Enquire about Google Ads",
+          "An online store where customers can browse, order and pay for your products. We agree on the product range, payment methods and store management before development begins.",
+        path: "online-shop",
+        button: "Explore online stores",
       },
       {
-        title: "Maintain your website",
+        title: "My website is hard to find on Google",
         description:
-          "You can also contact me for technical maintenance and changes after launch. We agree on the tasks I will handle and the costs involved.",
-        href: "/webdesign#anfrage",
-        button: "Enquire about maintenance",
+          "I review your website’s technical setup, content and structure and optimise them for relevant searches. For local businesses, we can also work on your Google Business Profile.",
+        path: "seo",
+        button: "Explore search engine optimisation",
       },
     ],
   },
 
   ru: {
-    eyebrow: "Мои услуги",
-    title: "Помогу вашему бизнесу выйти в интернет.",
+    eyebrow: "Решение под вашу задачу",
+
+    title: "Какую задачу должен решать ваш сайт?",
+
     description:
-      "Я создаю сайты для частных специалистов и небольших компаний. Если дополнительно нужны продвижение в Google или обслуживание сайта, отдельно согласуем подходящий объём работ.",
+      "Первый сайт, обновление существующего или интернет-магазин — начнём с вашей задачи и определим, что подходит вашему бизнесу.",
+
+    helpTitle: "Пока не знаете, что выбрать?",
+
+    helpDescription:
+      "Кратко расскажите о своём бизнесе и о том, что хотите улучшить. Если сайт уже есть, можете прислать ссылку. Я предложу подходящий следующий шаг.",
+
+    helpButton: "Рассказать о своей задаче",
+
     note:
-      "Необязательно заказывать всё сразу. До начала проекта письменно согласуем, что входит в работу и сколько это стоит.",
+      "Без обязательств, всё обсуждаем письменно. Состав работ и стоимость согласуем до начала проекта.",
+
     items: [
       {
-        title: "Разработка сайта",
+        title: "Мне нужен первый сайт",
         description:
-          "Лендинг или сайт компании, который понятно представляет ваши услуги и помогает связаться с вами. Индивидуальный дизайн, форма заявки и адаптация для телефона, планшета и компьютера.",
-        href: "/webdesign",
+          "Расскажите о своих услугах, покажите работы и дайте потенциальным клиентам удобный способ связаться с вами. Я разработаю лендинг или сайт компании под ваше предложение.",
+        path: "webdesign",
         button: "Посмотреть сайты и цены",
       },
       {
-        title: "Продвижение в Google",
+        title: "Мой сайт нужно обновить",
         description:
-          "Оптимизирую техническую основу и структуру сайта для поисковых систем. Для местного бизнеса также может быть полезна настройка или доработка профиля компании в Google.",
-        href: "/seo",
-        button: "Подробнее о SEO",
+          "Устаревшая информация, непонятная структура или проблемы на телефоне? Разберёмся, что стоит улучшить и достаточно ли отдельных изменений или нужен новый сайт.",
+        path: "digitale-loesungen",
+        button: "Подробнее об улучшении сайта",
       },
       {
-        title: "Настройка Google Ads",
+        title: "Хочу продавать товары онлайн",
         description:
-          "Хотите рекламировать свои услуги в Google? Помогу с настройкой рекламы. Объём работ и стоимость согласуем заранее. Рекламный бюджет Google оплачивается отдельно.",
-        href: "/webdesign#anfrage",
-        button: "Обсудить Google Ads",
+          "Интернет-магазин, в котором покупатели смогут посмотреть товары, оформить заказ и оплатить покупку. Количество товаров, способы оплаты и управление магазином согласуем до разработки.",
+        path: "online-shop",
+        button: "Подробнее об интернет-магазине",
       },
       {
-        title: "Обслуживание сайта",
+        title: "Мой сайт плохо находят в Google",
         description:
-          "После запуска ко мне можно обратиться за техническим обслуживанием и изменениями на сайте. Заранее определим, какие задачи я беру на себя и сколько они будут стоить.",
-        href: "/webdesign#anfrage",
-        button: "Обсудить обслуживание",
+          "Проверю техническую основу, содержание и структуру сайта и оптимизирую их под подходящие поисковые запросы. Для местного бизнеса при необходимости займёмся и профилем компании в Google.",
+        path: "seo",
+        button: "Подробнее о продвижении в поиске",
       },
     ],
   },
-};
+} as const;
 
 export default function ServicesSection() {
   const { language } = useLanguage();
@@ -135,20 +171,20 @@ export default function ServicesSection() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.08),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.08),transparent_35%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.06),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.05),transparent_35%)]"
       />
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
-          <p className="mb-5 text-xs font-medium uppercase tracking-[0.2em] text-blue-300">
+          <p className="mb-5 text-xs font-medium uppercase leading-6 tracking-[0.2em] text-blue-300">
             {t.eyebrow}
           </p>
 
-          <h2 className="break-words text-3xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="break-words text-3xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
             {t.title}
           </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 sm:text-lg">
             {t.description}
           </p>
         </div>
@@ -156,19 +192,45 @@ export default function ServicesSection() {
         <div className="mt-10 grid gap-6 sm:mt-14 md:grid-cols-2 lg:gap-8">
           {t.items.map((item, index) => (
             <ServiceCard
-              key={item.title}
+              key={item.path}
               number={`0${index + 1}`}
               title={item.title}
               description={item.description}
-              href={item.href}
+              href={`/${language}/${item.path}`}
               ctaLabel={item.button}
             />
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-7 text-white/60">
-          {t.note}
-        </p>
+        <div className="mt-8 rounded-[28px] border border-blue-400/20 bg-[#0b1220] p-6 sm:mt-10 sm:p-8 lg:p-10">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+            <div className="max-w-2xl">
+              <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl">
+                {t.helpTitle}
+              </h3>
+
+              <p className="mt-3 text-base leading-7 text-white/75">
+                {t.helpDescription}
+              </p>
+            </div>
+
+            <Link
+              href={`/${language}/webdesign#anfrage`}
+              className="inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full bg-blue-500 px-6 py-4 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 motion-reduce:transition-none sm:w-fit"
+            >
+              <span>{t.helpButton}</span>
+
+              <ArrowRight
+                aria-hidden="true"
+                className="h-5 w-5 shrink-0"
+              />
+            </Link>
+          </div>
+
+          <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-6 text-white/60">
+            {t.note}
+          </p>
+        </div>
       </Container>
     </Section>
   );

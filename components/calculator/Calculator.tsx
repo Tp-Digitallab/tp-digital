@@ -98,17 +98,52 @@ export default function Calculator() {
     setIncludedSupport([]);
   }
 
-  function handleWebsiteChange(newWebsite: WebsiteType) {
+    function handleWebsiteChange(newWebsite: WebsiteType) {
+    if (newWebsite.id === website.id) {
+      return;
+    }
+
     clearPackageSelection();
     setWebsite(newWebsite);
 
+    setSelectedLanguages(["de"]);
+    setSelectedMarketing([]);
+    setSelectedBranding([]);
+    setSelectedFeatures([]);
+    setSelectedSupport([]);
+
     if (newWebsite.id === "custom") {
-      setSelectedLanguages(["de"]);
-      setSelectedMarketing([]);
-      setSelectedBranding([]);
-      setSelectedFeatures([]);
-      setSelectedSupport([]);
+      return;
     }
+
+    const packageId = (
+      Object.keys(packagePresets) as PackageId[]
+    ).find(
+      (id) => packagePresets[id].website === newWebsite.id
+    );
+
+    if (!packageId) {
+      return;
+    }
+
+    const preset = packagePresets[packageId];
+
+    setSelectedPackageId(packageId);
+    setPackagePrice(preset.price);
+
+    setSelectedLanguages([...preset.languages]);
+    setIncludedLanguages([...preset.languages]);
+
+    setSelectedMarketing([...preset.marketing]);
+    setIncludedMarketing([...preset.marketing]);
+
+    setSelectedBranding([...preset.branding]);
+
+    setSelectedFeatures([...preset.features]);
+    setIncludedFeatures([...preset.features]);
+
+    setSelectedSupport([...preset.support]);
+    setIncludedSupport([...preset.support]);
   }
 
   function handleWebsiteNext() {
@@ -388,18 +423,24 @@ export default function Calculator() {
         )}
 
         {step === 2 && (
-          <LanguageStep
+                    <LanguageStep
             selected={selectedLanguages}
             setSelected={setSelectedLanguages}
+            includedCount={
+              packagePrice === null
+                ? 1
+                : Math.max(1, includedLanguages.length)
+            }
             back={() => setStep(1)}
             next={() => setStep(3)}
           />
         )}
 
         {step === 3 && (
-          <MarketingStep
+                    <MarketingStep
             selected={selectedMarketing}
             setSelected={setSelectedMarketing}
+            includedIds={includedMarketing}
             back={() => setStep(2)}
             next={() => setStep(4)}
           />
@@ -415,9 +456,10 @@ export default function Calculator() {
         )}
 
         {step === 5 && (
-          <FeaturesStep
+                    <FeaturesStep
             selected={selectedFeatures}
             setSelected={setSelectedFeatures}
+            includedIds={includedFeatures}
             back={() => setStep(4)}
             next={() => setStep(6)}
           />

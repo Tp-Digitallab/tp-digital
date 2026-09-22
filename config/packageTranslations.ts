@@ -18,192 +18,192 @@ export const packageTranslations: Record<
   PackageTranslation
 > = {
   de: {
-    popularBadge: "Für Ihren Firmenauftritt",
+    popularBadge: "Für mehrere Leistungen",
 
     packages: {
       launch: {
-        name: "Launch",
+        name: "Landingpage",
 
         description:
-          "Eine übersichtliche Landingpage für Selbstständige und kleine Unternehmen, die ihre Leistungen professionell präsentieren und einfach erreichbar sein möchten.",
+          "Für einen klaren Einstieg: Stellen Sie Ihr Angebot, Ihre Arbeit und Ihre Kontaktdaten auf einer übersichtlichen Seite vor. Passend für eine einzelne Dienstleistung oder einen kleinen Betrieb.",
 
         features: [
           "Eine Seite mit mehreren Abschnitten",
           "1 Sprache",
-          "Individuelles Design für Ihr Unternehmen",
-          "Optimiert für Smartphone, Tablet und Desktop",
-          "Basis-SEO",
-          "Kontaktformular",
-          "Google Analytics 4 Einrichtung",
-          "2 Korrekturrunden",
+          "Individuelles Design für Ihren Betrieb",
+          "Für Smartphone, Tablet und Computer",
+          "Kontaktformular für Kundenanfragen",
+          "Grundoptimierung für Suchmaschinen",
+          "Einrichtung der Besucheranalyse mit GA4",
+          "2 Korrekturrunden vor dem Start",
         ],
       },
 
       business: {
-        name: "Business",
+        name: "Firmenwebsite",
 
         description:
-          "Eine Unternehmenswebsite mit Platz für Ihre Leistungen, Referenzen und Unternehmensvorstellung – für einen klaren und vertrauenswürdigen Auftritt.",
+          "Für Unternehmen, die mehrere Leistungen ausführlich vorstellen möchten. Mit eigenen Seiten für Ihr Angebot, Ihre Projekte und Ihren Betrieb, damit Interessenten sich ein klares Bild machen können.",
 
         features: [
-          "Unternehmenswebsite – bis zu 5 Seiten",
+          "Bis zu 5 Seiten für Ihren Betrieb",
           "2 Sprachen",
           "Individuelles Design für Ihr Unternehmen",
-          "Optimiert für Smartphone, Tablet und Desktop",
-          "Kontaktformular",
-          "Erweiterte SEO-Optimierung",
-          "Google-Unternehmensprofil",
-          "GA4 und Conversion-Tracking",
-          "1 Monat technischer Support",
-          "2 Korrekturrunden",
+          "Für Smartphone, Tablet und Computer",
+          "Kontaktformular für Kundenanfragen",
+          "Erweiterte Suchmaschinenoptimierung",
+          "Einrichtung oder Optimierung Ihres Google-Unternehmensprofils",
+          "Einrichtung von GA4 und Anfrage-Tracking",
+          "1 Monat technischer Support nach dem Start",
+          "2 Korrekturrunden vor dem Start",
         ],
       },
 
       growth: {
-        name: "Growth",
+        name: "Online-Shop",
 
         description:
-          "Ein Online-Shop für Ihren Einstieg in den Online-Verkauf – mit Produktverwaltung, Zahlungsintegration und technischer Marketing-Einrichtung.",
+          "Für Unternehmen, die Produkte online verkaufen möchten. Kunden können Ihr Sortiment ansehen, bestellen und bezahlen. Sie erhalten einen Verwaltungsbereich für Ihren Shop.",
 
         features: [
-          "Online-Shop – bis zu 20 Produkte",
+          "Einrichtung von bis zu 20 Produkten",
           "Bis zu 3 Sprachen",
-          "Optimiert für Smartphone, Tablet und Desktop",
-          "Admin-Bereich (CMS)",
-          "Zahlungsintegration",
-          "Erweiterte SEO-Optimierung",
-          "GA4 E-Commerce-Tracking",
-          "Google Ads Einrichtung",
-          "2 Monate technischer Support",
-          "2 Korrekturrunden",
+          "Für Smartphone, Tablet und Computer",
+          "Verwaltungsbereich für Produkte und Bestellungen",
+          "Anbindung vereinbarter Zahlungsarten",
+          "Erweiterte Suchmaschinenoptimierung",
+          "Einrichtung der Shop-Analyse mit GA4",
+          "Einrichtung von Google Ads",
+          "2 Monate technischer Support nach dem Start",
+          "2 Korrekturrunden vor dem Start",
         ],
       },
     },
   },
 
   en: {
-    popularBadge: "For your business website",
+    popularBadge: "For several services",
 
     packages: {
       launch: {
-        name: "Launch",
+        name: "Landing page",
 
         description:
-          "A clear landing page for freelancers and small businesses that want to present their services professionally and make it easy for customers to get in touch.",
+          "A clear starting point: present your services, work and contact details on one well-organised page. Suitable for a single service or a small business.",
 
         features: [
           "One page with several sections",
           "1 language",
           "Custom design for your business",
-          "Optimized for mobile, tablet and desktop",
-          "Basic SEO",
-          "Contact form",
-          "Google Analytics 4 setup",
-          "2 revision rounds",
+          "Adapted for phones, tablets and computers",
+          "Contact form for customer enquiries",
+          "Basic search engine optimisation",
+          "Visitor analytics setup with GA4",
+          "2 revision rounds before launch",
         ],
       },
 
       business: {
-        name: "Business",
+        name: "Business website",
 
         description:
-          "A business website with room for your services, references and company introduction – for a clear and trustworthy online presence.",
+          "For businesses that need to explain several services in detail. Dedicated pages for your offer, projects and company help potential customers understand what you do.",
 
         features: [
-          "Business website – up to 5 pages",
+          "Up to 5 pages for your business",
           "2 languages",
           "Custom design for your business",
-          "Optimized for mobile, tablet and desktop",
-          "Contact form",
-          "Advanced SEO",
-          "Google Business Profile",
-          "GA4 and conversion tracking",
-          "1 month of technical support",
-          "2 revision rounds",
+          "Adapted for phones, tablets and computers",
+          "Contact form for customer enquiries",
+          "Advanced search engine optimisation",
+          "Google Business Profile setup or optimisation",
+          "GA4 and enquiry tracking setup",
+          "1 month of technical support after launch",
+          "2 revision rounds before launch",
         ],
       },
 
       growth: {
-        name: "Growth",
+        name: "Online store",
 
         description:
-          "An online store to help you start selling online – with product management, payment integration and technical marketing setup.",
+          "For businesses that want to sell products online. Customers can browse, order and pay, while you manage your store through an administration area.",
 
         features: [
-          "Online store – up to 20 products",
+          "Setup of up to 20 products",
           "Up to 3 languages",
-          "Optimized for mobile, tablet and desktop",
-          "Admin panel (CMS)",
-          "Payment integration",
-          "Advanced SEO",
-          "GA4 e-commerce tracking",
+          "Adapted for phones, tablets and computers",
+          "Administration area for products and orders",
+          "Integration of agreed payment methods",
+          "Advanced search engine optimisation",
+          "Store analytics setup with GA4",
           "Google Ads setup",
-          "2 months of technical support",
-          "2 revision rounds",
+          "2 months of technical support after launch",
+          "2 revision rounds before launch",
         ],
       },
     },
   },
 
   ru: {
-    popularBadge: "Для сайта вашей компании",
+    popularBadge: "Для нескольких направлений услуг",
 
     packages: {
       launch: {
-        name: "Старт",
+        name: "Лендинг",
 
         description:
-          "Понятный лендинг для самозанятых и небольших компаний: профессиональная презентация услуг и удобный способ связи для клиентов.",
+          "Для понятного старта: ваши услуги, работы и контакты на одной продуманной странице. Подходит для отдельной услуги или небольшого бизнеса.",
 
         features: [
           "Одна страница с несколькими разделами",
           "1 язык",
           "Индивидуальный дизайн для вашего бизнеса",
-          "Адаптация для смартфонов, планшетов и компьютеров",
-          "Базовое SEO",
-          "Контактная форма",
-          "Настройка Google Analytics 4",
-          "2 раунда правок",
+          "Адаптация для телефона, планшета и компьютера",
+          "Форма для заявок клиентов",
+          "Базовая оптимизация для поисковых систем",
+          "Настройка аналитики посещений GA4",
+          "2 раунда правок до запуска",
         ],
       },
 
       business: {
-        name: "Бизнес",
+        name: "Сайт компании",
 
         description:
-          "Сайт компании с отдельными страницами для услуг, примеров работ и информации о вас — для понятной презентации бизнеса и доверия клиентов.",
+          "Для бизнеса, которому нужно подробно представить несколько услуг. Отдельные страницы об услугах, проектах и компании помогут потенциальным клиентам разобраться в вашем предложении.",
 
         features: [
-          "Сайт компании — до 5 страниц",
+          "До 5 страниц для вашего бизнеса",
           "2 языка",
-          "Индивидуальный дизайн для вашего бизнеса",
-          "Адаптация для смартфонов, планшетов и компьютеров",
-          "Контактная форма",
-          "Расширенное SEO",
-          "Профиль компании в Google",
-          "GA4 и отслеживание конверсий",
-          "1 месяц технической поддержки",
-          "2 раунда правок",
+          "Индивидуальный дизайн для вашей компании",
+          "Адаптация для телефона, планшета и компьютера",
+          "Форма для заявок клиентов",
+          "Расширенная поисковая оптимизация",
+          "Настройка или улучшение профиля компании в Google",
+          "Настройка GA4 и отслеживания заявок",
+          "1 месяц технической поддержки после запуска",
+          "2 раунда правок до запуска",
         ],
       },
 
       growth: {
-        name: "Рост",
+        name: "Интернет-магазин",
 
         description:
-          "Интернет-магазин для начала онлайн-продаж: управление товарами, подключение оплаты и техническая настройка маркетинга.",
+          "Для бизнеса, который хочет продавать товары онлайн. Покупатели смогут изучить ассортимент, оформить заказ и оплатить покупку, а вы — управлять магазином через панель администратора.",
 
         features: [
-          "Интернет-магазин — до 20 товаров",
+          "Добавление до 20 товаров",
           "До 3 языков",
-          "Адаптация для смартфонов, планшетов и компьютеров",
-          "Панель управления (CMS)",
-          "Подключение оплаты",
-          "Расширенное SEO",
-          "GA4 для электронной торговли",
+          "Адаптация для телефона, планшета и компьютера",
+          "Панель управления товарами и заказами",
+          "Подключение согласованных способов оплаты",
+          "Расширенная поисковая оптимизация",
+          "Настройка аналитики магазина GA4",
           "Настройка Google Ads",
-          "2 месяца технической поддержки",
-          "2 раунда правок",
+          "2 месяца технической поддержки после запуска",
+          "2 раунда правок до запуска",
         ],
       },
     },
