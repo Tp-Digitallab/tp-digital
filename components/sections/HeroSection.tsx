@@ -1,10 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 import Container from "@/components/common/Container";
 import BackgroundGrid from "@/components/effects/BackgroundGrid";
@@ -15,122 +12,107 @@ import { packages } from "@/config/packages";
 
 const heroCopy = {
   de: {
-    eyebrow:
-      "Webentwicklung aus München · deutschlandweit",
+    eyebrow: "Webdesign für kleine Unternehmen · Aus München",
 
-    title:
-      "Professionelle Websites",
-
-    accent:
-      "für kleine Unternehmen.",
+    title: "Zeigen Sie, was Sie können.",
+    accent: "Mit einer Website, die überzeugt.",
 
     description:
-      "Ich entwickle Ihre Website persönlich – mit verständlichen Inhalten, einer klaren Struktur und einem einfachen Weg zur Kontaktaufnahme. Damit Ihr Unternehmen online überzeugend auftritt.",
+      "Ich erstelle Ihre Website so, dass Interessenten Ihre Leistungen verstehen, Ihre Arbeit kennenlernen und Sie einfach kontaktieren können. Für Selbstständige und kleine Unternehmen – vom ersten eigenen Auftritt bis zur neuen Website.",
 
-    priceLabel:
-      "Landingpage ab",
+    priceLabel: "Ihre erste Website als Landingpage ab",
 
     priceNote:
-      "Leistungsumfang und Festpreis vereinbaren wir schriftlich vor Projektbeginn.",
+      "Den genauen Leistungsumfang und Festpreis erhalten Sie schriftlich vor Projektbeginn.",
 
-    primaryCta:
-      "Unverbindliches Angebot anfragen",
+    primaryCta: "Unverbindliches Angebot anfragen",
+    secondaryCta: "Kundenprojekte ansehen",
 
-    secondaryCta:
-      "Kundenprojekte ansehen",
+    nextStep:
+      "Beschreiben Sie kurz Ihren Betrieb und Ihr Vorhaben. Ich empfehle Ihnen eine passende Lösung mit klarem Umfang und Preis.",
 
     benefits: [
-      "Direkter Kontakt mit mir",
-      "Schriftliche Abstimmung ohne Telefontermin",
-      "2 Korrekturrunden im Paket",
+      "Persönlich betreut von Anfang bis zum Start",
+      "Abstimmung per E-Mail oder WhatsApp",
+      "Website vor dem Start prüfen · 2 Korrekturrunden",
     ],
 
     personRole:
-      "Gründer von TP Digital Lab · Ihr direkter Ansprechpartner",
+      "Ihr Ansprechpartner für Planung, Umsetzung und Website-Start",
 
     reassurance:
-      "Ihre Anfrage ist unverbindlich. Ich antworte in der Regel innerhalb von 3–12 Stunden.",
+      "Sie müssen noch kein Paket auswählen. Wir klären zuerst, was Sie brauchen.",
   },
 
   en: {
-    eyebrow:
-      "Web development from Munich · across Germany",
+    eyebrow: "Web design for small businesses · Based in Munich",
 
-    title:
-      "Professional websites",
-
-    accent:
-      "for small businesses.",
+    title: "Show what you do best.",
+    accent: "With a website that builds confidence.",
 
     description:
-      "I personally build your website with clear content, a well-organized structure and an easy way for customers to get in touch. Give your business a professional online presence.",
+      "I build your website so potential customers can understand your services, see your work and contact you easily. For independent professionals and small businesses, whether you need your first website or a fresh start.",
 
-    priceLabel:
-      "Landing page from",
+    priceLabel: "Your first website as a landing page from",
 
     priceNote:
-      "We agree on the scope and fixed price in writing before the project begins.",
+      "You receive the exact scope and fixed price in writing before the project begins.",
 
-    primaryCta:
-      "Request a no-obligation quote",
+    primaryCta: "Request a no-obligation quote",
+    secondaryCta: "View client projects",
 
-    secondaryCta:
-      "View client projects",
+    nextStep:
+      "Tell me briefly about your business and what you need. I will recommend a suitable solution with a clear scope and price.",
 
     benefits: [
-      "Direct contact with me",
-      "Written communication — no phone appointment",
-      "2 revision rounds included in the package",
+      "Personal support from planning to launch",
+      "Communication by email or WhatsApp",
+      "Review before launch · 2 revision rounds",
     ],
 
     personRole:
-      "Founder of TP Digital Lab · Your direct contact",
+      "Your contact for planning, development and launching your website",
 
     reassurance:
-      "Your enquiry carries no obligation. I usually reply within 3–12 hours.",
+      "You do not need to choose a package yet. We will first work out what you need.",
   },
 
   ru: {
-    eyebrow:
-      "Разработка сайтов из Мюнхена · по всей Германии",
+    eyebrow: "Сайты для малого бизнеса · Из Мюнхена",
 
-    title:
-      "Профессиональные сайты",
-
-    accent:
-      "для малого бизнеса.",
+    title: "Покажите, что вы умеете.",
+    accent: "С сайтом, который вызывает доверие.",
 
     description:
-      "Я лично разрабатываю ваш сайт: понятные тексты, продуманная структура и удобный способ связи для клиентов. Чтобы ваш бизнес убедительно выглядел в интернете.",
+      "Я создам сайт, на котором потенциальные клиенты смогут понять ваши услуги, посмотреть работы и легко связаться с вами. Для частных специалистов и малого бизнеса — от первого сайта до обновления существующего.",
 
-    priceLabel:
-      "Лендинг от",
+    priceLabel: "Ваш первый сайт в формате лендинга — от",
 
     priceNote:
-      "Состав работ и фиксированную цену согласуем письменно до начала проекта.",
+      "Точный состав работ и фиксированную стоимость вы получите письменно до начала проекта.",
 
-    primaryCta:
-      "Запросить предложение",
+    primaryCta: "Запросить предложение",
+    secondaryCta: "Посмотреть работы",
 
-    secondaryCta:
-      "Посмотреть работы",
+    nextStep:
+      "Кратко расскажите о своём бизнесе и задаче. Я предложу подходящее решение с понятным составом работ и стоимостью.",
 
     benefits: [
-      "Прямой контакт со мной",
-      "Письменное общение без созвонов",
-      "2 раунда правок в пакете",
+      "Лично веду проект от обсуждения до запуска",
+      "Общение по электронной почте или WhatsApp",
+      "Проверка до запуска · 2 раунда правок",
     ],
 
     personRole:
-      "Основатель TP Digital Lab · Ваш прямой контакт",
+      "Ваш специалист по планированию, разработке и запуску сайта",
 
     reassurance:
-      "Заявка ни к чему не обязывает. Обычно я отвечаю в течение 3–12 часов.",
+      "Выбирать пакет заранее не нужно. Сначала разберёмся, что вам подходит.",
   },
 } as const;
 
 const landingPrice = packages.find(
-  (item) => item.id === "launch"
+  (item) => item.id === "launch",
 )?.price;
 
 export default function HeroSection() {
@@ -160,7 +142,6 @@ export default function HeroSection() {
       className="relative min-h-[100svh] overflow-hidden bg-[#050505] text-white"
     >
       <BackgroundGrid />
-
       <CursorTrail />
 
       <div
@@ -169,30 +150,28 @@ export default function HeroSection() {
       />
 
       <Container>
-        <div className="relative z-10 flex min-h-[100svh] items-center pb-20 pt-36 sm:pt-40 lg:pb-28 lg:pt-48">
+        <div className="relative z-10 flex min-h-[100svh] items-center pb-20 pt-32 sm:pt-40 lg:pb-24 lg:pt-44">
           <div className="w-full max-w-5xl">
-            <p className="max-w-2xl text-xs font-medium uppercase leading-6 tracking-[0.2em] text-blue-300/80 sm:tracking-[0.3em]">
+            <p className="max-w-2xl text-xs font-medium uppercase leading-6 tracking-[0.16em] text-blue-300 sm:tracking-[0.24em]">
               {t.eyebrow}
             </p>
 
-            <h1 className="mt-7 break-words text-[38px] font-semibold leading-[1.08] tracking-[-0.04em] sm:text-[56px] md:text-[68px] lg:text-[82px]">
-              {t.title}
+            <h1 className="mt-6 break-words text-[36px] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-[52px] md:text-[62px] lg:text-[72px]">
+              <span className="block">{t.title}</span>
 
-              <br />
-
-              <span className="text-white/70">
+              <span className="mt-2 block text-blue-200">
                 {t.accent}
               </span>
             </h1>
 
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/65 sm:mt-8 sm:text-xl sm:leading-9">
+            <p className="mt-6 max-w-3xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
               {t.description}
             </p>
 
-            <div className="mt-8 max-w-2xl">
+            <div className="mt-7 max-w-2xl">
               {formattedPrice && (
                 <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="text-base text-white/60">
+                  <span className="text-sm text-white/70 sm:text-base">
                     {t.priceLabel}
                   </span>
 
@@ -202,14 +181,14 @@ export default function HeroSection() {
                 </p>
               )}
 
-              <p className="mt-3 max-w-xl text-sm leading-6 text-white/45">
+              <p className="mt-2 max-w-xl text-sm leading-6 text-white/60">
                 {t.priceNote}
               </p>
             </div>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
-                href="/webdesign#anfrage"
+                href={`/${language}/webdesign#anfrage`}
                 className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-blue-500 px-6 py-4 text-center text-sm font-semibold text-white shadow-[0_12px_35px_rgba(59,130,246,0.18)] transition hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 sm:w-auto sm:text-base"
               >
                 <span>{t.primaryCta}</span>
@@ -222,7 +201,7 @@ export default function HeroSection() {
 
               <ScrollLink
                 href="#projects"
-                className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-6 py-4 text-center text-sm font-medium text-white/80 transition hover:border-white/30 hover:bg-white/[0.07] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 sm:w-auto sm:text-base"
+                className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.03] px-6 py-4 text-center text-sm font-medium text-white/85 transition hover:border-white/30 hover:bg-white/[0.07] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 sm:w-auto sm:text-base"
               >
                 <span>{t.secondaryCta}</span>
 
@@ -233,19 +212,25 @@ export default function HeroSection() {
               </ScrollLink>
             </div>
 
-            <p className="mt-4 max-w-xl text-sm leading-6 text-white/45">
-              {t.reassurance}
-            </p>
+            <div className="mt-4 max-w-2xl">
+              <p className="text-sm leading-6 text-white/75">
+                {t.nextStep}
+              </p>
 
-            <ul className="mt-8 flex flex-col gap-3 text-sm text-white/65 lg:flex-row lg:flex-wrap lg:gap-x-6">
+              <p className="mt-2 text-sm leading-6 text-blue-200/90">
+                {t.reassurance}
+              </p>
+            </div>
+
+            <ul className="mt-7 grid gap-3 text-sm leading-6 text-white/75">
               {t.benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex items-start gap-2"
+                  className="flex items-start gap-3"
                 >
                   <CheckCircle2
                     aria-hidden="true"
-                    className="mt-0.5 h-4 w-4 shrink-0 text-blue-400"
+                    className="mt-1 h-4 w-4 shrink-0 text-blue-400"
                   />
 
                   <span>{benefit}</span>
@@ -253,12 +238,12 @@ export default function HeroSection() {
               ))}
             </ul>
 
-            <div className="mt-9 max-w-2xl border-t border-white/10 pt-6">
-              <p className="font-medium text-white/90">
+            <div className="mt-7 max-w-2xl border-t border-white/10 pt-5">
+              <p className="font-medium text-white">
                 Taras Pakhaliuk
               </p>
 
-              <p className="mt-1 text-sm leading-6 text-white/45">
+              <p className="mt-1 text-sm leading-6 text-white/60">
                 {t.personRole}
               </p>
             </div>
