@@ -1,5 +1,5 @@
 "use client";
-
+import ReviewsSection from "@/components/sections/ReviewsSection";
 import { type FormEvent, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -1623,31 +1623,7 @@ export default function WebdesignLandingPage() {
           </Container>
         </section>
 
-        <section className="border-y border-white/10 bg-gradient-to-br from-blue-500/[0.09] via-white/[0.025] to-transparent py-24">
-          <Container>
-            <div className="mx-auto max-w-4xl text-center">
-              <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
-                {t.review.eyebrow}
-              </p>
-
-              <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
-                {t.review.title}
-              </h2>
-
-              <blockquote className="mt-8 text-xl leading-9 text-white/75">
-                “{t.review.text}”
-              </blockquote>
-
-              <p className="mt-8 font-semibold">
-                {t.review.author}
-              </p>
-
-              <p className="mt-1 text-sm text-white/40">
-                {t.review.source}
-              </p>
-            </div>
-          </Container>
-        </section>
+                <ReviewsSection />
 
         <section className="py-24 md:py-32">
           <Container>
