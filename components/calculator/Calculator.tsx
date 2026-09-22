@@ -25,101 +25,69 @@ import {
   marketing,
   websiteTypes,
 } from "@/config/calculator";
+
 import { features } from "@/config/features";
 import { packagePresets } from "@/config/packagePresets";
 import { support } from "@/config/support";
 
-type PackageId =
-  keyof typeof packagePresets;
+type PackageId = keyof typeof packagePresets;
 
-type WebsiteType =
-  (typeof websiteTypes)[number];
+type WebsiteType = (typeof websiteTypes)[number];
 
 type WindowWithLenis = Window & {
   lenis?: Lenis;
 };
 
 export default function Calculator() {
-  const calculatorRef =
-    useRef<HTMLDivElement>(null);
+  const calculatorRef = useRef<HTMLDivElement>(null);
+  const previousStep = useRef(1);
 
-  const isInitialStepRender =
-    useRef(true);
+  const [step, setStep] = useState(1);
 
-  const [step, setStep] =
-    useState(1);
+  const [selectedPackageId, setSelectedPackageId] =
+    useState<PackageId | null>(null);
 
-  const [
-    selectedPackageId,
-    setSelectedPackageId,
-  ] = useState<PackageId | null>(
-    null
-  );
+  const [packagePrice, setPackagePrice] =
+    useState<number | null>(null);
 
-  const [
-    packagePrice,
-    setPackagePrice,
-  ] = useState<number | null>(
-    null
-  );
+  const [includedLanguages, setIncludedLanguages] =
+    useState<string[]>([]);
 
-  const [
-    includedLanguages,
-    setIncludedLanguages,
-  ] = useState<string[]>([]);
+  const [includedMarketing, setIncludedMarketing] =
+    useState<string[]>([]);
 
-  const [
-    includedMarketing,
-    setIncludedMarketing,
-  ] = useState<string[]>([]);
+  const [includedFeatures, setIncludedFeatures] =
+    useState<string[]>([]);
 
-  const [
-    includedFeatures,
-    setIncludedFeatures,
-  ] = useState<string[]>([]);
-
-  const [
-    includedSupport,
-    setIncludedSupport,
-  ] = useState<string[]>([]);
+  const [includedSupport, setIncludedSupport] =
+    useState<string[]>([]);
 
   const [website, setWebsite] =
-    useState<WebsiteType>(
-      websiteTypes[0]
-    );
+    useState<WebsiteType>(websiteTypes[0]);
 
-  const [
-    selectedLanguages,
-    setSelectedLanguages,
-  ] = useState<string[]>(["de"]);
+  const [selectedLanguages, setSelectedLanguages] =
+    useState<string[]>(["de"]);
 
-  const [
-    selectedMarketing,
-    setSelectedMarketing,
-  ] = useState<string[]>([]);
+  const [selectedMarketing, setSelectedMarketing] =
+    useState<string[]>([]);
 
-  const [
-    selectedBranding,
-    setSelectedBranding,
-  ] = useState<string[]>([]);
+  const [selectedBranding, setSelectedBranding] =
+    useState<string[]>([]);
 
-  const [
-    selectedFeatures,
-    setSelectedFeatures,
-  ] = useState<string[]>([]);
+  const [selectedFeatures, setSelectedFeatures] =
+    useState<string[]>([]);
 
-  const [
-    selectedSupport,
-    setSelectedSupport,
-  ] = useState<string[]>([]);
+  const [selectedSupport, setSelectedSupport] =
+    useState<string[]>([]);
 
-  const isCustomWork =
-    website.id === "custom";
+  const isCustomWork = website.id === "custom";
 
   function clearPackageSelection() {
-    localStorage.removeItem(
-      "selectedPackage"
-    );
+    try {
+      window.localStorage.removeItem("selectedPackage");
+    } catch {
+      // Калькулятор работает и при недоступном хранилище.
+    }
 
     setSelectedPackageId(null);
     setPackagePrice(null);
@@ -130,11 +98,8 @@ export default function Calculator() {
     setIncludedSupport([]);
   }
 
-  function handleWebsiteChange(
-    newWebsite: WebsiteType
-  ) {
+  function handleWebsiteChange(newWebsite: WebsiteType) {
     clearPackageSelection();
-
     setWebsite(newWebsite);
 
     if (newWebsite.id === "custom") {
@@ -147,122 +112,66 @@ export default function Calculator() {
   }
 
   function handleWebsiteNext() {
-    if (isCustomWork) {
-      setStep(7);
-      return;
-    }
-
-    setStep(2);
+    setStep(isCustomWork ? 7 : 2);
   }
 
   function handleContactBack() {
-    if (isCustomWork) {
-      setStep(1);
-      return;
-    }
-
-    setStep(6);
+    setStep(isCustomWork ? 1 : 6);
   }
 
-  function applyPackage() {
-    const storedPackage =
-      localStorage.getItem(
-        "selectedPackage"
-      );
-
-    if (!storedPackage) {
-      return;
-    }
-
-    if (
-      !(
-        storedPackage in
-        packagePresets
-      )
-    ) {
-      return;
-    }
-
-    const packageId =
-      storedPackage as PackageId;
-
-    const preset =
-      packagePresets[packageId];
-
-    setSelectedPackageId(
-      packageId
-    );
-
-    setPackagePrice(
-      preset.price
-    );
-
-    const selectedWebsite =
-      websiteTypes.find(
-        (item) =>
-          item.id ===
-          preset.website
-      );
-
-    if (selectedWebsite) {
-      setWebsite(
-        selectedWebsite
-      );
-    }
-
-    setSelectedLanguages([
-      ...preset.languages,
-    ]);
-
-    setIncludedLanguages([
-      ...preset.languages,
-    ]);
-
-    setSelectedMarketing([
-      ...preset.marketing,
-    ]);
-
-    setIncludedMarketing([
-      ...preset.marketing,
-    ]);
-
-    setSelectedBranding([
-      ...preset.branding,
-    ]);
-
-    setSelectedFeatures([
-      ...preset.features,
-    ]);
-
-    setIncludedFeatures([
-      ...preset.features,
-    ]);
-
-    setSelectedSupport([
-      ...preset.support,
-    ]);
-
-    setIncludedSupport([
-      ...preset.support,
-    ]);
-
-    setStep(7);
-  }
-
+  // Пакет применяется только после нажатия на его кнопку.
+  // При загрузке страницы сохранённый пакет не восстанавливается.
   useEffect(() => {
     function handlePackageSelected() {
-      applyPackage();
-    }
+      let storedPackage: string | null = null;
 
-    const storedPackage =
-      localStorage.getItem(
-        "selectedPackage"
+      try {
+        storedPackage =
+          window.localStorage.getItem("selectedPackage");
+      } catch {
+        return;
+      }
+
+      if (
+        !storedPackage ||
+        !Object.prototype.hasOwnProperty.call(
+          packagePresets,
+          storedPackage
+        )
+      ) {
+        return;
+      }
+
+      const packageId = storedPackage as PackageId;
+      const preset = packagePresets[packageId];
+
+      const selectedWebsite = websiteTypes.find(
+        (item) => item.id === preset.website
       );
 
-    if (storedPackage) {
-      queueMicrotask(
-        handlePackageSelected
-      );
+      if (!selectedWebsite) {
+        return;
+      }
+
+      setSelectedPackageId(packageId);
+      setPackagePrice(preset.price);
+      setWebsite(selectedWebsite);
+
+      setSelectedLanguages([...preset.languages]);
+      setIncludedLanguages([...preset.languages]);
+
+      setSelectedMarketing([...preset.marketing]);
+      setIncludedMarketing([...preset.marketing]);
+
+      setSelectedBranding([...preset.branding]);
+
+      setSelectedFeatures([...preset.features]);
+      setIncludedFeatures([...preset.features]);
+
+      setSelectedSupport([...preset.support]);
+      setIncludedSupport([...preset.support]);
+
+      setStep(7);
     }
 
     window.addEventListener(
@@ -276,19 +185,70 @@ export default function Calculator() {
         handlePackageSelected
       );
     };
+  }, []);
 
-    }, []);
-
+  // После обновления главной страницы показываем её начало.
   useEffect(() => {
-    if (isInitialStepRender.current) {
-      isInitialStepRender.current = false;
+    const navigation = performance.getEntriesByType(
+      "navigation"
+    )[0] as PerformanceNavigationTiming | undefined;
+
+    if (navigation?.type !== "reload") {
       return;
     }
 
+    const previousScrollRestoration =
+      window.history.scrollRestoration;
+
+    window.history.scrollRestoration = "manual";
+
+    window.history.replaceState(
+      window.history.state,
+      "",
+      window.location.pathname + window.location.search
+    );
+
+    function scrollToTop() {
+      const browserWindow =
+        window as unknown as WindowWithLenis;
+
+      if (browserWindow.lenis) {
+        browserWindow.lenis.scrollTo(0, {
+          immediate: true,
+        });
+      } else {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "instant",
+        });
+      }
+    }
+
+    scrollToTop();
+
+    const frameId =
+      window.requestAnimationFrame(scrollToTop);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+
+      window.history.scrollRestoration =
+        previousScrollRestoration;
+    };
+  }, []);
+
+  // Прокрутка к калькулятору только при изменении шага.
+  useEffect(() => {
+    if (previousStep.current === step) {
+      return;
+    }
+
+    previousStep.current = step;
+
     const animationFrameId =
       window.requestAnimationFrame(() => {
-        const calculatorElement =
-          calculatorRef.current;
+        const calculatorElement = calculatorRef.current;
 
         if (!calculatorElement) {
           return;
@@ -297,12 +257,17 @@ export default function Calculator() {
         const browserWindow =
           window as unknown as WindowWithLenis;
 
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
         if (browserWindow.lenis) {
           browserWindow.lenis.scrollTo(
             calculatorElement,
             {
               duration: 0.7,
               offset: -96,
+              immediate: reducedMotion,
             }
           );
 
@@ -310,107 +275,64 @@ export default function Calculator() {
         }
 
         calculatorElement.scrollIntoView({
-          behavior: "smooth",
+          behavior: reducedMotion ? "instant" : "smooth",
           block: "start",
         });
       });
 
     return () => {
-      window.cancelAnimationFrame(
-        animationFrameId
-      );
+      window.cancelAnimationFrame(animationFrameId);
     };
   }, [step]);
 
   const total = useMemo(() => {
-    if (
-      website.id === "custom"
-    ) {
+    if (website.id === "custom") {
       return 0;
     }
 
-    let price =
-      packagePrice ??
-      website.price;
+    let price = packagePrice ?? website.price;
 
     const includedLanguageCount =
       packagePrice === null
         ? 1
-        : Math.max(
-            1,
-            includedLanguages.length
-          );
+        : Math.max(1, includedLanguages.length);
 
-    const paidLanguages =
-      Math.max(
-        0,
-        selectedLanguages.length -
-          includedLanguageCount
+    const paidLanguages = Math.max(
+      0,
+      selectedLanguages.length - includedLanguageCount
+    );
+
+    price += paidLanguages * 50;
+
+    selectedMarketing.forEach((id) => {
+      const item = marketing.find(
+        (marketingItem) => marketingItem.id === id
       );
 
-    price +=
-      paidLanguages * 50;
-
-    selectedMarketing.forEach(
-      (id) => {
-        const item =
-          marketing.find(
-            (
-              marketingItem
-            ) =>
-              marketingItem.id ===
-              id
-          );
-
-        if (
-          item &&
-          !includedMarketing.includes(
-            id
-          )
-        ) {
-          price += item.price;
-        }
+      if (item && !includedMarketing.includes(id)) {
+        price += item.price;
       }
-    );
+    });
 
-    selectedBranding.forEach(
-      (id) => {
-        const item =
-          branding.find(
-            (
-              brandingItem
-            ) =>
-              brandingItem.id ===
-              id
-          );
+    selectedBranding.forEach((id) => {
+      const item = branding.find(
+        (brandingItem) => brandingItem.id === id
+      );
 
-        if (item) {
-          price += item.price;
-        }
+      if (item) {
+        price += item.price;
       }
-    );
+    });
 
-    selectedFeatures.forEach(
-      (id) => {
-        const item =
-          features.find(
-            (
-              featureItem
-            ) =>
-              featureItem.id ===
-              id
-          );
+    selectedFeatures.forEach((id) => {
+      const item = features.find(
+        (featureItem) => featureItem.id === id
+      );
 
-        if (
-          item &&
-          !includedFeatures.includes(
-            id
-          )
-        ) {
-          price += item.price;
-        }
+      if (item && !includedFeatures.includes(id)) {
+        price += item.price;
       }
-    );
+    });
 
     return price;
   }, [
@@ -425,224 +347,119 @@ export default function Calculator() {
     includedFeatures,
   ]);
 
-  const monthlyTotal =
-    useMemo(() => {
-      if (
-        website.id === "custom"
-      ) {
-        return 0;
-      }
+  const monthlyTotal = useMemo(() => {
+    if (website.id === "custom") {
+      return 0;
+    }
 
-      let price = 0;
+    let price = 0;
 
-      selectedSupport.forEach(
-        (id) => {
-          const item =
-            support.find(
-              (
-                supportItem
-              ) =>
-                supportItem.id ===
-                id
-            );
-
-          if (
-            item &&
-            !includedSupport.includes(
-              id
-            )
-          ) {
-            price += item.price;
-          }
-        }
+    selectedSupport.forEach((id) => {
+      const item = support.find(
+        (supportItem) => supportItem.id === id
       );
 
-      return price;
-    }, [
-      website,
-      selectedSupport,
-      includedSupport,
-    ]);
+      if (item && !includedSupport.includes(id)) {
+        price += item.price;
+      }
+    });
+
+    return price;
+  }, [
+    website,
+    selectedSupport,
+    includedSupport,
+  ]);
 
   return (
-  <div
-    ref={calculatorRef}
-    className="
-      mt-16
-      scroll-mt-24
-      grid
-        w-full
-        max-w-full
-        gap-10
-        overflow-hidden
-        lg:grid-cols-[1.35fr_420px]
-      "
+    <div
+      ref={calculatorRef}
+      className="mt-16 grid w-full max-w-full scroll-mt-24 gap-10 overflow-hidden lg:grid-cols-[minmax(0,1.35fr)_420px]"
     >
-      {/* Left side */}
-
-      <div className="min-h-0">
-        <StepIndicator
-          step={step}
-        />
+      <div className="min-h-0 min-w-0">
+        <StepIndicator step={step} />
 
         {step === 1 && (
           <WebsiteStep
             website={website}
-            setWebsite={
-              handleWebsiteChange
-            }
-            next={
-              handleWebsiteNext
-            }
+            setWebsite={handleWebsiteChange}
+            next={handleWebsiteNext}
           />
         )}
 
         {step === 2 && (
           <LanguageStep
-            selected={
-              selectedLanguages
-            }
-            setSelected={
-              setSelectedLanguages
-            }
-            back={() =>
-              setStep(1)
-            }
-            next={() =>
-              setStep(3)
-            }
+            selected={selectedLanguages}
+            setSelected={setSelectedLanguages}
+            back={() => setStep(1)}
+            next={() => setStep(3)}
           />
         )}
 
         {step === 3 && (
           <MarketingStep
-            selected={
-              selectedMarketing
-            }
-            setSelected={
-              setSelectedMarketing
-            }
-            back={() =>
-              setStep(2)
-            }
-            next={() =>
-              setStep(4)
-            }
+            selected={selectedMarketing}
+            setSelected={setSelectedMarketing}
+            back={() => setStep(2)}
+            next={() => setStep(4)}
           />
         )}
 
         {step === 4 && (
           <BrandingStep
-            selected={
-              selectedBranding
-            }
-            setSelected={
-              setSelectedBranding
-            }
-            back={() =>
-              setStep(3)
-            }
-            next={() =>
-              setStep(5)
-            }
+            selected={selectedBranding}
+            setSelected={setSelectedBranding}
+            back={() => setStep(3)}
+            next={() => setStep(5)}
           />
         )}
 
         {step === 5 && (
           <FeaturesStep
-            selected={
-              selectedFeatures
-            }
-            setSelected={
-              setSelectedFeatures
-            }
-            back={() =>
-              setStep(4)
-            }
-            next={() =>
-              setStep(6)
-            }
+            selected={selectedFeatures}
+            setSelected={setSelectedFeatures}
+            back={() => setStep(4)}
+            next={() => setStep(6)}
           />
         )}
 
         {step === 6 && (
           <SupportStep
-            selected={
-              selectedSupport
-            }
-            setSelected={
-              setSelectedSupport
-            }
-            back={() =>
-              setStep(5)
-            }
-            next={() =>
-              setStep(7)
-            }
+            selected={selectedSupport}
+            setSelected={setSelectedSupport}
+            back={() => setStep(5)}
+            next={() => setStep(7)}
           />
         )}
 
         {step === 7 && (
           <ContactStep
-            back={
-              handleContactBack
-            }
+            back={handleContactBack}
             quote={{
-              packageId:
-                selectedPackageId,
-
-              websiteId:
-                website.id,
-
-              languages:
-                selectedLanguages,
-
-              marketing:
-                selectedMarketing,
-
-              branding:
-                selectedBranding,
-
-              features:
-                selectedFeatures,
-
-              support:
-                selectedSupport,
-
+              packageId: selectedPackageId,
+              websiteId: website.id,
+              languages: selectedLanguages,
+              marketing: selectedMarketing,
+              branding: selectedBranding,
+              features: selectedFeatures,
+              support: selectedSupport,
               total,
-
               monthlyTotal,
             }}
           />
         )}
       </div>
 
-      {/* Right side */}
-
       <Summary
         website={website}
         total={total}
-        monthlyTotal={
-          monthlyTotal
-        }
-        languages={
-          selectedLanguages
-        }
-        marketing={
-          selectedMarketing
-        }
-        branding={
-          selectedBranding
-        }
-        features={
-  selectedFeatures
-}
-includedFeatures={
-  includedFeatures
-}
-support={
-  selectedSupport
-}
+        monthlyTotal={monthlyTotal}
+        languages={selectedLanguages}
+        marketing={selectedMarketing}
+        branding={selectedBranding}
+        features={selectedFeatures}
+        includedFeatures={includedFeatures}
+        support={selectedSupport}
       />
     </div>
   );
