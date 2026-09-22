@@ -12,18 +12,19 @@ import { packages } from "@/config/packages";
 
 const heroCopy = {
   de: {
-    eyebrow: "Webdesign für kleine Unternehmen · Aus München",
+    eyebrow: "Webdesign aus München · Deutschlandweit",
 
-    title: "Zeigen Sie, was Sie können.",
-    accent: "Mit einer Website, die überzeugt.",
+    title: "Websites für kleine Unternehmen.",
+    accent:
+      "Damit Kunden sich leichter für Sie entscheiden.",
 
     description:
-      "Ich erstelle Ihre Website so, dass Interessenten Ihre Leistungen verstehen, Ihre Arbeit kennenlernen und Sie einfach kontaktieren können. Für Selbstständige und kleine Unternehmen – vom ersten eigenen Auftritt bis zur neuen Website.",
+      "Ich helfe Ihnen, Ihre Leistungen verständlich zu präsentieren, Ihre Arbeit zu zeigen und die Kontaktaufnahme einfach zu machen.",
 
-    priceLabel: "Ihre erste Website als Landingpage ab",
+    priceLabel: "Landingpage ab",
 
     priceNote:
-      "Den genauen Leistungsumfang und Festpreis erhalten Sie schriftlich vor Projektbeginn.",
+      "Leistungsumfang und Festpreis vereinbaren wir schriftlich vor Projektbeginn.",
 
     primaryCta: "Unverbindliches Angebot anfragen",
     secondaryCta: "Kundenprojekte ansehen",
@@ -31,32 +32,32 @@ const heroCopy = {
     nextStep:
       "Beschreiben Sie kurz Ihren Betrieb und Ihr Vorhaben. Ich empfehle Ihnen eine passende Lösung mit klarem Umfang und Preis.",
 
+    reassurance:
+      "Sie müssen noch kein Paket auswählen. Wir klären zuerst, was Sie brauchen.",
+
     benefits: [
-      "Persönlich betreut von Anfang bis zum Start",
+      "Ein persönlicher Ansprechpartner bis zum Start",
       "Abstimmung per E-Mail oder WhatsApp",
       "Website vor dem Start prüfen · 2 Korrekturrunden",
     ],
 
     personRole:
-      "Ihr Ansprechpartner für Planung, Umsetzung und Website-Start",
-
-    reassurance:
-      "Sie müssen noch kein Paket auswählen. Wir klären zuerst, was Sie brauchen.",
+      "Gründer von TP Digital Lab. Ich begleite Ihr Projekt persönlich – von der ersten Nachricht bis zum Website-Start.",
   },
 
   en: {
-    eyebrow: "Web design for small businesses · Based in Munich",
+    eyebrow: "Web design from Munich · Across Germany",
 
-    title: "Show what you do best.",
-    accent: "With a website that builds confidence.",
+    title: "Websites for small businesses.",
+    accent: "Make it easier for customers to choose you.",
 
     description:
-      "I build your website so potential customers can understand your services, see your work and contact you easily. For independent professionals and small businesses, whether you need your first website or a fresh start.",
+      "I help you explain your services clearly, showcase your work and make it easy for potential customers to get in touch.",
 
-    priceLabel: "Your first website as a landing page from",
+    priceLabel: "Landing page from",
 
     priceNote:
-      "You receive the exact scope and fixed price in writing before the project begins.",
+      "We agree on the scope and fixed price in writing before the project begins.",
 
     primaryCta: "Request a no-obligation quote",
     secondaryCta: "View client projects",
@@ -64,32 +65,33 @@ const heroCopy = {
     nextStep:
       "Tell me briefly about your business and what you need. I will recommend a suitable solution with a clear scope and price.",
 
+    reassurance:
+      "You do not need to choose a package yet. We will first work out what you need.",
+
     benefits: [
-      "Personal support from planning to launch",
+      "One dedicated contact through to launch",
       "Communication by email or WhatsApp",
       "Review before launch · 2 revision rounds",
     ],
 
     personRole:
-      "Your contact for planning, development and launching your website",
-
-    reassurance:
-      "You do not need to choose a package yet. We will first work out what you need.",
+      "Founder of TP Digital Lab. I personally handle your project, from the first message to the launch of your website.",
   },
 
   ru: {
-    eyebrow: "Сайты для малого бизнеса · Из Мюнхена",
+    eyebrow:
+      "Веб-разработка в Мюнхене · Работаю по всей Германии",
 
-    title: "Покажите, что вы умеете.",
-    accent: "С сайтом, который вызывает доверие.",
+    title: "Сайты для малого бизнеса.",
+    accent: "Чтобы клиентам было проще выбрать вас.",
 
     description:
-      "Я создам сайт, на котором потенциальные клиенты смогут понять ваши услуги, посмотреть работы и легко связаться с вами. Для частных специалистов и малого бизнеса — от первого сайта до обновления существующего.",
+      "Помогу понятно представить ваши услуги, показать работы и упростить обращение.",
 
-    priceLabel: "Ваш первый сайт в формате лендинга — от",
+    priceLabel: "Лендинг от",
 
     priceNote:
-      "Точный состав работ и фиксированную стоимость вы получите письменно до начала проекта.",
+      "Состав работ и фиксированную цену согласуем письменно до начала проекта.",
 
     primaryCta: "Запросить предложение",
     secondaryCta: "Посмотреть работы",
@@ -97,17 +99,17 @@ const heroCopy = {
     nextStep:
       "Кратко расскажите о своём бизнесе и задаче. Я предложу подходящее решение с понятным составом работ и стоимостью.",
 
+    reassurance:
+      "Выбирать пакет заранее не нужно. Сначала разберёмся, что вам подходит.",
+
     benefits: [
-      "Лично веду проект от обсуждения до запуска",
+      "Один специалист от обсуждения до запуска",
       "Общение по электронной почте или WhatsApp",
       "Проверка до запуска · 2 раунда правок",
     ],
 
     personRole:
-      "Ваш специалист по планированию, разработке и запуску сайта",
-
-    reassurance:
-      "Выбирать пакет заранее не нужно. Сначала разберёмся, что вам подходит.",
+      "Основатель TP Digital Lab. Лично веду ваш проект от первой переписки до запуска сайта.",
   },
 } as const;
 
@@ -156,22 +158,22 @@ export default function HeroSection() {
               {t.eyebrow}
             </p>
 
-            <h1 className="mt-6 break-words text-[36px] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-[52px] md:text-[62px] lg:text-[72px]">
-              <span className="block">{t.title}</span>
+            <h1 className="mt-6 break-words text-[36px] font-semibold leading-[1.12] tracking-[-0.04em] sm:text-[50px] md:text-[60px] lg:text-[68px]">
+              <span className="block">{t.title}</span>{" "}
 
               <span className="mt-2 block text-blue-200">
                 {t.accent}
               </span>
             </h1>
 
-            <p className="mt-6 max-w-3xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/75 sm:text-xl sm:leading-9">
               {t.description}
             </p>
 
             <div className="mt-7 max-w-2xl">
               {formattedPrice && (
                 <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <span className="text-sm text-white/70 sm:text-base">
+                  <span className="text-base text-white/70">
                     {t.priceLabel}
                   </span>
 
@@ -243,7 +245,7 @@ export default function HeroSection() {
                 Taras Pakhaliuk
               </p>
 
-              <p className="mt-1 text-sm leading-6 text-white/60">
+              <p className="mt-1 max-w-xl text-sm leading-6 text-white/60">
                 {t.personRole}
               </p>
             </div>
