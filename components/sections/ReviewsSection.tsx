@@ -9,7 +9,7 @@ import {
   Play,
   Star,
 } from "lucide-react";
-import { useReducedMotion } from "motion/react";
+
 
 import Container from "@/components/common/Container";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -155,7 +155,32 @@ export default function ReviewsSection() {
   const { language } = useLanguage();
   const t = copy[language];
 
-  const reducedMotion = useReducedMotion();
+    const [reducedMotion, setReducedMotion] =
+    useState<boolean | null>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    const frameId = window.requestAnimationFrame(() => {
+      setReducedMotion(mediaQuery.matches);
+    });
+
+    function handleMotionChange(event: MediaQueryListEvent) {
+      setReducedMotion(event.matches);
+    }
+
+    mediaQuery.addEventListener("change", handleMotionChange);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      mediaQuery.removeEventListener(
+        "change",
+        handleMotionChange
+      );
+    };
+  }, []);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -286,9 +311,8 @@ export default function ReviewsSection() {
                 const active = index === activeIndex;
 
                 return (
-                  <figure
+                                    <figure
                     key={review.author}
-                    role="group"
                     aria-label={`${t.slide} ${index + 1} ${t.of} ${reviews.length}`}
                     aria-hidden={!active}
                     inert={!active}

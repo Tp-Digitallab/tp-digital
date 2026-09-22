@@ -1,5 +1,5 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import {
   useEffect,
   useMemo,
@@ -13,7 +13,7 @@ import StepIndicator from "./StepIndicator";
 import Summary from "./Summary";
 
 import BrandingStep from "./steps/BrandingStep";
-import ContactStep from "./steps/ContactStep";
+
 import FeaturesStep from "./steps/FeaturesStep";
 import LanguageStep from "./steps/LanguageStep";
 import MarketingStep from "./steps/MarketingStep";
@@ -29,6 +29,38 @@ import {
 import { features } from "@/config/features";
 import { packagePresets } from "@/config/packagePresets";
 import { support } from "@/config/support";
+const ContactStep = dynamic(
+  () => import("./steps/ContactStep"),
+  {
+    loading: () => (
+      <div
+        role="status"
+        aria-busy="true"
+        className="min-h-[480px] rounded-3xl border border-white/10 bg-[#0b0d12] p-6"
+      >
+        <span className="sr-only">
+          Formular wird geladen / Loading form / Загрузка формы
+        </span>
+
+        <div
+          aria-hidden="true"
+          className="space-y-5 motion-safe:animate-pulse"
+        >
+          <div className="h-8 w-2/3 rounded-lg bg-white/10" />
+          <div className="h-5 w-full rounded-lg bg-white/5" />
+
+          <div className="grid gap-4 pt-4 sm:grid-cols-2">
+            <div className="h-16 rounded-2xl bg-white/5" />
+            <div className="h-16 rounded-2xl bg-white/5" />
+          </div>
+
+          <div className="h-16 rounded-2xl bg-white/5" />
+          <div className="h-32 rounded-2xl bg-white/5" />
+        </div>
+      </div>
+    ),
+  }
+);
 
 type PackageId = keyof typeof packagePresets;
 

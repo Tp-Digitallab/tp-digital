@@ -122,3 +122,31 @@ svg {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Readable white text on primary action buttons */
+:is(a, button).bg-blue-500 {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+:is(a, button).bg-blue-500:hover {
+  background-color: #1e40af;
+  color: #ffffff;
+}
+
+/* Keep primary buttons readable during keyboard navigation */
+:is(a, button).bg-blue-500:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 4px;
+}
+
+/* Supporting text in pricing cards */
+#packages .text-white\/45,
+#packages .text-white\/50 {
+  color: #cbd5e1;
+}
+
+/* Review dates, source labels and carousel controls */
+#reviews .text-white\/40,
+#reviews .text-white\/45 {
+  color: #cbd5e1;
+}
