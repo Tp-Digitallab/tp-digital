@@ -101,7 +101,7 @@ export default function ReviewsSection() {
     <section
       id="reviews"
       aria-labelledby="reviews-heading"
-      className="relative scroll-mt-28 border-y border-white/10 bg-gradient-to-br from-blue-500/[0.07] via-[#080b12] to-[#050505] py-20 sm:py-28"
+      className="relative isolate scroll-mt-28 overflow-hidden border-y border-white/[0.06] bg-[#050505] py-20 sm:py-28"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
