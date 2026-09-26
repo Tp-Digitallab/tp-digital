@@ -422,7 +422,7 @@ export default function FaqSection() {
             </p>
 
             <Link
-              href="/webdesign#anfrage"
+                href={`/${language}/webdesign#anfrage`}
               className="mt-6 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-blue-500 px-6 py-3 text-center font-medium text-white transition hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
             >
               {t.contactButton}

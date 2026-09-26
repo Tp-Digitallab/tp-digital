@@ -328,7 +328,7 @@ export default function ContactSection() {
 
             <div className="mt-8 flex flex-col gap-3">
               <Link
-                href="/webdesign#anfrage"
+                href={`/${language}/webdesign#anfrage`}
                 className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-2xl bg-blue-600 px-5 py-4 text-center font-semibold text-white transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
               >
                 <span>{t.primaryCta}</span>

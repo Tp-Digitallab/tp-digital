@@ -234,7 +234,7 @@ export default async function LocalizedServicePage({
   return (
     <LanguageProvider
       initialLanguage={locale}
-      respectSavedLanguage={false}
+      respectSavedLanguage={true}
     >
       <ServiceSchema
         name={`${content.title} ${content.accent}`}

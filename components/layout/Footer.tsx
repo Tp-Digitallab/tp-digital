@@ -174,28 +174,28 @@ export default function Footer() {
               className="flex flex-col gap-4"
             >
               <Link
-                href="/webdesign"
+                href={`/${language}/webdesign`}
                 className="text-white/70 transition hover:text-white"
               >
                 Webdesign
               </Link>
 
               <Link
-                href="/online-shop"
+                href={`/${language}/online-shop`}
                 className="text-white/70 transition hover:text-white"
               >
                 Online-Shop
               </Link>
 
               <Link
-                href="/seo"
+                href={`/${language}/seo`}
                 className="text-white/70 transition hover:text-white"
               >
                 SEO
               </Link>
 
               <Link
-                href="/digitale-loesungen"
+                href={`/${language}/digitale-loesungen`}
                 className="text-white/70 transition hover:text-white"
               >
                 {language === "de"

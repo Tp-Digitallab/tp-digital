@@ -267,7 +267,7 @@ export default function ServicePage({
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
-                  href="/webdesign#anfrage"
+                  href={`/${language}/webdesign#anfrage`}
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
                 >
                   {ui.request}
@@ -279,7 +279,7 @@ export default function ServicePage({
                 </Link>
 
                 <Link
-                  href="/webdesign#projekte"
+                  href={`/${language}/webdesign#projekte`}
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
                 >
                   {ui.references}
@@ -426,7 +426,7 @@ export default function ServicePage({
 
               <div className="lg:justify-self-end">
                 <Link
-                  href="/webdesign#anfrage"
+                  href={`/${language}/webdesign#anfrage`}
                   className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] sm:w-auto"
                 >
                   {ui.contactButton}
