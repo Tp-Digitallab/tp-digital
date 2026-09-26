@@ -166,18 +166,18 @@ const copy: Record<Language, Copy> = {
         "Professionelle Website erstellen lassen",
       accent: "ab 490 €",
       description:
-        "Moderne, schnelle Websites für Selbstständige und kleine Unternehmen. Persönlich umgesetzt, mit klarer Struktur, transparenter Planung und dem Ziel, neue Kundenanfragen zu erleichtern.",
+        "Klare Websites für Selbstständige und kleine Unternehmen – persönlich umgesetzt, damit Interessenten leichter Kontakt aufnehmen.",
       primaryCta:
         "Unverbindliches Angebot anfragen",
       secondaryCta:
         "Referenzen ansehen",
       priceNote:
-        "Einführungspreis für die ersten Projekte · Landingpages ab 490 € · Unternehmenswebsites ab 990 €",
+        "Festpreis und Leistungsumfang werden vor Projektbeginn schriftlich vereinbart.",
       cardTitle:
         "Ihr professioneller Online-Auftritt",
       cardPrice: "ab 490 €",
       cardDescription:
-        "Persönliche Umsetzung direkt mit mir – vom ersten Kontakt bis zum Livegang.",
+        "Direkte Zusammenarbeit vom ersten Kontakt bis zum Livegang.",
       cardFeatures: [
         "Festpreis schriftlich vor Projektbeginn",
         "Individuelles Design",
@@ -189,9 +189,8 @@ const copy: Record<Language, Copy> = {
 
     trust: [
       "Festpreis schriftlich vor Projektstart",
-      "Persönliche Betreuung aus München – deutschlandweit",
-      "Schriftliche Kommunikation per Formular, E-Mail oder WhatsApp",
-      "Antwort in der Regel innerhalb von 3–12 Stunden",
+      "Persönliche Betreuung aus München",
+      "Kommunikation per E-Mail oder WhatsApp",
     ],
 
     why: {
@@ -202,22 +201,22 @@ const copy: Record<Language, Copy> = {
         {
           title: "Direkter Kontakt mit mir",
           text:
-            "Sie schreiben direkt mit mir – von der ersten Anfrage bis zum Livegang. Keine Weiterleitung und keine anonyme Agenturstruktur.",
+            "Sie schreiben direkt mit mir – vom ersten Kontakt bis zum Livegang.",
         },
         {
           title: "Klare Vereinbarungen",
           text:
-            "Vor Projektbeginn erhalten Sie ein schriftliches Angebot mit klarem Leistungsumfang und transparentem Festpreis.",
+            "Sie erhalten vor dem Start ein schriftliches Angebot mit Festpreis.",
         },
         {
           title: "Für Kundenanfragen entwickelt",
           text:
-            "Ich achte auf klare Inhalte, schnelle Ladezeiten, mobile Darstellung und einen gut sichtbaren Kontaktweg.",
+            "Klare Inhalte, schnelle Ladezeiten und ein gut sichtbarer Kontaktweg.",
         },
         {
           title: "Alles aus einer Hand",
           text:
-            "Design, technische Umsetzung und Basis-SEO werden persönlich koordiniert. Auf Wunsch richte ich auch Domain und Hosting ein.",
+            "Design, Technik und Basis-SEO aus einer Hand.",
         },
       ],
     },
@@ -227,7 +226,7 @@ const copy: Record<Language, Copy> = {
       title:
         "Websites, die bereits online arbeiten",
       description:
-        "Zwei reale Kundenprojekte – keine gekauften Vorlagen und keine erfundenen Fallstudien.",
+        "Reale Kundenprojekte – klare Websites für konkrete Geschäftsziele.",
       open: "Website ansehen",
       items: [
         {
@@ -257,12 +256,12 @@ const copy: Record<Language, Copy> = {
       title:
         "Ein klarer Startpreis statt versteckter Kosten",
       description:
-        "Der endgültige Leistungsumfang und Festpreis werden vor Projektbeginn schriftlich im Angebot vereinbart.",
+        "Sie sehen den Startpreis. Der genaue Umfang wird vor Beginn schriftlich vereinbart.",
       from: "ab",
       select: "Paket anfragen",
       selected: "Ausgewählt",
       finalPrice:
-        "Zusatzfunktionen, Domain und optionale Betreuung werden bei Bedarf separat angeboten.",
+        "Zusatzleistungen werden nur nach vorheriger Absprache berechnet.",
     },
 
     packages: {
@@ -317,7 +316,7 @@ const copy: Record<Language, Copy> = {
       eyebrow: "Zusammenarbeit",
       title: "So läuft Ihr Projekt ab",
       description:
-        "Sie wissen von Anfang an, welcher Schritt als Nächstes kommt und wann eine Zahlung fällig wird.",
+        "Klare Schritte, schriftliche Abstimmung und ein transparenter Festpreis.",
       items: [
         {
           title: "Anfrage und Abstimmung",

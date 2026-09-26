@@ -19,30 +19,21 @@ const heroCopy = {
       "Damit Kunden sich leichter für Sie entscheiden.",
 
     description:
-      "Ich helfe Ihnen, Ihre Leistungen verständlich zu präsentieren, Ihre Arbeit zu zeigen und die Kontaktaufnahme einfach zu machen.",
+      "Klare Websites für Selbstständige und kleine Unternehmen – persönlich umgesetzt, damit Interessenten leichter Kontakt aufnehmen.",
 
     priceLabel: "Landingpage ab",
 
     priceNote:
-      "Leistungsumfang und Festpreis vereinbaren wir schriftlich vor Projektbeginn.",
+      "Festpreis und Leistungsumfang schriftlich vor Projektstart.",
 
     primaryCta: "Unverbindliches Angebot anfragen",
     secondaryCta: "Kundenprojekte ansehen",
 
-    nextStep:
-      "Beschreiben Sie kurz Ihren Betrieb und Ihr Vorhaben. Ich empfehle Ihnen eine passende Lösung mit klarem Umfang und Preis.",
-
-    reassurance:
-      "Sie müssen noch kein Paket auswählen. Wir klären zuerst, was Sie brauchen.",
-
     benefits: [
-      "Ein persönlicher Ansprechpartner bis zum Start",
+      "Persönlicher Ansprechpartner",
       "Abstimmung per E-Mail oder WhatsApp",
-      "Website vor dem Start prüfen · 2 Korrekturrunden",
+      "2 Korrekturrunden inklusive",
     ],
-
-    personRole:
-      "Gründer von TP Digital Lab. Ich begleite Ihr Projekt persönlich – von der ersten Nachricht bis zum Website-Start.",
   },
 
   en: {
@@ -62,20 +53,11 @@ const heroCopy = {
     primaryCta: "Request a no-obligation quote",
     secondaryCta: "View client projects",
 
-    nextStep:
-      "Tell me briefly about your business and what you need. I will recommend a suitable solution with a clear scope and price.",
-
-    reassurance:
-      "You do not need to choose a package yet. We will first work out what you need.",
-
     benefits: [
-      "One dedicated contact through to launch",
+      "One dedicated contact",
       "Communication by email or WhatsApp",
-      "Review before launch · 2 revision rounds",
+      "2 revision rounds included",
     ],
-
-    personRole:
-      "Founder of TP Digital Lab. I personally handle your project, from the first message to the launch of your website.",
   },
 
   ru: {
@@ -96,20 +78,11 @@ const heroCopy = {
     primaryCta: "Запросить предложение",
     secondaryCta: "Посмотреть работы",
 
-    nextStep:
-      "Кратко расскажите о своём бизнесе и задаче. Я предложу подходящее решение с понятным составом работ и стоимостью.",
-
-    reassurance:
-      "Выбирать пакет заранее не нужно. Сначала разберёмся, что вам подходит.",
-
     benefits: [
-      "Один специалист от обсуждения до запуска",
+      "Один специалист до запуска",
       "Общение по электронной почте или WhatsApp",
-      "Проверка до запуска · 2 раунда правок",
+      "2 раунда правок включены",
     ],
-
-    personRole:
-      "Основатель TP Digital Lab. Лично веду ваш проект от первой переписки до запуска сайта.",
   },
 } as const;
 
@@ -215,16 +188,6 @@ export default function HeroSection() {
               </ScrollLink>
             </div>
 
-            <div className="mt-4 max-w-2xl">
-              <p className="text-sm leading-6 text-white/75">
-                {t.nextStep}
-              </p>
-
-              <p className="mt-2 text-sm leading-6 text-blue-200/90">
-                {t.reassurance}
-              </p>
-            </div>
-
             <ul className="mt-7 grid gap-3 text-sm leading-6 text-white/75">
               {t.benefits.map((benefit) => (
                 <li
@@ -241,15 +204,6 @@ export default function HeroSection() {
               ))}
             </ul>
 
-            <div className="mt-7 max-w-2xl border-t border-white/10 pt-5">
-              <p className="font-medium text-white">
-                Taras Pakhaliuk
-              </p>
-
-              <p className="mt-1 max-w-xl text-sm leading-6 text-white/60">
-                {t.personRole}
-              </p>
-            </div>
           </div>
         </div>
       </Container>
