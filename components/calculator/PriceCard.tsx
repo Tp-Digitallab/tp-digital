@@ -29,7 +29,7 @@ export default function PriceCard({
         Estimated Price
       </p>
 
-      <h2
+      <p
         className="
           mt-4
 
@@ -40,7 +40,7 @@ export default function PriceCard({
         "
       >
         €{total}
-      </h2>
+      </p>
 
       <p
         className="

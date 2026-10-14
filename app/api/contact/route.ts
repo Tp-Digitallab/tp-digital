@@ -25,6 +25,7 @@ interface QuoteInput {
 }
 
 interface ContactRequest {
+  name?: string;
   firstName?: string;
   lastName?: string;
   email?: string;
@@ -558,11 +559,9 @@ export async function POST(
         3000
       );
 
-    if (
-      !firstName ||
-      !lastName ||
-      !email
-    ) {
+    const name = cleanText(body.name, 200) || [firstName, lastName].filter(Boolean).join(" ");
+
+    if (!name || !email) {
       return NextResponse.json(
         {
           success: false,
@@ -809,7 +808,7 @@ export async function POST(
 🚀 <b>New Website Request</b>
 
 👤 <b>Name:</b>
-${escapeTelegramHtml(firstName)} ${escapeTelegramHtml(lastName)}
+${escapeTelegramHtml(name)}
 
 📧 <b>Email:</b>
 ${escapeTelegramHtml(email)}

@@ -326,9 +326,9 @@ export default function Summary({
 
   return (
     <aside className="w-full self-start rounded-[24px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-5 sm:p-8 lg:sticky lg:top-32 lg:rounded-[32px]">
-      <h2 className="text-xs uppercase tracking-[0.3em] text-white/40">
+      <p className="text-xs uppercase tracking-[0.3em] text-white/40">
         {summaryT.title}
-      </h2>
+      </p>
 
       <div className="mt-6 space-y-6 sm:mt-8 sm:space-y-8">
         <div>

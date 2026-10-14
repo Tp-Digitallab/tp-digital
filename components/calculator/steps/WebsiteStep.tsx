@@ -144,12 +144,12 @@ export default function WebsiteStep({
         {t.calculatorSteps.website.step}
       </p>
 
-      <h2 className="text-3xl font-semibold text-white sm:text-5xl">
+      <p className="text-3xl font-semibold text-white sm:text-5xl">
         {
           t.calculatorSteps.website
             .title
         }
-      </h2>
+      </p>
 
       <p className="mt-4 max-w-2xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
         {
@@ -220,11 +220,11 @@ export default function WebsiteStep({
             >
               <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                  <h3 className="text-xl font-semibold text-white sm:text-3xl">
+                  <p className="text-xl font-semibold text-white sm:text-3xl">
                     {
                       translatedContent.title
                     }
-                  </h3>
+                  </p>
 
                   <p className="mt-3 max-w-xl text-sm leading-6 text-white/60 sm:text-base sm:leading-8">
                     {

@@ -1,6 +1,6 @@
 "use client";
 import ReviewsSection from "@/components/sections/ReviewsSection";
-import { type FormEvent, useRef, useState } from "react";
+import { type FormEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileLeadBar from "@/components/ui/MobileLeadBar";
@@ -418,8 +418,8 @@ const copy: Record<Language, Copy> = {
       title:
         "Erzählen Sie kurz von Ihrem Projekt",
       description:
-  "Beschreiben Sie mir kurz Ihr Projekt. Ich melde mich in der Regel innerhalb von 3–12 Stunden persönlich per E-Mail. Wenn es passt, erhalten Sie danach ein schriftliches Angebot mit klarem Leistungsumfang und Festpreis.",
-      firstName: "Vorname *",
+  "Was möchten Sie umsetzen oder verbessern? Ich antworte persönlich per E-Mail mit den nächsten Schritten.",
+      firstName: "Ihr Name *",
       lastName: "Nachname *",
       email: "E-Mail *",
       phone: "Telefon (optional)",
@@ -703,7 +703,7 @@ const copy: Record<Language, Copy> = {
         "Tell me briefly about your project",
       description:
   "Tell me briefly about your project. I usually reply personally by email within 3–12 hours. If the project is a good fit, you will then receive a written quote with a clear scope and fixed price.",
-      firstName: "First name *",
+      firstName: "Your name *",
       lastName: "Last name *",
       email: "Email *",
       phone: "Phone (optional)",
@@ -1100,8 +1100,14 @@ export default function WebdesignLandingPage() {
   const [selectedPackage, setSelectedPackage] =
     useState<PackageChoice>("launch");
 
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("request") === "changes") {
+      const frame = requestAnimationFrame(() => setSelectedPackage("custom"));
+      return () => cancelAnimationFrame(frame);
+    }
+  }, []);
+
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
@@ -1148,7 +1154,6 @@ export default function WebdesignLandingPage() {
 
     if (
       !firstName.trim() ||
-      !lastName.trim() ||
       !email.trim() ||
       !message.trim() ||
       !privacyAccepted
@@ -1174,8 +1179,7 @@ export default function WebdesignLandingPage() {
         },
 
         body: JSON.stringify({
-          firstName: firstName.trim(),
-          lastName: lastName.trim(),
+          name: firstName.trim(),
           email: email.trim(),
           
 
@@ -1660,7 +1664,7 @@ export default function WebdesignLandingPage() {
           className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-24 md:py-32"
         >
           <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:items-start">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
                   {t.form.eyebrow}
@@ -1674,7 +1678,12 @@ export default function WebdesignLandingPage() {
                   {t.form.description}
                 </p>
 
-                <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-6 text-white/55">
+                <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/75 lg:hidden">
+                  <a href="mailto:info@tpdigitallab.de" className="underline underline-offset-4">E-Mail</a>
+                  {whatsappUrl && <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">WhatsApp</a>}
+                </div>
+
+                <div className="mt-8 hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-6 text-white/55 lg:block">
                   <p className="font-medium text-white">
                     info@tpdigitallab.de
                   </p>
@@ -1707,32 +1716,19 @@ export default function WebdesignLandingPage() {
               >
                 <div className="grid gap-5 sm:grid-cols-2">
                   <input
-                    name="firstName"
+                    name="name"
                     value={firstName}
                     onChange={(event) =>
                       setFirstName(event.target.value)
                     }
                     placeholder={t.form.firstName}
                     aria-label={t.form.firstName}
-                    autoComplete="given-name"
+                    autoComplete="name"
                     maxLength={100}
                     required
                     className={inputClassName}
                   />
 
-                  <input
-                    name="lastName"
-                    value={lastName}
-                    onChange={(event) =>
-                      setLastName(event.target.value)
-                    }
-                    placeholder={t.form.lastName}
-                    aria-label={t.form.lastName}
-                    autoComplete="family-name"
-                    maxLength={100}
-                    required
-                    className={inputClassName}
-                  />
 
                   <input
                     name="email"

@@ -19,9 +19,7 @@ export default function ServiceCard({
   ctaLabel,
 }: ServiceCardProps) {
   return (
-    <Link
-      href={href}
-      aria-label={`${ctaLabel}: ${title}`}
+    <article
       className="
         group
         relative
@@ -85,7 +83,8 @@ export default function ServiceCard({
         </p>
 
         <div className="mt-auto pt-7 sm:pt-8">
-          <span
+          <Link
+            href={href}
             className="
               inline-flex
               min-h-12
@@ -123,9 +122,9 @@ export default function ServiceCard({
               aria-hidden="true"
               className="h-4 w-4 shrink-0"
             />
-          </span>
+          </Link>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }

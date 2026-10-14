@@ -31,14 +31,14 @@ export const metadata: Metadata = {
 
   title: {
     default:
-      "TP Digital Lab | Webdesign & Digitale Lösungen für Unternehmen in Deutschland",
+      "Webdesign München für kleine Unternehmen | TP Digital Lab",
 
     template:
       "%s | TP Digital Lab",
   },
 
   description:
-    "TP Digital Lab entwickelt moderne Websites, SEO-optimierte Weblösungen und digitale Systeme für Unternehmen in Deutschland. Professionelles Webdesign, Online-Shops und individuelle digitale Lösungen aus einer Hand.",
+    "Webdesign aus München: Websites für kleine Unternehmen ab 490 €. Persönliche Umsetzung, mobile Optimierung und klarer Festpreis. Jetzt Angebot anfragen.",
 
   keywords: [
     "Webdesign Deutschland",

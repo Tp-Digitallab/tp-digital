@@ -54,9 +54,9 @@ const localeOpenGraph: Record<
 const webdesignMetadata = {
   de: {
     title:
-      "Website erstellen lassen ab 490 € | TP Digital Lab München",
+      "Website erstellen ab 490 € in München | TP Digital Lab",
     description:
-      "Professionelle Websites für kleine Unternehmen: Landingpage ab 490 €, Firmenwebsite ab 990 €. Persönlich aus München, schriftlicher Festpreis und unverbindliches Angebot.",
+      "Websites für kleine Unternehmen aus München. Landingpage ab 490 €, Firmenwebsite ab 990 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
   },
   en: {
     title:

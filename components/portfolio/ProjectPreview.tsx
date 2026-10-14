@@ -42,9 +42,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Die Leistungen eines Bauunternehmens verständlich vorstellen und ausgeführte Arbeiten zeigen.",
         solution:
-          "Eine Unternehmenswebsite mit Leistungsübersicht, Projektgalerie und Kontaktmöglichkeiten. Zum Projekt gehören außerdem SEO und Google Ads.",
+          "Leistungsseiten für Sanierung und Innenausbau, eine Projektgalerie, drei Sprachversionen und ein Kostenrechner mit anschließender Anfrage. Zum Projekt gehören auch SEO und Google Ads.",
         visitor:
-          "Interessenten können Leistungen vergleichen, Projektbilder ansehen und ihr eigenes Vorhaben anfragen.",
+          "Besucher können passende Leistungen finden, Referenzbilder ansehen, Baukosten unverbindlich einschätzen und ein konkretes Vorhaben über das Formular anfragen.",
       },
 
       grabprofi: {
@@ -52,9 +52,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Eine lokale Dienstleistung vorstellen und die Kontaktaufnahme für Interessenten einfach machen.",
         solution:
-          "Eine Landingpage für GrabProfi mit Informationen zur Grabpflege, lokalem SEO und direktem WhatsApp-Kontakt.",
+          "Eine mobile Landingpage mit sechs Leistungsbereichen, drei Pflegepaketen, einem verständlichen Ablauf und Kontaktformular sowie WhatsApp für Anfragen aus München.",
         visitor:
-          "Interessenten können sich über das Angebot informieren und ihre Fragen direkt per WhatsApp stellen.",
+          "Besucher können Leistungen und monatliche oder jährliche Pflegepakete vergleichen und per Formular oder WhatsApp eine passende Betreuung anfragen.",
       },
     },
   },
@@ -291,9 +291,9 @@ export default function ProjectPreview() {
               </dl>
 
               <div className="mt-6 rounded-2xl border border-blue-400/20 bg-blue-500/[0.07] p-5">
-                <h4 className="text-sm font-semibold text-blue-200">
+                <p className="text-sm font-semibold text-blue-200">
                   {t.visitor}
-                </h4>
+                </p>
 
                 <p className="mt-2 text-base leading-7 text-white/80">
                   {content.visitor}

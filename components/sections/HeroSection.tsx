@@ -188,6 +188,8 @@ export default function HeroSection() {
               </ScrollLink>
             </div>
 
+            <p className="mt-6 text-sm leading-6 text-white/70">{language === "de" ? "Ihr Entwickler: Taras Pakhaliuk · München · über 2 Jahre Erfahrung" : language === "ru" ? "Ваш разработчик: Тарас Пахалюк · Мюнхен · более 2 лет опыта" : "Your developer: Taras Pakhaliuk · Munich · over 2 years of experience"}</p>
+
             <ul className="mt-7 grid gap-3 text-sm leading-6 text-white/75">
               {t.benefits.map((benefit) => (
                 <li

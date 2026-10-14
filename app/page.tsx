@@ -10,6 +10,8 @@ import ProcessSection from "@/components/sections/ProcessSection";
 import CalculatorSection from "@/components/sections/CalculatorSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
+import SmallChangesSection from "@/components/sections/SmallChangesSection";
+import ShareLinks from "@/components/ui/ShareLinks";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServicesSection />
+        <SmallChangesSection />
         <PackagesSection />
         <ProjectsSection />
         <ReviewsSection />
@@ -29,6 +32,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <ShareLinks />
     </>
   );
 }

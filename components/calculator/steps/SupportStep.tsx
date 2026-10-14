@@ -65,12 +65,12 @@ export default function SupportStep({
         }
       </p>
 
-      <h2 className="text-3xl font-semibold text-white sm:text-5xl">
+      <p className="text-3xl font-semibold text-white sm:text-5xl">
         {
           t.calculatorSteps.support
             .title
         }
-      </h2>
+      </p>
 
       <p className="mt-4 max-w-2xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
         {
@@ -141,9 +141,9 @@ export default function SupportStep({
                 "
               >
                 <div>
-                  <h3 className="text-xl font-semibold text-white sm:text-2xl">
+                  <p className="text-xl font-semibold text-white sm:text-2xl">
                     {content.title}
-                  </h3>
+                  </p>
 
                   <p className="mt-3 leading-7 text-white/55">
                     {

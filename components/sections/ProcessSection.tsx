@@ -292,9 +292,9 @@ export default function ProcessSection() {
                 {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-6 break-words text-xl font-semibold leading-7">
+              <p className="mt-6 break-words text-xl font-semibold leading-7">
                 {step.title}
-              </h3>
+              </p>
 
               <p className="mt-4 text-sm leading-7 text-white/60">
                 {step.description}
@@ -317,9 +317,9 @@ export default function ProcessSection() {
             />
 
             <div className="min-w-0">
-              <h3 className="text-lg font-medium">
+              <p className="text-lg font-medium">
                 {t.scopeTitle}
-              </h3>
+              </p>
 
               <p className="mt-3 text-sm leading-7 text-white/55">
                 {t.scopeText}
@@ -334,9 +334,9 @@ export default function ProcessSection() {
             />
 
             <div className="min-w-0">
-              <h3 className="text-lg font-medium">
+              <p className="text-lg font-medium">
                 {t.controlTitle}
-              </h3>
+              </p>
 
               <p className="mt-3 text-sm leading-7 text-white/55">
                 {t.controlText}

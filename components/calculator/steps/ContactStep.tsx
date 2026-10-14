@@ -239,9 +239,9 @@ export default function ContactStep({
         {t.calculatorSteps.contact.step}
       </p>
 
-      <h2 className="text-3xl font-semibold text-white sm:text-5xl">
+      <p className="text-3xl font-semibold text-white sm:text-5xl">
         {t.calculatorSteps.contact.title}
-      </h2>
+      </p>
 
       <p className="mt-4 max-w-2xl text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
         {t.calculatorSteps.contact.description}

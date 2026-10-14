@@ -92,9 +92,9 @@ export default function LanguageStep({
         {t.step}
       </p>
 
-      <h2 className="text-3xl font-semibold text-white sm:text-5xl">
+      <p className="text-3xl font-semibold text-white sm:text-5xl">
         {t.title}
-      </h2>
+      </p>
 
       <div className="mt-5 rounded-2xl border border-blue-400/20 bg-blue-500/[0.08] p-5">
         <p className="font-medium text-white">
@@ -107,9 +107,9 @@ export default function LanguageStep({
       </div>
 
       <div className="mt-8">
-        <h3 className="mb-4 text-xl font-semibold text-white">
+        <p className="mb-4 text-xl font-semibold text-white">
           {t.primary}
-        </h3>
+        </p>
 
         <div className="space-y-3">
           {languages
@@ -158,9 +158,9 @@ export default function LanguageStep({
       </div>
 
       <div className="mt-8">
-        <h3 className="mb-4 text-xl font-semibold text-white">
+        <p className="mb-4 text-xl font-semibold text-white">
           {t.additional}
-        </h3>
+        </p>
 
         <div className="space-y-3">
           {languages

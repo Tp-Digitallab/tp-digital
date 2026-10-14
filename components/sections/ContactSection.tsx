@@ -40,7 +40,7 @@ const contactCopy = {
       "In der Regel innerhalb von 3–12 Stunden.",
 
     communication:
-      "Die Abstimmung erfolgt schriftlich. Ein Telefontermin ist nicht erforderlich.",
+      "Wir stimmen Ihr Projekt unkompliziert per E-Mail oder WhatsApp ab.",
 
     primaryCta:
       "Unverbindliches Angebot anfragen",
@@ -380,9 +380,9 @@ export default function ContactSection() {
                   </span>
 
                   <div className="min-w-0">
-                    <h4 className="text-lg font-medium text-white">
+                    <p className="text-lg font-medium text-white">
                       {step.title}
-                    </h4>
+                    </p>
 
                     <p className="mt-2 leading-7 text-zinc-400">
                       {step.description}
@@ -405,9 +405,9 @@ export default function ContactSection() {
 
             <div className="my-8 h-px bg-white/10" />
 
-            <h4 className="text-sm font-medium text-zinc-300">
+            <p className="text-sm font-medium text-zinc-300">
               {t.legalTitle}
-            </h4>
+            </p>
 
             <nav
               aria-label={t.legalTitle}

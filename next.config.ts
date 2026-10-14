@@ -38,6 +38,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.tpdigitallab.de" }],
+        destination: "https://tpdigitallab.de/:path*",
+        statusCode: 301,
+      },
+      {
         source: "/webdesign",
         destination: "/de/webdesign",
         permanent: true,

@@ -155,7 +155,7 @@ export default function Footer() {
           {/* Services */}
 
           <div>
-            <h2
+            <p
               className="
                 mb-6
                 text-sm
@@ -165,7 +165,7 @@ export default function Footer() {
               "
             >
               {t.servicesTitle}
-            </h2>
+            </p>
 
             <nav
               aria-label={
@@ -210,7 +210,7 @@ export default function Footer() {
           {/* Company */}
 
           <div>
-            <h2
+            <p
               className="
                 mb-6
                 text-sm
@@ -220,7 +220,7 @@ export default function Footer() {
               "
             >
               {t.companyTitle}
-            </h2>
+            </p>
 
             <nav
               aria-label={
@@ -254,7 +254,7 @@ export default function Footer() {
           {/* Legal */}
 
           <div>
-            <h2
+            <p
               className="
                 mb-6
                 text-sm
@@ -264,7 +264,7 @@ export default function Footer() {
               "
             >
               {t.legalTitle}
-            </h2>
+            </p>
 
             <nav
               aria-label={t.legalTitle}

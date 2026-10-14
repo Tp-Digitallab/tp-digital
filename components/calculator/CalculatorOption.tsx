@@ -46,9 +46,9 @@ export default function CalculatorOption({
 
         <div>
 
-          <h3 className="text-xl font-semibold text-white">
+          <p className="text-xl font-semibold text-white">
             {title}
-          </h3>
+          </p>
 
           <p className="mt-2 text-white/45">
             Starting from

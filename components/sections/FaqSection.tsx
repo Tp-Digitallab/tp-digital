@@ -333,7 +333,7 @@ export default function FaqSection() {
                       : "border-white/15 bg-white/[0.03] hover:border-white/25"
                   }`}
                 >
-                  <h3>
+                  <div>
                     <button
                       id={questionId}
                       type="button"
@@ -369,7 +369,7 @@ export default function FaqSection() {
                         }`}
                       />
                     </button>
-                  </h3>
+                  </div>
 
                   <div
                     id={answerId}
