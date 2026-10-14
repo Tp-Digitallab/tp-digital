@@ -19,7 +19,7 @@ export default function SmallChangesSection() {
         <div className="rounded-3xl border border-blue-400/25 bg-blue-500/[0.06] p-6 sm:p-10">
           <h2 id="small-changes-heading" className="max-w-3xl text-2xl font-semibold leading-tight text-white sm:text-3xl">{t.title}</h2>
           <p className="mt-4 max-w-3xl leading-7 text-white/75">{t.description}</p>
-          <Link href={`/${language}/webdesign?request=changes#anfrage`} className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-center font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{t.cta}</Link>
+          <Link href={`/${language}/webdesign#anfrage-aenderungen`} className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-blue-500 px-6 py-3 text-center font-semibold text-white hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{t.cta}</Link>
         </div>
       </Container>
     </section>

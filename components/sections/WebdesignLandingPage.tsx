@@ -1101,7 +1101,7 @@ export default function WebdesignLandingPage() {
     useState<PackageChoice>("launch");
 
   useEffect(() => {
-    if (new URLSearchParams(window.location.search).get("request") === "changes") {
+    if (window.location.hash === "#anfrage-aenderungen") {
       const frame = requestAnimationFrame(() => setSelectedPackage("custom"));
       return () => cancelAnimationFrame(frame);
     }
@@ -1663,6 +1663,7 @@ export default function WebdesignLandingPage() {
           id="anfrage"
           className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-24 md:py-32"
         >
+          <span id="anfrage-aenderungen" className="block scroll-mt-24" aria-hidden="true" />
           <Container>
             <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:items-start">
               <div>
