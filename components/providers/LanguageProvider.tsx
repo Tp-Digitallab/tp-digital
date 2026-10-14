@@ -7,6 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { usePathname } from "next/navigation";
 
 export type Language = "de" | "en" | "ru";
 
@@ -39,14 +40,17 @@ export default function LanguageProvider({
   initialLanguage = "de",
   respectSavedLanguage = true,
 }: LanguageProviderProps) {
+  const pathname = usePathname();
   const [language, setLanguageState] =
     useState<Language>(initialLanguage);
 
   useEffect(() => {
+    const routeLanguage = pathname?.match(/^\/(de|en|ru)(?=\/|$)/)?.[1] ?? null;
     document.documentElement.lang =
-      initialLanguage;
+      isLanguage(routeLanguage) ? routeLanguage : initialLanguage;
 
-    if (!respectSavedLanguage) {
+    // The root provider must not overwrite a localized page with a saved language.
+    if (!respectSavedLanguage || isLanguage(routeLanguage)) {
       return;
     }
 
@@ -73,6 +77,7 @@ export default function LanguageProvider({
   }, [
     initialLanguage,
     respectSavedLanguage,
+    pathname,
   ]);
 
   const setLanguage = useCallback(
