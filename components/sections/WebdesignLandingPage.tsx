@@ -1101,10 +1101,26 @@ export default function WebdesignLandingPage() {
     useState<PackageChoice>("launch");
 
   useEffect(() => {
-    if (window.location.hash === "#anfrage-aenderungen") {
-      const frame = requestAnimationFrame(() => setSelectedPackage("custom"));
-      return () => cancelAnimationFrame(frame);
-    }
+    let frame = 0;
+    const syncPackage = () => {
+      const choices: Record<string, PackageChoice> = {
+        "#anfrage-aenderungen": "custom",
+        "#anfrage-launch": "launch",
+        "#anfrage-business": "business",
+        "#anfrage-growth": "growth",
+      };
+      const choice = choices[window.location.hash];
+      if (choice) {
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => setSelectedPackage(choice));
+      }
+    };
+    syncPackage();
+    window.addEventListener("hashchange", syncPackage);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", syncPackage);
+    };
   }, []);
 
   const [firstName, setFirstName] = useState("");
@@ -1664,6 +1680,9 @@ export default function WebdesignLandingPage() {
           className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-24 md:py-32"
         >
           <span id="anfrage-aenderungen" className="block scroll-mt-24" aria-hidden="true" />
+          <span id="anfrage-launch" className="block scroll-mt-24" aria-hidden="true" />
+          <span id="anfrage-business" className="block scroll-mt-24" aria-hidden="true" />
+          <span id="anfrage-growth" className="block scroll-mt-24" aria-hidden="true" />
           <Container>
             <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:items-start">
               <div>

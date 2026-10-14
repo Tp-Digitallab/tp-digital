@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { translations } from "@/config/translations";
+import Link from "next/link";
 
 interface PackageCardProps {
   id: string;
@@ -37,34 +37,26 @@ const priceNotes = {
     payment:
       "Die genaue Leistung und der endgültige Festpreis werden vor dem Start schriftlich vereinbart.",
     revisions: "2 Korrekturrunden inklusive",
+    cta: "Dieses Paket anfragen",
+    details: "Alle enthaltenen Leistungen",
   },
   en: {
     from: "Fixed price from",
     payment:
       "The exact scope and final fixed price are agreed in writing before work begins.",
     revisions: "2 revision rounds included",
+    cta: "Enquire about this package",
+    details: "All included services",
   },
   ru: {
     from: "Фиксированная цена от",
     payment:
       "Точный объём работ и окончательную фиксированную цену согласуем письменно до начала проекта.",
     revisions: "2 раунда правок включены",
+    cta: "Запросить этот пакет",
+    details: "Все включённые услуги",
   },
 };
-
-function scrollToCalculator() {
-  const calculator =
-    document.getElementById("calculator");
-
-  if (!calculator) {
-    return;
-  }
-
-  calculator.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-}
 
 export default function PackageCard({
   id,
@@ -76,7 +68,6 @@ export default function PackageCard({
   featured,
 }: PackageCardProps) {
   const { language } = useLanguage();
-  const t = translations[language];
 
   const goal =
     packageGoals[language][
@@ -84,25 +75,6 @@ export default function PackageCard({
     ];
 
   const copy = priceNotes[language];
-
-  function handleSelect() {
-    try {
-      window.localStorage.setItem(
-        "selectedPackage",
-        id,
-      );
-    } catch {
-      // Storage can be unavailable in private browsing.
-    }
-
-    window.dispatchEvent(
-      new Event("packageSelected"),
-    );
-
-    window.requestAnimationFrame(() => {
-      scrollToCalculator();
-    });
-  }
 
   return (
     <article
@@ -153,7 +125,7 @@ export default function PackageCard({
         <div className="my-8 h-px bg-white/10" />
 
         <ul className="space-y-4">
-          {features.map((feature) => (
+          {features.slice(0, 3).map((feature) => (
             <li
               key={feature}
               className="flex min-w-0 items-start gap-3 text-sm leading-6 text-white/85"
@@ -170,18 +142,22 @@ export default function PackageCard({
           ))}
         </ul>
 
+        {features.length > 3 && <details className="mt-5 border-t border-white/10 pt-4 text-sm text-white/80">
+          <summary className="cursor-pointer py-2 font-medium text-blue-200 focus-visible:outline-2 focus-visible:outline-blue-400">{copy.details}</summary>
+          <ul className="mt-3 space-y-3">{features.slice(3).map(feature => <li key={feature} className="flex gap-3 leading-6"><span aria-hidden="true" className="text-blue-300">✓</span><span>{feature}</span></li>)}</ul>
+        </details>}
+
         <div className="mt-auto pt-9">
-          <button
-            type="button"
-            onClick={handleSelect}
-            aria-label={`${t.packages.button}: ${title}`}
+          <Link
+            href={`/${language}/webdesign#anfrage-${id}`}
+            aria-label={`${copy.cta}: ${title}`}
             className={`group/button inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] ${
               featured
                 ? "border-blue-400/40 bg-blue-600 text-white hover:bg-blue-500"
                 : "border-white/15 bg-white/[0.08] text-white hover:border-blue-400/40 hover:bg-blue-500/15"
             }`}
           >
-            <span>{t.packages.button}</span>
+            <span>{copy.cta}</span>
 
             <span
               aria-hidden="true"
@@ -189,7 +165,7 @@ export default function PackageCard({
             >
               →
             </span>
-          </button>
+          </Link>
 
           <p className="mt-4 text-center text-xs leading-5 text-white/50">
             {copy.payment}

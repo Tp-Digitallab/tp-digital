@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
@@ -20,6 +21,17 @@ const mobileLeadCopy = {
 export default function MobileLeadBar() {
   const { language } = useLanguage();
   const t = mobileLeadCopy[language];
+  const [formVisible, setFormVisible] = useState(false);
+
+  useEffect(() => {
+    const form = document.getElementById("anfrage");
+    if (!form) return;
+    const observer = new IntersectionObserver(([entry]) => setFormVisible(entry.isIntersecting));
+    observer.observe(form);
+    return () => observer.disconnect();
+  }, []);
+
+  if (formVisible) return null;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#080b12]/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_35px_rgba(0,0,0,0.35)] backdrop-blur-xl lg:hidden">

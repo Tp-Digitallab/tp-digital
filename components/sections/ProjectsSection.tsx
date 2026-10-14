@@ -74,7 +74,7 @@ export default function ProjectsSection() {
     <section
       id="projects"
       aria-labelledby="projects-heading"
-      className="relative scroll-mt-24 overflow-hidden bg-[#050505] py-20 sm:py-28 lg:py-36"
+      className="relative scroll-mt-24 overflow-hidden bg-[#050505] py-14 sm:py-20 lg:py-24"
     >
       <div
         aria-hidden="true"

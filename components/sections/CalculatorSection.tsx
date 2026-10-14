@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import Calculator from "@/components/calculator/Calculator";
 import Container from "@/components/common/Container";
@@ -98,9 +99,17 @@ export default function CalculatorSection() {
           </div>
         </div>
 
-        <div className="mt-12 sm:mt-16">
-          <Calculator />
+        <div className="mt-7">
+          <Link href={`/${language}/webdesign#anfrage`} className="inline-flex min-h-12 items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-blue-400">
+            {language === "de" ? "Lieber direkt meine Aufgabe beschreiben" : language === "ru" ? "Просто описать мою задачу" : "Describe my project directly"}
+          </Link>
         </div>
+        <details className="mt-8 rounded-3xl border border-white/15 bg-[#0b0d12] p-5 sm:p-8">
+          <summary className="cursor-pointer py-2 text-lg font-medium text-blue-200 focus-visible:outline-2 focus-visible:outline-blue-400">
+            {language === "de" ? "Optional: Preisrahmen selbst konfigurieren" : language === "ru" ? "По желанию: рассчитать стоимость самостоятельно" : "Optional: configure a price estimate"}
+          </summary>
+          <div className="mt-8"><Calculator /></div>
+        </details>
       </Container>
     </section>
   );

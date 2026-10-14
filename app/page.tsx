@@ -20,11 +20,11 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <ProjectsSection />
+        <ReviewsSection />
         <ServicesSection />
         <SmallChangesSection />
         <PackagesSection />
-        <ProjectsSection />
-        <ReviewsSection />
         <ProcessSection />
         <CalculatorSection />
         <FaqSection />
