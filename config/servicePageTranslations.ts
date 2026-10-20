@@ -167,7 +167,7 @@ export const servicePageTranslations = {
           question:
             "Kann ich Produkte später selbst verwalten?",
           answer:
-            "Ja. Wenn ein CMS im vereinbarten Leistungsumfang enthalten ist, können Sie Produkte und Inhalte anschließend selbst verwalten.",
+            "Ja. Im Growth-Paket ist die Produktverwaltung über ein CMS enthalten. Ich zeige Ihnen bei der Übergabe, wie Sie die vereinbarten Produktdaten selbst ändern. Zusätzliche Verwaltungsfunktionen stimmen wir vorab ab.",
         },
       ],
     },
@@ -205,7 +205,7 @@ export const servicePageTranslations = {
           question:
             "Can I manage products myself later?",
           answer:
-            "Yes. If a CMS is included in the agreed scope, you can manage products and content yourself after the handover.",
+            "Yes. The Growth package includes product management through a CMS. During handover, I show you how to edit the agreed product data. Additional management features are agreed in advance.",
         },
       ],
     },
@@ -243,7 +243,7 @@ export const servicePageTranslations = {
           question:
             "Смогу ли я сам управлять товарами?",
           answer:
-            "Да. Если CMS входит в согласованный объём работ, после передачи магазина вы сможете самостоятельно управлять товарами и контентом.",
+            "Да. В пакет Growth входит управление товарами через CMS. При передаче покажу, как менять согласованные данные товаров. Дополнительные функции управления обсуждаем до начала работы.",
         },
       ],
     },
@@ -251,10 +251,10 @@ export const servicePageTranslations = {
 
   seo: {
     de: {
-      title: "SEO für Unternehmen",
-      accent: "damit Ihre Website besser gefunden wird.",
+      title: "SEO prüfen und gezielt verbessern",
+      accent: "mit einem konkreten Maßnahmenplan.",
       description:
-        "Ich verbessere die technische Grundlage und Struktur Ihrer Website, damit Suchmaschinen Ihre Inhalte besser verstehen und potenzielle Kunden Ihr Angebot leichter finden können.",
+        "Ich prüfe die vereinbarten Seiten auf technische und inhaltliche Schwächen, priorisiere die nächsten Schritte und setze beauftragte Korrekturen um. Sie erhalten einen schriftlichen Überblick darüber, was zu tun ist und was geändert wurde.",
       services: [
         "Technische SEO-Analyse",
         "Struktur und interne Verlinkung",
@@ -263,36 +263,30 @@ export const servicePageTranslations = {
         "Verbesserung der lokalen Sichtbarkeit",
       ],
       seoTitle:
-        "SEO beginnt mit einer verständlichen Website",
+        "Ein nachvollziehbarer SEO-Auftrag statt unklarer Versprechen",
       seoDescription:
-        "SEO ist kein einzelner Knopf und keine garantierte Position bei Google. Es ist ein langfristiger Prozess aus technischer Qualität, passenden Inhalten, klarer Struktur und einer guten Nutzererfahrung.",
+        "Ein Audit, die Korrektur bestimmter Seiten oder die lokale Auffindbarkeit können einzeln beauftragt werden. Analyse, Umsetzung und Übergabe werden im Angebot getrennt beschrieben. Ein bestimmtes Ranking oder eine feste Zahl an Anfragen wird nicht zugesagt.",
       faq: [
         {
-          question:
-            "Was kostet SEO?",
-          answer:
-            "SEO wird nach dem tatsächlichen Umfang angeboten. Nach einer kurzen Abstimmung erhalten Sie eine klare Beschreibung der geplanten Leistungen und den vereinbarten Preis.",
+          "question": "Was erhalte ich bei einer SEO-Analyse?",
+          "answer": "Eine schriftliche Übersicht zu den vereinbarten Seiten mit gefundenen Problemen, Prioritäten und empfohlenen Maßnahmen. Welche Seiten, Daten und Prüfungen dazugehören, legen wir vorab fest. Die Umsetzung wird separat oder als Teil desselben Angebots vereinbart."
         },
         {
-          question:
-            "Wann sind erste Verbesserungen sichtbar?",
-          answer:
-            "SEO braucht Zeit. Die Entwicklung hängt unter anderem von Wettbewerb, Ausgangslage, Suchbegriffen und Umfang der Optimierung ab. Einen bestimmten Ranking- oder Anfragewert kann ich nicht garantieren.",
+          "question": "Brauche ich einen monatlichen Vertrag?",
+          "answer": "Nein. Eine Analyse oder ein klar begrenzter Optimierungsauftrag ist auch einmalig möglich. Laufende Betreuung wird nur bei Bedarf separat vereinbart."
         },
         {
-          question:
-            "Kann SEO mit einer neuen Website kombiniert werden?",
-          answer:
-            "Ja. SEO kann bereits bei Struktur, Inhalten und technischer Umsetzung einer neuen Website berücksichtigt werden.",
-        },
+          "question": "Wann verbessern sich die Rankings?",
+          "answer": "SEO braucht Zeit. Ausgangslage, Wettbewerb und Suchbegriffe beeinflussen die Entwicklung. Die erledigten Arbeiten dokumentiere ich; einen festen Ranking-, Umsatz- oder Anfragewert kann ich nicht garantieren."
+        }
       ],
     },
 
     en: {
-      title: "SEO for businesses",
-      accent: "so your website can be found more easily.",
+      title: "Review and improve your SEO",
+      accent: "with a practical action plan.",
       description:
-        "I improve the technical foundation and structure of your website so search engines can understand your content more clearly and potential customers can find your offer more easily.",
+        "I review the agreed pages for technical and content issues, prioritise next steps and implement the commissioned corrections. You receive a written overview of what needs attention and what has changed.",
       services: [
         "Technical SEO review",
         "Site structure and internal linking",
@@ -301,36 +295,30 @@ export const servicePageTranslations = {
         "Improved local visibility",
       ],
       seoTitle:
-        "SEO starts with a clear website",
+        "A documented SEO assignment with a clear scope",
       seoDescription:
-        "SEO is not a single button or a guaranteed Google position. It is a long-term process involving technical quality, relevant content, clear structure and a useful customer experience.",
+        "An audit, specific page corrections or local visibility work can be commissioned separately. The quote distinguishes analysis, implementation and handover. A particular ranking or number of enquiries is not promised.",
       faq: [
         {
-          question:
-            "How much does SEO cost?",
-          answer:
-            "SEO is quoted according to the actual scope. After a short discussion, you receive a clear description of the planned work and the agreed price.",
+          "question": "What does an SEO review deliver?",
+          "answer": "A written overview of the agreed pages, identified issues, priorities and recommended actions. We define the pages, data and checks beforehand. Implementation is quoted separately or included in the same agreed scope."
         },
         {
-          question:
-            "When will the first improvements appear?",
-          answer:
-            "SEO takes time. Progress depends on competition, the starting point, search terms and the scope of optimization. I cannot guarantee a specific ranking or number of enquiries.",
+          "question": "Do I need a monthly contract?",
+          "answer": "No. A review or a clearly scoped optimisation task can be a one-off assignment. Ongoing support is only agreed separately when needed."
         },
         {
-          question:
-            "Can SEO be combined with a new website?",
-          answer:
-            "Yes. SEO can be considered from the beginning when planning the structure, content and technical implementation of a new website.",
-        },
+          "question": "When will rankings improve?",
+          "answer": "SEO takes time. The starting point, competition and search terms affect progress. I document the completed work but cannot guarantee rankings, revenue or a fixed number of enquiries."
+        }
       ],
     },
 
     ru: {
-      title: "SEO для бизнеса",
-      accent: "чтобы сайт было легче найти.",
+      title: "Проверка и улучшение SEO",
+      accent: "с конкретным планом действий.",
       description:
-        "Я улучшаю техническую основу и структуру сайта, чтобы поисковые системы лучше понимали ваш контент, а потенциальным клиентам было проще найти ваше предложение.",
+        "Проверю согласованные страницы на технические и содержательные проблемы, расставлю приоритеты и внесу заказанные исправления. Вы получите письменный список задач и выполненных изменений.",
       services: [
         "Технический SEO-аудит",
         "Структура сайта и внутренние ссылки",
@@ -339,37 +327,32 @@ export const servicePageTranslations = {
         "Улучшение локальной видимости",
       ],
       seoTitle:
-        "SEO начинается с понятного сайта",
+        "Понятный состав SEO-работ вместо неопределённых обещаний",
       seoDescription:
-        "SEO — это не одна кнопка и не гарантия конкретной позиции в Google. Это долгосрочная работа с техническим качеством, содержанием, структурой и удобством сайта для посетителей.",
+        "Аудит, исправление конкретных страниц или работа с локальной видимостью могут быть отдельными заказами. В предложении разделяем анализ, реализацию и передачу результата. Фиксированные позиции или количество заявок не обещаются.",
       faq: [
         {
-          question: "Сколько стоит SEO?",
-          answer:
-            "SEO рассчитывается по фактическому объёму работ. После короткого обсуждения вы получите понятное описание задач и согласованную стоимость.",
+          "question": "Что я получу после SEO-анализа?",
+          "answer": "Письменный обзор согласованных страниц: найденные проблемы, приоритеты и рекомендуемые действия. Страницы, данные и состав проверки определяем заранее. Внедрение согласуется отдельно или входит в то же предложение."
         },
         {
-          question:
-            "Когда появятся первые улучшения?",
-          answer:
-            "SEO требует времени. Результат зависит от конкуренции, состояния сайта, запросов и объёма оптимизации. Я не могу гарантировать конкретную позицию или количество заявок.",
+          "question": "Обязателен ли ежемесячный договор?",
+          "answer": "Нет. Можно заказать разовую проверку или ограниченную задачу по оптимизации. Постоянное обслуживание согласуется отдельно, если оно необходимо."
         },
         {
-          question:
-            "Можно ли объединить SEO с разработкой сайта?",
-          answer:
-            "Да. SEO можно учитывать уже при планировании структуры, контента и технической реализации нового сайта.",
-        },
+          "question": "Когда улучшатся позиции?",
+          "answer": "SEO требует времени. На результат влияют исходное состояние, конкуренция и запросы. Выполненные работы документирую, но конкретные позиции, выручку или количество обращений гарантировать не могу."
+        }
       ],
     },
   },
 
   digitalSolutions: {
     de: {
-      title: "Digitale Lösungen",
-      accent: "für besondere Aufgaben.",
+      title: "Website reparieren und erweitern",
+      accent: "auch als einzelne Aufgabe.",
       description:
-        "Wenn Ihr Unternehmen eine individuelle Webanwendung, einen automatisierten Ablauf oder eine spezielle Funktion benötigt, kläre ich zuerst die Aufgabe und entwickle danach einen passenden Lösungsumfang.",
+        "Ihr Formular sendet nicht, die mobile Ansicht ist unübersichtlich oder Sie brauchen eine neue Funktion? Ich prüfe Ihre bestehende Website und setze gezielte Verbesserungen um – vom einzelnen Fehler bis zum Rechner oder einer Integration.",
       services: [
         "Individuelle Webentwicklung",
         "Interne Tools und Webanwendungen",
@@ -378,36 +361,30 @@ export const servicePageTranslations = {
         "Technische Beratung und Umsetzung",
       ],
       seoTitle:
-        "Individuelle Entwicklung beginnt mit dem Problem",
+        "Bestehende Website verbessern, statt alles neu zu bauen",
       seoDescription:
-        "Nicht jede Aufgabe passt in ein fertiges Paket. Bei individuellen digitalen Lösungen steht deshalb zuerst die genaue Beschreibung des Problems im Mittelpunkt. Danach werden Umfang, technische Umsetzung und Kosten schriftlich geklärt.",
+        "Eine einzelne Korrektur kann sinnvoller sein als ein kompletter Neubau. Beschreiben Sie den Fehler oder die gewünschte Funktion und senden Sie den Link. Ich prüfe die technische Grundlage und vereinbare den konkreten Umfang, Festpreis und Termin vor der Umsetzung.",
       faq: [
         {
-          question:
-            "Welche digitalen Lösungen entwickeln Sie?",
-          answer:
-            "Zum Beispiel individuelle Webanwendungen, interne Tools, automatisierte Abläufe oder Anbindungen an externe Dienste. Die konkrete Lösung hängt von Ihrer Aufgabe ab.",
+          "question": "Kann ich auch nur einen Fehler beheben lassen?",
+          "answer": "Ja. Auch eine einzelne Formular-Reparatur, eine mobile Anpassung oder eine neue Seite ist möglich. Nach Prüfung der bestehenden Technik erhalten Sie ein Angebot für genau diese Aufgabe."
         },
         {
-          question:
-            "Wie wird der Preis berechnet?",
-          answer:
-            "Individuelle Projekte werden nach Aufgaben, Umfang und technischen Anforderungen kalkuliert. Vor dem Start erhalten Sie ein schriftliches Angebot.",
+          "question": "Was brauchen Sie für eine erste Einschätzung?",
+          "answer": "Den Website-Link, eine Beschreibung des Problems und das gewünschte Ergebnis. Bitte senden Sie zunächst keine Passwörter. Benötigte Zugänge stimmen wir später über einen geeigneten Weg ab."
         },
         {
-          question:
-            "Kann ich auch eine bestehende Lösung erweitern lassen?",
-          answer:
-            "Ja. Beschreiben Sie im ersten Kontakt, was bereits vorhanden ist und welche Änderung oder Funktion Sie benötigen.",
-        },
+          "question": "Was kostet eine Änderung und wie schnell geht es?",
+          "answer": "Das hängt von Ursache, Technik und Umfang ab. Nach der Prüfung nenne ich Ihnen Festpreis und Termin. Zusätzliche Arbeiten oder laufende Kosten werden vorab vereinbart."
+        }
       ],
     },
 
     en: {
-      title: "Digital solutions",
-      accent: "for specific business tasks.",
+      title: "Repair and extend your website",
+      accent: "one task at a time.",
       description:
-        "If your business needs a custom web application, automated workflow or special feature, I first clarify the task and then define a suitable solution and scope.",
+        "Your form does not send, the mobile layout is confusing or you need a new feature? I review your existing website and implement targeted improvements, from a single bug to a calculator or integration.",
       services: [
         "Custom web development",
         "Internal tools and web applications",
@@ -416,36 +393,30 @@ export const servicePageTranslations = {
         "Technical planning and implementation",
       ],
       seoTitle:
-        "Custom development starts with the problem",
+        "Improve your existing website without starting over",
       seoDescription:
-        "Not every task fits into a standard package. For custom digital solutions, the exact problem comes first. We then clarify the scope, technical approach and price in writing.",
+        "A targeted fix may be more useful than a full rebuild. Send the link, describe the issue or feature and I will review the existing setup. We agree on the scope, fixed price and timing before implementation.",
       faq: [
         {
-          question:
-            "What digital solutions do you develop?",
-          answer:
-            "Examples include custom web applications, internal tools, automated workflows and integrations with external services. The right solution depends on your task.",
+          "question": "Can I book a single fix?",
+          "answer": "Yes. A form repair, mobile adjustment or a new page can be a standalone task. After reviewing the existing setup, I provide a quote for that specific work."
         },
         {
-          question:
-            "How is the price calculated?",
-          answer:
-            "Custom projects are estimated according to the task, scope and technical requirements. You receive a written offer before work begins.",
+          "question": "What do you need for an initial assessment?",
+          "answer": "The website link, a description of the issue and the desired result. Please do not send passwords initially. We agree on a suitable method for any required access later."
         },
         {
-          question:
-            "Can you extend an existing solution?",
-          answer:
-            "Yes. Describe what already exists and which change or feature you need in your first enquiry.",
-        },
+          "question": "What does a change cost and how long will it take?",
+          "answer": "That depends on the cause, technology and scope. After reviewing the task, I provide a fixed price and timeline. Additional work or ongoing costs are agreed in advance."
+        }
       ],
     },
 
     ru: {
-      title: "Цифровые решения",
-      accent: "для особых задач бизнеса.",
+      title: "Ремонт и доработка сайтов",
+      accent: "в том числе отдельные задачи.",
       description:
-        "Если вашему бизнесу нужно индивидуальное веб-приложение, автоматизация процесса или специальная функция, я сначала изучу задачу, а затем предложу подходящий объём решения.",
+        "Форма не отправляется, мобильная версия неудобна или нужна новая функция? Проверю существующий сайт и внесу точечные улучшения: от исправления ошибки до калькулятора или интеграции.",
       services: [
         "Индивидуальная веб-разработка",
         "Внутренние инструменты и веб-приложения",
@@ -454,27 +425,22 @@ export const servicePageTranslations = {
         "Техническое планирование и реализация",
       ],
       seoTitle:
-        "Индивидуальная разработка начинается с проблемы",
+        "Улучшить существующий сайт без полной переделки",
       seoDescription:
-        "Не каждую задачу можно решить готовым пакетом. Поэтому в индивидуальных проектах сначала нужно точно описать проблему. После этого мы письменно согласуем объём, технический подход и стоимость.",
+        "Иногда отдельное исправление полезнее нового сайта. Пришлите ссылку, опишите ошибку или нужную функцию: я проверю техническую основу и согласую объём, фиксированную цену и срок до реализации.",
       faq: [
         {
-          question:
-            "Какие цифровые решения вы разрабатываете?",
-          answer:
-            "Например, индивидуальные веб-приложения, внутренние инструменты, автоматизацию процессов и интеграции с внешними сервисами. Решение зависит от вашей задачи.",
+          "question": "Можно заказать исправление только одной ошибки?",
+          "answer": "Да. Ремонт формы, мобильную доработку или новую страницу можно заказать отдельно. После проверки существующей системы вы получите предложение именно на эту задачу."
         },
         {
-          question: "Как рассчитывается стоимость?",
-          answer:
-            "Индивидуальный проект рассчитывается по задаче, объёму и техническим требованиям. До начала работы вы получите письменное предложение.",
+          "question": "Что нужно для первоначальной оценки?",
+          "answer": "Ссылка на сайт, описание проблемы и желаемый результат. Не отправляйте пароли при первом обращении. Если нужны доступы, позже согласуем подходящий способ их предоставления."
         },
         {
-          question:
-            "Можно ли доработать существующее решение?",
-          answer:
-            "Да. В первой заявке опишите, что уже есть и какую функцию или изменение вы хотите добавить.",
-        },
+          "question": "Сколько стоит доработка и как быстро она выполняется?",
+          "answer": "Зависит от причины, технологии и объёма. После проверки назову фиксированную цену и срок. Дополнительные работы и текущие расходы согласуются заранее."
+        }
       ],
     },
   },

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import LeadForm from "@/components/contact/LeadForm";
+import ShopDemo from "@/components/sections/ShopDemo";
+import { serviceOffers } from "@/config/serviceOffers";
 import {
   ArrowRight,
   CheckCircle2,
@@ -213,6 +215,7 @@ export default function ServicePage({
     servicePageTranslations[serviceKey][language];
 
   const ui = uiCopy[language];
+  const offer = serviceKey === "webdesign" ? null : serviceOffers[serviceKey][language];
   const price = prices[language][serviceKey];
   const serviceName = serviceNames[language][serviceKey];
 
@@ -280,10 +283,10 @@ export default function ServicePage({
                 </Link>
 
                 <Link
-                  href={`/${language}/webdesign#projekte`}
+                  href={serviceKey === "onlineShop" ? "#beispiel" : "/#projects"}
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
                 >
-                  {ui.references}
+                  {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
 
                   <ArrowRight
                     aria-hidden="true"
@@ -304,18 +307,18 @@ export default function ServicePage({
                 </p>
 
                 <h2 className="mt-5 max-w-xl text-3xl font-semibold leading-tight sm:text-5xl">
-                  {ui.outcomeTitle}
+                  {offer?.title ?? ui.outcomeTitle}
                 </h2>
 
                 <p className="mt-6 max-w-xl text-base leading-8 text-white/60 sm:text-lg">
-                  {ui.outcomeText}
+                  {offer?.description ?? ui.outcomeText}
                 </p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                {content.services.map((service) => (
+                {(offer?.deliverables ?? content.services.map((title) => ({ title, text: "" }))).map((service) => (
                   <div
-                    key={service}
+                    key={service.title}
                     className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
                   >
                     <CheckCircle2
@@ -323,15 +326,28 @@ export default function ServicePage({
                       className="h-5 w-5 text-blue-300"
                     />
 
-                    <p className="mt-5 leading-7 text-white/80">
-                      {service}
-                    </p>
+                    <h3 className="mt-5 text-lg font-semibold leading-7 text-white">{service.title}</h3>
+                    {service.text && <p className="mt-3 text-sm leading-7 text-white/75">{service.text}</p>}
                   </div>
                 ))}
               </div>
             </div>
           </Container>
         </section>
+
+        {offer && (
+          <section id="beispiel" className="relative z-10 scroll-mt-24 border-b border-white/10 py-16 sm:py-20">
+            <Container>
+              <h2 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">{offer.example.title}</h2>
+              <p className="mt-5 max-w-3xl text-base leading-8 text-white/75">{offer.example.text}</p>
+              {serviceKey === "onlineShop" ? <ShopDemo /> : (
+                <Link href="/#projects" className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full border border-blue-300/30 px-6 py-3 font-medium text-blue-100 hover:bg-blue-400/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300">
+                  {offer.example.link}<ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </Link>
+              )}
+            </Container>
+          </section>
+        )}
 
         <section className="relative z-10 py-20 sm:py-28">
           <Container>
@@ -426,7 +442,7 @@ export default function ServicePage({
               </div>
 
               <div className="min-w-0">
-                <LeadForm initialPackage={serviceKey === "onlineShop" ? "growth" : "custom"} context={serviceName} />
+                <LeadForm key={serviceKey} serviceKey={serviceKey} initialPackage={serviceKey === "onlineShop" ? "growth" : "custom"} />
 
                 <div className="mt-5 space-y-3 text-sm text-white/55">
                   <p className="flex items-center gap-2">

@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server";
+import { randomUUID } from "node:crypto";
+import { createContactNotification } from "@/lib/contactNotification";
 
 import {
   branding,
@@ -31,6 +33,10 @@ interface ContactRequest {
   email?: string;
   phone?: string;
   message?: string;
+  service?: string;
+  task?: string;
+  website?: string;
+  source?: string;
   budget?: string;
   timeline?: string;
   discount?: boolean;
@@ -74,15 +80,6 @@ function cleanText(
   return value
     .trim()
     .slice(0, maximumLength);
-}
-
-function escapeTelegramHtml(
-  value: unknown
-) {
-  return cleanText(value, 5000)
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;");
 }
 
 function cleanIds(
@@ -791,7 +788,7 @@ export async function POST(
 
     const calculatedPrice =
       quote.isCustomWork
-        ? "Price on request"
+        ? "По согласованию после оценки задачи"
         : `€${quote.total}`;
 
     const monthlyPrice =
@@ -799,136 +796,65 @@ export async function POST(
         ? "-"
         : `€${quote.monthlyTotal}`;
 
-    const requestType =
-      quote.isCustomWork
-        ? "Changes to an existing website"
-        : "New website";
+    const serviceNames: Record<string, string> = {
+      general: "Общая заявка",
+      webdesign: "Разработка сайта",
+      seo: "SEO",
+      digitalSolutions: "Доработка / интеграция",
+      onlineShop: "Интернет-магазин",
+      calculator: "Конфигуратор проекта",
+    };
+    const requestedService = cleanText(body.service, 40);
+    const serviceName = Object.hasOwn(serviceNames, requestedService)
+      ? serviceNames[requestedService]
+      : quote.isCustomWork ? "Индивидуальная задача" : "Разработка сайта";
+    const reference = randomUUID().slice(0, 8);
+    const messages = createContactNotification([
+      { label: "Имя", value: name },
+      { label: "Email для ответа", value: email },
+      { label: "Телефон", value: phone },
+      { label: "Язык интерфейса", value: language },
+      { label: "Услуга", value: serviceName },
+      { label: "Задача клиента", value: cleanText(body.task, 180) },
+      { label: "Сайт клиента", value: cleanText(body.website, 300) },
+      { label: "Страница отправки", value: cleanText(body.source, 200) },
+      { label: "Пакет", value: quote.isCustomWork ? "" : packageName },
+      { label: "Тип сайта", value: quote.isCustomWork ? "" : websiteName },
+      { label: "Языки сайта", value: languageNames === "-" ? "" : languageNames },
+      { label: "Маркетинг", value: marketingNames === "-" ? "" : marketingNames },
+      { label: "Брендинг", value: brandingNames === "-" ? "" : brandingNames },
+      { label: "Функции", value: featureNames === "-" ? "" : featureNames },
+      { label: "Поддержка", value: supportNames === "-" ? "" : supportNames },
+      { label: "Расчёт по конфигурации (не бюджет клиента)", value: calculatedPrice },
+      { label: "Ежемесячные услуги", value: quote.monthlyTotal > 0 ? monthlyPrice : "" },
+      { label: "Бюджет, указанный клиентом", value: budget },
+      { label: "Желаемый срок", value: timeline },
+      { label: "Гибкий бюджет", value: body.discount === true ? "Да" : "" },
+      { label: "Сообщение клиента", value: message },
+    ], reference);
 
-    const telegramText = `
-🚀 <b>New Website Request</b>
-
-👤 <b>Name:</b>
-${escapeTelegramHtml(name)}
-
-📧 <b>Email:</b>
-${escapeTelegramHtml(email)}
-
-📱 <b>Phone:</b>
-${escapeTelegramHtml(phone || "-")}
-
-🌍 <b>Interface language:</b>
-${escapeTelegramHtml(language || "-")}
-
-━━━━━━━━━━━━━━
-
-🧩 <b>Request type:</b>
-${escapeTelegramHtml(requestType)}
-
-📦 <b>Selected package:</b>
-${escapeTelegramHtml(packageName)}
-
-🖥 <b>Website type:</b>
-${escapeTelegramHtml(websiteName)}
-
-🌐 <b>Languages:</b>
-${escapeTelegramHtml(languageNames)}
-
-📈 <b>Marketing:</b>
-${escapeTelegramHtml(marketingNames)}
-
-🎨 <b>Branding:</b>
-${escapeTelegramHtml(brandingNames)}
-
-⚙️ <b>Features:</b>
-${escapeTelegramHtml(featureNames)}
-
-🛠 <b>Support:</b>
-${escapeTelegramHtml(supportNames)}
-
-💶 <b>Calculated price:</b>
-${escapeTelegramHtml(calculatedPrice)}
-
-🔄 <b>Monthly price:</b>
-${escapeTelegramHtml(monthlyPrice)}
-
-━━━━━━━━━━━━━━
-
-💰 <b>Customer budget:</b>
-${escapeTelegramHtml(budget || "-")}
-
-⏳ <b>Timeline:</b>
-${escapeTelegramHtml(timeline || "-")}
-
-💸 <b>Flexible budget:</b>
-${body.discount === true ? "Yes" : "No"}
-
-📝 <b>Project details:</b>
-
-${escapeTelegramHtml(message || "-")}
-`.trim();
-
-    const telegramUrl =
-      `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
-
-    const telegramResponse =
-      await fetch(
-        telegramUrl,
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type":
-              "application/json",
-          },
-
-          body: JSON.stringify({
-            chat_id:
-              telegramChatId,
-
-            text:
-              telegramText,
-
-            parse_mode:
-              "HTML",
-          }),
-
-          signal:
-            AbortSignal.timeout(
-              8000
-            ),
-
-          cache: "no-store",
-        }
-      );
-
-    if (
-      !telegramResponse.ok
-    ) {
-      const telegramError =
-        await telegramResponse
-          .text()
-          .catch(() => "");
-
-      console.error(
-        "Telegram API error:",
-        telegramResponse.status,
-        telegramError
-      );
-
-      return NextResponse.json(
-        {
-          success: false,
-          error:
-            "Message delivery failed",
-        },
-        {
-          status: 502,
-        }
-      );
+    const telegramUrl = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+    for (const text of messages) {
+      const telegramResponse = await fetch(telegramUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: telegramChatId, text, parse_mode: "HTML" }),
+        signal: AbortSignal.timeout(8000),
+        cache: "no-store",
+      });
+      const delivery: unknown = await telegramResponse.json().catch(() => null);
+      if (!telegramResponse.ok || !isObject(delivery) || delivery.ok !== true) {
+        console.error("Telegram message delivery failed", { status: telegramResponse.status, reference });
+        return NextResponse.json(
+          { success: false, error: "Message delivery failed" },
+          { status: 502 },
+        );
+      }
     }
 
     return NextResponse.json({
       success: true,
+      reference,
     });
   } catch (error) {
     console.error(

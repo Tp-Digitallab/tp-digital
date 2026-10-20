@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FileText, Mail, User } from "lucide-react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+import SecurityCheck from "@/components/contact/SecurityCheck";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { translations } from "@/config/translations";
@@ -78,6 +79,7 @@ export default function ContactStep({
   const t = translations[language];
   const copy = contactCopy[language];
   const router = useRouter();
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -196,6 +198,8 @@ export default function ContactStep({
       lastName: lastName.trim(),
       email: email.trim(),
       message: message.trim(),
+      service: "calculator",
+      source: window.location.pathname,
       language,
       quote,
       turnstileToken,
@@ -216,14 +220,18 @@ export default function ContactStep({
         throw new Error("Failed to send request");
       }
 
-      sessionStorage.setItem(
-        "lead_successfully_submitted",
-        "true",
-      );
+      try {
+        sessionStorage.setItem("lead_successfully_submitted", "true");
+      } catch {
+        router.push("/thank-you");
+        return;
+      }
 
       router.push("/thank-you");
     } catch (error) {
       console.error(error);
+      setTurnstileToken(null);
+      turnstileRef.current?.reset();
       setSubmitError(copy.sendError);
     } finally {
       setIsSubmitting(false);
@@ -473,28 +481,10 @@ export default function ContactStep({
           </p>
         )}
 
-        <div className="mt-8 flex justify-center">
-          <Turnstile
-            siteKey={
-              process.env
-                .NEXT_PUBLIC_TURNSTILE_SITE_KEY!
-            }
-            onSuccess={(token) => {
-              setTurnstileToken(token);
-              setSubmitError("");
-            }}
-            onExpire={() => {
-              setTurnstileToken(null);
-            }}
-            onError={() => {
-              setTurnstileToken(null);
-            }}
-            options={{
-              theme: "dark",
-              size: "flexible",
-            }}
-          />
-        </div>
+        <SecurityCheck widgetRef={turnstileRef} onTokenChange={(token) => {
+          setTurnstileToken(token);
+          if (token) setSubmitError("");
+        }} />
 
         {submitError && (
           <p

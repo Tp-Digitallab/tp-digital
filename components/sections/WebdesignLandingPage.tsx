@@ -2,12 +2,11 @@
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import { useState } from "react";
 import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
-import Image from "next/image";
+import ProjectPreview from "@/components/portfolio/ProjectPreview";
 import Link from "next/link";
 import MobileLeadBar from "@/components/ui/MobileLeadBar";
 import {
   CheckCircle2,
-  ExternalLink,
   MapPin,
 } from "lucide-react";
 
@@ -414,7 +413,7 @@ const copy: Record<Language, Copy> = {
       secondaryCta:
         "View references",
       priceNote:
-        "Introductory price for the first projects · Landing pages from €490 · Business websites from €990",
+        "We agree on the scope and fixed price in writing before work begins.",
       cardTitle:
         "Your professional online presence",
       cardPrice: "from €490",
@@ -1231,48 +1230,7 @@ export default function WebdesignLandingPage() {
               {t.projects.description}
             </p>
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {t.projects.items.map((project) => (
-                <article
-                  key={project.title}
-                  className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04]"
-                >
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-
-                  <div className="p-7">
-                    <h3 className="text-2xl font-semibold">
-                      {project.title}
-                    </h3>
-
-                    <p className="mt-2 text-white/45">
-                      {project.category}
-                    </p>
-
-                    <p className="mt-4 leading-7 text-white/60">
-                      {project.description}
-                    </p>
-
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-6 inline-flex items-center gap-2 text-white transition hover:text-blue-300"
-                    >
-                      {t.projects.open}
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <div className="mt-10"><ProjectPreview /></div>
           </Container>
         </section>
 

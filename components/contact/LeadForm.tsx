@@ -3,9 +3,12 @@
 import { type FormEvent, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { packagePresets } from "@/config/packagePresets";
+import { serviceOffers } from "@/config/serviceOffers";
+import type { ServicePageKey } from "@/config/servicePageTranslations";
+import SecurityCheck from "@/components/contact/SecurityCheck";
 
 export type PackageChoice = "launch" | "business" | "growth" | "custom";
 
@@ -116,23 +119,29 @@ export default function LeadForm({
   selectedPackage: controlledPackage,
   onPackageChange,
   initialPackage = "custom",
-  context = "",
+  serviceKey = "webdesign",
 }: {
   selectedPackage?: PackageChoice;
   initialPackage?: PackageChoice;
-  context?: string;
+  serviceKey?: ServicePageKey;
   onPackageChange?: (choice: PackageChoice) => void;
 }) {
   const { language } = useLanguage();
   const t = copy[language];
+  const offer = serviceKey === "webdesign" ? null : serviceOffers[serviceKey][language];
+  const specializedOffer = serviceKey === "seo" || serviceKey === "digitalSolutions" ? offer : null;
+  const [requestedTask, setRequestedTask] = useState(specializedOffer?.requests[0]?.id ?? "");
+  const requestedTaskLabel = specializedOffer?.requests.find((request) => request.id === requestedTask)?.label;
   const router = useRouter();
   const formId = useId();
   const [website, setWebsite] = useState("");
   const [localPackage, setLocalPackage] = useState<PackageChoice>(initialPackage);
   const selectedPackage = controlledPackage ?? localPackage;
   const setSelectedPackage = onPackageChange ?? setLocalPackage;
+  const effectivePackage = specializedOffer ? "custom" : selectedPackage;
 
   useEffect(() => {
+    if (serviceKey === "seo" || serviceKey === "digitalSolutions") return;
     let frame = 0;
     const syncPackage = () => {
       const choices: Record<string, PackageChoice> = {
@@ -153,7 +162,7 @@ export default function LeadForm({
       cancelAnimationFrame(frame);
       window.removeEventListener("hashchange", syncPackage);
     };
-  }, [setSelectedPackage]);
+  }, [setSelectedPackage, serviceKey]);
 
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -217,22 +226,19 @@ export default function LeadForm({
         body: JSON.stringify({
           name: firstName.trim(),
           email: email.trim(),
-          message:
-            `[Source: ${window.location.pathname}]\n[Service: ${context || selectedPackage}]\n${website.trim() ? `Website: ${website.trim()}\n` : ""}${message.trim()}`,
-
-          budget:
-            selectedPackage === "launch"
-              ? "ab 490 €"
-              : selectedPackage === "business"
-                ? "ab 990 €"
-                : selectedPackage === "growth"
-                  ? "ab 1.790 €"
-                  : "Noch offen",
-
+          message: message.trim(),
+          service: window.location.pathname === "/" ? "general" : serviceKey,
+          task: requestedTaskLabel || (
+            effectivePackage === "launch" ? t.packageLaunch :
+            effectivePackage === "business" ? t.packageBusiness :
+            effectivePackage === "growth" ? t.packageGrowth : t.packageCustom
+          ),
+          website: website.trim(),
+          source: window.location.pathname,
           timeline: "",
           discount: false,
           language,
-          quote: getQuote(selectedPackage),
+          quote: getQuote(effectivePackage),
           turnstileToken,
         }),
       });
@@ -314,15 +320,24 @@ export default function LeadForm({
           <select
             id={`${formId}-package`}
             name="package"
-            value={selectedPackage}
-            onChange={(event) => setSelectedPackage(event.target.value as PackageChoice)}
+            value={specializedOffer ? requestedTask : selectedPackage}
+            onChange={(event) => {
+              if (specializedOffer) setRequestedTask(event.target.value);
+              else setSelectedPackage(event.target.value as PackageChoice);
+            }}
             required
             className={inputClassName}
           >
-            <option value="custom" className="bg-zinc-950">{t.packageCustom}</option>
-            <option value="launch" className="bg-zinc-950">{t.packageLaunch}</option>
-            <option value="business" className="bg-zinc-950">{t.packageBusiness}</option>
-            <option value="growth" className="bg-zinc-950">{t.packageGrowth}</option>
+            {specializedOffer ? specializedOffer.requests.map((request) => (
+              <option key={request.id} value={request.id} className="bg-zinc-950">{request.label}</option>
+            )) : (
+              <>
+                <option value="custom" className="bg-zinc-950">{t.packageCustom}</option>
+                {serviceKey !== "onlineShop" && <option value="launch" className="bg-zinc-950">{t.packageLaunch}</option>}
+                {serviceKey !== "onlineShop" && <option value="business" className="bg-zinc-950">{t.packageBusiness}</option>}
+                <option value="growth" className="bg-zinc-950">{t.packageGrowth}</option>
+              </>
+            )}
           </select>
         </label>
         <label className="block text-sm font-medium text-white/85 sm:col-span-2" htmlFor={`${formId}-website`}>
@@ -345,6 +360,7 @@ export default function LeadForm({
           <textarea
             id={`${formId}-message`}
             name="message"
+            placeholder={offer?.messagePlaceholder}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
             rows={5}
@@ -354,21 +370,10 @@ export default function LeadForm({
           />
         </label>
       </fieldset>
-      <div className="mt-7 flex justify-center">
-        {turnstileSiteKey ? (
-          <Turnstile
-            ref={turnstileRef}
-            id={`${formId}-turnstile`}
-            siteKey={turnstileSiteKey}
-            onSuccess={setTurnstileToken}
-            onExpire={() => setTurnstileToken(null)}
-            onError={() => setTurnstileToken(null)}
-            options={{ theme: "dark", size: "flexible", language }}
-          />
-        ) : (
-          <p role="alert" className="text-center text-sm text-amber-300">{t.configError}</p>
-        )}
-      </div>
+      <SecurityCheck widgetRef={turnstileRef} onTokenChange={(token) => {
+        setTurnstileToken(token);
+        if (token) setSubmitError("");
+      }} />
       <label className="mt-6 flex items-start gap-3 text-sm leading-6 text-white/75">
         <input
           type="checkbox"
