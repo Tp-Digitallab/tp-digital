@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import RequestLink from "@/components/contact/RequestLink";
 
 import Container from "@/components/common/Container";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
@@ -14,7 +14,7 @@ const projectsCopy = {
     title: "So sehen Websites für meine Kunden aus.",
 
     description:
-      "Zwei unterschiedliche Unternehmen, zwei passende Websites. Sehen Sie, was ich umgesetzt habe und wie Besucher die Angebote kennenlernen und Kontakt aufnehmen können.",
+      "Zwei umgesetzte Projekte für Bau und lokale Dienstleistungen. Sehen Sie die jeweilige Aufgabe, meine Umsetzung und den Nutzen für Interessenten.",
 
     contactTitle: "Sie möchten etwas Ähnliches für Ihren Betrieb?",
 
@@ -33,7 +33,7 @@ const projectsCopy = {
     title: "Websites I have built for my clients.",
 
     description:
-      "Two different businesses, two websites built around their services. Explore what I created and how visitors can learn about each offer and get in touch.",
+      "Two completed projects for construction and local services. Explore the project goals, what I built and how each website helps potential customers.",
 
     contactTitle: "Would you like something similar for your business?",
 
@@ -52,7 +52,7 @@ const projectsCopy = {
     title: "Такие сайты я делаю для своих клиентов.",
 
     description:
-      "Два разных бизнеса — два решения под их услуги. Посмотрите, что я реализовал и как посетители могут изучить предложение и связаться с компанией.",
+      "Два реализованных проекта для строительства и местных услуг. Показываю задачу, своё решение и пользу для посетителей.",
 
     contactTitle: "Хотите похожее решение для своего бизнеса?",
 
@@ -122,12 +122,11 @@ export default function ProjectsSection() {
           </div>
 
           <div className="mt-6 lg:mt-0 lg:w-72 lg:shrink-0">
-            <Link
-              href={`/${language}/webdesign#anfrage`}
+            <RequestLink
               className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-blue-500 px-6 py-4 text-center text-sm font-semibold leading-6 text-white transition-colors hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
             >
               {t.button}
-            </Link>
+            </RequestLink>
 
             <p className="mt-3 text-center text-xs leading-5 text-white/60">
               {t.note}

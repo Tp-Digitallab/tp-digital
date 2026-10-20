@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import RequestLink from "@/components/contact/RequestLink";
 import { ArrowRight } from "lucide-react";
 
 import Container from "@/components/common/Container";
@@ -214,8 +214,7 @@ export default function ServicesSection() {
               </p>
             </div>
 
-            <Link
-              href={`/${language}/webdesign#anfrage`}
+            <RequestLink
               className="inline-flex min-h-14 w-full shrink-0 items-center justify-center gap-3 rounded-full bg-blue-500 px-6 py-4 text-center text-sm font-semibold text-white transition-colors hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 motion-reduce:transition-none sm:w-fit"
             >
               <span>{t.helpButton}</span>
@@ -224,7 +223,7 @@ export default function ServicesSection() {
                 aria-hidden="true"
                 className="h-5 w-5 shrink-0"
               />
-            </Link>
+            </RequestLink>
           </div>
 
           <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-6 text-white/60">

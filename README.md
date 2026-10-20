@@ -20,7 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Enquiry flow
+
+- `components/contact/LeadForm.tsx` is shared by the homepage and localized service pages. General enquiries start without a preselected paid package; package links select the requested package, and improvement links select a custom enquiry.
+- Homepage calls to action stay on the homepage. `ScrollLink` notifies the form when a package anchor changes, including repeat clicks without a page reload.
+- The form sends the page, selected service, optional website URL and message to the existing `/api/contact` endpoint. Package configuration comes from `config/packagePresets.ts`; pricing is validated on the server.
+- Existing Turnstile verification and Telegram delivery require the configured environment variables. Never disable verification to test a live enquiry.
+
+Before publishing, run `npm run lint`, `npx tsc --noEmit` and `npm run build`. In the browser, check general, improvement and package enquiries, all three languages, mobile navigation and keyboard labels. A successful build does not verify real message delivery: check one authorized test enquiry with valid Turnstile verification separately.
+
+## Resources
 
 To learn more about Next.js, take a look at the following resources:
 

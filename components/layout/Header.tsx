@@ -39,7 +39,9 @@ export default function Header() {
     return pathname === "/" ? hash : `/${hash}`;
   }
 
-  const requestHref = `/${language}/webdesign#anfrage`;
+  const requestHref = pathname === "/" || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
+    ? "#anfrage"
+    : `/${language}/webdesign#anfrage`;
 
   const navigation = [
     {

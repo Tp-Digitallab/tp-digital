@@ -31,9 +31,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
     visit: "Website ansehen",
     newTab: "Öffnet in einem neuen Tab",
     preview: "Website-Vorschau",
-    purpose: "Wofür die Website da ist",
+    purpose: "Die Aufgabe",
     solution: "Meine Umsetzung",
-    visitor: "Was Besucher damit machen können",
+    visitor: "Der Nutzen für Interessenten",
     comingSoon: "Bald verfügbar",
 
     projects: {
@@ -64,9 +64,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
     visit: "View website",
     newTab: "Opens in a new tab",
     preview: "Website preview",
-    purpose: "What the website is for",
+    purpose: "The project goal",
     solution: "What I built",
-    visitor: "What visitors can do",
+    visitor: "How it helps potential customers",
     comingSoon: "Coming soon",
 
     projects: {
@@ -75,9 +75,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Explain a construction company’s services clearly and showcase completed work.",
         solution:
-          "A business website with a service overview, project gallery and contact options. The project also includes SEO and Google Ads.",
+          "Service pages, a project gallery, three languages and a cost calculator leading to an enquiry. The project also includes SEO and Google Ads setup.",
         visitor:
-          "Potential customers can explore services, view project photos and enquire about their own project.",
+          "Potential customers can compare relevant services, view completed work and submit their requirements alongside an initial cost estimate.",
       },
 
       grabprofi: {
@@ -85,9 +85,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Present a local service and make it easy for potential customers to get in touch.",
         solution:
-          "A landing page for GrabProfi with grave care information, local SEO and direct WhatsApp contact.",
+          "A mobile-friendly landing page with six service areas, three care packages, a clear process, a contact form and WhatsApp.",
         visitor:
-          "Potential customers can learn about the service and ask questions directly through WhatsApp.",
+          "Visitors can compare care packages and enquire through the form or WhatsApp without arranging a phone call.",
       },
     },
   },
@@ -97,9 +97,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
     visit: "Посмотреть сайт",
     newTab: "Откроется в новой вкладке",
     preview: "Предпросмотр сайта",
-    purpose: "Какую задачу решает сайт",
+    purpose: "Задача проекта",
     solution: "Что я реализовал",
-    visitor: "Что может сделать посетитель",
+    visitor: "Польза для потенциального клиента",
     comingSoon: "Скоро",
 
     projects: {
@@ -108,9 +108,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Понятно представить услуги строительной компании и показать выполненные работы.",
         solution:
-          "Сайт компании с описанием услуг, галереей проектов и способами связи. Работа над проектом также включает SEO и Google Ads.",
+          "Страницы услуг, галерея работ, три языка и калькулятор стоимости с переходом к заявке. В проект также входят SEO и настройка Google Ads.",
         visitor:
-          "Потенциальный клиент может изучить услуги, посмотреть фотографии работ и отправить запрос по своему проекту.",
+          "Посетитель может изучить услуги, увидеть выполненные работы и отправить требования по своему объекту вместе с предварительным расчётом.",
       },
 
       grabprofi: {
@@ -118,9 +118,9 @@ const copy: Record<"de" | "en" | "ru", PortfolioText> = {
         purpose:
           "Представить местную услугу и упростить обращение для заинтересованных клиентов.",
         solution:
-          "Лендинг GrabProfi с информацией об уходе за захоронениями, локальным SEO и прямой связью через WhatsApp.",
+          "Мобильный лендинг с шестью направлениями услуг, тремя пакетами ухода, понятным порядком работы, формой заявки и WhatsApp.",
         visitor:
-          "Посетитель может ознакомиться с предложением и задать свои вопросы напрямую в WhatsApp.",
+          "Посетитель может сравнить пакеты ухода и отправить запрос через форму или WhatsApp без обязательного звонка.",
       },
     },
   },

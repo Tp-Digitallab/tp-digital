@@ -1,14 +1,10 @@
 "use client";
 import ReviewsSection from "@/components/sections/ReviewsSection";
-import { type FormEvent, useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
 import Image from "next/image";
 import Link from "next/link";
 import MobileLeadBar from "@/components/ui/MobileLeadBar";
-import { useRouter } from "next/navigation";
-import {
-  Turnstile,
-  type TurnstileInstance,
-} from "@marsidev/react-turnstile";
 import {
   CheckCircle2,
   ExternalLink,
@@ -23,12 +19,6 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import FaqSchema from "@/components/seo/FaqSchema";
 
 type Language = "de" | "en" | "ru";
-
-type PackageChoice =
-  | "launch"
-  | "business"
-  | "growth"
-  | "custom";
 
 type Copy = {
   nav: {
@@ -128,24 +118,6 @@ type Copy = {
     eyebrow: string;
     title: string;
     description: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    package: string;
-    packageLaunch: string;
-    packageBusiness: string;
-    packageGrowth: string;
-    packageCustom: string;
-    message: string;
-    privacy: string;
-    privacyLink: string;
-    submit: string;
-    sending: string;
-    requiredError: string;
-    securityError: string;
-    sendError: string;
-    configError: string;
     responseTime: string;
   };
 };
@@ -415,41 +387,9 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Projekt anfragen",
-      title:
-        "Erzählen Sie kurz von Ihrem Projekt",
-      description:
-  "Was möchten Sie umsetzen oder verbessern? Ich antworte persönlich per E-Mail mit den nächsten Schritten.",
-      firstName: "Ihr Name *",
-      lastName: "Nachname *",
-      email: "E-Mail *",
-      phone: "Telefon (optional)",
-      package: "Gewünschte Leistung *",
-      packageLaunch:
-        "Landingpage – ab 490 €",
-      packageBusiness:
-        "Unternehmenswebsite – ab 990 €",
-      packageGrowth:
-        "Online-Shop – ab 1.790 €",
-      packageCustom:
-        "Noch nicht sicher / individuelle Anfrage",
-      message:
-        "Beschreiben Sie kurz Ihr Projekt *",
-      privacy: "Ich habe die",
-      privacyLink:
-  "Datenschutzerklärung zur Kenntnis genommen",
-      submit:
-        "Unverbindliches Angebot anfragen",
-      sending: "Wird gesendet...",
-      requiredError:
-        "Bitte füllen Sie alle Pflichtfelder aus und bestätigen Sie die Datenschutzerklärung.",
-      securityError:
-        "Die Sicherheitsprüfung ist noch nicht abgeschlossen. Bitte versuchen Sie es erneut.",
-      sendError:
-        "Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
-      configError:
-        "Das Kontaktformular ist vorübergehend nicht verfügbar. Bitte schreiben Sie an info@tpdigitallab.de.",
-      responseTime:
-        "Antwort in der Regel innerhalb von 3–12 Stunden.",
+      title: "Erzählen Sie kurz von Ihrem Projekt",
+      description: "Was möchten Sie umsetzen oder verbessern? Ich antworte persönlich per E-Mail mit den nächsten Schritten.",
+      responseTime: "Antwort in der Regel innerhalb von 3–12 Stunden.",
     },
   },
 
@@ -699,39 +639,9 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Request a project",
-      title:
-        "Tell me briefly about your project",
-      description:
-  "Tell me briefly about your project. I usually reply personally by email within 3–12 hours. If the project is a good fit, you will then receive a written quote with a clear scope and fixed price.",
-      firstName: "Your name *",
-      lastName: "Last name *",
-      email: "Email *",
-      phone: "Phone (optional)",
-      package: "Requested service *",
-      packageLaunch:
-        "Landing page – from €490",
-      packageBusiness:
-        "Business website – from €990",
-      packageGrowth:
-        "Online store – from €1,790",
-      packageCustom:
-        "Not sure yet / custom request",
-      message:
-        "Briefly describe your project *",
-      privacy: "I have read the",
-      privacyLink: "Privacy Policy",
-      submit: "Request a no-obligation quote",
-      sending: "Sending...",
-      requiredError:
-        "Please complete all required fields and accept the privacy policy.",
-      securityError:
-        "The security check is not complete yet. Please try again.",
-      sendError:
-        "The request could not be sent. Please try again.",
-      configError:
-        "The contact form is temporarily unavailable. Please email info@tpdigitallab.de.",
-      responseTime:
-        "Usually replies within 3–12 hours.",
+      title: "Tell me briefly about your project",
+      description: "Tell me briefly about your project. I usually reply personally by email within 3–12 hours. If the project is a good fit, you will then receive a written quote with a clear scope and fixed price.",
+      responseTime: "Usually replies within 3–12 hours.",
     },
   },
 
@@ -985,46 +895,12 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Заявка на проект",
-      title:
-        "Кратко расскажите о вашем проекте",
-      description:
-  "Коротко расскажите о вашем проекте. Обычно я лично отвечаю по электронной почте в течение 3–12 часов. Если проект подходит, вы получите письменное предложение с понятным объёмом работ и фиксированной ценой.",
-      firstName: "Имя *",
-      lastName: "Фамилия *",
-      email: "E-mail *",
-      phone: "Телефон (необязательно)",
-      package: "Нужная услуга *",
-      packageLaunch:
-        "Лендинг — от 490 €",
-      packageBusiness:
-        "Сайт компании — от 990 €",
-      packageGrowth:
-        "Интернет-магазин — от 1 790 €",
-      packageCustom:
-        "Пока не уверен / индивидуальный запрос",
-      message:
-        "Кратко опишите проект *",
-      privacy: "Я ознакомился с",
-      privacyLink:
-        "политикой конфиденциальности",
-      submit: "Отправить заявку",
-      sending: "Отправка...",
-      requiredError:
-        "Заполните обязательные поля и подтвердите политику конфиденциальности.",
-      securityError:
-        "Проверка безопасности ещё не завершена. Попробуйте снова.",
-      sendError:
-        "Не удалось отправить заявку. Попробуйте ещё раз.",
-      configError:
-        "Форма временно недоступна. Напишите на info@tpdigitallab.de.",
-      responseTime:
-        "Обычно отвечаю в течение 3–12 часов.",
+      title: "Кратко расскажите о вашем проекте",
+      description: "Коротко расскажите о вашем проекте. Обычно я лично отвечаю по электронной почте в течение 3–12 часов. Если проект подходит, вы получите письменное предложение с понятным объёмом работ и фиксированной ценой.",
+      responseTime: "Обычно отвечаю в течение 3–12 часов.",
     },
   },
 };
-
-const inputClassName =
-  "w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/60 focus:bg-white/[0.07]";
 
 const packageIds: Array<
   "launch" | "business" | "growth"
@@ -1033,118 +909,12 @@ const packageIds: Array<
 const whatsappUrl =
   process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "";
 
-function getQuote(selectedPackage: PackageChoice) {
-  if (selectedPackage === "business") {
-    return {
-      packageId: "business",
-      websiteId: "business",
-      languages: ["de", "en"],
-      marketing: [
-        "advanced-seo",
-        "business-profile",
-      ],
-      branding: [],
-      features: [],
-      support: [],
-      total: 990,
-      monthlyTotal: 0,
-    };
-  }
-
-  if (selectedPackage === "growth") {
-    return {
-      packageId: "growth",
-      websiteId: "shop",
-      languages: ["de", "en", "other"],
-      marketing: ["advanced-seo", "ads"],
-      branding: [],
-      features: ["cms"],
-      support: [],
-      total: 1790,
-      monthlyTotal: 0,
-    };
-  }
-
-  if (selectedPackage === "custom") {
-    return {
-      packageId: null,
-      websiteId: "custom",
-      languages: [],
-      marketing: [],
-      branding: [],
-      features: [],
-      support: [],
-      total: 0,
-      monthlyTotal: 0,
-    };
-  }
-
-  return {
-    packageId: "launch",
-    websiteId: "landing",
-    languages: ["de"],
-    marketing: ["basic-seo"],
-    branding: [],
-    features: [],
-    support: [],
-    total: 490,
-    monthlyTotal: 0,
-  };
-}
-
 export default function WebdesignLandingPage() {
   const { language } = useLanguage();
   const t = copy[language];
-  const router = useRouter();
 
   const [selectedPackage, setSelectedPackage] =
-    useState<PackageChoice>("launch");
-
-  useEffect(() => {
-    let frame = 0;
-    const syncPackage = () => {
-      const choices: Record<string, PackageChoice> = {
-        "#anfrage-aenderungen": "custom",
-        "#anfrage-launch": "launch",
-        "#anfrage-business": "business",
-        "#anfrage-growth": "growth",
-      };
-      const choice = choices[window.location.hash];
-      if (choice) {
-        cancelAnimationFrame(frame);
-        frame = requestAnimationFrame(() => setSelectedPackage(choice));
-      }
-    };
-    syncPackage();
-    window.addEventListener("hashchange", syncPackage);
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("hashchange", syncPackage);
-    };
-  }, []);
-
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const [privacyAccepted, setPrivacyAccepted] =
-    useState(false);
-
-  const [turnstileToken, setTurnstileToken] =
-    useState<string | null>(null);
-
-  const [isSubmitting, setIsSubmitting] =
-    useState(false);
-
-  const [submitError, setSubmitError] = useState("");
-
-  const turnstileRef =
-    useRef<TurnstileInstance>(null);
-
-  const submissionLock = useRef(false);
-
-  const turnstileSiteKey =
-    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
+    useState<PackageChoice>("custom");
 
   function choosePackage(packageId: PackageChoice) {
     setSelectedPackage(packageId);
@@ -1157,102 +927,6 @@ export default function WebdesignLandingPage() {
           block: "start",
         });
     });
-  }
-
-  async function handleSubmit(
-    event: FormEvent<HTMLFormElement>
-  ) {
-    event.preventDefault();
-
-    if (submissionLock.current) return;
-
-    setSubmitError("");
-
-    if (
-      !firstName.trim() ||
-      !email.trim() ||
-      !message.trim() ||
-      !privacyAccepted
-    ) {
-      setSubmitError(t.form.requiredError);
-      return;
-    }
-
-    if (!turnstileToken) {
-      setSubmitError(t.form.securityError);
-      return;
-    }
-
-    submissionLock.current = true;
-    setIsSubmitting(true);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json",
-        },
-
-        body: JSON.stringify({
-          name: firstName.trim(),
-          email: email.trim(),
-          
-
-          message:
-            `[Source: /webdesign]\n${message.trim()}`,
-
-          budget:
-            selectedPackage === "launch"
-              ? "ab 490 €"
-              : selectedPackage === "business"
-                ? "ab 990 €"
-                : selectedPackage === "growth"
-                  ? "ab 1.790 €"
-                  : "Noch offen",
-
-          timeline: "",
-          discount: false,
-          language,
-          quote: getQuote(selectedPackage),
-          turnstileToken,
-        }),
-      });
-
-      const result: unknown = await response
-        .json()
-        .catch(() => null);
-
-      if (
-        !response.ok ||
-        typeof result !== "object" ||
-        result === null ||
-        !("success" in result) ||
-        result.success !== true
-      ) {
-        throw new Error("Request failed");
-      }
-    } catch {
-      setTurnstileToken(null);
-      setSubmitError(t.form.sendError);
-
-      submissionLock.current = false;
-      setIsSubmitting(false);
-
-      turnstileRef.current?.reset();
-      return;
-    }
-
-    try {
-      sessionStorage.setItem(
-        "lead_successfully_submitted",
-        "true"
-      );
-    } catch {
-      // A blocked analytics marker must not prevent the success page.
-    }
-
-    router.push("/thank-you");
   }
 
   return (
@@ -1730,179 +1404,7 @@ export default function WebdesignLandingPage() {
                 </div>
               </div>
 
-              <form
-                onSubmit={handleSubmit}
-                className="rounded-[32px] border border-white/15 bg-black/35 p-6 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:p-9"
-              >
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <input
-                    name="name"
-                    value={firstName}
-                    onChange={(event) =>
-                      setFirstName(event.target.value)
-                    }
-                    placeholder={t.form.firstName}
-                    aria-label={t.form.firstName}
-                    autoComplete="name"
-                    maxLength={100}
-                    required
-                    className={inputClassName}
-                  />
-
-
-                  <input
-                    name="email"
-                    type="email"
-                    value={email}
-                    onChange={(event) =>
-                      setEmail(event.target.value)
-                    }
-                    placeholder={t.form.email}
-                    aria-label={t.form.email}
-                    autoComplete="email"
-                    maxLength={254}
-                    required
-                    className={inputClassName}
-                  />
-
-
-                  <select
-                    name="package"
-                    value={selectedPackage}
-                    onChange={(event) =>
-                      setSelectedPackage(
-                        event.target.value as PackageChoice
-                      )
-                    }
-                    aria-label={t.form.package}
-                    required
-                    className={`${inputClassName} sm:col-span-2`}
-                  >
-                    <option
-                      value="launch"
-                      className="bg-zinc-950"
-                    >
-                      {t.form.packageLaunch}
-                    </option>
-
-                    <option
-                      value="business"
-                      className="bg-zinc-950"
-                    >
-                      {t.form.packageBusiness}
-                    </option>
-
-                    <option
-                      value="growth"
-                      className="bg-zinc-950"
-                    >
-                      {t.form.packageGrowth}
-                    </option>
-
-                    <option
-                      value="custom"
-                      className="bg-zinc-950"
-                    >
-                      {t.form.packageCustom}
-                    </option>
-                  </select>
-
-                  <textarea
-                    name="message"
-                    value={message}
-                    onChange={(event) =>
-                      setMessage(event.target.value)
-                    }
-                    placeholder={t.form.message}
-                    aria-label={t.form.message}
-                    rows={6}
-                    maxLength={1800}
-                    required
-                    className={`${inputClassName} resize-y sm:col-span-2`}
-                  />
-                </div>
-
-                <div className="mt-7 flex justify-center">
-                  {turnstileSiteKey ? (
-                    <Turnstile
-                      ref={turnstileRef}
-                      id="webdesign-lead-turnstile"
-                      siteKey={turnstileSiteKey}
-                      onSuccess={(token) => {
-                        setTurnstileToken(token);
-                      }}
-                      onExpire={() =>
-                        setTurnstileToken(null)
-                      }
-                      onError={() =>
-                        setTurnstileToken(null)
-                      }
-                      options={{
-                        theme: "dark",
-                        size: "flexible",
-                      }}
-                    />
-                  ) : (
-                    <p
-                      role="alert"
-                      className="text-center text-sm text-amber-300"
-                    >
-                      {t.form.configError}
-                    </p>
-                  )}
-                </div>
-
-                <label className="mt-6 flex items-start gap-3 text-sm leading-6 text-white/50">
-                  <input
-                    type="checkbox"
-                    checked={privacyAccepted}
-                    onChange={(event) =>
-                      setPrivacyAccepted(
-                        event.target.checked
-                      )
-                    }
-                    className="mt-1 h-4 w-4 shrink-0 accent-blue-500"
-                  />
-
-                  <span>
-                    {t.form.privacy}{" "}
-                    <Link
-                      href="/datenschutzerklaerung"
-                      className="text-white/80 underline underline-offset-4"
-                    >
-                      {t.form.privacyLink}
-                    </Link>
-                    .
-                  </span>
-                </label>
-
-                {submitError && (
-                  <p
-                    role="alert"
-                    className="mt-5 text-sm text-red-400"
-                  >
-                    {submitError}
-                  </p>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={
-                    isSubmitting ||
-                    !turnstileSiteKey ||
-                    !privacyAccepted
-                  }
-                  className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-blue-500 px-7 py-4 font-semibold text-white transition hover:bg-blue-400 disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  {isSubmitting
-                    ? t.form.sending
-                    : t.form.submit}
-
-                  {!isSubmitting && (
-                    <span className="ml-3">→</span>
-                  )}
-                </button>
-              </form>
+              <LeadForm selectedPackage={selectedPackage} onPackageChange={setSelectedPackage} />
             </div>
           </Container>
         </section>

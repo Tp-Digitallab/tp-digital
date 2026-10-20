@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import LeadForm from "@/components/contact/LeadForm";
+import ScrollLink from "@/components/ui/ScrollLink";
 import {
   ArrowRight,
   CheckCircle2,
@@ -231,6 +233,11 @@ export default function ContactSection() {
       id="contact"
       className="scroll-mt-24 bg-[#050505]"
     >
+      <span id="anfrage" className="block scroll-mt-28" aria-hidden="true" />
+      <span id="anfrage-aenderungen" className="block scroll-mt-28" aria-hidden="true" />
+      <span id="anfrage-launch" className="block scroll-mt-28" aria-hidden="true" />
+      <span id="anfrage-business" className="block scroll-mt-28" aria-hidden="true" />
+      <span id="anfrage-growth" className="block scroll-mt-28" aria-hidden="true" />
       <Container className="max-w-6xl">
         <div className="mb-14 text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-blue-300">
@@ -246,8 +253,8 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          <div className="min-w-0 rounded-3xl border border-white/15 bg-white/[0.05] p-6 sm:p-8">
+        <div className="grid items-start gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="order-2 min-w-0 rounded-3xl border border-white/15 bg-white/[0.05] p-6 sm:p-8 lg:order-1">
             <h3 className="text-2xl font-semibold text-white">
               Taras Pakhaliuk
             </h3>
@@ -327,8 +334,8 @@ export default function ContactSection() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3">
-              <Link
-                href={`/${language}/webdesign#anfrage`}
+              <ScrollLink
+                href="#anfrage"
                 className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-2xl bg-blue-600 px-5 py-4 text-center font-semibold text-white transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
               >
                 <span>{t.primaryCta}</span>
@@ -337,7 +344,7 @@ export default function ContactSection() {
                   aria-hidden="true"
                   className="h-5 w-5 shrink-0"
                 />
-              </Link>
+              </ScrollLink>
 
               {whatsappUrl && (
                 <a
@@ -361,8 +368,9 @@ export default function ContactSection() {
             </p>
           </div>
 
-          <div className="min-w-0 rounded-3xl border border-white/15 bg-white/[0.05] p-6 sm:p-8">
-            <h3 className="text-2xl font-semibold leading-snug text-white">
+          <div className="order-1 min-w-0 lg:order-2">
+            <LeadForm />
+            <h3 className="mt-10 text-2xl font-semibold leading-snug text-white">
               {t.nextTitle}
             </h3>
 

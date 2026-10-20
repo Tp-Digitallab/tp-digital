@@ -14,16 +14,21 @@ interface ScrollLinkProps {
   href: string;
   children: ReactNode;
   className?: string;
+  "aria-label"?: string;
 }
 
 export default function ScrollLink({
   href,
   children,
   className,
+  "aria-label": ariaLabel,
 }: ScrollLinkProps) {
   function handleClick(
     event: MouseEvent<HTMLAnchorElement>
   ) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
     if (!href.startsWith("#")) {
       return;
     }
@@ -42,7 +47,9 @@ export default function ScrollLink({
     const browserWindow =
   window as unknown as WindowWithLenis;
 
-    if (browserWindow.lenis) {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (browserWindow.lenis && !reducedMotion) {
       browserWindow.lenis.scrollTo(
         element,
         {
@@ -51,7 +58,7 @@ export default function ScrollLink({
       );
     } else {
       element.scrollIntoView({
-        behavior: "smooth",
+        behavior: reducedMotion ? "instant" : "smooth",
         block: "start",
       });
     }
@@ -61,6 +68,7 @@ export default function ScrollLink({
       "",
       href
     );
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   }
 
   return (
@@ -68,6 +76,7 @@ export default function ScrollLink({
       href={href}
       onClick={handleClick}
       className={className}
+      aria-label={ariaLabel}
     >
       {children}
     </a>

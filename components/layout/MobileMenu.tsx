@@ -66,9 +66,9 @@ export default function MobileMenu() {
   }
 
   const requestHref =
-    pathname === "/webdesign"
+    pathname === "/" || pathname === "/webdesign" || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
       ? "#anfrage"
-      : "/webdesign#anfrage";
+      : `/${language}/webdesign#anfrage`;
 
   const navigation = [
     {

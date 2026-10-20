@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import RequestLink from "@/components/contact/RequestLink";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import Container from "@/components/common/Container";
 import BackgroundGrid from "@/components/effects/BackgroundGrid";
@@ -12,24 +12,24 @@ import { googleReviewsUrl } from "@/config/reviews";
 
 const copy = {
   de: {
-    eyebrow: "Webdesign aus München · deutschlandweit", title: "Professionelle Websites", accent: "für kleine Unternehmen.",
-    description: "Ich entwickle Ihre Website persönlich — mit klaren Inhalten, mobiler Darstellung und einem einfachen Weg zur Kundenanfrage.",
+    eyebrow: "Webdesign aus München · deutschlandweit", title: "Websites für Handwerk", accent: "und lokale Dienstleister.",
+    description: "Zeigen Sie Ihre Leistungen und Referenzen so, dass Interessenten Ihr Angebot verstehen und Sie direkt kontaktieren können. Ich erstelle Ihre Website oder verbessere Ihren bestehenden Auftritt.",
     price: "Landingpage ab", note: "Umfang und Festpreis vereinbaren wir vor Projektstart.", cta: "Projekt kurz beschreiben", projects: "Kundenprojekte ansehen",
     founder: "Taras Pakhaliuk · Ihr Webentwickler aus München", reviews: "5,0 · 5 Google-Bewertungen", reviewsDate: "Bewertungsstand: 22.09.2026",
     benefits: ["Persönliche Umsetzung", "2 Korrekturrunden inklusive"], example: "Ein echtes Kundenprojekt", category: "Bau und Innenausbau · München",
     result: "Leistungsseiten, Projektgalerie und Kostenrechner — passend zum Betrieb umgesetzt.", detail: "Umsetzung ansehen",
   },
   en: {
-    eyebrow: "Web design from Munich · across Germany", title: "Professional websites", accent: "for small businesses.",
-    description: "I personally build your website with clear content, a mobile-friendly layout and an easy way for customers to get in touch.",
+    eyebrow: "Web design from Munich · across Germany", title: "Websites for trades", accent: "and local service businesses.",
+    description: "Help potential customers understand your services, see your work and contact you directly. I build new websites and improve existing ones.",
     price: "Landing page from", note: "We agree on the scope and fixed price before work begins.", cta: "Tell me about your project", projects: "View client projects",
     founder: "Taras Pakhaliuk · Your web developer in Munich", reviews: "5.0 · 5 Google reviews", reviewsDate: "Reviews as of 22 September 2026",
     benefits: ["Personal implementation", "2 revision rounds included"], example: "A real client project", category: "Construction and interiors · Munich",
     result: "Service pages, a project gallery and a cost calculator built around the business.", detail: "Explore the project",
   },
   ru: {
-    eyebrow: "Веб-разработка из Мюнхена · по всей Германии", title: "Профессиональные сайты", accent: "для малого бизнеса.",
-    description: "Лично разрабатываю ваш сайт: понятные тексты, удобная мобильная версия и простой способ отправить заявку.",
+    eyebrow: "Веб-разработка из Мюнхена · по всей Германии", title: "Сайты для мастеров", accent: "и компаний сферы услуг.",
+    description: "Помогаю понятно показать услуги и выполненные работы, чтобы посетителю было проще выбрать вас и обратиться. Разработаю новый сайт или улучшу существующий.",
     price: "Лендинг от", note: "Объём работ и фиксированную цену согласуем до начала проекта.", cta: "Кратко описать проект", projects: "Посмотреть работы",
     founder: "Тарас Пахалюк · Ваш веб-разработчик в Мюнхене", reviews: "5,0 · 5 отзывов в Google", reviewsDate: "Отзывы на 22.09.2026",
     benefits: ["Личная разработка", "2 раунда правок включены"], example: "Реальный проект клиента", category: "Строительство и отделка · Мюнхен",
@@ -54,7 +54,7 @@ export default function HeroSection() {
             <p className="mt-4 text-sm leading-6 text-white/70">{t.founder}</p>
             <div className="mt-5"><p className="flex flex-wrap items-baseline gap-3"><span className="text-sm text-white/70">{t.price}</span><span className="price-number text-3xl font-semibold">{formattedPrice}</span></p><p className="mt-1 text-xs leading-5 text-white/60">{t.note}</p></div>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href={`/${language}/webdesign#anfrage`} className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{t.cta}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" /></Link>
+              <RequestLink className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-blue-600 px-6 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{t.cta}<ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" /></RequestLink>
               <ScrollLink href="#projects" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-5 py-3 text-center text-sm font-medium text-white/85 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400">{t.projects}</ScrollLink>
             </div>
             <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" title={t.reviewsDate} className="mt-5 inline-flex min-h-10 items-center gap-2 text-sm text-white/80 underline decoration-white/20 underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-blue-400"><Star aria-hidden="true" className="h-4 w-4 fill-amber-300 text-amber-300" />{t.reviews}<ArrowRight aria-hidden="true" className="h-3 w-3" /></a>

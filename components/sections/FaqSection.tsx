@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useState } from "react";
-import Link from "next/link";
+import RequestLink from "@/components/contact/RequestLink";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -421,8 +421,7 @@ export default function FaqSection() {
               {t.contactDescription}
             </p>
 
-            <Link
-                href={`/${language}/webdesign#anfrage`}
+            <RequestLink
               className="mt-6 inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-blue-500 px-6 py-3 text-center font-medium text-white transition hover:bg-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
             >
               {t.contactButton}
@@ -431,7 +430,7 @@ export default function FaqSection() {
                 aria-hidden="true"
                 className="h-4 w-4 shrink-0"
               />
-            </Link>
+            </RequestLink>
           </div>
         </Container>
       </Section>

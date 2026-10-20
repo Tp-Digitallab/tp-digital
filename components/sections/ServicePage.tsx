@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import LeadForm from "@/components/contact/LeadForm";
 import {
   ArrowRight,
   CheckCircle2,
@@ -267,7 +268,7 @@ export default function ServicePage({
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
-                  href={`/${language}/webdesign#anfrage`}
+                  href="#anfrage"
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
                 >
                   {ui.request}
@@ -407,9 +408,9 @@ export default function ServicePage({
           </Container>
         </section>
 
-        <section className="relative z-10 py-20 sm:py-28">
+        <section id="anfrage" className="relative z-10 scroll-mt-24 py-20 sm:py-28">
           <Container>
-            <div className="grid gap-8 rounded-[30px] border border-blue-400/20 bg-gradient-to-br from-blue-500/[0.13] to-white/[0.03] p-6 sm:p-10 lg:grid-cols-[1fr_0.7fr] lg:items-center lg:p-12">
+            <div className="grid gap-8 rounded-[30px] border border-blue-400/20 bg-gradient-to-br from-blue-500/[0.13] to-white/[0.03] p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:p-12">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
                   {ui.contactEyebrow}
@@ -424,18 +425,8 @@ export default function ServicePage({
                 </p>
               </div>
 
-              <div className="lg:justify-self-end">
-                <Link
-                  href={`/${language}/webdesign#anfrage`}
-                  className="inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] sm:w-auto"
-                >
-                  {ui.contactButton}
-
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="h-5 w-5"
-                  />
-                </Link>
+              <div className="min-w-0">
+                <LeadForm initialPackage={serviceKey === "onlineShop" ? "growth" : "custom"} context={serviceName} />
 
                 <div className="mt-5 space-y-3 text-sm text-white/55">
                   <p className="flex items-center gap-2">

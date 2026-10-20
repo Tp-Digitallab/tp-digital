@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import Link from "next/link";
+import RequestLink from "@/components/contact/RequestLink";
 
 interface PackageCardProps {
   id: string;
@@ -148,9 +148,8 @@ export default function PackageCard({
         </details>}
 
         <div className="mt-auto pt-9">
-          <Link
-            href={`/${language}/webdesign#anfrage-${id}`}
-            aria-label={`${copy.cta}: ${title}`}
+          <RequestLink choice={id}
+            label={`${copy.cta}: ${title}`}
             className={`group/button inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] ${
               featured
                 ? "border-blue-400/40 bg-blue-600 text-white hover:bg-blue-500"
@@ -165,7 +164,7 @@ export default function PackageCard({
             >
               →
             </span>
-          </Link>
+          </RequestLink>
 
           <p className="mt-4 text-center text-xs leading-5 text-white/50">
             {copy.payment}
