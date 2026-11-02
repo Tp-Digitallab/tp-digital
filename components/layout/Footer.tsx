@@ -8,7 +8,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 const footerTranslations = {
   de: {
     description:
-      "Moderne Websites, digitale Lösungen und Wachstumsstrategien für Unternehmen.",
+      "Websites für kleine Unternehmen. Persönlich aus München.",
 
     servicesTitle: "Leistungen",
 
@@ -60,7 +60,7 @@ const footerTranslations = {
 
   ru: {
     description:
-      "Современные сайты, цифровые решения и стратегии онлайн-развития для бизнеса.",
+      "Сайты для малого бизнеса. Лично из Мюнхена.",
 
     servicesTitle: "Услуги",
 
@@ -236,10 +236,10 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="/#process"
+                href="/#faq"
                 className="text-white/70 transition hover:text-white"
               >
-                {t.process}
+                FAQ
               </Link>
 
               <Link

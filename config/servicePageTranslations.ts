@@ -42,7 +42,7 @@ export const servicePageTranslations = {
           question:
             "Wie viel kostet eine professionelle Website?",
           answer:
-            "Eine Landingpage startet bei 490 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 990 €. Den genauen Leistungsumfang und den endgültigen Festpreis erhalten Sie vor Projektbeginn schriftlich.",
+            "Eine Landingpage startet bei 300 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 790 €. Den genauen Leistungsumfang und den endgültigen Festpreis erhalten Sie vor Projektbeginn schriftlich.",
         },
         {
           question:
@@ -80,7 +80,7 @@ export const servicePageTranslations = {
           question:
             "How much does a professional website cost?",
           answer:
-            "A landing page starts from €490. A business website with up to five pages starts from €990. You receive the exact scope and final fixed price in writing before the project begins.",
+            "A landing page starts from €300. A business website with up to five pages starts from €790. You receive the exact scope and final fixed price in writing before the project begins.",
         },
         {
           question:
@@ -117,7 +117,7 @@ export const servicePageTranslations = {
         {
           question: "Сколько стоит профессиональный сайт?",
           answer:
-            "Лендинг стоит от 490 €. Сайт компании до пяти страниц — от 990 €. Точный объём работ и окончательная фиксированная цена согласуются письменно до начала проекта.",
+            "Лендинг стоит от 300 €. Сайт компании до пяти страниц — от 790 €. Точный объём работ и окончательная фиксированная цена согласуются письменно до начала проекта.",
         },
         {
           question: "Сколько времени занимает разработка?",
@@ -155,7 +155,7 @@ export const servicePageTranslations = {
           question:
             "Wie viel kostet ein Online-Shop?",
           answer:
-            "Ein Online-Shop startet bei 1.790 €. Der genaue Preis hängt von Produktanzahl, Sprachen, Zahlungsanbieter und weiteren Funktionen ab. Sie erhalten den endgültigen Festpreis schriftlich vor dem Start.",
+            "Ein Online-Shop startet bei 1.500 €. Der genaue Preis hängt von Produktanzahl, Sprachen, Zahlungsanbieter und weiteren Funktionen ab. Sie erhalten den endgültigen Festpreis schriftlich vor dem Start.",
         },
         {
           question:
@@ -193,7 +193,7 @@ export const servicePageTranslations = {
           question:
             "How much does an online store cost?",
           answer:
-            "An online store starts from €1,790. The final price depends on the number of products, languages, payment provider and additional features. You receive the final fixed price in writing before work begins.",
+            "An online store starts from €1,500. The final price depends on the number of products, languages, payment provider and additional features. You receive the final fixed price in writing before work begins.",
         },
         {
           question:
@@ -231,7 +231,7 @@ export const servicePageTranslations = {
           question:
             "Сколько стоит интернет-магазин?",
           answer:
-            "Интернет-магазин стоит от 1 790 €. Итоговая цена зависит от количества товаров, языков, платёжной системы и дополнительных функций. Фиксированную цену вы получите письменно до начала работы.",
+            "Интернет-магазин стоит от 1 500 €. Итоговая цена зависит от количества товаров, языков, платёжной системы и дополнительных функций. Фиксированную цену вы получите письменно до начала работы.",
         },
         {
           question:

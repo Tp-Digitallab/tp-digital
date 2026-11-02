@@ -57,12 +57,8 @@ export default function Header() {
       href: homeHref("#packages"),
     },
     {
-      name: t.nav.process,
-      href: homeHref("#process"),
-    },
-    {
-      name: t.nav.calculator,
-      href: homeHref("#calculator"),
+      name: "FAQ",
+      href: homeHref("#faq"),
     },
     {
       name: t.nav.contact,

@@ -54,21 +54,21 @@ const localeOpenGraph: Record<
 const webdesignMetadata = {
   de: {
     title:
-      "Website erstellen ab 490 € in München | TP Digital Lab",
+      "Website erstellen ab 300 € in München | TP Digital Lab",
     description:
-      "Websites für kleine Unternehmen aus München. Landingpage ab 490 €, Firmenwebsite ab 990 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
+      "Websites für kleine Unternehmen aus München. Landingpage ab 300 €, Firmenwebsite ab 790 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
   },
   en: {
     title:
-      "Professional website from €490 | TP Digital Lab Munich",
+      "Professional website from €300 | TP Digital Lab Munich",
     description:
-      "Professional websites for small businesses: landing pages from €490 and business websites from €990. Personal implementation from Munich and a written no-obligation quote.",
+      "Professional websites for small businesses: landing pages from €300 and business websites from €790. Personal implementation from Munich and a written no-obligation quote.",
   },
   ru: {
     title:
-      "Создание сайта от 490 € | TP Digital Lab, Мюнхен",
+      "Создание сайта от 300 € | TP Digital Lab, Мюнхен",
     description:
-      "Профессиональные сайты для небольших компаний: лендинг от 490 €, сайт компании от 990 €. Личная разработка из Мюнхена и письменное предложение без обязательств.",
+      "Профессиональные сайты для небольших компаний: лендинг от 300 €, сайт компании от 790 €. Личная разработка из Мюнхена и письменное предложение без обязательств.",
   },
 } as const;
 

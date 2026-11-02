@@ -35,7 +35,7 @@ export default function PackageGrid() {
   }
 
   return (
-    <div className="mt-20 grid gap-8 lg:grid-cols-3">
+    <div className="mt-8 grid gap-5 lg:grid-cols-3">
       {packages.map((pkg) => {
         const packageContent =
           content.packages[

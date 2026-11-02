@@ -6,10 +6,20 @@ export interface Project {
   technologies: string[];
   image: string;
   website: string;
-  status: "live" | "coming-soon";
+  status: "live" | "coming-soon" | "in-development";
 }
 
 export const projects: Project[] = [
+  {
+    id: "marigstudio",
+    title: "Mari G Beauty Studio",
+    category: "Beauty Studio",
+    description: "Custom design and development from scratch, three languages and appointment enquiries.",
+    technologies: ["Custom Design", "Development", "Appointment Enquiries"],
+    image: "/projects/marigstudio.png",
+    website: "https://marigstudio.vercel.app/",
+    status: "in-development",
+  },
   {
     id: "exzellentia",
     title: "Exzellentia Constructio",

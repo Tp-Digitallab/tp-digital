@@ -93,9 +93,9 @@ export default function PackageCard({
         }`}
       />
 
-      <div className="relative z-10 flex h-full flex-col p-6 sm:p-8 lg:p-9">
+      <div className="relative z-10 flex h-full flex-col p-6 sm:p-7">
         {badge && (
-          <div className="mb-6 inline-flex w-fit rounded-full border border-blue-300/30 bg-blue-400/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-200">
+          <div className="mb-4 inline-flex w-fit rounded-full border border-blue-300/30 bg-blue-400/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-200">
             {badge}
           </div>
         )}
@@ -108,7 +108,7 @@ export default function PackageCard({
           {title}
         </h3>
 
-        <div className="mt-7">
+        <div className="mt-5">
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-white/45">
             {copy.from}
           </p>
@@ -118,13 +118,13 @@ export default function PackageCard({
           </p>
         </div>
 
-        <p className="mt-6 text-base leading-7 text-white/70">
+        <p className="mt-4 text-sm leading-6 text-white/70">
           {description}
         </p>
 
-        <div className="my-8 h-px bg-white/10" />
+        <div className="my-5 h-px bg-white/10" />
 
-        <ul className="space-y-4">
+        <ul className="space-y-3">
           {features.slice(0, 3).map((feature) => (
             <li
               key={feature}
@@ -147,7 +147,7 @@ export default function PackageCard({
           <ul className="mt-3 space-y-3">{features.slice(3).map(feature => <li key={feature} className="flex gap-3 leading-6"><span aria-hidden="true" className="text-blue-300">✓</span><span>{feature}</span></li>)}</ul>
         </details>}
 
-        <div className="mt-auto pt-9">
+        <div className="mt-auto pt-6">
           <RequestLink choice={id}
             label={`${copy.cta}: ${title}`}
             className={`group/button inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] ${

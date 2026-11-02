@@ -4,7 +4,7 @@ export const packages = [
 
     name: "Launch",
 
-    price: 490,
+    price: 300,
 
     featured: false,
 
@@ -12,12 +12,11 @@ export const packages = [
       "Eine startbereite Landingpage für Selbstständige und kleine Unternehmen, die professionell online auftreten möchten.",
 
     features: [
-      "Landingpage – eine Seite mit mehreren Abschnitten",
+      "Landingpage – eine Seite mit bis zu 5 Abschnitten",
       "1 Sprache",
       "Individuelles Design",
       "Basis-SEO",
       "Kontaktformular",
-      "Google-Analytics-4-Einrichtung",
       "Optimiert für Smartphone und Desktop",
       "2 Korrekturrunden",
     ],
@@ -28,7 +27,7 @@ export const packages = [
 
     name: "Business",
 
-    price: 990,
+    price: 790,
 
     featured: true,
 
@@ -37,11 +36,9 @@ export const packages = [
 
     features: [
       "Unternehmenswebsite – bis zu 5 Seiten",
-      "2 Sprachen",
+      "1 Sprache",
       "Individuelles Design",
-      "Erweiterte SEO-Optimierung",
-      "Google-Unternehmensprofil",
-      "GA4 und Conversion-Tracking",
+      "Basis-SEO",
       "1 Monat technischer Support",
       "2 Korrekturrunden",
     ],
@@ -52,21 +49,19 @@ export const packages = [
 
     name: "Growth",
 
-    price: 1790,
+    price: 1500,
 
     featured: false,
 
     description:
-      "Ein professioneller Online-Shop mit Verwaltung, Zahlungsintegration und Marketing-Einrichtung.",
+      "Ein kleiner Online-Shop mit Produktverwaltung und vereinbarter Zahlungsintegration.",
 
     features: [
       "Online-Shop – bis zu 20 Produkte",
-      "Bis zu 3 Sprachen",
+      "1 Sprache",
       "Admin-Bereich (CMS)",
       "Zahlungsintegration",
-      "Erweiterte SEO-Optimierung",
-      "GA4 E-Commerce-Tracking",
-      "Google-Ads-Einrichtung",
+      "Basis-SEO",
       "2 Monate technischer Support",
       "2 Korrekturrunden",
     ],

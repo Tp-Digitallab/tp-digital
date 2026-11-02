@@ -12,24 +12,24 @@ import { googleReviewsUrl } from "@/config/reviews";
 
 const copy = {
   de: {
-    eyebrow: "Webdesign aus München · deutschlandweit", title: "Websites für Handwerk", accent: "und lokale Dienstleister.",
-    description: "Zeigen Sie Ihre Leistungen und Referenzen so, dass Interessenten Ihr Angebot verstehen und Sie direkt kontaktieren können. Ich erstelle Ihre Website oder verbessere Ihren bestehenden Auftritt.",
+    eyebrow: "Webdesign aus München · deutschlandweit", title: "Ihr Geschäft.", accent: "Ihre neue Website.",
+    description: "Individuelle Websites für Selbstständige und kleine Unternehmen. Klar gestaltet, mobil optimiert und mit direktem Kontakt zu Ihnen.",
     price: "Landingpage ab", note: "Umfang und Festpreis vereinbaren wir vor Projektstart.", cta: "Projekt kurz beschreiben", projects: "Kundenprojekte ansehen",
     founder: "Taras Pakhaliuk · Ihr Webentwickler aus München", reviews: "5,0 · 5 Google-Bewertungen", reviewsDate: "Bewertungsstand: 22.09.2026",
     benefits: ["Persönliche Umsetzung", "2 Korrekturrunden inklusive"], example: "Ein echtes Kundenprojekt", category: "Bau und Innenausbau · München",
     result: "Leistungsseiten, Projektgalerie und Kostenrechner — passend zum Betrieb umgesetzt.", detail: "Umsetzung ansehen",
   },
   en: {
-    eyebrow: "Web design from Munich · across Germany", title: "Websites for trades", accent: "and local service businesses.",
-    description: "Help potential customers understand your services, see your work and contact you directly. I build new websites and improve existing ones.",
+    eyebrow: "Web design from Munich · across Germany", title: "Your business.", accent: "Your new website.",
+    description: "Custom websites for independent professionals and small businesses. Clear design, mobile-friendly and easy to contact you.",
     price: "Landing page from", note: "We agree on the scope and fixed price before work begins.", cta: "Tell me about your project", projects: "View client projects",
     founder: "Taras Pakhaliuk · Your web developer in Munich", reviews: "5.0 · 5 Google reviews", reviewsDate: "Reviews as of 22 September 2026",
     benefits: ["Personal implementation", "2 revision rounds included"], example: "A real client project", category: "Construction and interiors · Munich",
     result: "Service pages, a project gallery and a cost calculator built around the business.", detail: "Explore the project",
   },
   ru: {
-    eyebrow: "Веб-разработка из Мюнхена · по всей Германии", title: "Сайты для мастеров", accent: "и компаний сферы услуг.",
-    description: "Помогаю понятно показать услуги и выполненные работы, чтобы посетителю было проще выбрать вас и обратиться. Разработаю новый сайт или улучшу существующий.",
+    eyebrow: "Веб-разработка из Мюнхена · по всей Германии", title: "Ваш бизнес.", accent: "Ваш новый сайт.",
+    description: "Создаю сайты для малого бизнеса: понятный дизайн, удобная мобильная версия и простой способ обратиться к вам.",
     price: "Лендинг от", note: "Объём работ и фиксированную цену согласуем до начала проекта.", cta: "Кратко описать проект", projects: "Посмотреть работы",
     founder: "Тарас Пахалюк · Ваш веб-разработчик в Мюнхене", reviews: "5,0 · 5 отзывов в Google", reviewsDate: "Отзывы на 22.09.2026",
     benefits: ["Личная разработка", "2 раунда правок включены"], example: "Реальный проект клиента", category: "Строительство и отделка · Мюнхен",
@@ -41,7 +41,7 @@ export default function HeroSection() {
   const { language } = useLanguage();
   const t = copy[language];
   const price = packages.find(p => p.id === "launch")?.price;
-  const formattedPrice = new Intl.NumberFormat(language === "de" ? "de-DE" : language === "ru" ? "ru-RU" : "en-US", {style: "currency", currency: "EUR", maximumFractionDigits: 0}).format(price ?? 490);
+  const formattedPrice = new Intl.NumberFormat(language === "de" ? "de-DE" : language === "ru" ? "ru-RU" : "en-US", {style: "currency", currency: "EUR", maximumFractionDigits: 0}).format(price ?? 300);
   return (
     <section id="top" className="relative overflow-hidden bg-[#050505] text-white">
       <BackgroundGrid />

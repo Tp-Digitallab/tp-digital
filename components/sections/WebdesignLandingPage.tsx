@@ -1,4 +1,5 @@
 "use client";
+import { packageTranslations } from "@/config/packageTranslations";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import { useState } from "react";
 import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
@@ -135,7 +136,7 @@ const copy: Record<Language, Copy> = {
         "Persönliche Website-Entwicklung aus München",
       title:
         "Professionelle Website erstellen lassen",
-      accent: "ab 490 €",
+      accent: "ab 300 €",
       description:
         "Klare Websites für Selbstständige und kleine Unternehmen – persönlich umgesetzt, damit Interessenten leichter Kontakt aufnehmen.",
       primaryCta:
@@ -146,7 +147,7 @@ const copy: Record<Language, Copy> = {
         "Festpreis und Leistungsumfang werden vor Projektbeginn schriftlich vereinbart.",
       cardTitle:
         "Ihr professioneller Online-Auftritt",
-      cardPrice: "ab 490 €",
+      cardPrice: "ab 300 €",
       cardDescription:
         "Direkte Zusammenarbeit vom ersten Kontakt bis zum Livegang.",
       cardFeatures: [
@@ -256,7 +257,7 @@ const copy: Record<Language, Copy> = {
           "Eine vollständige Unternehmenswebsite für mehr Sichtbarkeit und neue Kundenanfragen.",
         features: [
           "Bis zu 5 Seiten",
-          "2 Sprachen",
+          "1 Sprache",
           "Individuelles Design",
           "Erweiterte SEO-Optimierung",
           "Google-Unternehmensprofil",
@@ -271,7 +272,7 @@ const copy: Record<Language, Copy> = {
           "Ein professioneller Online-Shop mit Verwaltung, Zahlungsintegration und Marketing-Einrichtung.",
         features: [
           "Bis zu 20 Produkte",
-          "Bis zu 3 Sprachen",
+          "1 Sprache",
           "Admin-Bereich (CMS)",
           "Zahlungsintegration",
           "Erweiterte SEO-Optimierung",
@@ -337,7 +338,7 @@ const copy: Record<Language, Copy> = {
           question:
             "Wie viel kostet eine professionelle Website?",
           answer:
-            "Eine Landingpage startet bei 490 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 990 €. Ein Online-Shop startet bei 1.790 €. Den endgültigen Festpreis erhalten Sie vor Projektbeginn schriftlich im Angebot.",
+            "Eine Landingpage startet bei 300 €. Eine Unternehmenswebsite mit bis zu fünf Seiten startet bei 790 €. Ein Online-Shop startet bei 1.500 €. Den endgültigen Festpreis erhalten Sie vor Projektbeginn schriftlich im Angebot.",
         },
         {
           question:
@@ -405,7 +406,7 @@ const copy: Record<Language, Copy> = {
         "Personal website development from Munich",
       title:
         "Get a professional business website",
-      accent: "from €490",
+      accent: "from €300",
       description:
         "Modern, fast websites for freelancers and small businesses. Personally implemented with clear planning and the goal of making new enquiries easier.",
       primaryCta:
@@ -416,7 +417,7 @@ const copy: Record<Language, Copy> = {
         "We agree on the scope and fixed price in writing before work begins.",
       cardTitle:
         "Your professional online presence",
-      cardPrice: "from €490",
+      cardPrice: "from €300",
       cardDescription:
         "Personal implementation directly with me – from first contact to launch.",
       cardFeatures: [
@@ -528,7 +529,7 @@ const copy: Record<Language, Copy> = {
           "A complete business website for better visibility and new enquiries.",
         features: [
           "Up to 5 pages",
-          "2 languages",
+          "1 language",
           "Custom design",
           "Advanced SEO",
           "Google Business Profile",
@@ -543,7 +544,7 @@ const copy: Record<Language, Copy> = {
           "A professional online store with administration, payment integration and marketing setup.",
         features: [
           "Up to 20 products",
-          "Up to 3 languages",
+          "1 language",
           "Admin panel",
           "Payment integration",
           "Advanced SEO",
@@ -609,7 +610,7 @@ const copy: Record<Language, Copy> = {
           question:
             "How much does a professional website cost?",
           answer:
-            "A landing page starts at €490, a business website with up to five pages at €990 and an online store at €1,790. You receive the final fixed price in writing before the project begins.",
+            "A landing page starts at €300, a business website with up to five pages at €790 and an online store at €1,500. You receive the final fixed price in writing before the project begins.",
         },
         {
           question: "Do I need to call?",
@@ -657,7 +658,7 @@ const copy: Record<Language, Copy> = {
         "Личная разработка сайтов из Мюнхена",
       title:
         "Профессиональный сайт для бизнеса",
-      accent: "от 490 €",
+      accent: "от 300 €",
       description:
         "Современные быстрые сайты для самозанятых и небольших компаний. Личная работа, понятный процесс и фокус на новых обращениях клиентов.",
       primaryCta:
@@ -665,10 +666,10 @@ const copy: Record<Language, Copy> = {
       secondaryCta:
         "Посмотреть работы",
       priceNote:
-        "Вводная цена для первых проектов · Лендинги от 490 € · Сайты компаний от 990 €",
+        "Вводная цена для первых проектов · Лендинги от 300 € · Сайты компаний от 790 €",
       cardTitle:
         "Профессиональное присутствие в интернете",
-      cardPrice: "от 490 €",
+      cardPrice: "от 300 €",
       cardDescription:
         "Личная работа напрямую со мной — от первого контакта до запуска.",
       cardFeatures: [
@@ -781,7 +782,7 @@ const copy: Record<Language, Copy> = {
           "Полноценный сайт компании для большей видимости и новых обращений.",
         features: [
           "До 5 страниц",
-          "2 языка",
+          "1 язык",
           "Индивидуальный дизайн",
           "Расширенное SEO",
           "Профиль компании в Google",
@@ -796,7 +797,7 @@ const copy: Record<Language, Copy> = {
           "Профессиональный интернет-магазин с админкой, оплатой и настройкой маркетинга.",
         features: [
           "До 20 товаров",
-          "До 3 языков",
+          "1 язык",
           "Панель управления",
           "Интеграция оплаты",
           "Расширенное SEO",
@@ -863,7 +864,7 @@ const copy: Record<Language, Copy> = {
           question:
             "Сколько стоит профессиональный сайт?",
           answer:
-            "Лендинг стоит от 490 €, сайт компании до пяти страниц — от 990 €, интернет-магазин — от 1 790 €. Окончательная фиксированная цена указывается письменно до начала проекта.",
+            "Лендинг стоит от 300 €, сайт компании до пяти страниц — от 790 €, интернет-магазин — от 1 500 €. Окончательная фиксированная цена указывается письменно до начала проекта.",
         },
         {
           question:
@@ -1130,14 +1131,14 @@ export default function WebdesignLandingPage() {
             <div className="mt-14 grid gap-6 lg:grid-cols-3">
               {packageIds.map((packageId) => {
                 const packageText =
-                  t.packages[packageId];
+                  packageTranslations[language].packages[packageId];
 
                 const price =
                   packageId === "launch"
-                    ? "490 €"
+                    ? "300 €"
                     : packageId === "business"
-                      ? "990 €"
-                      : "1.790 €";
+                      ? "790 €"
+                      : "1.500 €";
 
                 const selected =
                   selectedPackage === packageId;

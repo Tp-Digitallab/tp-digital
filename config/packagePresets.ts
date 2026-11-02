@@ -25,7 +25,7 @@ export const packagePresets:
     PackagePreset
   > = {
   launch: {
-    price: 490,
+    price: 300,
 
     website: "landing",
 
@@ -50,18 +50,16 @@ export const packagePresets:
   },
 
   business: {
-    price: 990,
+    price: 790,
 
     website: "business",
 
     languages: [
       "de",
-      "en",
     ],
 
     marketing: [
-      "advanced-seo",
-      "business-profile",
+      "basic-seo",
     ],
 
     branding: [],
@@ -78,19 +76,16 @@ export const packagePresets:
   },
 
   growth: {
-    price: 1790,
+    price: 1500,
 
     website: "shop",
 
     languages: [
       "de",
-      "en",
-      "other",
     ],
 
     marketing: [
-      "advanced-seo",
-      "ads",
+      "basic-seo",
     ],
 
     branding: [],

@@ -48,7 +48,7 @@ function getFaqContent(language: Language) {
       eyebrow: "Gut zu wissen",
 
       title:
-        "Klare Antworten vor dem Projektstart.",
+        "Häufige Fragen.",
 
       description:
         "Hier finden Sie die wichtigsten Informationen zu Preisen, Zusammenarbeit und Übergabe.",
@@ -68,7 +68,7 @@ function getFaqContent(language: Language) {
             "Wie viel kostet meine Website?",
 
           answer:
-            `Eine Landingpage startet bei ${landingPrice}, eine Unternehmenswebsite mit bis zu fünf Seiten bei ${businessPrice} und ein Online-Shop mit bis zu 20 Produkten bei ${shopPrice}. Der genaue Preis hängt vom vereinbarten Umfang ab. Vor Projektbeginn erhalten Sie ein schriftliches Angebot mit Leistungsumfang und Festpreis.`,
+            `Eine Landingpage startet bei ${landingPrice}, eine Unternehmenswebsite mit bis zu fünf Seiten bei ${businessPrice} und ein Online-Shop mit bis zu 20 Produkten bei ${shopPrice}. Der genaue Preis hängt vom vereinbarten Umfang ab. Enthalten ist jeweils eine Sprache. Die Landingpage umfasst bis zu fünf Abschnitte. Ihre Texte und Bilder bilden die Grundlage. Individuelle Buchungssysteme, zusätzliche Sprachen und Integrationen werden separat angeboten. Vor Projektbeginn erhalten Sie ein schriftliches Angebot mit Leistungsumfang und Festpreis.`,
         },
         {
           question:
@@ -126,7 +126,7 @@ function getFaqContent(language: Language) {
       eyebrow: "Good to know",
 
       title:
-        "Clear answers before your project begins.",
+        "Common questions.",
 
       description:
         "The key information about pricing, working together and handing over your website.",
@@ -146,7 +146,7 @@ function getFaqContent(language: Language) {
             "How much will my website cost?",
 
           answer:
-            `A landing page starts at ${landingPrice}, a business website with up to five pages at ${businessPrice}, and an online store with up to 20 products at ${shopPrice}. The exact price depends on the agreed scope. Before work begins, you receive a written offer with the scope and fixed price.`,
+            `A landing page starts at ${landingPrice}, a business website with up to five pages at ${businessPrice}, and an online store with up to 20 products at ${shopPrice}. The exact price depends on the agreed scope. Each starting package includes one language and uses your text and images. The landing page includes up to five sections. Custom booking systems, extra languages and integrations are quoted separately. Before work begins, you receive a written offer with the scope and fixed price.`,
         },
         {
           question:
@@ -287,7 +287,7 @@ export default function FaqSection() {
   const t = getFaqContent(language);
 
   const [openIndex, setOpenIndex] =
-    useState<number | null>(0);
+    useState<number | null>(null);
 
   const accordionId = useId();
 
@@ -297,7 +297,7 @@ export default function FaqSection() {
 
       <Section
         id="faq"
-        className="scroll-mt-24"
+        className="scroll-mt-24 !py-12 sm:!py-16"
       >
         <Container className="max-w-4xl">
           <div className="mb-12 text-center">
