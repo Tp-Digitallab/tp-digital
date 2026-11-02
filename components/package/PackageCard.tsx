@@ -166,13 +166,6 @@ export default function PackageCard({
             </span>
           </RequestLink>
 
-          <p className="mt-4 text-center text-xs leading-5 text-white/50">
-            {copy.payment}
-          </p>
-
-          <p className="mt-2 text-center text-xs text-white/65">
-            {copy.revisions}
-          </p>
         </div>
       </div>
     </article>

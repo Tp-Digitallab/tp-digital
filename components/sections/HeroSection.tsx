@@ -16,24 +16,24 @@ const copy = {
     description: "Individuelle Websites für Selbstständige und kleine Unternehmen. Klar gestaltet, mobil optimiert und mit direktem Kontakt zu Ihnen.",
     price: "Landingpage ab", note: "Umfang und Festpreis vereinbaren wir vor Projektstart.", cta: "Projekt kurz beschreiben", projects: "Kundenprojekte ansehen",
     founder: "Taras Pakhaliuk · Ihr Webentwickler aus München", reviews: "5,0 · 5 Google-Bewertungen", reviewsDate: "Bewertungsstand: 22.09.2026",
-    benefits: ["Persönliche Umsetzung", "2 Korrekturrunden inklusive"], example: "Ein echtes Kundenprojekt", category: "Bau und Innenausbau · München",
-    result: "Leistungsseiten, Projektgalerie und Kostenrechner — passend zum Betrieb umgesetzt.", detail: "Umsetzung ansehen",
+    benefits: ["Persönliche Umsetzung", "2 Korrekturrunden inklusive"], example: "Aktuelles Projekt · in Entwicklung", category: "Beauty-Studio · Haar bei München",
+    result: "Design und Entwicklung von Grund auf. Drei Sprachen, Leistungen und Terminanfragen.", detail: "Umsetzung ansehen",
   },
   en: {
     eyebrow: "Web design from Munich · across Germany", title: "Your business.", accent: "Your new website.",
     description: "Custom websites for independent professionals and small businesses. Clear design, mobile-friendly and easy to contact you.",
     price: "Landing page from", note: "We agree on the scope and fixed price before work begins.", cta: "Tell me about your project", projects: "View client projects",
     founder: "Taras Pakhaliuk · Your web developer in Munich", reviews: "5.0 · 5 Google reviews", reviewsDate: "Reviews as of 22 September 2026",
-    benefits: ["Personal implementation", "2 revision rounds included"], example: "A real client project", category: "Construction and interiors · Munich",
-    result: "Service pages, a project gallery and a cost calculator built around the business.", detail: "Explore the project",
+    benefits: ["Personal implementation", "2 revision rounds included"], example: "Current project · in development", category: "Beauty studio · Haar near Munich",
+    result: "Designed and built from scratch. Three languages, services and appointment enquiries.", detail: "Explore the project",
   },
   ru: {
     eyebrow: "Веб-разработка из Мюнхена · по всей Германии", title: "Ваш бизнес.", accent: "Ваш новый сайт.",
     description: "Создаю сайты для малого бизнеса: понятный дизайн, удобная мобильная версия и простой способ обратиться к вам.",
     price: "Лендинг от", note: "Объём работ и фиксированную цену согласуем до начала проекта.", cta: "Кратко описать проект", projects: "Посмотреть работы",
     founder: "Тарас Пахалюк · Ваш веб-разработчик в Мюнхене", reviews: "5,0 · 5 отзывов в Google", reviewsDate: "Отзывы на 22.09.2026",
-    benefits: ["Личная разработка", "2 раунда правок включены"], example: "Реальный проект клиента", category: "Строительство и отделка · Мюнхен",
-    result: "Страницы услуг, галерея проектов и калькулятор стоимости — под задачи компании.", detail: "Подробнее о проекте",
+    benefits: ["Личная разработка", "2 раунда правок включены"], example: "Текущий проект · в разработке", category: "Бьюти-студия · Хаар рядом с Мюнхеном",
+    result: "Дизайн и разработка с нуля. Три языка, услуги и заявки на запись.", detail: "Подробнее о проекте",
   },
 };
 
@@ -62,8 +62,8 @@ export default function HeroSection() {
           </div>
           <figure className="min-w-0 overflow-hidden rounded-3xl border border-white/15 bg-[#0b1018] shadow-[0_25px_100px_rgba(37,99,235,0.12)]">
             <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3 text-xs text-white/55"><span>{t.example}</span><span className="flex gap-1.5" aria-hidden="true"><span className="h-2 w-2 rounded-full bg-white/20" /><span className="h-2 w-2 rounded-full bg-white/20" /><span className="h-2 w-2 rounded-full bg-white/20" /></span></div>
-            <Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website für Bau und Innenausbau in München" width={1897} height={912} sizes="(max-width: 1023px) calc(100vw - 48px), 520px" preload className="h-auto w-full" />
-            <figcaption className="p-5 sm:p-6"><p className="text-xs text-blue-300">{t.category}</p><p className="mt-2 text-lg font-semibold">Exzellentia Constructio</p><p className="mt-3 text-sm leading-6 text-white/65">{t.result}</p><ScrollLink href="#projects" className="mt-4 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-blue-200 underline underline-offset-4 hover:text-white">{t.detail}<ArrowRight aria-hidden="true" className="h-4 w-4" /></ScrollLink></figcaption>
+            <Image src="/projects/marigstudio.png" alt="Mari G Beauty Studio — Website" width={1905} height={904} sizes="(max-width: 1023px) calc(100vw - 48px), 520px" preload className="h-auto w-full" />
+            <figcaption className="p-5 sm:p-6"><p className="text-xs text-blue-300">{t.category}</p><p className="mt-2 text-lg font-semibold">Mari G Beauty Studio</p><p className="mt-3 text-sm leading-6 text-white/65">{t.result}</p><ScrollLink href="#projects" className="mt-4 inline-flex min-h-10 items-center gap-2 text-sm font-medium text-blue-200 underline underline-offset-4 hover:text-white">{t.detail}<ArrowRight aria-hidden="true" className="h-4 w-4" /></ScrollLink></figcaption>
           </figure>
         </div>
       </Container>
