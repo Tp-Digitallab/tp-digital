@@ -24,7 +24,8 @@ const schema = {
 
 "provider": {
 
-"@type": "ProfessionalService",
+"@type": "Organization",
+"@id": "https://tpdigitallab.de/#organization",
 
 "name": "TP Digital Lab",
 

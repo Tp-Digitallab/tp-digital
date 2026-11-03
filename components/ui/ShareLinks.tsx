@@ -1,10 +1,11 @@
 "use client";
 
+import { homePath } from "@/lib/locale-paths";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function ShareLinks() {
   const { language } = useLanguage();
-  const url = encodeURIComponent("https://tpdigitallab.de/");
+  const url = encodeURIComponent(`https://tpdigitallab.de${homePath(language)}`);
   return (
     <div className="border-t border-white/10 bg-[#050505] px-6 py-5 text-center text-sm text-white/60">
       <p>{language === "de" ? "TP Digital Lab weiterempfehlen" : language === "ru" ? "Поделиться TP Digital Lab" : "Share TP Digital Lab"}</p>

@@ -1,5 +1,6 @@
 "use client";
 
+import { homePath } from "@/lib/locale-paths";
 import Link from "next/link";
 import LeadForm from "@/components/contact/LeadForm";
 import ShopDemo from "@/components/sections/ShopDemo";
@@ -279,7 +280,7 @@ export default function ServicePage({
                 </Link>
 
                 <Link
-                  href={serviceKey === "onlineShop" ? "#beispiel" : "/#projects"}
+                  href={serviceKey === "onlineShop" ? "#beispiel" : `${homePath(language)}#projects`}
                   className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
                 >
                   {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
@@ -334,7 +335,7 @@ export default function ServicePage({
               <h2 className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl">{offer.example.title}</h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-white/75">{offer.example.text}</p>
               {serviceKey === "onlineShop" ? <ShopDemo /> : (
-                <Link href="/#projects" className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full border border-blue-300/30 px-6 py-3 font-medium text-blue-100 hover:bg-blue-400/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300">
+                <Link href={`${homePath(language)}#projects`} className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full border border-blue-300/30 px-6 py-3 font-medium text-blue-100 hover:bg-blue-400/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300">
                   {offer.example.link}
                 </Link>
               )}

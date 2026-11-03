@@ -37,6 +37,7 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      { source: "/de", destination: "/", permanent: true },
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.tpdigitallab.de" }],

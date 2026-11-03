@@ -7,7 +7,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export type Language = "de" | "en" | "ru";
 
@@ -41,11 +41,14 @@ export default function LanguageProvider({
   respectSavedLanguage = true,
 }: LanguageProviderProps) {
   const pathname = usePathname();
-  const [language, setLanguageState] =
+  const router = useRouter();
+  const [languageState, setLanguageState] =
     useState<Language>(initialLanguage);
 
+  const routeLanguage = pathname?.match(/^\/(de|en|ru)(?=\/|$)/)?.[1] ?? null;
+  const language = isLanguage(routeLanguage) ? routeLanguage : languageState;
+
   useEffect(() => {
-    const routeLanguage = pathname?.match(/^\/(de|en|ru)(?=\/|$)/)?.[1] ?? null;
     document.documentElement.lang =
       isLanguage(routeLanguage) ? routeLanguage : initialLanguage;
 
@@ -58,6 +61,11 @@ export default function LanguageProvider({
       window.localStorage.getItem("language");
 
     if (!isLanguage(savedLanguage)) {
+      return;
+    }
+
+    if (pathname === "/" && savedLanguage !== "de") {
+      router.replace(`/${savedLanguage}${window.location.hash}`);
       return;
     }
 
@@ -78,23 +86,20 @@ export default function LanguageProvider({
     initialLanguage,
     respectSavedLanguage,
     pathname,
+    routeLanguage,
+    router,
   ]);
 
   const setLanguage = useCallback(
     (newLanguage: Language) => {
       setLanguageState(newLanguage);
 
-      if (respectSavedLanguage) {
-        window.localStorage.setItem(
-          "language",
-          newLanguage,
-        );
-      }
+      window.localStorage.setItem("language", newLanguage);
 
       document.documentElement.lang =
         newLanguage;
     },
-    [respectSavedLanguage],
+    [],
   );
 
   return (

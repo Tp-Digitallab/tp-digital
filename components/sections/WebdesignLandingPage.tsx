@@ -4,6 +4,7 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 import { useState } from "react";
 import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
+import { homePath } from "@/lib/locale-paths";
 import Link from "next/link";
 import MobileLeadBar from "@/components/ui/MobileLeadBar";
 import {
@@ -659,7 +660,7 @@ const copy: Record<Language, Copy> = {
         "Профессиональный сайт для бизнеса",
       accent: "от 300 €",
       description:
-        "Современные быстрые сайты для самозанятых и небольших компаний. Личная работа, понятный процесс и фокус на новых обращениях клиентов.",
+        "Создаю сайты для малого бизнеса в Мюнхене и по всей Германии: услуги, цены, примеры работ и удобная заявка. Общаемся на русском, объём и стоимость согласуем письменно.",
       primaryCta:
         "Запросить предложение",
       secondaryCta:
@@ -936,7 +937,7 @@ export default function WebdesignLandingPage() {
         <Container>
           <div className="mt-6 flex items-center justify-between rounded-full border border-white/10 bg-black/60 px-5 py-3 backdrop-blur-xl">
             <Link
-              href="/"
+              href={homePath(language)}
               className="leading-none text-white"
             >
               <span className="text-xl font-semibold">

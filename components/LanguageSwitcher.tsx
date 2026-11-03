@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { localizedPath } from "@/lib/locale-paths";
 
 import {
   type Language,
@@ -30,36 +32,12 @@ const languages: Array<{
   },
 ];
 
-function getLocalizedPath(
-  pathname: string,
-  language: Language,
-) {
-  const localizedMatch = pathname.match(
-    /^\/(de|en|ru)(?=\/|$)/,
-  );
-
-  if (!localizedMatch) {
-    return null;
-  }
-
-  const pathWithoutLocale =
-    pathname.slice(localizedMatch[0].length) ||
-    "/";
-
-  return `/${language}${
-    pathWithoutLocale === "/"
-      ? ""
-      : pathWithoutLocale
-  }`;
-}
-
 export default function LanguageSwitcher() {
   const [open, setOpen] = useState(false);
   const { language, setLanguage } =
     useLanguage();
 
   const pathname = usePathname();
-  const router = useRouter();
 
   function changeLanguage(
     newLanguage: Language,
@@ -67,18 +45,6 @@ export default function LanguageSwitcher() {
     setLanguage(newLanguage);
     setOpen(false);
 
-    if (!pathname) {
-      return;
-    }
-
-    const localizedPath = getLocalizedPath(
-      pathname,
-      newLanguage,
-    );
-
-    if (localizedPath) {
-      router.push(localizedPath);
-    }
   }
 
   const currentLanguage =
@@ -119,9 +85,10 @@ export default function LanguageSwitcher() {
               item.code === language;
 
             return (
-              <button
+              <Link
                 key={item.code}
-                type="button"
+                href={localizedPath(pathname ?? "/", item.code) ?? pathname ?? "/"}
+                hrefLang={item.code}
                 role="menuitem"
                 aria-current={
                   active ? "true" : undefined
@@ -136,7 +103,7 @@ export default function LanguageSwitcher() {
                 }`}
               >
                 {item.short}
-              </button>
+              </Link>
             );
           })}
         </div>

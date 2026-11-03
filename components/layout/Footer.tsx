@@ -1,5 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { homePath, localizedPath, locales } from "@/lib/locale-paths";
+
 import Link from "next/link";
 
 import Container from "@/components/common/Container";
@@ -89,7 +92,8 @@ const footerTranslations = {
 } as const;
 
 export default function Footer() {
-  const { language } = useLanguage();
+  const pathname = usePathname();
+  const { language, setLanguage } = useLanguage();
 
   const t =
     footerTranslations[language];
@@ -229,21 +233,21 @@ export default function Footer() {
               className="flex flex-col gap-4"
             >
               <Link
-                href="/#projects"
+                href={`${homePath(language)}#projects`}
                 className="text-white/70 transition hover:text-white"
               >
                 {t.projects}
               </Link>
 
               <Link
-                href="/#faq"
+                href={`${homePath(language)}#faq`}
                 className="text-white/70 transition hover:text-white"
               >
                 FAQ
               </Link>
 
               <Link
-                href="/#contact"
+                href={`${homePath(language)}#contact`}
                 className="text-white/70 transition hover:text-white"
               >
                 {t.contact}
@@ -296,6 +300,10 @@ export default function Footer() {
             </nav>
           </div>
         </div>
+
+        <nav aria-label="Languages" className="relative z-10 flex flex-wrap gap-5 pb-6 text-sm text-white/65">
+          {locales.map(locale => <Link key={locale} href={localizedPath(pathname ?? "/", locale) ?? homePath(locale)} hrefLang={locale} onClick={() => setLanguage(locale)} className="inline-flex min-h-11 items-center underline underline-offset-4 hover:text-white">{locale === "de" ? "Deutsch" : locale === "ru" ? "Русский" : "English"}</Link>)}
+        </nav>
 
         {/* Copyright */}
 

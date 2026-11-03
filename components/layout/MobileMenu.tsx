@@ -13,6 +13,7 @@ import type Lenis from "lenis";
 import { usePathname } from "next/navigation";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { homePath, isHomePath, localizedPath } from "@/lib/locale-paths";
 import { translations } from "@/config/translations";
 
 type Language = "de" | "en" | "ru";
@@ -61,11 +62,11 @@ export default function MobileMenu() {
   const [open, setOpen] = useState(false);
 
   function homeHref(hash: string) {
-    return pathname === "/" ? hash : `/${hash}`;
+    return isHomePath(pathname) ? hash : `${homePath(language)}${hash}`;
   }
 
   const requestHref =
-    pathname === "/" || pathname === "/webdesign" || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
+    isHomePath(pathname) || pathname === "/webdesign" || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
       ? "#anfrage"
       : `/${language}/webdesign#anfrage`;
 
@@ -201,26 +202,11 @@ export default function MobileMenu() {
     return;
   }
 
-  const localizedMatch = pathname.match(
-    /^\/(de|en|ru)(?=\/|$)/,
-  );
-
-  if (!localizedMatch) {
-    return;
-  }
-
-  const pathWithoutLocale =
-    pathname.slice(localizedMatch[0].length) ||
-    "/";
-
-  const localizedPath = `/${code}${
-    pathWithoutLocale === "/"
-      ? ""
-      : pathWithoutLocale
-  }`;
+  const nextPath = localizedPath(pathname, code);
+  if (!nextPath) return;
 
   setOpen(false);
-  window.location.assign(localizedPath);
+  window.location.assign(nextPath);
 }
 
   return (

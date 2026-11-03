@@ -54,21 +54,39 @@ const localeOpenGraph: Record<
 const webdesignMetadata = {
   de: {
     title:
-      "Website erstellen ab 300 € in München | TP Digital Lab",
+      "Webdesign München: Website erstellen ab 300 € | TP Digital Lab",
     description:
       "Websites für kleine Unternehmen aus München. Landingpage ab 300 €, Firmenwebsite ab 790 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
   },
   en: {
     title:
-      "Professional website from €300 | TP Digital Lab Munich",
+      "Web Design Munich: Business Websites from €300 | TP Digital Lab",
     description:
       "Professional websites for small businesses: landing pages from €300 and business websites from €790. Personal implementation from Munich and a written no-obligation quote.",
   },
   ru: {
     title:
-      "Создание сайта от 300 € | TP Digital Lab, Мюнхен",
+      "Создание сайтов в Мюнхене и Германии от 300 € | TP Digital Lab",
     description:
-      "Профессиональные сайты для небольших компаний: лендинг от 300 €, сайт компании от 790 €. Личная разработка из Мюнхена и письменное предложение без обязательств.",
+      "Разработка сайтов для малого бизнеса в Мюнхене и по всей Германии. Лендинг от 300 €, сайт компании от 790 €. Общение на русском и фиксированная стоимость.",
+  },
+} as const;
+
+const serviceMetadata = {
+  seo: {
+    de: { title: "SEO München: Technisches SEO-Audit & Optimierung | TP Digital Lab", description: "Technisches SEO-Audit, Onpage-Optimierung und Hilfe mit Google Search Console für kleine Unternehmen. Persönlich aus München, mit schriftlichem Maßnahmenplan." },
+    en: { title: "SEO Audit & Website Optimization Munich | TP Digital Lab", description: "Technical SEO audits, on-page improvements and Google Search Console support for small businesses in Munich and across Germany. Clear scope and a written action plan." },
+    ru: { title: "SEO-аудит и продвижение сайтов в Германии | TP Digital Lab", description: "Технический SEO-аудит, оптимизация страниц и помощь с Google Search Console для малого бизнеса в Германии. Общение на русском, понятный план работ." },
+  },
+  "online-shop": {
+    de: { title: "Onlineshop erstellen lassen ab 1.500 € | TP Digital Lab München", description: "Onlineshop für kleine Unternehmen: bis zu 20 Produkte im Einstiegspaket, Warenkorb und vereinbarte Zahlungsanbindung. Entwicklung aus München, Festpreis vor dem Start." },
+    en: { title: "Online Store Development from €1,500 | TP Digital Lab Munich", description: "Online stores for small businesses in Germany. Starter scope with up to 20 products, a shopping cart and an agreed payment integration. Request a fixed-price quote." },
+    ru: { title: "Создание интернет-магазина в Германии от 1 500 € | TP Digital Lab", description: "Разработка интернет-магазинов для малого бизнеса в Германии: до 20 товаров в стартовом пакете, корзина и согласованная интеграция оплаты. Общение на русском." },
+  },
+  "digitale-loesungen": {
+    de: { title: "Website überarbeiten & Fehler beheben | TP Digital Lab München", description: "Kontaktformular reparieren, mobile Ansicht verbessern oder eine Funktion ergänzen. Hilfe für bestehende Websites aus München, auch für kleine Aufgaben zum vereinbarten Festpreis." },
+    en: { title: "Website Fixes & Improvements | TP Digital Lab Munich", description: "Fix contact forms, improve mobile layouts or add a feature to your website. Personal help from Munich for small businesses, with the scope and price agreed before work begins." },
+    ru: { title: "Доработка и исправление сайтов в Германии | TP Digital Lab", description: "Исправлю форму заявки, мобильную версию или добавлю нужную функцию на сайт. Помощь малому бизнесу в Германии, общение на русском и согласованная стоимость." },
   },
 } as const;
 
@@ -126,7 +144,6 @@ export async function generateMetadata({
 
   const locale = localeParam;
   const service = serviceParam;
-  const serviceKey = serviceKeys[service];
   const pageUrl = `https://tpdigitallab.de${getLocalizedPath(
     locale,
     service,
@@ -135,13 +152,12 @@ export async function generateMetadata({
   const title =
     service === "webdesign"
       ? webdesignMetadata[locale].title
-      : `${servicePageTranslations[serviceKey][locale].title} ${servicePageTranslations[serviceKey][locale].accent}`;
+      : serviceMetadata[service][locale].title;
 
   const description =
     service === "webdesign"
       ? webdesignMetadata[locale].description
-      : servicePageTranslations[serviceKey][locale]
-          .description;
+      : serviceMetadata[service][locale].description;
 
   return {
     title: {
@@ -157,6 +173,7 @@ export async function generateMetadata({
       ),
 
       languages: {
+        "x-default": getLocalizedPath("de", service),
         de: getLocalizedPath(
           "de",
           service,

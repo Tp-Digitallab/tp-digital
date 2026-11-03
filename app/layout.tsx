@@ -66,9 +66,6 @@ export const metadata: Metadata = {
     follow: true,
   },
 
-  alternates: {
-    canonical: "/",
-  },
 
   openGraph: {
     title:

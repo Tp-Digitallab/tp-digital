@@ -8,6 +8,7 @@ import MobileMenu from "@/components/layout/MobileMenu";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import ScrollLink from "@/components/ui/ScrollLink";
+import { homePath, isHomePath } from "@/lib/locale-paths";
 import { translations } from "@/config/translations";
 
 const headerCopy = {
@@ -36,10 +37,10 @@ export default function Header() {
   const copy = headerCopy[language];
 
   function homeHref(hash: string) {
-    return pathname === "/" ? hash : `/${hash}`;
+    return isHomePath(pathname) ? hash : `${homePath(language)}${hash}`;
   }
 
-  const requestHref = pathname === "/" || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
+  const requestHref = isHomePath(pathname) || /^\/(de|en|ru)\/(webdesign|seo|online-shop|digitale-loesungen)$/.test(pathname)
     ? "#anfrage"
     : `/${language}/webdesign#anfrage`;
 
