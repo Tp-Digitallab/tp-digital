@@ -315,7 +315,7 @@ export default function WebsiteStep({
             t.calculatorSteps.website
               .next
           }{" "}
-          →
+
         </button>
       </div>
     </section>

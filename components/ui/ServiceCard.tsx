@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+
 
 interface ServiceCardProps {
   number: string;
@@ -118,10 +118,7 @@ export default function ServiceCard({
               {ctaLabel}
             </span>
 
-            <ArrowRight
-              aria-hidden="true"
-              className="h-4 w-4 shrink-0"
-            />
+
           </Link>
         </div>
       </div>

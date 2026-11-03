@@ -245,7 +245,7 @@ export default function SupportStep({
             t.calculatorSteps.support
               .finish
           }{" "}
-          →
+
         </button>
       </div>
     </section>

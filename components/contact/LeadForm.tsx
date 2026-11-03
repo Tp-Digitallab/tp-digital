@@ -404,7 +404,7 @@ export default function LeadForm({
         className="mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-full bg-blue-600 px-5 py-4 font-semibold text-white transition hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {isSubmitting ? t.sending : t.submit}
-        {!isSubmitting && <span aria-hidden="true" className="ml-3">→</span>}
+
       </button>
       <p className="mt-4 text-center text-sm leading-6 text-white/70">{t.reassurance}</p>
     </form>

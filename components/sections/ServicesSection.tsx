@@ -1,7 +1,7 @@
 "use client";
 
 import RequestLink from "@/components/contact/RequestLink";
-import { ArrowRight } from "lucide-react";
+
 
 import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
@@ -219,10 +219,7 @@ export default function ServicesSection() {
             >
               <span>{t.helpButton}</span>
 
-              <ArrowRight
-                aria-hidden="true"
-                className="h-5 w-5 shrink-0"
-              />
+
             </RequestLink>
           </div>
 

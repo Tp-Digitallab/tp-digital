@@ -3,7 +3,6 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import {
-  ArrowRight,
   CheckCircle2,
   Clock3,
   Mail,
@@ -430,10 +429,7 @@ export default function ThankYouPage() {
           >
             {t.backHome}
 
-            <ArrowRight
-              aria-hidden="true"
-              className="h-4 w-4 shrink-0"
-            />
+
           </Link>
 
           <Link

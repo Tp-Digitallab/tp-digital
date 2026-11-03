@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 import RequestLink from "@/components/contact/RequestLink";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 import Container from "@/components/common/Container";
@@ -426,10 +426,7 @@ export default function FaqSection() {
             >
               {t.contactButton}
 
-              <ArrowRight
-                aria-hidden="true"
-                className="h-4 w-4 shrink-0"
-              />
+
             </RequestLink>
           </div>
         </Container>

@@ -13,7 +13,6 @@ import {
 
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import Container from "@/components/common/Container";
-import BackgroundGrid from "@/components/effects/BackgroundGrid";
 import Footer from "@/components/layout/Footer";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import FaqSchema from "@/components/seo/FaqSchema";
@@ -984,9 +983,9 @@ export default function WebdesignLandingPage() {
         </Container>
       </header>
 
-      <main className="relative overflow-hidden bg-[#050505] text-white">
+      <main className="home-atmosphere text-white">
         <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-32">
-          <BackgroundGrid />
+
 
           <Container>
             <div className="relative z-10 grid gap-12 pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
@@ -1012,14 +1011,14 @@ export default function WebdesignLandingPage() {
                     href="#anfrage"
                     className="rounded-full bg-blue-500 px-6 py-4 font-semibold text-white transition hover:bg-blue-400"
                   >
-                    {t.hero.primaryCta} →
+                    {t.hero.primaryCta}
                   </a>
 
                   <a
                     href="#projekte"
                     className="text-sm text-white/60 transition hover:text-white"
                   >
-                    {t.hero.secondaryCta} →
+                    {t.hero.secondaryCta}
                   </a>
                 </div>
 

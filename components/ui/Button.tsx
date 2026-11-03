@@ -133,17 +133,7 @@ export default function Button({
     >
       <span>{children}</span>
 
-      <span
-        aria-hidden="true"
-        className="
-          shrink-0
-          transition-transform
-          duration-300
-          group-hover:translate-x-1
-        "
-      >
-        →
-      </span>
+
     </button>
   );
 }

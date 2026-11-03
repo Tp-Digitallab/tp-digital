@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+
 
 interface PackageRowProps {
   badge?: string;
@@ -95,7 +95,7 @@ export default function PackageRow({
           >
             View Package
 
-            <ArrowRight size={20} />
+
           </button>
 
         </div>

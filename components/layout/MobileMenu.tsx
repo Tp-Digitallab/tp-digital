@@ -6,7 +6,6 @@ import {
   motion,
 } from "motion/react";
 import {
-  ArrowRight,
   Menu,
   X,
 } from "lucide-react";
@@ -325,12 +324,7 @@ export default function MobileMenu() {
                         {item.name}
                       </span>
 
-                      <ArrowRight
-                        size={18}
-                        strokeWidth={1.7}
-                        aria-hidden="true"
-                        className="text-white/35 transition-transform group-hover:translate-x-1"
-                      />
+
                     </motion.button>
                   ))}
                 </nav>
@@ -389,11 +383,7 @@ export default function MobileMenu() {
                 >
                   <span>{copy.request}</span>
 
-                  <ArrowRight
-                    size={19}
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
-                  />
+
                 </button>
 
                 <p className="mt-4 text-center text-[11px] leading-5 text-white/35">

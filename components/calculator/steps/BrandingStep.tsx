@@ -232,7 +232,7 @@ export default function BrandingStep({
             t.calculatorSteps.branding
               .next
           }{" "}
-          →
+
         </button>
       </div>
     </section>

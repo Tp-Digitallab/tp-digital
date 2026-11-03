@@ -5,7 +5,6 @@ import LeadForm from "@/components/contact/LeadForm";
 import ShopDemo from "@/components/sections/ShopDemo";
 import { serviceOffers } from "@/config/serviceOffers";
 import {
-  ArrowRight,
   CheckCircle2,
   Clock3,
   Mail,
@@ -276,10 +275,7 @@ export default function ServicePage({
                 >
                   {ui.request}
 
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="h-5 w-5"
-                  />
+
                 </Link>
 
                 <Link
@@ -288,10 +284,7 @@ export default function ServicePage({
                 >
                   {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
 
-                  <ArrowRight
-                    aria-hidden="true"
-                    className="h-4 w-4"
-                  />
+
                 </Link>
               </div>
             </div>
@@ -342,7 +335,7 @@ export default function ServicePage({
               <p className="mt-5 max-w-3xl text-base leading-8 text-white/75">{offer.example.text}</p>
               {serviceKey === "onlineShop" ? <ShopDemo /> : (
                 <Link href="/#projects" className="mt-6 inline-flex min-h-12 items-center gap-3 rounded-full border border-blue-300/30 px-6 py-3 font-medium text-blue-100 hover:bg-blue-400/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-300">
-                  {offer.example.link}<ArrowRight aria-hidden="true" className="h-4 w-4" />
+                  {offer.example.link}
                 </Link>
               )}
             </Container>

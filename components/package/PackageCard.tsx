@@ -158,12 +158,7 @@ export default function PackageCard({
           >
             <span>{copy.cta}</span>
 
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-200 group-hover/button:translate-x-1"
-            >
-              →
-            </span>
+
           </RequestLink>
 
         </div>

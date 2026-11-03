@@ -512,7 +512,7 @@ export default function ContactStep({
           >
             {isSubmitting
               ? copy.sending
-              : `${t.calculatorSteps.contact.submit} →`}
+              : `${t.calculatorSteps.contact.submit}`}
           </button>
         </div>
       </form>

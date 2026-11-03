@@ -239,7 +239,7 @@ export default function LanguageStep({
           onClick={next}
           className="rounded-full bg-blue-500 px-8 py-4 font-medium text-white hover:bg-blue-400"
         >
-          {t.next} →
+          {t.next}
         </button>
       </div>
     </section>

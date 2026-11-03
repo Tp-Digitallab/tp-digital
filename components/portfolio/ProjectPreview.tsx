@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { projects } from "@/config/projects";
 const copy = {
@@ -26,6 +26,6 @@ export default function ProjectPreview() {
  {project.status === "in-development" && <span className="absolute left-4 top-4 rounded-full bg-black/75 px-3 py-1.5 text-xs text-white">{t.status}</span>}</a>
  <div className="flex flex-1 flex-col p-6"><h3 className="text-xl font-semibold text-white">{project.title}</h3>
  <p className="mt-3 text-sm leading-6 text-white/65">{t.descriptions[project.id as keyof typeof t.descriptions] ?? project.description}</p>
- <a href={project.website} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex min-h-12 items-center gap-2 pt-5 text-sm font-medium text-blue-200 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-blue-400">{project.status === "in-development" ? t.preview : t.visit}<ArrowUpRight aria-hidden="true" className="h-4 w-4" /></a></div>
+ <a href={project.website} target="_blank" rel="noopener noreferrer" className="mt-auto inline-flex min-h-12 items-center gap-2 pt-5 text-sm font-medium text-blue-200 underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-blue-400">{project.status === "in-development" ? t.preview : t.visit}</a></div>
  </article>)}</div>;
 }
