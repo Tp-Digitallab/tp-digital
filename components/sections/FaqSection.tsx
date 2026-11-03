@@ -299,7 +299,7 @@ export default function FaqSection() {
         id="faq"
         className="scroll-mt-24 !py-12 sm:!py-16"
       >
-        <Container className="max-w-4xl">
+        <Container className="max-w-6xl 2xl:max-w-6xl">
           <div className="mb-12 text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-blue-300">
               {t.eyebrow}
@@ -400,7 +400,7 @@ export default function FaqSection() {
                         >
                           <div className="mx-4 border-t border-white/10 sm:mx-6" />
 
-                          <p className="px-4 pb-6 pt-5 text-base leading-8 text-zinc-300 sm:px-6">
+                          <p className="max-w-[78ch] px-4 pb-6 pt-5 text-base leading-8 text-zinc-300 sm:px-6">
                             {item.answer}
                           </p>
                         </motion.div>

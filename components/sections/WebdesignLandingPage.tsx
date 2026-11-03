@@ -1279,7 +1279,7 @@ export default function WebdesignLandingPage() {
 
         <section className="py-24 md:py-32">
           <Container>
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-5xl">
               <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
                 {t.faq.eyebrow}
               </p>
