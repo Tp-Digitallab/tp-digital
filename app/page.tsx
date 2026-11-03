@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main>
+      <main className="home-atmosphere">
         <HeroSection />
         <ProjectsSection />
         <PackagesSection />

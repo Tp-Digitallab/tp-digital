@@ -150,3 +150,54 @@ svg {
 #reviews .text-white\/45 {
   color: #cbd5e1;
 }
+
+/* A continuous backdrop keeps the homepage from becoming separate black strips. */
+.home-atmosphere {
+  position: relative;
+  isolation: isolate;
+  background-color: #080e1a;
+  background-image:
+    radial-gradient(ellipse 65% 700px at 94% 320px, rgb(44 99 180 / 24%), transparent 75%),
+    radial-gradient(ellipse 55% 550px at 0% 100px, rgb(87 79 140 / 17%), transparent 75%),
+    radial-gradient(ellipse 75% 650px at 10% 35%, rgb(32 95 119 / 16%), transparent 75%),
+    radial-gradient(ellipse 65% 650px at 95% 62%, rgb(69 75 145 / 18%), transparent 75%),
+    radial-gradient(ellipse 70% 700px at 65% 90%, rgb(35 91 155 / 19%), transparent 75%),
+    linear-gradient(#0a1221, #080e1a 42%, #0a1020 82%, #050505);
+}
+
+.home-atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1050px;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(154 184 232 / 3.5%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(154 184 232 / 3.5%) 1px, transparent 1px);
+  background-size: 88px 88px;
+  mask-image: linear-gradient(to bottom, transparent 80px, #000 240px, rgb(0 0 0 / 65%) 45%, transparent);
+}
+
+.home-atmosphere > section {
+  position: relative;
+  background-color: transparent;
+}
+
+.home-atmosphere #top figure {
+  box-shadow: 0 28px 100px rgb(0 0 0 / 25%), 0 0 80px rgb(82 139 228 / 10%);
+}
+
+@media (max-width: 639px) {
+  .home-atmosphere {
+    background-image:
+      radial-gradient(ellipse 110% 600px at 100% 400px, rgb(44 99 180 / 22%), transparent 80%),
+      radial-gradient(ellipse 110% 850px at 0% 38%, rgb(32 95 119 / 16%), transparent 80%),
+      radial-gradient(ellipse 110% 900px at 100% 76%, rgb(69 75 145 / 17%), transparent 80%),
+      linear-gradient(#0c1424, #080e1a 45%, #0a1020 85%, #050505);
+  }
+
+  .home-atmosphere::before {
+    background-size: 64px 64px;
+  }
+}

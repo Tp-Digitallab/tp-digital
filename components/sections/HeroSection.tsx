@@ -4,7 +4,6 @@ import Image from "next/image";
 import RequestLink from "@/components/contact/RequestLink";
 import { ArrowRight, CheckCircle2, Star } from "lucide-react";
 import Container from "@/components/common/Container";
-import BackgroundGrid from "@/components/effects/BackgroundGrid";
 import ScrollLink from "@/components/ui/ScrollLink";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { packages } from "@/config/packages";
@@ -44,7 +43,6 @@ export default function HeroSection() {
   const formattedPrice = new Intl.NumberFormat(language === "de" ? "de-DE" : language === "ru" ? "ru-RU" : "en-US", {style: "currency", currency: "EUR", maximumFractionDigits: 0}).format(price ?? 300);
   return (
     <section id="top" className="relative overflow-hidden bg-[#050505] text-white">
-      <BackgroundGrid />
       <Container className="relative z-10">
         <div className="grid items-center gap-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pb-24 lg:pt-40">
           <div className="min-w-0">
