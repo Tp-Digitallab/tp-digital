@@ -6,9 +6,9 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { googleReviewsUrl, reviewExcerpts } from "@/config/reviews";
 
 const copy = {
-  de: { title: "Was meine Kunden sagen", note: "5,0 von 5 · 5 Bewertungen auf Google", date: "Stand: 22.09.2026", excerpt: "Auszug aus einer Google-Bewertung · Original auf Deutsch", source: "Alle Bewertungen auf Google ansehen" },
-  en: { title: "What my clients say", note: "5.0 out of 5 · 5 Google reviews", date: "As of 22 September 2026", excerpt: "Google review excerpt · Original in German", source: "Read all reviews on Google" },
-  ru: { title: "Что говорят мои клиенты", note: "5,0 из 5 · 5 отзывов в Google", date: "На 22.09.2026", excerpt: "Фрагмент отзыва в Google · Оригинал на немецком", source: "Посмотреть все отзывы в Google" },
+  de: { title: "Was meine Kunden sagen", note: "5,0 von 5 · 7 Bewertungen auf Google", date: "Stand: 03.11.2026", excerpt: "Auszug aus einer Google-Bewertung", source: "Alle Bewertungen auf Google ansehen" },
+  en: { title: "What my clients say", note: "5.0 out of 5 · 7 Google reviews", date: "As of 3 November 2026", excerpt: "Google review excerpt", source: "Read all reviews on Google" },
+  ru: { title: "Что говорят мои клиенты", note: "5,0 из 5 · 7 отзывов в Google", date: "На 03.11.2026", excerpt: "Фрагмент отзыва в Google", source: "Посмотреть все отзывы в Google" },
 };
 
 export default function ReviewsSection() {
