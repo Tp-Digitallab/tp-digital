@@ -26,12 +26,12 @@ import {
 const uiCopy = {
   de: {
     badge: "TP DIGITAL LAB · MÜNCHEN",
-    request: "Unverbindliches Angebot anfragen",
-    references: "Kundenprojekte ansehen",
+    request: "Projekt anfragen",
+    references: "Arbeiten ansehen",
     priceLabel: "Startpreis",
     priceNote:
-      "Der genaue Leistungsumfang und der endgültige Festpreis werden vor dem Projektstart schriftlich vereinbart.",
-    outcomeEyebrow: "Was Ihr Unternehmen davon hat",
+      "Umfang und Festpreis vor dem Start. Externe Kosten separat.",
+    outcomeEyebrow: "Leistungen",
     outcomeTitle:
       "Eine digitale Lösung, die zu Ihrer Aufgabe passt.",
     outcomeText:
@@ -56,12 +56,12 @@ const uiCopy = {
       },
     ],
     faqEyebrow: "Häufige Fragen",
-    faqTitle: "Das sollten Sie vor dem Start wissen.",
+    faqTitle: "Kurz erklärt.",
     contactEyebrow: "Nächster Schritt",
     contactTitle:
-      "Beschreiben Sie kurz Ihre Aufgabe.",
+      "Was brauchen Sie?",
     contactText:
-      "Ich melde mich persönlich per E-Mail. Die Anfrage ist unverbindlich und verpflichtet Sie zu nichts.",
+      "Ich antworte persönlich per E-Mail.",
     contactButton: "Projekt schriftlich anfragen",
     response:
       "Persönliche Antwort in der Regel innerhalb von 3–12 Stunden.",
@@ -71,12 +71,12 @@ const uiCopy = {
 
   en: {
     badge: "TP DIGITAL LAB · MUNICH",
-    request: "Request a no-obligation quote",
-    references: "View client projects",
+    request: "Discuss your project",
+    references: "View my work",
     priceLabel: "Starting price",
     priceNote:
-      "The exact scope and final fixed price are agreed in writing before the project begins.",
-    outcomeEyebrow: "What this helps your business do",
+      "Scope and fixed price agreed before work. External costs separate.",
+    outcomeEyebrow: "Services",
     outcomeTitle:
       "A digital solution built around your actual task.",
     outcomeText:
@@ -101,12 +101,12 @@ const uiCopy = {
       },
     ],
     faqEyebrow: "Frequently asked questions",
-    faqTitle: "What you should know before starting.",
+    faqTitle: "Your questions answered.",
     contactEyebrow: "Next step",
     contactTitle:
-      "Briefly describe what you need.",
+      "What do you need?",
     contactText:
-      "I will personally reply by email. Your enquiry carries no obligation.",
+      "I will reply personally by email.",
     contactButton: "Enquire about your project",
     response:
       "Personal reply usually within 3–12 hours.",
@@ -116,12 +116,12 @@ const uiCopy = {
 
   ru: {
     badge: "TP DIGITAL LAB · МЮНХЕН",
-    request: "Запросить предложение",
-    references: "Посмотреть проекты клиентов",
+    request: "Обсудить проект",
+    references: "Посмотреть работы",
     priceLabel: "Стартовая цена",
     priceNote:
-      "Точный объём работ и окончательную фиксированную цену мы согласуем письменно до начала проекта.",
-    outcomeEyebrow: "Что это даст вашему бизнесу",
+      "Объём и фиксированная цена — до начала работ. Внешние расходы отдельно.",
+    outcomeEyebrow: "Услуги",
     outcomeTitle:
       "Цифровое решение под вашу реальную задачу.",
     outcomeText:
@@ -148,12 +148,12 @@ const uiCopy = {
     ],
     faqEyebrow: "Частые вопросы",
     faqTitle:
-      "Что важно знать до начала проекта.",
+      "Частые вопросы.",
     contactEyebrow: "Следующий шаг",
     contactTitle:
-      "Коротко опишите, что вам нужно.",
+      "Что вам нужно?",
     contactText:
-      "Я лично отвечу по электронной почте. Заявка ни к чему вас не обязывает.",
+      "Я лично отвечу по электронной почте.",
     contactButton: "Обсудить задачу",
     response:
       "Личный ответ обычно в течение 3–12 часов.",
@@ -227,7 +227,7 @@ export default function ServicePage({
 
       <main
         id="top"
-        className="relative min-h-screen overflow-hidden bg-[#050505] text-white"
+        className="service-copy home-atmosphere relative min-h-screen text-white"
       >
         <BackgroundGrid />
 
@@ -236,14 +236,14 @@ export default function ServicePage({
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_60%_18%,rgba(59,130,246,0.12),transparent_48%),linear-gradient(to_bottom,transparent_45%,#050505_92%)]"
         />
 
-        <section className="relative z-10 flex min-h-[100svh] items-center px-5 pb-20 pt-36 sm:px-8 md:pb-28 md:pt-40 lg:px-12">
+        <section className="relative z-10 pb-14 pt-32 sm:pb-20 md:pt-40">
           <Container className="w-full">
-            <div className="max-w-5xl">
+            <div className="min-w-0 max-w-5xl">
               <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300 sm:tracking-[0.4em]">
                 {ui.badge}
               </p>
 
-              <h1 className="mt-7 max-w-4xl break-words text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-8xl">
+              <h1 className="mt-6 max-w-4xl text-[clamp(2rem,5vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
                 {content.title}
                 <br />
                 <span className="text-white/65">
@@ -251,7 +251,7 @@ export default function ServicePage({
                 </span>
               </h1>
 
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/65 sm:text-xl sm:leading-9">
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
                 {content.description}
               </p>
 
@@ -292,9 +292,9 @@ export default function ServicePage({
           </Container>
         </section>
 
-        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-20 sm:py-28">
+        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-14 sm:py-20">
           <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div className="space-y-8">
               <div>
                 <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
                   {ui.outcomeEyebrow}
@@ -309,7 +309,7 @@ export default function ServicePage({
                 </p>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4 md:grid-cols-3">
                 {(offer?.deliverables ?? content.services.map((title) => ({ title, text: "" }))).map((service) => (
                   <div
                     key={service.title}
@@ -343,42 +343,7 @@ export default function ServicePage({
           </section>
         )}
 
-        <section className="relative z-10 py-20 sm:py-28">
-          <Container>
-            <div className="max-w-3xl">
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
-                {ui.processEyebrow}
-              </p>
-
-              <h2 className="mt-5 text-3xl font-semibold leading-tight sm:text-5xl">
-                {ui.processTitle}
-              </h2>
-            </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {ui.processItems.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8"
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-400/30 bg-blue-500/10 font-semibold text-blue-300">
-                    {index + 1}
-                  </span>
-
-                  <h3 className="mt-7 text-xl font-semibold">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-white/55">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-20 sm:py-28">
+        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-14 sm:py-20">
           <Container>
             <div className="max-w-3xl">
               <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
@@ -418,7 +383,7 @@ export default function ServicePage({
           </Container>
         </section>
 
-        <section id="anfrage" className="relative z-10 scroll-mt-24 py-20 sm:py-28">
+        <section id="anfrage" className="relative z-10 scroll-mt-24 py-14 sm:py-20">
           <Container>
             <div className="grid gap-8 rounded-[30px] border border-blue-400/20 bg-gradient-to-br from-blue-500/[0.13] to-white/[0.03] p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:p-12">
               <div>

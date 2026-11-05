@@ -152,6 +152,15 @@ svg {
 }
 
 /* A continuous backdrop keeps the homepage from becoming separate black strips. */
+.service-copy :is(h1, h2, h3) {
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.service-copy :is(p, summary, label) {
+  overflow-wrap: anywhere;
+}
+
 .home-atmosphere {
   position: relative;
   isolation: isolate;

@@ -135,28 +135,27 @@ const copy: Record<Language, Copy> = {
       eyebrow:
         "Persönliche Website-Entwicklung aus München",
       title:
-        "Professionelle Website erstellen lassen",
+        "Websites für Ihr Unternehmen.",
       accent: "ab 300 €",
       description:
-        "Klare Websites für Selbstständige und kleine Unternehmen – persönlich umgesetzt, damit Interessenten leichter Kontakt aufnehmen.",
+        "Individuell gestaltet, mobil optimiert. Damit Kunden Ihr Angebot verstehen und Sie erreichen.",
       primaryCta:
-        "Unverbindliches Angebot anfragen",
+        "Projekt anfragen",
       secondaryCta:
-        "Referenzen ansehen",
+        "Arbeiten ansehen",
       priceNote:
-        "Festpreis und Leistungsumfang werden vor Projektbeginn schriftlich vereinbart.",
+        "Umfang und Festpreis vor dem Start.",
       cardTitle:
-        "Ihr professioneller Online-Auftritt",
+        "Das ist dabei",
       cardPrice: "ab 300 €",
       cardDescription:
-        "Direkte Zusammenarbeit vom ersten Kontakt bis zum Livegang.",
+        "",
       cardFeatures: [
-        "Festpreis schriftlich vor Projektbeginn",
-        "Individuelles Design",
-        "Optimiert für Smartphone und Desktop",
-        "Basis-SEO und Kontaktformular",
-        "2 Korrekturrunden inklusive",
-      ],
+  "Individuelles Design",
+  "Mobil optimiert",
+  "Basis-SEO und Kontaktformular",
+  "2 Korrekturrunden"
+],
     },
 
     trust: [
@@ -196,9 +195,9 @@ const copy: Record<Language, Copy> = {
     projects: {
       eyebrow: "Referenzen",
       title:
-        "Websites, die bereits online arbeiten",
+        "Meine Arbeit.",
       description:
-        "Reale Kundenprojekte – klare Websites für konkrete Geschäftsziele.",
+        "",
       open: "Website ansehen",
       items: [
         {
@@ -224,16 +223,16 @@ const copy: Record<Language, Copy> = {
     },
 
     pricing: {
-      eyebrow: "Transparente Pakete",
+      eyebrow: "Leistungen & Preise",
       title:
-        "Ein klarer Startpreis statt versteckter Kosten",
+        "Die passende Website.",
       description:
-        "Sie sehen den Startpreis. Der genaue Umfang wird vor Beginn schriftlich vereinbart.",
+        "Startpreise für einen klar vereinbarten Umfang.",
       from: "ab",
       select: "Paket anfragen",
       selected: "Ausgewählt",
       finalPrice:
-        "Zusatzleistungen werden nur nach vorheriger Absprache berechnet.",
+        "Domain, Hosting und externe Gebühren separat. Extras nach Absprache.",
     },
 
     packages: {
@@ -332,7 +331,7 @@ const copy: Record<Language, Copy> = {
     faq: {
       eyebrow: "Häufige Fragen",
       title:
-        "Das Wichtigste vor dem Projektstart",
+        "Kurz erklärt.",
       items: [
         {
           question:
@@ -387,8 +386,8 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Projekt anfragen",
-      title: "Erzählen Sie kurz von Ihrem Projekt",
-      description: "Was möchten Sie umsetzen oder verbessern? Ich antworte persönlich per E-Mail mit den nächsten Schritten.",
+      title: "Was brauchen Sie?",
+      description: "Beschreiben Sie kurz Ihr Projekt. Ich antworte persönlich per E-Mail.",
       responseTime: "Antwort in der Regel innerhalb von 3–12 Stunden.",
     },
   },
@@ -405,28 +404,27 @@ const copy: Record<Language, Copy> = {
       eyebrow:
         "Personal website development from Munich",
       title:
-        "Get a professional business website",
+        "Websites for your business.",
       accent: "from €300",
       description:
-        "Modern, fast websites for freelancers and small businesses. Personally implemented with clear planning and the goal of making new enquiries easier.",
+        "Custom design, built for mobile. Help customers understand your offer and get in touch.",
       primaryCta:
-  "Request a no-obligation quote",
+  "Discuss your project",
       secondaryCta:
-        "View references",
+        "View my work",
       priceNote:
-        "We agree on the scope and fixed price in writing before work begins.",
+        "Scope and fixed price agreed before work starts.",
       cardTitle:
-        "Your professional online presence",
+        "What is included",
       cardPrice: "from €300",
       cardDescription:
-        "Personal implementation directly with me – from first contact to launch.",
+        "",
       cardFeatures: [
-        "Written fixed price before the project",
-        "Custom design",
-        "Optimized for mobile and desktop",
-        "Basic SEO and contact form",
-        "2 revision rounds included",
-      ],
+  "Custom design",
+  "Mobile-friendly",
+  "Basic SEO and contact form",
+  "2 revision rounds"
+],
     },
 
     trust: [
@@ -468,9 +466,9 @@ const copy: Record<Language, Copy> = {
     projects: {
       eyebrow: "References",
       title:
-        "Websites that are already live",
+        "My work.",
       description:
-        "Two real client projects – no purchased templates and no invented case studies.",
+        "",
       open: "View website",
       items: [
         {
@@ -496,16 +494,16 @@ const copy: Record<Language, Copy> = {
     },
 
     pricing: {
-      eyebrow: "Transparent packages",
+      eyebrow: "Services & pricing",
       title:
-        "A clear starting price without hidden costs",
+        "Choose your website.",
       description:
-        "The final scope and fixed price are agreed in writing before the project begins.",
+        "Starting prices for a clearly agreed scope.",
       from: "from",
       select: "Request this package",
       selected: "Selected",
       finalPrice:
-        "Additional features, domain and optional support are quoted separately when needed.",
+        "Domain, hosting and external fees separate. Extras agreed in advance.",
     },
 
     packages: {
@@ -604,7 +602,7 @@ const copy: Record<Language, Copy> = {
     faq: {
       eyebrow: "Frequently asked questions",
       title:
-        "What you should know before starting",
+        "Your questions answered.",
       items: [
         {
           question:
@@ -639,8 +637,8 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Request a project",
-      title: "Tell me briefly about your project",
-      description: "Tell me briefly about your project. I usually reply personally by email within 3–12 hours. If the project is a good fit, you will then receive a written quote with a clear scope and fixed price.",
+      title: "What do you need?",
+      description: "Briefly describe your project. I will reply personally by email.",
       responseTime: "Usually replies within 3–12 hours.",
     },
   },
@@ -657,28 +655,27 @@ const copy: Record<Language, Copy> = {
       eyebrow:
         "Личная разработка сайтов из Мюнхена",
       title:
-        "Профессиональный сайт для бизнеса",
+        "Сайты для вашего бизнеса.",
       accent: "от 300 €",
       description:
-        "Создаю сайты для малого бизнеса в Мюнхене и по всей Германии: услуги, цены, примеры работ и удобная заявка. Общаемся на русском, объём и стоимость согласуем письменно.",
+        "Индивидуальный дизайн и удобная мобильная версия. Клиенты быстро поймут ваше предложение и свяжутся с вами.",
       primaryCta:
-        "Запросить предложение",
+        "Обсудить проект",
       secondaryCta:
         "Посмотреть работы",
       priceNote:
-        "Вводная цена для первых проектов · Лендинги от 300 € · Сайты компаний от 790 €",
+        "Объём и фиксированная цена — до начала работ.",
       cardTitle:
-        "Профессиональное присутствие в интернете",
+        "Что входит",
       cardPrice: "от 300 €",
       cardDescription:
-        "Личная работа напрямую со мной — от первого контакта до запуска.",
+        "",
       cardFeatures: [
-        "Письменная фиксированная цена",
-        "Индивидуальный дизайн",
-        "Адаптация под телефон и компьютер",
-        "Базовое SEO и контактная форма",
-        "2 раунда правок",
-      ],
+  "Индивидуальный дизайн",
+  "Мобильная версия",
+  "Базовое SEO и форма связи",
+  "2 раунда правок"
+],
     },
 
     trust: [
@@ -721,9 +718,9 @@ const copy: Record<Language, Copy> = {
     projects: {
       eyebrow: "Работы",
       title:
-        "Сайты, которые уже работают",
+        "Мои работы.",
       description:
-        "Два реальных клиентских проекта — без купленных шаблонов и выдуманных кейсов.",
+        "",
       open: "Открыть сайт",
       items: [
         {
@@ -749,16 +746,16 @@ const copy: Record<Language, Copy> = {
     },
 
     pricing: {
-      eyebrow: "Прозрачные пакеты",
+      eyebrow: "Услуги и цены",
       title:
-        "Понятная стартовая цена без скрытых расходов",
+        "Сайт под вашу задачу.",
       description:
-        "Окончательный объём и фиксированная цена письменно согласовываются до начала проекта.",
+        "Стартовые цены для согласованного объёма.",
       from: "от",
       select: "Запросить пакет",
       selected: "Выбрано",
       finalPrice:
-        "Дополнительные функции, домен и поддержка при необходимости рассчитываются отдельно.",
+        "Домен, хостинг и внешние сервисы — отдельно. Дополнения по согласованию.",
     },
 
     packages: {
@@ -858,7 +855,7 @@ const copy: Record<Language, Copy> = {
     faq: {
       eyebrow: "Частые вопросы",
       title:
-        "Что важно знать до начала",
+        "Частые вопросы.",
       items: [
         {
           question:
@@ -895,8 +892,8 @@ const copy: Record<Language, Copy> = {
 
     form: {
       eyebrow: "Заявка на проект",
-      title: "Кратко расскажите о вашем проекте",
-      description: "Коротко расскажите о вашем проекте. Обычно я лично отвечаю по электронной почте в течение 3–12 часов. Если проект подходит, вы получите письменное предложение с понятным объёмом работ и фиксированной ценой.",
+      title: "Что вам нужно?",
+      description: "Коротко опишите проект. Я лично отвечу по почте.",
       responseTime: "Обычно отвечаю в течение 3–12 часов.",
     },
   },
@@ -965,10 +962,10 @@ export default function WebdesignLandingPage() {
               </a>
 
               <a
-                href="#ablauf"
+                href="#faq"
                 className="transition hover:text-white"
               >
-                {t.nav.process}
+                FAQ
               </a>
 
               <a
@@ -984,18 +981,18 @@ export default function WebdesignLandingPage() {
         </Container>
       </header>
 
-      <main className="home-atmosphere text-white">
-        <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-32">
+      <main className="service-copy home-atmosphere text-white">
+        <section className="relative pt-28 sm:pt-36">
 
 
           <Container>
-            <div className="relative z-10 grid gap-12 pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="relative z-10 grid min-w-0 gap-8 pb-14 sm:gap-12 sm:pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
                   {t.hero.eyebrow}
                 </p>
 
-                <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[0.98] tracking-[-0.05em] sm:text-7xl lg:text-8xl">
+                <h1 className="mt-6 max-w-4xl text-[clamp(2.25rem,5vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
                   {t.hero.title}
                   <br />
                   <span className="text-white/65">
@@ -1007,17 +1004,17 @@ export default function WebdesignLandingPage() {
                   {t.hero.description}
                 </p>
 
-                <div className="mt-10 flex flex-wrap items-center gap-4">
+                <div className="mt-8 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
                   <a
                     href="#anfrage"
-                    className="rounded-full bg-blue-500 px-6 py-4 font-semibold text-white transition hover:bg-blue-400"
+                    className="inline-flex min-h-12 items-center justify-center rounded-full bg-blue-500 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-400 sm:text-base"
                   >
                     {t.hero.primaryCta}
                   </a>
 
                   <a
                     href="#projekte"
-                    className="text-sm text-white/60 transition hover:text-white"
+                    className="inline-flex min-h-11 items-center justify-center text-sm text-white/70 transition hover:text-white"
                   >
                     {t.hero.secondaryCta}
                   </a>
@@ -1027,7 +1024,7 @@ export default function WebdesignLandingPage() {
                   {t.hero.priceNote}
                 </p>
 
-                <div className="mt-8 grid gap-3 text-sm text-white/55 sm:grid-cols-2">
+                <div className="mt-6 grid gap-2 text-sm text-white/65">
                   {t.trust.map((item) => (
                     <div
                       key={item}
@@ -1042,18 +1039,14 @@ export default function WebdesignLandingPage() {
                 </div>
               </div>
 
-              <div className="rounded-[32px] border border-white/15 bg-white/[0.05] p-7 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+              <div className="min-w-0 rounded-[24px] border border-white/15 bg-white/[0.05] p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(0,0,0,0.35)] backdrop-blur-xl">
                 <p className="text-sm uppercase tracking-[0.25em] text-white/40">
                   {t.hero.cardTitle}
                 </p>
 
-                <p className="mt-7 text-5xl font-semibold">
-                  {t.hero.cardPrice}
-                </p>
 
-                <p className="mt-5 leading-7 text-white/55">
-                  {t.hero.cardDescription}
-                </p>
+
+
 
                 <div className="mt-8 space-y-4 border-t border-white/10 pt-7">
                   {t.hero.cardFeatures.map((item) => (
@@ -1067,60 +1060,22 @@ export default function WebdesignLandingPage() {
                   ))}
                 </div>
 
-                <a
-                  href="#anfrage"
-                  className="mt-8 inline-flex w-full justify-center rounded-full bg-blue-500 px-6 py-4 font-semibold transition hover:bg-blue-400"
-                >
-                  {t.hero.primaryCta}
-                </a>
+
               </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="border-y border-white/10 bg-white/[0.025] py-24">
-          <Container>
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
-              {t.why.eyebrow}
-            </p>
-
-            <h2 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              {t.why.title}
-            </h2>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-2">
-              {t.why.items.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-7"
-                >
-                  <span className="text-sm text-blue-300">
-                    0{index + 1}
-                  </span>
-
-                  <h3 className="mt-8 text-2xl font-semibold">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-4 leading-7 text-white/55">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
             </div>
           </Container>
         </section>
 
         <section
           id="preise"
-          className="scroll-mt-24 py-24 md:py-32"
+          className="scroll-mt-24 py-16 md:py-24"
         >
           <Container>
             <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
               {t.pricing.eyebrow}
             </p>
 
-            <h2 className="mt-5 max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+            <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
               {t.pricing.title}
             </h2>
 
@@ -1175,7 +1130,7 @@ export default function WebdesignLandingPage() {
                     </p>
 
                     <div className="mt-7 space-y-3 border-t border-white/10 pt-6">
-                      {packageText.features.map(
+                      {packageText.features.slice(0, 3).map(
                         (feature) => (
                           <div
                             key={feature}
@@ -1187,6 +1142,20 @@ export default function WebdesignLandingPage() {
                         )
                       )}
                     </div>
+
+                    <details className="mt-5 border-t border-white/10 pt-3 text-sm text-white/75">
+                      <summary className="cursor-pointer py-2 font-medium text-blue-200">
+                        {language === "de" ? "Alle Leistungen" : language === "en" ? "All included services" : "Что ещё входит"}
+                      </summary>
+                      <ul className="mt-3 space-y-2">
+                        {packageText.features.slice(3).map((feature) => (
+                          <li key={feature} className="flex gap-3 leading-6">
+                            <CheckCircle2 aria-hidden="true" className="h-5 w-5 shrink-0 text-blue-400" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
 
                     <button
                       type="button"
@@ -1216,75 +1185,33 @@ export default function WebdesignLandingPage() {
 
         <section
           id="projekte"
-          className="scroll-mt-24 border-y border-white/10 bg-white/[0.025] py-24 md:py-32"
+          className="scroll-mt-24 border-y border-white/10 bg-white/[0.025] py-16 md:py-24"
         >
           <Container>
             <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
               {t.projects.eyebrow}
             </p>
 
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
               {t.projects.title}
             </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/55">
-              {t.projects.description}
-            </p>
+
 
             <div className="mt-10"><ProjectPreview /></div>
           </Container>
         </section>
 
-        <section
-          id="ablauf"
-          className="scroll-mt-24 py-24 md:py-32"
-        >
-          <Container>
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
-              {t.process.eyebrow}
-            </p>
-
-            <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
-              {t.process.title}
-            </h2>
-
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/55">
-              {t.process.description}
-            </p>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-              {t.process.items.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
-                >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/15 text-blue-300">
-                    {index + 1}
-                  </span>
-
-                  <h3 className="mt-6 text-lg font-semibold">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-6 text-white/55">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </Container>
-        </section>
-
                 <ReviewsSection />
 
-        <section className="py-24 md:py-32">
+        <section id="faq" className="scroll-mt-24 py-16 md:py-24">
           <Container>
             <div className="mx-auto max-w-5xl">
               <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
                 {t.faq.eyebrow}
               </p>
 
-              <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
+              <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
                 {t.faq.title}
               </h2>
 
@@ -1310,20 +1237,20 @@ export default function WebdesignLandingPage() {
 
         <section
           id="anfrage"
-          className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-24 md:py-32"
+          className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-16 md:py-24"
         >
           <span id="anfrage-aenderungen" className="block scroll-mt-24" aria-hidden="true" />
           <span id="anfrage-launch" className="block scroll-mt-24" aria-hidden="true" />
           <span id="anfrage-business" className="block scroll-mt-24" aria-hidden="true" />
           <span id="anfrage-growth" className="block scroll-mt-24" aria-hidden="true" />
           <Container>
-            <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:gap-12 lg:items-start">
+            <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-12 lg:items-start">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
                   {t.form.eyebrow}
                 </p>
 
-                <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
+                <h2 className="mt-5 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
                   {t.form.title}
                 </h2>
 

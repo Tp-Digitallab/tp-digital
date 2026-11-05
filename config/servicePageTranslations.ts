@@ -135,10 +135,10 @@ export const servicePageTranslations = {
 
   onlineShop: {
     de: {
-      title: "Online-Shop erstellen lassen",
-      accent: "für den Verkauf im Internet.",
+      title: "Ihr Online-Shop.",
+      accent: "Bereit für Ihre Produkte.",
       description:
-        "Ich entwickle übersichtliche Online-Shops für Unternehmen, die Produkte oder Leistungen online anbieten möchten. Der Shop wird mit Produktverwaltung, Zahlungsintegration und einer klaren Nutzerführung geplant.",
+        "Produkte präsentieren, Bestellungen erhalten und Zahlungen annehmen — in Ihrem eigenen Shop.",
       services: [
         "Online-Shop mit bis zu 20 Produkten",
         "Produktverwaltung über ein CMS",
@@ -173,10 +173,10 @@ export const servicePageTranslations = {
     },
 
     en: {
-      title: "Build your online store",
-      accent: "for selling online.",
+      title: "Your online store.",
+      accent: "Ready for your products.",
       description:
-        "I create clear online stores for businesses that want to offer products or services online. The store is planned with product management, payment integration and a straightforward customer journey.",
+        "Present products, receive orders and accept payments in your own store.",
       services: [
         "Online store with up to 20 products",
         "Product management through a CMS",
@@ -211,10 +211,10 @@ export const servicePageTranslations = {
     },
 
     ru: {
-      title: "Разработка интернет-магазина",
-      accent: "для продаж в интернете.",
+      title: "Ваш интернет-магазин.",
+      accent: "Для ваших товаров.",
       description:
-        "Я создаю понятные интернет-магазины для компаний, которые хотят продавать товары или услуги онлайн. Магазин планируется с управлением товарами, подключением оплаты и удобным путём клиента от товара до заказа.",
+        "Показывайте товары, получайте заказы и принимайте оплату в собственном магазине.",
       services: [
         "Интернет-магазин до 20 товаров",
         "Управление товарами через CMS",
@@ -251,10 +251,10 @@ export const servicePageTranslations = {
 
   seo: {
     de: {
-      title: "SEO prüfen und gezielt verbessern",
-      accent: "mit einem konkreten Maßnahmenplan.",
+      title: "SEO für Ihre Website.",
+      accent: "Prüfen. Verbessern.",
       description:
-        "Ich prüfe die vereinbarten Seiten auf technische und inhaltliche Schwächen, priorisiere die nächsten Schritte und setze beauftragte Korrekturen um. Sie erhalten einen schriftlichen Überblick darüber, was zu tun ist und was geändert wurde.",
+        "Ich finde technische und inhaltliche Schwachstellen und setze vereinbarte Verbesserungen um.",
       services: [
         "Technische SEO-Analyse",
         "Struktur und interne Verlinkung",
@@ -283,10 +283,10 @@ export const servicePageTranslations = {
     },
 
     en: {
-      title: "Review and improve your SEO",
-      accent: "with a practical action plan.",
+      title: "SEO for your website.",
+      accent: "Review. Improve.",
       description:
-        "I review the agreed pages for technical and content issues, prioritise next steps and implement the commissioned corrections. You receive a written overview of what needs attention and what has changed.",
+        "I find technical and content issues and implement the improvements we agree on.",
       services: [
         "Technical SEO review",
         "Site structure and internal linking",
@@ -315,10 +315,10 @@ export const servicePageTranslations = {
     },
 
     ru: {
-      title: "Проверка и улучшение SEO",
-      accent: "с конкретным планом действий.",
+      title: "SEO для вашего сайта.",
+      accent: "Проверю и улучшу.",
       description:
-        "Проверю согласованные страницы на технические и содержательные проблемы, расставлю приоритеты и внесу заказанные исправления. Вы получите письменный список задач и выполненных изменений.",
+        "Найду технические и содержательные проблемы и внесу согласованные исправления.",
       services: [
         "Технический SEO-аудит",
         "Структура сайта и внутренние ссылки",
@@ -349,10 +349,10 @@ export const servicePageTranslations = {
 
   digitalSolutions: {
     de: {
-      title: "Website reparieren und erweitern",
-      accent: "auch als einzelne Aufgabe.",
+      title: "Ihre Website.",
+      accent: "Wieder einfach nutzbar.",
       description:
-        "Ihr Formular sendet nicht, die mobile Ansicht ist unübersichtlich oder Sie brauchen eine neue Funktion? Ich prüfe Ihre bestehende Website und setze gezielte Verbesserungen um – vom einzelnen Fehler bis zum Rechner oder einer Integration.",
+        "Formular defekt, mobile Ansicht unübersichtlich oder eine Funktion fehlt? Ich kümmere mich darum.",
       services: [
         "Individuelle Webentwicklung",
         "Interne Tools und Webanwendungen",
@@ -381,10 +381,10 @@ export const servicePageTranslations = {
     },
 
     en: {
-      title: "Repair and extend your website",
-      accent: "one task at a time.",
+      title: "Your website.",
+      accent: "Working as it should.",
       description:
-        "Your form does not send, the mobile layout is confusing or you need a new feature? I review your existing website and implement targeted improvements, from a single bug to a calculator or integration.",
+        "Broken form, awkward mobile layout or a missing feature? I can help.",
       services: [
         "Custom web development",
         "Internal tools and web applications",
@@ -413,10 +413,10 @@ export const servicePageTranslations = {
     },
 
     ru: {
-      title: "Ремонт и доработка сайтов",
-      accent: "в том числе отдельные задачи.",
+      title: "Ваш сайт.",
+      accent: "Снова удобный и рабочий.",
       description:
-        "Форма не отправляется, мобильная версия неудобна или нужна новая функция? Проверю существующий сайт и внесу точечные улучшения: от исправления ошибки до калькулятора или интеграции.",
+        "Не работает форма, неудобно с телефона или нужна новая функция? Помогу исправить.",
       services: [
         "Индивидуальная веб-разработка",
         "Внутренние инструменты и веб-приложения",

@@ -36,7 +36,27 @@ export default function SecurityCheck({
   const activeRef = widgetRef ?? internalRef;
   const [failed, setFailed] = useState(false);
   const [widgetReady, setWidgetReady] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const compactRef = useRef(true);
+  const [compact, setCompact] = useState(true);
   const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY?.trim();
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    const observer = new ResizeObserver(([entry]) => {
+      const nextCompact = entry.contentRect.width < 300;
+      if (nextCompact !== compactRef.current) {
+        compactRef.current = nextCompact;
+        onTokenChange(null);
+        setWidgetReady(false);
+        setFailed(false);
+        setCompact(nextCompact);
+      }
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [onTokenChange]);
 
   useEffect(() => {
     if (!siteKey || widgetReady) return;
@@ -59,10 +79,11 @@ export default function SecurityCheck({
   }
 
   return (
-    <div className="mt-7 min-w-0">
+    <div ref={containerRef} className="mt-7 min-w-0">
       {siteKey && (
         <div className="flex justify-center">
           <Turnstile
+            key={compact ? "compact" : "flexible"}
             ref={activeRef}
             id={`${widgetId}-security`}
             siteKey={siteKey}
@@ -78,7 +99,7 @@ export default function SecurityCheck({
             onError={handleFailure}
             onTimeout={handleFailure}
             onUnsupported={handleFailure}
-            options={{ theme: "dark", size: "flexible", language }}
+            options={{ theme: "dark", size: compact ? "compact" : "flexible", language }}
           />
         </div>
       )}
