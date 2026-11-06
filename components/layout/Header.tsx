@@ -86,7 +86,7 @@ export default function Header() {
 
           <nav
             aria-label={copy.navigation}
-            className="relative hidden items-center gap-5 overflow-hidden rounded-full border border-white/15 bg-white/[0.09] px-6 py-3 shadow-[0_18px_55px_rgba(0,0,0,0.4)] backdrop-blur-2xl md:flex lg:gap-7"
+            className="relative hidden items-center gap-5 overflow-hidden rounded-full border border-white/15 bg-white/[0.09] px-6 py-3 shadow-[0_18px_55px_rgba(60,40,20,0.12)] backdrop-blur-2xl md:flex lg:gap-7"
           >
             <motion.div
               aria-hidden="true"
@@ -119,7 +119,7 @@ export default function Header() {
 
             <ScrollLink
               href={requestHref}
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-center text-sm font-semibold leading-5 text-white shadow-[0_8px_25px_rgba(37,99,235,0.25)] transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:px-5"
+              className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-4 py-2 text-center text-sm font-semibold leading-5 text-white shadow-[0_8px_25px_rgba(120,70,40,0.25)] transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:px-5"
             >
               <span className="md:hidden">
                 {copy.requestShort}

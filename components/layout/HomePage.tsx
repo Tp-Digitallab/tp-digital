@@ -8,6 +8,8 @@ import CalculatorSection from "@/components/sections/CalculatorSection";
 import FaqSection from "@/components/sections/FaqSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SmallChangesSection from "@/components/sections/SmallChangesSection";
+import ReviewsSection from "@/components/sections/ReviewsSection";
+import ProcessSection from "@/components/sections/ProcessSection";
 import ShareLinks from "@/components/ui/ShareLinks";
 
 export default function HomePage() {
@@ -18,7 +20,9 @@ export default function HomePage() {
       <main className="home-atmosphere">
         <HeroSection />
         <ProjectsSection />
+        <ReviewsSection />
         <PackagesSection />
+        <ProcessSection />
         <SmallChangesSection />
         <CalculatorSection />
         <FaqSection />

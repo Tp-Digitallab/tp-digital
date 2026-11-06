@@ -233,7 +233,7 @@ export default function ServicePage({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_60%_18%,rgba(59,130,246,0.12),transparent_48%),linear-gradient(to_bottom,transparent_45%,#050505_92%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_60%_18%,rgba(120,70,40,0.12),transparent_48%),linear-gradient(to_bottom,transparent_45%,#f6f2ec_92%)]"
         />
 
         <section className="relative z-10 pb-14 pt-32 sm:pb-20 md:pt-40">
@@ -272,7 +272,7 @@ export default function ServicePage({
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="#anfrage"
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#f6f2ec]"
                 >
                   {ui.request}
 
@@ -281,7 +281,7 @@ export default function ServicePage({
 
                 <Link
                   href={serviceKey === "onlineShop" ? "#beispiel" : `${homePath(language)}#projects`}
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#f6f2ec]"
                 >
                   {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
 

@@ -210,3 +210,94 @@ svg {
     background-size: 64px 64px;
   }
 }
+
+/* ==========================================================
+   LIGHT THEME (Nov 2026)
+   Components were written for a dark UI with text-white/xx,
+   bg-white/xx, blue-* accents. Instead of rewriting every class,
+   the palette is remapped: "white" = ink, "black" = paper,
+   blue = ink buttons + terracotta accents.
+========================================================== */
+:root {
+  --paper: #f6f2ec;
+  --paper-raised: #fffdf9;
+  --ink: #1b1712;
+  --accent: #a4461f;
+  --accent-strong: #8a3816;
+
+  --color-white: var(--ink);
+  --color-black: var(--paper);
+
+  --color-blue-50: var(--accent-strong);
+  --color-blue-100: var(--accent-strong);
+  --color-blue-200: var(--accent);
+  --color-blue-300: var(--accent);
+  --color-blue-400: var(--accent);
+  --color-blue-500: #3a332b;
+  --color-blue-600: var(--ink);
+  --color-blue-700: #000;
+  --color-blue-800: #ecdcd0;
+  --color-blue-900: #f1e4da;
+  --color-blue-950: #f5ebe3;
+
+  --color-zinc-300: #4a433b;
+  --color-zinc-400: #5c544b;
+  --color-zinc-500: #6b6258;
+  --color-zinc-950: var(--paper);
+  --color-green-200: #1f6b45;
+  --color-green-300: #1f6b45;
+  --color-green-400: #1f7a4d;
+  --color-red-400: #b42318;
+  --color-amber-100: #8a5a00;
+  --color-amber-200: #b7791f;
+  --color-amber-300: #d99a1e;
+  --color-cyan-400: var(--accent);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-hover: #3a332b;
+  --muted-foreground: #6b6258;
+  --border: rgb(27 23 18 / 12%);
+}
+
+body { background: var(--paper); color: var(--ink); }
+
+/* Real white text on dark (ink) buttons and badges */
+.bg-blue-500, .bg-blue-600, .bg-blue-700,
+[class*="bg-white "]:not([class*="bg-white/"]), .bg-white,
+.bg-black\/75 {
+  --color-white: #fffdf9;
+  --color-black: #fffdf9;
+}
+.bg-white { background-color: var(--ink); }
+
+:is(a, button).bg-blue-500,
+:is(a, button).bg-blue-600 { background-color: var(--ink); color: #fffdf9; }
+:is(a, button).bg-blue-500:hover,
+:is(a, button).bg-blue-600:hover { background-color: #3a332b; color: #fffdf9; }
+:is(a, button):focus-visible { outline-color: var(--accent); }
+
+::selection { background: var(--accent); color: #fffdf9; }
+
+#packages .text-white\/45, #packages .text-white\/50,
+#reviews .text-white\/40, #reviews .text-white\/45 { color: #6b6258; }
+
+.home-atmosphere {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 60% 620px at 92% 260px, rgb(214 160 120 / 18%), transparent 75%),
+    radial-gradient(ellipse 55% 520px at 0% 120px, rgb(240 214 190 / 35%), transparent 75%),
+    linear-gradient(var(--paper), var(--paper));
+}
+.home-atmosphere::before { display: none; }
+.home-atmosphere #top figure { box-shadow: 0 30px 80px -40px rgb(60 40 20 / 35%); }
+
+@media (max-width: 639px) {
+  .home-atmosphere {
+    background-image:
+      radial-gradient(ellipse 110% 520px at 100% 300px, rgb(214 160 120 / 16%), transparent 80%),
+      linear-gradient(var(--paper), var(--paper));
+  }
+}
+

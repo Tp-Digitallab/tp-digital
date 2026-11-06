@@ -10,7 +10,7 @@ const copy = {
 };
 export default function PackagesSection() {
  const {language}=useLanguage();const t=copy[language];
- return <section id="packages" className="scroll-mt-24 bg-[#050505] py-12 sm:py-20"><Container>
+ return <section id="packages" className="scroll-mt-24 bg-[#f6f2ec] py-12 sm:py-20"><Container>
  <p className="text-xs font-medium uppercase tracking-[0.18em] text-blue-300">{t.eyebrow}</p>
  <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">{t.title}</h2>
  <p className="mt-4 text-sm leading-6 text-white/65">{t.note}</p><PackageGrid />

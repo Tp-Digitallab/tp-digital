@@ -149,7 +149,7 @@ export default function CookieConsent() {
           border
           border-white/15
 
-          bg-[#090909]/90
+          bg-[#f6f2ec]/90
 
           px-4
           py-2.5
@@ -201,7 +201,7 @@ export default function CookieConsent() {
           border
           border-white/10
 
-          bg-[#090909]/95
+          bg-[#f6f2ec]/95
 
           p-6
 

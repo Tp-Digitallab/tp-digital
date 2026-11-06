@@ -15,7 +15,7 @@ export default function ReviewsSection() {
   const { language } = useLanguage();
   const t = copy[language];
   return (
-    <section id="reviews" aria-labelledby="reviews-heading" className="scroll-mt-24 bg-[#050505] py-14 sm:py-20">
+    <section id="reviews" aria-labelledby="reviews-heading" className="scroll-mt-24 bg-[#f6f2ec] py-14 sm:py-20">
       <Container>
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div><h2 id="reviews-heading" className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">{t.title}</h2><p className="mt-4 flex items-center gap-2 text-sm text-white/75"><Star aria-hidden="true" className="h-4 w-4 fill-amber-300 text-amber-300" />{t.note}</p><p className="mt-1 text-xs text-white/45">{t.date}</p></div>

@@ -77,7 +77,7 @@ export default function ShopDemo() {
   }
 
   return (
-    <div className="mt-8 rounded-3xl border border-blue-300/25 bg-[#0b1018] p-5 sm:p-8">
+    <div className="mt-8 rounded-3xl border border-blue-300/25 bg-[#fffdf9] p-5 sm:p-8">
       <p className="text-sm font-medium text-blue-200">{t.label}</p>
       <div className="mt-6 grid gap-6 xl:grid-cols-[1.5fr_1fr]">
         <div className="grid min-w-0 gap-4 sm:grid-cols-3">

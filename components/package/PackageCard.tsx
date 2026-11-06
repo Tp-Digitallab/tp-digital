@@ -80,7 +80,7 @@ export default function PackageCard({
     <article
       className={`group relative flex h-full min-w-0 flex-col overflow-hidden rounded-[30px] border transition-colors duration-200 ${
         featured
-          ? "border-blue-400/60 bg-blue-500/[0.09] shadow-[0_20px_70px_rgba(37,99,235,0.12)]"
+          ? "border-blue-400/60 bg-blue-500/[0.09] shadow-[0_20px_70px_rgba(120,70,40,0.12)]"
           : "border-white/10 bg-white/[0.035] hover:border-white/25"
       }`}
     >
@@ -150,7 +150,7 @@ export default function PackageCard({
         <div className="mt-auto pt-6">
           <RequestLink choice={id}
             label={`${copy.cta}: ${title}`}
-            className={`group/button inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#050505] ${
+            className={`group/button inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full border px-5 py-3 text-center text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#f6f2ec] ${
               featured
                 ? "border-blue-400/40 bg-blue-600 text-white hover:bg-blue-500"
                 : "border-white/15 bg-white/[0.08] text-white hover:border-blue-400/40 hover:bg-blue-500/15"

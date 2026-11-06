@@ -45,7 +45,7 @@ export default function BrowserWindow() {
 
         backdrop-blur-xl
 
-        shadow-[0_0_80px_rgba(59,130,246,0.25)]
+        shadow-[0_0_80px_rgba(120,70,40,0.25)]
       "
 
     >

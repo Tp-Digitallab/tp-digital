@@ -171,7 +171,7 @@ export default function ServicesSection() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(59,130,246,0.06),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.05),transparent_35%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(120,70,40,0.06),transparent_35%),radial-gradient(circle_at_80%_70%,rgba(120,70,40,0.05),transparent_35%)]"
       />
 
       <Container className="relative z-10">
@@ -202,7 +202,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-[28px] border border-blue-400/20 bg-[#0b1220] p-6 sm:mt-10 sm:p-8 lg:p-10">
+        <div className="mt-8 rounded-[28px] border border-blue-400/20 bg-[#fffdf9] p-6 sm:mt-10 sm:p-8 lg:p-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-2xl">
               <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl">

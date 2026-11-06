@@ -30,7 +30,7 @@ export default function CalculatorOption({
             ? `
               border-blue-400/40
               bg-blue-500/10
-              shadow-[0_0_40px_rgba(59,130,246,0.18)]
+              shadow-[0_0_40px_rgba(120,70,40,0.18)]
             `
             : `
               border-white/10

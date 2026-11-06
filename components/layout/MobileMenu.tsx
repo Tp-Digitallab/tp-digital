@@ -217,7 +217,7 @@ export default function MobileMenu() {
         aria-label={copy.open}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#111827] text-white shadow-[0_8px_30px_rgba(0,0,0,0.28)] transition-colors hover:bg-[#1a263b] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95 md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#fffdf9] text-white shadow-[0_8px_30px_rgba(60,40,20,0.12)] transition-colors hover:bg-[#efe7dd] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95 md:hidden"
       >
         <Menu
           size={21}
@@ -237,7 +237,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] overflow-y-auto bg-[#05070b]"
+            className="fixed inset-0 z-[100] overflow-y-auto bg-[#f6f2ec]"
           >
             <div
               aria-hidden="true"
@@ -336,7 +336,7 @@ export default function MobileMenu() {
                         }
                         className={`flex min-h-14 flex-col items-center justify-center rounded-xl transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.97] ${
                           active
-                            ? "bg-blue-600 text-white shadow-[0_8px_25px_rgba(59,130,246,0.28)]"
+                            ? "bg-blue-600 text-white shadow-[0_8px_25px_rgba(120,70,40,0.28)]"
                             : "text-white/50 hover:bg-white/[0.06] hover:text-white"
                         }`}
                       >
@@ -365,7 +365,7 @@ export default function MobileMenu() {
                   onClick={() =>
                     handleNavigation(requestHref)
                   }
-                  className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-blue-400/20 bg-blue-600 px-5 font-semibold text-white shadow-[0_12px_35px_rgba(59,130,246,0.28)] transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 active:scale-[0.985]"
+                  className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-blue-400/20 bg-blue-600 px-5 font-semibold text-white shadow-[0_12px_35px_rgba(120,70,40,0.28)] transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 active:scale-[0.985]"
                 >
                   <span>{copy.request}</span>
 

@@ -10,7 +10,7 @@ const copy = {
 };
 export default function SmallChangesSection(){
  const {language}=useLanguage();const t=copy[language];
- return <section id="solutions" className="scroll-mt-24 bg-[#050505] py-8"><Container>
+ return <section id="solutions" className="scroll-mt-24 bg-[#f6f2ec] py-8"><Container>
  <div id="website-improvements" className="scroll-mt-24 rounded-3xl border border-white/10 bg-white/[0.025] p-6 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
  <div className="max-w-2xl"><h2 className="text-xl font-semibold leading-snug text-white sm:text-2xl">{t.title}</h2><p className="mt-3 text-sm leading-6 text-white/65">{t.text}</p></div>
  <div className="mt-5 shrink-0 lg:mt-0"><RequestLink choice="aenderungen" className="inline-flex min-h-12 items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-500">{t.cta}</RequestLink>

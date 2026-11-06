@@ -21,7 +21,7 @@ export default function ProcessCard({
         bg-gradient-to-b
 from-white/[0.06]
 to-white/[0.02]
-        shadow-[0_15px_45px_rgba(0,0,0,0.30)]
+        shadow-[0_15px_45px_rgba(60,40,20,0.12)]
 
         p-8
 
@@ -31,7 +31,7 @@ to-white/[0.02]
         hover:-translate-y-2
         hover:border-blue-400/30
         hover:bg-white/[0.05]
-        hover:shadow-[0_25px_60px_rgba(59,130,246,0.18)]
+        hover:shadow-[0_25px_60px_rgba(120,70,40,0.18)]
       "
     >
         <div
@@ -69,7 +69,7 @@ bg-gradient-to-br
 from-blue-500/20
 to-cyan-400/10
 
-shadow-[0_0_25px_rgba(59,130,246,0.15)]
+shadow-[0_0_25px_rgba(120,70,40,0.15)]
 
       text-lg
       font-semibold
