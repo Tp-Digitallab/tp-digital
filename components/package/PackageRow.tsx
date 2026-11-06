@@ -35,7 +35,7 @@ export default function PackageRow({
         border
         border-white/10
 
-        bg-white/[0.03]
+        bg-[#f7f5f3]/70
 
         p-10
 
@@ -49,7 +49,7 @@ export default function PackageRow({
         <div>
 
           {badge && (
-            <div className="mb-5 inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-blue-300">
+            <div className="mb-5 inline-flex rounded-full border border-blue-400/30 bg-blue-500/10 px-4 py-2 text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
               {badge}
             </div>
           )}

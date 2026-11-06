@@ -260,7 +260,7 @@ export default function ProcessSection() {
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.3em] text-blue-300">
+          <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
             {t.eyebrow}
           </p>
 
@@ -283,7 +283,7 @@ export default function ProcessSection() {
           {t.steps.map((step, index) => (
             <li
               key={step.title}
-              className="flex min-w-0 flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-6 last:md:col-span-2 last:xl:col-span-1"
+              className="flex min-w-0 flex-col rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-6 last:md:col-span-2 last:xl:col-span-1"
             >
               <span
                 aria-hidden="true"
@@ -310,7 +310,7 @@ export default function ProcessSection() {
         </ol>
 
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/[0.025] p-6">
+          <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-6">
             <FileText
               aria-hidden="true"
               className="mt-1 h-6 w-6 shrink-0 text-blue-400"
@@ -327,7 +327,7 @@ export default function ProcessSection() {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-white/[0.025] p-6">
+          <div className="flex items-start gap-4 rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-6">
             <CheckCircle2
               aria-hidden="true"
               className="mt-1 h-6 w-6 shrink-0 text-blue-400"

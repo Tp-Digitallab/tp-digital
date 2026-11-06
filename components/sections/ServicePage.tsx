@@ -233,20 +233,20 @@ export default function ServicePage({
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_60%_18%,rgba(23,42,57,0.12),transparent_48%),linear-gradient(to_bottom,transparent_45%,#e9e4e0_92%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_55%_600px_at_92%_220px,rgba(252,86,60,0.11),transparent_75%),radial-gradient(ellipse_60%_700px_at_0%_30%,rgba(143,163,199,0.18),transparent_75%)]"
         />
 
         <section className="relative z-10 pb-14 pt-32 sm:pb-20 md:pt-40">
           <Container className="w-full">
             <div className="min-w-0 max-w-5xl">
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300 sm:tracking-[0.4em]">
+              <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300 sm:text-[15px]">
                 {ui.badge}
               </p>
 
               <h1 className="mt-6 max-w-4xl text-[clamp(2rem,5vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.035em]">
                 {content.title}
                 <br />
-                <span className="text-white/65">
+                <span className="text-blue-200">
                   {content.accent}
                 </span>
               </h1>
@@ -281,7 +281,7 @@ export default function ServicePage({
 
                 <Link
                   href={serviceKey === "onlineShop" ? "#beispiel" : `${homePath(language)}#projects`}
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#e9e4e0]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-[#f7f5f3]/70 px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#e9e4e0]"
                 >
                   {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
 
@@ -292,11 +292,11 @@ export default function ServicePage({
           </Container>
         </section>
 
-        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-14 sm:py-20">
+        <section className="relative z-10 border-y border-white/10 bg-[#f7f5f3]/70 py-14 sm:py-20">
           <Container>
             <div className="space-y-8">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                   {ui.outcomeEyebrow}
                 </p>
 
@@ -313,7 +313,7 @@ export default function ServicePage({
                 {(offer?.deliverables ?? content.services.map((title) => ({ title, text: "" }))).map((service) => (
                   <div
                     key={service.title}
-                    className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
+                    className="rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
                   >
                     <CheckCircle2
                       aria-hidden="true"
@@ -343,10 +343,10 @@ export default function ServicePage({
           </section>
         )}
 
-        <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-14 sm:py-20">
+        <section className="relative z-10 border-y border-white/10 bg-[#f7f5f3]/70 py-14 sm:py-20">
           <Container>
             <div className="max-w-3xl">
-              <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
+              <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                 {ui.faqEyebrow}
               </p>
 
@@ -359,7 +359,7 @@ export default function ServicePage({
               {content.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.035] p-6"
+                  className="group rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-6"
                 >
                   <summary className="cursor-pointer list-none pr-8 text-lg font-medium text-white marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
                     <span className="flex items-start justify-between gap-5">
@@ -387,7 +387,7 @@ export default function ServicePage({
           <Container>
             <div className="grid gap-8 rounded-[30px] border border-blue-400/20 bg-gradient-to-br from-blue-500/[0.13] to-white/[0.03] p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:p-12">
               <div>
-                <p className="text-xs font-medium uppercase tracking-[0.25em] text-blue-300">
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                   {ui.contactEyebrow}
                 </p>
 

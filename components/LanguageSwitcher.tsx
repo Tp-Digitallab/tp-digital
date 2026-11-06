@@ -60,7 +60,7 @@ export default function LanguageSwitcher() {
         aria-haspopup="menu"
         aria-expanded={open}
         aria-label={`Language: ${currentLanguage.name}`}
-        className="flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white backdrop-blur-xl transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+        className="flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-[#f7f5f3]/70 px-4 py-2 text-sm text-white backdrop-blur-xl transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
       >
         <span>{currentLanguage.short}</span>
 

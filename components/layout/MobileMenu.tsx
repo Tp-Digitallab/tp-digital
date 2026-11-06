@@ -275,7 +275,7 @@ export default function MobileMenu() {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label={copy.close}
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-white transition-colors hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95"
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#f7f5f3]/70 text-white transition-colors hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95"
                 >
                   <X
                     size={22}
@@ -304,7 +304,7 @@ export default function MobileMenu() {
                       onClick={() =>
                         handleNavigation(item.href)
                       }
-                      className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.035] px-5 text-left transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.985]"
+                      className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-[#f7f5f3]/70 px-5 text-left transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.985]"
                     >
                       <span className="text-base font-medium text-white/90">
                         {item.name}
@@ -321,7 +321,7 @@ export default function MobileMenu() {
                   {copy.language}
                 </p>
 
-                <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/[0.08] bg-white/[0.025] p-1.5">
+                <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/[0.08] bg-[#f7f5f3]/70 p-1.5">
                   {languages.map((item) => {
                     const active =
                       language === item.code;

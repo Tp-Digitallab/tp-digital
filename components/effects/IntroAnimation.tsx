@@ -223,7 +223,7 @@ export default function IntroAnimation() {
                 rounded-2xl
                 border
                 border-white/15
-                bg-white/[0.06]
+                bg-[#f7f5f3]/70
                 text-left
                 shadow-[0_0_70px_rgba(23,42,57,0.2)]
                 backdrop-blur-xl
@@ -398,7 +398,7 @@ export default function IntroAnimation() {
                       rounded-xl
                       border
                       border-white/10
-                      bg-white/[0.04]
+                      bg-[#f7f5f3]/70
                       px-2
                       py-2.5
                       text-center
@@ -415,7 +415,7 @@ export default function IntroAnimation() {
                       rounded-xl
                       border
                       border-white/10
-                      bg-white/[0.04]
+                      bg-[#f7f5f3]/70
                       px-2
                       py-2.5
                       text-center
@@ -432,7 +432,7 @@ export default function IntroAnimation() {
                       rounded-xl
                       border
                       border-white/10
-                      bg-white/[0.04]
+                      bg-[#f7f5f3]/70
                       px-2
                       py-2.5
                       text-center

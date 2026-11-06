@@ -82,7 +82,7 @@ export default function ShopDemo() {
       <div className="mt-6 grid gap-6 xl:grid-cols-[1.5fr_1fr]">
         <div className="grid min-w-0 gap-4 sm:grid-cols-3">
           {products.map((product, index) => (
-            <article key={product.id} className="flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+            <article key={product.id} className="flex min-w-0 flex-col rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-4">
               <div aria-hidden="true" className="flex aspect-square items-center justify-center rounded-xl bg-blue-200/5">
                 <product.Icon className="h-14 w-14 text-blue-200" />
               </div>

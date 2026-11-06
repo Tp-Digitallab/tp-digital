@@ -935,18 +935,16 @@ export default function WebdesignLandingPage() {
           <div className="mt-6 flex items-center justify-between rounded-full border border-white/10 bg-black/60 px-5 py-3 backdrop-blur-xl">
             <Link
               href={homePath(language)}
-              className="leading-none text-white"
+              aria-label="TP Digital Lab"
+              className="shrink-0 rounded-full border border-white/10 bg-[#f7f5f3]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl"
             >
-              <span className="text-xl font-semibold">
-                TP
-              </span>
-
-              <span className="ml-2 text-[10px] uppercase tracking-[0.3em] text-white/45">
-                Digital Lab
+              <span className="whitespace-nowrap text-[17px] tracking-tight text-white">
+                <span className="font-bold">TP</span>
+                <span className="hidden font-semibold min-[360px]:inline"> Digital Lab</span>
               </span>
             </Link>
 
-            <nav className="hidden items-center gap-6 text-sm text-white/65 md:flex">
+            <nav className="hidden items-center gap-6 text-sm font-semibold text-white/85 md:flex">
               <a
                 href="#projekte"
                 className="transition hover:text-white"
@@ -988,7 +986,7 @@ export default function WebdesignLandingPage() {
           <Container>
             <div className="relative z-10 grid min-w-0 gap-8 pb-14 sm:gap-12 sm:pb-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                   {t.hero.eyebrow}
                 </p>
 
@@ -1039,7 +1037,7 @@ export default function WebdesignLandingPage() {
                 </div>
               </div>
 
-              <div className="min-w-0 rounded-[24px] border border-white/15 bg-white/[0.05] p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(23,42,57,0.12)] backdrop-blur-xl">
+              <div className="min-w-0 rounded-[24px] border border-white/15 bg-[#f7f5f3]/70 p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(23,42,57,0.12)] backdrop-blur-xl">
                 <p className="text-sm uppercase tracking-[0.25em] text-white/40">
                   {t.hero.cardTitle}
                 </p>
@@ -1071,7 +1069,7 @@ export default function WebdesignLandingPage() {
           className="scroll-mt-24 py-16 md:py-24"
         >
           <Container>
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
+            <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
               {t.pricing.eyebrow}
             </p>
 
@@ -1104,7 +1102,7 @@ export default function WebdesignLandingPage() {
                     className={`rounded-[30px] border p-7 ${
                       packageId === "business"
                         ? "border-blue-400/40 bg-blue-500/[0.08]"
-                        : "border-white/10 bg-white/[0.04]"
+                        : "border-white/10 bg-[#f7f5f3]/70"
                     }`}
                   >
                     {packageId === "business" && (
@@ -1165,7 +1163,7 @@ export default function WebdesignLandingPage() {
                       className={`mt-8 w-full rounded-full px-6 py-4 font-semibold transition ${
                         selected
                           ? "bg-blue-500"
-                          : "border border-white/15 bg-white/[0.06] hover:bg-white/[0.12]"
+                          : "border border-white/15 bg-[#f7f5f3]/70 hover:bg-white/[0.12]"
                       }`}
                     >
                       {selected
@@ -1185,10 +1183,10 @@ export default function WebdesignLandingPage() {
 
         <section
           id="projekte"
-          className="scroll-mt-24 border-y border-white/10 bg-white/[0.025] py-16 md:py-24"
+          className="scroll-mt-24 border-y border-white/10 bg-[#f7f5f3]/70 py-16 md:py-24"
         >
           <Container>
-            <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
+            <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
               {t.projects.eyebrow}
             </p>
 
@@ -1207,7 +1205,7 @@ export default function WebdesignLandingPage() {
         <section id="faq" className="scroll-mt-24 py-16 md:py-24">
           <Container>
             <div className="mx-auto max-w-5xl">
-              <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
+              <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                 {t.faq.eyebrow}
               </p>
 
@@ -1219,7 +1217,7 @@ export default function WebdesignLandingPage() {
                 {t.faq.items.map((item) => (
                   <details
                     key={item.question}
-                    className="rounded-2xl border border-white/10 bg-white/[0.035] p-6"
+                    className="rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-6"
                   >
                     <summary className="cursor-pointer pr-6 text-lg font-medium">
                       {item.question}
@@ -1237,7 +1235,7 @@ export default function WebdesignLandingPage() {
 
         <section
           id="anfrage"
-          className="scroll-mt-24 border-t border-white/10 bg-white/[0.025] py-16 md:py-24"
+          className="scroll-mt-24 border-t border-white/10 bg-[#f7f5f3]/70 py-16 md:py-24"
         >
           <span id="anfrage-aenderungen" className="block scroll-mt-24" aria-hidden="true" />
           <span id="anfrage-launch" className="block scroll-mt-24" aria-hidden="true" />
@@ -1246,7 +1244,7 @@ export default function WebdesignLandingPage() {
           <Container>
             <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] lg:gap-12 lg:items-start">
               <div>
-                <p className="text-xs uppercase tracking-[0.35em] text-blue-300/70">
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
                   {t.form.eyebrow}
                 </p>
 
@@ -1263,7 +1261,7 @@ export default function WebdesignLandingPage() {
                   {whatsappUrl && <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">WhatsApp</a>}
                 </div>
 
-                <div className="mt-8 hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-6 text-white/55 lg:block">
+                <div className="mt-8 hidden rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-5 text-sm leading-6 text-white/55 lg:block">
                   <p className="font-medium text-white">
                     info@tpdigitallab.de
                   </p>

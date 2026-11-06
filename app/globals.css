@@ -367,3 +367,8 @@ html.intro.intro-reveal .home-atmosphere #top [data-intro="media"] > div > div:n
 .sh-accent { color: #fc563c; }
 @keyframes sh-word-in { to { transform: none; } }
 @keyframes sh-words-out { to { transform: perspective(800px) translateZ(220px); opacity: 0; } }
+
+/* Light theme: faint "white/xx" text from the dark design reads too pale on paper.
+   Lift it to readable greys (WCAG AA on #e9e4e0). Not inside dark (ink) buttons. */
+:is(.text-white\/30, .text-white\/35, .text-white\/40, .text-white\/45, .text-white\/50, .text-white\/55):not(:is(.bg-blue-600, .bg-blue-500, .bg-white) *) { color: #56606a; }
+:is(.text-white\/60, .text-white\/65, .text-white\/70):not(:is(.bg-blue-600, .bg-blue-500, .bg-white) *) { color: #45515c; }

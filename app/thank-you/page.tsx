@@ -362,7 +362,7 @@ export default function ThankYouPage() {
           </p>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-white/10 bg-white/[0.03] p-5 text-left sm:p-7">
+        <div className="mt-8 rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-5 text-left sm:p-7">
           <h2 className="text-xl font-semibold">
             {t.nextTitle}
           </h2>
@@ -434,7 +434,7 @@ export default function ThankYouPage() {
 
           <Link
             href={`/${language}/webdesign#projekte`}
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-7 py-4 font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-[#f7f5f3]/70 px-7 py-4 font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
           >
             {t.projects}
           </Link>

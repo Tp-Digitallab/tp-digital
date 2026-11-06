@@ -126,7 +126,7 @@ export default function LanguageStep({
                   className={`${buttonBase} ${
                     active
                       ? "border-blue-400/40 bg-blue-500/10"
-                      : "border-white/10 bg-white/[0.03] hover:border-white/25"
+                      : "border-white/10 bg-[#f7f5f3]/70 hover:border-white/25"
                   }`}
                 >
                   <span className="flex items-center justify-between gap-4">
@@ -182,7 +182,7 @@ export default function LanguageStep({
                   className={`${buttonBase} ${
                     active
                       ? "border-blue-400/40 bg-blue-500/10"
-                      : "border-white/10 bg-white/[0.03] hover:border-white/25"
+                      : "border-white/10 bg-[#f7f5f3]/70 hover:border-white/25"
                   }`}
                 >
                   <span className="flex items-center justify-between gap-4">

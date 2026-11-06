@@ -176,7 +176,7 @@ export default function ServicesSection() {
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
-          <p className="mb-5 text-xs font-medium uppercase leading-6 tracking-[0.2em] text-blue-300">
+          <p className="mb-5 text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
             {t.eyebrow}
           </p>
 

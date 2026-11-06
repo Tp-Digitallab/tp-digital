@@ -101,7 +101,7 @@ const copy: Record<"de" | "en" | "ru", FormCopy> = {
 };
 
 const inputClassName =
-  "w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-white outline-none transition placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/60 focus:bg-white/[0.07]";
+  "w-full rounded-2xl border border-white/10 bg-[#f7f5f3]/70 px-5 py-4 text-white outline-none transition placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/60 focus:bg-white/[0.07]";
 
 function getQuote(selectedPackage: PackageChoice) {
   if (selectedPackage === "custom") {

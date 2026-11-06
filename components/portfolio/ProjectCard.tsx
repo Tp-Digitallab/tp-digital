@@ -13,7 +13,7 @@ export default function ProjectCard({
         rounded-[28px]
         border
         border-white/10
-        bg-white/[0.03]
+        bg-[#f7f5f3]/70
         p-8
       "
     >

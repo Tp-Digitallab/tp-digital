@@ -62,12 +62,12 @@ export default function ImpressumPage() {
       {/* Hero */}
 
       <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(23,42,57,0.12),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_600px_at_92%_160px,rgba(252,86,60,0.10),transparent_75%),radial-gradient(ellipse_60%_700px_at_0%_20%,rgba(143,163,199,0.18),transparent_75%)]" />
 
-        <div className="relative mx-auto w-full max-w-4xl rounded-[32px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-2xl sm:p-10">
+        <div className="relative mx-auto w-full max-w-4xl rounded-[32px] border border-white/10 bg-[#f7f5f3]/70 p-5 backdrop-blur-2xl sm:p-10">
           <Link
             href="/"
-            className="mb-10 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-white transition hover:border-white/30 hover:bg-white/10"
+            className="mb-10 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-[#f7f5f3]/70 px-5 py-3 text-white transition hover:border-white/30 hover:bg-white/10"
           >
             <ArrowLeft className="h-5 w-5 shrink-0" />
 
@@ -93,7 +93,7 @@ export default function ImpressumPage() {
         <div className="grid min-w-0 gap-5 sm:gap-8 lg:grid-cols-2">
           {/* Business */}
 
-          <div className="min-w-0 overflow-hidden rounded-3xl border border-white/15 bg-white/[0.05] p-5 backdrop-blur sm:p-8">
+          <div className="min-w-0 overflow-hidden rounded-3xl border border-white/15 bg-[#f7f5f3]/70 p-5 backdrop-blur sm:p-8">
             <div className="mb-6 flex min-w-0 items-start gap-3">
               <Building2 className="h-6 w-6 shrink-0 text-blue-400" />
 
@@ -139,7 +139,7 @@ export default function ImpressumPage() {
 
           {/* Contact */}
 
-          <div className="min-w-0 overflow-hidden rounded-3xl border border-white/15 bg-white/[0.05] p-5 backdrop-blur sm:p-8">
+          <div className="min-w-0 overflow-hidden rounded-3xl border border-white/15 bg-[#f7f5f3]/70 p-5 backdrop-blur sm:p-8">
             <div className="mb-6 flex min-w-0 items-start gap-3">
               <Shield className="h-6 w-6 shrink-0 text-blue-400" />
 

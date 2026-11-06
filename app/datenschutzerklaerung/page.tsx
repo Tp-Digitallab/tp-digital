@@ -77,7 +77,7 @@ function PrivacySection({
         rounded-3xl
         border
         border-white/15
-        bg-white/[0.05]
+        bg-[#f7f5f3]/70
         p-6
         backdrop-blur
         sm:p-8
@@ -162,7 +162,7 @@ export default function DatenschutzerklaerungPage() {
             <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(23,42,57,0.12),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(ellipse_55%_600px_at_92%_160px,rgba(252,86,60,0.10),transparent_75%),radial-gradient(ellipse_60%_700px_at_0%_20%,rgba(143,163,199,0.18),transparent_75%)]"
         />
 
         <div className="relative mx-auto w-full max-w-6xl">
@@ -177,7 +177,7 @@ export default function DatenschutzerklaerungPage() {
               rounded-full
               border
               border-white/15
-              bg-white/5
+              bg-[#f7f5f3]/70
               px-5
               py-3
               text-white
@@ -196,7 +196,7 @@ export default function DatenschutzerklaerungPage() {
 
 
                     <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
-            <div className="shrink-0 rounded-2xl border border-white/15 bg-white/5 p-4">
+            <div className="shrink-0 rounded-2xl border border-white/15 bg-[#f7f5f3]/70 p-4">
               <Shield
                 aria-hidden="true"
                 className="h-8 w-8 text-blue-400"
@@ -232,7 +232,7 @@ export default function DatenschutzerklaerungPage() {
         <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
           {/* Navigation */}
 
-          <aside className="h-fit rounded-3xl border border-white/15 bg-white/[0.05] p-6 backdrop-blur lg:sticky lg:top-28">
+          <aside className="h-fit rounded-3xl border border-white/15 bg-[#f7f5f3]/70 p-6 backdrop-blur lg:sticky lg:top-28">
             <h2 className="text-lg font-semibold text-white">
               Inhaltsverzeichnis
             </h2>
