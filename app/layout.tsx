@@ -128,7 +128,7 @@ export default function RootLayout({
       >
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var d=document.documentElement,f=location.search.indexOf("intro")>-1;if(["/","/en","/en/","/ru","/ru/"].indexOf(location.pathname)>-1&&innerWidth>=768&&(f||(!matchMedia("(prefers-reduced-motion: reduce)").matches&&(document.referrer||"").indexOf(location.origin)!==0)))d.classList.add("intro")}catch(e){}`,
+            __html: `try{var d=document.documentElement,f=location.search.indexOf("intro")>-1;if(["/","/en","/en/","/ru","/ru/"].indexOf(location.pathname)>-1&&(f||(!matchMedia("(prefers-reduced-motion: reduce)").matches&&(document.referrer||"").indexOf(location.origin)!==0)))d.classList.add(innerWidth>=768?"intro":"intro-m")}catch(e){}`,
           }}
         />
         <JsonLd />

@@ -372,3 +372,19 @@ html.intro.intro-reveal .home-atmosphere #top [data-intro="media"] > div > div:n
    Lift it to readable greys (WCAG AA on #e9e4e0). Not inside dark (ink) buttons. */
 :is(.text-white\/30, .text-white\/35, .text-white\/40, .text-white\/45, .text-white\/50, .text-white\/55):not(:is(.bg-blue-600, .bg-blue-500, .bg-white) *) { color: #56606a; }
 :is(.text-white\/60, .text-white\/65, .text-white\/70):not(:is(.bg-blue-600, .bg-blue-500, .bg-white) *) { color: #45515c; }
+
+/* Phone entrance (no overlay): hero blocks rise in one after another, ~0.9s.
+   html.intro-m is set by the inline script in app/layout.tsx. */
+@keyframes m-up { from { opacity: 0; transform: translateY(18px); } }
+@keyframes m-fade { from { opacity: 0; } }
+html.intro-m #top [data-intro="text"] > * { animation: m-up 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+html.intro-m #top [data-intro="text"] > :nth-child(2) { animation-delay: 0.08s; }
+html.intro-m #top [data-intro="text"] > :nth-child(3) { animation-delay: 0.3s; }
+html.intro-m #top [data-intro="text"] > :nth-child(4) { animation-delay: 0.36s; }
+html.intro-m #top [data-intro="text"] > :nth-child(5) { animation-delay: 0.42s; }
+html.intro-m #top [data-intro="text"] > :nth-child(6) { animation-delay: 0.48s; }
+html.intro-m #top [data-intro="text"] > :nth-child(n + 7) { animation-delay: 0.54s; }
+html.intro-m #top h1 > span { animation: m-fade 0.6s ease 0.25s both; }
+html.intro-m #top [data-intro="media"] > div > div { animation: m-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both; }
+html.intro-m #top [data-intro="media"] > div > div:nth-child(2) { animation-delay: 0.6s; }
+html.intro-m #top [data-intro="media"] > div > div:nth-child(3) { animation-delay: 0.68s; }
