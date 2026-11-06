@@ -265,8 +265,7 @@ body { background: var(--paper); color: var(--ink); }
 
 /* Real white text on dark (ink) buttons and badges */
 .bg-blue-500, .bg-blue-600, .bg-blue-700,
-[class*="bg-white "]:not([class*="bg-white/"]), .bg-white,
-.bg-black\/75 {
+[class*="bg-white "]:not([class*="bg-white/"]), .bg-white {
   --color-white: #f7f5f3;
   --color-black: #f7f5f3;
 }

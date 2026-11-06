@@ -7,12 +7,12 @@ import { createPortal } from "react-dom";
   Desktop/tablet intro "shutters": the headline assembles word by word on a
   navy screen, then the screen splits into vertical strips that slide away in
   3D while the hero content flies in from depth.
-  Plays once per session, skippable, off on phones and for reduced motion.
+  Plays on every entry from outside the site (search, links, direct),
+  not on internal navigation; skippable, off on phones and for reduced motion.
   <html class="intro"> is set by an inline script in app/layout.tsx before
   first paint; html.intro body::before provides the navy screen until then.
 */
 
-const KEY = "tp-intro-seen";
 const REVEAL_AT = 1450;
 const END_AT = 4300;
 const STRIPS = 7;
@@ -36,7 +36,6 @@ export default function HeroIntro() {
   useEffect(() => {
     const root = document.documentElement;
     if (!root.classList.contains("intro")) return;
-    try { sessionStorage.setItem(KEY, "1"); } catch {}
 
     const timers: number[] = [];
     let done = false;

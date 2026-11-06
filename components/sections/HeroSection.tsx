@@ -48,7 +48,7 @@ export default function HeroSection() {
       <Container className="relative z-10">
         <div className="grid items-center gap-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pb-24 lg:pt-40">
           <div data-intro="text" className="min-w-0">
-            <p className="text-[11px] font-medium uppercase leading-5 tracking-[0.12em] text-blue-300">{t.eyebrow}</p>
+            <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300 sm:text-[15px]">{t.eyebrow}</p>
             <h1 className="mt-5 text-[34px] font-semibold leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-[54px]">{t.title}{" "}<span className="text-blue-200">{t.accent}</span></h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">{t.description}</p>
             <p className="mt-4 text-sm leading-6 text-white/70">{t.founder}</p>
@@ -66,7 +66,6 @@ export default function HeroSection() {
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
               <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/grabpflege.png" alt="GrabProfi — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
             </div>
-            <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm text-white/65"><span>{t.example}</span><ScrollLink href="#projects" className="inline-flex min-h-10 items-center gap-2 font-medium text-blue-200 underline underline-offset-4 hover:text-white">{t.detail}</ScrollLink></figcaption>
           </figure>
         </div>
       </Container>

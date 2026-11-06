@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 
 import Container from "@/components/common/Container";
@@ -73,14 +72,12 @@ export default function Header() {
         <div className="mt-4 flex items-center justify-between gap-4 md:mt-7">
           <ScrollLink
             href={homeHref("#top")}
-            className="group shrink-0 rounded-lg leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+            aria-label="TP Digital Lab"
+            className="group flex shrink-0 items-center gap-2.5 rounded-full border border-white/10 bg-[#f7f5f3]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4"
           >
-            <span className="block text-2xl font-semibold text-white transition-transform duration-300 group-hover:scale-105">
-              TP
-            </span>
-
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.28em] text-white/50">
-              Digital Lab
+            <span className="whitespace-nowrap text-[17px] tracking-tight text-white">
+              <span className="font-bold">TP</span>
+              <span className="hidden font-semibold min-[360px]:inline"> Digital Lab</span>
             </span>
           </ScrollLink>
 
@@ -88,24 +85,12 @@ export default function Header() {
             aria-label={copy.navigation}
             className="relative hidden items-center gap-5 overflow-hidden rounded-full border border-white/10 bg-[#f7f5f3]/80 px-6 py-3 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl md:flex lg:gap-7"
           >
-            <motion.div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 -left-32 w-28 bg-gradient-to-r from-transparent via-white/25 to-blue-400/20 blur-xl"
-              animate={{
-                x: ["0%", "850%"],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
 
             {navigation.map((item) => (
               <ScrollLink
                 key={item.href}
                 href={item.href}
-                className="relative z-10 whitespace-nowrap rounded-md text-sm font-medium text-white/75 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 lg:text-[15px]"
+                className="relative z-10 whitespace-nowrap rounded-md text-sm font-semibold text-white/85 transition-colors hover:text-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 lg:text-[15px]"
               >
                 {item.name}
               </ScrollLink>
