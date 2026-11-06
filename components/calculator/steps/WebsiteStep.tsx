@@ -207,7 +207,7 @@ export default function WebsiteStep({
                       bg-gradient-to-br
                       from-blue-500/15
                       to-white/[0.03]
-                      shadow-[0_20px_60px_rgba(120,70,40,0.18)]
+                      shadow-[0_20px_60px_rgba(23,42,57,0.18)]
                     `
                     : `
                       border-white/10

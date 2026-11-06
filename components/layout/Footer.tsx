@@ -122,7 +122,7 @@ export default function Footer() {
           pointer-events-none
           absolute
           inset-0
-          bg-[radial-gradient(circle_at_top,rgba(120,70,40,0.12),transparent_40%)]
+          bg-[radial-gradient(circle_at_top,rgba(23,42,57,0.12),transparent_40%)]
         "
       />
 

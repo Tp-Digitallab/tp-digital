@@ -285,7 +285,7 @@ export default function LeadForm({
     <form
       onSubmit={handleSubmit}
       aria-busy={isSubmitting}
-      className="min-w-0 rounded-[24px] border border-white/15 bg-black/35 p-5 shadow-[0_30px_100px_rgba(60,40,20,0.12)] sm:rounded-[32px] sm:p-9"
+      className="min-w-0 rounded-[24px] border border-white/15 bg-black/35 p-5 shadow-[0_30px_100px_rgba(23,42,57,0.12)] sm:rounded-[32px] sm:p-9"
     >
       <fieldset disabled={isSubmitting} className="grid min-w-0 gap-5 sm:grid-cols-2">
         <label className="block text-sm font-medium text-white/85" htmlFor={`${formId}-name`}>

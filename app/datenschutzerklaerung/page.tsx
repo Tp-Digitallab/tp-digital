@@ -155,14 +155,14 @@ const navigation = [
 
 export default function DatenschutzerklaerungPage() {
   return (
-    <main className="min-h-screen bg-[#f6f2ec] text-white">
+    <main className="min-h-screen bg-[#e9e4e0] text-white">
       {/* Hero */}
 
 
             <section className="relative overflow-hidden px-4 py-20 sm:px-6 sm:py-28">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(120,70,40,0.12),transparent_60%)]"
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(23,42,57,0.12),transparent_60%)]"
         />
 
         <div className="relative mx-auto w-full max-w-6xl">

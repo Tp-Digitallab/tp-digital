@@ -225,7 +225,7 @@ export default function IntroAnimation() {
                 border-white/15
                 bg-white/[0.06]
                 text-left
-                shadow-[0_0_70px_rgba(120,70,40,0.2)]
+                shadow-[0_0_70px_rgba(23,42,57,0.2)]
                 backdrop-blur-xl
               "
             >
@@ -367,7 +367,7 @@ export default function IntroAnimation() {
                       from-blue-500
                       via-cyan-400
                       to-blue-300
-                      shadow-[0_0_18px_rgba(120,70,40,0.8)]
+                      shadow-[0_0_18px_rgba(23,42,57,0.8)]
                     "
                   />
                 </div>

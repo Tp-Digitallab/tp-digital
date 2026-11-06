@@ -310,7 +310,7 @@ export default function ThankYouPage() {
   }, []);
 
   return (
-    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#f6f2ec] px-5 py-16 text-white sm:px-6">
+    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#e9e4e0] px-5 py-16 text-white sm:px-6">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[150px]"

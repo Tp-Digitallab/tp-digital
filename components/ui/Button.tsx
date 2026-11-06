@@ -50,20 +50,20 @@ export default function Button({
     variant === "primary" &&
       `
         border-blue-400/25
-        bg-[#efe7dd]
+        bg-[#e2ddd8]
         text-white
-        shadow-[0_8px_30px_rgba(120,70,40,0.16)]
+        shadow-[0_8px_30px_rgba(23,42,57,0.16)]
 
         sm:border-white/15
         sm:bg-white/[0.10]
         sm:backdrop-blur-xl
-        sm:shadow-[0_0_30px_rgba(120,70,40,0.18)]
+        sm:shadow-[0_0_30px_rgba(23,42,57,0.18)]
 
         hover:border-blue-400/40
-        hover:bg-[#efe7dd]
+        hover:bg-[#e2ddd8]
 
         sm:hover:bg-white/[0.15]
-        sm:hover:shadow-[0_0_45px_rgba(120,70,40,0.35)]
+        sm:hover:shadow-[0_0_45px_rgba(23,42,57,0.35)]
 
         active:scale-[0.98]
       `,

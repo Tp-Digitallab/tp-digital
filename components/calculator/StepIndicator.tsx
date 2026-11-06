@@ -66,7 +66,7 @@ export default function StepIndicator({
 
                     ${
                       completed
-                        ? "bg-blue-500 shadow-[0_0_18px_rgba(120,70,40,0.6)]"
+                        ? "bg-blue-500 shadow-[0_0_18px_rgba(23,42,57,0.6)]"
                         : "bg-white/10"
                     }
                   `}

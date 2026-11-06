@@ -78,7 +78,7 @@ export default function LanguageSwitcher() {
         <div
           role="menu"
           aria-label="Choose language"
-          className="absolute right-0 top-full z-50 mt-2 flex gap-1 rounded-full border border-white/15 bg-black/90 p-1 shadow-[0_10px_40px_rgba(60,40,20,0.12)] backdrop-blur-xl"
+          className="absolute right-0 top-full z-50 mt-2 flex gap-1 rounded-full border border-white/15 bg-black/90 p-1 shadow-[0_10px_40px_rgba(23,42,57,0.12)] backdrop-blur-xl"
         >
           {languages.map((item) => {
             const active =

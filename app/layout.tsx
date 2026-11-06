@@ -117,6 +117,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body
@@ -125,6 +126,11 @@ export default function RootLayout({
           overflow-x-hidden
         "
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var d=document.documentElement,f=location.search.indexOf("intro")>-1;if(["/","/en","/en/","/ru","/ru/"].indexOf(location.pathname)>-1&&innerWidth>=768&&(f||(!matchMedia("(prefers-reduced-motion: reduce)").matches&&!sessionStorage.getItem("tp-intro-seen"))))d.classList.add("intro")}catch(e){}`,
+          }}
+        />
         <JsonLd />
 
   

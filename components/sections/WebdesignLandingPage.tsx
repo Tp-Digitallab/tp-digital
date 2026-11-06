@@ -1039,7 +1039,7 @@ export default function WebdesignLandingPage() {
                 </div>
               </div>
 
-              <div className="min-w-0 rounded-[24px] border border-white/15 bg-white/[0.05] p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(60,40,20,0.12)] backdrop-blur-xl">
+              <div className="min-w-0 rounded-[24px] border border-white/15 bg-white/[0.05] p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(23,42,57,0.12)] backdrop-blur-xl">
                 <p className="text-sm uppercase tracking-[0.25em] text-white/40">
                   {t.hero.cardTitle}
                 </p>

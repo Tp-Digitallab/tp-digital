@@ -239,7 +239,7 @@ export default function ContactStep({
   }
 
   const inputClassName =
-    "w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white outline-none transition-all duration-300 placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(120,70,40,0.15)]";
+    "w-full rounded-[22px] border border-white/10 bg-white/[0.03] py-5 pl-14 pr-6 text-white outline-none transition-all duration-300 placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(23,42,57,0.15)]";
 
   return (
     <section>
@@ -508,7 +508,7 @@ export default function ContactStep({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="inline-flex w-full items-center justify-center rounded-full bg-blue-500 px-8 py-4 font-semibold text-white shadow-[0_12px_35px_rgba(120,70,40,0.25)] transition-all duration-300 hover:bg-blue-400 hover:shadow-[0_18px_45px_rgba(120,70,40,0.35)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-blue-500 sm:w-auto"
+            className="inline-flex w-full items-center justify-center rounded-full bg-blue-500 px-8 py-4 font-semibold text-white shadow-[0_12px_35px_rgba(23,42,57,0.25)] transition-all duration-300 hover:bg-blue-400 hover:shadow-[0_18px_45px_rgba(23,42,57,0.35)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-blue-500 sm:w-auto"
           >
             {isSubmitting
               ? copy.sending

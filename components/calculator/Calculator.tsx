@@ -36,7 +36,7 @@ const ContactStep = dynamic(
       <div
         role="status"
         aria-busy="true"
-        className="min-h-[480px] rounded-3xl border border-white/10 bg-[#fffdf9] p-6"
+        className="min-h-[480px] rounded-3xl border border-white/10 bg-[#f7f5f3] p-6"
       >
         <span className="sr-only">
           Formular wird geladen / Loading form / Загрузка формы

@@ -5,6 +5,7 @@ import RequestLink from "@/components/contact/RequestLink";
 import { CheckCircle2, Star } from "lucide-react";
 import Container from "@/components/common/Container";
 import ScrollLink from "@/components/ui/ScrollLink";
+import HeroIntro from "@/components/effects/HeroIntro";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { packages } from "@/config/packages";
 import { googleReviewsUrl } from "@/config/reviews";
@@ -43,9 +44,10 @@ export default function HeroSection() {
   const formattedPrice = new Intl.NumberFormat(language === "de" ? "de-DE" : language === "ru" ? "ru-RU" : "en-US", {style: "currency", currency: "EUR", maximumFractionDigits: 0}).format(price ?? 300);
   return (
     <section id="top" className="relative overflow-hidden text-white">
+      <HeroIntro />
       <Container className="relative z-10">
         <div className="grid items-center gap-10 pb-14 pt-28 sm:pb-20 sm:pt-36 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pb-24 lg:pt-40">
-          <div className="min-w-0">
+          <div data-intro="text" className="min-w-0">
             <p className="text-[11px] font-medium uppercase leading-5 tracking-[0.12em] text-blue-300">{t.eyebrow}</p>
             <h1 className="mt-5 text-[34px] font-semibold leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-[54px]">{t.title}{" "}<span className="text-blue-200">{t.accent}</span></h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">{t.description}</p>
@@ -58,11 +60,11 @@ export default function HeroSection() {
             <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" title={t.reviewsDate} className="mt-5 inline-flex min-h-10 items-center gap-2 text-sm text-white/80 underline decoration-white/20 underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-blue-400"><Star aria-hidden="true" className="h-4 w-4 fill-amber-300 text-amber-300" />{t.reviews}</a>
             <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs leading-5 text-white/65">{t.benefits.map(b=><li key={b} className="flex items-center gap-2"><CheckCircle2 aria-hidden="true" className="h-4 w-4 shrink-0 text-blue-300" />{b}</li>)}</ul>
           </div>
-          <figure className="min-w-0">
+          <figure data-intro="media" className="min-w-0">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="col-span-2 overflow-hidden rounded-3xl border border-white/10 bg-[#fffdf9]"><Image src="/projects/marigstudio.png" alt="Mari G Beauty Studio — Website" width={1905} height={904} sizes="(max-width: 1023px) calc(100vw - 48px), 560px" preload className="h-auto w-full" /></div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#fffdf9]"><Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#fffdf9]"><Image src="/projects/grabpflege.png" alt="GrabProfi — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
+              <div className="col-span-2 overflow-hidden rounded-3xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/marigstudio.png" alt="Mari G Beauty Studio — Website" width={1905} height={904} sizes="(max-width: 1023px) calc(100vw - 48px), 560px" preload className="h-auto w-full" /></div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/grabpflege.png" alt="GrabProfi — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
             </div>
             <figcaption className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm text-white/65"><span>{t.example}</span><ScrollLink href="#projects" className="inline-flex min-h-10 items-center gap-2 font-medium text-blue-200 underline underline-offset-4 hover:text-white">{t.detail}</ScrollLink></figcaption>
           </figure>

@@ -113,7 +113,7 @@ export default function BrandingStep({
                     ? `
                       border-blue-400/40
                       bg-blue-500/10
-                      shadow-[0_15px_40px_rgba(120,70,40,0.15)]
+                      shadow-[0_15px_40px_rgba(23,42,57,0.15)]
                     `
                     : `
                       border-white/10

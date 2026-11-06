@@ -249,11 +249,11 @@ export default function ProcessSection() {
   return (
     <section
       id="process"
-      className="relative scroll-mt-24 overflow-hidden bg-[#f6f2ec] py-24 text-white md:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-[#e9e4e0] py-24 text-white md:py-32"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(120,70,40,0.07),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(23,42,57,0.07),transparent_60%)]"
       />
 
       <Grid />

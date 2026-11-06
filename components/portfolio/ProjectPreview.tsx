@@ -20,7 +20,7 @@ const copy = {
 export default function ProjectPreview() {
  const {language} = useLanguage(); const t = copy[language];
  return <div className="grid gap-6 lg:grid-cols-3">{projects.map(project =>
- <article key={project.id} className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#fffdf9]">
+ <article key={project.id} className="group flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#f7f5f3]">
  <a href={project.website} target="_blank" rel="noopener noreferrer" aria-label={project.title} className="relative block aspect-[16/10] overflow-hidden border-b border-white/10 focus-visible:outline-2 focus-visible:outline-blue-400">
  <Image src={project.image} alt={project.title} fill sizes="(max-width: 1023px) 100vw, 420px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.025] motion-reduce:transition-none" />
  {project.status === "in-development" && <span className="absolute left-4 top-4 rounded-full bg-black/75 px-3 py-1.5 text-xs text-white">{t.status}</span>}</a>

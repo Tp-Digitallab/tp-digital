@@ -34,7 +34,7 @@ export default function MobileLeadBar() {
   if (formVisible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#f6f2ec]/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_35px_rgba(60,40,20,0.12)] backdrop-blur-xl lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-[#e9e4e0]/95 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-12px_35px_rgba(23,42,57,0.12)] backdrop-blur-xl lg:hidden">
       <div className="mx-auto flex max-w-lg items-center gap-3">
         <p className="min-w-0 flex-1 truncate text-xs font-medium text-white/75">
           {t.label}
@@ -42,7 +42,7 @@ export default function MobileLeadBar() {
 
         <a
           href="#anfrage"
-          className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f6f2ec] active:scale-[0.98]"
+          className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#e9e4e0] active:scale-[0.98]"
         >
           {t.button}
         </a>
