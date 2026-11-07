@@ -194,7 +194,7 @@ export const serviceOffers: Record<Exclude<ServicePageKey, "webdesign">, Record<
 ],
       requests: [],
       messagePlaceholder: "Welche Produkte möchten Sie verkaufen und wie viele sind es? Gibt es bereits einen Shop? Welche Zahlungen, Länder und Versandarten benötigen Sie?",
-      example: { title: "Probieren Sie den Warenkorb aus.", text: "Funktionsdemo mit fiktiven Produkten. Keine echten Bestellungen oder Zahlungen.", link: "Demo ausprobieren" },
+      example: { title: "Probieren Sie einen echten Shop aus.", text: "Ein kompletter Demo-Shop einer Kaffeerösterei: Katalog, Produktseite, Warenkorb und Kasse. So kann Ihr Shop aussehen. Keine echten Bestellungen oder Zahlungen.", link: "Demo ausprobieren" },
     },
     en: {
       title: "Ready for your first sale.",
@@ -215,7 +215,7 @@ export const serviceOffers: Record<Exclude<ServicePageKey, "webdesign">, Record<
 ],
       requests: [],
       messagePlaceholder: "What will you sell and how many products do you have? Is there an existing store? Which payments, countries and shipping methods do you need?",
-      example: { title: "Try the shopping cart.", text: "A feature demo with fictional products. No real orders or payments.", link: "Try the demo" },
+      example: { title: "Try a real shop.", text: "A complete demo shop for a coffee roastery: catalogue, product page, cart and checkout. This is how your shop can look. No real orders or payments.", link: "Try the demo" },
     },
     ru: {
       title: "Всё для первых продаж.",
@@ -236,7 +236,7 @@ export const serviceOffers: Record<Exclude<ServicePageKey, "webdesign">, Record<
 ],
       requests: [],
       messagePlaceholder: "Какие товары и в каком количестве вы хотите продавать? Есть ли действующий магазин? Какие способы оплаты, страны и варианты доставки нужны?",
-      example: { title: "Попробуйте корзину.", text: "Демо с вымышленными товарами. Без настоящих заказов и оплаты.", link: "Попробовать демо" },
+      example: { title: "Попробуйте настоящий магазин.", text: "Полное демо магазина обжарки кофе: каталог, страница товара, корзина и оформление заказа. Так может выглядеть ваш магазин. Без настоящих заказов и оплаты.", link: "Попробовать демо" },
     },
   },
 };

@@ -1,6 +1,7 @@
 "use client";
 import { packageTranslations } from "@/config/packageTranslations";
 import ReviewsSection from "@/components/sections/ReviewsSection";
+import ReadyWebsitesSection from "@/components/sections/ReadyWebsitesSection";
 import { useState } from "react";
 import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
@@ -1199,6 +1200,8 @@ export default function WebdesignLandingPage() {
             <div className="mt-10"><ProjectPreview /></div>
           </Container>
         </section>
+
+        <ReadyWebsitesSection />
 
                 <ReviewsSection />
 
