@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kontakt – Demo Firmenwebsite von TP Digital Lab</title>
+<link rel="stylesheet" href="/demo/firma/style.css">
+</head>
+<body>
+<div class="demo-bar">Demo: Firmenwebsite mit mehreren Seiten von TP Digital Lab. Klicken Sie sich durch. <a href="/#fertige-websites" target="_top">Mehr erfahren</a></div>
+<header><div class="wrap nav">
+  <a class="logo" href="/demo/firma/index.html"><i aria-hidden="true"></i><span>Ihr Betrieb<small>Maler und Renovierung · München</small></span></a>
+  <nav class="links" id="links" aria-label="Hauptnavigation"><a href="/demo/firma/index.html">Start</a><a href="/demo/firma/leistungen.html">Leistungen</a><a href="/demo/firma/projekte.html">Projekte</a><a href="/demo/firma/ueber-uns.html">Über uns</a><a href="/demo/firma/kontakt.html" aria-current="page">Kontakt</a></nav>
+  <div class="side"><a class="num" href="tel:+49890000000">089 0000000</a><a class="btn btn-main" href="/demo/firma/kontakt.html">Besichtigung</a><button class="burger" type="button" aria-expanded="false" aria-controls="links" id="burger">Menü</button></div>
+</div></header>
+<main>
+
+<div class="wrap"><p class="crumbs"><a href="/demo/firma/index.html">Start</a> / Kontakt</p><div class="page-head reveal"><span class="mono">Kontakt</span><h1>Besichtigung vereinbaren.</h1><p class="lead">Wir melden uns innerhalb eines Werktags. Mit Fotos können wir oft schon vorab eine Preisspanne nennen.</p></div></div>
+<section><div class="wrap grid2">
+  <form>
+    <label>Name<input type="text" autocomplete="name"></label>
+    <label>Telefon<input type="tel" autocomplete="tel"></label>
+    <label>Leistung<select><option>Malerarbeiten</option><option>Tapezieren</option><option>Bodenbeläge</option><option>Renovierung beim Auszug</option><option>Etwas anderes</option></select></label>
+    <label>Wohnungsgröße<input type="text" placeholder="z. B. 3 Zimmer, 75 m²"></label>
+    <label class="full">Ihre Nachricht<textarea placeholder="Wunschtermin, Etage, Besonderheiten"></textarea></label>
+    <button class="btn btn-main full" type="submit">Anfrage senden</button>
+    <p class="form-note">Ihre Daten nutzen wir nur für diese Anfrage.</p>
+  </form>
+  <div>
+    <div class="map"><div><b>Musterstraße 20, 80339 München</b>Hier steht in Ihrer Website eine Karte. Sie lädt erst nach Zustimmung, wegen Datenschutz.</div></div>
+    <div class="kv" style="grid-template-columns:1fr 1fr"><div><b>089 0000000</b><span>Mo – Fr, 7 – 17 Uhr</span></div><div><b>WhatsApp</b><span>Fotos direkt schicken</span></div></div>
+    <div style="margin-top:28px"><span class="mono">Häufige Fragen</span>
+      <details><summary>Kostet die Besichtigung etwas?</summary><p>Nein. Sie ist kostenlos und unverbindlich, auch wenn Sie sich am Ende anders entscheiden.</p></details>
+      <details><summary>Wann können Sie anfangen?</summary><p>Meist in zwei bis drei Wochen. Für Übergaben zu Monatsende planen wir früher.</p></details>
+      <details><summary>Muss ich zu Hause sein?</summary><p>Nur am ersten Tag und zur Abnahme. Dazwischen reicht ein Schlüssel.</p></details>
+    </div>
+  </div>
+</div></section>
+</main>
+<footer class="site"><div class="wrap">
+  <div class="fcols">
+    <div><b style="font-size:19px">Ihr Betrieb</b><p style="color:var(--muted);margin-top:10px">Malerbetrieb in München seit 2009. Meisterbetrieb, eingetragen bei der Handwerkskammer.</p></div>
+    <div><h4>Leistungen</h4><a href="/demo/firma/leistung-malerarbeiten.html">Malerarbeiten</a><a href="/demo/firma/leistung-tapezieren.html">Tapezieren</a><a href="/demo/firma/leistung-boden.html">Bodenbeläge</a><a href="/demo/firma/leistung-auszug.html">Renovierung beim Auszug</a></div>
+    <div><h4>Betrieb</h4><a href="/demo/firma/projekte.html">Projekte</a><a href="/demo/firma/ueber-uns.html">Über uns</a><a href="/demo/firma/ueber-uns.html#ausbildung">Ausbildung</a><a href="/demo/firma/kontakt.html">Kontakt</a></div>
+    <div><h4>Kontakt</h4><p>Musterstraße 20<br>80339 München</p><a href="tel:+49890000000">089 0000000</a><p style="color:var(--muted)">Mo – Fr, 7 – 17 Uhr</p></div>
+  </div>
+  <div class="fbottom"><span>© Ihr Betrieb · Demo · Impressum · Datenschutz</span><span>Website-Vorlage von <a href="/" target="_top">TP Digital Lab</a> · Fotos: Unsplash</span></div>
+</div></footer>
+<script>
+(function(){var b=document.getElementById("burger"),l=document.getElementById("links");b.onclick=function(){var o=l.classList.toggle("open");b.setAttribute("aria-expanded",o);b.textContent=o?"Schließen":"Menü";};
+document.querySelectorAll("form").forEach(function(f){f.addEventListener("submit",function(e){e.preventDefault();var n=f.querySelector(".form-note");if(n)n.textContent="Demo: In Ihrer echten Website kommt diese Anfrage direkt bei Ihnen an.";});});
+var c=document.querySelectorAll(".chips button[data-f]");c.forEach(function(x){x.onclick=function(){c.forEach(function(y){y.setAttribute("aria-pressed",y===x)});document.querySelectorAll("[data-cat]").forEach(function(k){k.hidden=x.dataset.f!=="alle"&&k.dataset.cat!==x.dataset.f});};});})();
+</script>
+</body>
+</html>

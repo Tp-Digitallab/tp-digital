@@ -22,6 +22,12 @@ const copy = {
     request: "Anfragen",
     more: "Ihre Branche fehlt? Schreiben Sie mir, ich baue die Vorlage passend für Sie.",
     moreCta: "Branche vorschlagen",
+    kind: "Landingpage",
+    firmKind: "Firmenwebsite",
+    firmTitle: "Mehr als eine Seite: zum Durchklicken.",
+    firmText: "Startseite, jede Leistung mit eigener Seite und Preisen, Projekte mit Detailseite, Über uns und Kontakt. Zehn Seiten, die auch bei Google einzeln gefunden werden.",
+    firmPrice: "ab 790 €",
+    firmDemo: "Firmenwebsite ansehen",
   },
   en: {
     eyebrow: "Ready-made websites",
@@ -33,6 +39,12 @@ const copy = {
     request: "Request",
     more: "Your industry is missing? Tell me, and I will build the template for you.",
     moreCta: "Suggest an industry",
+    kind: "Landing page",
+    firmKind: "Business website",
+    firmTitle: "More than one page: click through it.",
+    firmText: "Home, a page for every service with prices, projects with a detail page, about and contact. Ten pages that Google can find one by one.",
+    firmPrice: "from €790",
+    firmDemo: "View business website",
   },
   ru: {
     eyebrow: "Готовые сайты",
@@ -44,6 +56,12 @@ const copy = {
     request: "Хочу такой",
     more: "Нет вашей сферы? Напишите, и я сделаю шаблон под вас.",
     moreCta: "Предложить сферу",
+    kind: "Лендинг",
+    firmKind: "Сайт компании",
+    firmTitle: "Больше одной страницы: пощёлкайте сами.",
+    firmText: "Главная, отдельная страница с ценами на каждую услугу, проекты со страницей проекта, о компании и контакты. Десять страниц, каждую из которых Google находит отдельно.",
+    firmPrice: "от 790 €",
+    firmDemo: "Открыть сайт компании",
   },
 };
 
@@ -69,7 +87,8 @@ export default function ReadyWebsitesSection() {
                 <Image src={`/demo/${tpl.slug}/preview.png`} alt={`${tpl.name[language]} – Demo`} width={1440} height={900} sizes="(max-width: 767px) 100vw, 400px" className="aspect-[16/10] h-auto w-full object-cover object-left-top transition-transform duration-700 hover:scale-[1.03]" />
               </a>
               <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-baseline justify-between gap-3">
+                <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{t.kind}</p>
+                <div className="mt-1 flex items-baseline justify-between gap-3">
                   <h3 className="text-xl font-semibold tracking-tight text-white">{tpl.name[language]}</h3>
                   <p className="price-number shrink-0 text-lg font-semibold text-white">{t.price}</p>
                 </div>
@@ -83,6 +102,22 @@ export default function ReadyWebsitesSection() {
           ))}
         </div>
 
+
+        <article className="mt-4 grid overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]/70 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <a href="/demo/firma" target="_blank" rel="noopener" className="block overflow-hidden" aria-label={t.firmDemo}>
+            <Image src="/demo/firma/preview.png" alt={`${t.firmKind} – Demo`} width={1440} height={900} sizes="(max-width: 767px) 100vw, 640px" className="aspect-[16/10] h-full w-full object-cover object-left-top transition-transform duration-700 hover:scale-[1.03]" />
+          </a>
+          <div className="flex min-w-0 flex-col p-6 sm:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{t.firmKind} · {templates[1].name[language]}</p>
+            <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">{t.firmTitle}</h3>
+            <p className="mt-3 text-base leading-7 text-white/70">{t.firmText}</p>
+            <p className="price-number mt-4 text-2xl font-semibold text-white">{t.firmPrice}</p>
+            <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
+              <a href="/demo/firma" target="_blank" rel="noopener" className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-center text-sm font-semibold text-white">{t.firmDemo}</a>
+              <RequestLink className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-center text-sm font-medium text-white/85 hover:bg-white/10">{t.request}</RequestLink>
+            </div>
+          </div>
+        </article>
         <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-base text-white/70">{t.more}</p>
           <RequestLink className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white/85 hover:bg-white/10">{t.moreCta}</RequestLink>
