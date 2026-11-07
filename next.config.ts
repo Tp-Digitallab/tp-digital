@@ -67,6 +67,10 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  async rewrites() {
+    return [{ source: "/demo/beauty", destination: "/demo/beauty/index.html" }];
+  },
+
   async headers() {
     return [
       {
