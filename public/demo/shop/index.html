@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Online-Shop Vorlage – Demo von TP Digital Lab</title>
+<meta name="description" content="Demo eines Online-Shops für eine kleine Kaffeerösterei. TP Digital Lab baut diesen Shop für Ihre Produkte.">
+<style>
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/shop/fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/shop/fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
+:root{--bg:#0f2e31;--bg2:#13393d;--cream:#f4ecdf;--ink:#18292b;--muted:#a9c2c0;--pink:#f3a8bd;--mint:#86d3c6;--line:rgba(244,236,223,.14)}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font:500 17px/1.6 Manrope,system-ui,sans-serif;color:var(--cream);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.demo-bar{background:var(--pink);color:#3a1520;font-size:14px;font-weight:700;text-align:center;padding:9px 16px}
+.demo-bar a{text-decoration:underline;text-underline-offset:3px}
+.ship-bar{background:var(--bg2);font-size:14px;text-align:center;padding:8px 16px;color:var(--muted)}
+.ship-bar b{color:var(--mint)}
+.ship-track{height:3px;background:var(--line);max-width:260px;margin:6px auto 0;border-radius:3px;overflow:hidden}
+.ship-track i{display:block;height:100%;background:var(--mint);width:0;transition:width .4s}
+header{position:sticky;top:0;z-index:30;background:rgba(15,46,49,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--pink);color:#3a1520;font-size:15px}
+.links{display:flex;gap:24px;font-size:15px;font-weight:700;color:var(--muted)}
+.links a:hover{color:var(--cream)}
+.cart-btn{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:none;color:var(--cream);font-weight:800;font-size:15px;padding:10px 16px;border-radius:999px}
+.cart-btn span{display:inline-grid;place-items:center;min-width:24px;height:24px;border-radius:999px;background:var(--pink);color:#3a1520;font-size:13px;padding:0 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 26px;border-radius:999px;font-weight:800;font-size:15px;border:0;transition:background .2s,transform .1s}
+.btn:active{transform:scale(.98)}
+.btn-pink{background:var(--pink);color:#3a1520}
+.btn-pink:hover{background:#f7bccc}
+.btn-line{border:1px solid var(--line);color:var(--cream);background:none}
+.btn-line:hover{background:rgba(255,255,255,.06)}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding:40px 0 70px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:800;color:var(--mint)}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint)}
+h1{font-size:clamp(42px,5.6vw,76px);line-height:1;letter-spacing:-.045em;font-weight:800;margin:16px 0 20px}
+h2{font-size:clamp(28px,3.4vw,44px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+.sub{font-size:19px;color:var(--muted);max-width:500px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hero-img{position:relative;border-radius:32px;overflow:hidden;aspect-ratio:5/4}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.roast{position:absolute;left:18px;bottom:18px;background:var(--cream);color:var(--ink);padding:14px 18px;border-radius:18px;font-size:14px;font-weight:700}
+.roast b{display:block;font-size:20px;letter-spacing:-.02em}
+.usp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:70px}
+.usp div{padding:20px 22px;border-radius:20px;background:var(--bg2);font-size:15px;color:var(--muted)}
+.usp b{display:block;color:var(--cream);font-size:17px}
+.shop-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1px solid var(--line);background:none;color:var(--cream);font-weight:700;font-size:14px;padding:9px 15px;border-radius:999px}
+.chip[aria-pressed="true"]{background:var(--cream);color:var(--ink)}
+select{font:600 15px Manrope,sans-serif;color:var(--cream);background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:9px 14px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.prod{background:var(--cream);color:var(--ink);border-radius:24px;overflow:hidden;display:flex;flex-direction:column}
+.prod a.pic{display:block;aspect-ratio:1;overflow:hidden;background:#e7ddcd}
+.prod img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.prod:hover img{transform:scale(1.05)}
+.prod .b{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.prod .kind{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#4d7a73}
+.prod h3{font-size:18px;letter-spacing:-.01em;line-height:1.25;margin-top:4px}
+.prod .notes{font-size:14px;color:#56696a;margin-top:4px}
+.prod .row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:14px}
+.prod .price{font-weight:800;font-size:18px}
+.prod .add{border:0;background:var(--ink);color:var(--cream);font-weight:800;font-size:14px;padding:10px 14px;border-radius:999px}
+.prod .add:hover{background:#2c4447}
+.badge{position:absolute;top:12px;left:12px;background:var(--pink);color:#3a1520;font-size:12px;font-weight:800;padding:5px 10px;border-radius:999px}
+.pic-wrap{position:relative}
+section{padding:80px 0}
+.about{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:48px;align-items:center}
+.about img{border-radius:28px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.about p{color:var(--muted);margin-top:16px;max-width:560px}
+.steps{display:grid;gap:14px;margin-top:24px}
+.steps div{display:flex;gap:16px;align-items:baseline}
+.steps b{font-size:28px;letter-spacing:-.03em;color:var(--pink);min-width:46px}
+/* product page */
+.crumbs{padding:22px 0;font-size:14px;color:var(--muted)}
+.crumbs a:hover{color:var(--cream)}
+.pd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.pd-img{border-radius:28px;overflow:hidden;aspect-ratio:1;background:#e7ddcd}
+.pd-img img{width:100%;height:100%;object-fit:cover}
+.pd h1{font-size:clamp(34px,4vw,52px);margin:8px 0 10px}
+.pd .notes{font-size:18px;color:var(--muted)}
+.meter{margin-top:22px}
+.meter .bar{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-top:8px}
+.meter .bar i{height:8px;border-radius:4px;background:var(--line)}
+.meter .bar i.on{background:var(--pink)}
+.meter .ends{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);margin-top:4px}
+.opt{margin-top:22px}
+.opt > b{display:block;font-size:14px;margin-bottom:8px}
+.opt .chips{display:flex;flex-wrap:wrap;gap:8px}
+.buy{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.qty button{width:44px;height:48px;border:0;background:none;color:var(--cream);font-size:20px;font-weight:700}
+.qty span{min-width:28px;text-align:center;font-weight:800}
+.pd-price{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.facts{margin-top:24px;display:grid;gap:8px;font-size:15px;color:var(--muted)}
+.facts b{color:var(--cream)}
+/* drawer */
+.overlay{position:fixed;inset:0;background:rgba(5,18,20,.6);z-index:40;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--cream);color:var(--ink);z-index:50;transform:translateX(100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dr-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid rgba(24,41,43,.12)}
+.dr-head h2{font-size:24px}
+.dr-close{border:0;background:none;font-weight:800;font-size:15px;color:var(--ink)}
+.dr-ship{padding:14px 24px;font-size:14px;background:#ebe1d1}
+.dr-ship .ship-track{max-width:none;background:rgba(24,41,43,.12)}
+.dr-ship .ship-track i{background:#2f7d6f}
+.dr-items{flex:1;overflow:auto;padding:8px 24px}
+.ci{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:14px;padding:16px 0;border-bottom:1px solid rgba(24,41,43,.1);align-items:center}
+.ci img{width:72px;height:72px;border-radius:14px;object-fit:cover}
+.ci b{display:block;font-size:15px;line-height:1.3}
+.ci small{color:#56696a;font-size:13px}
+.ci .qty{border-color:rgba(24,41,43,.2);margin-top:6px}
+.ci .qty button{width:32px;height:32px;color:var(--ink);font-size:17px}
+.ci .p{font-weight:800;text-align:right}
+.ci .rm{display:block;border:0;background:none;color:#8a5361;font-size:13px;font-weight:700;margin-top:6px}
+.empty{padding:40px 0;text-align:center;color:#56696a}
+.dr-foot{padding:20px 24px 24px;border-top:1px solid rgba(24,41,43,.12)}
+.sum{display:flex;justify-content:space-between;font-size:15px;margin-bottom:6px}
+.sum.total{font-size:20px;font-weight:800;margin:10px 0 16px}
+.dr-foot .btn{width:100%}
+/* checkout */
+.co{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:start;padding-bottom:80px}
+.stepper{display:flex;gap:8px;margin:10px 0 26px;flex-wrap:wrap}
+.stepper span{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:800;border:1px solid var(--line);color:var(--muted)}
+.stepper span.on{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.stepper span.done{color:var(--mint);border-color:var(--mint)}
+.panel{background:var(--bg2);border-radius:24px;padding:28px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fields label{display:grid;gap:6px;font-size:14px;font-weight:700}
+.fields .full{grid-column:1/-1}
+input[type=text],input[type=email]{font:500 16px Manrope,sans-serif;color:var(--cream);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px;width:100%}
+.radio{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:16px;margin-bottom:10px;cursor:pointer}
+.radio input{accent-color:var(--pink);width:18px;height:18px}
+.radio span{flex:1}
+.radio small{display:block;color:var(--muted);font-size:13px}
+.co-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px;flex-wrap:wrap}
+.summary{background:var(--cream);color:var(--ink);border-radius:24px;padding:24px;position:sticky;top:96px}
+.summary h3{font-size:18px;margin-bottom:12px}
+.summary .line{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:6px 0}
+.summary .line span:first-child{color:#56696a}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+.legal-note{font-size:13px;color:#56696a;margin-top:12px}
+.done{text-align:center;padding:90px 0}
+.done h1{margin:14px auto;max-width:700px}
+.done p{color:var(--muted);max-width:560px;margin:0 auto}
+.legal{padding:20px 0 80px;max-width:760px}
+.legal h2{margin-top:30px;font-size:24px}
+.legal p{color:var(--muted);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:40px 0 50px;color:var(--muted);font-size:14px}
+.fgrid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+.flinks{display:flex;flex-wrap:wrap;gap:8px 20px}
+.flinks a:hover{color:var(--cream)}
+.pay{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.pay span{border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:700}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,120%);background:var(--cream);color:var(--ink);padding:12px 18px;border-radius:999px;font-weight:800;font-size:14px;z-index:60;transition:transform .3s;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.toast.on{transform:translate(-50%,0)}
+@keyframes in{from{opacity:0;filter:blur(10px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+.view.enter>*{animation:in .8s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion:reduce){@keyframes in{from{opacity:0}to{opacity:1}}}
+@media (max-width:1000px){
+ .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .hero,.about,.pd,.co{grid-template-columns:minmax(0,1fr)}
+ .summary{position:static}
+ .links{display:none}
+}
+@media (max-width:700px){
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .prod .b{padding:12px 12px 14px}
+ .prod h3{font-size:15px}
+ .prod .notes{display:none}
+ .prod .row{flex-direction:column;align-items:stretch;gap:8px}
+ .usp{grid-template-columns:minmax(0,1fr)}
+ .fields{grid-template-columns:minmax(0,1fr)}
+ .panel{padding:20px}
+ .hero{padding-top:20px}
+ section{padding:56px 0}
+ .cta .btn{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo-Shop von TP Digital Lab · Es wird nichts verkauft und nichts bezahlt. <a href="/#fertige-websites" target="_top">Mehr erfahren</a></div>
+<div class="ship-bar"><span id="shipText">Kostenloser Versand ab 39 €</span><div class="ship-track"><i id="shipFill"></i></div></div>
+<header><div class="wrap nav">
+  <a class="logo" href="#/"><b>IR</b>Ihre Rösterei</a>
+  <nav class="links" aria-label="Navigation"><a href="#/">Shop</a><a href="#/" data-scroll="roesterei">Rösterei</a><a href="#/rechtliches">Versand</a></nav>
+  <button class="cart-btn" type="button" id="openCart" aria-label="Warenkorb öffnen">Warenkorb <span id="count">0</span></button>
+</div></header>
+
+<main id="app"></main>
+
+<footer><div class="wrap fgrid">
+  <div><b style="color:var(--cream)">Ihre Rösterei</b><p>Kleine Kaffeerösterei in München. Geröstet wird jeden Dienstag.</p><div class="pay"><span>PayPal</span><span>Visa</span><span>Mastercard</span><span>Klarna</span><span>Apple Pay</span></div></div>
+  <div class="flinks"><a href="#/rechtliches">AGB</a><a href="#/rechtliches">Widerruf</a><a href="#/rechtliches">Versand und Zahlung</a><a href="#/rechtliches">Impressum</a><a href="#/rechtliches">Datenschutz</a></div>
+  <div style="width:100%">Shop-Vorlage von <a href="/" target="_top" style="color:var(--cream)">TP Digital Lab</a> · Fotos: Unsplash</div>
+</div></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Warenkorb" aria-hidden="true">
+  <div class="dr-head"><h2>Warenkorb</h2><button class="dr-close" type="button" id="closeCart">Schließen</button></div>
+  <div class="dr-ship"><span id="drShipText"></span><div class="ship-track"><i id="drShipFill"></i></div></div>
+  <div class="dr-items" id="items"></div>
+  <div class="dr-foot" id="drFoot"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+var P=[
+ {id:"espresso-nr1",cat:"espresso",kind:"Espresso",name:"Espresso Nr. 1",notes:"Schokolade, Haselnuss, wenig Säure",img:"sack",price:12.9,roast:4,origin:"Brasilien, Indien",badge:"Bestseller",coffee:true},
+ {id:"aethiopien",cat:"filter",kind:"Filter",name:"Äthiopien Guji",notes:"Erdbeere, Jasmin, sehr fruchtig",img:"beans",price:14.5,roast:1,origin:"Äthiopien, Guji",badge:"Neu",coffee:true},
+ {id:"hausmischung",cat:"espresso",kind:"Espresso",name:"Hausmischung Crema",notes:"Karamell, Nuss, viel Crema",img:"espresso",price:11.9,roast:3,origin:"Brasilien, Guatemala",coffee:true},
+ {id:"kolumbien-decaf",cat:"filter",kind:"Filter · Entkoffeiniert",name:"Kolumbien ohne Koffein",notes:"Kakao, roter Apfel",img:"grinder",price:13.5,roast:3,origin:"Kolumbien, Huila",coffee:true},
+ {id:"handfilter",cat:"zubehoer",kind:"Zubehör",name:"Handfilter-Set",notes:"Porzellanfilter, 80 Papierfilter",img:"pourover",price:34,coffee:false},
+ {id:"becher",cat:"zubehoer",kind:"Zubehör",name:"Becher aus Steinzeug",notes:"Handgemacht, jeder sieht etwas anders aus",img:"cup-handmade",price:24,coffee:false},
+ {id:"tassen",cat:"zubehoer",kind:"Zubehör",name:"Espressotassen, 2er-Set",notes:"Mit Untertasse, spülmaschinenfest",img:"cup-blue",price:29,coffee:false},
+ {id:"probierpaket",cat:"geschenk",kind:"Geschenk",name:"Probierpaket mit Becher",notes:"3 × 250 g nach Wahl der Rösterin, dazu ein Becher",img:"mug",price:48,coffee:false,badge:"Geschenkidee"}
+];
+var WEIGHTS=[["250 g",1],["500 g",1.85],["1 kg",3.4]], GRINDS=["Ganze Bohne","Siebträger","Filter","French Press"];
+var FREE=39, SHIP=4.9, KEY="demo-shop-cart";
+var fmt=function(n){return n.toFixed(2).replace(".",",")+" €"};
+var app=document.getElementById("app"), cart=[];
+try{cart=JSON.parse(localStorage.getItem(KEY))||[]}catch(e){cart=[]}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(cart))}catch(e){} renderCart();}
+function byId(id){return P.filter(function(p){return p.id===id})[0]}
+function sub(){return cart.reduce(function(s,c){return s+c.price*c.qty},0)}
+function nextRoast(){var d=new Date(), add=(2-d.getDay()+7)%7||7; d.setDate(d.getDate()+add); return d.toLocaleDateString("de-DE",{weekday:"long",day:"numeric",month:"long"})}
+function toast(t){var el=document.getElementById("toast"); el.textContent=t; el.classList.add("on"); clearTimeout(toast.t); toast.t=setTimeout(function(){el.classList.remove("on")},2200)}
+function shipInfo(){var s=sub(); return s>=FREE?["<b>Kostenloser Versand</b> ist drin.",100]:s===0?["Kostenloser Versand ab "+fmt(FREE),0]:["Noch <b>"+fmt(FREE-s)+"</b> bis zum kostenlosen Versand",Math.round(s/FREE*100)]}
+function renderCart(){
+  var n=cart.reduce(function(s,c){return s+c.qty},0), si=shipInfo();
+  document.getElementById("count").textContent=n;
+  document.getElementById("shipText").innerHTML=si[0]; document.getElementById("shipFill").style.width=si[1]+"%";
+  document.getElementById("drShipText").innerHTML=si[0]; document.getElementById("drShipFill").style.width=si[1]+"%";
+  var items=document.getElementById("items"), foot=document.getElementById("drFoot");
+  if(!cart.length){items.innerHTML='<p class="empty">Ihr Warenkorb ist leer.<br>Wie wäre es mit dem Espresso Nr. 1?</p>'; foot.innerHTML='<a class="btn btn-dark" href="#/" data-close>Weiter einkaufen</a>'; return;}
+  items.innerHTML=cart.map(function(c,i){var p=byId(c.id);return '<div class="ci"><img src="/demo/shop/img/'+p.img+'.jpg" alt=""><div><b>'+p.name+'</b><small>'+(c.opt||"")+'</small><div class="qty"><button type="button" data-q="'+i+'" data-d="-1" aria-label="Weniger">−</button><span>'+c.qty+'</span><button type="button" data-q="'+i+'" data-d="1" aria-label="Mehr">+</button></div></div><div><div class="p">'+fmt(c.price*c.qty)+'</div><button class="rm" type="button" data-rm="'+i+'">Entfernen</button></div></div>'}).join("");
+  var s=sub(), sh=s>=FREE?0:SHIP;
+  foot.innerHTML='<div class="sum"><span>Zwischensumme</span><span>'+fmt(s)+'</span></div><div class="sum"><span>Versand</span><span>'+(sh?fmt(sh):"kostenlos")+'</span></div><div class="sum total"><span>Gesamt</span><span>'+fmt(s+sh)+'</span></div><a class="btn btn-dark" href="#/kasse" data-close>Zur Kasse</a><p class="legal-note">Inkl. MwSt. Lieferung in 2 bis 3 Werktagen mit DHL.</p>';
+}
+function add(id,opt,price,qty){var k=cart.filter(function(c){return c.id===id&&c.opt===opt})[0]; if(k)k.qty+=qty; else cart.push({id:id,opt:opt,price:price,qty:qty}); save(); toast(byId(id).name+" ist im Warenkorb");}
+function openCart(o){if(o)document.getElementById("toast").classList.remove("on");document.getElementById("drawer").classList.toggle("on",o);document.getElementById("overlay").classList.toggle("on",o);document.getElementById("drawer").setAttribute("aria-hidden",!o);document.body.classList.toggle("lock",o);}
+document.getElementById("openCart").onclick=function(){openCart(true)};
+document.getElementById("closeCart").onclick=document.getElementById("overlay").onclick=function(){openCart(false)};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")openCart(false)});
+document.getElementById("drawer").addEventListener("click",function(e){var t=e.target;
+  if(t.dataset.q){var c=cart[+t.dataset.q]; c.qty+= +t.dataset.d; if(c.qty<1)cart.splice(+t.dataset.q,1); save();}
+  if(t.dataset.rm){cart.splice(+t.dataset.rm,1); save();}
+  if(t.hasAttribute("data-close"))openCart(false);
+});
+function card(p){return '<article class="prod"><div class="pic-wrap"><a class="pic" href="#/p/'+p.id+'"><img src="/demo/shop/img/'+p.img+'.jpg" alt="'+p.name+'" loading="lazy"></a>'+(p.badge?'<span class="badge">'+p.badge+'</span>':'')+'</div><div class="b"><span class="kind">'+p.kind+'</span><h3><a href="#/p/'+p.id+'">'+p.name+'</a></h3><p class="notes">'+p.notes+'</p><div class="row"><span class="price">'+(p.coffee?"ab ":"")+fmt(p.price)+'</span><button class="add" type="button" data-add="'+p.id+'">In den Warenkorb</button></div></div></article>'}
+function home(){
+  app.innerHTML='<div class="view enter"><div class="wrap hero"><div><span class="tag">Kaffeerösterei in München</span><h1>Kaffee, der vor drei Tagen noch grün war.</h1><p class="sub">Wir rösten jeden Dienstag in kleinen Mengen und verschicken am selben Tag. Bei uns liegt nichts monatelang im Lager.</p><div class="cta"><a class="btn btn-pink" href="#/" data-scroll="shop">Zum Shop</a><a class="btn btn-line" href="#/p/probierpaket">Probierpaket ansehen</a></div></div><div class="hero-img"><img src="/demo/shop/img/hero.jpg" alt="Röstmaschine mit frisch gerösteten Bohnen" fetchpriority="high"><div class="roast">Nächste Röstung<b>'+nextRoast()+'</b></div></div></div>'
+  +'<div class="wrap usp"><div><b>Versand am Röst-Tag</b>Mit DHL in 2 bis 3 Werktagen bei Ihnen.</div><div><b>Gemahlen, wie Sie wollen</b>Für Siebträger, Filter oder French Press.</div><div><b>Ab 39 € versandkostenfrei</b>Sonst 4,90 € in ganz Deutschland.</div></div>'
+  +'<section id="shop" style="padding-top:0"><div class="wrap"><div class="shop-head"><h2>Im Shop</h2><div class="filters"><button class="chip" data-f="alle" aria-pressed="true">Alle</button><button class="chip" data-f="espresso" aria-pressed="false">Espresso</button><button class="chip" data-f="filter" aria-pressed="false">Filter</button><button class="chip" data-f="zubehoer" aria-pressed="false">Zubehör</button><button class="chip" data-f="geschenk" aria-pressed="false">Geschenke</button><select id="sort" aria-label="Sortieren"><option value="">Beliebt</option><option value="up">Preis aufsteigend</option><option value="down">Preis absteigend</option></select></div></div><div class="grid" id="grid"></div></div></section>'
+  +'<section id="roesterei" style="padding-top:0"><div class="wrap about"><img src="/demo/shop/img/beans.jpg" alt="Frisch geröstete Kaffeebohnen" loading="lazy"><div><span class="tag">Die Rösterei</span><h2 style="margin-top:10px">Zwei Leute, eine Röstmaschine, 15 Kilo pro Durchgang.</h2><p>Wir kaufen direkt bei Importeuren, die die Farmen persönlich kennen. Jede Sorte probieren wir mindestens fünfmal, bevor sie in den Shop kommt.</p><div class="steps"><div><b>Di</b><span>Rösten, über Nacht ausgasen lassen</span></div><div><b>Mi</b><span>Abfüllen, mahlen, verpacken</span></div><div><b>Mi</b><span>Abholung durch DHL am Nachmittag</span></div></div></div></div></section></div>';
+  var f="alle", s="";
+  function draw(){var list=P.filter(function(p){return f==="alle"||p.cat===f}); if(s==="up")list.sort(function(a,b){return a.price-b.price}); if(s==="down")list.sort(function(a,b){return b.price-a.price}); document.getElementById("grid").innerHTML=list.map(card).join("");}
+  app.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){app.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed",x===b)}); f=b.dataset.f; draw();}});
+  document.getElementById("sort").onchange=function(){s=this.value; draw();};
+  draw();
+}
+function product(id){
+  var p=byId(id); if(!p)return home();
+  var w=0,g=0,q=1;
+  function price(){return p.coffee?Math.round(p.price*WEIGHTS[w][1]*10)/10:p.price}
+  var meter=p.coffee?'<div class="meter"><b style="font-size:14px">Röstgrad</b><div class="bar">'+[1,2,3,4,5].map(function(i){return '<i class="'+(i<=p.roast?"on":"")+'"></i>'}).join("")+'</div><div class="ends"><span>hell, fruchtig</span><span>dunkel, kräftig</span></div></div>':'';
+  var opts=p.coffee?'<div class="opt"><b>Menge</b><div class="chips" id="w">'+WEIGHTS.map(function(x,i){return '<button class="chip" type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+x[0]+'</button>'}).join("")+'</div></div><div class="opt"><b>Mahlgrad</b><div class="chips" id="g">'+GRINDS.map(function(x,i){return '<button class="chip" type="button" data-i="'+i+'" aria-pressed="'+(i===0)+'">'+x+'</button>'}).join("")+'</div></div>':'';
+  var facts=p.coffee?'<div class="facts"><span><b>Herkunft:</b> '+p.origin+'</span><span><b>Nächste Röstung:</b> '+nextRoast()+'</span><span><b>Haltbar:</b> am besten innerhalb von 6 Wochen nach Röstung</span></div>':'<div class="facts"><span><b>Versand:</b> 2 bis 3 Werktage</span><span><b>Rückgabe:</b> 14 Tage, ohne Begründung</span></div>';
+  var rel=P.filter(function(x){return x.id!==p.id&&x.cat===p.cat}).concat(P.filter(function(x){return x.cat!==p.cat})).slice(0,4);
+  app.innerHTML='<div class="view enter"><div class="wrap"><p class="crumbs"><a href="#/">Shop</a> / '+p.kind+' / '+p.name+'</p><div class="pd"><div class="pd-img"><img src="/demo/shop/img/'+p.img+'.jpg" alt="'+p.name+'"></div><div><span class="tag">'+p.kind+'</span><h1>'+p.name+'</h1><p class="notes">'+p.notes+'</p>'+meter+opts+'<div class="buy"><span class="pd-price" id="pp"></span><div class="qty"><button type="button" id="qm" aria-label="Weniger">−</button><span id="qv">1</span><button type="button" id="qp" aria-label="Mehr">+</button></div><button class="btn btn-pink" type="button" id="addBtn">In den Warenkorb</button></div><p class="note">Inkl. MwSt., zzgl. Versand. Ab 39 € versandkostenfrei.</p>'+facts+'</div></div></div><section><div class="wrap"><h2 style="margin-bottom:20px">Passt dazu</h2><div class="grid">'+rel.map(card).join("")+'</div></div></section></div>';
+  function upd(){document.getElementById("pp").textContent=fmt(price()*q); document.getElementById("qv").textContent=q;}
+  ["w","g"].forEach(function(k){var el=document.getElementById(k); if(!el)return; el.querySelectorAll("button").forEach(function(b){b.onclick=function(){el.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)}); if(k==="w")w=+b.dataset.i; else g=+b.dataset.i; upd();}})});
+  document.getElementById("qm").onclick=function(){if(q>1)q--; upd()};
+  document.getElementById("qp").onclick=function(){q++; upd()};
+  document.getElementById("addBtn").onclick=function(){add(p.id,p.coffee?WEIGHTS[w][0]+" · "+GRINDS[g]:"",price(),q); openCart(true);};
+  upd(); window.scrollTo(0,0);
+}
+var co={step:1,ship:0,pay:0};
+function checkout(){
+  if(!cart.length){app.innerHTML='<div class="view enter wrap done"><span class="tag">Kasse</span><h1>Ihr Warenkorb ist leer.</h1><p>Legen Sie etwas in den Warenkorb, dann geht es hier weiter.</p><div class="cta" style="justify-content:center"><a class="btn btn-pink" href="#/">Zum Shop</a></div></div>';return;}
+  var ships=[["DHL Standard","2 bis 3 Werktage",sub()>=FREE?0:SHIP],["DHL Express","Am nächsten Werktag",9.9]], pays=[["PayPal",""],["Kreditkarte","Visa, Mastercard"],["Klarna","Rechnung oder Ratenkauf"],["Apple Pay",""]];
+  var s=sub(), sh=ships[co.ship][2];
+  var labels=["Adresse","Versand","Zahlung","Prüfen"];
+  var stepper='<div class="stepper">'+labels.map(function(l,i){return '<span class="'+(i+1===co.step?"on":i+1<co.step?"done":"")+'">'+(i+1)+'. '+l+'</span>'}).join("")+'</div>';
+  var body="";
+  if(co.step===1)body='<div class="fields"><label>Vorname<input type="text" autocomplete="given-name"></label><label>Nachname<input type="text" autocomplete="family-name"></label><label class="full">E-Mail<input type="email" autocomplete="email"></label><label class="full">Straße und Hausnummer<input type="text" autocomplete="street-address"></label><label>PLZ<input type="text" autocomplete="postal-code"></label><label>Ort<input type="text" autocomplete="address-level2"></label></div>';
+  if(co.step===2)body=ships.map(function(x,i){return '<label class="radio"><input type="radio" name="ship" value="'+i+'"'+(i===co.ship?" checked":"")+'><span>'+x[0]+'<small>'+x[1]+'</small></span><b>'+(x[2]?fmt(x[2]):"kostenlos")+'</b></label>'}).join("");
+  if(co.step===3)body=pays.map(function(x,i){return '<label class="radio"><input type="radio" name="pay" value="'+i+'"'+(i===co.pay?" checked":"")+'><span>'+x[0]+(x[1]?'<small>'+x[1]+'</small>':'')+'</span></label>'}).join("")+'<p class="note">Im echten Shop läuft die Zahlung über einen geprüften Anbieter wie Stripe, PayPal oder Klarna. Kartendaten landen nie auf Ihrem Server.</p>';
+  if(co.step===4)body='<p>Versand: <b>'+ships[co.ship][0]+'</b><br>Zahlung: <b>'+pays[co.pay][0]+'</b></p><p class="note">Mit Klick auf „Zahlungspflichtig bestellen“ akzeptieren Sie die AGB und die Widerrufsbelehrung. In dieser Demo wird nichts bestellt.</p>';
+  var next=co.step<4?'<button class="btn btn-pink" type="button" id="next">Weiter</button>':'<button class="btn btn-pink" type="button" id="order">Zahlungspflichtig bestellen</button>';
+  app.innerHTML='<div class="view enter wrap"><p class="crumbs"><a href="#/">Shop</a> / Kasse</p><h1 style="font-size:clamp(34px,4vw,52px)">Kasse</h1>'+stepper+'<div class="co"><div class="panel">'+body+'<div class="co-nav">'+(co.step>1?'<button class="btn btn-line" type="button" id="back">Zurück</button>':'<a class="btn btn-line" href="#/">Weiter einkaufen</a>')+next+'</div></div><aside class="summary"><h3>Ihre Bestellung</h3>'+cart.map(function(c){return '<div class="line"><span>'+c.qty+' × '+byId(c.id).name+'</span><span>'+fmt(c.price*c.qty)+'</span></div>'}).join("")+'<div class="line"><span>Versand</span><span>'+(sh?fmt(sh):"kostenlos")+'</span></div><div class="line" style="font-weight:800;font-size:17px;border-top:1px solid rgba(24,41,43,.15);margin-top:6px;padding-top:12px"><span style="color:var(--ink)">Gesamt</span><span>'+fmt(s+sh)+'</span></div><p class="legal-note">Inkl. 7 % MwSt. auf Kaffee, 19 % auf Zubehör.</p></aside></div></div>';
+  app.querySelectorAll("input[name=ship]").forEach(function(r){r.onchange=function(){co.ship=+r.value; checkout();}});
+  app.querySelectorAll("input[name=pay]").forEach(function(r){r.onchange=function(){co.pay=+r.value;}});
+  var n=document.getElementById("next"), b=document.getElementById("back"), o=document.getElementById("order");
+  if(n)n.onclick=function(){co.step++; checkout(); window.scrollTo(0,0)};
+  if(b)b.onclick=function(){co.step--; checkout()};
+  if(o)o.onclick=function(){cart=[]; save(); co={step:1,ship:0,pay:0}; app.innerHTML='<div class="view enter wrap done"><span class="tag">Demo</span><h1>So sieht die Bestätigung aus.</h1><p>Im echten Shop bekommt die Kundin jetzt eine E-Mail mit Rechnung, und Sie sehen die Bestellung in Ihrer Übersicht. Hier wurde nichts bestellt und nichts bezahlt.</p><div class="cta" style="justify-content:center"><a class="btn btn-pink" href="#/">Zurück zum Shop</a><a class="btn btn-line" href="/#fertige-websites" target="_top">Diesen Shop anfragen</a></div></div>'; window.scrollTo(0,0);};
+}
+function legal(){
+  app.innerHTML='<div class="view enter wrap legal"><p class="crumbs"><a href="#/">Shop</a> / Rechtliches</p><span class="tag">Wichtig für Ihren Shop</span><h1 style="font-size:clamp(34px,4vw,52px)">AGB, Widerruf, Versand, Impressum, Datenschutz.</h1><p>In dieser Demo stehen hier keine echten Texte. Für einen Online-Shop in Deutschland sind diese Seiten Pflicht.</p><h2>Was Ihr Shop braucht</h2><p>AGB, Widerrufsbelehrung mit Muster-Formular, Informationen zu Versand und Zahlung, Impressum und Datenschutzerklärung. Dazu klare Preisangaben mit MwSt. und Versandkosten, so wie in dieser Demo.</p><h2>Woher die Texte kommen</h2><p>Am sichersten über einen Rechtstexte-Dienst wie den Händlerbund oder die IT-Recht Kanzlei. Die Texte werden automatisch aktualisiert, wenn sich Gesetze ändern. Ich binde sie in Ihren Shop ein.</p><div class="cta"><a class="btn btn-pink" href="#/">Zurück zum Shop</a></div></div>';
+  window.scrollTo(0,0);
+}
+function route(){
+  var h=location.hash.replace(/^#/,"")||"/";
+  if(h.indexOf("/p/")===0)product(h.slice(3));
+  else if(h==="/kasse")checkout();
+  else if(h==="/rechtliches")legal();
+  else home();
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest("[data-add]"); if(a){var p=byId(a.dataset.add); add(p.id,p.coffee?"250 g · Ganze Bohne":"",p.price,1); openCart(true); return;}
+  var sc=e.target.closest("[data-scroll]"); if(sc){e.preventDefault(); var go=function(){var t=document.getElementById(sc.dataset.scroll); if(t)t.scrollIntoView({behavior:"smooth"})}; if(location.hash&&location.hash!=="#/"){location.hash="#/"; setTimeout(go,60);} else go();}
+});
+window.addEventListener("hashchange",route);
+renderCart(); route();
+})();
+</script>
+</body>
+</html>
