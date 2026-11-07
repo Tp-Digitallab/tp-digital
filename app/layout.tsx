@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Webdesign aus München: Websites für kleine Unternehmen ab 300 €. Persönliche Umsetzung, mobile Optimierung und klarer Festpreis. Jetzt Angebot anfragen.",
+    "Webdesign aus München: Websites für kleine Unternehmen, Landingpage für 300 €. Persönliche Umsetzung, mobile Optimierung und klarer Festpreis. Jetzt Angebot anfragen.",
 
   keywords: [
     "Webdesign Deutschland",

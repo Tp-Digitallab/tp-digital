@@ -164,20 +164,20 @@ const uiCopy = {
 
 const prices = {
   de: {
-    webdesign: "ab 300 €",
-    onlineShop: "ab 1.500 €",
+    webdesign: "300 €",
+    onlineShop: "1.500 €",
     seo: "nach Umfang",
     digitalSolutions: "nach Absprache",
   },
   en: {
-    webdesign: "from €300",
-    onlineShop: "from €1,500",
+    webdesign: "€300",
+    onlineShop: "€1,500",
     seo: "based on scope",
     digitalSolutions: "by agreement",
   },
   ru: {
-    webdesign: "от 300 €",
-    onlineShop: "от 1 500 €",
+    webdesign: "300 €",
+    onlineShop: "1 500 €",
     seo: "по объёму",
     digitalSolutions: "по договорённости",
   },

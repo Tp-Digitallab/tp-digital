@@ -87,7 +87,7 @@ export const topicPages: Record<string, TopicPageData> = {
     intro: "Kunden vergleichen drei Betriebe, bevor sie anrufen. Wer Preise, echte Projekte und ein klares Einsatzgebiet zeigt, bekommt die Anfrage. Ihre Website erledigt das Erklären, Sie machen die Arbeit.",
     price: "290 €",
     cta: "Website anfragen",
-    demo: { slug: "handwerk", title: "Demo: Maler und Renovierung", text: "Preisrechner pro Quadratmeter, Projekte mit Dauer und Umfang, Ablauf bis zum Festpreis. Für mehr Seiten gibt es auch die Firmenwebsite ab 790 €.", cta: "Live-Demo ansehen" },
+    demo: { slug: "handwerk", title: "Demo: Maler und Renovierung", text: "Preisrechner pro Quadratmeter, Projekte mit Dauer und Umfang, Ablauf bis zum Festpreis. Für mehr Seiten gibt es auch die Firmenwebsite für 790 €.", cta: "Live-Demo ansehen" },
     needsTitle: "Was Kunden vor dem Anruf wissen wollen.",
     needs: [
       { title: "Was kostet das ungefähr?", text: "Ein Preisrechner oder Richtpreise pro Quadratmeter. Spart Ihnen Anrufe von Leuten, für die der Preis nicht passt." },

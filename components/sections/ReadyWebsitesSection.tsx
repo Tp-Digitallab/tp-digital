@@ -52,13 +52,15 @@ const copy = {
     kind: "Landingpage",
     firmKind: "Firmenwebsite",
     firmTitle: "Mehr als eine Seite: zum Durchklicken.",
-    firmText: "Startseite, jede Leistung mit eigener Seite und Preisen, Projekte mit Detailseite, Über uns und Kontakt. Zehn Seiten, die auch bei Google einzeln gefunden werden.",
-    firmPrice: "ab 790 €",
+    firmPrice: "790 €",
     firmDemo: "Firmenwebsite ansehen",
+    firmFeatures: ["Bis zu 5 Seiten: z. B. Start, Leistungen, Projekte, Über uns, Kontakt", "Design nach Ihrem Logo und Ihren Farben", "Kontaktformular, Telefon und WhatsApp", "Jede Seite einzeln bei Google auffindbar", "Impressum und Datenschutz", "1 Monat technischer Support", "2 Korrekturrunden"],
+    shopFeatures: ["Bis zu 20 Produkte", "Warenkorb und Kasse", "Zahlung mit PayPal, Karte oder Klarna", "Admin-Bereich für Produkte und Preise", "Impressum und Datenschutz", "2 Monate technischer Support", "2 Korrekturrunden"],
+    firmText: "Startseite, Leistungen mit Preisen, Projekte, Über uns und Kontakt. Die Demo zeigt, wie sich das durchklicken lässt.",
     shopKind: "Online-Shop",
     shopTitle: "Ein echter Shop zum Ausprobieren.",
     shopText: "Kaffeerösterei mit Filtern, Produktseiten mit Mahlgrad und Menge, Warenkorb und Kasse in vier Schritten. Legen Sie etwas in den Warenkorb, es wird nichts bezahlt.",
-    shopPrice: "ab 1.500 €",
+    shopPrice: "1.500 €",
     shopDemo: "Shop ausprobieren",
   },
   en: {
@@ -74,13 +76,15 @@ const copy = {
     kind: "Landing page",
     firmKind: "Business website",
     firmTitle: "More than one page: click through it.",
-    firmText: "Home, a page for every service with prices, projects with a detail page, about and contact. Ten pages that Google can find one by one.",
-    firmPrice: "from €790",
+    firmPrice: "€790",
     firmDemo: "View business website",
+    firmFeatures: ["Up to 5 pages: e.g. home, services, projects, about, contact", "Design based on your logo and colours", "Contact form, phone and WhatsApp", "Each page can be found on Google", "Imprint and privacy policy", "1 month of technical support", "2 revision rounds"],
+    shopFeatures: ["Up to 20 products", "Cart and checkout", "Payment via PayPal, card or Klarna", "Admin area for products and prices", "Imprint and privacy policy", "2 months of technical support", "2 revision rounds"],
+    firmText: "Home, services with prices, projects, about and contact. The demo shows how it feels to click through.",
     shopKind: "Online shop",
     shopTitle: "A real shop to try out.",
     shopText: "Coffee roastery with filters, product pages with grind and size, cart and a four-step checkout. Add something to the cart, nothing is charged.",
-    shopPrice: "from €1,500",
+    shopPrice: "€1,500",
     shopDemo: "Try the shop",
   },
   ru: {
@@ -96,13 +100,15 @@ const copy = {
     kind: "Лендинг",
     firmKind: "Сайт компании",
     firmTitle: "Больше одной страницы: пощёлкайте сами.",
-    firmText: "Главная, отдельная страница с ценами на каждую услугу, проекты со страницей проекта, о компании и контакты. Десять страниц, каждую из которых Google находит отдельно.",
-    firmPrice: "от 790 €",
+    firmPrice: "790 €",
     firmDemo: "Открыть сайт компании",
+    firmFeatures: ["До 5 страниц: например, главная, услуги, проекты, о компании, контакты", "Дизайн под ваш логотип и цвета", "Форма заявки, звонок и WhatsApp", "Каждую страницу Google находит отдельно", "Impressum и Datenschutz", "1 месяц технической поддержки", "2 раунда правок"],
+    shopFeatures: ["До 20 товаров", "Корзина и оформление заказа", "Оплата через PayPal, карту или Klarna", "Админ-панель для товаров и цен", "Impressum и Datenschutz", "2 месяца технической поддержки", "2 раунда правок"],
+    firmText: "Главная, услуги с ценами, проекты, о компании и контакты. В демо можно пощёлкать и посмотреть, как это работает.",
     shopKind: "Интернет-магазин",
     shopTitle: "Настоящий магазин, который можно потрогать.",
     shopText: "Обжарка кофе: фильтры, страницы товаров с помолом и весом, корзина и оформление заказа в четыре шага. Положите что-нибудь в корзину, оплаты не будет.",
-    shopPrice: "от 1 500 €",
+    shopPrice: "1 500 €",
     shopDemo: "Попробовать магазин",
   },
 };
@@ -152,8 +158,8 @@ export default function ReadyWebsitesSection() {
 
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           {[
-            { slug: "firma", kind: t.firmKind, title: t.firmTitle, text: t.firmText, price: t.firmPrice, cta: t.firmDemo },
-            { slug: "shop", kind: t.shopKind, title: t.shopTitle, text: t.shopText, price: t.shopPrice, cta: t.shopDemo },
+            { slug: "firma", kind: t.firmKind, title: t.firmTitle, text: t.firmText, price: t.firmPrice, cta: t.firmDemo, features: t.firmFeatures },
+            { slug: "shop", kind: t.shopKind, title: t.shopTitle, text: t.shopText, price: t.shopPrice, cta: t.shopDemo, features: t.shopFeatures },
           ].map((pkg) => (
             <article key={pkg.slug} className="flex min-w-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]/70">
               <a href={`/demo/${pkg.slug}`} target="_blank" rel="noopener" className="block overflow-hidden" aria-label={pkg.cta}>
@@ -166,6 +172,11 @@ export default function ReadyWebsitesSection() {
                 </div>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">{pkg.title}</h3>
                 <p className="mt-3 text-base leading-7 text-white/70">{pkg.text}</p>
+                <ul className="mt-4 grid gap-1.5 text-sm leading-6 text-white/75 sm:grid-cols-2 sm:gap-x-4">
+                  {pkg.features.map((f) => (
+                    <li key={f} className="flex gap-2"><span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-300" />{f}</li>
+                  ))}
+                </ul>
                 <div className="mt-auto flex flex-col gap-3 pt-6 sm:flex-row">
                   <a href={`/demo/${pkg.slug}`} target="_blank" rel="noopener" className="inline-flex min-h-11 items-center justify-center rounded-full bg-blue-600 px-5 py-2.5 text-center text-sm font-semibold text-white">{pkg.cta}</a>
                   <RequestLink className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-center text-sm font-medium text-white/85 hover:bg-white/10">{t.request}</RequestLink>

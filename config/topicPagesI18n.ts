@@ -55,7 +55,7 @@ const en: Record<string, Override> = {
     accent: "while you're on site.",
     intro: "Customers compare three companies before they call. Whoever shows prices, real projects and a clear service area gets the enquiry. Your website does the explaining, you do the work.",
     cta: "Request a website",
-    demo: { title: "Demo: painting and renovation", text: "Price calculator per square metre, projects with duration and scope, the steps up to a fixed price. For more pages there is also the business website from €790.", cta: "View live demo" },
+    demo: { title: "Demo: painting and renovation", text: "Price calculator per square metre, projects with duration and scope, the steps up to a fixed price. For more pages there is also the business website for €790.", cta: "View live demo" },
     needsEyebrow: "What matters",
     needsTitle: "What customers want to know before calling.",
     needs: [
@@ -206,7 +206,7 @@ const ru: Record<string, Override> = {
     accent: "пока вы на объекте.",
     intro: "Клиенты сравнивают три фирмы, прежде чем позвонить. Заявку получает тот, кто показывает цены, реальные объекты и понятную зону работы. Сайт объясняет, вы работаете.",
     cta: "Заказать сайт",
-    demo: { title: "Демо: покраска и ремонт", text: "Калькулятор цены за квадратный метр, объекты со сроками и объёмом, путь до фиксированной цены. Для нескольких страниц есть сайт компании от 790 €.", cta: "Открыть демо" },
+    demo: { title: "Демо: покраска и ремонт", text: "Калькулятор цены за квадратный метр, объекты со сроками и объёмом, путь до фиксированной цены. Для нескольких страниц есть сайт компании за 790 €.", cta: "Открыть демо" },
     needsEyebrow: "Что важно",
     needsTitle: "Что клиенты хотят знать до звонка.",
     needs: [

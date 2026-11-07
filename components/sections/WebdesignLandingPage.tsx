@@ -138,7 +138,7 @@ const copy: Record<Language, Copy> = {
         "Persönliche Website-Entwicklung aus München",
       title:
         "Websites für Ihr Unternehmen.",
-      accent: "ab 300 €",
+      accent: "300 €",
       description:
         "Individuell gestaltet, mobil optimiert. Damit Kunden Ihr Angebot verstehen und Sie erreichen.",
       primaryCta:
@@ -149,7 +149,7 @@ const copy: Record<Language, Copy> = {
         "Umfang und Festpreis vor dem Start.",
       cardTitle:
         "Das ist dabei",
-      cardPrice: "ab 300 €",
+      cardPrice: "300 €",
       cardDescription:
         "",
       cardFeatures: [
@@ -229,8 +229,8 @@ const copy: Record<Language, Copy> = {
       title:
         "Die passende Website.",
       description:
-        "Startpreise für einen klar vereinbarten Umfang.",
-      from: "ab",
+        "Feste Preise für einen klar vereinbarten Umfang.",
+      from: "",
       select: "Paket anfragen",
       selected: "Ausgewählt",
       finalPrice:
@@ -407,7 +407,7 @@ const copy: Record<Language, Copy> = {
         "Personal website development from Munich",
       title:
         "Websites for your business.",
-      accent: "from €300",
+      accent: "€300",
       description:
         "Custom design, built for mobile. Help customers understand your offer and get in touch.",
       primaryCta:
@@ -418,7 +418,7 @@ const copy: Record<Language, Copy> = {
         "Scope and fixed price agreed before work starts.",
       cardTitle:
         "What is included",
-      cardPrice: "from €300",
+      cardPrice: "€300",
       cardDescription:
         "",
       cardFeatures: [
@@ -501,7 +501,7 @@ const copy: Record<Language, Copy> = {
         "Choose your website.",
       description:
         "Starting prices for a clearly agreed scope.",
-      from: "from",
+      from: "",
       select: "Request this package",
       selected: "Selected",
       finalPrice:
@@ -663,7 +663,7 @@ const copy: Record<Language, Copy> = {
         "Личная разработка сайтов из Мюнхена",
       title:
         "Сайты для вашего бизнеса.",
-      accent: "от 300 €",
+      accent: "300 €",
       description:
         "Индивидуальный дизайн и удобная мобильная версия. Клиенты быстро поймут ваше предложение и свяжутся с вами.",
       primaryCta:
@@ -674,7 +674,7 @@ const copy: Record<Language, Copy> = {
         "Объём и фиксированная цена — до начала работ.",
       cardTitle:
         "Что входит",
-      cardPrice: "от 300 €",
+      cardPrice: "300 €",
       cardDescription:
         "",
       cardFeatures: [
@@ -758,7 +758,7 @@ const copy: Record<Language, Copy> = {
         "Сайт под вашу задачу.",
       description:
         "Стартовые цены для согласованного объёма.",
-      from: "от",
+      from: "",
       select: "Запросить пакет",
       selected: "Выбрано",
       finalPrice:
@@ -868,7 +868,7 @@ const copy: Record<Language, Copy> = {
           question:
             "Сколько стоит профессиональный сайт?",
           answer:
-            "Лендинг стоит от 300 €, сайт компании до пяти страниц — от 790 €, интернет-магазин — от 1 500 €. Окончательная фиксированная цена указывается письменно до начала проекта.",
+            "Лендинг стоит 300 €, сайт компании до пяти страниц — 790 €, интернет-магазин — 1 500 €. Дополнительные пожелания обсуждаем заранее и согласовываем отдельно.",
         },
         {
           question: "Что нужно от меня?",
@@ -1132,7 +1132,7 @@ export default function WebdesignLandingPage() {
                     </h3>
 
                     <p className="mt-4 text-5xl font-semibold">
-                      {t.pricing.from} {price}
+                      {t.pricing.from ? `${t.pricing.from} ` : ""}{price}
                     </p>
 
                     <p className="mt-5 leading-7 text-white/55">

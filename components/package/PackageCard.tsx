@@ -33,7 +33,7 @@ const packageGoals = {
 
 const priceNotes = {
   de: {
-    from: "Festpreis ab",
+    from: "Festpreis",
     payment:
       "Die genaue Leistung und der endgültige Festpreis werden vor dem Start schriftlich vereinbart.",
     revisions: "2 Korrekturrunden inklusive",
@@ -41,7 +41,7 @@ const priceNotes = {
     details: "Alle enthaltenen Leistungen",
   },
   en: {
-    from: "Fixed price from",
+    from: "Fixed price",
     payment:
       "The exact scope and final fixed price are agreed in writing before work begins.",
     revisions: "2 revision rounds included",
@@ -49,7 +49,7 @@ const priceNotes = {
     details: "All included services",
   },
   ru: {
-    from: "Фиксированная цена от",
+    from: "Фиксированная цена",
     payment:
       "Точный объём работ и окончательную фиксированную цену согласуем письменно до начала проекта.",
     revisions: "2 раунда правок включены",

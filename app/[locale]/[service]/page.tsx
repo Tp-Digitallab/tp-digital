@@ -54,21 +54,21 @@ const localeOpenGraph: Record<
 const webdesignMetadata = {
   de: {
     title:
-      "Webdesign München: Website erstellen ab 300 € | TP Digital Lab",
+      "Webdesign München: Website erstellen für 300 € | TP Digital Lab",
     description:
-      "Websites für kleine Unternehmen aus München. Landingpage ab 300 €, Firmenwebsite ab 790 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
+      "Websites für kleine Unternehmen aus München. Landingpage für 300 €, Firmenwebsite für 790 €. Persönliche Umsetzung und schriftliches Festpreis-Angebot.",
   },
   en: {
     title:
-      "Web Design Munich: Business Websites from €300 | TP Digital Lab",
+      "Web Design Munich: Business Websites for €300 | TP Digital Lab",
     description:
-      "Professional websites for small businesses: landing pages from €300 and business websites from €790. Personal implementation from Munich and a written no-obligation quote.",
+      "Professional websites for small businesses: landing pages for €300 and business websites for €790. Personal implementation from Munich and a written no-obligation quote.",
   },
   ru: {
     title:
-      "Создание сайтов в Мюнхене и Германии от 300 € | TP Digital Lab",
+      "Создание сайтов в Мюнхене и Германии за 300 € | TP Digital Lab",
     description:
-      "Разработка сайтов для малого бизнеса в Мюнхене и по всей Германии. Лендинг от 300 €, сайт компании от 790 €. Общение на русском и фиксированная стоимость.",
+      "Разработка сайтов для малого бизнеса в Мюнхене и по всей Германии. Лендинг за 300 €, сайт компании за 790 €. Общение на русском и фиксированная стоимость.",
   },
 } as const;
 
@@ -79,9 +79,9 @@ const serviceMetadata = {
     ru: { title: "SEO-аудит и продвижение сайтов в Германии | TP Digital Lab", description: "Технический SEO-аудит, оптимизация страниц и помощь с Google Search Console для малого бизнеса в Германии. Общение на русском, понятный план работ." },
   },
   "online-shop": {
-    de: { title: "Onlineshop erstellen lassen ab 1.500 € | TP Digital Lab München", description: "Onlineshop für kleine Unternehmen: bis zu 20 Produkte im Einstiegspaket, Warenkorb und vereinbarte Zahlungsanbindung. Entwicklung aus München, Festpreis vor dem Start." },
-    en: { title: "Online Store Development from €1,500 | TP Digital Lab Munich", description: "Online stores for small businesses in Germany. Starter scope with up to 20 products, a shopping cart and an agreed payment integration. Request a fixed-price quote." },
-    ru: { title: "Создание интернет-магазина в Германии от 1 500 € | TP Digital Lab", description: "Разработка интернет-магазинов для малого бизнеса в Германии: до 20 товаров в стартовом пакете, корзина и согласованная интеграция оплаты. Общение на русском." },
+    de: { title: "Onlineshop erstellen lassen für 1.500 € | TP Digital Lab München", description: "Onlineshop für kleine Unternehmen: bis zu 20 Produkte im Einstiegspaket, Warenkorb und vereinbarte Zahlungsanbindung. Entwicklung aus München, Festpreis vor dem Start." },
+    en: { title: "Online Store Development for €1,500 | TP Digital Lab Munich", description: "Online stores for small businesses in Germany. Starter scope with up to 20 products, a shopping cart and an agreed payment integration. Request a fixed-price quote." },
+    ru: { title: "Создание интернет-магазина в Германии за 1 500 € | TP Digital Lab", description: "Разработка интернет-магазинов для малого бизнеса в Германии: до 20 товаров в стартовом пакете, корзина и согласованная интеграция оплаты. Общение на русском." },
   },
   "digitale-loesungen": {
     de: { title: "Website überarbeiten & Fehler beheben | TP Digital Lab München", description: "Kontaktformular reparieren, mobile Ansicht verbessern oder eine Funktion ergänzen. Hilfe für bestehende Websites aus München, auch für kleine Aufgaben zum vereinbarten Festpreis." },
