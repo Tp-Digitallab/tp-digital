@@ -217,7 +217,7 @@ export default function MobileMenu() {
         aria-label={copy.open}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#f7f5f3] text-white shadow-[0_8px_30px_rgba(23,42,57,0.12)] transition-colors hover:bg-[#e2ddd8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95 md:hidden"
+        className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[var(--card)] text-white shadow-[0_8px_30px_rgba(23,42,57,0.12)] transition-colors hover:bg-[var(--card-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95 md:hidden"
       >
         <Menu
           size={21}
@@ -237,7 +237,7 @@ export default function MobileMenu() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] overflow-y-auto bg-[#e9e4e0]"
+            className="fixed inset-0 z-[100] overflow-y-auto bg-[var(--paper)]"
           >
             <div
               aria-hidden="true"
@@ -275,7 +275,7 @@ export default function MobileMenu() {
                   type="button"
                   onClick={() => setOpen(false)}
                   aria-label={copy.close}
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[#f7f5f3]/70 text-white transition-colors hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95"
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[var(--card)]/70 text-white transition-colors hover:bg-white/[0.1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-95"
                 >
                   <X
                     size={22}
@@ -304,7 +304,7 @@ export default function MobileMenu() {
                       onClick={() =>
                         handleNavigation(item.href)
                       }
-                      className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-[#f7f5f3]/70 px-5 text-left transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.985]"
+                      className="group flex min-h-14 w-full items-center justify-between rounded-2xl border border-white/[0.08] bg-[var(--card)]/70 px-5 text-left transition-colors hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 active:scale-[0.985]"
                     >
                       <span className="text-base font-medium text-white/90">
                         {item.name}
@@ -321,7 +321,7 @@ export default function MobileMenu() {
                   {copy.language}
                 </p>
 
-                <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/[0.08] bg-[#f7f5f3]/70 p-1.5">
+                <div className="mt-4 grid grid-cols-3 gap-2 rounded-2xl border border-white/[0.08] bg-[var(--card)]/70 p-1.5">
                   {languages.map((item) => {
                     const active =
                       language === item.code;

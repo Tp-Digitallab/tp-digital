@@ -73,7 +73,7 @@ export default function Header() {
           <ScrollLink
             href={homeHref("#top")}
             aria-label="TP Digital Lab"
-            className="group flex shrink-0 items-center gap-2.5 rounded-full border border-white/10 bg-[#f7f5f3]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4"
+            className="group flex shrink-0 items-center gap-2.5 rounded-full border border-white/10 bg-[var(--card)]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-4"
           >
             <span className="whitespace-nowrap text-[17px] tracking-tight text-white">
               <span className="font-bold">TP</span>
@@ -83,7 +83,7 @@ export default function Header() {
 
           <nav
             aria-label={copy.navigation}
-            className="relative hidden items-center gap-5 overflow-hidden rounded-full border border-white/10 bg-[#f7f5f3]/80 px-6 py-3 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl md:flex lg:gap-7"
+            className="relative hidden items-center gap-5 overflow-hidden rounded-full border border-white/10 bg-[var(--card)]/80 px-6 py-3 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl md:flex lg:gap-7"
           >
 
             {navigation.map((item) => (

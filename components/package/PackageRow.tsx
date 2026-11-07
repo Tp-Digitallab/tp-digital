@@ -35,7 +35,7 @@ export default function PackageRow({
         border
         border-white/10
 
-        bg-[#f7f5f3]/70
+        bg-[var(--card)]/70
 
         p-10
 

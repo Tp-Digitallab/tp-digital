@@ -202,7 +202,7 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-[28px] border border-blue-400/20 bg-[#f7f5f3] p-6 sm:mt-10 sm:p-8 lg:p-10">
+        <div className="mt-8 rounded-[28px] border border-blue-400/20 bg-[var(--card)] p-6 sm:mt-10 sm:p-8 lg:p-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-2xl">
               <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl">

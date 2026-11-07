@@ -272,7 +272,7 @@ export default function ServicePage({
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link
                   href="#anfrage"
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#e9e4e0]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-600 px-7 py-4 text-center font-semibold text-white transition-colors hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--paper)]"
                 >
                   {ui.request}
 
@@ -281,7 +281,7 @@ export default function ServicePage({
 
                 <Link
                   href={serviceKey === "onlineShop" ? "#beispiel" : `${homePath(language)}#projects`}
-                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-[#f7f5f3]/70 px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[#e9e4e0]"
+                  className="inline-flex min-h-14 items-center justify-center gap-3 rounded-full border border-white/15 bg-[var(--card)]/70 px-7 py-4 text-center font-medium text-white/80 transition-colors hover:border-white/30 hover:bg-white/[0.08] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300 focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--paper)]"
                 >
                   {serviceKey === "onlineShop" ? offer?.example.link : ui.references}
 
@@ -292,7 +292,7 @@ export default function ServicePage({
           </Container>
         </section>
 
-        <section className="relative z-10 border-y border-white/10 bg-[#f7f5f3]/70 py-14 sm:py-20">
+        <section className="relative z-10 border-y border-white/10 bg-[var(--card)]/70 py-14 sm:py-20">
           <Container>
             <div className="space-y-8">
               <div>
@@ -313,7 +313,7 @@ export default function ServicePage({
                 {(offer?.deliverables ?? content.services.map((title) => ({ title, text: "" }))).map((service) => (
                   <div
                     key={service.title}
-                    className="rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
+                    className="rounded-3xl border border-white/10 bg-[var(--card)]/70 p-6 transition-colors hover:border-blue-400/30 hover:bg-white/[0.06]"
                   >
                     <CheckCircle2
                       aria-hidden="true"
@@ -343,7 +343,7 @@ export default function ServicePage({
           </section>
         )}
 
-        <section className="relative z-10 border-y border-white/10 bg-[#f7f5f3]/70 py-14 sm:py-20">
+        <section className="relative z-10 border-y border-white/10 bg-[var(--card)]/70 py-14 sm:py-20">
           <Container>
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
@@ -359,7 +359,7 @@ export default function ServicePage({
               {content.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-6"
+                  className="group rounded-2xl border border-white/10 bg-[var(--card)]/70 p-6"
                 >
                   <summary className="cursor-pointer list-none pr-8 text-lg font-medium text-white marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400">
                     <span className="flex items-start justify-between gap-5">

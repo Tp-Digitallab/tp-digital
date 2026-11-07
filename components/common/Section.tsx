@@ -17,7 +17,7 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "relative bg-[#e9e4e0] py-20 md:py-28",
+        "relative bg-[var(--paper)] py-20 md:py-28",
         className
       )}
     >

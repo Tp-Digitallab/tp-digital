@@ -490,7 +490,7 @@ export default function Summary({
             </span>
           </div>
 
-          <div className="mt-8 rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-5">
+          <div className="mt-8 rounded-2xl border border-white/10 bg-[var(--card)]/70 p-5">
             <p className="text-sm text-white/45">
               {summaryT.monthlyServices}
             </p>

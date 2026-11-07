@@ -123,7 +123,7 @@ export default function SupportStep({
                     `
                     : `
                       border-white/10
-                      bg-[#f7f5f3]/70
+                      bg-[var(--card)]/70
                       hover:border-white/20
                       hover:bg-white/[0.05]
                     `

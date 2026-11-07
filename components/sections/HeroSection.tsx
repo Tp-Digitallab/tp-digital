@@ -62,9 +62,9 @@ export default function HeroSection() {
           </div>
           <figure data-intro="media" className="min-w-0">
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="col-span-2 overflow-hidden rounded-3xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/marigstudio.png" alt="Mari G Beauty Studio — Website" width={1905} height={904} sizes="(max-width: 1023px) calc(100vw - 48px), 560px" preload className="h-auto w-full" /></div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#f7f5f3]"><Image src="/projects/grabpflege.png" alt="GrabProfi — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
+              <div className="col-span-2 overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]"><Image src="/projects/marigstudio.png" alt="Mari G Beauty Studio — Website" width={1905} height={904} sizes="(max-width: 1023px) calc(100vw - 48px), 560px" preload className="h-auto w-full" /></div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--card)]"><Image src="/projects/exzellentia.png" alt="Exzellentia Constructio — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
+              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[var(--card)]"><Image src="/projects/grabpflege.png" alt="GrabProfi — Website" width={1905} height={904} sizes="(max-width: 1023px) 45vw, 270px" preload className="aspect-[16/10] h-auto w-full object-cover object-top" /></div>
             </div>
           </figure>
         </div>

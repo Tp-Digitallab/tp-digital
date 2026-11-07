@@ -36,7 +36,7 @@ const ContactStep = dynamic(
       <div
         role="status"
         aria-busy="true"
-        className="min-h-[480px] rounded-3xl border border-white/10 bg-[#f7f5f3] p-6"
+        className="min-h-[480px] rounded-3xl border border-white/10 bg-[var(--card)] p-6"
       >
         <span className="sr-only">
           Formular wird geladen / Loading form / Загрузка формы
@@ -47,15 +47,15 @@ const ContactStep = dynamic(
           className="space-y-5 motion-safe:animate-pulse"
         >
           <div className="h-8 w-2/3 rounded-lg bg-white/10" />
-          <div className="h-5 w-full rounded-lg bg-[#f7f5f3]/70" />
+          <div className="h-5 w-full rounded-lg bg-[var(--card)]/70" />
 
           <div className="grid gap-4 pt-4 sm:grid-cols-2">
-            <div className="h-16 rounded-2xl bg-[#f7f5f3]/70" />
-            <div className="h-16 rounded-2xl bg-[#f7f5f3]/70" />
+            <div className="h-16 rounded-2xl bg-[var(--card)]/70" />
+            <div className="h-16 rounded-2xl bg-[var(--card)]/70" />
           </div>
 
-          <div className="h-16 rounded-2xl bg-[#f7f5f3]/70" />
-          <div className="h-32 rounded-2xl bg-[#f7f5f3]/70" />
+          <div className="h-16 rounded-2xl bg-[var(--card)]/70" />
+          <div className="h-32 rounded-2xl bg-[var(--card)]/70" />
         </div>
       </div>
     ),

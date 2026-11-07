@@ -310,7 +310,7 @@ export default function ThankYouPage() {
   }, []);
 
   return (
-    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#e9e4e0] px-5 py-16 text-white sm:px-6">
+    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[var(--paper)] px-5 py-16 text-white sm:px-6">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-[150px]"
@@ -362,7 +362,7 @@ export default function ThankYouPage() {
           </p>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-white/10 bg-[#f7f5f3]/70 p-5 text-left sm:p-7">
+        <div className="mt-8 rounded-3xl border border-white/10 bg-[var(--card)]/70 p-5 text-left sm:p-7">
           <h2 className="text-xl font-semibold">
             {t.nextTitle}
           </h2>
@@ -434,7 +434,7 @@ export default function ThankYouPage() {
 
           <Link
             href={`/${language}/webdesign#projekte`}
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-[#f7f5f3]/70 px-7 py-4 font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-[var(--card)]/70 px-7 py-4 font-medium text-white/80 transition hover:bg-white/[0.08] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
           >
             {t.projects}
           </Link>

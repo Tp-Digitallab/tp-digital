@@ -936,7 +936,7 @@ export default function WebdesignLandingPage() {
             <Link
               href={homePath(language)}
               aria-label="TP Digital Lab"
-              className="shrink-0 rounded-full border border-white/10 bg-[#f7f5f3]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl"
+              className="shrink-0 rounded-full border border-white/10 bg-[var(--card)]/85 px-4 py-2.5 shadow-[0_18px_55px_rgba(23,42,57,0.12)] backdrop-blur-2xl"
             >
               <span className="whitespace-nowrap text-[17px] tracking-tight text-white">
                 <span className="font-bold">TP</span>
@@ -1037,7 +1037,7 @@ export default function WebdesignLandingPage() {
                 </div>
               </div>
 
-              <div className="min-w-0 rounded-[24px] border border-white/15 bg-[#f7f5f3]/70 p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(23,42,57,0.12)] backdrop-blur-xl">
+              <div className="min-w-0 rounded-[24px] border border-white/15 bg-[var(--card)]/70 p-5 sm:rounded-[32px] sm:p-7 shadow-[0_30px_100px_rgba(23,42,57,0.12)] backdrop-blur-xl">
                 <p className="text-sm uppercase tracking-[0.25em] text-white/40">
                   {t.hero.cardTitle}
                 </p>
@@ -1102,7 +1102,7 @@ export default function WebdesignLandingPage() {
                     className={`rounded-[30px] border p-7 ${
                       packageId === "business"
                         ? "border-blue-400/40 bg-blue-500/[0.08]"
-                        : "border-white/10 bg-[#f7f5f3]/70"
+                        : "border-white/10 bg-[var(--card)]/70"
                     }`}
                   >
                     {packageId === "business" && (
@@ -1163,7 +1163,7 @@ export default function WebdesignLandingPage() {
                       className={`mt-8 w-full rounded-full px-6 py-4 font-semibold transition ${
                         selected
                           ? "bg-blue-500"
-                          : "border border-white/15 bg-[#f7f5f3]/70 hover:bg-white/[0.12]"
+                          : "border border-white/15 bg-[var(--card)]/70 hover:bg-white/[0.12]"
                       }`}
                     >
                       {selected
@@ -1183,7 +1183,7 @@ export default function WebdesignLandingPage() {
 
         <section
           id="projekte"
-          className="scroll-mt-24 border-y border-white/10 bg-[#f7f5f3]/70 py-16 md:py-24"
+          className="scroll-mt-24 border-y border-white/10 bg-[var(--card)]/70 py-16 md:py-24"
         >
           <Container>
             <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">
@@ -1217,7 +1217,7 @@ export default function WebdesignLandingPage() {
                 {t.faq.items.map((item) => (
                   <details
                     key={item.question}
-                    className="rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-6"
+                    className="rounded-2xl border border-white/10 bg-[var(--card)]/70 p-6"
                   >
                     <summary className="cursor-pointer pr-6 text-lg font-medium">
                       {item.question}
@@ -1235,7 +1235,7 @@ export default function WebdesignLandingPage() {
 
         <section
           id="anfrage"
-          className="scroll-mt-24 border-t border-white/10 bg-[#f7f5f3]/70 py-16 md:py-24"
+          className="scroll-mt-24 border-t border-white/10 bg-[var(--card)]/70 py-16 md:py-24"
         >
           <span id="anfrage-aenderungen" className="block scroll-mt-24" aria-hidden="true" />
           <span id="anfrage-launch" className="block scroll-mt-24" aria-hidden="true" />
@@ -1261,7 +1261,7 @@ export default function WebdesignLandingPage() {
                   {whatsappUrl && <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">WhatsApp</a>}
                 </div>
 
-                <div className="mt-8 hidden rounded-2xl border border-white/10 bg-[#f7f5f3]/70 p-5 text-sm leading-6 text-white/55 lg:block">
+                <div className="mt-8 hidden rounded-2xl border border-white/10 bg-[var(--card)]/70 p-5 text-sm leading-6 text-white/55 lg:block">
                   <p className="font-medium text-white">
                     info@tpdigitallab.de
                   </p>

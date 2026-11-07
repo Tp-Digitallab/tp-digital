@@ -43,7 +43,7 @@ export default function ServiceCard({
         focus-visible:ring-2
         focus-visible:ring-blue-400
         focus-visible:ring-offset-4
-        focus-visible:ring-offset-[#e9e4e0]
+        focus-visible:ring-offset-[var(--paper)]
         motion-reduce:transition-none
         sm:rounded-[32px]
         sm:p-8
@@ -95,7 +95,7 @@ export default function ServiceCard({
               rounded-2xl
               border
               border-blue-400/25
-              bg-[#e2ddd8]
+              bg-[var(--card-hover)]
               px-4
               py-3
               text-sm
@@ -105,9 +105,9 @@ export default function ServiceCard({
               transition-colors
               duration-200
               group-hover:border-blue-400/50
-              group-hover:bg-[#e2ddd8]
+              group-hover:bg-[var(--card-hover)]
               group-focus-visible:border-blue-400/50
-              group-focus-visible:bg-[#e2ddd8]
+              group-focus-visible:bg-[var(--card-hover)]
               motion-reduce:transition-none
               sm:w-auto
               sm:rounded-full

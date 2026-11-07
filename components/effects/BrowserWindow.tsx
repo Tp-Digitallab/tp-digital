@@ -41,7 +41,7 @@ export default function BrowserWindow() {
         border
         border-white/15
 
-        bg-[#f7f5f3]/70
+        bg-[var(--card)]/70
 
         backdrop-blur-xl
 

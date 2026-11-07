@@ -93,7 +93,7 @@ export default function FeaturesStep({
                   ? "border-green-400/25 bg-green-500/[0.07]"
                   : active
                     ? "border-blue-400/40 bg-blue-500/10"
-                    : "border-white/10 bg-[#f7f5f3]/70 hover:border-white/25"
+                    : "border-white/10 bg-[var(--card)]/70 hover:border-white/25"
               }`}
             >
               <span className="flex items-start justify-between gap-4">

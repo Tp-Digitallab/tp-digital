@@ -239,7 +239,7 @@ export default function ContactStep({
   }
 
   const inputClassName =
-    "w-full rounded-[22px] border border-white/10 bg-[#f7f5f3]/70 py-5 pl-14 pr-6 text-white outline-none transition-all duration-300 placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(23,42,57,0.15)]";
+    "w-full rounded-[22px] border border-white/10 bg-[var(--card)]/70 py-5 pl-14 pr-6 text-white outline-none transition-all duration-300 placeholder:text-white/30 hover:border-white/20 focus:border-blue-400/50 focus:bg-white/[0.05] focus:shadow-[0_0_25px_rgba(23,42,57,0.15)]";
 
   return (
     <section>

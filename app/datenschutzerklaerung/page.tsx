@@ -77,7 +77,7 @@ function PrivacySection({
         rounded-3xl
         border
         border-white/15
-        bg-[#f7f5f3]/70
+        bg-[var(--card)]/70
         p-6
         backdrop-blur
         sm:p-8
@@ -155,7 +155,7 @@ const navigation = [
 
 export default function DatenschutzerklaerungPage() {
   return (
-    <main className="min-h-screen bg-[#e9e4e0] text-white">
+    <main className="min-h-screen bg-[var(--paper)] text-white">
       {/* Hero */}
 
 
@@ -177,7 +177,7 @@ export default function DatenschutzerklaerungPage() {
               rounded-full
               border
               border-white/15
-              bg-[#f7f5f3]/70
+              bg-[var(--card)]/70
               px-5
               py-3
               text-white
@@ -196,7 +196,7 @@ export default function DatenschutzerklaerungPage() {
 
 
                     <div className="flex flex-col items-start gap-5 md:flex-row md:items-center">
-            <div className="shrink-0 rounded-2xl border border-white/15 bg-[#f7f5f3]/70 p-4">
+            <div className="shrink-0 rounded-2xl border border-white/15 bg-[var(--card)]/70 p-4">
               <Shield
                 aria-hidden="true"
                 className="h-8 w-8 text-blue-400"
@@ -232,7 +232,7 @@ export default function DatenschutzerklaerungPage() {
         <div className="grid gap-8 lg:grid-cols-[280px_1fr]">
           {/* Navigation */}
 
-          <aside className="h-fit rounded-3xl border border-white/15 bg-[#f7f5f3]/70 p-6 backdrop-blur lg:sticky lg:top-28">
+          <aside className="h-fit rounded-3xl border border-white/15 bg-[var(--card)]/70 p-6 backdrop-blur lg:sticky lg:top-28">
             <h2 className="text-lg font-semibold text-white">
               Inhaltsverzeichnis
             </h2>

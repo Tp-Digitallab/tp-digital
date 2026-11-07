@@ -329,8 +329,8 @@ export default function FaqSection() {
                   key={index}
                   className={`overflow-hidden rounded-3xl border transition-colors duration-300 ${
                     isOpen
-                      ? "border-blue-400/30 bg-[#f7f5f3]/70"
-                      : "border-white/15 bg-[#f7f5f3]/70 hover:border-white/25"
+                      ? "border-blue-400/30 bg-[var(--card)]/70"
+                      : "border-white/15 bg-[var(--card)]/70 hover:border-white/25"
                   }`}
                 >
                   <div>
@@ -350,7 +350,7 @@ export default function FaqSection() {
                     >
                       <span
                         aria-hidden="true"
-                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#f7f5f3]/70 text-xs font-semibold text-blue-300 sm:h-10 sm:w-10"
+                        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[var(--card)]/70 text-xs font-semibold text-blue-300 sm:h-10 sm:w-10"
                       >
                         {String(index + 1).padStart(
                           2,
