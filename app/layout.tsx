@@ -129,7 +129,7 @@ export default function RootLayout({
       >
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var tm=/[?&]theme=(night|graphite|light)/.exec(location.search);if(tm)sessionStorage.setItem("tp-theme",tm[1]);var th=sessionStorage.getItem("tp-theme");if(th==="light")document.documentElement.removeAttribute("data-theme");else if(th)document.documentElement.setAttribute("data-theme",th)}catch(e){}try{var d=document.documentElement,q=location.search,f=q.indexOf("intro")>-1,soft=q.indexOf("intro=soft")>-1,r=matchMedia("(prefers-reduced-motion: reduce)").matches;if(["/","/en","/en/","/ru","/ru/"].indexOf(location.pathname)>-1&&(f||(document.referrer||"").indexOf(location.origin)!==0))d.classList.add(soft||(!f&&r)?"intro-soft":innerWidth>=768?"intro":"intro-m")}catch(e){}`,
+            __html: `try{var lp=location.pathname.split("/")[1];if(lp==="en"||lp==="ru")document.documentElement.lang=lp}catch(e){}try{var tm=/[?&]theme=(night|graphite|light)/.exec(location.search);if(tm)sessionStorage.setItem("tp-theme",tm[1]);var th=sessionStorage.getItem("tp-theme");if(th==="light")document.documentElement.removeAttribute("data-theme");else if(th)document.documentElement.setAttribute("data-theme",th)}catch(e){}try{var d=document.documentElement,q=location.search,f=q.indexOf("intro")>-1,soft=q.indexOf("intro=soft")>-1,r=matchMedia("(prefers-reduced-motion: reduce)").matches;if(["/","/en","/en/","/ru","/ru/"].indexOf(location.pathname)>-1&&(f||(document.referrer||"").indexOf(location.origin)!==0))d.classList.add(soft||(!f&&r)?"intro-soft":innerWidth>=768?"intro":"intro-m")}catch(e){}`,
           }}
         />
         <JsonLd />

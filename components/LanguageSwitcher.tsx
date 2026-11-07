@@ -64,14 +64,6 @@ export default function LanguageSwitcher() {
       >
         <span>{currentLanguage.short}</span>
 
-        <span
-          aria-hidden="true"
-          className={`text-white/60 transition-transform ${
-            open ? "rotate-180" : ""
-          }`}
-        >
-         ⌄
-        </span>
       </button>
 
       {open && (
