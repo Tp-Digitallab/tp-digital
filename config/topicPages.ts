@@ -14,6 +14,7 @@ export type TopicPageData = {
   priceNote: string;
   cta: string;
   demo?: { slug: string; title: string; text: string; cta: string };
+  demo2?: { slug: string; title: string; text: string; cta: string };
   needsEyebrow: string;
   needsTitle: string;
   needs: { title: string; text: string }[];
@@ -49,6 +50,7 @@ export const topicPages: Record<string, TopicPageData> = {
     price: "290 €",
     cta: "Website anfragen",
     demo: { slug: "beauty", title: "Demo: Nagel- und Beauty-Studio", text: "Freie Termine der Woche, Preisliste wie im Salon, Galerie mit Preisen. So kann Ihre Website aussehen, mit Ihrem Namen, Ihren Fotos und Ihren Preisen.", cta: "Live-Demo ansehen" },
+    demo2: { slug: "studio", title: "Demo 2: helles Studio in Rosé", text: "Ruhiges, helles Design mit Preisliste zum Aufklappen, Galerie zum Wischen und drei Sprachen: Deutsch, Russisch und Ukrainisch.", cta: "Zweites Design ansehen" },
     needsTitle: "Was Kundinnen auf Ihrer Website suchen.",
     needs: [
       { title: "Preise ohne Nachfragen", text: "Eine klare Preisliste für Maniküre, Gel und Pediküre. Wer den Preis sieht, bucht eher und fragt weniger per WhatsApp nach." },

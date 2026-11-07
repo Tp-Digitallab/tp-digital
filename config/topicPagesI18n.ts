@@ -1,8 +1,10 @@
 import { topicPages, type TopicPageData } from "@/config/topicPages";
 
 type Lang = "de" | "en" | "ru";
-type Override = Omit<TopicPageData, "slug" | "metaTitle" | "metaDescription" | "formService" | "formPackage" | "demo"> & {
-  demo?: { title: string; text: string; cta: string };
+type DemoText = { title: string; text: string; cta: string };
+type Override = Omit<TopicPageData, "slug" | "metaTitle" | "metaDescription" | "formService" | "formPackage" | "demo" | "demo2"> & {
+  demo?: DemoText;
+  demo2?: DemoText;
 };
 
 const en: Record<string, Override> = {
@@ -16,6 +18,7 @@ const en: Record<string, Override> = {
     intro: "Most clients find you on Google Maps or Instagram and then want to know three things: what does it cost, what does your work look like, and when is there a free slot. Your new website shows exactly that at a glance.",
     cta: "Request a website",
     demo: { title: "Demo: nail and beauty studio", text: "Free slots this week, a price list like in the salon, a gallery with prices. This is how your website can look, with your name, your photos and your prices.", cta: "View live demo" },
+    demo2: { title: "Demo 2: bright studio in rosé", text: "A calm, bright design with an expandable price list, a swipeable gallery and three languages: German, Russian and Ukrainian.", cta: "View second design" },
     needsEyebrow: "What matters",
     needsTitle: "What clients look for on your website.",
     needs: [
@@ -166,6 +169,7 @@ const ru: Record<string, Override> = {
     intro: "Большинство клиенток находят вас в Google Maps или Instagram, а потом хотят узнать три вещи: сколько стоит, как выглядят ваши работы и когда есть свободное время. Новый сайт показывает это сразу.",
     cta: "Заказать сайт",
     demo: { title: "Демо: ногтевая и бьюти-студия", text: "Свободные окна на неделю, прайс как в салоне, галерея с ценами. Так может выглядеть ваш сайт, с вашим названием, фото и ценами.", cta: "Открыть демо" },
+    demo2: { title: "Демо 2: светлая студия в розовых тонах", text: "Спокойный светлый дизайн: прайс с раскрывающимися описаниями, галерея с перелистыванием и три языка — немецкий, русский и украинский.", cta: "Открыть второй дизайн" },
     needsEyebrow: "Что важно",
     needsTitle: "Что клиентки ищут на вашем сайте.",
     needs: [
@@ -314,5 +318,6 @@ export function getTopicPage(slug: string, lang: Lang): TopicPageData {
     ...base,
     ...o,
     demo: base.demo && o.demo ? { ...base.demo, ...o.demo } : base.demo,
+    demo2: base.demo2 && o.demo2 ? { ...base.demo2, ...o.demo2 } : base.demo2,
   };
 }

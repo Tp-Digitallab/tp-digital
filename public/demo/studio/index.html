@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nagelstudio Vorlage 2 – Demo-Website von TP Digital Lab</title>
+<meta name="description" content="Demo-Website für ein Nagelstudio. TP Digital Lab passt diese Website an Ihr Studio an.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FCEEEB">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TP Digital Lab">
+<meta property="og:title" content="Nagelstudio Vorlage – Demo von TP Digital Lab">
+<meta property="og:description" content="Demo-Website für ein Nagelstudio, in 3 Tagen mit Ihrem Namen online.">
+<meta property="og:url" content="https://tpdigitallab.de/demo/studio">
+<meta property="og:image" content="https://tpdigitallab.de/demo/studio/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="/demo/studio/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/demo/studio/assets/fonts/manrope.css">
+<style>
+:root{
+  --ink:#3A2427;
+  --ink-soft:#6A5355;
+  --wine:#A52C31;            /* из логотипа */
+  --wine-dark:#86222A;
+  --wine-deep:#4A161B;
+  --blush:#F4B6B5;           /* листья логотипа */
+  --panel:rgba(255,250,249,.86);
+  --line:rgba(165,44,49,.14);
+  --radius:36px;
+  --font:"Manrope", system-ui, sans-serif;
+  --gutter:clamp(10px, 1.6vw, 24px);
+  --max:1600px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+/* фон всего сайта — один длинный тёплый градиент */
+body{
+  font:500 17px/1.7 var(--font);color:var(--ink-soft);overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(900px 600px at 85% 0%, #F9CFCB 0%, transparent 60%),
+    radial-gradient(800px 700px at 0% 35%, #F7D9D4 0%, transparent 60%),
+    radial-gradient(900px 700px at 100% 70%, #EFC2C0 0%, transparent 60%),
+    linear-gradient(180deg, #FCEEEB 0%, #F8E1DD 30%, #F3D1CD 60%, #ECBFBD 100%);
+}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wine);outline-offset:3px;border-radius:8px}
+h1,h2,h3{color:var(--ink);font-weight:500;letter-spacing:-.03em;line-height:1.12}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* ── Header ── */
+header{position:sticky;top:12px;z-index:20;margin:12px auto 0;max-width:var(--max);padding:0 var(--gutter)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 14px 0 22px;border-radius:999px;background:rgba(255,250,249,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px -18px rgba(74,22,27,.35)}
+.to-top{text-decoration:none}
+.mark{display:block;font-weight:700;font-size:20px;letter-spacing:-.02em;line-height:1.05;color:var(--wine)}
+.mark small{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+.links{display:flex;align-items:center;gap:30px;list-style:none}
+.links a{font-weight:600;font-size:15px;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+.links a:hover{color:var(--wine)}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 30px;border-radius:999px;border:0;cursor:pointer;font:600 16px/1 var(--font);text-decoration:none;transition:background .25s,transform .25s,box-shadow .25s}
+.btn-wine{background:var(--wine);color:#fff!important;box-shadow:0 14px 30px -14px rgba(165,44,49,.7)}
+.btn-wine:hover{background:var(--wine-dark);transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--wine)!important;box-shadow:0 10px 24px -16px rgba(74,22,27,.4)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-sm{min-height:46px;padding:0 22px;font-size:15px}
+
+/* ── Panels: каждый блок отдельная скруглённая карточка на градиенте ── */
+.panel{background:var(--panel);border-radius:var(--radius);padding:clamp(28px,6vw,96px);box-shadow:0 40px 90px -50px rgba(74,22,27,.35);border:1px solid rgba(255,255,255,.7)}
+section{margin-top:clamp(18px,3vw,40px)}
+.kicker{display:inline-block;font-weight:600;font-size:14px;color:var(--wine);background:rgba(165,44,49,.08);padding:8px 16px;border-radius:999px;margin-bottom:20px}
+h2{font-size:clamp(32px,4vw,52px);margin-bottom:18px}
+.intro{max-width:34em;font-size:18px}
+
+/* ── Hero ── */
+.hero .panel{position:relative;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(32px,5vw,72px);padding-top:clamp(40px,6vw,88px);padding-bottom:clamp(40px,6vw,88px);
+  background:
+    radial-gradient(500px 420px at 92% 10%, rgba(244,182,181,.55), transparent 70%),
+    linear-gradient(135deg,#FFF8F6 0%,#FBE7E3 100%)}
+.branch{display:none}
+.stars{display:flex;align-items:center;gap:12px;font-weight:600;color:var(--ink);margin-bottom:22px}
+.stars span{color:var(--wine);letter-spacing:2px;font-size:18px}
+.hero-quote{font-weight:500;color:var(--ink);font-size:clamp(38px,5.2vw,74px);line-height:1.08;letter-spacing:-.04em}
+.hero-quote::before{content:"„";color:var(--blush)}
+.hero-quote::after{content:"“";color:var(--blush)}
+.quote-by{margin-top:14px;font-weight:600;font-size:15px}
+.lead{margin-top:26px;max-width:30em;font-size:clamp(17px,1.3vw,19px);color:var(--ink-soft)}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+.portrait{position:relative;justify-self:center;width:min(100%,540px);aspect-ratio:1}
+.portrait .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(244,182,181,.9)}
+.portrait .photo{position:absolute;inset:6%;border-radius:50%;overflow:hidden;box-shadow:0 40px 70px -35px rgba(74,22,27,.55)}
+.portrait .photo img{width:100%;height:100%;object-fit:cover;object-position:86% 22%;transform:scale(1.35);transform-origin:78% 30%}
+.badge{position:absolute;left:0;bottom:8%;display:flex;align-items:center;gap:12px;background:#fff;padding:12px 20px 12px 12px;border-radius:999px;box-shadow:0 16px 36px -18px rgba(74,22,27,.45);font-size:14px;line-height:1.3}
+.badge b{display:block;color:var(--ink);font-size:15px}
+.badge i{width:40px;height:40px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-style:normal;font-weight:700}
+
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.6vw,20px);margin-top:clamp(16px,2.4vw,28px);list-style:none}
+.facts li{padding:22px clamp(20px,3vw,40px);border-left:1px solid rgba(165,44,49,.18)}
+.facts li:first-child{border-left:0}
+.facts b{display:block;color:var(--ink);font-weight:600;font-size:22px;letter-spacing:-.02em;margin-bottom:2px}
+
+/* ── Preise ── */
+.prices-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 40px;margin-bottom:clamp(28px,4vw,48px)}
+.tabs{display:inline-flex;gap:6px;padding:6px;background:rgba(165,44,49,.07);border-radius:999px}
+.tabs button{border:0;background:none;cursor:pointer;font:600 15px/1 var(--font);color:var(--ink-soft);padding:13px 22px;border-radius:999px;transition:background .2s,color .2s}
+.tabs button[aria-selected="true"]{background:#fff;color:var(--wine);box-shadow:0 6px 16px -10px rgba(74,22,27,.5)}
+.menu{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,auto);grid-auto-flow:column;column-gap:clamp(24px,4vw,64px)}
+.menu li{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 20px;padding:24px 18px;margin:0 -18px;border-radius:22px;position:relative;transition:background .25s}
+.menu li::after{content:"";position:absolute;left:18px;right:18px;bottom:0;height:1px;background:var(--line);transition:opacity .25s}
+.menu li:hover{background:rgba(255,255,255,.75)}
+.menu li:hover::after{opacity:0}
+.menu .name{font-weight:600;color:var(--ink);font-size:18px;line-height:1.35;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.menu .meta{grid-column:1;font-size:15px;font-weight:500}
+.menu .price{grid-row:1/3;grid-column:2;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.menu .price strong{font-size:22px;font-weight:600;color:var(--wine);white-space:nowrap}
+.pick{display:inline-block;text-decoration:none;border:0;cursor:pointer;font:700 13px/1 var(--font);color:var(--wine);background:rgba(165,44,49,.08);padding:9px 14px;border-radius:999px;transition:background .2s,color .2s}
+.pick:hover{background:var(--wine);color:#fff}
+
+/* ── Arbeiten: дуговая карусель (механика из Mari G) ── */
+.works .panel{padding-left:0;padding-right:0;overflow:hidden}
+.works-head{text-align:center;max-width:720px;margin:0 auto clamp(8px,1.5vw,16px);padding:0 24px}
+.works-head .intro{margin:0 auto}
+.stage{position:relative;height:clamp(300px,36vw,500px);touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.stage.dragging{cursor:grabbing}
+.track{list-style:none;position:absolute;inset:0}
+.card{position:absolute;top:0;left:0;padding:0;border:0;background:#F1D3CF;overflow:hidden;cursor:inherit;will-change:transform}
+.card img{width:100%;height:100%;object-fit:cover;pointer-events:none;display:block}
+.card:focus-visible{outline:none;box-shadow:inset 0 0 0 4px #fff}
+.works-foot{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 18px;margin-top:clamp(12px,2vw,24px);padding:0 24px}
+.ctrl{width:50px;height:50px;border-radius:50%;border:0;background:#fff;color:var(--wine);font-size:20px;cursor:pointer;box-shadow:0 10px 24px -16px rgba(74,22,27,.5);transition:background .2s,color .2s}
+.ctrl:hover{background:var(--wine);color:#fff}
+.ctrl.toggle{width:auto;padding:0 20px;font:600 14px/1 var(--font)}
+.demo-note{text-align:center;margin-top:18px;padding:0 24px;font-size:13px;color:var(--ink-soft);opacity:.75}
+#lightbox{width:min(980px,calc(100% - 24px));background:transparent;box-shadow:none;overflow:visible}
+#lightbox::backdrop{background:rgba(42,24,27,.88)}
+#lightbox img{width:100%;max-height:calc(100dvh - 150px);object-fit:contain;border-radius:22px}
+#lightbox .close{position:absolute;top:-56px;right:0;background:#fff}
+.lb-bar{display:flex;justify-content:center;align-items:center;gap:18px;margin-top:14px;color:#fff;font-size:14px}
+.lb-bar .ctrl{width:44px;height:44px}
+
+/* ── Studio ── */
+.studio .panel{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,90px);align-items:center}
+.collage{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:14px;align-items:stretch}
+.collage figure{overflow:hidden;border-radius:28px}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .big{grid-row:1/3;border-radius:240px 240px 28px 28px;aspect-ratio:auto;height:100%;min-height:0}
+.collage .big img{position:absolute;inset:0}
+.collage .big{position:relative}
+.collage .s{aspect-ratio:1}
+.points{list-style:none;margin-top:30px;display:grid;gap:16px}
+.points li{position:relative;padding-left:22px}
+.points li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:8px;border-radius:50%;background:var(--wine);opacity:.55}
+.points b{color:var(--ink);font-weight:600}
+
+/* ── Bewertungen ── */
+.reviews .panel{background:linear-gradient(135deg,#F6DEDA 0%,#EFCFCB 100%)}
+.reviews .kicker{background:rgba(255,255,255,.7)}
+.reviews-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 40px;margin-bottom:clamp(28px,4vw,44px)}
+.score{display:flex;align-items:center;gap:18px}
+.score b{font-size:clamp(56px,6vw,84px);font-weight:500;line-height:1;color:var(--wine);letter-spacing:-.04em}
+.score span{font-weight:600;line-height:1.5;color:var(--ink)}
+.score i{font-style:normal;color:var(--wine);letter-spacing:2px}
+.quotes{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.quotes li{background:rgba(255,255,255,.72);border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:20px}
+.quotes blockquote{color:var(--ink);font-size:19px;font-weight:500;line-height:1.6}
+.quotes blockquote::before{content:"„";display:block;font-size:48px;line-height:.5;color:var(--blush);margin-bottom:10px}
+.quotes cite{margin-top:auto;font-style:normal;font-size:14px}
+.reviews-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;margin-top:28px}
+.source{font-size:14px}
+
+/* ── Termin: всплывающее окно ── */
+dialog{margin:auto;width:min(720px,calc(100% - 24px));max-height:calc(100dvh - 24px);border:0;border-radius:32px;padding:0;background:#FFF8F6;color:var(--ink-soft);box-shadow:0 50px 120px -40px rgba(74,22,27,.6);overflow:auto}
+dialog::backdrop{background:rgba(58,36,39,.45);backdrop-filter:blur(4px)}
+dialog[open]{animation:dlg .35s cubic-bezier(.2,.7,.2,1)}
+@keyframes dlg{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.dlg-head{display:flex;justify-content:space-between;gap:16px;padding:clamp(22px,3.5vw,36px) clamp(22px,3.5vw,40px) 0}
+.dlg-head h2{font-size:clamp(26px,3vw,34px);margin-bottom:6px}
+.dlg-head p{font-size:15px}
+.dlg-head a{color:var(--wine);font-weight:700}
+.close{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:rgba(165,44,49,.08);color:var(--wine);font-size:26px;line-height:1;cursor:pointer}
+.close:hover{background:var(--wine);color:#fff}
+dialog form{border:0;border-radius:0;background:none}
+#svc{width:min(560px,calc(100% - 24px))}
+.svc-meta{font-weight:600;color:var(--wine)!important}
+.svc-body{padding:18px clamp(22px,3.5vw,40px) clamp(24px,3.5vw,36px);display:grid;gap:22px;justify-items:start}
+.svc-text{font-size:17px}
+.steps{list-style:none;margin-top:26px;display:grid;gap:10px}
+.steps li{display:flex;gap:14px;align-items:center;font-weight:600;color:var(--ink)}
+.steps b{flex:none;width:34px;height:34px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-size:14px}
+.direct{margin-top:28px;font-weight:600}
+.direct a{color:var(--wine)}
+form{background:#fff;border-radius:30px;padding:clamp(22px,3.5vw,40px);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
+.field{display:grid;gap:8px}
+.field.full{grid-column:1/-1}
+label,.legend{font-weight:700;font-size:15px;color:var(--ink)}
+.opt{font-weight:500;color:var(--ink-soft)}
+input,select,textarea{width:100%;font:500 16px/1.4 var(--font);color:var(--ink);background:#FDF6F5;border:1.5px solid #EED8D6;border-radius:16px;padding:14px 16px;min-height:54px;transition:border-color .2s,box-shadow .2s,background .2s;appearance:none;-webkit-appearance:none}
+select{background:#FDF6F5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23A52C31' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 18px center;padding-right:44px}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--wine);background:#fff;box-shadow:0 0 0 4px rgba(165,44,49,.12)}
+.invalid input,.invalid select{border-color:var(--wine)}
+.err{display:none;font-size:14px;font-weight:600;color:var(--wine)}
+.invalid .err{display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips label{font-weight:600;cursor:pointer;padding:12px 18px;border-radius:999px;background:#FDF6F5;border:1.5px solid #EED8D6;min-height:46px;display:inline-flex;align-items:center;transition:all .2s}
+.chips input:checked+label{background:var(--wine);border-color:var(--wine);color:#fff}
+.chips input:focus-visible+label{outline:3px solid var(--wine);outline-offset:2px}
+.consent{grid-column:1/-1;display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.55}
+.consent input{width:22px;height:22px;min-height:0;padding:0;margin-top:1px;flex:none;appearance:auto;-webkit-appearance:auto;accent-color:var(--wine)}
+.consent label{font-weight:500;color:var(--ink-soft)}
+.consent a{color:var(--wine)}
+.hp{position:absolute;left:-9999px}
+.submit{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.submit small{font-size:14px}
+.done{grid-column:1/-1;text-align:center;padding:30px 10px}
+.done h3{font-size:32px;margin-bottom:10px}
+
+/* переключатель языка */
+.lang{display:inline-flex;gap:2px;padding:4px;border-radius:999px;background:rgba(165,44,49,.07)}
+.lang button{border:0;background:none;cursor:pointer;font:700 13px/1 var(--font);color:var(--ink-soft);padding:9px 11px;border-radius:999px;letter-spacing:.02em}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--wine);box-shadow:0 4px 12px -8px rgba(74,22,27,.6)}
+
+@media (max-width:420px){.links li.keep:last-child{display:none}}
+
+/* ── Footer ── */
+footer{margin:clamp(16px,2.4vw,28px) auto 0;max-width:var(--max);padding:0 var(--gutter) 24px}
+footer .panel{background:var(--wine-deep);color:#EBCFCF;padding:clamp(32px,5vw,64px)}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+footer h3{color:#fff;font-size:20px;margin-bottom:12px}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(244,182,181,.5)}
+footer td{padding:3px 20px 3px 0}
+footer .closed{opacity:.6}
+.bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:14px;opacity:.75}
+
+/* одна вводная анимация первого экрана */
+.rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.d2{animation-delay:.1s}.d3{animation-delay:.2s}.d4{animation-delay:.3s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){dialog[open]{animation:none}.rise{opacity:1;transform:none;animation:none}html{scroll-behavior:auto}.menu li,.btn{transition:none}}
+
+/* ── Responsive ── */
+@media (max-width:1000px){
+  .links li:not(.keep){display:none}
+  .links{gap:8px}
+  .hero .panel,.studio .panel{grid-template-columns:minmax(0,1fr)}
+  .portrait{order:-1;width:min(82%,400px)}
+  .menu,.quotes{grid-template-columns:minmax(0,1fr)}
+  .menu{grid-template-rows:none;grid-auto-flow:row}
+  footer .cols{grid-template-columns:1fr 1fr}
+  footer .cols>div:first-child{grid-column:1/-1}
+}
+@media (max-width:600px){
+  .links .btn-sm{padding:0 14px;font-size:13px;min-height:42px}
+  .lang button{padding:8px 8px;font-size:12px}
+  body{font-size:16px}
+  header{top:8px;margin-top:8px}
+  .nav{height:62px;padding:0 8px 0 14px}
+  .mark{transform:scale(.85);transform-origin:left center}
+  :root{--radius:28px}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .facts li{padding:14px 6px;border-left:0;border-top:1px solid rgba(165,44,49,.18)}
+  .facts li:first-child{border-top:0}
+  .actions .btn{flex:1 1 100%}
+  .branch{display:none}
+  .tabs{display:flex;width:100%}
+  .tabs button{flex:1;padding:12px 6px;font-size:14px}
+  .menu li{padding:18px}
+  form{grid-template-columns:minmax(0,1fr)}
+  .submit .btn{width:100%}
+  footer .cols{grid-template-columns:1fr}
+}
+.demo-bar{background:var(--wine);color:#fff;font-size:14px;font-weight:600;text-align:center;padding:9px 16px}
+.demo-bar a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo-Website von TP Digital Lab · Diese Website kann in 3 Tagen Ihre sein. <a href="/#fertige-websites" target="_top">Mehr erfahren</a></div>
+
+<header>
+  <nav class="nav" aria-label="Hauptnavigation" data-i18n-aria="a.nav">
+    <a href="#" class="to-top" aria-label="Ihr Studio, zum Seitenanfang"><span class="mark">Ihr Studio<small>Nails · München</small></span></a>
+    <ul class="links">
+      <li><a href="#preise" data-i18n="nav.prices">Preise</a></li>
+      <li><a href="#arbeiten" data-i18n="nav.works">Arbeiten</a></li>
+      <li><a href="#studio" data-i18n="nav.studio">Studio</a></li>
+      <li><a href="#bewertungen" data-i18n="nav.reviews">Bewertungen</a></li>
+      <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+      <li class="keep"><div class="lang" role="group" aria-label="Sprache"><button type="button" data-lang="de" aria-pressed="true" lang="de">DE</button><button type="button" data-lang="ru" aria-pressed="false" lang="ru">RU</button><button type="button" data-lang="uk" aria-pressed="false" lang="uk">UA</button></div></li>
+      <li class="keep"><a class="btn btn-wine btn-sm" href="https://www.treatwell.de/" target="_blank" rel="noopener" data-i18n="cta.book">Termin buchen</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="panel">
+      <div>
+        <p class="stars rise"><span aria-hidden="true">★★★★★</span><span data-i18n="hero.stars">4,9 aus 120 Bewertungen (Beispiel)</span></p>
+        <h1 id="hero-title" class="hero-quote rise d2" data-i18n="hero.quote">Endlich ein Studio, in dem man sich Zeit nimmt.</h1>
+        <p class="quote-by rise d2" data-i18n="hero.by">Anna, Kundin (Beispiel)</p>
+        <p class="lead rise d3" data-i18n="hero.lead">Maniküre, Pediküre und Gellack – seit 2018, in einem ruhigen Studio in München-Haidhausen. Mit sterilisiertem Werkzeug, Einwegmaterial und viel Zeit für Sie.</p>
+        <div class="actions rise d4">
+          <a class="btn btn-wine" href="https://www.treatwell.de/" target="_blank" rel="noopener" data-i18n="cta.book">Termin buchen</a>
+          <a class="btn btn-light" href="#preise" data-i18n="cta.prices">Preise ansehen</a>
+        </div>
+      </div>
+      <figure class="portrait rise d3">
+        <span class="ring" aria-hidden="true"></span>
+        <div class="photo"><img src="/demo/studio/assets/hero.jpg" alt="Maniküre im Studio" width="1280" height="800"></div>
+      </figure>
+    </div>
+    <ul class="facts">
+      <li data-i18n-html="f2"><b>Mo–Sa, 10–19 Uhr</b>Mittwoch geschlossen</li>
+      <li data-i18n-html="f3"><b>Haidhausen</b>Musterstraße 1, München</li>
+    </ul>
+  </section>
+
+  <section class="prices" id="preise" aria-labelledby="preise-title">
+    <div class="panel">
+      <div class="prices-head">
+        <div>
+          <span class="kicker" data-i18n="pr.kicker">Leistungen & Preise</span>
+          <h2 id="preise-title" data-i18n="pr.title">Klare Preise, klare Zeiten</h2>
+          <p class="intro" data-i18n="pr.intro">Unter „Mehr erfahren“ finden Sie Details zu jeder Behandlung. Den Termin buchen Sie direkt online.</p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Kategorie">
+          <button role="tab" aria-selected="true" data-tab="mani" data-i18n="tab.mani">Maniküre</button>
+          <button role="tab" aria-selected="false" data-tab="pedi" data-i18n="tab.pedi">Pediküre</button>
+          <button role="tab" aria-selected="false" data-tab="extra" data-i18n="tab.extra">Extras</button>
+        </div>
+      </div>
+      <ul class="menu" data-group="mani">
+        <li><span class="name" data-i18n="s0">Maniküre</span><span class="meta" data-i18n="m40">40 Min.</span><span class="price"><strong>40 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s2">Japanische Maniküre</span><span class="meta" data-i18n="m50">50 Min.</span><span class="price"><strong>50 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s1">Maniküre mit Gellack</span><span class="meta" data-i18n="m70">1 Std. 10 Min., Basis oder Farbe</span><span class="price"><strong>60 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s3">Maniküre mit Naturnagelverstärkung</span><span class="meta" data-i18n="m90">1 Std. 30 Min.</span><span class="price"><strong>65 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+      </ul>
+      <ul class="menu" data-group="pedi" hidden>
+        <li><span class="name" data-i18n="s4">Pediküre</span><span class="meta" data-i18n="m40">40 Min.</span><span class="price"><strong>55 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s5">Pediküre mit Gellack</span><span class="meta" data-i18n="m60">1 Std.</span><span class="price"><strong>65 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s6">Pediküre mit Gellack und Massage</span><span class="meta" data-i18n="m75">1 Std. 15 Min.</span><span class="price"><strong>70 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+      </ul>
+      <ul class="menu" data-group="extra" hidden>
+        <li><span class="name" data-i18n="s7">SPA für die Hände</span><span class="meta" data-i18n="m30">30 Min.</span><span class="price"><strong>15 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s8">SPA für die Füße</span><span class="meta" data-i18n="m30">30 Min.</span><span class="price"><strong>20 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+        <li><span class="name" data-i18n="s9">Gellack entfernen</span><span class="meta" data-i18n="m30x">30 Min., ohne Maniküre</span><span class="price"><strong>25 €</strong><button class="pick" type="button" data-i18n="more">Mehr erfahren</button></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="works" id="arbeiten" aria-labelledby="arbeiten-title">
+    <div class="panel">
+      <div class="works-head">
+        <span class="kicker" data-i18n="nav.works">Arbeiten</span>
+        <h2 id="arbeiten-title" data-i18n="w.title">Aus dem Studio</h2>
+        <p class="intro" data-i18n="w.intro">Ziehen, wischen oder die Pfeile nutzen. Tippen Sie auf ein Foto, um es groß zu sehen.</p>
+      </div>
+      <div class="stage" aria-roledescription="Karussell" aria-label="Arbeiten aus dem Studio">
+        <ul class="track">
+          <li><button class="card" type="button" data-i="0" data-ph="ph0" aria-label="Foto vergrößern: Nude in zartem Rosé"><img src="/demo/studio/assets/nails-1.jpg" alt="Nude in zartem Rosé" draggable="false"></button></li>
+          <li><button class="card" type="button" data-i="1" data-ph="ph1" aria-label="Foto vergrößern: Mauve Gellack"><img src="/demo/studio/assets/nails-2.jpg" alt="Mauve Gellack" draggable="false"></button></li>
+          <li><button class="card" type="button" data-i="2" data-ph="ph2" aria-label="Foto vergrößern: Milchige Natur-Maniküre"><img src="/demo/studio/assets/nails-3.jpg" alt="Milchige Natur-Maniküre" draggable="false"></button></li>
+          <li><button class="card" type="button" data-i="3" data-ph="ph3" aria-label="Foto vergrößern: Nude mit Glitzer-Akzent"><img src="/demo/studio/assets/nails-4.jpg" alt="Nude mit Glitzer-Akzent" draggable="false"></button></li>
+          <li><button class="card" type="button" data-i="4" data-ph="ph4" aria-label="Foto vergrößern: Mandelform in Nude"><img src="/demo/studio/assets/nails-5.jpg" alt="Mandelform in Nude" draggable="false"></button></li>
+          <li><button class="card" type="button" data-i="5" data-ph="ph5" aria-label="Foto vergrößern: Maniküre im Studio"><img src="/demo/studio/assets/nails-6.jpg" alt="Maniküre im Studio" draggable="false"></button></li>
+        </ul>
+      </div>
+      <div class="works-foot">
+        <button class="ctrl" type="button" data-prev aria-label="Vorheriges Foto" data-i18n-aria="w.prev">&larr;</button>
+        <button class="ctrl toggle" type="button" data-toggle>Pause</button>
+        <button class="ctrl" type="button" data-next aria-label="Nächstes Foto" data-i18n-aria="w.next">&rarr;</button>
+      </div>
+      <p class="demo-note" data-i18n="w.note">Beispielfotos von Unsplash. Hier zeigen Sie später Ihre eigenen Arbeiten.</p>
+    </div>
+  </section>
+
+  <section class="studio" id="studio" aria-labelledby="studio-title">
+    <div class="panel">
+      <div class="collage">
+        <figure class="big"><img src="/demo/studio/assets/studio-1.jpg" alt="Regal mit Gellacken im Studio" width="720" height="480" loading="lazy" style="object-position:40% 20%"></figure>
+        <figure class="s"><img src="/demo/studio/assets/studio-2.jpg" alt="Pediküre-Sessel im Studio" width="720" height="480" loading="lazy"></figure>
+        <figure class="s"><img src="/demo/studio/assets/studio-3.jpg" alt="Maniküre-Arbeitsplatz mit Farbpalette" width="720" height="480" loading="lazy" style="object-position:45% 50%"></figure>
+      </div>
+      <div>
+        <span class="kicker" data-i18n="st.kicker">Das Studio</span>
+        <h2 id="studio-title" data-i18n="st.title">Ein ruhiger Ort nur für Sie</h2>
+        <p class="intro" data-i18n="st.intro">Ein gemütliches Studio. Bei Tee oder Kaffee und angenehmer Musik können Sie abschalten, während Ihre Hände und Füße gepflegt werden.</p>
+        <ul class="points">
+          <li data-i18n-html="st.p1"><b>Hygiene zuerst:</b> sterilisiertes Werkzeug und Einwegmaterial</li>
+          <li data-i18n-html="st.p2"><b>Zertifizierte Materialien</b> mit Blick auf jedes Detail</li>
+          <li data-i18n-html="st.p3"><b>Erfahrung seit 2018</b> in Maniküre und Pediküre</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="bewertungen" aria-labelledby="bewertungen-title">
+    <div class="panel">
+      <div class="reviews-head">
+        <div>
+          <span class="kicker" data-i18n="nav.reviews">Bewertungen</span>
+          <h2 id="bewertungen-title" data-i18n="rv.title">Was Kundinnen sagen</h2>
+        </div>
+        <div class="score"><b>4,9</b><span><i aria-hidden="true">★★★★★</i><br><span data-i18n="rv.count">120 Bewertungen (Beispiel)</span></span></div>
+      </div>
+      <ul class="quotes">
+        <li><blockquote data-i18n="rv.q1">Sehr sorgfältig und ruhig gearbeitet. Alles war sauber, ich komme wieder.</blockquote><cite data-i18n="rv.c1">Lena, Maniküre (Beispiel)</cite></li>
+        <li><blockquote data-i18n="rv.q2">Die Farbe hält seit drei Wochen. Genau so wollte ich es.</blockquote><cite data-i18n="rv.c2">Sophie, Gellack (Beispiel)</cite></li>
+        <li><blockquote data-i18n="rv.q3">Termin online gebucht, pünktlich dran gewesen, tolles Ergebnis.</blockquote><cite data-i18n="rv.c3">Marie, Pediküre (Beispiel)</cite></li>
+      </ul>
+      <div class="reviews-foot">
+        <p class="source" data-i18n="rv.source">Beispielbewertungen. Hier erscheinen später Ihre echten Google- oder Treatwell-Bewertungen.</p>
+        <a class="btn btn-light" href="https://www.treatwell.de/" target="_blank" rel="noopener" data-i18n="rv.all">Alle Bewertungen ansehen</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<dialog id="svc" aria-labelledby="svc-title">
+  <div class="dlg-head">
+    <div>
+      <h2 id="svc-title"></h2>
+      <p class="svc-meta"></p>
+    </div>
+    <button class="close" type="button" aria-label="Schließen" data-i18n-aria="a.close">&times;</button>
+  </div>
+  <div class="svc-body">
+    <p class="svc-text">Ausführliche Beschreibung folgt in Kürze.</p>
+    <a class="btn btn-wine" href="https://www.treatwell.de/" target="_blank" rel="noopener" data-i18n="svc.book">Termin buchen</a>
+  </div>
+</dialog>
+
+<dialog id="lightbox" aria-label="Foto vergrößert">
+  <button class="close" type="button" aria-label="Schließen" data-i18n-aria="a.close">&times;</button>
+  <img alt="">
+  <div class="lb-bar">
+    <button class="ctrl" type="button" data-lb-prev aria-label="Vorheriges Foto" data-i18n-aria="w.prev">&larr;</button>
+    <span class="lb-cap"></span>
+    <button class="ctrl" type="button" data-lb-next aria-label="Nächstes Foto" data-i18n-aria="w.next">&rarr;</button>
+  </div>
+</dialog>
+
+
+<footer id="kontakt">
+  <div class="panel">
+    <div class="cols">
+      <div>
+        <h3>Ihr Studio</h3>
+        <p>Musterstraße 1<br>81667 München</p>
+        <p style="margin-top:12px"><a href="https://maps.google.com/" target="_blank" rel="noopener" data-i18n="ft.route">Route planen</a></p>
+      </div>
+      <div>
+        <h3 data-i18n="nav.contact">Kontakt</h3>
+        <p><a href="tel:+491510000000">0151 0000000</a></p>
+        <p style="margin-top:10px"><a href="https://www.treatwell.de/" target="_blank" rel="noopener" data-i18n="cta.book">Termin buchen</a></p>
+      </div>
+      <div>
+        <h3 data-i18n="ft.hours">Öffnungszeiten</h3>
+        <table>
+          <tr><td>Mo – Di</td><td>10 – 19 Uhr</td></tr>
+          <tr class="closed"><td>Mi</td><td>geschlossen</td></tr>
+          <tr><td>Do – Sa</td><td>10 – 19 Uhr</td></tr>
+          <tr class="closed"><td>So</td><td>geschlossen</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© Ihr Studio · Demo</span>
+      <span>Website-Vorlage von <a href="/" target="_top">TP Digital Lab</a> · Fotos: Unsplash</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── карусель «Arbeiten»: дуга, автодвижение, drag + инерция (адаптация компонента Mari G) ──
+  (()=>{
+    const stage=document.querySelector('.stage'), track=stage.querySelector('.track');
+    const originals=[...track.querySelectorAll('.card')];
+    const photos=originals.map(c=>({src:c.querySelector('img').getAttribute('src'),alt:c.querySelector('img').alt}));
+    // второй набор только для бесшовного цикла
+    originals.forEach(c=>{const li=document.createElement('li');const k=c.cloneNode(true);k.querySelector('img').alt='';k.tabIndex=-1;k.setAttribute('aria-hidden','true');li.append(k);track.append(li)});
+    const cards=[...track.querySelectorAll('.card')];
+    const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img'), lbCap=lb.querySelector('.lb-cap');
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+    const toggle=document.querySelector('[data-toggle]');
+    let W=0,H=0,scale=1,pitch=300,pos=0,vel=0,hover=false,inView=false,paused=false,frame=0,last=0,ptr=null,tween=null,sel=0;
+    const mod=(v,d)=>((v%d)+d)%d;
+    const canMove=()=>!reduced.matches&&!lb.open&&!document.hidden&&inView;
+    const auto=()=>canMove()&&!paused&&!hover&&!ptr;
+    function quad(w,h,lh,rh,r){const lt=(h-lh)/2,rt=(h-rh)/2,lbm=lt+lh,rb=rt+rh;return "path('M "+r+" "+lt+" L "+(w-r)+" "+rt+" Q "+w+" "+rt+" "+w+" "+(rt+r)+" L "+w+" "+(rb-r)+" Q "+w+" "+rb+" "+(w-r)+" "+rb+" L "+r+" "+lbm+" Q 0 "+lbm+" 0 "+(lbm-r)+" L 0 "+(lt+r)+" Q 0 "+lt+" "+r+" "+lt+" Z')"}
+    function paint(){
+      const half=W/2, loop=cards.length*pitch;
+      cards.forEach((c,i)=>{
+        const t=mod(i*pitch+pos+loop/2,loop)-loop/2, d=Math.min(Math.abs(t)/half,1.3);
+        const w=(240+50*d*d)*scale, x=half+t*(1+.07*(t/half)**2);
+        const eh=e=>(340+90*Math.min(Math.abs(e)/half,1.4)**2.6)*scale;
+        const lh=eh(t-w/2), rh=eh(t+w/2), h=Math.max(lh,rh);
+        c.style.width=w+'px'; c.style.height=h+'px';
+        c.style.transform='translate3d('+(x-w/2)+'px,'+(H/2-10*d*d*scale-h/2)+'px,0)';
+        c.style.clipPath=quad(w,h,lh,rh,26*scale);
+        c.style.visibility=(x+w/2<0||x-w/2>W)?'hidden':'visible';
+      });
+    }
+    const req=()=>{if(!frame&&!document.hidden&&inView)frame=requestAnimationFrame(tick)};
+    function tick(ts){
+      frame=0; const dt=Math.min(Math.max((ts-last)/1000,0),.04); last=ts;
+      if(tween){const p=Math.min((performance.now()-tween.s)/420,1);pos=tween.f+(tween.t-tween.f)*(1-(1-p)**3);if(p===1)tween=null}
+      else if(!ptr&&canMove()&&Math.abs(vel)>2){pos+=vel*dt;vel*=Math.exp(-3*dt)}
+      else if(auto()){pos-=34*scale*dt;vel=0}
+      paint();
+      if(tween||auto()||(!ptr&&canMove()&&Math.abs(vel)>2))req();
+    }
+    function resize(){const old=pitch;W=stage.clientWidth;H=stage.clientHeight;scale=Math.min(H/500,1.1);pitch=300*scale;pos*=pitch/old;tween=null;paint();req()}
+    function step(dir){vel=0;if(reduced.matches){pos-=dir*pitch;paint()}else tween={f:pos,t:pos-dir*pitch,s:performance.now()};req()}
+    function show(i){sel=mod(i,photos.length);lbImg.src=photos[sel].src;const a=originals[sel].querySelector('img').alt;lbImg.alt=a;lbCap.textContent=a+' · '+(sel+1)+'/'+photos.length}
+    function open(i){show(i);lb.showModal()}
+    document.querySelector('[data-prev]').addEventListener('click',()=>step(-1));
+    document.querySelector('[data-next]').addEventListener('click',()=>step(1));
+    const label=()=>{toggle.textContent=window.t?(paused?t('w.play'):t('w.pause')):(paused?'Abspielen':'Pause')};document.addEventListener('langchange',label);
+    toggle.addEventListener('click',()=>{paused=!paused;label();req()});
+    if(reduced.matches)toggle.hidden=true;
+    stage.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hover=true});
+    stage.addEventListener('pointerleave',()=>{hover=false;req()});
+    stage.addEventListener('dragstart',e=>e.preventDefault());
+    stage.addEventListener('pointerdown',e=>{if(!e.isPrimary||(e.pointerType==='mouse'&&e.button!==0))return;tween=null;vel=0;ptr={id:e.pointerId,x:e.clientX,y:e.clientY,f:pos,lx:e.clientX,lt:performance.now(),drag:false,card:e.target.closest('.card')};stage.setPointerCapture(e.pointerId)});
+    stage.addEventListener('pointermove',e=>{
+      if(!ptr||ptr.id!==e.pointerId)return;const dx=e.clientX-ptr.x,dy=e.clientY-ptr.y;
+      if(!ptr.drag&&Math.abs(dx)>6&&(e.pointerType==='mouse'||Math.abs(dx)>Math.abs(dy)*1.15)){ptr.drag=true;stage.classList.add('dragging')}
+      if(!ptr.drag)return;const now=performance.now();vel=Math.max(-1500,Math.min(1500,(e.clientX-ptr.lx)/Math.max(now-ptr.lt,1)*1000));pos=ptr.f+dx;ptr.lx=e.clientX;ptr.lt=now;paint();
+    });
+    function end(e){
+      if(!ptr||ptr.id!==e.pointerId)return;
+      const tap=!ptr.drag&&Math.hypot(e.clientX-ptr.x,e.clientY-ptr.y)<=8&&e.type==='pointerup';
+      if(e.type==='pointercancel'||performance.now()-ptr.lt>100)vel=0;
+      const card=ptr.card; ptr=null; stage.classList.remove('dragging');
+      if(tap&&card)open(+card.dataset.i);
+      req();
+    }
+    stage.addEventListener('pointerup',end);stage.addEventListener('pointercancel',end);
+    stage.addEventListener('keydown',e=>{
+      if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();step(e.key==='ArrowLeft'?-1:1)}
+      else if(e.key==='Enter'||e.key===' '){const c=e.target.closest('.card');if(c){e.preventDefault();open(+c.dataset.i)}}
+    });
+    stage.addEventListener('focusin',()=>{hover=true});
+    stage.addEventListener('focusout',()=>{hover=false;req()});
+    stage.addEventListener('wheel',e=>{const hz=Math.abs(e.deltaX)>Math.abs(e.deltaY)||e.shiftKey;if(!hz)return;e.preventDefault();tween=null;vel=0;pos-=(e.shiftKey&&Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX);paint()},{passive:false});
+    lb.querySelector('.close').addEventListener('click',()=>lb.close());
+    lb.querySelector('[data-lb-prev]').addEventListener('click',()=>show(sel-1));
+    lb.querySelector('[data-lb-next]').addEventListener('click',()=>show(sel+1));
+    lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+    lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();show(sel+(e.key==='ArrowLeft'?-1:1))}});
+    lb.addEventListener('close',req);
+    document.addEventListener('visibilitychange',req);
+    new ResizeObserver(resize).observe(stage);
+    new IntersectionObserver(en=>{inView=en[0].isIntersecting;if(inView)req()},{rootMargin:'80px'}).observe(stage);
+    resize();
+  })();
+
+  // ── языки DE / RU / UA ──
+  const I18N={
+    de:{
+      'meta.title':'Nagelstudio Vorlage – Demo von TP Digital Lab',
+      'a.nav':'Hauptnavigation','a.close':'Schließen',
+      'nav.prices':'Preise','nav.works':'Arbeiten','nav.studio':'Studio','nav.reviews':'Bewertungen','nav.contact':'Kontakt',
+      'cta.book':'Termin buchen','cta.prices':'Preise ansehen',
+      'hero.stars':'4,9 aus 120 Bewertungen (Beispiel)','hero.quote':'Endlich ein Studio, in dem man sich Zeit nimmt.','hero.by':'Anna, Kundin (Beispiel)',
+      'hero.lead':'Maniküre, Pediküre und Gellack – seit 2018, in einem ruhigen Studio in München-Haidhausen. Mit sterilisiertem Werkzeug, Einwegmaterial und viel Zeit für Sie.',
+      'f1':'<b>Eine Kundin zur Zeit</b>Ruhig, ohne Trubel','f2':'<b>Mo–Sa, 10–19 Uhr</b>Mittwoch geschlossen','f3':'<b>Haidhausen</b>Musterstraße 1, München',
+      'pr.kicker':'Leistungen & Preise','pr.title':'Klare Preise, klare Zeiten','pr.intro':'Unter „Mehr erfahren“ finden Sie Details zu jeder Behandlung. Den Termin buchen Sie direkt online.',
+      'tab.mani':'Maniküre','tab.pedi':'Pediküre','tab.extra':'Extras','pick':'Buchen','more':'Mehr erfahren','svc.ph':'Ausführliche Beschreibung folgt in Kürze.','svc.book':'Termin buchen',
+      's0':'Maniküre','s1':'Maniküre mit Gellack','s2':'Japanische Maniküre','s3':'Maniküre mit Naturnagelverstärkung','s4':'Pediküre','s5':'Pediküre mit Gellack','s6':'Pediküre mit Gellack und Massage','s7':'SPA für die Hände','s8':'SPA für die Füße','s9':'Gellack entfernen','s10':'Nagelmodellage / Beratung',
+      'm40':'40 Min.','m70':'1 Std. 10 Min., Basis oder Farbe','m50':'50 Min.','m90':'1 Std. 30 Min.','m60':'1 Std.','m75':'1 Std. 15 Min.','m30':'30 Min.','m30x':'30 Min., ohne Maniküre',
+      'w.title':'Aus dem Studio','w.intro':'Ziehen, wischen oder die Pfeile nutzen. Tippen Sie auf ein Foto, um es groß zu sehen.','w.prev':'Vorheriges Foto','w.next':'Nächstes Foto','w.pause':'Pause','w.play':'Abspielen','w.zoom':'Foto vergrößern',
+      'w.note':'Beispielfotos von Unsplash. Hier zeigen Sie später Ihre eigenen Arbeiten.',
+      'ph0':'Nude in zartem Rosé','ph1':'Mauve Gellack','ph2':'Milchige Natur-Maniküre','ph3':'Nude mit Glitzer-Akzent','ph4':'Mandelform in Nude','ph5':'Maniküre im Studio',
+      'st.kicker':'Das Studio','st.title':'Ein ruhiger Ort nur für Sie','st.intro':'Ein gemütliches Studio. Bei Tee oder Kaffee und angenehmer Musik können Sie abschalten, während Ihre Hände und Füße gepflegt werden.',
+      'st.p1':'<b>Hygiene zuerst:</b> sterilisiertes Werkzeug und Einwegmaterial','st.p2':'<b>Zertifizierte Materialien</b> mit Blick auf jedes Detail','st.p3':'<b>Erfahrung seit 2018</b> in Maniküre und Pediküre',
+      'rv.title':'Was Kundinnen sagen','rv.count':'120 Bewertungen (Beispiel)',
+      'rv.q1':'Sehr sorgfältig und ruhig gearbeitet. Alles war sauber, ich komme wieder.','rv.q2':'Die Farbe hält seit drei Wochen. Genau so wollte ich es.','rv.q3':'Termin online gebucht, pünktlich dran gewesen, tolles Ergebnis.',
+      'rv.c1':'Lena, Maniküre (Beispiel)','rv.c2':'Sophie, Gellack (Beispiel)','rv.c3':'Marie, Pediküre (Beispiel)',
+      'rv.source':'Beispielbewertungen. Hier erscheinen später Ihre echten Google- oder Treatwell-Bewertungen.','rv.all':'Alle Bewertungen ansehen',
+      'd.sub':'Wir melden uns persönlich und bestätigen den Termin. Lieber direkt? <a href="tel:+491510000000">0151 0000000</a>',
+      'f.service':'Leistung','f.choose':'Bitte wählen','f.errService':'Bitte wählen Sie eine Leistung.',
+      'f.day':'Wunschtag','f.errDay':'Bitte wählen Sie einen Tag.','f.dayHint':'Mittwoch und Sonntag geschlossen.','f.back':'Zurück','f.fwd':'Weiter','f.today':'Heute','f.tomorrow':'Morgen',
+      'f.time':'Tageszeit <span class="opt">(optional)</span>','f.name':'Name','f.errName':'Bitte geben Sie Ihren Namen an.','f.phone':'Telefon','f.errPhone':'Bitte geben Sie eine Telefonnummer an.',
+      'f.msg':'Nachricht <span class="opt">(optional)</span>','f.ph':'z. B. Wunschfarbe, Uhrzeit oder Fragen',
+      'f.consent':'Ich bin einverstanden, dass meine Angaben zur Bearbeitung der Terminanfrage verwendet werden. Mehr in der <a href="#">Datenschutzerklärung</a>.',
+      'f.send':'Anfrage senden','f.note':'Unverbindlich. Der Termin gilt nach Bestätigung.','f.thx':'Vielen Dank!','f.thxText':'Ihre Anfrage ist angekommen. Wir melden uns so bald wie möglich bei Ihnen.',
+      'ft.route':'Route planen','ft.hours':'Öffnungszeiten'
+    },
+    ru:{
+      'meta.title':'Шаблон для ногтевой студии – демо TP Digital Lab',
+      'a.nav':'Главное меню','a.close':'Закрыть',
+      'nav.prices':'Цены','nav.works':'Работы','nav.studio':'Студия','nav.reviews':'Отзывы','nav.contact':'Контакты',
+      'cta.book':'Записаться','cta.prices':'Смотреть цены',
+      'hero.stars':'4,9 — 120 отзывов (пример)','hero.quote':'Наконец-то студия, где никто не торопит.','hero.by':'Анна, клиентка (пример)',
+      'hero.lead':'Маникюр, педикюр и покрытие гель-лаком — с 2018 года, в спокойной студии в Мюнхене (Haidhausen). Стерилизованный инструмент, одноразовые материалы и время только для вас.',
+      'f1':'<b>Одна клиентка за раз</b>Спокойно, без суеты','f2':'<b>Пн–Сб, 10–19</b>Среда — выходной','f3':'<b>Haidhausen</b>Musterstraße 1, Мюнхен',
+      'pr.kicker':'Услуги и цены','pr.title':'Понятные цены и время','pr.intro':'В «Подробнее» — детали каждой процедуры. Записаться можно сразу онлайн.',
+      'tab.mani':'Маникюр','tab.pedi':'Педикюр','tab.extra':'Уход','pick':'Записаться','more':'Подробнее','svc.ph':'Подробное описание скоро появится.','svc.book':'Записаться',
+      's0':'Маникюр','s1':'Маникюр с гель-лаком','s2':'Японский маникюр','s3':'Маникюр с укреплением ногтей','s4':'Педикюр','s5':'Педикюр с гель-лаком','s6':'Педикюр с гель-лаком и массажем','s7':'SPA для рук','s8':'SPA для ног','s9':'Снятие гель-лака','s10':'Наращивание / консультация',
+      'm40':'40 мин','m70':'1 ч 10 мин, база или цвет','m50':'50 мин','m90':'1 ч 30 мин','m60':'1 ч','m75':'1 ч 15 мин','m30':'30 мин','m30x':'30 мин, без маникюра',
+      'w.title':'Работы студии','w.intro':'Листайте пальцем, мышью или стрелками. Нажмите на фото, чтобы увеличить.','w.prev':'Предыдущее фото','w.next':'Следующее фото','w.pause':'Пауза','w.play':'Продолжить','w.zoom':'Увеличить фото',
+      'w.note':'Примеры фото с Unsplash. Здесь будут ваши собственные работы.',
+      'ph0':'Нюд в нежно-розовом','ph1':'Гель-лак цвета мов','ph2':'Молочный натуральный маникюр','ph3':'Нюд с блёстками','ph4':'Миндальная форма, нюд','ph5':'Маникюр в студии',
+      'st.kicker':'Студия','st.title':'Спокойное место только для вас','st.intro':'Уютная студия. За чаем или кофе под приятную музыку можно отдохнуть, пока о ваших руках и ногах заботятся.',
+      'st.p1':'<b>Гигиена прежде всего:</b> стерилизованный инструмент и одноразовые материалы','st.p2':'<b>Сертифицированные материалы</b> и внимание к каждой детали','st.p3':'<b>Опыт с 2018 года</b> в маникюре и педикюре',
+      'rv.title':'Что говорят клиентки','rv.count':'120 отзывов (пример)',
+      'rv.q1':'Очень аккуратно и спокойно. Всё чисто, приду снова.','rv.q2':'Покрытие держится уже три недели. Именно то, что хотела.','rv.q3':'Записалась онлайн, приняли вовремя, результат отличный.',
+      'rv.c1':'Лена, маникюр (пример)','rv.c2':'Софи, гель-лак (пример)','rv.c3':'Мари, педикюр (пример)',
+      'rv.source':'Примеры отзывов. Здесь появятся ваши настоящие отзывы из Google или Treatwell.','rv.all':'Все отзывы',
+      'd.sub':'Мы лично свяжемся с вами и подтвердим запись. Удобнее позвонить? <a href="tel:+491510000000">0151 0000000</a>',
+      'f.service':'Услуга','f.choose':'Выберите услугу','f.errService':'Пожалуйста, выберите услугу.',
+      'f.day':'Желаемый день','f.errDay':'Пожалуйста, выберите день.','f.dayHint':'Среда и воскресенье — выходные.','f.back':'Назад','f.fwd':'Дальше','f.today':'Сегодня','f.tomorrow':'Завтра',
+      'f.time':'Время дня <span class="opt">(необязательно)</span>','f.name':'Имя','f.errName':'Пожалуйста, укажите имя.','f.phone':'Телефон','f.errPhone':'Пожалуйста, укажите номер телефона.',
+      'f.msg':'Сообщение <span class="opt">(необязательно)</span>','f.ph':'Например, желаемый цвет, время или вопросы',
+      'f.consent':'Я согласна(-ен) на обработку моих данных для записи. Подробнее в <a href="#">политике конфиденциальности</a>.',
+      'f.send':'Отправить заявку','f.note':'Без обязательств. Запись действительна после подтверждения.','f.thx':'Спасибо!','f.thxText':'Заявка отправлена. Мы свяжемся с вами в ближайшее время.',
+      'ft.route':'Построить маршрут','ft.hours':'Часы работы'
+    },
+    uk:{
+      'meta.title':'Шаблон для манікюрної студії – демо TP Digital Lab',
+      'a.nav':'Головне меню','a.close':'Закрити',
+      'nav.prices':'Ціни','nav.works':'Роботи','nav.studio':'Студія','nav.reviews':'Відгуки','nav.contact':'Контакти',
+      'cta.book':'Записатися','cta.prices':'Переглянути ціни',
+      'hero.stars':'4,9 — 120 відгуків (приклад)','hero.quote':'Нарешті студія, де ніхто не поспішає.','hero.by':'Анна, клієнтка (приклад)',
+      'hero.lead':'Манікюр, педикюр і покриття гель-лаком — з 2018 року, у спокійній студії в Мюнхені (Haidhausen). Стерилізований інструмент, одноразові матеріали й час лише для вас.',
+      'f1':'<b>Одна клієнтка за раз</b>Спокійно, без метушні','f2':'<b>Пн–Сб, 10–19</b>Середа — вихідний','f3':'<b>Haidhausen</b>Musterstraße 1, Мюнхен',
+      'pr.kicker':'Послуги та ціни','pr.title':'Зрозумілі ціни й час','pr.intro':'У «Детальніше» — подробиці кожної процедури. Записатися можна одразу онлайн.',
+      'tab.mani':'Манікюр','tab.pedi':'Педикюр','tab.extra':'Догляд','pick':'Записатися','more':'Детальніше','svc.ph':'Детальний опис незабаром з’явиться.','svc.book':'Записатися',
+      's0':'Манікюр','s1':'Манікюр з гель-лаком','s2':'Японський манікюр','s3':'Манікюр зі зміцненням нігтів','s4':'Педикюр','s5':'Педикюр з гель-лаком','s6':'Педикюр з гель-лаком і масажем','s7':'SPA для рук','s8':'SPA для ніг','s9':'Зняття гель-лаку','s10':'Нарощування / консультація',
+      'm40':'40 хв','m70':'1 год 10 хв, база або колір','m50':'50 хв','m90':'1 год 30 хв','m60':'1 год','m75':'1 год 15 хв','m30':'30 хв','m30x':'30 хв, без манікюру',
+      'w.title':'Роботи студії','w.intro':'Гортайте пальцем, мишею або стрілками. Натисніть на фото, щоб збільшити.','w.prev':'Попереднє фото','w.next':'Наступне фото','w.pause':'Пауза','w.play':'Продовжити','w.zoom':'Збільшити фото',
+      'w.note':'Приклади фото з Unsplash. Тут будуть ваші власні роботи.',
+      'ph0':'Нюд у ніжно-рожевому','ph1':'Гель-лак кольору мов','ph2':'Молочний натуральний манікюр','ph3':'Нюд із блискітками','ph4':'Мигдалеподібна форма, нюд','ph5':'Манікюр у студії',
+      'st.kicker':'Студія','st.title':'Спокійне місце лише для вас','st.intro':'Затишна студія. За чаєм чи кавою під приємну музику можна відпочити, поки про ваші руки й ноги дбають.',
+      'st.p1':'<b>Гігієна понад усе:</b> стерилізований інструмент і одноразові матеріали','st.p2':'<b>Сертифіковані матеріали</b> й увага до кожної деталі','st.p3':'<b>Досвід з 2018 року</b> в манікюрі та педикюрі',
+      'rv.title':'Що кажуть клієнтки','rv.count':'120 відгуків (приклад)',
+      'rv.q1':'Дуже акуратно і спокійно. Усе чисто, прийду ще.','rv.q2':'Покриття тримається вже три тижні. Саме те, що хотіла.','rv.q3':'Записалася онлайн, прийняли вчасно, результат чудовий.',
+      'rv.c1':'Лена, манікюр (приклад)','rv.c2':'Софи, гель-лак (пример)','rv.c3':'Марі, педикюр (приклад)',
+      'rv.source':'Приклади відгуків. Тут з’являться ваші справжні відгуки з Google або Treatwell.','rv.all':'Усі відгуки',
+      'd.sub':'Ми особисто зв’яжемося з вами й підтвердимо запис. Зручніше подзвонити? <a href="tel:+491510000000">0151 0000000</a>',
+      'f.service':'Послуга','f.choose':'Оберіть послугу','f.errService':'Будь ласка, оберіть послугу.',
+      'f.day':'Бажаний день','f.errDay':'Будь ласка, оберіть день.','f.dayHint':'Середа й неділя — вихідні.','f.back':'Назад','f.fwd':'Далі','f.today':'Сьогодні','f.tomorrow':'Завтра',
+      'f.time':'Час дня <span class="opt">(необов’язково)</span>','f.name':'Ім’я','f.errName':'Будь ласка, вкажіть ім’я.','f.phone':'Телефон','f.errPhone':'Будь ласка, вкажіть номер телефону.',
+      'f.msg':'Повідомлення <span class="opt">(необов’язково)</span>','f.ph':'Наприклад, бажаний колір, час або запитання',
+      'f.consent':'Я погоджуюся на обробку моїх даних для запису. Детальніше в <a href="#">політиці конфіденційності</a>.',
+      'f.send':'Надіслати заявку','f.note':'Без зобов’язань. Запис дійсний після підтвердження.','f.thx':'Дякуємо!','f.thxText':'Заявку надіслано. Ми зв’яжемося з вами найближчим часом.',
+      'ft.route':'Прокласти маршрут','ft.hours':'Години роботи'
+    }
+  };
+  const HOURS={de:['Mo – Di','Mi','Do – Sa','So','10 – 19 Uhr','geschlossen'],ru:['Пн – Вт','Ср','Чт – Сб','Вс','10 – 19','выходной'],uk:['Пн – Вт','Ср','Чт – Сб','Нд','10 – 19','вихідний']};
+  let LANG='de';
+  window.t=k=>(I18N[LANG]&&I18N[LANG][k])??I18N.de[k]??k;
+  function applyLang(l){
+    LANG=I18N[l]?l:'de';
+    document.documentElement.lang=LANG;
+    document.title=t('meta.title');
+    document.querySelectorAll('[data-i18n]').forEach(e=>{e.textContent=t(e.dataset.i18n)});
+    document.querySelectorAll('[data-i18n-html]').forEach(e=>{e.innerHTML=t(e.dataset.i18nHtml)});
+    document.querySelectorAll('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.i18nAria)));
+    document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.setAttribute('placeholder',t(e.dataset.i18nPh)));
+    document.querySelectorAll('[data-i18n-label]').forEach(e=>e.setAttribute('label',t(e.dataset.i18nLabel)));
+    document.querySelectorAll('.card[data-ph]').forEach(c=>{const a=t(c.dataset.ph);c.setAttribute('aria-label',t('w.zoom')+': '+a);const im=c.querySelector('img');if(!c.hasAttribute('aria-hidden'))im.alt=a});
+    const rows=document.querySelectorAll('footer table tr');const h=HOURS[LANG];
+    if(rows.length===4){[[0,4],[1,5],[2,4],[3,5]].forEach(([a,b],i)=>{rows[i].cells[0].textContent=h[a];rows[i].cells[1].textContent=h[b]})}
+    document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===LANG));
+    try{localStorage.setItem('studio-lang',LANG)}catch(e){}
+    document.dispatchEvent(new Event('langchange'));
+  }
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+
+  let saved='de';try{saved=localStorage.getItem('studio-lang')||'de'}catch(e){}
+  applyLang(saved);
+
+  // ── прайс из данных (/api/content, запасной вариант /content.json) ──
+  (()=>{
+    const d=document.getElementById('svc');
+    let DATA=null;
+    const L=o=>(o&&(o[LANG]||o.de))||'';
+    const money=p=>(Number.isInteger(p)?p:p.toFixed(2).replace('.',','))+' €';
+    function render(){
+      if(!DATA)return;
+      ['mani','pedi','extra'].forEach(cat=>{
+        const ul=document.querySelector('.menu[data-group="'+cat+'"]');if(!ul)return;
+        const items=DATA.services.filter(s=>s.cat===cat);
+        ul.innerHTML='';
+        ul.style.gridTemplateRows='repeat('+Math.max(1,Math.ceil(items.length/2))+',auto)';
+        items.forEach(s=>{
+          const li=document.createElement('li');
+          const n=document.createElement('span');n.className='name';n.textContent=L(s.name);
+          const m=document.createElement('span');m.className='meta';m.textContent=L(s.time);
+          const p=document.createElement('span');p.className='price';
+          const st=document.createElement('strong');st.textContent=money(s.price);
+          const b=document.createElement('button');b.className='pick';b.type='button';b.textContent=t('more');b.dataset.id=s.id;
+          p.append(st,b);li.append(n,m,p);ul.append(li);
+        });
+      });
+    }
+    document.querySelector('.prices').addEventListener('click',e=>{
+      const b=e.target.closest('.pick');if(!b)return;
+      const li=b.closest('li');
+      const s=DATA&&DATA.services.find(x=>x.id===b.dataset.id);
+      d.querySelector('#svc-title').textContent=li.querySelector('.name').textContent;
+      d.querySelector('.svc-meta').textContent=li.querySelector('.meta').textContent+' · '+li.querySelector('.price strong').textContent;
+      const txt=d.querySelector('.svc-text');
+      txt.textContent=(s&&L(s.desc))||t('svc.ph');
+      d.showModal();
+    });
+    d.querySelector('.close').addEventListener('click',()=>d.close());
+    d.addEventListener('click',e=>{if(e.target===d)d.close()});
+    document.addEventListener('langchange',render);
+    const load=u=>fetch(u,{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
+    load('/demo/studio/content.json').then(j=>{if(j&&Array.isArray(j.services)){DATA=j;render()}}).catch(()=>{});
+  })();
+
+  // вкладки прайса
+  const tabs=[...document.querySelectorAll('.tabs button')];
+  tabs.forEach(t=>t.addEventListener('click',()=>{
+    tabs.forEach(x=>x.setAttribute('aria-selected',x===t));
+    document.querySelectorAll('.menu').forEach(m=>m.hidden=m.dataset.group!==t.dataset.tab);
+  }));
+
+  document.querySelector('.to-top').addEventListener('click',e=>{
+    e.preventDefault();
+    scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    history.replaceState(null,'',location.pathname);
+  });
+
+</script>
+</body>
+</html>

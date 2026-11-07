@@ -50,15 +50,19 @@ export default function TopicPage({ data: base }: { data: TopicPageData }) {
         {data.demo && (
           <section className="pb-14 sm:pb-20">
             <Container>
-              <a href={`/demo/${data.demo.slug}`} target="_blank" rel="noopener" className="group grid overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]/70 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]" aria-label={data.demo.cta}>
-                <Image src={`/demo/${data.demo.slug}/preview.png`} alt={data.demo.title} width={1440} height={900} sizes="(max-width: 1023px) 100vw, 700px" className="aspect-[16/10] h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]" />
-                <div className="flex flex-col justify-center p-6 sm:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{u.live}</p>
-                  <h2 className="mt-2 text-2xl font-semibold tracking-tight">{data.demo.title}</h2>
-                  <p className="mt-3 text-base leading-7 text-white/70">{data.demo.text}</p>
-                  <span className="mt-5 text-sm font-semibold text-blue-200 underline underline-offset-4">{data.demo.cta}</span>
-                </div>
-              </a>
+              <div className="grid gap-6">
+                {[data.demo, data.demo2].filter((d): d is NonNullable<typeof d> => Boolean(d)).map((d) => (
+                  <a key={d.slug} href={`/demo/${d.slug}`} target="_blank" rel="noopener" className="group grid overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]/70 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]" aria-label={d.cta}>
+                    <Image src={`/demo/${d.slug}/preview.png`} alt={d.title} width={1440} height={900} sizes="(max-width: 1023px) 100vw, 700px" className="aspect-[16/10] h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]" />
+                    <div className="flex flex-col justify-center p-6 sm:p-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{u.live}</p>
+                      <h2 className="mt-2 text-2xl font-semibold tracking-tight">{d.title}</h2>
+                      <p className="mt-3 text-base leading-7 text-white/70">{d.text}</p>
+                      <span className="mt-5 text-sm font-semibold text-blue-200 underline underline-offset-4">{d.cta}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </Container>
           </section>
         )}
