@@ -722,6 +722,20 @@ export async function POST(
     const verification =
       (await verificationResponse.json()) as TurnstileResponse;
 
+    const allowedHostnames = ["tpdigitallab.de", "www.tpdigitallab.de", "localhost"];
+    if (
+      verification.success &&
+      verification.hostname &&
+      !allowedHostnames.includes(verification.hostname) &&
+      !verification.hostname.endsWith(".vercel.app")
+    ) {
+      console.warn("Turnstile token issued for unexpected hostname:", verification.hostname);
+      return NextResponse.json(
+        { success: false, error: "Security verification failed" },
+        { status: 403 },
+      );
+    }
+
     if (!verification.success) {
       console.warn(
         "Turnstile verification failed:",

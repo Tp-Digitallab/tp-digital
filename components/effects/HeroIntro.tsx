@@ -39,7 +39,9 @@ export default function HeroIntro() {
       // phones: start the entrance only once the page is hydrated and painting,
       // otherwise it finishes during load and looks like a jump
       const t = window.setTimeout(() => root.classList.add(root.classList.contains("intro-soft") ? "intro-soft-go" : "intro-m-go"), 150);
-      return () => clearTimeout(t);
+      // drop the classes once the entrance is over, so internal navigation back home does not replay it
+      const done = window.setTimeout(() => root.classList.remove("intro-soft", "intro-soft-go", "intro-m", "intro-m-go"), 2800);
+      return () => { clearTimeout(t); clearTimeout(done); };
     }
     if (!root.classList.contains("intro")) return;
 
