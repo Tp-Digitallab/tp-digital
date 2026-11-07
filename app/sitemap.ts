@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       };
       return locales.map(locale => ({ url: languages[locale], alternates: { languages } }));
     }),
+    ...["website-nagelstudio", "website-handwerker", "website-cafe", "wordpress-wartung-muenchen"].map(slug => ({ url: `${siteUrl}/${slug}` })),
     { url: `${siteUrl}/impressum` },
     { url: `${siteUrl}/datenschutzerklaerung` },
   ];

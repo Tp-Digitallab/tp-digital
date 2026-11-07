@@ -208,6 +208,19 @@ export default function Footer() {
                     ? "Цифровые решения"
                     : "Digital Solutions"}
               </Link>
+
+              <Link href="/wordpress-wartung-muenchen" className="text-white/70 transition hover:text-white">
+                {language === "ru" ? "Обслуживание WordPress" : language === "en" ? "WordPress maintenance" : "WordPress-Wartung"}
+              </Link>
+              <Link href="/website-nagelstudio" className="text-white/70 transition hover:text-white">
+                {language === "ru" ? "Сайт для ногтевой студии" : language === "en" ? "Website for nail studios" : "Website für Nagelstudios"}
+              </Link>
+              <Link href="/website-handwerker" className="text-white/70 transition hover:text-white">
+                {language === "ru" ? "Сайт для мастеров" : language === "en" ? "Website for trades" : "Website für Handwerker"}
+              </Link>
+              <Link href="/website-cafe" className="text-white/70 transition hover:text-white">
+                {language === "ru" ? "Сайт для кафе" : language === "en" ? "Website for cafés" : "Website für Cafés"}
+              </Link>
             </nav>
           </div>
 

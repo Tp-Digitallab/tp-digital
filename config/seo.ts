@@ -13,7 +13,7 @@ export const homeLanguages = {
 const homeCopy = {
   de: {
     title: "Webdesign München für kleine Unternehmen | TP Digital Lab",
-    description: "Websites für Selbstständige und kleine Unternehmen: Landingpage ab 300 €, Firmenwebsite ab 790 €. Persönlich aus München, deutschlandweit. Arbeiten ansehen und Festpreis anfragen.",
+    description: "Websites für Selbstständige und kleine Unternehmen: Landingpage ab 290 €, Firmenwebsite ab 790 €. Persönlich aus München, deutschlandweit. Arbeiten ansehen und Festpreis anfragen.",
     locale: "de_DE",
   },
   en: {

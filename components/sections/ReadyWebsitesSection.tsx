@@ -6,9 +6,9 @@ import RequestLink from "@/components/contact/RequestLink";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const templates = [
-  { slug: "beauty", name: { de: "Nagel- und Beauty-Studio", en: "Nail and beauty studio", ru: "Ногтевая и бьюти-студия" }, extra: { de: "Freie Termine, Preisliste, Galerie", en: "Free slots, price list, gallery", ru: "Свободные окна, прайс, галерея" } },
-  { slug: "handwerk", name: { de: "Handwerk und Renovierung", en: "Trades and renovation", ru: "Ремонт и мастера" }, extra: { de: "Preisrechner, Projekte, Einsatzgebiet", en: "Price calculator, projects, service area", ru: "Калькулятор цены, проекты, районы" } },
-  { slug: "cafe", name: { de: "Café und Gastronomie", en: "Café and gastronomy", ru: "Кафе и гастрономия" }, extra: { de: "Speisekarte, Mittagstisch, Reservierung", en: "Menu, lunch of the day, reservations", ru: "Меню, обед дня, бронь столика" } },
+  { slug: "beauty", page: "/website-nagelstudio", name: { de: "Nagel- und Beauty-Studio", en: "Nail and beauty studio", ru: "Ногтевая и бьюти-студия" }, extra: { de: "Freie Termine, Preisliste, Galerie", en: "Free slots, price list, gallery", ru: "Свободные окна, прайс, галерея" } },
+  { slug: "handwerk", page: "/website-handwerker", name: { de: "Handwerk und Renovierung", en: "Trades and renovation", ru: "Ремонт и мастера" }, extra: { de: "Preisrechner, Projekte, Einsatzgebiet", en: "Price calculator, projects, service area", ru: "Калькулятор цены, проекты, районы" } },
+  { slug: "cafe", page: "/website-cafe", name: { de: "Café und Gastronomie", en: "Café and gastronomy", ru: "Кафе и гастрономия" }, extra: { de: "Speisekarte, Mittagstisch, Reservierung", en: "Menu, lunch of the day, reservations", ru: "Меню, обед дня, бронь столика" } },
 ] as const;
 
 const copy = {
@@ -22,6 +22,7 @@ const copy = {
     request: "Anfragen",
     more: "Ihre Branche fehlt? Schreiben Sie mir, ich baue die Vorlage passend für Sie.",
     moreCta: "Branche vorschlagen",
+    details: "Mehr zur Branche",
     kind: "Landingpage",
     firmKind: "Firmenwebsite",
     firmTitle: "Mehr als eine Seite: zum Durchklicken.",
@@ -44,6 +45,7 @@ const copy = {
     request: "Request",
     more: "Your industry is missing? Tell me, and I will build the template for you.",
     moreCta: "Suggest an industry",
+    details: "More about this industry",
     kind: "Landing page",
     firmKind: "Business website",
     firmTitle: "More than one page: click through it.",
@@ -66,6 +68,7 @@ const copy = {
     request: "Хочу такой",
     more: "Нет вашей сферы? Напишите, и я сделаю шаблон под вас.",
     moreCta: "Предложить сферу",
+    details: "Подробнее о сфере",
     kind: "Лендинг",
     firmKind: "Сайт компании",
     firmTitle: "Больше одной страницы: пощёлкайте сами.",
@@ -108,6 +111,7 @@ export default function ReadyWebsitesSection() {
                   <p className="price-number shrink-0 text-lg font-semibold text-white">{t.price}</p>
                 </div>
                 <p className="mt-2 text-sm leading-6 text-white/60">{tpl.extra[language]}</p>
+                <a href={tpl.page} className="mt-2 text-sm font-semibold text-blue-200 underline underline-offset-4">{t.details}</a>
                 <div className="mt-auto flex gap-3 pt-6">
                   <a href={`/demo/${tpl.slug}`} target="_blank" rel="noopener" className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-blue-600 px-4 py-2.5 text-center text-sm font-semibold text-white">{t.demo}</a>
                   <RequestLink className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 px-4 py-2.5 text-center text-sm font-medium text-white/85 hover:bg-white/10">{t.request}</RequestLink>
