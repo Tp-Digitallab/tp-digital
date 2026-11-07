@@ -1,6 +1,6 @@
 export const en = {
   nav: {
-    services: "Solutions",
+    services: "Ready-made",
     packages: "Packages",
     projects: "Projects",
     calculator: "Calculator",

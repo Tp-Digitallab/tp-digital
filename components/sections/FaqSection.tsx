@@ -9,40 +9,10 @@ import Container from "@/components/common/Container";
 import Section from "@/components/common/Section";
 import FaqSchema from "@/components/seo/FaqSchema";
 import { useLanguage } from "@/components/providers/LanguageProvider";
-import { packagePresets } from "@/config/packagePresets";
 
 type Language = "de" | "en" | "ru";
 
 function getFaqContent(language: Language) {
-  const numberLocale =
-    language === "de"
-      ? "de-DE"
-      : language === "ru"
-        ? "ru-RU"
-        : "en-US";
-
-  const formatter = new Intl.NumberFormat(
-    numberLocale,
-    {
-      style: "currency",
-      currency: "EUR",
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }
-  );
-
-  const landingPrice = formatter.format(
-    packagePresets.launch.price
-  );
-
-  const businessPrice = formatter.format(
-    packagePresets.business.price
-  );
-
-  const shopPrice = formatter.format(
-    packagePresets.growth.price
-  );
-
   const content = {
     de: {
       eyebrow: "Gut zu wissen",
@@ -65,24 +35,10 @@ function getFaqContent(language: Language) {
       items: [
         {
           question:
-            "Wie viel kostet meine Website?",
-
-          answer:
-            `Eine Landingpage startet bei ${landingPrice}, eine Unternehmenswebsite mit bis zu fünf Seiten bei ${businessPrice} und ein Online-Shop mit bis zu 20 Produkten bei ${shopPrice}. Der genaue Preis hängt vom vereinbarten Umfang ab. Enthalten ist jeweils eine Sprache. Die Landingpage umfasst bis zu fünf Abschnitte. Ihre Texte und Bilder bilden die Grundlage. Individuelle Buchungssysteme, zusätzliche Sprachen und Integrationen werden separat angeboten. Vor Projektbeginn erhalten Sie ein schriftliches Angebot mit Leistungsumfang und Festpreis.`,
-        },
-        {
-          question:
             "Wie lange dauert die Erstellung?",
 
           answer:
             "Das hängt vom Umfang, den gewünschten Funktionen und den verfügbaren Inhalten ab. Nach der Abstimmung vereinbaren wir einen realistischen Zeitplan. Wenn Texte, Bilder oder Freigaben später vorliegen, kann sich der Termin entsprechend verschieben.",
-        },
-        {
-          question:
-            "Welche Materialien benötigen Sie von mir?",
-
-          answer:
-            "Hilfreich sind Informationen zu Ihrem Unternehmen, Ihren Leistungen und Ihrer Zielgruppe sowie vorhandene Texte, ein Logo und Bilder, die Sie verwenden dürfen. Wenn etwas fehlt, klären wir vorab, welche Unterstützung Sie benötigen und ob dafür zusätzliche Kosten entstehen.",
         },
         {
           question:
@@ -97,13 +53,6 @@ function getFaqContent(language: Language) {
 
           answer:
             "Ja. Sie erhalten vor dem Livegang Zugang zu einer geschützten Testversion. Zwei Korrekturrunden innerhalb des vereinbarten Leistungsumfangs sind enthalten. In jeder Runde sammeln Sie Ihre Änderungswünsche. Neue Funktionen, zusätzliche Seiten oder weitere Korrekturrunden werden vorab separat vereinbart.",
-        },
-        {
-          question:
-            "Muss ich einen Telefontermin vereinbaren?",
-
-          answer:
-            "Nein. Wir stimmen Ihr Projekt schriftlich ab. Sie können Ihre Anfrage über das Formular oder per E-Mail senden. Ich stelle Rückfragen ebenfalls schriftlich, damit Ziele, Inhalte und Vereinbarungen nachvollziehbar bleiben.",
         },
         {
           question:
@@ -143,24 +92,10 @@ function getFaqContent(language: Language) {
       items: [
         {
           question:
-            "How much will my website cost?",
-
-          answer:
-            `A landing page starts at ${landingPrice}, a business website with up to five pages at ${businessPrice}, and an online store with up to 20 products at ${shopPrice}. The exact price depends on the agreed scope. Each starting package includes one language and uses your text and images. The landing page includes up to five sections. Custom booking systems, extra languages and integrations are quoted separately. Before work begins, you receive a written offer with the scope and fixed price.`,
-        },
-        {
-          question:
             "How long does the project take?",
 
           answer:
             "That depends on the scope, required features and available content. After discussing the details, we agree on a realistic timeline. If texts, images or approvals arrive later, the delivery date may need to change accordingly.",
-        },
-        {
-          question:
-            "What materials do you need from me?",
-
-          answer:
-            "Information about your business, services and target customers is helpful, along with any existing texts, logo and images you have permission to use. If something is missing, we agree in advance on the help you need and any additional costs.",
         },
         {
           question:
@@ -175,13 +110,6 @@ function getFaqContent(language: Language) {
 
           answer:
             "Yes. You receive access to a protected preview before launch. Two revision rounds within the agreed scope are included. You collect your requested changes for each round. New features, additional pages or further revision rounds are agreed separately in advance.",
-        },
-        {
-          question:
-            "Do I need to arrange a phone call?",
-
-          answer:
-            "No. We discuss your project in writing. You can send your enquiry through the form or by email. I also send follow-up questions in writing so that the goals, content and agreements remain documented.",
         },
         {
           question:
@@ -221,24 +149,10 @@ function getFaqContent(language: Language) {
       items: [
         {
           question:
-            "Сколько будет стоить мой сайт?",
-
-          answer:
-            `Лендинг стоит от ${landingPrice}, сайт компании до пяти страниц — от ${businessPrice}, интернет-магазин до 20 товаров — от ${shopPrice}. Точная стоимость зависит от согласованного объёма. До начала работы вы получите письменное предложение с составом работ и фиксированной ценой.`,
-        },
-        {
-          question:
             "Сколько времени занимает разработка?",
 
           answer:
             "Это зависит от объёма, нужных функций и готовности материалов. После обсуждения задачи мы согласуем реалистичные сроки. Если тексты, изображения или согласования поступают позже, срок запуска может соответственно сдвинуться.",
-        },
-        {
-          question:
-            "Какие материалы нужны от меня?",
-
-          answer:
-            "Полезна информация о вашем бизнесе, услугах и клиентах, а также готовые тексты, логотип и изображения, которые вы вправе использовать. Если чего-то нет, заранее обсудим, какая помощь нужна и возникнут ли дополнительные расходы.",
         },
         {
           question:
@@ -253,13 +167,6 @@ function getFaqContent(language: Language) {
 
           answer:
             "Да. До запуска вы получите доступ к закрытой тестовой версии. Включены два раунда правок в рамках согласованного объёма. Для каждого раунда вы собираете свои пожелания. Новые функции, дополнительные страницы и последующие раунды правок согласовываются заранее отдельно.",
-        },
-        {
-          question:
-            "Обязательно ли созваниваться?",
-
-          answer:
-            "Нет. Мы обсуждаем проект письменно. Заявку можно отправить через форму или по электронной почте. Уточняющие вопросы я также задаю письменно, чтобы цели, материалы и договорённости оставались зафиксированы.",
         },
         {
           question:

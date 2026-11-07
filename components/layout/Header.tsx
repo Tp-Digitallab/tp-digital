@@ -45,12 +45,12 @@ export default function Header() {
 
   const navigation = [
     {
-      name: t.nav.services,
-      href: homeHref("#solutions"),
-    },
-    {
       name: t.nav.projects,
       href: homeHref("#projects"),
+    },
+    {
+      name: t.nav.services,
+      href: homeHref("#fertige-websites"),
     },
     {
       name: t.nav.packages,

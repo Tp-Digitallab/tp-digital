@@ -1,6 +1,6 @@
 export const ru = {
   nav: {
-    services: "Услуги",
+    services: "Готовые сайты",
     packages: "Пакеты",
     projects: "Проекты",
     calculator: "Калькулятор",

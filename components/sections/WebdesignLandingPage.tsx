@@ -2,6 +2,7 @@
 import { packageTranslations } from "@/config/packageTranslations";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import ReadyWebsitesSection from "@/components/sections/ReadyWebsitesSection";
+import CalculatorSection from "@/components/sections/CalculatorSection";
 import { useState } from "react";
 import LeadForm, { type PackageChoice } from "@/components/contact/LeadForm";
 import ProjectPreview from "@/components/portfolio/ProjectPreview";
@@ -612,6 +613,11 @@ const copy: Record<Language, Copy> = {
             "A landing page starts at €300, a business website with up to five pages at €790 and an online store at €1,500. You receive the final fixed price in writing before the project begins.",
         },
         {
+          question: "What do you need from me?",
+          answer:
+            "Information about your business and services, an existing logo and photos you are allowed to use. If texts or images are missing, we clarify before the start what support you need.",
+        },
+        {
           question: "Do I need to call?",
           answer:
             "No. Communication takes place in writing by form, email or WhatsApp.",
@@ -863,6 +869,11 @@ const copy: Record<Language, Copy> = {
             "Сколько стоит профессиональный сайт?",
           answer:
             "Лендинг стоит от 300 €, сайт компании до пяти страниц — от 790 €, интернет-магазин — от 1 500 €. Окончательная фиксированная цена указывается письменно до начала проекта.",
+        },
+        {
+          question: "Что нужно от меня?",
+          answer:
+            "Информация о вашем бизнесе и услугах, логотип и фото, которые вы вправе использовать. Если текстов или фото нет, до старта обсудим, какая помощь нужна.",
         },
         {
           question:
@@ -1204,6 +1215,8 @@ export default function WebdesignLandingPage() {
         <ReadyWebsitesSection />
 
                 <ReviewsSection />
+
+        <CalculatorSection />
 
         <section id="faq" className="scroll-mt-24 py-16 md:py-24">
           <Container>
