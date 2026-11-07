@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Handwerk Vorlage – Demo-Website von TP Digital Lab</title>
+<meta name="description" content="Demo-Website für einen Malerbetrieb oder Handwerker. TP Digital Lab passt diese Website an Ihren Betrieb an.">
+<style>
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/handwerk/fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/handwerk/fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
+:root{--bg:#14181d;--panel:#1b2128;--panel2:#222a33;--text:#eef1f3;--muted:#a3adb7;--accent:#ff8a3d;--line:rgba(238,241,243,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font:500 17px/1.6 Manrope,system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+.mono{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:13px;letter-spacing:.04em;color:var(--muted)}
+.demo-bar{background:var(--accent);color:#1a0d04;font-size:14px;font-weight:700;text-align:center;padding:9px 16px}
+.demo-bar a{text-decoration:underline;text-underline-offset:3px}
+header{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:74px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:19px;line-height:1.15}
+.logo i{width:34px;height:34px;border-radius:6px;background:var(--accent);display:block}
+.logo small{display:block;font-size:12px;font-weight:600;color:var(--muted)}
+.links{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.callnow{display:flex;align-items:center;gap:16px}
+.callnow .num{font-weight:800;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 24px;border-radius:8px;font-weight:800;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn-main{background:var(--accent);color:#1a0d04}
+.btn-main:hover{background:#ffa463}
+.btn-line{border:1px solid var(--line);color:var(--text);background:none}
+.btn-line:hover{background:rgba(255,255,255,.06)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);border-bottom:1px solid var(--line)}
+.hero-text{padding:72px 56px 64px max(16px,calc((100vw - 1200px)/2))}
+.hero-text .mono{display:block;margin-bottom:22px}
+h1{font-size:clamp(40px,5vw,68px);line-height:1.02;letter-spacing:-.04em;font-weight:800}
+.sub{margin-top:22px;font-size:19px;color:var(--muted);max-width:560px}
+.sub b{color:var(--text)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.trust{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:8px 28px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:14px}
+.trust b{display:block;font-size:22px;letter-spacing:-.02em}
+.trust span{color:var(--muted)}
+.hero-photo{position:relative;min-height:560px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo .tag{position:absolute;left:20px;bottom:20px;background:var(--bg);padding:12px 16px;border-radius:8px;font-size:14px;max-width:280px}
+.hero-photo .tag b{color:var(--accent)}
+section{padding:96px 0}
+h2{font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin-top:10px}
+.lead{color:var(--muted);margin-top:14px;max-width:620px}
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:0;margin-top:36px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.calc-in{padding:32px;background:var(--panel)}
+.calc-out{padding:32px;background:var(--panel2);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.opts button{font:700 15px Manrope,sans-serif;padding:11px 16px;border-radius:8px;border:1px solid var(--line);background:none;color:var(--text);cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+.field{margin-top:26px}
+.field label{display:flex;justify-content:space-between;font-weight:700}
+.field output{color:var(--accent)}
+input[type=range]{width:100%;margin-top:14px;accent-color:var(--accent)}
+.check{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:15px;cursor:pointer}
+.check input{width:18px;height:18px;accent-color:var(--accent)}
+.result{font-size:clamp(34px,4vw,48px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-top:8px}
+.calc-out p{font-size:14px;color:var(--muted)}
+/* services as a table */
+.svc{margin-top:36px;border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr) auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc-row h3{font-size:20px;letter-spacing:-.01em}
+.svc-row p{color:var(--muted);font-size:15px}
+.svc-row .price{font-weight:800;white-space:nowrap}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px;margin-top:36px}
+.proj{position:relative;border-radius:12px;overflow:hidden;background:var(--panel)}
+.proj img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.proj:nth-child(1){grid-column:span 7}.proj:nth-child(2){grid-column:span 5}.proj:nth-child(3){grid-column:span 5}.proj:nth-child(4){grid-column:span 7}
+.proj figcaption{padding:16px 18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px}
+.proj figcaption b{font-size:17px}
+.proj figcaption span{font-size:14px;color:var(--muted)}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:36px;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.step{padding:26px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .mono{color:var(--accent)}
+.step b{display:block;font-size:19px;margin-top:10px}
+.step p{font-size:15px;color:var(--muted);margin-top:6px}
+/* area + person */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:14px;font-weight:600}
+.me{display:grid;grid-template-columns:150px minmax(0,1fr);gap:24px;align-items:start;margin-top:22px}
+.me-photo{aspect-ratio:1;border-radius:12px;border:1px dashed rgba(238,241,243,.3);display:grid;place-items:center;text-align:center;font-size:13px;color:var(--muted);padding:12px}
+.me p{color:var(--muted)}
+.me p+p{margin-top:10px}
+.quote{margin-top:32px;padding:24px;border-left:3px solid var(--accent);background:var(--panel)}
+.quote p{font-size:18px;font-weight:600}
+.quote span{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+/* request */
+.req{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:28px;border-radius:12px;background:var(--panel);border:1px solid var(--line)}
+form label{display:grid;gap:6px;font-size:14px;font-weight:700}
+form .full{grid-column:1/-1}
+input[type=text],input[type=tel],select,textarea{font:500 16px Manrope,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.form-note{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.direct{margin-top:26px;display:grid;gap:12px}
+.direct a{display:flex;justify-content:space-between;gap:12px;padding:16px 18px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+.direct a span{color:var(--muted);font-weight:500}
+.foot{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@keyframes in{from{opacity:0;filter:blur(10px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+.hero-text>*{animation:in 1s cubic-bezier(.2,.8,.2,1) both}
+.hero-text>:nth-child(2){animation-delay:.1s}.hero-text>:nth-child(3){animation-delay:.22s}.hero-text>:nth-child(4){animation-delay:.32s}.hero-text>:nth-child(5){animation-delay:.42s}
+.hero-photo{animation:in 1.2s ease .2s both}
+@media (prefers-reduced-motion:reduce){@keyframes in{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:none}}}
+@media (max-width:980px){
+ .links{display:none}
+ .hero,.calc,.two,.req{grid-template-columns:minmax(0,1fr)}
+ .hero-text{padding:48px 16px 40px}
+ .hero-photo{min-height:380px}
+ .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .step:nth-child(2){border-right:0}
+ .step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .projects .proj{grid-column:span 12!important}
+ section{padding:68px 0}
+}
+@media (max-width:600px){
+ .callnow .num{display:none}
+ .nav .btn{min-height:44px;padding:9px 14px;font-size:14px}
+ .trust{grid-template-columns:minmax(0,1fr)}
+ .svc-row{grid-template-columns:minmax(0,1fr);gap:6px}
+ .steps{grid-template-columns:minmax(0,1fr)}
+ .step{border-right:0;border-bottom:1px solid var(--line)}
+ .step:last-child{border-bottom:0}
+ form{grid-template-columns:minmax(0,1fr);padding:20px}
+ .calc-in,.calc-out{padding:22px}
+ .me{grid-template-columns:96px minmax(0,1fr);gap:16px}
+ .cta .btn{flex:1 1 100%}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo-Website von TP Digital Lab · Diese Website kann in 3 Tagen Ihre sein. <a href="/#fertige-websites" target="_top">Mehr erfahren</a></div>
+
+<header><div class="wrap nav">
+  <a class="logo" href="#"><i aria-hidden="true"></i><span>Ihr Betrieb<small>Maler und Renovierung · München</small></span></a>
+  <nav class="links" aria-label="Navigation"><a href="#leistungen">Leistungen</a><a href="#projekte">Projekte</a><a href="#ablauf">Ablauf</a><a href="#anfrage">Kontakt</a></nav>
+  <div class="callnow"><a class="num" href="tel:+49890000000">089 0000000</a><a class="btn btn-main" href="#anfrage">Angebot</a></div>
+</div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <div class="hero-text">
+    <span class="mono">MALERBETRIEB IN MÜNCHEN · SEIT 2009</span>
+    <h1>Wände streichen, Böden legen, Wohnungen renovieren.</h1>
+    <p class="sub">Festpreis nach Besichtigung. <b>Abdecken, Abkleben und Aufräumen sind im Preis drin</b>, Sie kommen in eine saubere Wohnung zurück.</p>
+    <div class="cta"><a class="btn btn-main" href="#anfrage">Kostenlose Besichtigung</a><a class="btn btn-line" href="#rechner">Preis grob berechnen</a></div>
+    <div class="trust"><div><b>800+</b><span>Wohnungen seit 2009</span></div><div><b>Meisterbetrieb</b><span>Handwerkskammer</span></div><div><b>3 Mio. €</b><span>Haftpflicht versichert</span></div></div>
+  </div>
+  <div class="hero-photo">
+    <img src="/demo/handwerk/img/roller.jpg" alt="Malerrolle streicht eine Wand weiß" width="1600" height="1200" fetchpriority="high">
+    <p class="tag"><b>Nächster freier Starttermin:</b> in 2 Wochen</p>
+  </div>
+</section>
+
+<section id="rechner"><div class="wrap">
+  <span class="mono">PREISRECHNER</span>
+  <h2>Was kostet das ungefähr?</h2>
+  <p class="lead">Ein Richtwert in zehn Sekunden. Den genauen Festpreis bekommen Sie nach der Besichtigung, schriftlich.</p>
+  <div class="calc">
+    <div class="calc-in">
+      <b>Was soll gemacht werden?</b>
+      <div class="opts" role="group" aria-label="Arbeit">
+        <button type="button" aria-pressed="true" data-min="9" data-max="12">Wände streichen</button>
+        <button type="button" aria-pressed="false" data-min="18" data-max="24">Tapezieren und streichen</button>
+        <button type="button" aria-pressed="false" data-min="32" data-max="45">Vinylboden verlegen</button>
+      </div>
+      <div class="field"><label for="m2">Fläche <output id="m2out">80 m²</output></label><input id="m2" type="range" min="10" max="300" step="5" value="80"></div>
+      <label class="check"><input type="checkbox" id="mat" checked> Material besorge ich mit (Farbe, Vlies, Kleber)</label>
+      <label class="check"><input type="checkbox" id="moebel"> Möbel rücken und abdecken</label>
+    </div>
+    <div class="calc-out">
+      <div><span class="mono">RICHTWERT</span><p class="result" id="result">720 – 960 €</p></div>
+      <p>Wandfläche, nicht Grundfläche. Faustregel: Grundfläche mal 3. Preise inklusive MwSt.</p>
+      <a class="btn btn-main" href="#anfrage">Festpreis anfragen</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="leistungen" style="padding-top:0"><div class="wrap">
+  <span class="mono">LEISTUNGEN</span>
+  <h2>Was wir machen. Und was nicht.</h2>
+  <div class="svc">
+    <div class="svc-row"><h3>Malerarbeiten</h3><p>Wände und Decken, Türen und Heizkörper lackieren, Spachteln bis Q3.</p><span class="price">ab 9 € / m²</span></div>
+    <div class="svc-row"><h3>Tapezieren</h3><p>Raufaser, Vlies, Mustertapeten. Alte Tapete entfernen wir mit.</p><span class="price">ab 18 € / m²</span></div>
+    <div class="svc-row"><h3>Bodenbeläge</h3><p>Vinyl, Laminat, Parkett verlegen, Sockelleisten inklusive.</p><span class="price">ab 32 € / m²</span></div>
+    <div class="svc-row"><h3>Wohnungsübergabe</h3><p>Renovierung beim Auszug, Termin passend zur Übergabe.</p><span class="price">Festpreis</span></div>
+    <div class="svc-row"><h3>Nicht bei uns</h3><p>Elektrik, Sanitär und Fliesen. Dafür empfehlen wir Kollegen, mit denen wir seit Jahren arbeiten.</p><span class="price">–</span></div>
+  </div>
+</div></section>
+
+<section id="projekte" style="padding-top:0"><div class="wrap">
+  <span class="mono">PROJEKTE</span>
+  <h2>Was wir zuletzt gemacht haben.</h2>
+  <div class="projects">
+    <figure class="proj"><img src="/demo/handwerk/img/after.jpg" alt="Renoviertes Wohnzimmer mit hellem Boden" loading="lazy"><figcaption><b>3-Zimmer-Wohnung, Schwabing</b><span>5 Tage · Wände, Decken, Vinylboden</span></figcaption></figure>
+    <figure class="proj"><img src="/demo/handwerk/img/before.jpg" alt="Küche während der Renovierung, abgedeckt" loading="lazy"><figcaption><b>Küche, Pasing</b><span>Während der Arbeiten · alles abgedeckt</span></figcaption></figure>
+    <figure class="proj"><img src="/demo/handwerk/img/hero.jpg" alt="Maler an einer hohen weißen Wand" loading="lazy"><figcaption><b>Treppenhaus, Haidhausen</b><span>4 Etagen · Arbeiten in der Höhe</span></figcaption></figure>
+    <figure class="proj"><img src="/demo/handwerk/img/tools.jpg" alt="Werkzeug und Farbe vor Arbeitsbeginn" loading="lazy"><figcaption><b>Büro, Maxvorstadt</b><span>Am Wochenende, ohne Betriebsausfall</span></figcaption></figure>
+  </div>
+  <p class="lead" style="font-size:14px">Beispielbilder. In Ihrer Website stehen hier Ihre echten Projekte.</p>
+</div></section>
+
+<section id="ablauf" style="padding-top:0"><div class="wrap">
+  <span class="mono">ABLAUF</span>
+  <h2>So läuft es ab.</h2>
+  <div class="steps">
+    <div class="step"><span class="mono">TAG 1</span><b>Anruf oder Anfrage</b><p>Sie beschreiben kurz, was gemacht werden soll. Fotos helfen.</p></div>
+    <div class="step"><span class="mono">TAG 2 BIS 4</span><b>Besichtigung</b><p>Kostenlos und unverbindlich. Wir messen aus und beraten.</p></div>
+    <div class="step"><span class="mono">24 STD. DANACH</span><b>Festpreis per E-Mail</b><p>Schriftlich, mit allen Positionen. Ohne Nachträge.</p></div>
+    <div class="step"><span class="mono">NACH ABSPRACHE</span><b>Arbeit und Übergabe</b><p>Gemeinsame Abnahme. Bezahlt wird erst danach.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap two">
+  <div>
+    <span class="mono">EINSATZGEBIET</span>
+    <h2>München und 30 km drumherum.</h2>
+    <p class="lead">Ohne Anfahrtskosten. Weiter weg nach Absprache.</p>
+    <div class="chips"><span>Schwabing</span><span>Maxvorstadt</span><span>Haidhausen</span><span>Pasing</span><span>Bogenhausen</span><span>Sendling</span><span>Giesing</span><span>Unterföhring</span><span>Garching</span><span>Starnberg</span></div>
+  </div>
+  <div>
+    <span class="mono">WER KOMMT</span>
+    <div class="me">
+      <div class="me-photo">Ihr Foto</div>
+      <div><p><b style="color:var(--text)">Ich bin Ihr Name, Malermeister.</b> Zu Ihnen kommen ich und zwei feste Gesellen, keine Subunternehmer.</p><p>Wir rauchen nicht in der Wohnung, ziehen Schuhüberzieher an und nehmen unseren Müll mit.</p></div>
+    </div>
+    <div class="quote"><p>„Pünktlich, sauber, und der Preis war am Ende genau der aus dem Angebot.“</p><span>Beispielbewertung · Google</span></div>
+  </div>
+</div></section>
+
+<section id="anfrage" style="padding-top:0"><div class="wrap req">
+  <div>
+    <span class="mono">ANFRAGE</span>
+    <h2>Besichtigung vereinbaren.</h2>
+    <p class="lead">Wir melden uns innerhalb eines Werktags. Lieber telefonieren? Gern.</p>
+    <div class="direct">
+      <a href="tel:+49890000000">089 0000000<span>Mo – Fr, 7 – 17 Uhr</span></a>
+      <a href="#anfrage">WhatsApp<span>Fotos direkt schicken</span></a>
+    </div>
+  </div>
+  <form onsubmit="event.preventDefault();this.querySelector('.form-note').textContent='Demo: In Ihrer echten Website kommt diese Anfrage direkt bei Ihnen an.'">
+    <label>Name<input type="text" autocomplete="name"></label>
+    <label>Telefon<input type="tel" autocomplete="tel"></label>
+    <label>Was soll gemacht werden?<select><option>Wände streichen</option><option>Tapezieren</option><option>Boden verlegen</option><option>Renovierung beim Auszug</option><option>Etwas anderes</option></select></label>
+    <label>Ungefähre Fläche<input type="text" placeholder="z. B. 3 Zimmer, 75 m²"></label>
+    <label class="full">Was sollten wir noch wissen?<textarea placeholder="Wunschtermin, Etage, Besonderheiten"></textarea></label>
+    <button class="btn btn-main full" type="submit">Besichtigung anfragen</button>
+    <p class="form-note">Ihre Daten nutzen wir nur für diese Anfrage.</p>
+  </form>
+</div></section>
+</main>
+
+<footer class="wrap foot"><span>© Ihr Betrieb · Demo</span><span>Website-Vorlage von <a href="/" target="_top" style="color:var(--text)">TP Digital Lab</a> · Fotos: Unsplash</span></footer>
+
+<script>
+(function(){
+  var opts=[].slice.call(document.querySelectorAll(".opts button")), m2=document.getElementById("m2"), out=document.getElementById("m2out"), res=document.getElementById("result"), mat=document.getElementById("mat"), moebel=document.getElementById("moebel");
+  var fmt=new Intl.NumberFormat("de-DE");
+  function calc(){
+    var o=opts.filter(function(b){return b.getAttribute("aria-pressed")==="true"})[0], a=+m2.value;
+    var min=+o.dataset.min*a, max=+o.dataset.max*a;
+    if(!mat.checked){min*=0.82;max*=0.85}
+    if(moebel.checked){min+=120;max+=220}
+    min=Math.round(min/10)*10; max=Math.round(max/10)*10;
+    out.textContent=a+" m²"; res.textContent=fmt.format(min)+" – "+fmt.format(max)+" €";
+  }
+  opts.forEach(function(b){b.onclick=function(){opts.forEach(function(x){x.setAttribute("aria-pressed",x===b)}); calc();}});
+  [m2,mat,moebel].forEach(function(el){el.addEventListener("input",calc)});
+  calc();
+})();
+</script>
+</body>
+</html>

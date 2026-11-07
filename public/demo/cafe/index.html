@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Café Vorlage – Demo-Website von TP Digital Lab</title>
+<meta name="description" content="Demo-Website für ein Café, eine Bäckerei oder ein kleines Restaurant. TP Digital Lab passt diese Website an Ihr Lokal an.">
+<style>
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/cafe/fonts/manrope-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:Manrope;font-style:normal;font-weight:400 800;font-display:swap;src:url(/demo/cafe/fonts/manrope-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2C60-2C7F,U+A720-A7FF}
+:root{--bg:#1c1713;--panel:#262019;--cream:#f2e8da;--text:#f2e8da;--muted:#c4b4a0;--rust:#d0703a;--green:#8fbf7f;--line:rgba(242,232,218,.13)}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{font:500 17px/1.6 Manrope,system-ui,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.demo-bar{background:var(--cream);color:#2a1d12;font-size:14px;font-weight:700;text-align:center;padding:9px 16px}
+.demo-bar a{text-decoration:underline;text-underline-offset:3px}
+header .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:76px}
+.logo{font-weight:800;font-size:22px;letter-spacing:-.02em;line-height:1.1}
+.logo small{display:block;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(143,191,127,.18)}
+.status.closed i{background:#d36a5a;box-shadow:0 0 0 4px rgba(211,106,90,.18)}
+.links{display:flex;gap:26px;font-size:15px;font-weight:600;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:12px 24px;border-radius:999px;font-weight:800;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:background .2s}
+.btn-main{background:var(--rust);color:#1c1009}
+.btn-main:hover{background:#e0844f}
+.btn-line{border:1px solid var(--line);color:var(--text);background:none}
+.btn-line:hover{background:rgba(255,255,255,.06)}
+.hero{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:48px;align-items:center;padding:24px 0 80px}
+.hero-photos{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:1fr 1fr;gap:12px;height:600px}
+.hero-photos img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.hero-photos img:first-child{grid-row:span 2}
+.kicker{font-size:15px;font-weight:700;color:var(--rust)}
+h1{font-size:clamp(42px,5.6vw,76px);line-height:1;letter-spacing:-.045em;font-weight:800;margin:16px 0 20px}
+.sub{font-size:19px;color:var(--muted);max-width:500px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.small{margin-top:22px;font-size:14px;color:var(--muted)}
+section{padding:90px 0}
+h2{font-size:clamp(30px,3.6vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800}
+.kick2{font-size:14px;font-weight:700;color:var(--rust);margin-bottom:10px}
+/* lunch of the day */
+.lunch{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:28px;align-items:center;padding:28px 32px;border-radius:22px;background:var(--cream);color:#2a1d12}
+.lunch .day{font-weight:800;font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:#9a4a1f}
+.lunch h3{font-size:clamp(22px,2.4vw,28px);letter-spacing:-.02em;line-height:1.2}
+.lunch p{font-size:15px;color:#6b5641;margin-top:4px}
+.lunch .p{font-size:26px;font-weight:800;white-space:nowrap}
+.week{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;font-size:14px;color:var(--muted)}
+.week b{color:var(--text)}
+/* menu */
+.menu-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:18px;margin-bottom:30px}
+.tabs{display:inline-flex;gap:4px;padding:5px;border-radius:999px;border:1px solid var(--line)}
+.tabs button{border:0;background:none;color:var(--muted);font:700 15px Manrope,sans-serif;padding:9px 16px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--cream);color:#2a1d12}
+.cols{columns:2;column-gap:56px}
+.item{break-inside:avoid;padding:16px 0;border-bottom:1px solid var(--line)}
+.item .top{display:flex;justify-content:space-between;gap:16px;font-weight:800}
+.item p{font-size:15px;color:var(--muted);margin-top:2px}
+.tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-left:8px;vertical-align:2px}
+/* photos */
+.mosaic{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:220px;gap:12px}
+.mosaic figure{position:relative;border-radius:18px;overflow:hidden}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figure:nth-child(1){grid-column:span 2;grid-row:span 2}
+.mosaic figure:nth-child(4){grid-column:span 2}
+.mosaic figcaption{position:absolute;left:12px;bottom:12px;background:rgba(28,23,19,.75);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
+/* reserve + info */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.card{padding:32px;border-radius:22px;background:var(--panel);border:1px solid var(--line)}
+form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+form label{display:grid;gap:6px;font-size:14px;font-weight:700}
+form .full{grid-column:1/-1}
+input,select{font:500 16px Manrope,sans-serif;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;color-scheme:dark}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+table{width:100%;border-collapse:collapse;margin-top:18px;font-size:16px}
+td{padding:9px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right}
+tr.today td{color:var(--rust);font-weight:800}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.facts span{padding:7px 13px;border-radius:999px;background:rgba(242,232,218,.07);font-size:14px}
+.addr{margin-top:20px}
+.addr b{display:block;font-size:18px}
+.addr span{color:var(--muted);font-size:15px}
+.foot{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@keyframes in{from{opacity:0;filter:blur(10px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+.hero-text>*,.hero-photos img{animation:in 1s cubic-bezier(.2,.8,.2,1) both}
+.hero-text>:nth-child(2){animation-delay:.1s}.hero-text>:nth-child(3){animation-delay:.22s}.hero-text>:nth-child(4){animation-delay:.32s}.hero-text>:nth-child(5){animation-delay:.4s}
+.hero-photos img:nth-child(1){animation-delay:.15s}.hero-photos img:nth-child(2){animation-delay:.3s}.hero-photos img:nth-child(3){animation-delay:.42s}
+@media (prefers-reduced-motion:reduce){@keyframes in{from{opacity:0;filter:blur(10px)}to{opacity:1;filter:none}}}
+@media (max-width:940px){
+ .links{display:none}
+ .hero,.split{grid-template-columns:minmax(0,1fr)}
+ .hero{gap:28px}
+ .hero-photos{height:420px}
+ .cols{columns:1}
+ .mosaic{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:180px}
+ .mosaic figure:nth-child(4){grid-column:span 2}
+ section{padding:64px 0}
+ .lunch{grid-template-columns:minmax(0,1fr);gap:10px}
+}
+@media (max-width:560px){
+ header .nav{height:auto;padding:14px 0;flex-wrap:wrap}
+ .hero-photos{height:340px;grid-template-columns:1fr 1fr}
+ form{grid-template-columns:minmax(0,1fr)}
+ .card{padding:22px}
+ .cta .btn{flex:1 1 100%}
+ .tabs{width:100%;justify-content:space-between}
+ .tabs button{padding:9px 12px}
+}
+</style>
+</head>
+<body>
+<div class="demo-bar">Demo-Website von TP Digital Lab · Diese Website kann in 3 Tagen Ihre sein. <a href="/#fertige-websites" target="_top">Mehr erfahren</a></div>
+
+<header><div class="wrap nav">
+  <a class="logo" href="#">Ihr Café<small>Frühstück · Kaffee · Kuchen</small></a>
+  <nav class="links" aria-label="Navigation"><a href="#karte">Karte</a><a href="#mittag">Mittagstisch</a><a href="#tisch">Tisch reservieren</a><a href="#info">Anfahrt</a></nav>
+  <span class="status" id="status"><i></i><span id="statusText">Geöffnet</span></span>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <div class="hero-text">
+    <p class="kicker">Café in München-Giesing</p>
+    <h1>Frühstück bis 15 Uhr. Auch am Sonntag.</h1>
+    <p class="sub">Brot vom Bäcker zwei Häuser weiter, Kaffee aus einer kleinen Rösterei in Giesing, Kuchen backen wir selbst.</p>
+    <div class="cta"><a class="btn btn-main" href="#tisch">Tisch reservieren</a><a class="btn btn-line" href="#karte">Zur Karte</a></div>
+    <p class="small">Ohne Reservierung? Unter der Woche ist fast immer ein Platz frei.</p>
+  </div>
+  <div class="hero-photos">
+    <img src="/demo/cafe/img/hero.jpg" alt="Theke und Tische im Café" width="1600" height="2409" fetchpriority="high">
+    <img src="/demo/cafe/img/latte.jpg" alt="Milch wird in einen Cappuccino gegossen">
+    <img src="/demo/cafe/img/bread.jpg" alt="Frisches Brot mit Körnern">
+  </div>
+</div>
+
+<section id="mittag" style="padding-top:0"><div class="wrap">
+  <div class="lunch">
+    <span class="day" id="lunchDay">Heute</span>
+    <div><h3 id="lunchDish">Kürbissuppe mit Ingwer, dazu Sauerteigbrot</h3><p id="lunchSide">Mittagstisch, solange der Topf reicht, ab 11:30</p></div>
+    <span class="p">9,50 €</span>
+  </div>
+  <div class="week" id="week"></div>
+</div></section>
+
+<section id="karte" style="padding-top:0"><div class="wrap">
+  <div class="menu-head">
+    <div><p class="kick2">Karte</p><h2>Was es bei uns gibt.</h2></div>
+    <div class="tabs" role="tablist" aria-label="Kategorie">
+      <button role="tab" aria-selected="true" data-tab="f">Frühstück</button>
+      <button role="tab" aria-selected="false" data-tab="k">Kaffee</button>
+      <button role="tab" aria-selected="false" data-tab="s">Kuchen</button>
+    </div>
+  </div>
+  <div class="cols" data-panel="f">
+    <div class="item"><div class="top"><span>Kleines Frühstück</span><span>7,90 €</span></div><p>Zwei Semmeln, Butter, Marmelade, Kaffee oder Tee</p></div>
+    <div class="item"><div class="top"><span>Rührei auf Sauerteig<span class="tag">veg</span></span><span>10,50 €</span></div><p>Mit Schnittlauch und Bergkäse</p></div>
+    <div class="item"><div class="top"><span>Porridge mit Apfel<span class="tag">vegan</span></span><span>8,90 €</span></div><p>Haferdrink, Zimt, gerösteter Apfel</p></div>
+    <div class="item"><div class="top"><span>Weißwurstfrühstück</span><span>12,90 €</span></div><p>Zwei Weißwürste, Brezn, süßer Senf. Nur bis 12 Uhr, wie es sich gehört</p></div>
+    <div class="item"><div class="top"><span>Avocado-Brot<span class="tag">vegan</span></span><span>11,50 €</span></div><p>Mit Chili, Limette und Kresse</p></div>
+    <div class="item"><div class="top"><span>Pfannkuchen</span><span>9,80 €</span></div><p>Mit Beeren und Ahornsirup</p></div>
+  </div>
+  <div class="cols" data-panel="k" hidden>
+    <div class="item"><div class="top"><span>Espresso</span><span>2,60 €</span></div><p>Röstung: Bohne aus Giesing, wechselt monatlich</p></div>
+    <div class="item"><div class="top"><span>Cappuccino</span><span>3,90 €</span></div><p>Auch mit Hafer- oder Mandeldrink, ohne Aufpreis</p></div>
+    <div class="item"><div class="top"><span>Flat White</span><span>4,30 €</span></div><p>Doppelter Espresso, wenig Milch</p></div>
+    <div class="item"><div class="top"><span>Filterkaffee</span><span>3,20 €</span></div><p>Nachschenken ist gratis</p></div>
+    <div class="item"><div class="top"><span>Chai Latte</span><span>4,50 €</span></div><p>Selbst gemischte Gewürze</p></div>
+  </div>
+  <div class="cols" data-panel="s" hidden>
+    <div class="item"><div class="top"><span>Käsekuchen</span><span>4,20 €</span></div><p>Nach dem Rezept der Oma, ohne Boden</p></div>
+    <div class="item"><div class="top"><span>Zwetschgendatschi</span><span>3,90 €</span></div><p>Nur im Herbst, solange es Zwetschgen gibt</p></div>
+    <div class="item"><div class="top"><span>Schokokuchen<span class="tag">vegan</span></span><span>4,50 €</span></div><p>Merkt keiner, versprochen</p></div>
+    <div class="item"><div class="top"><span>Zimtschnecke</span><span>3,40 €</span></div><p>Ab 10 Uhr frisch aus dem Ofen</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="mosaic">
+    <figure><img src="/demo/cafe/img/breakfast.jpg" alt="Gedeckter Frühstückstisch" loading="lazy"><figcaption>Sonntagsfrühstück für vier</figcaption></figure>
+    <figure><img src="/demo/cafe/img/cappuccino.jpg" alt="Cappuccino mit Latte Art" loading="lazy"><figcaption>Cappuccino</figcaption></figure>
+    <figure><img src="/demo/cafe/img/barista.jpg" alt="Barista gießt Milch in den Kaffee" loading="lazy"><figcaption>Latte Art, jeden Tag ein bisschen besser</figcaption></figure>
+    <figure><img src="/demo/cafe/img/bread.jpg" alt="Körnerbrot vom Bäcker nebenan" loading="lazy"><figcaption>Brot vom Bäcker nebenan</figcaption></figure>
+  </div>
+  <p class="note">Beispielbilder. In Ihrer Website stehen hier Fotos aus Ihrem Lokal.</p>
+</div></section>
+
+<section id="tisch" style="padding-top:0"><div class="wrap split">
+  <div class="card">
+    <p class="kick2">Tisch reservieren</p>
+    <h2>Für wie viele?</h2>
+    <form onsubmit="event.preventDefault();this.nextElementSibling.textContent='Demo: In Ihrer echten Website kommt die Reservierung direkt bei Ihnen an.'">
+      <label>Tag<input type="date" id="date"></label>
+      <label>Uhrzeit<select><option>09:00</option><option>10:00</option><option>11:00</option><option>12:30</option><option>14:00</option></select></label>
+      <label>Personen<select><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label>
+      <label class="full">Name<input type="text" autocomplete="name"></label>
+      <button class="btn btn-main full" type="submit">Reservierung anfragen</button>
+    </form>
+    <p class="note">Ab 8 Personen bitte kurz anrufen, dann stellen wir Tische zusammen.</p>
+  </div>
+  <div class="card" id="info">
+    <p class="kick2">Öffnungszeiten</p>
+    <h2>Wann wir da sind.</h2>
+    <table id="hours">
+      <tr data-d="1"><td>Montag</td><td>Ruhetag</td></tr>
+      <tr data-d="2"><td>Dienstag – Freitag</td><td>08:00 – 18:00</td></tr>
+      <tr data-d="6"><td>Samstag</td><td>09:00 – 18:00</td></tr>
+      <tr data-d="0"><td>Sonntag</td><td>09:00 – 17:00</td></tr>
+    </table>
+    <div class="addr"><b>Musterstraße 5, 81539 München</b><span>Tram 18, Haltestelle direkt vor der Tür</span></div>
+    <div class="facts"><span>Hunde willkommen</span><span>Kinderstuhl</span><span>WLAN</span><span>Kartenzahlung</span><span>Terrasse im Sommer</span></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="wrap foot"><span>© Ihr Café · Demo</span><span>Website-Vorlage von <a href="/" target="_top" style="color:var(--text)">TP Digital Lab</a> · Fotos: Unsplash</span></footer>
+
+<script>
+(function(){
+  var now=new Date(), d=now.getDay(), h=now.getHours()+now.getMinutes()/60;
+  var hours={0:[9,17],1:null,2:[8,18],3:[8,18],4:[8,18],5:[8,18],6:[9,18]};
+  var t=hours[d], open=t&&h>=t[0]&&h<t[1], st=document.getElementById("status"), sx=document.getElementById("statusText");
+  if(open){sx.textContent="Jetzt geöffnet · bis "+t[1]+":00";}
+  else{st.classList.add("closed"); var n=1; while(!hours[(d+n)%7]&&n<7)n++; var nd=t&&h<t[0]?0:n; var nt=hours[(d+nd)%7]; sx.textContent="Geschlossen · öffnet "+(nd===0?"heute":nd===1?"morgen":"am "+["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"][(d+nd)%7])+" um "+("0"+nt[0]).slice(-2)+":00";}
+  var rows=document.querySelectorAll("#hours tr"), key=d>=2&&d<=5?2:d; rows.forEach(function(r){if(+r.dataset.d===key)r.classList.add("today")});
+  var dishes=["","","Linsencurry mit Reis","Kürbissuppe mit Ingwer, dazu Sauerteigbrot","Ofengemüse mit Feta und Joghurt","Spinatknödel mit brauner Butter","Quiche mit Lauch und Bergkäse"], days=["So","Mo","Di","Mi","Do","Fr","Sa"];
+  if(d>=2){document.getElementById("lunchDish").textContent=dishes[d];}
+  else{document.getElementById("lunchDish").textContent="Mittagstisch gibt es Dienstag bis Samstag";document.getElementById("lunchSide").textContent="Am Wochenende: Frühstück bis 15 Uhr";}
+  document.getElementById("lunchDay").textContent=["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"][d];
+  var w=document.getElementById("week");
+  [2,3,4,5,6].forEach(function(k){var s=document.createElement("span"); s.innerHTML="<b>"+days[k]+"</b> "+dishes[k]; w.appendChild(s);});
+  var di=document.getElementById("date"); di.valueAsDate=new Date(now.getTime()+864e5); di.min=now.toISOString().slice(0,10);
+  document.querySelectorAll(".tabs button").forEach(function(b){b.onclick=function(){
+    document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected",x===b)});
+    document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==b.dataset.tab});
+  };});
+})();
+</script>
+</body>
+</html>

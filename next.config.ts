@@ -68,7 +68,7 @@ const nextConfig: NextConfig = {
   },
 
   async rewrites() {
-    return [{ source: "/demo/beauty", destination: "/demo/beauty/index.html" }];
+    return ["beauty", "handwerk", "cafe"].map((n) => ({ source: `/demo/${n}`, destination: `/demo/${n}/index.html` }));
   },
 
   async headers() {
