@@ -35,6 +35,12 @@ export default function HeroIntro() {
 
   useEffect(() => {
     const root = document.documentElement;
+    if (root.classList.contains("intro-m")) {
+      // phones: start the entrance only once the page is hydrated and painting,
+      // otherwise it finishes during load and looks like a jump
+      const t = window.setTimeout(() => root.classList.add("intro-m-go"), 150);
+      return () => clearTimeout(t);
+    }
     if (!root.classList.contains("intro")) return;
 
     const timers: number[] = [];
