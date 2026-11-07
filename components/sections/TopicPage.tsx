@@ -8,8 +8,19 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import FaqSchema from "@/components/seo/FaqSchema";
 import type { TopicPageData } from "@/config/topicPages";
+import { getTopicPage } from "@/config/topicPagesI18n";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
-export default function TopicPage({ data }: { data: TopicPageData }) {
+const ui = {
+  de: { live: "Live-Demo", faqEyebrow: "Häufige Fragen", faqTitle: "Kurz beantwortet.", form: "Anfrage", more: "Weitere Leistungen:", web: "Webdesign", redo: "Website überarbeiten", seo: "SEO" },
+  en: { live: "Live demo", faqEyebrow: "Common questions", faqTitle: "Short answers.", form: "Enquiry", more: "More services:", web: "Web design", redo: "Website redesign", seo: "SEO" },
+  ru: { live: "Живое демо", faqEyebrow: "Частые вопросы", faqTitle: "Коротко о главном.", form: "Заявка", more: "Другие услуги:", web: "Веб-дизайн", redo: "Доработка сайта", seo: "SEO" },
+};
+
+export default function TopicPage({ data: base }: { data: TopicPageData }) {
+  const { language } = useLanguage();
+  const data = getTopicPage(base.slug, language);
+  const u = ui[language];
   return (
     <>
       <Header />
@@ -42,7 +53,7 @@ export default function TopicPage({ data }: { data: TopicPageData }) {
               <a href={`/demo/${data.demo.slug}`} target="_blank" rel="noopener" className="group grid overflow-hidden rounded-3xl border border-white/10 bg-[var(--card)]/70 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)]" aria-label={data.demo.cta}>
                 <Image src={`/demo/${data.demo.slug}/preview.png`} alt={data.demo.title} width={1440} height={900} sizes="(max-width: 1023px) 100vw, 700px" className="aspect-[16/10] h-full w-full object-cover object-left-top transition-transform duration-700 group-hover:scale-[1.02]" />
                 <div className="flex flex-col justify-center p-6 sm:p-8">
-                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">Live-Demo</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{u.live}</p>
                   <h2 className="mt-2 text-2xl font-semibold tracking-tight">{data.demo.title}</h2>
                   <p className="mt-3 text-base leading-7 text-white/70">{data.demo.text}</p>
                   <span className="mt-5 text-sm font-semibold text-blue-200 underline underline-offset-4">{data.demo.cta}</span>
@@ -80,8 +91,8 @@ export default function TopicPage({ data }: { data: TopicPageData }) {
                 </ul>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">Häufige Fragen</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Kurz beantwortet.</h2>
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">{u.faqEyebrow}</p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">{u.faqTitle}</h2>
                 <div className="mt-6">
                   {data.faq.map((f) => (
                     <details key={f.question} className="border-b border-white/10 py-4">
@@ -99,11 +110,11 @@ export default function TopicPage({ data }: { data: TopicPageData }) {
           <Container>
             <div className="grid gap-8 rounded-[30px] border border-white/10 bg-[var(--card)]/70 p-6 sm:p-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:p-12">
               <div>
-                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">Anfrage</p>
+                <p className="text-sm font-semibold uppercase leading-5 tracking-[0.1em] text-blue-300">{u.form}</p>
                 <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">{data.formTitle}</h2>
                 <p className="mt-4 text-base leading-7 text-white/70">{data.formText}</p>
                 <p className="mt-6 text-sm text-white/60">
-                  Weitere Leistungen: <Link className="text-blue-200 underline underline-offset-4" href="/de/webdesign">Webdesign</Link> · <Link className="text-blue-200 underline underline-offset-4" href="/de/digitale-loesungen">Website überarbeiten</Link> · <Link className="text-blue-200 underline underline-offset-4" href="/de/seo">SEO</Link>
+                  {u.more} <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/webdesign`}>{u.web}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/digitale-loesungen`}>{u.redo}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/seo`}>{u.seo}</Link>
                 </p>
               </div>
               <div className="min-w-0">
