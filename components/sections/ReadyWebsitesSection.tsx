@@ -6,9 +6,36 @@ import RequestLink from "@/components/contact/RequestLink";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const templates = [
-  { slug: "beauty", page: "/website-nagelstudio", name: { de: "Nagel- und Beauty-Studio", en: "Nail and beauty studio", ru: "Ногтевая и бьюти-студия" }, extra: { de: "Freie Termine, Preisliste, Galerie", en: "Free slots, price list, gallery", ru: "Свободные окна, прайс, галерея" } },
-  { slug: "handwerk", page: "/website-handwerker", name: { de: "Handwerk und Renovierung", en: "Trades and renovation", ru: "Ремонт и мастера" }, extra: { de: "Preisrechner, Projekte, Einsatzgebiet", en: "Price calculator, projects, service area", ru: "Калькулятор цены, проекты, районы" } },
-  { slug: "cafe", page: "/website-cafe", name: { de: "Café und Gastronomie", en: "Café and gastronomy", ru: "Кафе и гастрономия" }, extra: { de: "Speisekarte, Mittagstisch, Reservierung", en: "Menu, lunch of the day, reservations", ru: "Меню, обед дня, бронь столика" } },
+  {
+    slug: "studio", page: "/website-nagelstudio",
+    name: { de: "Nagel- und Beauty-Studio", en: "Nail and beauty studio", ru: "Ногтевая и бьюти-студия" },
+    price: { de: "500 €", en: "€500", ru: "500 €" },
+    features: {
+      de: ["Admin-Bereich: Preise und Texte selbst ändern", "3 Sprachen: Deutsch, Russisch, Ukrainisch", "Preisliste mit Beschreibungen", "Galerie und Bewertungen", "Termin über Treatwell oder WhatsApp"],
+      en: ["Admin area: change prices and texts yourself", "3 languages: German, Russian, Ukrainian", "Price list with descriptions", "Gallery and reviews", "Booking via Treatwell or WhatsApp"],
+      ru: ["Админ-панель: цены и тексты меняете сами", "3 языка: немецкий, русский, украинский", "Прайс с описаниями услуг", "Галерея и отзывы", "Запись через Treatwell или WhatsApp"],
+    },
+  },
+  {
+    slug: "handwerk", page: "/website-handwerker",
+    name: { de: "Handwerk und Renovierung", en: "Trades and renovation", ru: "Ремонт и мастера" },
+    price: { de: "290 €", en: "€290", ru: "290 €" },
+    features: {
+      de: ["Preisrechner pro Quadratmeter", "Projekte mit Fotos", "Einsatzgebiet und Ablauf", "Anfrageformular, Telefon und WhatsApp"],
+      en: ["Price calculator per square metre", "Projects with photos", "Service area and process", "Enquiry form, phone and WhatsApp"],
+      ru: ["Калькулятор цены за м²", "Объекты с фото", "Районы работы и этапы", "Форма заявки, звонок и WhatsApp"],
+    },
+  },
+  {
+    slug: "cafe", page: "/website-cafe",
+    name: { de: "Café und Gastronomie", en: "Café and gastronomy", ru: "Кафе и гастрономия" },
+    price: { de: "290 €", en: "€290", ru: "290 €" },
+    features: {
+      de: ["Speisekarte mit Preisen", "Mittagstisch des Tages", "Öffnungszeiten mit Live-Status", "Tischreservierung"],
+      en: ["Menu with prices", "Lunch of the day", "Opening hours with live status", "Table reservation"],
+      ru: ["Меню с ценами", "Обед дня", "Часы работы со статусом «открыто»", "Бронирование столика"],
+    },
+  },
 ] as const;
 
 const copy = {
@@ -16,7 +43,6 @@ const copy = {
     eyebrow: "Fertige Websites",
     title: "Sehen, auswählen, online gehen.",
     text: "Fertige Designs für Ihre Branche. Sie sehen das Ergebnis schon vor dem Auftrag. Ich passe Texte, Farben, Logo und Fotos an Ihr Geschäft an.",
-    price: "ab 290 €",
     points: "Online in 3 Tagen · Impressum und Datenschutz inklusive · pro Stadt nur einmal vergeben",
     demo: "Live-Demo ansehen",
     request: "Anfragen",
@@ -39,7 +65,6 @@ const copy = {
     eyebrow: "Ready-made websites",
     title: "See it, pick it, go live.",
     text: "Finished designs for your industry. You see the result before you order. I adapt texts, colours, logo and photos to your business.",
-    price: "from €290",
     points: "Online in 3 days · legal pages included · only one per city",
     demo: "View live demo",
     request: "Request",
@@ -62,7 +87,6 @@ const copy = {
     eyebrow: "Готовые сайты",
     title: "Посмотрите, выберите, запускайте.",
     text: "Готовые дизайны под вашу сферу. Вы видите результат ещё до заказа. Я адаптирую тексты, цвета, логотип и фото под ваш бизнес.",
-    price: "от 290 €",
     points: "Онлайн за 3 дня · Impressum и Datenschutz включены · один дизайн на город",
     demo: "Открыть демо",
     request: "Хочу такой",
@@ -108,10 +132,14 @@ export default function ReadyWebsitesSection() {
                 <p className="text-xs font-semibold uppercase tracking-[0.1em] text-white/55">{t.kind}</p>
                 <div className="mt-1 flex items-baseline justify-between gap-3">
                   <h3 className="text-xl font-semibold tracking-tight text-white">{tpl.name[language]}</h3>
-                  <p className="price-number shrink-0 text-lg font-semibold text-white">{t.price}</p>
+                  <p className="price-number shrink-0 text-lg font-semibold text-white">{tpl.price[language]}</p>
                 </div>
-                <p className="mt-2 text-sm leading-6 text-white/60">{tpl.extra[language]}</p>
-                <a href={tpl.page} className="mt-2 text-sm font-semibold text-blue-200 underline underline-offset-4">{t.details}</a>
+                <ul className="mt-3 grid gap-1.5 text-sm leading-6 text-white/70">
+                  {tpl.features[language].map((f) => (
+                    <li key={f} className="flex gap-2"><span aria-hidden="true" className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-300" />{f}</li>
+                  ))}
+                </ul>
+                <a href={tpl.page} className="mt-3 text-sm font-semibold text-blue-200 underline underline-offset-4">{t.details}</a>
                 <div className="mt-auto flex gap-3 pt-6">
                   <a href={`/demo/${tpl.slug}`} target="_blank" rel="noopener" className="inline-flex min-h-11 flex-1 items-center justify-center rounded-full bg-blue-600 px-4 py-2.5 text-center text-sm font-semibold text-white">{t.demo}</a>
                   <RequestLink className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/20 px-4 py-2.5 text-center text-sm font-medium text-white/85 hover:bg-white/10">{t.request}</RequestLink>

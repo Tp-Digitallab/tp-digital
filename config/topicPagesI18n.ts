@@ -9,7 +9,7 @@ type Override = Omit<TopicPageData, "slug" | "metaTitle" | "metaDescription" | "
 
 const en: Record<string, Override> = {
   "website-nagelstudio": {
-    priceLabel: "Ready-made website from",
+    priceLabel: "Ready-made website:",
     price: "€290",
     priceNote: "fixed price before we start",
     eyebrow: "Website for nail studios",
@@ -18,7 +18,7 @@ const en: Record<string, Override> = {
     intro: "Most clients find you on Google Maps or Instagram and then want to know three things: what does it cost, what does your work look like, and when is there a free slot. Your new website shows exactly that at a glance.",
     cta: "Request a website",
     demo: { title: "Demo: nail and beauty studio", text: "Free slots this week, a price list like in the salon, a gallery with prices. This is how your website can look, with your name, your photos and your prices.", cta: "View live demo" },
-    demo2: { title: "Demo 2: bright studio in rosé", text: "A calm, bright design with an expandable price list, a swipeable gallery and three languages: German, Russian and Ukrainian.", cta: "View second design" },
+    demo2: { title: "Demo 2: bright studio in rosé, €500", text: "Admin area included: you change prices, descriptions and texts yourself, without me. Three languages: German, Russian and Ukrainian. Plus an expandable price list and a swipeable gallery.", cta: "View second design" },
     needsEyebrow: "What matters",
     needsTitle: "What clients look for on your website.",
     needs: [
@@ -47,7 +47,7 @@ const en: Record<string, Override> = {
     formText: "Briefly write the name and town of your studio. I'll get back to you with a suggestion and the fixed price.",
   },
   "website-handwerker": {
-    priceLabel: "Ready-made website from",
+    priceLabel: "Ready-made website:",
     price: "€290",
     priceNote: "fixed price before we start",
     eyebrow: "Website for tradespeople",
@@ -84,7 +84,7 @@ const en: Record<string, Override> = {
     formText: "Briefly write your trade and town. I'll get back to you with a suggestion and the fixed price.",
   },
   "website-cafe": {
-    priceLabel: "Ready-made website from",
+    priceLabel: "Ready-made website:",
     price: "€290",
     priceNote: "fixed price before we start",
     eyebrow: "Website for cafés and restaurants",
@@ -160,7 +160,7 @@ const en: Record<string, Override> = {
 
 const ru: Record<string, Override> = {
   "website-nagelstudio": {
-    priceLabel: "Готовый сайт от",
+    priceLabel: "Готовый сайт:",
     price: "290 €",
     priceNote: "фиксированная цена до начала",
     eyebrow: "Сайт для ногтевой студии",
@@ -169,7 +169,7 @@ const ru: Record<string, Override> = {
     intro: "Большинство клиенток находят вас в Google Maps или Instagram, а потом хотят узнать три вещи: сколько стоит, как выглядят ваши работы и когда есть свободное время. Новый сайт показывает это сразу.",
     cta: "Заказать сайт",
     demo: { title: "Демо: ногтевая и бьюти-студия", text: "Свободные окна на неделю, прайс как в салоне, галерея с ценами. Так может выглядеть ваш сайт, с вашим названием, фото и ценами.", cta: "Открыть демо" },
-    demo2: { title: "Демо 2: светлая студия в розовых тонах", text: "Спокойный светлый дизайн: прайс с раскрывающимися описаниями, галерея с перелистыванием и три языка — немецкий, русский и украинский.", cta: "Открыть второй дизайн" },
+    demo2: { title: "Демо 2: светлая студия в розовых тонах, 500 €", text: "Админ-панель включена: цены, описания и тексты меняете сами, без меня. Три языка: немецкий, русский и украинский. Плюс прайс с раскрывающимися описаниями и галерея с перелистыванием.", cta: "Открыть второй дизайн" },
     needsEyebrow: "Что важно",
     needsTitle: "Что клиентки ищут на вашем сайте.",
     needs: [
@@ -198,7 +198,7 @@ const ru: Record<string, Override> = {
     formText: "Коротко напишите название и город студии. Я отвечу с предложением и фиксированной ценой.",
   },
   "website-handwerker": {
-    priceLabel: "Готовый сайт от",
+    priceLabel: "Готовый сайт:",
     price: "290 €",
     priceNote: "фиксированная цена до начала",
     eyebrow: "Сайт для мастеров и ремонта",
@@ -235,7 +235,7 @@ const ru: Record<string, Override> = {
     formText: "Коротко напишите вид работ и город. Я отвечу с предложением и фиксированной ценой.",
   },
   "website-cafe": {
-    priceLabel: "Готовый сайт от",
+    priceLabel: "Готовый сайт:",
     price: "290 €",
     priceNote: "фиксированная цена до начала",
     eyebrow: "Сайт для кафе и ресторанов",

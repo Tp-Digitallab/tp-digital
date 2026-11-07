@@ -29,7 +29,7 @@ export type TopicPageData = {
 };
 
 const common = {
-  priceLabel: "Fertige Website ab",
+  priceLabel: "Fertige Website:",
   priceNote: "Festpreis vor dem Start",
   needsEyebrow: "Worauf es ankommt",
   includedEyebrow: "Im Preis enthalten",
@@ -41,7 +41,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-nagelstudio": {
     ...common,
     slug: "website-nagelstudio",
-    metaTitle: "Website für Nagelstudio & Beauty-Studio ab 290 € | TP Digital Lab",
+    metaTitle: "Website für Nagelstudio & Beauty-Studio für 290 € | TP Digital Lab",
     metaDescription: "Website für Ihr Nagelstudio: Preisliste, Galerie, Online-Termin über Treatwell oder Fresha. Fertiges Design zum Ansehen, in 3 Tagen online. Persönlich aus München.",
     eyebrow: "Website für Nagelstudios",
     title: "Eine Website, über die Kundinnen",
@@ -50,7 +50,7 @@ export const topicPages: Record<string, TopicPageData> = {
     price: "290 €",
     cta: "Website anfragen",
     demo: { slug: "beauty", title: "Demo: Nagel- und Beauty-Studio", text: "Freie Termine der Woche, Preisliste wie im Salon, Galerie mit Preisen. So kann Ihre Website aussehen, mit Ihrem Namen, Ihren Fotos und Ihren Preisen.", cta: "Live-Demo ansehen" },
-    demo2: { slug: "studio", title: "Demo 2: helles Studio in Rosé", text: "Ruhiges, helles Design mit Preisliste zum Aufklappen, Galerie zum Wischen und drei Sprachen: Deutsch, Russisch und Ukrainisch.", cta: "Zweites Design ansehen" },
+    demo2: { slug: "studio", title: "Demo 2: helles Studio in Rosé, 500 €", text: "Mit Admin-Bereich inklusive: Preise, Beschreibungen und Texte ändern Sie selbst, ohne mich. Drei Sprachen: Deutsch, Russisch und Ukrainisch. Dazu Preisliste zum Aufklappen und Galerie zum Wischen.", cta: "Zweites Design ansehen" },
     needsTitle: "Was Kundinnen auf Ihrer Website suchen.",
     needs: [
       { title: "Preise ohne Nachfragen", text: "Eine klare Preisliste für Maniküre, Gel und Pediküre. Wer den Preis sieht, bucht eher und fragt weniger per WhatsApp nach." },
@@ -79,7 +79,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-handwerker": {
     ...common,
     slug: "website-handwerker",
-    metaTitle: "Website für Handwerker ab 290 € | Maler, Renovierung, Elektrik | TP Digital Lab",
+    metaTitle: "Website für Handwerker für 290 € | Maler, Renovierung, Elektrik | TP Digital Lab",
     metaDescription: "Website für Ihren Handwerksbetrieb: Leistungen mit Preisen, Projekte, Einsatzgebiet und Anfrageformular. Fertiges Design zum Ansehen, in 3 Tagen online. Aus München.",
     eyebrow: "Website für Handwerker",
     title: "Eine Website, die Anfragen bringt,",
@@ -116,7 +116,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-cafe": {
     ...common,
     slug: "website-cafe",
-    metaTitle: "Website für Café, Bäckerei & Restaurant ab 290 € | TP Digital Lab",
+    metaTitle: "Website für Café, Bäckerei & Restaurant für 290 € | TP Digital Lab",
     metaDescription: "Website für Ihr Café: Speisekarte, Öffnungszeiten mit Live-Status, Mittagstisch und Tischreservierung. Fertiges Design zum Ansehen, in 3 Tagen online. Aus München.",
     eyebrow: "Website für Cafés und Gastronomie",
     title: "Eine Website, die zeigt:",
