@@ -212,6 +212,9 @@ export default function Footer() {
               <Link href="/wordpress-wartung-muenchen" className="text-white/70 transition hover:text-white">
                 {language === "ru" ? "Обслуживание WordPress" : language === "en" ? "WordPress maintenance" : "WordPress-Wartung"}
               </Link>
+              <Link href="/seo-audit-muenchen" className="text-white/70 transition hover:text-white">
+                {language === "ru" ? "SEO-аудит" : language === "en" ? "SEO audit" : "SEO-Audit"}
+              </Link>
               <Link href="/website-nagelstudio" className="text-white/70 transition hover:text-white">
                 {language === "ru" ? "Сайт для ногтевой студии" : language === "en" ? "Website for nail studios" : "Website für Nagelstudios"}
               </Link>
