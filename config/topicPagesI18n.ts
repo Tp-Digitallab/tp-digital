@@ -28,7 +28,7 @@ const en: Record<string, Override> = {
       { title: "Found on Google", text: "Your website strengthens your Google profile, with address, opening hours and services in your clients' language." },
     ],
     includedEyebrow: "Included in the price",
-    includedTitle: "What you get for €290.",
+    includedTitle: "What you get from €290.",
     included: [
       "Ready-made design, adapted to your logo, colours and photos",
       "Price list, gallery, about me, directions and opening hours",
@@ -65,7 +65,7 @@ const en: Record<string, Override> = {
       { title: "How soon can they start?", text: "Your next free date and a clear process up to the fixed price. That removes the uncertainty." },
     ],
     includedEyebrow: "Included in the price",
-    includedTitle: "What you get for €290.",
+    includedTitle: "What you get from €290.",
     included: [
       "Ready-made design, adapted to your logo, colours and photos",
       "Services with guide prices, projects, service area, process",
@@ -102,7 +102,7 @@ const en: Record<string, Override> = {
       { title: "A table for six?", text: "Table reservation by form or through your system. Groups call, everyone else books online." },
     ],
     includedEyebrow: "Included in the price",
-    includedTitle: "What you get for €290.",
+    includedTitle: "What you get from €290.",
     included: [
       "Ready-made design, adapted to your logo, colours and photos",
       "Menu, opening hours, lunch, directions",
@@ -216,7 +216,7 @@ const ru: Record<string, Override> = {
       { title: "Вас находят в Google", text: "Сайт усиливает ваш профиль в Google: адрес, часы работы и услуги на языке ваших клиенток." },
     ],
     includedEyebrow: "Входит в цену",
-    includedTitle: "Что вы получаете за 290 €.",
+    includedTitle: "Что вы получаете от 290 €.",
     included: [
       "Готовый дизайн под ваш логотип, цвета и фото",
       "Прайс, галерея, о себе, как добраться и часы работы",
@@ -253,7 +253,7 @@ const ru: Record<string, Override> = {
       { title: "Когда смогут начать?", text: "Ближайшая свободная дата и понятный порядок до фиксированной цены. Это снимает сомнения." },
     ],
     includedEyebrow: "Входит в цену",
-    includedTitle: "Что вы получаете за 290 €.",
+    includedTitle: "Что вы получаете от 290 €.",
     included: [
       "Готовый дизайн под ваш логотип, цвета и фото",
       "Услуги с ориентировочными ценами, объекты, зона работы, этапы",
@@ -290,7 +290,7 @@ const ru: Record<string, Override> = {
       { title: "Столик на шестерых?", text: "Бронирование через форму или вашу систему. Группы звонят, остальные бронируют онлайн." },
     ],
     includedEyebrow: "Входит в цену",
-    includedTitle: "Что вы получаете за 290 €.",
+    includedTitle: "Что вы получаете от 290 €.",
     included: [
       "Готовый дизайн под ваш логотип, цвета и фото",
       "Меню, часы работы, обед дня, как добраться",

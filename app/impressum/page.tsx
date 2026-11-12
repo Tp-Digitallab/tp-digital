@@ -81,7 +81,7 @@ export default function ImpressumPage() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-300">
-            Angaben gemäß § 5 TMG und
+            Angaben gemäß § 5 DDG und
             § 18 MStV.
           </p>
         </div>
@@ -120,6 +120,16 @@ export default function ImpressumPage() {
 
                 <p className="mt-2">
                   Taras Pakhaliuk
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm uppercase tracking-widest text-zinc-500">
+                  Rechtsform
+                </p>
+
+                <p className="mt-2">
+                  Einzelunternehmen
                 </p>
               </div>
 
@@ -177,6 +187,31 @@ export default function ImpressumPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="mt-5 min-w-0 space-y-6 overflow-hidden rounded-3xl border border-white/15 bg-[var(--card)]/70 p-5 text-zinc-300 backdrop-blur sm:mt-8 sm:p-8">
+          <div>
+            <h2 className="text-xl font-semibold text-white">
+              Umsatzsteuer
+            </h2>
+
+            <p className="mt-2 leading-7">
+              Als Kleinunternehmer im Sinne von § 19 UStG wird keine
+              Umsatzsteuer berechnet.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-semibold text-white">
+              Verbraucherstreitbeilegung
+            </h2>
+
+            <p className="mt-2 leading-7">
+              Ich bin nicht bereit und nicht verpflichtet, an
+              Streitbeilegungsverfahren vor einer
+              Verbraucherschlichtungsstelle teilzunehmen.
+            </p>
           </div>
         </div>
       </section>

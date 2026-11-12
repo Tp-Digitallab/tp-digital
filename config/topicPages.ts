@@ -41,7 +41,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-nagelstudio": {
     ...common,
     slug: "website-nagelstudio",
-    metaTitle: "Website für Nagelstudio & Beauty-Studio für 290 € | TP Digital Lab",
+    metaTitle: "Website für Nagelstudio & Beauty-Studio ab 290 € | TP Digital Lab",
     metaDescription: "Website für Ihr Nagelstudio: Preisliste, Galerie, Online-Termin über Treatwell oder Fresha. Fertiges Design zum Ansehen, in 3 Tagen online. Persönlich aus München.",
     eyebrow: "Website für Nagelstudios",
     title: "Eine Website, über die Kundinnen",
@@ -58,7 +58,7 @@ export const topicPages: Record<string, TopicPageData> = {
       { title: "Termin in einer Minute", text: "Ein Klick zu Treatwell, Fresha, Planity oder direkt zu WhatsApp. Ihr Buchungssystem bleibt, die Website führt die Kundinnen hin." },
       { title: "Bei Google gefunden werden", text: "Ihre Website stärkt Ihr Google-Profil. Mit Adresse, Öffnungszeiten und Leistungen in der Sprache Ihrer Kundinnen." },
     ],
-    includedTitle: "Was Sie für 290 € bekommen.",
+    includedTitle: "Was Sie ab 290 € bekommen.",
     included: [
       "Fertiges Design, angepasst an Ihr Logo, Ihre Farben und Ihre Fotos",
       "Preisliste, Galerie, Über-mich, Anfahrt und Öffnungszeiten",
@@ -79,7 +79,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-handwerker": {
     ...common,
     slug: "website-handwerker",
-    metaTitle: "Website für Handwerker für 290 € | Maler, Renovierung, Elektrik | TP Digital Lab",
+    metaTitle: "Website für Handwerker ab 290 € | Maler, Renovierung, Elektrik | TP Digital Lab",
     metaDescription: "Website für Ihren Handwerksbetrieb: Leistungen mit Preisen, Projekte, Einsatzgebiet und Anfrageformular. Fertiges Design zum Ansehen, in 3 Tagen online. Aus München.",
     eyebrow: "Website für Handwerker",
     title: "Eine Website, die Anfragen bringt,",
@@ -95,7 +95,7 @@ export const topicPages: Record<string, TopicPageData> = {
       { title: "Kommen die zu mir?", text: "Ihr Einsatzgebiet mit Stadtteilen und Orten. So finden Sie auch Kunden, die nach Ihrem Ort suchen." },
       { title: "Wie schnell geht es los?", text: "Ihr nächster freier Termin und ein klarer Ablauf bis zum Festpreis. Das nimmt die Unsicherheit." },
     ],
-    includedTitle: "Was Sie für 290 € bekommen.",
+    includedTitle: "Was Sie ab 290 € bekommen.",
     included: [
       "Fertiges Design, angepasst an Ihr Logo, Ihre Farben und Ihre Fotos",
       "Leistungen mit Richtpreisen, Projekte, Einsatzgebiet, Ablauf",
@@ -116,7 +116,7 @@ export const topicPages: Record<string, TopicPageData> = {
   "website-cafe": {
     ...common,
     slug: "website-cafe",
-    metaTitle: "Website für Café, Bäckerei & Restaurant für 290 € | TP Digital Lab",
+    metaTitle: "Website für Café, Bäckerei & Restaurant ab 290 € | TP Digital Lab",
     metaDescription: "Website für Ihr Café: Speisekarte, Öffnungszeiten mit Live-Status, Mittagstisch und Tischreservierung. Fertiges Design zum Ansehen, in 3 Tagen online. Aus München.",
     eyebrow: "Website für Cafés und Gastronomie",
     title: "Eine Website, die zeigt:",
@@ -132,7 +132,7 @@ export const topicPages: Record<string, TopicPageData> = {
       { title: "Heute Mittag?", text: "Mittagstisch der Woche, den Sie in einer Minute ändern. Bringt Stammgäste aus den Büros nebenan." },
       { title: "Platz für sechs?", text: "Tischreservierung per Formular oder über Ihr System. Gruppen rufen an, alle anderen buchen online." },
     ],
-    includedTitle: "Was Sie für 290 € bekommen.",
+    includedTitle: "Was Sie ab 290 € bekommen.",
     included: [
       "Fertiges Design, angepasst an Ihr Logo, Ihre Farben und Ihre Fotos",
       "Speisekarte, Öffnungszeiten, Mittagstisch, Anfahrt",
