@@ -16,7 +16,7 @@ export default function JsonLd() {
         description: "Webdesign und Webentwicklung für Selbstständige und kleine Unternehmen aus München und ganz Deutschland.",
         founder: { "@type": "Person", name: "Taras Pakhaliuk" },
         areaServed: { "@type": "Country", name: "Deutschland" },
-        sameAs: [googleReviewsUrl],
+        sameAs: [googleReviewsUrl, "https://www.linkedin.com/company/tp-digital-lab/", "https://www.linkedin.com/in/taras-pakhaliuk-webdesign/"],
         knowsLanguage: ["de", "en", "ru"],
       },
       {
