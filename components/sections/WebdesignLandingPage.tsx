@@ -1190,6 +1190,13 @@ export default function WebdesignLandingPage() {
             <p className="mx-auto mt-8 max-w-3xl text-center text-sm text-white/40">
               {t.pricing.finalPrice}
             </p>
+            {language !== "en" && (
+              <p className="mx-auto mt-3 max-w-3xl text-center text-sm">
+                <Link href={language === "ru" ? "/sozdanie-saytov-v-germanii" : "/website-kosten-muenchen"} className="text-blue-200 underline underline-offset-4">
+                  {language === "ru" ? "Подробнее о ценах и создании сайтов в Германии" : "Was kostet eine Website in München? Alle Preise im Überblick"}
+                </Link>
+              </p>
+            )}
           </Container>
         </section>
 

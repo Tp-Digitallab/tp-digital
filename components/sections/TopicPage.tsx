@@ -12,9 +12,9 @@ import { getTopicPage } from "@/config/topicPagesI18n";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 const ui = {
-  de: { live: "Live-Demo", faqEyebrow: "Häufige Fragen", faqTitle: "Kurz beantwortet.", form: "Anfrage", more: "Weitere Leistungen:", web: "Webdesign", redo: "Website überarbeiten", seo: "SEO" },
-  en: { live: "Live demo", faqEyebrow: "Common questions", faqTitle: "Short answers.", form: "Enquiry", more: "More services:", web: "Web design", redo: "Website redesign", seo: "SEO" },
-  ru: { live: "Живое демо", faqEyebrow: "Частые вопросы", faqTitle: "Коротко о главном.", form: "Заявка", more: "Другие услуги:", web: "Веб-дизайн", redo: "Доработка сайта", seo: "SEO" },
+  de: { live: "Live-Demo", faqEyebrow: "Häufige Fragen", faqTitle: "Kurz beantwortet.", form: "Anfrage", more: "Weitere Leistungen:", web: "Webdesign", redo: "Website überarbeiten", seo: "SEO", prices: "Website-Kosten" },
+  en: { live: "Live demo", faqEyebrow: "Common questions", faqTitle: "Short answers.", form: "Enquiry", more: "More services:", web: "Web design", redo: "Website redesign", seo: "SEO", prices: "Website costs" },
+  ru: { live: "Живое демо", faqEyebrow: "Частые вопросы", faqTitle: "Коротко о главном.", form: "Заявка", more: "Другие услуги:", web: "Веб-дизайн", redo: "Доработка сайта", seo: "SEO", prices: "Цены на сайты" },
 };
 
 export default function TopicPage({ data: base }: { data: TopicPageData }) {
@@ -118,7 +118,7 @@ export default function TopicPage({ data: base }: { data: TopicPageData }) {
                 <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">{data.formTitle}</h2>
                 <p className="mt-4 text-base leading-7 text-white/70">{data.formText}</p>
                 <p className="mt-6 text-sm text-white/60">
-                  {u.more} <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/webdesign`}>{u.web}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/digitale-loesungen`}>{u.redo}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/seo`}>{u.seo}</Link>
+                  {u.more} <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/webdesign`}>{u.web}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/digitale-loesungen`}>{u.redo}</Link> · <Link className="text-blue-200 underline underline-offset-4" href={`/${language}/seo`}>{u.seo}</Link>{data.slug !== "website-kosten-muenchen" && <> · <Link className="text-blue-200 underline underline-offset-4" href={language === "ru" ? "/sozdanie-saytov-v-germanii" : "/website-kosten-muenchen"}>{u.prices}</Link></>}
                 </p>
               </div>
               <div className="min-w-0">

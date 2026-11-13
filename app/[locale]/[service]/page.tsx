@@ -74,7 +74,7 @@ const webdesignMetadata = {
 
 const serviceMetadata = {
   seo: {
-    de: { title: "Technisches SEO-Audit für kleine Unternehmen | München | TP Digital Lab", description: "Ich prüfe Ihre Website wie Google: Indexierung, Ladezeit, Titel, mobile Ansicht und Search Console. Sie bekommen eine klare Liste, was zuerst zu tun ist. Festpreis vor Beginn." },
+    de: { title: "Technisches SEO-Audit: erste Prüfung kostenlos | TP Digital Lab", description: "Warum bringt Ihre Website keine Anfragen? Ich prüfe Indexierung, Ladezeit, Titel und Handy-Ansicht und sage Ihnen, was zuerst zu tun ist. Erstprüfung kostenlos, danach Festpreis." },
     en: { title: "SEO Audit & Website Optimization Munich | TP Digital Lab", description: "Technical SEO audits, on-page improvements and Google Search Console support for small businesses in Munich and across Germany. Clear scope and a written action plan." },
     ru: { title: "SEO-аудит и продвижение сайтов в Германии | TP Digital Lab", description: "Технический SEO-аудит, оптимизация страниц и помощь с Google Search Console для малого бизнеса в Германии. Общение на русском, понятный план работ." },
   },
